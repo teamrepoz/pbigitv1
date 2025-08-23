@@ -1,342 +1,51 @@
 {
-  "layouts": [
+  "config": "{\"version\":\"5.66\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":{\"visual\":\"1.8.95\",\"report\":\"2.0.95\",\"page\":\"1.3.95\"},\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true,\"useEnhancedTooltips\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Middle'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
     {
-      "id": 0,
-      "position": {
-        "height": 368.33333333333337,
-        "tabOrder": 3000,
-        "width": 640,
-        "x": 0,
-        "y": 351.6666666666667,
-        "z": 3000
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
       }
     }
   ],
-  "name": "3b5cd924c1efe28b3295",
-  "singleVisual": {
-    "columnProperties": {
-      "New_Data.Aircraft_Type": {
-        "displayName": "Aircraft Type"
-      },
-      "Sum(New_Data.Net_Profit)": {
-        "displayName": "Net Profit"
-      }
-    },
-    "drillFilterOtherVisuals": true,
-    "objects": {
-      "categoryAxis": [
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Page 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "91c402e30268c12e1323",
+      "visualContainers": [
         {
-          "properties": {
-            "axisType": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Scalar'"
-                }
-              }
-            },
-            "labelColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#666666'"
-                    }
-                  }
-                }
-              }
-            },
-            "showAxisTitle": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "titleColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#333333'"
-                    }
-                  }
-                }
-              }
-            },
-            "titleFontFamily": {
-              "expr": {
-                "Literal": {
-                  "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
-                }
-              }
-            },
-            "titleFontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "9D"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "legend": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "showGradientLegend": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "valueAxis": [
-        {
-          "properties": {
-            "labelColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#605E5C'"
-                    }
-                  }
-                }
-              }
-            },
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "showAxisTitle": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "titleColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#605E5C'"
-                    }
-                  }
-                }
-              }
-            },
-            "titleFontFamily": {
-              "expr": {
-                "Literal": {
-                  "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
-                }
-              }
-            },
-            "titleFontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "9D"
-                }
-              }
-            },
-            "titleText": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Net Profit'"
-                }
-              }
-            }
-          }
-        }
-      ]
-    },
-    "projections": {
-      "Category": [
-        {
-          "active": true,
-          "queryRef": "New_Data.Aircraft_Type"
-        }
-      ],
-      "Series": [
-        {
-          "queryRef": "New_Data.Origin"
-        }
-      ],
-      "Y": [
-        {
-          "queryRef": "Sum(New_Data.Net_Profit)"
-        }
-      ]
-    },
-    "prototypeQuery": {
-      "From": [
-        {
-          "Entity": "New_Data",
-          "Name": "n",
-          "Type": 0
-        }
-      ],
-      "OrderBy": [
-        {
-          "Direction": 1,
-          "Expression": {
-            "Column": {
-              "Expression": {
-                "SourceRef": {
-                  "Source": "n"
-                }
-              },
-              "Property": "Aircraft_Type"
-            }
-          }
-        }
-      ],
-      "Select": [
-        {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Source": "n"
-                  }
-                },
-                "Property": "Net_Profit"
-              }
-            },
-            "Function": 0
-          },
-          "Name": "Sum(New_Data.Net_Profit)",
-          "NativeReferenceName": "Net Profit"
+          "config": "{\"name\":\"2f0f7f43d5330bb7921a\",\"layouts\":[{\"id\":0,\"position\":{\"x\":9.448891554591802,\"y\":0,\"z\":0,\"width\":738.9033195690789,\"height\":489.4525825278553,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"barChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Sum(Orders - table.Quantity)\"}],\"Category\":[{\"queryRef\":\"Orders - table.City\",\"active\":true}],\"Series\":[{\"queryRef\":\"Orders - table.Region\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"o\",\"Entity\":\"Orders - table\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"o\"}},\"Property\":\"Quantity\"}},\"Function\":0},\"Name\":\"Sum(Orders - table.Quantity)\",\"NativeReferenceName\":\"Sum of Quantity\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"o\"}},\"Property\":\"City\"},\"Name\":\"Orders - table.City\",\"NativeReferenceName\":\"City\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"o\"}},\"Property\":\"Region\"},\"Name\":\"Orders - table.Region\",\"NativeReferenceName\":\"Region\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"o\"}},\"Property\":\"Quantity\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"categoryAxis\":[{\"properties\":{\"titleText\":{\"expr\":{\"Literal\":{\"Value\":\"''\"}}},\"titleFontFamily\":{\"expr\":{\"Literal\":{\"Value\":\"'Arial'\"}}},\"titleBold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"titleColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#76B7B2'\"}}}}}}}],\"valueAxis\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"14D\"}}},\"labelColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#F28E2B'\"}}}}},\"titleFontFamily\":{\"expr\":{\"Literal\":{\"Value\":\"'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'\"}}},\"titleFontSize\":{\"expr\":{\"Literal\":{\"Value\":\"14D\"}}},\"titleColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#F28E2B'\"}}}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"15D\"}}},\"fontFamily\":{\"expr\":{\"Literal\":{\"Value\":\"'''Arial Black'''\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#F28E2B'\"}}}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Sheet Title'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 489.45,
+          "width": 738.90,
+          "x": 9.45,
+          "y": 0.00,
+          "z": 0.00
         },
         {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Source": "n"
-              }
-            },
-            "Property": "Aircraft_Type"
-          },
-          "Name": "New_Data.Aircraft_Type",
-          "NativeReferenceName": "Aircraft Type"
-        },
-        {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Source": "n"
-              }
-            },
-            "Property": "Origin"
-          },
-          "Name": "New_Data.Origin",
-          "NativeReferenceName": "Origin"
+          "config": "{\"name\":\"stackedBarChart_01\",\"layouts\":[{\"id\":0,\"position\":{\"x\":100,\"y\":50,\"z\":1000,\"width\":600,\"height\":400,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"barChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Orders-table.City\",\"active\":true}],\"Y\":[{\"queryRef\":\"sum(Orders-table.Quantity)\"}],\"Series\":[{\"queryRef\":\"Orders-table.Region\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"o\",\"Entity\":\"Orders-table\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"o\"}},\"Property\":\"City\"},\"Name\":\"Orders-table.City\",\"NativeReferenceName\":\"City\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"o\"}},\"Property\":\"Quantity\"}},\"Function\":0},\"Name\":\"sum(Orders-table.Quantity)\",\"NativeReferenceName\":\"SumofQuantity\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"o\"}},\"Property\":\"Region\"},\"Name\":\"Orders-table.Region\",\"NativeReferenceName\":\"Region\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"o\"}},\"Property\":\"Quantity\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"categoryAxis\":[{\"properties\":{\"preferredCategoryWidth\":{\"expr\":{\"Literal\":{\"Value\":\"20D\"}}},\"concatenateLabels\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"fontFamily\":{\"expr\":{\"Literal\":{\"Value\":\"'''Arial'''\"}}},\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"'''12D'''\"}}},\"labelColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'''#76b7b2'''\"}}}}},\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"titleFontFamily\":{\"expr\":{\"Literal\":{\"Value\":\"'''Arial'''\"}}},\"titleFontSize\":{\"expr\":{\"Literal\":{\"Value\":\"'''12D'''\"}}},\"titleColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'''#76b7b2'''\"}}}}},\"switchAxisPosition\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"valueAxis\":[{\"properties\":{\"fontFamily\":{\"expr\":{\"Literal\":{\"Value\":\"'''SegoeUI'''\"}}},\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"14D\"}}},\"labelColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"#f28e2b\"}}}}},\"labelDisplayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"1000D\"}}},\"labelPrecision\":{\"expr\":{\"Literal\":{\"Value\":\"1L\"}}},\"axisStyle\":{\"expr\":{\"Literal\":{\"Value\":\"'showTitleOnly'\"}}},\"titleFontFamily\":{\"expr\":{\"Literal\":{\"Value\":\"'SegoeUI'\"}}},\"titleFontSize\":{\"expr\":{\"Literal\":{\"Value\":\"14D\"}}},\"titleColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"#f28e2bD\"}}}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"heading\":{\"expr\":{\"Literal\":{\"Value\":\"'Heading2'\"}}},\"titleWrap\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#f28e2b'\"}}}}},\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"15D\"}}},\"fontFamily\":{\"expr\":{\"Literal\":{\"Value\":\"'''ArialBlack'''\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}],\"border\":[{\"properties\":{\"width\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 489.45,
+          "width": 738.90,
+          "x": 200.45,
+          "y": 0.00,
+          "z": 0.00
         }
       ],
-      "Version": 2
-    },
-    "vcObjects": {
-      "background": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "transparency": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "border": [
-        {
-          "properties": {
-            "width": {
-              "expr": {
-                "Literal": {
-                  "Value": "1D"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "title": [
-        {
-          "properties": {
-            "fontColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#333333'"
-                    }
-                  }
-                }
-              }
-            },
-            "fontFamily": {
-              "expr": {
-                "Literal": {
-                  "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "15D"
-                }
-              }
-            },
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'stacked_bar_chart'"
-                }
-              }
-            },
-            "titleWrap": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          }
-        }
-      ]
-    },
-    "visualType": "barChart"
-  }
+      "width": 1280.00
+    }
+  ]
 }
