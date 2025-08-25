@@ -19,7 +19,7 @@ table 'health care diabetes'
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"health care diabetes","TableItemName":"Pregnancies (bins)","ObjectType":4},"LinkType":"UsedInGroup"}]
+		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"health care diabetes","TableItemName":"Pregnancies (bin)","ObjectType":4},"LinkType":"UsedInGroup"}]
 
 	column Glucose
 		dataType: int64
@@ -41,7 +41,7 @@ table 'health care diabetes'
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"health care diabetes","TableItemName":"BloodPressure (bins)","ObjectType":4},"LinkType":"UsedInGroup"}]
+		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"health care diabetes","TableItemName":"Blood Pressure (bin)","ObjectType":4},"LinkType":"UsedInGroup"}]
 
 	column SkinThickness
 		dataType: int64
@@ -52,7 +52,7 @@ table 'health care diabetes'
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"health care diabetes","TableItemName":"SkinThickness (bins)","ObjectType":4},"LinkType":"UsedInGroup"}]
+		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"health care diabetes","TableItemName":"Skin Thickness (bin)","ObjectType":4},"LinkType":"UsedInGroup"}]
 
 	column Insulin
 		dataType: int64
@@ -63,7 +63,7 @@ table 'health care diabetes'
 
 		annotation SummarizationSetBy = User
 
-		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"health care diabetes","TableItemName":"Insulin (bins)","ObjectType":4},"LinkType":"UsedInGroup"}]
+		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"health care diabetes","TableItemName":"Insulin (bin)","ObjectType":4},"LinkType":"UsedInGroup"}]
 
 	column BMI
 		dataType: double
@@ -75,7 +75,7 @@ table 'health care diabetes'
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"health care diabetes","TableItemName":"BMI (bins)","ObjectType":4},"LinkType":"UsedInGroup"}]
+		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"health care diabetes","TableItemName":"BMI (bin)","ObjectType":4},"LinkType":"UsedInGroup"}]
 
 	column DiabetesPedigreeFunction
 		dataType: double
@@ -87,7 +87,7 @@ table 'health care diabetes'
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"health care diabetes","TableItemName":"DiabetesPedigreeFunction (bins)","ObjectType":4},"LinkType":"UsedInGroup"}]
+		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"health care diabetes","TableItemName":"Diabetes Pedigree Function (bin)","ObjectType":4},"LinkType":"UsedInGroup"}]
 
 	column Age
 		dataType: int64
@@ -98,7 +98,7 @@ table 'health care diabetes'
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"health care diabetes","TableItemName":"Age (bins)","ObjectType":4},"LinkType":"UsedInGroup"}]
+		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"health care diabetes","TableItemName":"Age (bin)","ObjectType":4},"LinkType":"UsedInGroup"}]
 
 	column Outcome
 		dataType: int64
@@ -109,7 +109,7 @@ table 'health care diabetes'
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'BloodPressure (bins)' =
+	column 'Blood Pressure (bin)' =
 			IF(
 				ISBLANK('health care diabetes'[BloodPressure]),
 				BLANK(),
@@ -146,7 +146,7 @@ table 'health care diabetes'
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'BMI (bins)' =
+	column 'BMI (bin)' =
 			IF(
 				ISBLANK('health care diabetes'[BMI]),
 				BLANK(),
@@ -188,7 +188,7 @@ table 'health care diabetes'
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column 'Insulin (bins)' =
+	column 'Insulin (bin)' =
 			IF(
 				ISBLANK('health care diabetes'[Insulin]),
 				BLANK(),
@@ -225,7 +225,7 @@ table 'health care diabetes'
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'SkinThickness (bins)' =
+	column 'Skin Thickness (bin)' =
 			IF(
 				ISBLANK('health care diabetes'[SkinThickness]),
 				BLANK(),
@@ -262,7 +262,7 @@ table 'health care diabetes'
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Age (bins)' =
+	column 'Age (bin)' =
 			IF(
 				ISBLANK('health care diabetes'[Age]),
 				BLANK(),
@@ -336,7 +336,7 @@ table 'health care diabetes'
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'DiabetesPedigreeFunction (bins)' =
+	column 'Diabetes Pedigree Function (bin)' =
 			IF(
 				ISBLANK('health care diabetes'[DiabetesPedigreeFunction]),
 				BLANK(),
@@ -378,7 +378,7 @@ table 'health care diabetes'
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column 'Pregnancies (bins)' =
+	column 'Pregnancies (bin)' =
 			IF(
 				ISBLANK('health care diabetes'[Pregnancies]),
 				BLANK(),
