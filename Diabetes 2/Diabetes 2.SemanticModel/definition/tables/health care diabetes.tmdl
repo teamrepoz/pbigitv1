@@ -419,14 +419,14 @@ table 'health care diabetes'
 		mode: import
 		source =
 				let
-				    Source = Excel.Workbook(Web.Contents("https://repoz-my.sharepoint.com/personal/karthikrajan_repoz_ai/Documents/SaaS%20testing%20files/Domain%20Datasets%20-%20Remote%20inters/Healthcare%20files/Diabetes/Diabetes%202/health%20care%20diabetes.xlsx"), null, true),
+				    Source = Excel.Workbook(Web.Contents("https://repoz-my.sharepoint.com/personal/karthikrajan_repoz_ai/Documents/SaaS%20testing%20files/Domain%20Datasets%20-%20Remote%20inters/Healthcare%20files/Diabetes%202/health%20care%20diabetes.xlsx"), null, true),
 				    #"Healthcare-Diabetes(1)_Sheet" = Source{[Item="Healthcare-Diabetes(1)",Kind="Sheet"]}[Data],
 				    #"Promoted Headers" = Table.PromoteHeaders(#"Healthcare-Diabetes(1)_Sheet", [PromoteAllScalars=true]),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Id", Int64.Type}, {"Pregnancies", Int64.Type}, {"Glucose", Int64.Type}, {"BloodPressure", Int64.Type}, {"SkinThickness", Int64.Type}, {"Insulin", Int64.Type}, {"BMI", type number}, {"DiabetesPedigreeFunction", type number}, {"Age", Int64.Type}, {"Outcome", Int64.Type}})
 				in
 				    #"Changed Type"
 
-	changedProperty = Name
-
 	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
 
