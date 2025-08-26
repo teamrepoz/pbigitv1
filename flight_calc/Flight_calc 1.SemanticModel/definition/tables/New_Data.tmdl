@@ -1,0 +1,233 @@
+table New_Data
+	lineageTag: 814d8a70-b572-4b84-b18f-04a6c01f7617
+
+	measure dummy = 0
+		formatString: 0
+		lineageTag: adde0bbe-dc0f-45ad-959d-2599aee15305
+
+	column Ident
+		dataType: string
+		lineageTag: 718e71b7-817f-4dee-afa5-5de59ceb4f9c
+		summarizeBy: none
+		sourceColumn: Ident
+
+		annotation SummarizationSetBy = Automatic
+
+	column Registration
+		dataType: string
+		lineageTag: cc20d8a0-9e67-43cd-8cda-48d67f425954
+		summarizeBy: none
+		sourceColumn: Registration
+
+		annotation SummarizationSetBy = Automatic
+
+	column Aircraft_Type
+		dataType: string
+		lineageTag: 68cf1b8a-b252-443f-a20c-e77eebb2c65c
+		summarizeBy: none
+		sourceColumn: Aircraft_Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Origin
+		dataType: string
+		lineageTag: d418115a-47c3-49a8-b2df-b64038c02c5a
+		summarizeBy: none
+		sourceColumn: Origin
+
+		annotation SummarizationSetBy = Automatic
+
+	column Origin_Name
+		dataType: string
+		lineageTag: 366f2e8a-8f1e-4960-bbf1-62026aa28c52
+		summarizeBy: none
+		sourceColumn: Origin_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Origin_City
+		dataType: string
+		lineageTag: e2c21b1c-7346-4ed7-9d47-9719b3f424d8
+		summarizeBy: none
+		sourceColumn: Origin_City
+
+		annotation SummarizationSetBy = Automatic
+
+	column Destination
+		dataType: string
+		lineageTag: fbc15b79-7ec9-4e80-9905-e33d7d294ad5
+		summarizeBy: none
+		sourceColumn: Destination
+
+		annotation SummarizationSetBy = Automatic
+
+	column Destination_Name
+		dataType: string
+		lineageTag: 0e5411c6-6668-4270-bc11-5005cadeff08
+		summarizeBy: none
+		sourceColumn: Destination_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Destination_City
+		dataType: string
+		lineageTag: 5fdc61f5-370a-4f52-82e1-4a484f1f047e
+		summarizeBy: none
+		sourceColumn: Destination_City
+
+		annotation SummarizationSetBy = Automatic
+
+	column Actual_Departure_Time
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 94d2bd39-20b1-4a46-8514-b7ffd7d36264
+		summarizeBy: none
+		sourceColumn: Actual_Departure_Time
+
+		variation Variation
+			isDefault
+			relationship: 8da4e2d5-bc76-4556-be7a-ddec1cd361c6
+			defaultHierarchy: LocalDateTable_6f3141e9-ed72-4328-82ce-622a189b39f7.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Actual_Arrival_Time
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: e3d8a4b7-1574-4351-a344-d87dc61dcb89
+		summarizeBy: none
+		sourceColumn: Actual_Arrival_Time
+
+		variation Variation
+			isDefault
+			relationship: 0665d097-1e62-4b96-8250-6c130207be87
+			defaultHierarchy: LocalDateTable_d28405b1-75c3-4fc0-8a4e-881da6970fb3.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Estimated_Arrival_Time
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 1e939cbc-1911-421b-9707-d046d5cb8920
+		summarizeBy: none
+		sourceColumn: Estimated_Arrival_Time
+
+		variation Variation
+			isDefault
+			relationship: 6c6a55cb-d2ce-43c3-bdde-8f95e4657df7
+			defaultHierarchy: LocalDateTable_8010c04f-2ead-48b9-8328-cd84ade5a332.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Enroute_Duration
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: cba662d8-fb71-4ff2-96ac-1f95676f5d75
+		summarizeBy: none
+		sourceColumn: Enroute_Duration
+
+		variation Variation
+			isDefault
+			relationship: a47fe12d-9480-439f-97e5-da85b7b5b4d8
+			defaultHierarchy: LocalDateTable_628612cb-8d27-432a-a50d-9318638e0c3a.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ticket_revenue
+		dataType: double
+		formatString: #,0
+		lineageTag: a0caf908-e878-47b4-8c1d-a42fb8a02ca2
+		summarizeBy: sum
+		sourceColumn: Ticket_revenue
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column Fuel_Cost
+		dataType: int64
+		formatString: #,0
+		lineageTag: 09ec99d7-4996-494a-9f87-a52eb3311d7f
+		summarizeBy: sum
+		sourceColumn: Fuel_Cost
+
+		annotation SummarizationSetBy = Automatic
+
+	column Total_Cargo_Weight
+		dataType: double
+		lineageTag: 7aa13eff-53f2-4611-aea1-a621af82fb57
+		summarizeBy: sum
+		sourceColumn: Total_Cargo_Weight
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Net_Profit
+		dataType: double
+		formatString: #,0
+		lineageTag: df9f142e-acd4-4cbf-b1cd-5d4c326971e8
+		summarizeBy: sum
+		sourceColumn: Net_Profit
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column Enroute_Duration_Minutes =
+			
+			DATEDIFF('New_Data'[Actual_Departure_Time], 'New_Data'[Actual_Arrival_Time], MINUTE)
+		formatString: 0
+		lineageTag: f258088f-d60a-4ee9-94fc-26044cdaf82a
+		summarizeBy: none
+
+		annotation SummarizationSetBy = User
+
+	column Total_Ticket_Revenue = ('New_Data'[Ticket_revenue])
+		lineageTag: 0af800e4-ce91-43a4-ad5b-114ea98eee64
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Profit_Margin =
+			
+			DIVIDE(('New_Data'[Net_Profit]),('New_Data'[Ticket_Revenue])) * 100
+		formatString: 0.0
+		lineageTag: 7586bae4-af85-4657-a8a0-0610cb55a0d0
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'x cos' = New_Data[Net_Profit] * cos(New_Data[Fuel_Cost])
+		lineageTag: 48fe9238-7f42-4384-b624-36eb4766eac8
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'y sin' = New_Data[Net_Profit]* SIN(New_Data[Fuel_Cost])
+		lineageTag: 9e951814-f33e-476a-a42d-96004b6f195b
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition New_Data = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://repoz-my.sharepoint.com/personal/saransrirama_repoz_ai/Documents/Flight_Data.xlsx"), null, true),
+				    New_Data_Sheet = Source{[Item="New_Data",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(New_Data_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Ident", type any}, {"Registration", type any}, {"Aircraft_Type", type any}, {"Origin", type text}, {"Origin_Name", type text}, {"Origin_City", type text}, {"Destination", type text}, {"Destination_Name", type text}, {"Destination_City", type text}, {"Actual_Departure_Time", type datetime}, {"Actual_Arrival_Time", type datetime}, {"Estimated_Arrival_Time", type datetime}, {"Enroute_Duration", type datetime}, {"Ticket_revenue", type number}, {"Fuel_Cost", Int64.Type}, {"Total_Cargo_Weight", type number}, {"Net_Profit", type number}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+
