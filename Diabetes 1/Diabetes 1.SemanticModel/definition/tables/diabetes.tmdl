@@ -1,0 +1,305 @@
+table diabetes
+	lineageTag: 50f57d61-3a22-4f95-99c9-d15509094834
+
+	column Id
+		dataType: int64
+		formatString: #,0
+		lineageTag: a76fcec9-611e-497f-b282-2e31552024d2
+		summarizeBy: count
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pregnancies
+		dataType: int64
+		formatString: 0
+		lineageTag: 9d1132d5-1ccb-4ebb-9e07-cf8d0f69a498
+		summarizeBy: sum
+		sourceColumn: Pregnancies
+
+		annotation SummarizationSetBy = Automatic
+
+	column Glucose
+		dataType: int64
+		formatString: 0
+		lineageTag: d6928fe4-071b-4969-abaf-902e3b3a869c
+		summarizeBy: sum
+		sourceColumn: Glucose
+
+		annotation SummarizationSetBy = Automatic
+
+	column BloodPressure
+		dataType: int64
+		formatString: 0
+		lineageTag: e09ff281-a35e-403d-94d3-f71f042b99fd
+		summarizeBy: sum
+		sourceColumn: BloodPressure
+
+		annotation SummarizationSetBy = Automatic
+
+	column SkinThickness
+		dataType: int64
+		formatString: 0
+		lineageTag: 5b8edad8-61f1-4e35-83cf-66318f10849e
+		summarizeBy: sum
+		sourceColumn: SkinThickness
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"diabetes","TableItemName":"Skin Thickness (bin)","ObjectType":4},"LinkType":"UsedInGroup"}]
+
+	column Insulin
+		dataType: int64
+		formatString: 0
+		lineageTag: 78dabf6d-29b9-4a9b-a0be-c27963485595
+		summarizeBy: sum
+		sourceColumn: Insulin
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"diabetes","TableItemName":"Insulin (bin)","ObjectType":4},"LinkType":"UsedInGroup"}]
+
+	column BMI
+		dataType: double
+		lineageTag: 0ccb6de2-fce7-4e0b-9e9d-92bf1ce68498
+		summarizeBy: sum
+		sourceColumn: BMI
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DiabetesPedigreeFunction
+		dataType: double
+		lineageTag: d71f4d72-f297-42ae-a62b-5d035d5ee309
+		summarizeBy: sum
+		sourceColumn: DiabetesPedigreeFunction
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"diabetes","TableItemName":"Diabetes Pedigree Function (bin)","ObjectType":4},"LinkType":"UsedInGroup"}]
+
+	column Age
+		dataType: int64
+		formatString: 0
+		lineageTag: 53efbbdc-d92a-4a1d-b413-d23cfe3cf44b
+		summarizeBy: sum
+		sourceColumn: Age
+
+		annotation SummarizationSetBy = Automatic
+
+	column Outcome
+		dataType: int64
+		formatString: #,0
+		lineageTag: da9c6215-0ff5-43e9-8cd4-ba44f435dd63
+		summarizeBy: sum
+		sourceColumn: Outcome
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Custom BMI Bin' = ```
+			
+			SWITCH (
+			    TRUE(),
+			    [BMI] < 18.5, "Under weight",
+			    [BMI] >= 18.5 && [BMI] <= 24.9, "Normal weight",
+			    [BMI] >= 25 && [BMI] <= 29.9, "Over weight",
+			    [BMI] >= 30 && [BMI] <= 34.9, "Obese(1)",
+			    [BMI] >= 35 && [BMI] <= 39.9, "Obese(2)",
+			    "Obese(3)"
+			)
+			
+			```
+		lineageTag: 379f0586-402f-4169-a9e2-82a87683b01d
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Custom Blood pressure' = ```
+			
+			SWITCH (
+			    TRUE(),
+			    [BloodPressure] < 80, "Normal or Elevated",
+			    [BloodPressure] >= 80 && [BloodPressure] <= 89, "High blood pressure (Stage 1)",
+			    [BloodPressure] >= 90 && [BloodPressure] <= 120, "High blood pressure (Stage 2)",
+			    "Hypertensive crisis"
+			)
+			
+			```
+		lineageTag: 8bd89729-a6c6-4931-b744-361c580483cc
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Custom Glucose BIn' = ```
+			
+			SWITCH (
+			    TRUE(),
+			    [Glucose] < 53, "Hypoglycemia",
+			    [Glucose] >= 60 && [Glucose] <= 79, "Early hypoglycemia",
+			    [Glucose] >= 80 && [Glucose] <= 100, "Normal",
+			    [Glucose] >= 101 && [Glucose] <= 126, "Early diabetes",
+			    "Diabetic"
+			)
+			
+			```
+		lineageTag: 86c25221-3324-4ac7-9873-d9f53db4afee
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Custom Pregnancy Bin' = ```
+			
+			SWITCH (
+			    TRUE(),
+			    [Pregnancies] <= 2, "0-2",
+			    [Pregnancies] > 2 && [Pregnancies] <= 4, "3-4",
+			    [Pregnancies] > 4 && [Pregnancies] <= 6, "5-6",
+			    [Pregnancies] > 6 && [Pregnancies] <= 8, "7-8",
+			    [Pregnancies] > 8 && [Pregnancies] <= 10, "9-10",
+			    "10+"
+			)
+			
+			
+			```
+		lineageTag: 5bf2f05d-fd48-4293-95ca-8a81f35c64c7
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Diabetes Pedigree Function (bin)' =
+			IF(
+				ISBLANK('diabetes'[DiabetesPedigreeFunction]),
+				BLANK(),
+				IF(
+					'diabetes'[DiabetesPedigreeFunction] >= 0,
+					ROUNDDOWN('diabetes'[DiabetesPedigreeFunction] / 0.080758620689655169, 0) * 0.080758620689655169,
+					ROUNDUP('diabetes'[DiabetesPedigreeFunction] / 0.080758620689655169, 0) * 0.080758620689655169
+				)
+			)
+		lineageTag: 601d58a4-77e0-4468-b36b-c4dd89cd1462
+		summarizeBy: none
+
+		extendedProperty GroupingMetadata =
+				{
+				  "version": 0,
+				  "groupedColumns": [
+				    {
+				      "Column": {
+				        "Expression": {
+				          "SourceRef": {
+				            "Entity": "diabetes"
+				          }
+				        },
+				        "Property": "DiabetesPedigreeFunction"
+				      }
+				    }
+				  ],
+				  "binningMetadata": {
+				    "binSize": {
+				      "value": 0.080758620689655169,
+				      "unit": 0
+				    }
+				  }
+				}
+
+		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"d","Entity":"diabetes"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"d"}},"Property":"DiabetesPedigreeFunction"}}],"BinItem":{"Expression":{"Floor":{"Expression":{"Column":{"Expression":{"SourceRef":{"Source":"d"}},"Property":"DiabetesPedigreeFunction"}},"Size":0.080758620689655169}}}}
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Insulin (bin)' =
+			IF(
+				ISBLANK('diabetes'[Insulin]),
+				BLANK(),
+				INT('diabetes'[Insulin] / 40) * 40
+			)
+		formatString: 0
+		lineageTag: 2972470b-7d02-4407-b557-1746f95e3064
+		summarizeBy: none
+
+		extendedProperty GroupingMetadata =
+				{
+				  "version": 0,
+				  "groupedColumns": [
+				    {
+				      "Column": {
+				        "Expression": {
+				          "SourceRef": {
+				            "Entity": "diabetes"
+				          }
+				        },
+				        "Property": "Insulin"
+				      }
+				    }
+				  ],
+				  "binningMetadata": {
+				    "binSize": {
+				      "value": 40.0,
+				      "unit": 0
+				    }
+				  }
+				}
+
+		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"d","Entity":"diabetes"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"d"}},"Property":"Insulin"}}],"BinItem":{"Expression":{"Floor":{"Expression":{"Column":{"Expression":{"SourceRef":{"Source":"d"}},"Property":"Insulin"}},"Size":40.0}}}}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Skin Thickness (bin)' =
+			IF(
+				ISBLANK('diabetes'[SkinThickness]),
+				BLANK(),
+				INT('diabetes'[SkinThickness] / 10) * 10
+			)
+		formatString: 0
+		lineageTag: fd47784e-8d86-4b35-93e0-2e74ccfe9a1b
+		summarizeBy: none
+
+		extendedProperty GroupingMetadata =
+				{
+				  "version": 0,
+				  "groupedColumns": [
+				    {
+				      "Column": {
+				        "Expression": {
+				          "SourceRef": {
+				            "Entity": "diabetes"
+				          }
+				        },
+				        "Property": "SkinThickness"
+				      }
+				    }
+				  ],
+				  "binningMetadata": {
+				    "binSize": {
+				      "value": 10.0,
+				      "unit": 0
+				    }
+				  }
+				}
+
+		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"d","Entity":"diabetes"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"d"}},"Property":"SkinThickness"}}],"BinItem":{"Expression":{"Floor":{"Expression":{"Column":{"Expression":{"SourceRef":{"Source":"d"}},"Property":"SkinThickness"}},"Size":10.0}}}}
+
+		annotation SummarizationSetBy = Automatic
+
+	partition diabetes = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://repoz-my.sharepoint.com/personal/karthikrajan_repoz_ai/Documents/SaaS%20testing%20files/Domain%20Datasets%20-%20Remote%20inters/Healthcare%20files/Diabetes%201/health%20care%20diabetes.xlsx"), null, true),
+				    #"Healthcare-Diabetes(1)_Sheet" = Source{[Item="Healthcare-Diabetes(1)",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Healthcare-Diabetes(1)_Sheet", [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Id", Int64.Type}, {"Pregnancies", Int64.Type}, {"Glucose", Int64.Type}, {"BloodPressure", Int64.Type}, {"SkinThickness", Int64.Type}, {"Insulin", Int64.Type}, {"BMI", type number}, {"DiabetesPedigreeFunction", type number}, {"Age", Int64.Type}, {"Outcome", Int64.Type}}),
+				    #"Duplicated Column" = Table.DuplicateColumn(#"Changed Type", "DiabetesPedigreeFunction", "DiabetesPedigreeFunction - Copy"),
+				    #"Renamed Columns" = Table.RenameColumns(#"Duplicated Column",{{"DiabetesPedigreeFunction - Copy", "Diabetes Pedigree Function (bin)"}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Renamed Columns",{"Diabetes Pedigree Function (bin)"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

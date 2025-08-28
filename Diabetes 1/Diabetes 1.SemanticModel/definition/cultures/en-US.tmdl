@@ -1,0 +1,2012 @@
+cultureInfo en-US
+
+	linguisticMetadata =
+			{
+			  "Version": "4.1.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "diabetes": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "diabetes"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "diabetes": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "diabetes.id": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "diabetes",
+			          "ConceptualProperty": "Id"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "id": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "identification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "identity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "credential": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ],
+			      "NameType": "Identifier"
+			    },
+			    "diabetes.pregnancy": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "diabetes",
+			          "ConceptualProperty": "Pregnancies"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "pregnancy": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "gravidity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "gravidness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "gestation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "confinement": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "condition": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "lying-in": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "significance": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "importance": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "import": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        },
+			        {
+			          "meaning": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        }
+			      ]
+			    },
+			    "diabetes.glucose": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "diabetes",
+			          "ConceptualProperty": "Glucose"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "glucose": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "diabetes.blood_pressure": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "diabetes",
+			          "ConceptualProperty": "BloodPressure"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "blood pressure": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "BloodPressure": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "pressure": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "blood heaviness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "blood compression": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "blood gravity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "blood density": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "heaviness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "compression": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "gravity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "density": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "blood weight": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "blood burden": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        }
+			      ]
+			    },
+			    "diabetes.skin_thickness": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "diabetes",
+			          "ConceptualProperty": "SkinThickness"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "skin thickness": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "SkinThickness": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "thickness": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "skin width": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "skin breadth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "skin depth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "skin chunkiness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "skin fatness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "skin wideness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "width": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "breadth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "depth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "chunkiness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        }
+			      ]
+			    },
+			    "diabetes.insulin": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "diabetes",
+			          "ConceptualProperty": "Insulin"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "insulin": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "diabetes.bmi": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "diabetes",
+			          "ConceptualProperty": "BMI"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "bmi": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "diabetes.diabetes_pedigree_function": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "diabetes",
+			          "ConceptualProperty": "DiabetesPedigreeFunction"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "diabetes pedigree function": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "DiabetesPedigreeFunction": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "function": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "pedigree function": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "diabetes pedigree role": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "diabetes pedigree occupation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "pedigree role": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "pedigree occupation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "diabetes pedigree purpose": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "diabetes pedigree meaning": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "diabetes pedigree job": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "diabetes pedigree task": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "diabetes pedigree utility": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "role": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        }
+			      ]
+			    },
+			    "diabetes.age": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "diabetes",
+			          "ConceptualProperty": "Age"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "age": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "oldness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "stage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "phase": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "era": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "epoch": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        }
+			      ]
+			    },
+			    "diabetes.outcome": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "diabetes",
+			          "ConceptualProperty": "Outcome"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "outcome": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "consequence": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "product": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "conclusion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "upshot": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "aftermath": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "sequel": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "aftereffect": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "result": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "effect": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "after-effect": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "Outcome1": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "diabetes.custom_BMI_bin": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "diabetes",
+			          "ConceptualProperty": "Custom BMI Bin"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "custom BMI bin": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "bin": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "BMI bin": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "custom bmi basket": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "custom bmi container": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "custom bmi holder": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "bmi basket": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "bmi container": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "bmi holder": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "custom bmi box": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "custom bmi silo": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "custom bmi tub": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "custom bmi case": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        }
+			      ]
+			    },
+			    "diabetes.custom_blood_pressure": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "diabetes",
+			          "ConceptualProperty": "Custom Blood pressure"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "custom blood pressure": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "pressure": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "custom blood heaviness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "custom blood compression": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "custom blood gravity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "custom blood density": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "custom blood weight": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "custom blood burden": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "custom blood force": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "heaviness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "compression": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "gravity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        }
+			      ]
+			    },
+			    "diabetes.custom_glucose_BIn": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "diabetes",
+			          "ConceptualProperty": "Custom Glucose BIn"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "custom glucose BIn": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "BIn": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "glucose BIn": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "custom glucose basket": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "custom glucose container": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "custom glucose holder": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "glucose basket": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "glucose container": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "glucose holder": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "custom glucose box": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "custom glucose silo": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "custom glucose tub": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "custom glucose case": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        }
+			      ]
+			    },
+			    "diabetes.custom_pregnancy_bin": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "diabetes",
+			          "ConceptualProperty": "Custom Pregnancy Bin"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "custom pregnancy bin": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "bin": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "pregnancy bin": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "custom pregnancy basket": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "custom pregnancy container": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "custom pregnancy holder": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "pregnancy basket": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "pregnancy container": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "pregnancy holder": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "custom pregnancy box": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "custom pregnancy silo": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "custom pregnancy tub": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "custom pregnancy case": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        }
+			      ]
+			    },
+			    "diabetes.diabetes_pedigree_function_bin": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "diabetes",
+			          "ConceptualProperty": "Diabetes Pedigree Function (bin)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "diabetes pedigree function (bin)": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "diabetes pedigree function": {
+			            "State": "Generated",
+			            "Weight": 0.75
+			          }
+			        }
+			      ]
+			    },
+			    "diabetes.insulin_bin": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "diabetes",
+			          "ConceptualProperty": "Insulin (bin)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "insulin (bin)": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "insulin": {
+			            "State": "Generated",
+			            "Weight": 0.75
+			          }
+			        }
+			      ]
+			    },
+			    "diabetes.skin_thickness_bin": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "diabetes",
+			          "ConceptualProperty": "Skin Thickness (bin)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "skin thickness (bin)": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "skin thickness": {
+			            "State": "Generated",
+			            "Weight": 0.75
+			          }
+			        }
+			      ]
+			    }
+			  },
+			  "Relationships": {
+			    "diabetes_has_diabetes_pedigree_function_bin": {
+			      "Binding": {
+			        "ConceptualEntity": "diabetes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "diabetes": {
+			          "Target": {
+			            "Entity": "diabetes"
+			          }
+			        },
+			        "diabetes.diabetes_pedigree_function_bin": {
+			          "Target": {
+			            "Entity": "diabetes.diabetes_pedigree_function_bin"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "diabetes"
+			            },
+			            "Object": {
+			              "Role": "diabetes.diabetes_pedigree_function_bin"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "diabetes_have_diabetes_pedigree_function_bin"
+			        }
+			      ]
+			    },
+			    "diabetes_has_custom_pregnancy_bin": {
+			      "Binding": {
+			        "ConceptualEntity": "diabetes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "diabetes": {
+			          "Target": {
+			            "Entity": "diabetes"
+			          }
+			        },
+			        "diabetes.custom_pregnancy_bin": {
+			          "Target": {
+			            "Entity": "diabetes.custom_pregnancy_bin"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "diabetes"
+			            },
+			            "Object": {
+			              "Role": "diabetes.custom_pregnancy_bin"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "diabetes_have_custom_pregnancy_bins"
+			        }
+			      ]
+			    },
+			    "diabetes_has_custom_glucose_BIn": {
+			      "Binding": {
+			        "ConceptualEntity": "diabetes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "diabetes": {
+			          "Target": {
+			            "Entity": "diabetes"
+			          }
+			        },
+			        "diabetes.custom_glucose_BIn": {
+			          "Target": {
+			            "Entity": "diabetes.custom_glucose_BIn"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "diabetes"
+			            },
+			            "Object": {
+			              "Role": "diabetes.custom_glucose_BIn"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "diabetes_have_custom_glucose_BIns"
+			        }
+			      ]
+			    },
+			    "diabetes_has_custom_blood_pressure": {
+			      "Binding": {
+			        "ConceptualEntity": "diabetes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "diabetes": {
+			          "Target": {
+			            "Entity": "diabetes"
+			          }
+			        },
+			        "diabetes.custom_blood_pressure": {
+			          "Target": {
+			            "Entity": "diabetes.custom_blood_pressure"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "diabetes"
+			            },
+			            "Object": {
+			              "Role": "diabetes.custom_blood_pressure"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "diabetes_have_custom_blood_pressures"
+			        }
+			      ]
+			    },
+			    "diabetes_has_custom_BMI_bin": {
+			      "Binding": {
+			        "ConceptualEntity": "diabetes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "diabetes": {
+			          "Target": {
+			            "Entity": "diabetes"
+			          }
+			        },
+			        "diabetes.custom_BMI_bin": {
+			          "Target": {
+			            "Entity": "diabetes.custom_BMI_bin"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "diabetes"
+			            },
+			            "Object": {
+			              "Role": "diabetes.custom_BMI_bin"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "diabetes_have_custom_BMI_bins"
+			        }
+			      ]
+			    },
+			    "diabetes_has_outcome": {
+			      "Binding": {
+			        "ConceptualEntity": "diabetes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "diabetes": {
+			          "Target": {
+			            "Entity": "diabetes"
+			          }
+			        },
+			        "diabetes.outcome": {
+			          "Target": {
+			            "Entity": "diabetes.outcome"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "diabetes"
+			            },
+			            "Object": {
+			              "Role": "diabetes.outcome"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "diabetes_have_outcomes"
+			        }
+			      ]
+			    },
+			    "diabetes_has_age": {
+			      "Binding": {
+			        "ConceptualEntity": "diabetes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "diabetes": {
+			          "Target": {
+			            "Entity": "diabetes"
+			          }
+			        },
+			        "diabetes.age": {
+			          "Target": {
+			            "Entity": "diabetes.age"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "diabetes"
+			            },
+			            "Object": {
+			              "Role": "diabetes.age"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "diabetes_have_ages"
+			        },
+			        {
+			          "Adjective": {
+			            "Subject": {
+			              "Role": "diabetes"
+			            },
+			            "Adjectives": [
+			              {
+			                "old": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Antonyms": [
+			              {
+			                "young": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Measurement": {
+			              "Role": "diabetes.age"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "age_indicates_how_old_diabetes_are"
+			        }
+			      ]
+			    },
+			    "diabetes_has_diabetes_pedigree_function": {
+			      "Binding": {
+			        "ConceptualEntity": "diabetes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "diabetes": {
+			          "Target": {
+			            "Entity": "diabetes"
+			          }
+			        },
+			        "diabetes.diabetes_pedigree_function": {
+			          "Target": {
+			            "Entity": "diabetes.diabetes_pedigree_function"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "diabetes"
+			            },
+			            "Object": {
+			              "Role": "diabetes.diabetes_pedigree_function"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "diabetes_have_diabetes_pedigree_functions"
+			        }
+			      ]
+			    },
+			    "diabetes_has_bmi": {
+			      "Binding": {
+			        "ConceptualEntity": "diabetes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "diabetes": {
+			          "Target": {
+			            "Entity": "diabetes"
+			          }
+			        },
+			        "diabetes.bmi": {
+			          "Target": {
+			            "Entity": "diabetes.bmi"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "diabetes"
+			            },
+			            "Object": {
+			              "Role": "diabetes.bmi"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "diabetes_have_bmi"
+			        }
+			      ]
+			    },
+			    "diabetes_has_insulin": {
+			      "Binding": {
+			        "ConceptualEntity": "diabetes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "diabetes": {
+			          "Target": {
+			            "Entity": "diabetes"
+			          }
+			        },
+			        "diabetes.insulin": {
+			          "Target": {
+			            "Entity": "diabetes.insulin"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "diabetes"
+			            },
+			            "Object": {
+			              "Role": "diabetes.insulin"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "diabetes_have_insulin"
+			        }
+			      ]
+			    },
+			    "diabetes_has_skin_thickness": {
+			      "Binding": {
+			        "ConceptualEntity": "diabetes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "diabetes": {
+			          "Target": {
+			            "Entity": "diabetes"
+			          }
+			        },
+			        "diabetes.skin_thickness": {
+			          "Target": {
+			            "Entity": "diabetes.skin_thickness"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "diabetes"
+			            },
+			            "Object": {
+			              "Role": "diabetes.skin_thickness"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "diabetes_have_skin_thickness"
+			        }
+			      ]
+			    },
+			    "diabetes_has_blood_pressure": {
+			      "Binding": {
+			        "ConceptualEntity": "diabetes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "diabetes": {
+			          "Target": {
+			            "Entity": "diabetes"
+			          }
+			        },
+			        "diabetes.blood_pressure": {
+			          "Target": {
+			            "Entity": "diabetes.blood_pressure"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "diabetes"
+			            },
+			            "Object": {
+			              "Role": "diabetes.blood_pressure"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "diabetes_have_blood_pressures"
+			        }
+			      ]
+			    },
+			    "diabetes_has_glucose": {
+			      "Binding": {
+			        "ConceptualEntity": "diabetes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "diabetes": {
+			          "Target": {
+			            "Entity": "diabetes"
+			          }
+			        },
+			        "diabetes.glucose": {
+			          "Target": {
+			            "Entity": "diabetes.glucose"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "diabetes"
+			            },
+			            "Object": {
+			              "Role": "diabetes.glucose"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "diabetes_have_glucoses"
+			        }
+			      ]
+			    },
+			    "diabetes_has_pregnancy": {
+			      "Binding": {
+			        "ConceptualEntity": "diabetes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "diabetes": {
+			          "Target": {
+			            "Entity": "diabetes"
+			          }
+			        },
+			        "diabetes.pregnancy": {
+			          "Target": {
+			            "Entity": "diabetes.pregnancy"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "diabetes"
+			            },
+			            "Object": {
+			              "Role": "diabetes.pregnancy"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "diabetes_have_pregnancies"
+			        }
+			      ]
+			    },
+			    "diabetes_has_id": {
+			      "Binding": {
+			        "ConceptualEntity": "diabetes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "diabetes": {
+			          "Target": {
+			            "Entity": "diabetes"
+			          }
+			        },
+			        "diabetes.id": {
+			          "Target": {
+			            "Entity": "diabetes.id"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "diabetes"
+			            },
+			            "Object": {
+			              "Role": "diabetes.id"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "diabetes_have_ids"
+			        },
+			        {
+			          "Name": {
+			            "Subject": {
+			              "Role": "diabetes"
+			            },
+			            "Name": {
+			              "Role": "diabetes.id"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "ids_are_names_IDs_of_diabetes"
+			        }
+			      ]
+			    },
+			    "diabetes_has_insulin_bin": {
+			      "Binding": {
+			        "ConceptualEntity": "diabetes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "diabetes": {
+			          "Target": {
+			            "Entity": "diabetes"
+			          }
+			        },
+			        "diabetes.insulin_bin": {
+			          "Target": {
+			            "Entity": "diabetes.insulin_bin"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "diabetes"
+			            },
+			            "Object": {
+			              "Role": "diabetes.insulin_bin"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "diabetes_have_insulin_bin"
+			        }
+			      ]
+			    },
+			    "diabetes_has_skin_thickness_bin": {
+			      "Binding": {
+			        "ConceptualEntity": "diabetes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "diabetes": {
+			          "Target": {
+			            "Entity": "diabetes"
+			          }
+			        },
+			        "diabetes.skin_thickness_bin": {
+			          "Target": {
+			            "Entity": "diabetes.skin_thickness_bin"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "diabetes"
+			            },
+			            "Object": {
+			              "Role": "diabetes.skin_thickness_bin"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "diabetes_have_skin_thickness_bin"
+			        }
+			      ]
+			    }
+			  },
+			  "Agents": {
+			    "Internal": {
+			      "Version": "1.1.0"
+			    }
+			  }
+			}
+		contentType: json
+

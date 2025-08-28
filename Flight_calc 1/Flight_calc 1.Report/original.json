@@ -1,0 +1,112 @@
+{
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "height": 688.1720430107528,
+        "tabOrder": 1000,
+        "width": 581.3029728020241,
+        "x": 699.5066413662239,
+        "y": 14.573055028463,
+        "z": 1000
+      }
+    }
+  ],
+  "name": "2354a3852a2dc826ccea",
+  "singleVisual": {
+    "drillFilterOtherVisuals": true,
+    "hasDefaultSort": true,
+    "projections": {
+      "Category": [
+        {
+          "active": true,
+          "queryRef": "New_Data.Aircraft_Type"
+        }
+      ],
+      "Series": [
+        {
+          "queryRef": "New_Data.Origin"
+        }
+      ],
+      "Y": [
+        {
+          "queryRef": "Sum(New_Data.Net_Profit)"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "From": [
+        {
+          "Entity": "New_Data",
+          "Name": "N",
+          "Type": 0
+        }
+      ],
+      "OrderBy": [
+        {
+          "Direction": 2,
+          "Expression": {
+            "Aggregation": {
+              "Expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Source": "N"
+                    }
+                  },
+                  "Property": "Net_Profit"
+                }
+              },
+              "Function": 0
+            }
+          }
+        }
+      ],
+      "Select": [
+        {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "N"
+                  }
+                },
+                "Property": "Net_Profit"
+              }
+            },
+            "Function": 0
+          },
+          "Name": "Sum(New_Data.Net_Profit)",
+          "NativeReferenceName": "Sum of Net_Profit"
+        },
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "N"
+              }
+            },
+            "Property": "Aircraft_Type"
+          },
+          "Name": "New_Data.Aircraft_Type",
+          "NativeReferenceName": "Aircraft_Type"
+        },
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "N"
+              }
+            },
+            "Property": "Origin"
+          },
+          "Name": "New_Data.Origin",
+          "NativeReferenceName": "Origin"
+        }
+      ],
+      "Version": 2
+    },
+    "visualType": "barChart"
+  }
+}
