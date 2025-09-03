@@ -1,0 +1,103 @@
+table e-commerce
+	lineageTag: 46384eac-1b9a-4486-a328-f865f513a0e8
+
+	column User_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 76c7af3e-e1e7-4c2c-9cb8-84d0bb41e70c
+		summarizeBy: count
+		sourceColumn: User_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product_ID
+		dataType: string
+		lineageTag: 34bbf833-5459-4870-b6ec-99b9ea57451b
+		summarizeBy: none
+		sourceColumn: Product_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gender
+		dataType: string
+		lineageTag: ac278298-c08e-4bf2-a4dd-7790bb2033b3
+		summarizeBy: none
+		sourceColumn: Gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column Age
+		dataType: string
+		lineageTag: ca443884-9531-40f1-b0ca-f58f1f5f5ea1
+		summarizeBy: none
+		sourceColumn: Age
+
+		annotation SummarizationSetBy = Automatic
+
+	column Occupation
+		dataType: int64
+		formatString: 0
+		lineageTag: c6aaab08-55d0-4c2a-9196-93d1e07f70fa
+		summarizeBy: sum
+		sourceColumn: Occupation
+
+		annotation SummarizationSetBy = Automatic
+
+	column City_Category
+		dataType: string
+		lineageTag: bb69f408-eee1-4deb-91aa-c964cda2debf
+		summarizeBy: none
+		sourceColumn: City_Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column Stay_In_Current_City_Years
+		dataType: int64
+		formatString: 0
+		lineageTag: 2035bc6c-a519-4d3c-a906-f2c3d9953d8d
+		summarizeBy: sum
+		sourceColumn: Stay_In_Current_City_Years
+
+		annotation SummarizationSetBy = Automatic
+
+	column Marital_Status
+		dataType: int64
+		formatString: 0
+		lineageTag: 62baab2f-36fc-4456-971b-0fba64f1ca5c
+		summarizeBy: none
+		sourceColumn: Marital_Status
+
+		annotation SummarizationSetBy = User
+
+	column Product_Category
+		dataType: int64
+		formatString: 0
+		lineageTag: de884152-990a-48f0-be6a-7f15287ebcc1
+		summarizeBy: sum
+		sourceColumn: Product_Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column Purchase
+		dataType: int64
+		formatString: 0
+		lineageTag: d5cae3cf-d426-40f0-b64c-767908f3dc8f
+		summarizeBy: sum
+		sourceColumn: Purchase
+
+		annotation SummarizationSetBy = Automatic
+
+	partition e-commerce = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(Web.Contents("https://repoz-my.sharepoint.com/personal/karthikrajan_repoz_ai/Documents/SaaS%20testing%20files/Domain%20Datasets%20-%20Remote%20inters/E-Commerce/E-commerce%20interactive%20dashboard/e-commerce-cleaned.csv"),[Delimiter=",", Columns=10, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"User_ID", Int64.Type}, {"Product_ID", type text}, {"Gender", type text}, {"Age", type text}, {"Occupation", Int64.Type}, {"City_Category", type text}, {"Stay_In_Current_City_Years", Int64.Type}, {"Marital_Status", Int64.Type}, {"Product_Category", Int64.Type}, {"Purchase", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+
