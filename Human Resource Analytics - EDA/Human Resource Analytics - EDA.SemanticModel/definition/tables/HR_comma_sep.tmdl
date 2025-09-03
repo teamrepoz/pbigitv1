@@ -1,4 +1,4 @@
-table HR%20Dataset
+table HR_comma_sep
 	lineageTag: 8ffa17ba-4679-487e-bb1f-925509d40a1f
 
 	column Employee_Name
@@ -273,7 +273,7 @@ table HR%20Dataset
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"HR%20Dataset","TableItemName":"Satisfaction  Level (bins)","ObjectType":4},"LinkType":"UsedInGroup"}]
+		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"HR_comma_sep","TableItemName":"Satisfaction  Level (bins)","ObjectType":4},"LinkType":"UsedInGroup"}]
 
 	column SpecialProjectsCount
 		dataType: int64
@@ -312,9 +312,9 @@ table HR%20Dataset
 
 	column 'Satisfaction  Level (bins)' =
 			IF(
-				ISBLANK('HR%20Dataset'[EmpSatisfaction]),
+				ISBLANK('HR_comma_sep'[EmpSatisfaction]),
 				BLANK(),
-				INT('HR%20Dataset'[EmpSatisfaction])
+				INT('HR_comma_sep'[EmpSatisfaction])
 			)
 		formatString: 0
 		lineageTag: a16c473e-f54a-45d1-ba76-936913ea1f85
@@ -328,7 +328,7 @@ table HR%20Dataset
 				      "Column": {
 				        "Expression": {
 				          "SourceRef": {
-				            "Entity": "HR%20Dataset"
+				            "Entity": "HR_comma_sep"
 				          }
 				        },
 				        "Property": "EmpSatisfaction"
@@ -343,7 +343,7 @@ table HR%20Dataset
 				  }
 				}
 
-		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"h","Entity":"HR%20Dataset"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"h"}},"Property":"EmpSatisfaction"}}],"BinItem":{"Expression":{"Floor":{"Expression":{"Column":{"Expression":{"SourceRef":{"Source":"h"}},"Property":"EmpSatisfaction"}},"Size":1.0}}}}
+		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"h","Entity":"HR_comma_sep"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"h"}},"Property":"EmpSatisfaction"}}],"BinItem":{"Expression":{"Floor":{"Expression":{"Column":{"Expression":{"SourceRef":{"Source":"h"}},"Property":"EmpSatisfaction"}},"Size":1.0}}}}
 
 		annotation SummarizationSetBy = Automatic
 
@@ -354,7 +354,7 @@ table HR%20Dataset
 
 		annotation SummarizationSetBy = Automatic
 
-	partition HR%20Dataset = m
+	partition HR_comma_sep = m
 		mode: import
 		source =
 				let
@@ -363,6 +363,8 @@ table HR%20Dataset
 				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Employee_Name", type text}, {"EmpID", Int64.Type}, {"MarriedID", Int64.Type}, {"MaritalStatusID", Int64.Type}, {"GenderID", Int64.Type}, {"EmpStatusID", Int64.Type}, {"DeptID", Int64.Type}, {"PerfScoreID", Int64.Type}, {"FromDiversityJobFairID", Int64.Type}, {"Salary", Int64.Type}, {"Termd", Int64.Type}, {"PositionID", Int64.Type}, {"Position", type text}, {"State", type text}, {"Zip", Int64.Type}, {"DOB", type text}, {"Sex", type text}, {"MaritalDesc", type text}, {"CitizenDesc", type text}, {"HispanicLatino", type text}, {"RaceDesc", type text}, {"DateofHire", type text}, {"DateofTermination", type text}, {"TermReason", type text}, {"EmploymentStatus", type text}, {"Department", type text}, {"ManagerName", type text}, {"ManagerID", Int64.Type}, {"RecruitmentSource", type text}, {"PerformanceScore", type text}, {"EngagementSurvey", type number}, {"EmpSatisfaction", Int64.Type}, {"SpecialProjectsCount", Int64.Type}, {"LastPerformanceReview_Date", type text}, {"DaysLateLast30", Int64.Type}, {"Absences", Int64.Type}})
 				in
 				    #"Changed Type"
+
+	changedProperty = Name
 
 	annotation PBI_ResultType = Table
 

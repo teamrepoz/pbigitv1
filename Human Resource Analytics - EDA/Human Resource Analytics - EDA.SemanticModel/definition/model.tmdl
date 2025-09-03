@@ -6,7 +6,7 @@ model Model
 		legacyRedirects
 		returnErrorValuesAsNull
 
-annotation PBI_QueryOrder = ["HR%20Dataset"]
+annotation PBI_QueryOrder = ["HR_comma_sep"]
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
@@ -14,7 +14,7 @@ annotation PBIDesktopVersion = 2.146.1254.0 (25.08)+791a7518fadc83da883d79322a26
 
 annotation PBI_ProTooling = ["DevMode"]
 
-ref table HR%20Dataset
+ref table HR_comma_sep
 
 ref cultureInfo en-US
 
