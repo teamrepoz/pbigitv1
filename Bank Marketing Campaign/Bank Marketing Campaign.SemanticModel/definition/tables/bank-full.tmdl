@@ -1,0 +1,158 @@
+table bank-full
+	lineageTag: bd55811f-49bc-4a89-90d6-6a69ec80ce6f
+
+	column age
+		dataType: int64
+		formatString: 0
+		lineageTag: 3d18c129-9e41-4382-a393-187419c6bfae
+		summarizeBy: sum
+		sourceColumn: age
+
+		annotation SummarizationSetBy = Automatic
+
+	column job
+		dataType: string
+		lineageTag: 93671c22-ef3e-4e85-bb8d-451fba4e1625
+		summarizeBy: none
+		sourceColumn: job
+
+		annotation SummarizationSetBy = Automatic
+
+	column marital
+		dataType: string
+		lineageTag: 3b95e02a-ed93-4499-b426-d5e3bf237b18
+		summarizeBy: none
+		sourceColumn: marital
+
+		annotation SummarizationSetBy = Automatic
+
+	column education
+		dataType: string
+		lineageTag: 310052fe-2d25-4a35-a4f9-ddcb4f1eb86a
+		summarizeBy: none
+		sourceColumn: education
+
+		annotation SummarizationSetBy = Automatic
+
+	column default
+		dataType: string
+		lineageTag: 115c020b-d41d-4dcf-834d-f82e53f8839b
+		summarizeBy: none
+		sourceColumn: default
+
+		annotation SummarizationSetBy = Automatic
+
+	column balance
+		dataType: int64
+		formatString: 0
+		lineageTag: f2a5a5f6-dacd-442e-aefd-1fc4cb2ccf3e
+		summarizeBy: sum
+		sourceColumn: balance
+
+		annotation SummarizationSetBy = Automatic
+
+	column housing
+		dataType: string
+		lineageTag: bc1b8222-e0fe-46a7-844f-80a69cbbea40
+		summarizeBy: none
+		sourceColumn: housing
+
+		annotation SummarizationSetBy = Automatic
+
+	column loan
+		dataType: string
+		lineageTag: c40724c2-5aad-417c-84ee-3807271badfa
+		summarizeBy: none
+		sourceColumn: loan
+
+		annotation SummarizationSetBy = Automatic
+
+	column contact
+		dataType: string
+		lineageTag: fc68c1e8-a8e5-4a12-a860-f98cb9ee81b1
+		summarizeBy: none
+		sourceColumn: contact
+
+		annotation SummarizationSetBy = Automatic
+
+	column day
+		dataType: int64
+		formatString: 0
+		lineageTag: 4dd594fd-fd42-4ea6-9d22-501d77209577
+		summarizeBy: sum
+		sourceColumn: day
+
+		annotation SummarizationSetBy = Automatic
+
+	column month
+		dataType: string
+		lineageTag: 4d5a2280-7032-4b12-9541-ff29cda02686
+		summarizeBy: none
+		sourceColumn: month
+
+		annotation SummarizationSetBy = Automatic
+
+	column duration
+		dataType: int64
+		formatString: 0
+		lineageTag: 7e08dd59-69f3-48f6-9421-ca249bd6d011
+		summarizeBy: sum
+		sourceColumn: duration
+
+		annotation SummarizationSetBy = Automatic
+
+	column campaign
+		dataType: int64
+		formatString: 0
+		lineageTag: 5461a395-5d4a-470b-8723-434f01c2eedf
+		summarizeBy: sum
+		sourceColumn: campaign
+
+		annotation SummarizationSetBy = Automatic
+
+	column pdays
+		dataType: int64
+		formatString: 0
+		lineageTag: 341c272d-d436-4bef-ac7e-54ef59a70f09
+		summarizeBy: sum
+		sourceColumn: pdays
+
+		annotation SummarizationSetBy = Automatic
+
+	column previous
+		dataType: int64
+		formatString: 0
+		lineageTag: 7c74a27e-02aa-421a-91cf-c5390bbca166
+		summarizeBy: sum
+		sourceColumn: previous
+
+		annotation SummarizationSetBy = Automatic
+
+	column poutcome
+		dataType: string
+		lineageTag: 724e09a6-c41b-4e72-8d2d-837c3a1f7ef2
+		summarizeBy: none
+		sourceColumn: poutcome
+
+		annotation SummarizationSetBy = Automatic
+
+	column deposit
+		dataType: string
+		lineageTag: a5694059-9777-44f1-a734-053377373928
+		summarizeBy: none
+		sourceColumn: deposit
+
+		annotation SummarizationSetBy = Automatic
+
+	partition bank-full = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(Web.Contents("https://repoz-my.sharepoint.com/personal/karthikrajan_repoz_ai/Documents/SaaS%20testing%20files/Domain%20Datasets%20-%20Remote%20inters/Bank%20marketing/Bank%20marketing%20Compaign/bank-full.csv"),[Delimiter=",", Columns=17, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"age", Int64.Type}, {"job", type text}, {"marital", type text}, {"education", type text}, {"default", type text}, {"balance", Int64.Type}, {"housing", type text}, {"loan", type text}, {"contact", type text}, {"day", Int64.Type}, {"month", type text}, {"duration", Int64.Type}, {"campaign", Int64.Type}, {"pdays", Int64.Type}, {"previous", Int64.Type}, {"poutcome", type text}, {"deposit", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
