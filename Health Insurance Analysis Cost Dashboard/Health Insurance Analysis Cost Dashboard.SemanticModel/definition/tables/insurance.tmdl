@@ -1,0 +1,281 @@
+table insurance
+	lineageTag: 11046b8f-14d0-4c04-9f12-ebd77e715b08
+
+	column 'Customer ID'
+		dataType: string
+		lineageTag: 4cda0dd3-877c-4003-8a7e-601c698f8214
+		summarizeBy: none
+		sourceColumn: Customer ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		lineageTag: 8cb2c67d-c2c2-401b-b92e-67d881571cb2
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Age
+		dataType: int64
+		formatString: 0
+		lineageTag: a2e81b95-3970-4103-9651-5c58b542dc90
+		summarizeBy: sum
+		sourceColumn: Age
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sex1
+		dataType: string
+		lineageTag: d12c5663-206e-4677-80a6-fbcf3bc1bf11
+		summarizeBy: none
+		sourceColumn: Sex1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region1
+		dataType: string
+		lineageTag: 818119ca-44e1-4276-bb7d-0acc969b0370
+		summarizeBy: none
+		sourceColumn: Region1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Policy ID'
+		dataType: string
+		lineageTag: 8d9d0edd-d1b7-46fe-a23a-23f43f200dc9
+		summarizeBy: none
+		sourceColumn: Policy ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Policy Type'
+		dataType: string
+		lineageTag: b94480c1-0be9-44fb-a1ca-ddb951b60cca
+		summarizeBy: none
+		sourceColumn: Policy Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Coverage Amount'
+		dataType: int64
+		formatString: 0
+		lineageTag: f63ec78a-72b5-4a8a-97e1-c2118c40290d
+		summarizeBy: sum
+		sourceColumn: Coverage Amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Annual Premium'
+		dataType: int64
+		formatString: 0
+		lineageTag: a5b30db8-726c-43c7-8597-a6d5be93b6f4
+		summarizeBy: sum
+		sourceColumn: Annual Premium
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Policy Start Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: d61123a9-0508-4da7-b96e-ffaf9b89a64d
+		summarizeBy: none
+		sourceColumn: Policy Start Date
+
+		variation Variation
+			isDefault
+			relationship: 76d4aba3-4a85-497d-95f1-691cc9417c0c
+			defaultHierarchy: LocalDateTable_8d1d43ff-7751-4416-8a92-799a4b445042.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Policy End Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: ade4fc4c-d81f-4831-93f4-c23582bd8eb6
+		summarizeBy: none
+		sourceColumn: Policy End Date
+
+		variation Variation
+			isDefault
+			relationship: ca8de4bd-4213-4416-878b-234109b198a0
+			defaultHierarchy: LocalDateTable_a595ae5e-606b-4cbb-bd98-b7fea0a77538.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Payment Frequency'
+		dataType: string
+		lineageTag: ea25cdfa-e7a7-480c-8748-975c0a42daae
+		summarizeBy: none
+		sourceColumn: Payment Frequency
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Claim ID'
+		dataType: string
+		lineageTag: 35537929-6a46-46cb-9657-7369d8ee9169
+		summarizeBy: none
+		sourceColumn: Claim ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Claim Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 7aaa3dce-7fde-4144-b8d0-b7911fdf780f
+		summarizeBy: none
+		sourceColumn: Claim Date
+
+		variation Variation
+			isDefault
+			relationship: 03cd7233-cfcd-4fca-8556-97a39c6710db
+			defaultHierarchy: LocalDateTable_7a3f6060-1835-43fd-8024-2eac95dea5f4.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Claim Amount'
+		dataType: int64
+		formatString: 0
+		lineageTag: 1cf7d7d9-0cb7-4e8c-8d91-6bbb96e63e5d
+		summarizeBy: sum
+		sourceColumn: Claim Amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Claim Status'
+		dataType: string
+		lineageTag: 0813e8c7-6313-4ae2-a57a-53b83fa4357a
+		summarizeBy: none
+		sourceColumn: Claim Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Claim Settlement Days'
+		dataType: int64
+		formatString: 0
+		lineageTag: f73dcd57-079a-499d-9c0f-5b1fdfb0dc01
+		summarizeBy: sum
+		sourceColumn: Claim Settlement Days
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Claim Reason'
+		dataType: string
+		lineageTag: e71ef827-5e96-467b-bfcc-c0b8b4ed2cd5
+		summarizeBy: none
+		sourceColumn: Claim Reason
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Hospital Name'
+		dataType: string
+		lineageTag: e6d67292-15fd-4d1f-ad52-918a118d7460
+		summarizeBy: none
+		sourceColumn: Hospital Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Hospital Location'
+		dataType: string
+		lineageTag: 28b99fbc-6bce-462b-b935-cc74de372afd
+		summarizeBy: none
+		sourceColumn: Hospital Location
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Satisfaction Score'
+		dataType: int64
+		formatString: 0
+		lineageTag: b1d51a6e-9936-44e9-8306-2c34f9dc565c
+		summarizeBy: sum
+		sourceColumn: Satisfaction Score
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bmi
+		dataType: double
+		lineageTag: d6c02edb-65fb-472f-b3da-e8c8b57800a2
+		summarizeBy: sum
+		sourceColumn: Bmi
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Smoker1
+		dataType: string
+		lineageTag: 459b8f94-ce26-4df8-b243-b748b3ac0366
+		summarizeBy: none
+		sourceColumn: Smoker1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Risk Score'
+		dataType: int64
+		formatString: 0
+		lineageTag: 2c55982a-06bf-411c-8db2-83efd032b03c
+		summarizeBy: sum
+		sourceColumn: Risk Score
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Premiums Collected'
+		dataType: int64
+		formatString: 0
+		lineageTag: 4218648d-b569-44b0-8738-a49505a290c8
+		summarizeBy: sum
+		sourceColumn: Total Premiums Collected
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Claims Paid'
+		dataType: int64
+		formatString: 0
+		lineageTag: f5dce4a7-3813-43b9-a9bb-a162c3a95a3f
+		summarizeBy: sum
+		sourceColumn: Total Claims Paid
+
+		annotation SummarizationSetBy = Automatic
+
+	column Profit/Loss
+		dataType: int64
+		formatString: 0
+		lineageTag: fb6ac591-6ede-45c6-a10d-2c9d4b7892df
+		summarizeBy: sum
+		sourceColumn: Profit/Loss
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Claim Ratio'
+		dataType: double
+		lineageTag: 537b8f19-9f1e-4c39-a997-9104af53782e
+		summarizeBy: sum
+		sourceColumn: Claim Ratio
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition insurance = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://repoz-my.sharepoint.com/personal/karthikrajan_repoz_ai/Documents/SaaS%20testing%20files/Domain%20Datasets%20-%20Remote%20inters/Insurances%20Domain/Health%20Insurance%20Analysis%20Cost%20Dashboard/Health%20Insurance%20Analysis%20Cost%20Dashboard.xlsx"), null, true),
+				    Sheet1_Sheet = Source{[Item="Sheet1",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Customer ID", type text}, {"Name", type text}, {"Age", Int64.Type}, {"Sex", type text}, {"Region", type text}, {"Policy ID", type text}, {"Policy Type", type text}, {"Coverage Amount", Int64.Type}, {"Annual Premium", Int64.Type}, {"Policy Start Date", type date}, {"Policy End Date", type date}, {"Payment Frequency", type text}, {"Claim ID", type text}, {"Claim Date", type date}, {"Claim Amount", Int64.Type}, {"Claim Status", type text}, {"Claim Settlement Days", Int64.Type}, {"Claim Reason", type text}, {"Hospital Name", type text}, {"Hospital Location", type text}, {"Satisfaction Score", Int64.Type}, {"Bmi", type number}, {"Smoker", type text}, {"Risk Score", Int64.Type}, {"Total Premiums Collected", Int64.Type}, {"Total Claims Paid", Int64.Type}, {"Profit/Loss", Int64.Type}, {"Claim Ratio", type number}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"Region", "Region1"}, {"Sex", "Sex1"}, {"Smoker", "Smoker1"}})
+				in
+				    #"Renamed Columns"
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Health Insurance Analysis Cost Dashboard"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "305836a9-9300-4344-8ba8-ecdc8f4bb806"
+  }
+}
