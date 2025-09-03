@@ -1,4 +1,4 @@
-table Walmart
+table walmart
 	lineageTag: 6e819175-7e41-4457-9994-3b562972fd2f
 
 	column User_ID
@@ -88,7 +88,7 @@ table Walmart
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	partition Walmart = m
+	partition walmart = m
 		mode: import
 		source =
 				let
@@ -97,6 +97,8 @@ table Walmart
 				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"User_ID", Int64.Type}, {"Product_ID", type text}, {"Gender", type text}, {"Age", type text}, {"Occupation", Int64.Type}, {"City_Category", type text}, {"Stay_In_Current_City_Years", Int64.Type}, {"Marital_Status", Int64.Type}, {"Product_Category", Int64.Type}, {"Purchase", Int64.Type}})
 				in
 				    #"Changed Type"
+
+	changedProperty = Name
 
 	annotation PBI_ResultType = Table
 
