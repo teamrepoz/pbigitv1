@@ -1,0 +1,368 @@
+table HR%20Dataset
+	lineageTag: 8ffa17ba-4679-487e-bb1f-925509d40a1f
+
+	column Employee_Name
+		dataType: string
+		lineageTag: 9be22108-8665-4f93-a65b-057a9be9a4cc
+		summarizeBy: none
+		sourceColumn: Employee_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column EmpID
+		dataType: int64
+		formatString: 0
+		lineageTag: e7f04d99-436e-4165-b1b4-4fc0446c3fb9
+		summarizeBy: count
+		sourceColumn: EmpID
+
+		annotation SummarizationSetBy = Automatic
+
+	column MarriedID
+		dataType: int64
+		formatString: 0
+		lineageTag: 3a903229-5c2c-4e61-a363-d923b585c582
+		summarizeBy: count
+		sourceColumn: MarriedID
+
+		annotation SummarizationSetBy = Automatic
+
+	column MaritalStatusID
+		dataType: int64
+		formatString: 0
+		lineageTag: c77c4ce6-8b77-4325-bbc2-7c02dea50fc5
+		summarizeBy: count
+		sourceColumn: MaritalStatusID
+
+		annotation SummarizationSetBy = Automatic
+
+	column GenderID
+		dataType: int64
+		formatString: 0
+		lineageTag: 55d4d630-0619-40fe-8429-a126455e3f4f
+		summarizeBy: count
+		sourceColumn: GenderID
+
+		annotation SummarizationSetBy = Automatic
+
+	column EmpStatusID
+		dataType: int64
+		formatString: 0
+		lineageTag: 6a5b5b2a-3e66-4a33-9f82-4dcd20eb2d1b
+		summarizeBy: count
+		sourceColumn: EmpStatusID
+
+		annotation SummarizationSetBy = Automatic
+
+	column DeptID
+		dataType: int64
+		formatString: 0
+		lineageTag: aca39066-4123-43de-8c02-e5b96787f95b
+		summarizeBy: count
+		sourceColumn: DeptID
+
+		annotation SummarizationSetBy = Automatic
+
+	column PerfScoreID
+		dataType: int64
+		formatString: 0
+		lineageTag: 996638a6-e805-4595-98da-c5214668a0ca
+		summarizeBy: count
+		sourceColumn: PerfScoreID
+
+		annotation SummarizationSetBy = Automatic
+
+	column FromDiversityJobFairID
+		dataType: int64
+		formatString: 0
+		lineageTag: 9954076e-b5aa-4f76-8379-ffd1e632a3bd
+		summarizeBy: count
+		sourceColumn: FromDiversityJobFairID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Salary
+		dataType: int64
+		formatString: 0
+		lineageTag: e3306e4c-905d-4119-9c87-f9e859674f91
+		summarizeBy: sum
+		sourceColumn: Salary
+
+		annotation SummarizationSetBy = Automatic
+
+	column Termd
+		dataType: int64
+		formatString: 0
+		lineageTag: edb14bdf-c079-4e7a-9fd9-eb797ec7bc7c
+		summarizeBy: sum
+		sourceColumn: Termd
+
+		annotation SummarizationSetBy = Automatic
+
+	column PositionID
+		dataType: int64
+		formatString: 0
+		lineageTag: 24e65b7c-05d2-44f4-a5a7-d48c0e35f906
+		summarizeBy: count
+		sourceColumn: PositionID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Position
+		dataType: string
+		lineageTag: cf76c2a4-bbab-4293-ad2c-fb9f3cff0a70
+		summarizeBy: none
+		sourceColumn: Position
+
+		annotation SummarizationSetBy = Automatic
+
+	column State
+		dataType: string
+		lineageTag: 62c243fd-1883-4387-bbd7-4390f6c9dacc
+		summarizeBy: none
+		sourceColumn: State
+
+		annotation SummarizationSetBy = Automatic
+
+	column Zip
+		dataType: int64
+		formatString: 0
+		lineageTag: 32fb158d-9bac-47db-b653-010efe1b74a7
+		summarizeBy: sum
+		sourceColumn: Zip
+
+		annotation SummarizationSetBy = Automatic
+
+	column DOB
+		dataType: string
+		lineageTag: 0bdb9dbc-eceb-435d-a7b0-acac59e1fd0b
+		summarizeBy: none
+		sourceColumn: DOB
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sex
+		dataType: string
+		lineageTag: e3a3cf18-3716-495d-bd35-f01073447aeb
+		summarizeBy: none
+		sourceColumn: Sex
+
+		annotation SummarizationSetBy = Automatic
+
+	column MaritalDesc
+		dataType: string
+		lineageTag: 3d0a210a-ab12-4968-8a2e-eac66d29f25e
+		summarizeBy: none
+		sourceColumn: MaritalDesc
+
+		annotation SummarizationSetBy = Automatic
+
+	column CitizenDesc
+		dataType: string
+		lineageTag: ee46c135-5781-4828-9e57-e6e9d8b86fb6
+		summarizeBy: none
+		sourceColumn: CitizenDesc
+
+		annotation SummarizationSetBy = Automatic
+
+	column HispanicLatino
+		dataType: string
+		lineageTag: 6dbe0516-8cb6-4a9d-968b-49e009f35cec
+		summarizeBy: none
+		sourceColumn: HispanicLatino
+
+		annotation SummarizationSetBy = Automatic
+
+	column RaceDesc
+		dataType: string
+		lineageTag: ed30b74c-6ccc-4063-b1fd-a63d0befdae1
+		summarizeBy: none
+		sourceColumn: RaceDesc
+
+		annotation SummarizationSetBy = Automatic
+
+	column DateofHire
+		dataType: string
+		lineageTag: 45318076-f8c1-41da-8bfe-804333846434
+		summarizeBy: none
+		sourceColumn: DateofHire
+
+		annotation SummarizationSetBy = Automatic
+
+	column DateofTermination
+		dataType: string
+		lineageTag: e6865691-3833-4b19-a991-0cf252bb8a05
+		summarizeBy: none
+		sourceColumn: DateofTermination
+
+		annotation SummarizationSetBy = Automatic
+
+	column TermReason
+		dataType: string
+		lineageTag: 3457be74-3d70-4be8-ab0d-a1f50fd9ddd6
+		summarizeBy: none
+		sourceColumn: TermReason
+
+		annotation SummarizationSetBy = Automatic
+
+	column EmploymentStatus
+		dataType: string
+		lineageTag: 629117fb-5b56-43a6-8cb0-ffe0c0e42824
+		summarizeBy: none
+		sourceColumn: EmploymentStatus
+
+		annotation SummarizationSetBy = Automatic
+
+	column Department
+		dataType: string
+		lineageTag: 9831d354-066e-4295-a259-03051251e56b
+		summarizeBy: none
+		sourceColumn: Department
+
+		annotation SummarizationSetBy = Automatic
+
+	column ManagerName
+		dataType: string
+		lineageTag: 6551b25f-b2fa-43b6-a4cb-dca72196c2c8
+		summarizeBy: none
+		sourceColumn: ManagerName
+
+		annotation SummarizationSetBy = Automatic
+
+	column ManagerID
+		dataType: int64
+		formatString: 0
+		lineageTag: 07cb3696-8baa-457d-ba08-5cf355af6f1d
+		summarizeBy: count
+		sourceColumn: ManagerID
+
+		annotation SummarizationSetBy = Automatic
+
+	column RecruitmentSource
+		dataType: string
+		lineageTag: b02ab00c-a0e5-4d5d-9885-7a1c3c5fd087
+		summarizeBy: none
+		sourceColumn: RecruitmentSource
+
+		annotation SummarizationSetBy = Automatic
+
+	column PerformanceScore
+		dataType: string
+		lineageTag: 1cc230ba-4421-432d-948a-b638f8398d7d
+		summarizeBy: none
+		sourceColumn: PerformanceScore
+
+		annotation SummarizationSetBy = Automatic
+
+	column EngagementSurvey
+		dataType: double
+		lineageTag: 1e51eb81-d89e-46ff-b7db-187677eb6433
+		summarizeBy: sum
+		sourceColumn: EngagementSurvey
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column EmpSatisfaction
+		dataType: int64
+		formatString: 0
+		lineageTag: 391c9c35-58bc-4a16-ab60-fbee7c3e3ce6
+		summarizeBy: sum
+		sourceColumn: EmpSatisfaction
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"HR%20Dataset","TableItemName":"Satisfaction  Level (bins)","ObjectType":4},"LinkType":"UsedInGroup"}]
+
+	column SpecialProjectsCount
+		dataType: int64
+		formatString: 0
+		lineageTag: 7193ea1e-350e-4810-86f3-b95362ca75f3
+		summarizeBy: sum
+		sourceColumn: SpecialProjectsCount
+
+		annotation SummarizationSetBy = Automatic
+
+	column LastPerformanceReview_Date
+		dataType: string
+		lineageTag: 71fd199e-eb52-4456-8ad6-ee75ea3422cd
+		summarizeBy: none
+		sourceColumn: LastPerformanceReview_Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column DaysLateLast30
+		dataType: int64
+		formatString: 0
+		lineageTag: 53e07ec4-70f7-4749-8163-7117f0759a6e
+		summarizeBy: sum
+		sourceColumn: DaysLateLast30
+
+		annotation SummarizationSetBy = Automatic
+
+	column Absences
+		dataType: int64
+		formatString: 0
+		lineageTag: 125d7e69-85f1-4b8e-b6a5-b1c2e0d6ba12
+		summarizeBy: sum
+		sourceColumn: Absences
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Satisfaction  Level (bins)' =
+			IF(
+				ISBLANK('HR%20Dataset'[EmpSatisfaction]),
+				BLANK(),
+				INT('HR%20Dataset'[EmpSatisfaction])
+			)
+		formatString: 0
+		lineageTag: a16c473e-f54a-45d1-ba76-936913ea1f85
+		summarizeBy: none
+
+		extendedProperty GroupingMetadata =
+				{
+				  "version": 0,
+				  "groupedColumns": [
+				    {
+				      "Column": {
+				        "Expression": {
+				          "SourceRef": {
+				            "Entity": "HR%20Dataset"
+				          }
+				        },
+				        "Property": "EmpSatisfaction"
+				      }
+				    }
+				  ],
+				  "binningMetadata": {
+				    "binSize": {
+				      "value": 1.0,
+				      "unit": 0
+				    }
+				  }
+				}
+
+		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"h","Entity":"HR%20Dataset"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"h"}},"Property":"EmpSatisfaction"}}],"BinItem":{"Expression":{"Floor":{"Expression":{"Column":{"Expression":{"SourceRef":{"Source":"h"}},"Property":"EmpSatisfaction"}},"Size":1.0}}}}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Number of records' = 1
+		formatString: 0
+		lineageTag: b4961792-e3d7-4537-91e0-6ac011a03e14
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition HR%20Dataset = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(Web.Contents("https://repoz-my.sharepoint.com/personal/karthikrajan_repoz_ai/Documents/SaaS%20testing%20files/Domain%20Datasets%20-%20Remote%20inters/Human%20resource/Human%20Resources%20Analytics/HR%20Dataset.csv"),[Delimiter=",", Columns=36, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Employee_Name", type text}, {"EmpID", Int64.Type}, {"MarriedID", Int64.Type}, {"MaritalStatusID", Int64.Type}, {"GenderID", Int64.Type}, {"EmpStatusID", Int64.Type}, {"DeptID", Int64.Type}, {"PerfScoreID", Int64.Type}, {"FromDiversityJobFairID", Int64.Type}, {"Salary", Int64.Type}, {"Termd", Int64.Type}, {"PositionID", Int64.Type}, {"Position", type text}, {"State", type text}, {"Zip", Int64.Type}, {"DOB", type text}, {"Sex", type text}, {"MaritalDesc", type text}, {"CitizenDesc", type text}, {"HispanicLatino", type text}, {"RaceDesc", type text}, {"DateofHire", type text}, {"DateofTermination", type text}, {"TermReason", type text}, {"EmploymentStatus", type text}, {"Department", type text}, {"ManagerName", type text}, {"ManagerID", Int64.Type}, {"RecruitmentSource", type text}, {"PerformanceScore", type text}, {"EngagementSurvey", type number}, {"EmpSatisfaction", Int64.Type}, {"SpecialProjectsCount", Int64.Type}, {"LastPerformanceReview_Date", type text}, {"DaysLateLast30", Int64.Type}, {"Absences", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
