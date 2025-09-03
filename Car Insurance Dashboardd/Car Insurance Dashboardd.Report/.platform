@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Car Insurance Dashboardd"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "95b4599a-2228-4c11-96bb-520188e82e6e"
+  }
+}
