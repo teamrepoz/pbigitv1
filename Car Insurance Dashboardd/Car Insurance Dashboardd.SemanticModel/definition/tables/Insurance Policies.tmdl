@@ -274,14 +274,14 @@ table 'Insurance Policies'
 		mode: import
 		source =
 				let
-				    Source = Excel.Workbook(Web.Contents("https://repoz-my.sharepoint.com/personal/karthikrajan_repoz_ai/Documents/SaaS%20testing%20files/Domain%20Datasets%20-%20Remote%20inters/Insurances%20Domain/Car%20Insurance%20Dashboard/Car%20Insurance%20Dashboard.xlsx"), null, true),
+				    Source = Excel.Workbook(Web.Contents("https://repoz-my.sharepoint.com/personal/karthikrajan_repoz_ai/Documents/SaaS%20testing%20files/Domain%20Datasets%20-%20Remote%20inters/Insurances%20Domain/Car%20Insurance%20Dashboardd/Car%20Insurance%20Dashboardd.xlsx"), null, true),
 				    Sheet1_Sheet = Source{[Item="Sheet1",Kind="Sheet"]}[Data],
 				    #"Promoted Headers" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Customer ID", type text}, {"Name", type text}, {"Age", Int64.Type}, {"Gender", type text}, {"Region", type text}, {"Policy ID", type text}, {"Policy Type", type text}, {"Coverage Amount", Int64.Type}, {"Annual Premium", Int64.Type}, {"Policy Start Date", type date}, {"Policy End Date", type date}, {"Payment Frequency", type text}, {"Claim ID", type text}, {"Claim Date", type date}, {"Claim Amount", Int64.Type}, {"Claim Status", type text}, {"Claim Settlement Days", Int64.Type}, {"Claim Reason", type text}, {"Hospital Name", type text}, {"Hospital Location", type text}, {"Satisfaction Score", Int64.Type}, {"BMI", type number}, {"Smoking Status", type text}, {"Risk Score", Int64.Type}, {"Total Premiums Collected", Int64.Type}, {"Total Claims Paid", Int64.Type}, {"Profit/Loss", Int64.Type}, {"Claim Ratio", type number}})
 				in
 				    #"Changed Type"
 
-	changedProperty = Name
-
 	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
 
