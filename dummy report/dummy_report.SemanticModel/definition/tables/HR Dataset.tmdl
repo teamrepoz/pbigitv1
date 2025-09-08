@@ -348,8 +348,8 @@ table 'HR Dataset'
 		mode: import
 		source =
 				let
-					Source = Csv.Document(Web.Contents("C:\Users\LENOVO\Downloads\HR Workbook (2)\HR Dataset.csv")),
-					#"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+					Source = Csv.Document(Web.Contents("https://repoz-my.sharepoint.com/personal/karthikrajan_repoz_ai/Documents/SaaS%20testing%20files/Domain%20Datasets%20-%20Remote%20inters/Human%20resource/HR%20Workbook%20(2)/HR%20Dataset.csv"),[Delimiter=",", Columns=36, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
 					#"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Employee_Name", type text}, {"EmpID", Int64.Type}, {"MarriedID", Int64.Type}, {"MaritalStatusID", Int64.Type}, {"GenderID", Int64.Type}, {"EmpStatusID", Int64.Type}, {"DeptID", Int64.Type}, {"PerfScoreID", Int64.Type}, {"FromDiversityJobFairID", Int64.Type}, {"Salary", Int64.Type}, {"Termd", Int64.Type}, {"PositionID", Int64.Type}, {"Position", type text}, {"State", type text}, {"Zip", Int64.Type}, {"DOB", type date}, {"Sex", type text}, {"MaritalDesc", type text}, {"CitizenDesc", type text}, {"HispanicLatino", type text}, {"RaceDesc", type text}, {"DateofHire", type date}, {"DateofTermination", type date}, {"TermReason", type text}, {"EmploymentStatus", type text}, {"Department", type text}, {"ManagerName", type text}, {"ManagerID", Int64.Type}, {"RecruitmentSource", type text}, {"PerformanceScore", type text}, {"EngagementSurvey", type number}, {"EmpSatisfaction", Int64.Type}, {"SpecialProjectsCount", Int64.Type}, {"LastPerformanceReview_Date", type date}, {"DaysLateLast30", Int64.Type}, {"Absences", Int64.Type}})
 					in
 					#"Changed Type"
