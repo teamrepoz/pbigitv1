@@ -1,0 +1,51 @@
+table 'Customer ID (Excel-to-Tableau-Data)_Extract'
+	lineageTag: e29f2766-571d-4b69-8827-9ac10902e2a4
+
+	column 'Customer ID'
+		dataType: string
+		lineageTag: e1510980-8ba2-4db0-a837-6e87e497b0c7
+		summarizeBy: none
+		sourceColumn: 'Customer ID'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gender
+		dataType: string
+		lineageTag: 96915c99-9885-4f42-aea6-6ec10104a57c
+		summarizeBy: none
+		sourceColumn: Gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column Age
+		dataType: string
+		lineageTag: eaf47d2a-13b6-43e8-b547-af4dfca1e13e
+		summarizeBy: none
+		sourceColumn: Age
+
+		annotation SummarizationSetBy = Automatic
+
+	column State
+		dataType: string
+		lineageTag: 8972ec03-f9b9-404c-b7a9-e734fbc7d9b9
+		summarizeBy: none
+		sourceColumn: State
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Customer ID (Excel-to-Tableau-Data)_Extract' = m
+		mode: import
+		source =
+				let
+					    Source = Csv.Document(
+					        File.Contents("https://saastestlatest.blob.core.windows.net/saas-test-reports/Customer%20ID%20%28Excel-to-Tableau-Data%29_Extract.csv?se=2025-10-31T22%3A15%3A21Z&sp=r&sv=2025-11-05&sr=b&sig=wVQOAPFWWErfm3/Y6ZQXEQBe9ScRNfFJ4NMatcy2G/o%3D"),
+					        [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.None]
+					    ),
+					    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+					    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Customer ID", type text}, {"Gender", type text}, {"Age", type text}, {"State", type text}})
+					in
+					    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
