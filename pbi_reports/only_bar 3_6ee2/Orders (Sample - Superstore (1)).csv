@@ -1,6 +1,0 @@
-Row ID,Order ID,Order Date,Ship Date,Ship Mode,Customer ID,Customer Name,Segment,Country,City,State,Postal Code,Region,Product ID,Category,Sub-Category,Product Name,Sales,Quantity,Discount,Profit
-1,ORD-100001,2024-08-15,2024-08-20,Standard Class,CUST-1001,Michael Chen,Consumer,United States,San Francisco,California,94105,West,PROD-1001,Technology,Accessories,USB-C Hub 6-in-1,129.99,2,10.0,18.5
-2,ORD-100002,2024-08-28,2024-09-02,First Class,CUST-1002,Sara Patel,Corporate,United States,New York,New York,10001,Northeast,PROD-2003,Furniture,Chairs,Ergo Mesh Chair,399.99,1,5.0,52.5
-3,ORD-100003,2024-09-01,2024-09-03,Next Day Air,CUST-1003,David Kim,Home Office,United States,Austin,Texas,73301,South,PROD-3004,Office Supplies,Paper,Premium Printer Paper 500 sheets,89.5,3,0.0,22.5
-4,ORD-100004,2024-07-22,2024-07-24,Standard Class,CUST-1004,Emily Nguyen,Consumer,Canada,Montreal,Quebec,10010,Canada,PROD-4002,Technology,Accessories,Wireless Keyboard + Mouse Combo,149.95,1,8.0,18.5
-5,ORD-100005,2024-11-02,2024-11-12,Second Class,CUST-1005,Carlos Ramirez,Corporate,United States,Chicago,Illinois,60601,Midwest,PROD-5007,Furniture,Tables,Laminated Conference Table 6ft,899.95,1,7.0,70.0
