@@ -1,0 +1,165 @@
+table 'Sample Retail Data (Excel-to-Tableau-Data)'
+	lineageTag: 66a89dfb-651d-4e30-95ce-9729938ffd0e
+
+	measure 'Margin Calculation' = SUM('Sample Retail Data (Excel-to-Tableau-Data)'[Profit]) / SUM('Sample Retail Data (Excel-to-Tableau-Data)'[Gross Sales])
+		formatString: 0
+		lineageTag: edd3c1b3-3738-4802-bf9d-1e330cc0f8a4
+
+	column Date
+		dataType: datetime
+		lineageTag: a9c2a8a8-3947-4218-9e19-23103f4aff4c
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Time
+		dataType: datetime
+		lineageTag: 1ead434b-1140-4264-a305-0ccded9491ed
+		summarizeBy: none
+		sourceColumn: Time
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		lineageTag: 820668a4-083c-407a-b202-cb0eca98c4f5
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column Item
+		dataType: string
+		lineageTag: d595906c-8f08-4faf-be3a-809b90f4a7d2
+		summarizeBy: none
+		sourceColumn: Item
+
+		annotation SummarizationSetBy = Automatic
+
+	column Qty
+		dataType: int64
+		formatString: 0
+		lineageTag: 00182b6c-5138-4e6c-90b4-26b80ffcd817
+		summarizeBy: sum
+		sourceColumn: Qty
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Price Point Name'
+		dataType: string
+		lineageTag: cfc1fadd-81f6-4042-956e-7858f43dda74
+		summarizeBy: none
+		sourceColumn: 'Price Point Name'
+
+		annotation SummarizationSetBy = Automatic
+
+	column SKU
+		dataType: int64
+		formatString: 0
+		lineageTag: 273a849a-227b-4060-8b27-23223fbc689e
+		summarizeBy: sum
+		sourceColumn: SKU
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Gross Sales'
+		dataType: double
+		formatString: General Number
+		lineageTag: 0277f2b8-8c90-4fd5-8625-cc3aa33a4c30
+		summarizeBy: sum
+		sourceColumn: 'Gross Sales'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Discounts
+		dataType: double
+		formatString: General Number
+		lineageTag: 6ab21ac0-31cd-44fc-a812-76dc2fb1edba
+		summarizeBy: sum
+		sourceColumn: Discounts
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Customer ID'
+		dataType: string
+		lineageTag: 89fdbc6a-2d55-412d-bc65-976731ab4cf4
+		summarizeBy: none
+		sourceColumn: 'Customer ID'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cost
+		dataType: double
+		formatString: General Number
+		lineageTag: 3080c411-c712-41ff-969e-b57d3279f40e
+		summarizeBy: sum
+		sourceColumn: Cost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Margin
+		dataType: double
+		formatString: General Number
+		lineageTag: 7dc00df3-5edd-4caa-bdb2-9ea997858f70
+		summarizeBy: sum
+		sourceColumn: Margin
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Gender
+		dataType: string
+		lineageTag: 22a5c44f-8f72-4fc0-95d6-c3f7d630d861
+		summarizeBy: none
+		sourceColumn: Gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column Age
+		dataType: string
+		lineageTag: 12dfec67-6cc2-424c-9003-30d429714648
+		summarizeBy: none
+		sourceColumn: Age
+
+		annotation SummarizationSetBy = Automatic
+
+	column State
+		dataType: string
+		lineageTag: 22f2c269-b72a-42fc-b3f0-15f95163d123
+		summarizeBy: none
+		sourceColumn: State
+
+		annotation SummarizationSetBy = Automatic
+
+	column Profit = 'Sample Retail Data (Excel-to-Tableau-Data)'[Gross Sales] - 'Sample Retail Data (Excel-to-Tableau-Data)'[Cost]
+		lineageTag: 129bc43a-98fc-405e-af1b-597842bf0d21
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Sample Retail Data (Excel-to-Tableau-Data)' = m
+		mode: import
+		source =
+				let
+					    Source = Csv.Document(
+					        File.Contents("https://saastestlatest.blob.core.windows.net/saas-test-reports/Sample%20Retail%20Data%20%28Excel-to-Tableau-Data%29.csv?se=2025-10-31T22%3A15%3A38Z&sp=r&sv=2025-11-05&sr=b&sig=yl4Um5%2Be4/VpQr6s3AsiZlkHZg6EVtXVABu%2BOcd8iL0%3D"),
+					        [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.None]
+					    ),
+					    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+					    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Date", type date}, {"Time", type datetime}, {"Category", type text}, {"Item", type text}, {"Qty", Int64.Type}, {"Price Point Name", type text}, {"SKU", Int64.Type}, {"Gross Sales", type number}, {"Discounts", type number}, {"Customer ID", type text}, {"Cost", type number}, {"Margin", type number}, {"Gender", type text}, {"Age", type text}, {"State", type text}})
+					in
+					    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
