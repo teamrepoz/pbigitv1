@@ -1,0 +1,6 @@
+Row ID,Order ID,Order Date,Ship Date,Ship Mode,Customer ID,Customer Name,Segment,Country,City,State,Postal Code,Region,Product ID,Category,Sub-Category,Product Name,Sales,Quantity,Discount,Profit
+1,ORD-100001,2024-06-15,2024-06-18,Standard Class,CUST-00001,Emily Rivera,Corporate,United States,San Francisco,CA,94107,West,P-1001,Technology,Accessories,Wireless Ergonomic Mouse,199.99,2,12.0,28.5
+2,ORD-100002,2024-07-02,2024-07-04,Express Air,CUST-00002,Michael Chen,Consumer,United States,New York,NY,10001,East,P-1005,Office Supplies,Binders,Avery Durable Binders 4-Pack,89.5,5,5.0,12.5
+3,ORD-100003,2024-08-12,2024-08-14,Second Class,CUST-00003,Sophia Patel,Consumer,United States,Chicago,IL,60601,Central,P-1023,Furniture,Chairs,ErgoMesh Executive Chair,420.75,1,10.0,66.0
+4,ORD-100004,2024-09-01,2024-09-03,First Class,CUST-00004,David Kim,Home Office,United States,Dallas,TX,75201,South,P-1102,Furniture,Desks,L-Shaped Executive Desk,359.4,2,7.5,56.4
+5,ORD-100005,2024-09-18,2024-09-25,Standard Class,CUST-00005,Olivia Martinez,Corporate,United States,Seattle,WA,98101,West,P-1150,Technology,Accessories,USB-C Hub 7-Port,149.99,3,8.0,18.99
