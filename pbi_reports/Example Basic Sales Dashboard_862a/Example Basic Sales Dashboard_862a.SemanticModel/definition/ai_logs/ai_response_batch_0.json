@@ -1,0 +1,32 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Customer ID (Excel-to-Tableau-Data)",
+      "name": "Constant 1",
+      "dax_expression": "1",
+      "solution_explanation": "The Tableau formula is a row-level constant with no aggregation, so it becomes a calculated column returning 1 for each row."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Sample Retail Data (Excel-to-Tableau-Data)",
+      "name": "Profit",
+      "dax_expression": "'Sample Retail Data (Excel-to-Tableau-Data)'[Gross Sales] - 'Sample Retail Data (Excel-to-Tableau-Data)'[Cost]",
+      "solution_explanation": "Row-level arithmetic using columns from the same row converts directly to a calculated column."
+    },
+    {
+      "type": "measure",
+      "table": "Sample Retail Data (Excel-to-Tableau-Data)",
+      "name": "Margin Calculation",
+      "dax_expression": "SUM('Sample Retail Data (Excel-to-Tableau-Data)'[Profit]) / SUM('Sample Retail Data (Excel-to-Tableau-Data)'[Gross Sales])",
+      "solution_explanation": "This calculation is context-based (ratio using aggregations). Implemented as a measure by dividing the sum of the Profit column by the sum of Gross Sales."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Sample Retail Data (Excel-to-Tableau-Data)",
+      "name": "Constant 1",
+      "dax_expression": "1",
+      "solution_explanation": "The Tableau formula is a row-level constant with no aggregation, so it becomes a calculated column returning 1 for each row."
+    }
+  ]
+}
