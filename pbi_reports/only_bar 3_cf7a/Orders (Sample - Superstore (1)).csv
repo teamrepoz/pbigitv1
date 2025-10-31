@@ -1,0 +1,6 @@
+Row ID,Order ID,Order Date,Ship Date,Ship Mode,Customer ID,Customer Name,Segment,Country,City,State,Postal Code,Region,Product ID,Category,Sub-Category,Product Name,Sales,Quantity,Discount,Profit
+1,ORD-100001,2023-11-12,2023-11-14,Standard Class,CUST-1001,Alice Johnson,Consumer,United States,Seattle,WA,98101,West,P-1001,Furniture,Chairs,Ergo Comfort Chair,420.6,2,0.05,60.09
+2,ORD-100002,2023-12-03,2023-12-04,First Class,CUST-1002,Michael Smith,Corporate,United States,New York,NY,10001,Northeast,P-2001,Technology,Phones,Smartphone Pro 128GB,990.0,2,0.1,176.0
+3,ORD-100003,2023-10-05,2023-10-07,Standard Class,CUST-1003,Emily Davis,Consumer,United States,Chicago,IL,60601,Midwest,P-3001,Office Supplies,Binders,"Heavy Duty Binder 2""",55.75,3,0.0,12.0
+4,ORD-100004,2024-01-15,2024-01-18,Second Class,CUST-1004,Robert Chen,Home Office,United States,San Francisco,CA,94105,West,P-4002,Furniture,Desk,L-Shaped Executive Desk,1250.0,1,0.08,180.0
+5,ORD-100005,2024-03-02,2024-03-05,Standard Class,CUST-1005,Laura Martinez,Consumer,United States,Miami,FL,33101,South,P-5003,Technology,Accessories,Wireless Keyboard and Mouse Combo,149.99,1,0.15,19.5
