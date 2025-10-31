@@ -1,0 +1,6 @@
+Row ID,Order ID,Order Date,Ship Date,Ship Mode,Customer ID,Customer Name,Segment,Country,City,State,Postal Code,Region,Product ID,Category,Sub-Category,Product Name,Sales,Quantity,Discount,Profit
+1,ORD-1001,2024-07-15,2024-07-17,Standard Class,CUST-1010,Emily Carter,Home Office,United States,Chicago,IL,60601,Central,P-1007,Furniture,Chairs,Lumina Ergonomic Chair,420.5,3,0.07,95.0
+2,ORD-1002,2024-08-02,2024-08-06,First Class,CUST-2045,Michael Nguyen,Consumer,United States,New York,NY,10001,East,P-2012,Office Supplies,Paper,Premium A4 Paper Pack 500 sheets,89.99,5,0.02,12.0
+3,ORD-1003,2024-05-20,2024-05-24,Standard Class,CUST-3120,Sofia Martinez,Corporate,United States,Seattle,WA,98101,West,P-3005,Furniture,Bookcases,Horizon 5-Shelf Bookcase,260.4,2,0.1,40.5
+4,ORD-1004,2024-09-10,2024-09-12,Same Day,CUST-4102,Daniel Kim,Consumer,United States,Los Angeles,CA,90001,West,P-4020,Technology,Accessories,Wireless Mouse Pro,75.6,4,0.05,14.5
+5,ORD-1005,2024-11-03,2024-11-05,Second Class,CUST-8791,Olivia Brown,Consumer,United States,Dallas,TX,75201,Central,P-5009,Furniture,Desks,Nova L-Shaped Desk,599.99,1,0.12,80.0
