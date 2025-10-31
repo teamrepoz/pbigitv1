@@ -1,0 +1,6 @@
+Row ID,Order ID,Order Date,Ship Date,Ship Mode,Customer ID,Customer Name,Segment,Country,City,State,Postal Code,Region,Product ID,Category,Sub-Category,Product Name,Sales,Quantity,Discount,Profit
+1,ORD-100001,2022-05-12,2022-05-15,Standard Class,CUST-0001,Emily Carter,Consumer,United States,New York,New York,10001,East,P-1023,Office Supplies,Paper,Premium Bond Paper A4 500 Sheets,259.68,3,5.0,30.0
+2,ORD-100002,2022-06-01,2022-06-04,First Class,CUST-0002,James Wilson,Corporate,United States,Los Angeles,California,90001,West,P-2045,Technology,Accessories,Wireless Keyboard and Mouse Combo,540.89,2,12.0,110.0
+3,ORD-100003,2022-07-15,2022-07-18,Standard Class,CUST-0003,Sophia Martinez,Consumer,United States,Chicago,Illinois,60601,Central,P-3178,Furniture,Chairs,ErgoComfort Task Chair,1200.0,4,0.0,240.0
+4,ORD-100004,2022-08-03,2022-08-06,Second Class,CUST-0004,Daniel Nguyen,Corporate,United States,Seattle,Washington,98101,West,P-4099,Furniture,Office Furnishings,Executive Desk,980.5,1,7.5,120.0
+5,ORD-100005,2022-09-20,2022-09-25,Standard Class,CUST-0005,Ava Johnson,Home Office,United States,Atlanta,Georgia,30301,South,P-5012,Technology,Accessories,HD Web Camera 1080p,213.75,2,0.0,60.0
