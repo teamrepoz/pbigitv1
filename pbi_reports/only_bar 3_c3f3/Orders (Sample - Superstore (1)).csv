@@ -1,0 +1,6 @@
+Row ID,Order ID,Order Date,Ship Date,Ship Mode,Customer ID,Customer Name,Segment,Country,City,State,Postal Code,Region,Product ID,Category,Sub-Category,Product Name,Sales,Quantity,Discount,Profit
+1,ORD-1001,2024-11-21,2024-11-24,Standard Class,CU-1001,John Smith,Consumer,United States,Los Angeles,CA,90001,West,P-2001,Technology,Accessories,Ergonomic Wireless Keyboard,359.9,2,8.0,60.0
+2,ORD-1002,2024-12-02,2024-12-06,Second Class,CU-1002,Maria Garcia,Corporate,United States,New York,NY,10001,East,P-4021,Office Supplies,Binders,Three-Ring Binder 1 inch,123.45,3,5.0,25.5
+3,ORD-1003,2025-01-15,2025-01-20,First Class,CU-1003,Ahmed Khan,Small Business,United States,Miami,FL,33101,South,P-3105,Technology,Components,USB-C Hub 5-in-1,499.99,1,10.0,90.0
+4,ORD-1004,2025-02-03,2025-02-10,Standard Class,CU-1004,Linda Martinez,Consumer,United States,Seattle,WA,98101,West,P-5002,Furniture,Chairs,Ergonomic Task Chair,420.0,1,15.0,55.0
+5,ORD-1005,2025-03-22,2025-03-24,Standard Class,CU-1005,James Wilson,Small Business,United States,Austin,TX,73301,Central,P-2008,Furniture,Chairs,Executive Leather Chair,980.25,4,12.0,150.75
