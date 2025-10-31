@@ -1,0 +1,53 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.63\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "name": "Section_Dashboard 1",
+      "ordinal": 0,
+      "displayName": "Dashboard 1",
+      "visualContainers": [
+        {
+          "x": 8.0,
+          "y": 500.0,
+          "z": 0,
+          "width": 492.0,
+          "height": 490.0,
+          "config": "{\"name\": \"616eb7fe0c0a10cc8db9\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 10, \"y\": 10, \"z\": 1000, \"width\": 960, \"height\": 640, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"barChart\", \"projections\": {\"Category\": [{\"queryRef\": \"Sample Retail Data (Excel-to-Tableau-Data).Age\", \"active\": true}], \"Y\": [{\"queryRef\": \"Sum(Sample Retail Data (Excel-to-Tableau-Data).Gross Sales)\"}], \"Series\": [{\"queryRef\": \"Sample Retail Data (Excel-to-Tableau-Data).Gender\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"S\", \"Entity\": \"Sample Retail Data (Excel-to-Tableau-Data)\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}, \"Property\": \"Age\"}, \"Name\": \"Sample Retail Data (Excel-to-Tableau-Data).Age\", \"NativeReferenceName\": \"Age\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}, \"Property\": \"Gross Sales\"}}, \"Function\": 0}, \"Name\": \"Sum(Sample Retail Data (Excel-to-Tableau-Data).Gross Sales)\", \"NativeReferenceName\": \"Sum of Gross Sales\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}, \"Property\": \"Gender\"}, \"Name\": \"Sample Retail Data (Excel-to-Tableau-Data).Gender\", \"NativeReferenceName\": \"Gender\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Aggregation\": {\"Expression\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}, \"Property\": \"Gross Sales\"}}, \"Function\": 0}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#4e79a7'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"16D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Sales By Age'\"}}}}}]}}}"
+        },
+        {
+          "x": 500.0,
+          "y": 500.0,
+          "z": 0,
+          "width": 492.0,
+          "height": 490.0,
+          "config": "{\"name\": \"6fc05bfc0bf2a10ea8e0\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 0, \"y\": 0, \"z\": 0, \"width\": 600, \"height\": 600, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"filledMap\", \"projections\": {\"Values\": [{\"queryRef\": \"Sample Retail Data (Excel-to-Tableau-Data).Latitude (generated)\"}, {\"queryRef\": \"Sample Retail Data (Excel-to-Tableau-Data).Longitude (generated)\"}, {\"queryRef\": \"Sum(Sample Retail Data (Excel-to-Tableau-Data).Gross Sales)\"}, {\"queryRef\": \"Sample Retail Data (Excel-to-Tableau-Data).State\"}, {\"queryRef\": \"Sum(Sample Retail Data (Excel-to-Tableau-Data).Gross Sales)\"}, {\"queryRef\": \"Sample Retail Data (Excel-to-Tableau-Data).Geometry (generated)\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"S\", \"Entity\": \"Sample Retail Data (Excel-to-Tableau-Data)\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}, \"Property\": \"Latitude (generated)\"}, \"Name\": \"Sample Retail Data (Excel-to-Tableau-Data).Latitude (generated)\", \"NativeReferenceName\": \"Latitude (generated)\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}, \"Property\": \"Longitude (generated)\"}, \"Name\": \"Sample Retail Data (Excel-to-Tableau-Data).Longitude (generated)\", \"NativeReferenceName\": \"Longitude (generated)\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}, \"Property\": \"Gross Sales\"}}, \"Function\": 0}, \"Name\": \"Sum(Sample Retail Data (Excel-to-Tableau-Data).Gross Sales)\", \"NativeReferenceName\": \"Sum of Gross Sales\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}, \"Property\": \"State\"}, \"Name\": \"Sample Retail Data (Excel-to-Tableau-Data).State\", \"NativeReferenceName\": \"State\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}, \"Property\": \"Gross Sales\"}}, \"Function\": 0}, \"Name\": \"Sum(Sample Retail Data (Excel-to-Tableau-Data).Gross Sales)\", \"NativeReferenceName\": \"Sum of Gross Sales\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}, \"Property\": \"Geometry (generated)\"}, \"Name\": \"Sample Retail Data (Excel-to-Tableau-Data).Geometry (generated)\", \"NativeReferenceName\": \"Geometry (generated)\"}], \"OrderBy\": []}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#4e79a7'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"16D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Sales By State'\"}}}}}]}}}"
+        },
+        {
+          "x": 8.0,
+          "y": 10.0,
+          "z": 0,
+          "width": 984.0,
+          "height": 490.0,
+          "config": "{\"name\": \"6d8e01879ea0c8311abd\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 0, \"y\": 0, \"z\": 1000, \"width\": 1000, \"height\": 800, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"Sum(Sample Retail Data (Excel-to-Tableau-Data).Gross Sales)\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"S\", \"Entity\": \"Sample Retail Data (Excel-to-Tableau-Data)\", \"Type\": 0}], \"Select\": [{\"Aggregation\": {\"Expression\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}, \"Property\": \"Gross Sales\"}}, \"Function\": 0}, \"Name\": \"Sum(Sample Retail Data (Excel-to-Tableau-Data).Gross Sales)\", \"NativeReferenceName\": \"Sum of Gross Sales\"}], \"OrderBy\": []}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}], \"labels\": [{\"properties\": {\"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"24D\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"bold\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"15D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Total Sales'\"}}}, \"italic\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}"
+        }
+      ]
+    }
+  ]
+}
