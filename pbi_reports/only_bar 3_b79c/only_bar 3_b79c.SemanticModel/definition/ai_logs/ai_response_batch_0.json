@@ -1,0 +1,9 @@
+[
+  {
+    "type": "calculated_column",
+    "table": "Orders (Sample - Superstore (1))",
+    "name": "Calculation1",
+    "dax_expression": "SWITCH('Orders (Sample - Superstore (1))'[Category], \"Furniture\", \"furniture\", \"Office Supplies\", \"office supplier\", \"Technology\", \"technology\", 'Orders (Sample - Superstore (1))'[Category])",
+    "solution_explanation": "Row-level transformation: maps specific Category values to lowercase labels; otherwise returns the original Category."
+  }
+]
