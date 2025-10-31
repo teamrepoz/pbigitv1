@@ -1,0 +1,6 @@
+Row ID,Order ID,Order Date,Ship Date,Ship Mode,Customer ID,Customer Name,Segment,Country,City,State,Postal Code,Region,Product ID,Category,Sub-Category,Product Name,Sales,Quantity,Discount,Profit
+1,SO-100001,2024-03-12,2024-03-14,Standard Class,CUST-1001,John Carter,Consumer,United States,Seattle,WA,98101,West,P-1001,Office Supplies,Paper,Copy Paper A4 500 sheets,125.5,3,5,25.0
+2,SO-100002,2024-03-22,2024-03-23,First Class,CUST-1002,Emily Rivera,Corporate,United States,New York,NY,10001,East,P-1020,Technology,Accessories,USB-C 6-in-1 Hub,199.99,1,15,32.0
+3,SO-100003,2024-04-02,2024-04-03,Standard Class,CUST-1003,Michael Chen,Consumer,United States,Chicago,IL,60601,Midwest,P-2005,Furniture,Office Chairs,Ergonomic Office Chair,350.0,1,0,80.0
+4,SO-100004,2024-05-10,2024-05-15,Second Class,CUST-1004,Patricia Gomez,Home Office,United States,Austin,TX,73301,South,P-3002,Furniture,Desks,Standing Desk,420.75,2,8,60.5
+5,SO-100005,2024-06-01,2024-06-04,Same Day,CUST-1005,David Lee,Corporate,United States,San Francisco,CA,94107,West,P-4208,Technology,Audio,Bluetooth Wireless Speaker,149.99,1,12,18.5
