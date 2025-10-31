@@ -1,0 +1,6 @@
+Row ID,Order ID,Order Date,Ship Date,Ship Mode,Customer ID,Customer Name,Segment,Country,City,State,Postal Code,Region,Product ID,Category,Sub-Category,Product Name,Sales,Quantity,Discount,Profit
+1,SO-1000001,2023-08-02,2023-08-04,Standard Class,CUST-1001,Emily Carter,Consumer,United States,Seattle,WA,98101,West,P-CH001,Furniture,Chairs,Ergo Comfort Chair,289.99,2,7.0,28.5
+2,SO-1000002,2023-06-15,2023-06-18,First Class,CUST-1002,Michael Nguyen,Corporate,United States,San Francisco,CA,94105,West,P-CH002,Furniture,Chairs,Lumina Ergonomic Chair,540.0,3,6.0,120.0
+3,SO-1000003,2023-04-22,2023-04-25,Standard Class,CUST-1003,Sophia Patel,Home Office,United States,New York,NY,10011,Northeast,P-TEC-901,Technology,Accessories,Wireless Keyboard and Mouse Combo,199.95,1,5.0,35.0
+4,SO-1000004,2023-12-02,2023-12-04,Second Class,CUST-1004,Daniel Smith,Consumer,United States,Chicago,IL,60601,Midwest,P-PP-004,Office Supplies,Paper,A4 Paper Pack 500 sheets,80.0,5,0.0,18.0
+5,SO-1000005,2023-11-12,2023-11-15,First Class,CUST-1005,Linda Garcia,Corporate,United States,Austin,TX,73301,South,P-TEC-710,Technology,Accessories,USB-C Hub 7-in-1,125.5,2,12.0,15.0
