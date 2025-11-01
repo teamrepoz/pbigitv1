@@ -1,0 +1,237 @@
+table Salesforce
+	lineageTag: a312ad91-583d-4eb6-baf8-c5a7ff865adf
+
+	column 'Account Id'
+		dataType: string
+		lineageTag: 3aaeb9c3-c53d-43ed-9ede-810f91f8a430
+		summarizeBy: none
+		sourceColumn: 'Account Id'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Account Name'
+		dataType: string
+		lineageTag: d86bd959-1db3-4d61-a905-d5249d1513cf
+		summarizeBy: none
+		sourceColumn: 'Account Name'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Account Owned By'
+		dataType: string
+		lineageTag: dee38200-e2e1-409f-8e0c-2834d643fb00
+		summarizeBy: none
+		sourceColumn: 'Account Owned By'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Account Type'
+		dataType: string
+		lineageTag: de9e1347-ccf4-40de-a997-bf49fe357813
+		summarizeBy: none
+		sourceColumn: 'Account Type'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Billing City'
+		dataType: string
+		lineageTag: b9350fbc-93a1-4510-a8cb-943364db23a0
+		summarizeBy: none
+		sourceColumn: 'Billing City'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Billing Region'
+		dataType: string
+		lineageTag: 40d5a540-0ce6-442c-86c2-3067a2cd8859
+		summarizeBy: none
+		sourceColumn: 'Billing Region'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Billing State'
+		dataType: string
+		lineageTag: 3878acf2-cd3f-4f0b-a60d-0126569cb7b7
+		summarizeBy: none
+		sourceColumn: 'Billing State'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Zip Code'
+		dataType: int64
+		formatString: 0
+		lineageTag: bdad4cf4-430b-4c38-8e23-cee03c443fbc
+		summarizeBy: sum
+		sourceColumn: 'Zip Code'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Address
+		dataType: string
+		lineageTag: ca6b1d3c-4e3e-4c6f-9591-fff573329634
+		summarizeBy: none
+		sourceColumn: Address
+
+		annotation SummarizationSetBy = Automatic
+
+	column Latitude
+		dataType: double
+		formatString: General Number
+		lineageTag: 2fe71156-9709-40d7-af48-b994dc913110
+		summarizeBy: sum
+		sourceColumn: Latitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Longitude
+		dataType: double
+		formatString: General Number
+		lineageTag: d5bf533b-b824-468f-9fef-319d937fbc90
+		summarizeBy: sum
+		sourceColumn: Longitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Close Date'
+		dataType: datetime
+		lineageTag: 39ecfffd-4937-49a8-9d64-af2080753e62
+		summarizeBy: none
+		sourceColumn: 'Close Date'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Closed
+		dataType: string
+		lineageTag: bcf4d6c9-a8b6-45ed-8bc4-4348697b5804
+		summarizeBy: none
+		sourceColumn: Closed
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Created Date'
+		dataType: int64
+		formatString: 0
+		lineageTag: 0e9783e9-c06e-4e9f-819f-8257956b4ef5
+		summarizeBy: sum
+		sourceColumn: 'Created Date'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Industry
+		dataType: string
+		lineageTag: 0abfa75c-2524-4705-b15e-755a8b4f1aad
+		summarizeBy: none
+		sourceColumn: Industry
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Opportunity ID'
+		dataType: string
+		lineageTag: eda81160-2aea-4afb-b54f-bc7a106d6c2f
+		summarizeBy: none
+		sourceColumn: 'Opportunity ID'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Opportunity Name'
+		dataType: string
+		lineageTag: 7cf628c7-4a85-4fd0-a773-a30cbb4285a5
+		summarizeBy: none
+		sourceColumn: 'Opportunity Name'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Opportunity Type'
+		dataType: string
+		lineageTag: 872e199c-5b47-40b6-8e71-aed35c0d1567
+		summarizeBy: none
+		sourceColumn: 'Opportunity Type'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Name'
+		dataType: string
+		lineageTag: 5115f9f8-cc3c-4037-b676-ace5da3c8b75
+		summarizeBy: none
+		sourceColumn: 'Product Name'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Stage
+		dataType: string
+		lineageTag: 10fa379e-7446-4c82-8b91-6dd54db6cd9a
+		summarizeBy: none
+		sourceColumn: Stage
+
+		annotation SummarizationSetBy = Automatic
+
+	column Won
+		dataType: string
+		lineageTag: 5dec037b-212f-4072-bc35-b2dfeb6a76ba
+		summarizeBy: none
+		sourceColumn: Won
+
+		annotation SummarizationSetBy = Automatic
+
+	column Amount
+		dataType: double
+		formatString: General Number
+		lineageTag: 7a6a561e-cc47-45ad-9666-563907a68f5f
+		summarizeBy: sum
+		sourceColumn: Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Discount Granted'
+		dataType: double
+		formatString: General Number
+		lineageTag: 7ba9bc8f-f528-4730-bb6b-a9772b290f90
+		summarizeBy: sum
+		sourceColumn: 'Discount Granted'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Opportunity Quantity'
+		dataType: double
+		formatString: General Number
+		lineageTag: cc5504a8-95ed-491e-921c-570751eb0586
+		summarizeBy: sum
+		sourceColumn: 'Opportunity Quantity'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Unit Price'
+		dataType: int64
+		formatString: 0
+		lineageTag: 65d231ee-8dad-47bd-8eca-7693355987ae
+		summarizeBy: sum
+		sourceColumn: 'Unit Price'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Salesforce = m
+		mode: import
+		source =
+				let
+					    Source = Csv.Document(
+					        File.Contents("https://saastestlatest.blob.core.windows.net/saas-test-reports/Salesforce.csv?se=2025-11-01T13%3A26%3A54Z&sp=r&sv=2025-11-05&sr=b&sig=x%2Bgj1HNZxlsGG2ErPo84ZZsTLiBPwmbx3aYDKIQCkf4%3D"),
+					        [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.None]
+					    ),
+					    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+					    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Account Id", type text}, {"Account Name", type text}, {"Account Owned By", type text}, {"Account Type", type text}, {"Billing City", type text}, {"Billing Region", type text}, {"Billing State", type text}, {"Zip Code", Int64.Type}, {"Address", type text}, {"Latitude", type number}, {"Longitude", type number}, {"Close Date", type date}, {"Closed", type text}, {"Created Date", Int64.Type}, {"Industry", type text}, {"Opportunity ID", type text}, {"Opportunity Name", type text}, {"Opportunity Type", type text}, {"Product Name", type text}, {"Stage", type text}, {"Won", type text}, {"Amount", type number}, {"Discount Granted", type number}, {"Opportunity Quantity", type number}, {"Unit Price", Int64.Type}})
+					in
+					    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
