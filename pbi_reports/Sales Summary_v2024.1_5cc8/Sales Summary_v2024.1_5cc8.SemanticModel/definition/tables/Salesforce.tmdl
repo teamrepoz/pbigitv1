@@ -1,0 +1,317 @@
+table Salesforce
+	lineageTag: cda777a7-7085-4b02-b0de-605eef7c527a
+
+	measure QTD = VAR currentValue = SUM('Salesforce'[Weekly Sales]) RETURN CALCULATE( SUM('Salesforce'[Weekly Sales]), FILTER( ALLSELECTED('Salesforce'), 'Salesforce'[Weekly Sales] <= currentValue ) )
+		formatString: 0
+		lineageTag: 9c02205c-8590-448d-95a7-57041dff91ed
+
+	measure 'Sales over Quota' = VAR sales = SUM('Salesforce'[Sales]) VAR quota = SUM('Quota'[Quota]) RETURN IF(sales > quota, "Above Quota", "Below Quota")
+		lineageTag: 36baa08a-44f1-4d26-bcad-df88f5287ffd
+
+	measure 'Week of the Quarter Index' = VAR current_id = SELECTEDVALUE('Salesforce'[Account Id]) RETURN IF( ISBLANK(current_id), BLANK(), RANKX( ALLSELECTED('Salesforce'[Account Id]), current_id, , ASC, DENSE ) )
+		formatString: 0
+		lineageTag: 74d44514-9ad2-4de3-a223-dca34280baaf
+
+	measure 'Customer Count' = DISTINCTCOUNT('Salesforce'[Account Id])
+		formatString: 0
+		lineageTag: 72c430dc-0e17-4e27-83f5-bdccc8853839
+
+	measure Transactions = SUMX( 'Salesforce', IF('Salesforce'[Won] = TRUE(), 1, 0) )
+		formatString: 0
+		lineageTag: 0f596b9e-f1c6-41fc-977e-65734722cb0e
+
+	measure 'Sales Quota Diff' = [Sales] - SUM('Quota'[Current Quarter Quota])
+		formatString: 0
+		lineageTag: cdb986d4-722d-4a9e-946a-96d902743380
+
+	measure 'Opportunity Type Filter' = VAR paramOpp = SELECTEDVALUE('Opportunity Type'[Display As]) RETURN IF( paramOpp = "All", 0, IF(paramOpp = 'Salesforce'[Opportunity Type], 1, BLANK()) )
+		formatString: 0
+		lineageTag: 6941995f-9369-4f09-a68f-212ca3859583
+
+	measure 'Product Name Filter' = VAR param = SELECTEDVALUE('Product Name'[Display As]) VAR prod = SELECTEDVALUE('Salesforce'[Product Name]) RETURN IF( param = "All", 0, IF(param = prod, 1) )
+		formatString: 0
+		lineageTag: 95dd786a-ad49-4975-961e-4d06e7c462fd
+
+	column 'Account Id'
+		dataType: string
+		lineageTag: b3e5f1ba-205c-43ee-ba3f-884c7324f01a
+		summarizeBy: none
+		sourceColumn: 'Account Id'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Account Name'
+		dataType: string
+		lineageTag: af16d729-ee6d-4a6a-b995-c5138a454ac6
+		summarizeBy: none
+		sourceColumn: 'Account Name'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Account Owned By'
+		dataType: string
+		lineageTag: d19b5b81-589d-44e8-9bb5-5c3862769567
+		summarizeBy: none
+		sourceColumn: 'Account Owned By'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Account Type'
+		dataType: string
+		lineageTag: a6bebdce-f757-4756-8270-f0a3fef93395
+		summarizeBy: none
+		sourceColumn: 'Account Type'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Billing City'
+		dataType: string
+		lineageTag: 0eb221d0-90c3-4216-a05f-37bf171d8151
+		summarizeBy: none
+		sourceColumn: 'Billing City'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Billing Region'
+		dataType: string
+		lineageTag: 124e235c-23fd-4043-b883-e2a5f74898f2
+		summarizeBy: none
+		sourceColumn: 'Billing Region'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Billing State'
+		dataType: string
+		lineageTag: ca6de655-776f-470c-a278-7f5954d10ba9
+		summarizeBy: none
+		sourceColumn: 'Billing State'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Zip Code'
+		dataType: int64
+		formatString: 0
+		lineageTag: 6ee2a63e-bb83-4fc6-bd5b-5d33d722c359
+		summarizeBy: sum
+		sourceColumn: 'Zip Code'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Address
+		dataType: string
+		lineageTag: 990a2329-6a12-40cb-98ef-73d7a164997d
+		summarizeBy: none
+		sourceColumn: Address
+
+		annotation SummarizationSetBy = Automatic
+
+	column Latitude
+		dataType: double
+		formatString: General Number
+		lineageTag: 9335d11a-6893-4d0c-b0ec-6989d534c488
+		summarizeBy: sum
+		sourceColumn: Latitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Longitude
+		dataType: double
+		formatString: General Number
+		lineageTag: 105f8794-3f1f-4219-aee3-d35ae85aaf17
+		summarizeBy: sum
+		sourceColumn: Longitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Close Date'
+		dataType: datetime
+		lineageTag: fdc693a5-6f9e-45c3-8037-34221ccea215
+		summarizeBy: none
+		sourceColumn: 'Close Date'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Closed
+		dataType: string
+		lineageTag: c79eca51-54bd-40a3-a44b-a9f250985ccd
+		summarizeBy: none
+		sourceColumn: Closed
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Created Date'
+		dataType: int64
+		formatString: 0
+		lineageTag: 57e59f28-343e-400d-8f2c-c83de15f6f46
+		summarizeBy: sum
+		sourceColumn: 'Created Date'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Industry
+		dataType: string
+		lineageTag: 94c5b3be-c175-4e6f-9fe3-11e09c93b5be
+		summarizeBy: none
+		sourceColumn: Industry
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Opportunity ID'
+		dataType: string
+		lineageTag: dbd60959-9d51-4c9c-ab13-40c071c4eee8
+		summarizeBy: none
+		sourceColumn: 'Opportunity ID'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Opportunity Name'
+		dataType: string
+		lineageTag: d13237f1-a826-4a05-9ba6-a2a2506acf5a
+		summarizeBy: none
+		sourceColumn: 'Opportunity Name'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Opportunity Type'
+		dataType: string
+		lineageTag: 441ae3f9-3bea-4e00-9345-8bda4da07f92
+		summarizeBy: none
+		sourceColumn: 'Opportunity Type'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Name'
+		dataType: string
+		lineageTag: 3106822c-2158-47a5-b77e-344ac6c0daab
+		summarizeBy: none
+		sourceColumn: 'Product Name'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Stage
+		dataType: string
+		lineageTag: 97ed1dc9-e2ca-47b1-ad07-71892b8c7e36
+		summarizeBy: none
+		sourceColumn: Stage
+
+		annotation SummarizationSetBy = Automatic
+
+	column Won
+		dataType: string
+		lineageTag: 7ae21bdf-759a-4692-a007-f585067461b1
+		summarizeBy: none
+		sourceColumn: Won
+
+		annotation SummarizationSetBy = Automatic
+
+	column Amount
+		dataType: double
+		formatString: General Number
+		lineageTag: 03a5d33d-3b2a-4b90-b082-1f433ca66883
+		summarizeBy: sum
+		sourceColumn: Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Discount Granted'
+		dataType: double
+		formatString: General Number
+		lineageTag: 45160f6b-d3df-4108-a9f5-b60a8affb552
+		summarizeBy: sum
+		sourceColumn: 'Discount Granted'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Opportunity Quantity'
+		dataType: double
+		formatString: General Number
+		lineageTag: 3cde0d5b-fec2-4a54-ad3f-be37e64c4f86
+		summarizeBy: sum
+		sourceColumn: 'Opportunity Quantity'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Unit Price'
+		dataType: int64
+		formatString: 0
+		lineageTag: 41790c33-e7f8-4b2f-98ff-170f472a0825
+		summarizeBy: sum
+		sourceColumn: 'Unit Price'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Today = DATE(2015, 5, 30)
+		lineageTag: ee79add4-4428-4981-a40d-c835bfdcf533
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Days Left before EOQ' = VAR todayDate = 'Salesforce'[Today] VAR endOfQuarter = EOMONTH( DATE(YEAR(todayDate), QUARTER(todayDate) * 3, 1), 0 ) RETURN DATEDIFF(todayDate, endOfQuarter, DAY)
+		formatString: 0
+		lineageTag: eff203a3-e9b0-4217-9872-d2e5c670e87b
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Hide Dates' = 'Salesforce'[Close Date] <= [Today]
+		lineageTag: 0888230a-1cc2-45d7-a846-b1b329103119
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Current Quarter?' = QUARTER('Salesforce'[Close Date]) = QUARTER(DATE(2015, 5, 31)) && YEAR('Salesforce'[Close Date]) = YEAR(DATE(2015, 5, 31))
+		lineageTag: 2fd9e0b3-f046-4d9a-bcdf-870a19c343ab
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Software Sold' = IF('Salesforce'[Opportunity Type] = "Software", 'Salesforce'[Opportunity Quantity], 0)
+		lineageTag: e6c0ac0b-c3a8-4ca7-bc06-6dfe25a7242d
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Sales = IF('Salesforce'[Won] = TRUE(), COALESCE('Salesforce'[Amount], 0), 0)
+		lineageTag: f9aef932-849f-4ccd-8b32-85e7c47d46e8
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Weekly Sales' = IF( 'Salesforce'[Won] = TRUE(), COALESCE('Salesforce'[Amount], 0), 0 )
+		lineageTag: 8cfb22a6-db7c-4915-b757-75e019dd1603
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Salesforce = m
+		mode: import
+		source =
+				let
+					    Source = Csv.Document(
+					        File.Contents("https://saastestlatest.blob.core.windows.net/saas-test-reports/Salesforce.csv?se=2025-11-01T08%3A15%3A51Z&sp=r&sv=2025-11-05&sr=b&sig=IFq2yvXq80pzDWCW7OQlCZ2MX0i9cKJpVX1BOVry9KI%3D"),
+					        [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.None]
+					    ),
+					    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+					    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Account Id", type text}, {"Account Name", type text}, {"Account Owned By", type text}, {"Account Type", type text}, {"Billing City", type text}, {"Billing Region", type text}, {"Billing State", type text}, {"Zip Code", Int64.Type}, {"Address", type text}, {"Latitude", type number}, {"Longitude", type number}, {"Close Date", type date}, {"Closed", type text}, {"Created Date", Int64.Type}, {"Industry", type text}, {"Opportunity ID", type text}, {"Opportunity Name", type text}, {"Opportunity Type", type text}, {"Product Name", type text}, {"Stage", type text}, {"Won", type text}, {"Amount", type number}, {"Discount Granted", type number}, {"Opportunity Quantity", type number}, {"Unit Price", Int64.Type}})
+					in
+					    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
