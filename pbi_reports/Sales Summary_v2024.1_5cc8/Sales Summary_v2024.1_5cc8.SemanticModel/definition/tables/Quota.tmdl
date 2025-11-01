@@ -1,0 +1,79 @@
+table Quota
+	lineageTag: 046e3ef0-9b2e-46ce-b3d3-d301809a9147
+
+	measure 'Current Quarter Quota' = VAR todayDate = SELECTEDVALUE('Salesforce'[Today]) VAR currQtr = QUARTER(todayDate) VAR currYear = YEAR(todayDate) VAR paramOpp = SELECTEDVALUE('Opportunity Type'[Display As]) VAR paramProd = SELECTEDVALUE('Product Name'[Display As]) RETURN SUMX( 'Quota', IF( QUARTER('Quota'[Close Date]) = currQtr && YEAR('Quota'[Close Date]) = currYear && ( (paramOpp = 'Quota'[Opportunity Type] || paramOpp = "All") && (paramProd = 'Quota'[Product Name] || paramProd = "All") ), 'Quota'[Quota], 0 ) )
+		formatString: 0
+		lineageTag: 94400d1c-f50a-4932-ad00-18fbf5470e72
+
+	measure 'Current Quarter Quota New' = 'Quota'[Current Quarter Quota] / 1.8
+		formatString: 0
+		lineageTag: 81844211-0b95-47cb-856b-4d48cc1ead65
+
+	measure Today = DATE(2015, 5, 30)
+		lineageTag: bff8880d-7799-4d77-b4e2-48146af471fc
+
+	column 'Close Date'
+		dataType: datetime
+		lineageTag: 6aa91efb-711e-4aff-a249-5b27769e486f
+		summarizeBy: none
+		sourceColumn: 'Close Date'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Account Owned By'
+		dataType: string
+		lineageTag: f7a82937-b37c-4c9e-a2a6-b93cbc4a8dab
+		summarizeBy: none
+		sourceColumn: 'Account Owned By'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Name'
+		dataType: string
+		lineageTag: 7119e635-23f0-4a56-b4b6-5f8fdd65e9e7
+		summarizeBy: none
+		sourceColumn: 'Product Name'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Opportunity Type'
+		dataType: string
+		lineageTag: 791d8f1c-6313-49c1-935e-33704c42f688
+		summarizeBy: none
+		sourceColumn: 'Opportunity Type'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quota
+		dataType: double
+		formatString: General Number
+		lineageTag: 6e492383-16e1-4e29-8b9a-eba4130fb9f0
+		summarizeBy: sum
+		sourceColumn: Quota
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Learn More' = "Click here to learn more about Tableau for Sales Analytics"
+		lineageTag: f398c4b2-68a7-4897-9adf-57d2b1a5f131
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Quota = m
+		mode: import
+		source =
+				let
+					    Source = Csv.Document(
+					        File.Contents("https://saastestlatest.blob.core.windows.net/saas-test-reports/Quota.csv?se=2025-11-01T08%3A15%3A27Z&sp=r&sv=2025-11-05&sr=b&sig=k3pcy4KDoFHkiE0nVZguo7Y2i1JX28oGmmO9xPSR1HI%3D"),
+					        [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.None]
+					    ),
+					    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+					    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Close Date", type date}, {"Account Owned By", type text}, {"Product Name", type text}, {"Opportunity Type", type text}, {"Quota", type number}})
+					in
+					    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
