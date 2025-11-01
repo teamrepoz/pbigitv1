@@ -1,6 +1,0 @@
-Row ID,Order ID,Order Date,Ship Date,Ship Mode,Customer ID,Customer Name,Segment,Country,City,State,Postal Code,Region,Product ID,Category,Sub-Category,Product Name,Sales,Quantity,Discount,Profit
-1,ORD-2024-0001,2024-08-15,2024-08-18,Standard Class,CUST-1001,John Doe,Consumer,United States,Seattle,WA,98101,West,P-2410,Technology,Accessories,Wireless Keyboard and Mouse Combo,289.75,2,5.0,120.5
-2,ORD-2024-0002,2024-09-02,2024-09-03,First Class,CUST-1002,Jane Smith,Corporate,United States,New York,NY,10001,East,P-2425,Office Supplies,Paper,Legal Paper Reams 500 Sheets,420.0,3,7.0,70.5
-3,ORD-2024-0003,2024-07-21,2024-07-23,Standard Class,CUST-1003,Michael Brown,Home Office,United States,Chicago,IL,60601,Central,P-1284,Furniture,Chairs,Ergonomic Office Chair,229.99,1,10.0,30.5
-4,ORD-2024-0004,2024-11-10,2024-11-11,First Class,CUST-1004,Emily Clark,Consumer,United States,San Francisco,CA,94105,West,P-3505,Technology,Phones,Smartphone X100,899.99,1,12.0,350.0
-5,ORD-2024-0005,2024-03-05,2024-03-10,Standard Class,CUST-1005,David Wilson,Corporate,United States,Atlanta,GA,30303,South,P-5402,Furniture,Storage,Laminate File Cabinet 4 Drawer,320.5,2,4.0,80.0

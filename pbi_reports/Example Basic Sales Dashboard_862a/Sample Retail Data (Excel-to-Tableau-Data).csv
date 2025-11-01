@@ -1,6 +1,0 @@
-Date,Time,Category,Item,Qty,Price Point Name,SKU,Gross Sales,Discounts,Customer ID,Cost,Margin,Gender,Age,State
-2024-08-15,13:24:07,Electronics,Wireless Headphones X200,2,Mid-Range,540102,199.98,20.0,CUST-845120,110.0,69.98,Female,25-34,CA
-2024-08-16,09:15:42,Home & Kitchen,Stainless Steel Cookware Set (10pc),1,Premium,612304,349.99,25.0,CUST-934210,180.0,144.99,Male,35-44,TX
-2024-09-02,18:05:11,Fashion,Men's Leather Belt,3,Budget,221488,74.97,5.0,CUST-721890,28.0,41.97,Male,25-34,NY
-2024-10-30,11:40:20,Grocery,Organic Almonds 1lb,2,Mid-Range,991203,24.98,0.99,CUST-556233,8.0,15.99,Female,45-54,CA
-2024-12-12,20:10:05,Health & Beauty,Vitamin C Serum 30ml,1,Premium,780512,29.99,5.0,CUST-482710,12.0,12.99,Female,18-24,FL

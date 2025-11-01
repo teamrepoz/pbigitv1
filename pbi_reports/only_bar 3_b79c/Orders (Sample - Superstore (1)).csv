@@ -1,6 +1,0 @@
-Row ID,Order ID,Order Date,Ship Date,Ship Mode,Customer ID,Customer Name,Segment,Country,City,State,Postal Code,Region,Product ID,Category,Sub-Category,Product Name,Sales,Quantity,Discount,Profit
-1,US-2024-0001,2024-08-15,2024-08-20,Standard Class,CUST-1001,Michael Chen,Consumer,United States,Seattle,WA,98101,West,P-10001,Furniture,Chairs,Proline Ergonomic Chair,349.99,1,0.05,66.5
-2,US-2024-0002,2024-09-02,2024-09-05,Standard Class,CUST-1002,Sofia Ramirez,Corporate,United States,Chicago,IL,60601,Central,P-10002,Office Supplies,Binders,"UltraBind A4 Binders, 3-ring",120.5,3,0.1,18.15
-3,US-2024-0003,2024-07-11,2024-07-17,First Class,CUST-1003,David Lee,Home Office,United States,San Francisco,CA,94105,West,P-10003,Technology,Phones,XPhone 12 Pro,899.99,2,0.12,140.0
-4,US-2024-0004,2024-10-01,2024-10-03,Standard Class,CUST-1004,Emily Carter,Consumer,United States,New York,NY,10001,East,P-10004,Furniture,Tables,Stellar Console Table,260.0,2,0.15,23.5
-5,US-2024-0005,2024-05-19,2024-05-22,Standard Class,CUST-1005,Raj Patel,Corporate,United States,Atlanta,GA,30301,South,P-10005,Technology,Accessories,Smart Keyboard Pro,59.99,4,0.0,3.99
