@@ -1,0 +1,68 @@
+{
+  "calculations": [
+    {
+      "table_name": "Salesforce",
+      "name": "Hide Dates",
+      "formula": "[Close Date]<=[Today]",
+      "col_to_table_map": {},
+      "col_to_datatype": {
+        "Close Date": "date"
+      },
+      "measures": {}
+    },
+    {
+      "table_name": "Salesforce",
+      "name": "Product Name Filter",
+      "formula": "if [Parameters].[Product Name]=\"All\" then 0 elseif [Parameters].[Product Name]= [Product Name]then 1 end",
+      "col_to_table_map": {},
+      "col_to_datatype": {
+        "Product Name": "string"
+      },
+      "measures": {}
+    },
+    {
+      "table_name": "Salesforce",
+      "name": "Current Quarter?",
+      "formula": "datepart(\"quarter\",[Close Date])=datepart(\"quarter\", Date(\"5/31/2015\")) and datepart(\"year\",[Close Date])=datepart(\"year\", Date(\"5/31/2015\"))",
+      "col_to_table_map": {},
+      "col_to_datatype": {
+        "Close Date": "date"
+      },
+      "measures": {}
+    },
+    {
+      "table_name": "Quota",
+      "name": "Learn More",
+      "formula": "\"Click here to learn more about Tableau for Sales Analytics\"",
+      "col_to_table_map": {},
+      "col_to_datatype": {},
+      "measures": {
+        "Sales": "real"
+      }
+    },
+    {
+      "table_name": "Quota",
+      "name": "Today",
+      "formula": "Date(\"5/30/2015\")\r\n// We fixed today on 5/31/2015 in this sample since this is a static data set. In real time data, you can use today() instead.",
+      "col_to_table_map": {},
+      "col_to_datatype": {},
+      "measures": {}
+    }
+  ]
+}\", 1, DATETRUNC(\"quarter\",[Today]))))",
+      "col_to_table_map": {},
+      "col_to_datatype": {},
+      "measures": {}
+    },
+    {
+      "table_name": "Salesforce",
+      "name": "Opportunity Type Filter",
+      "formula": "if [Parameters].[Opportunity Type]=\"All\" then 0 elseif [Parameters].[Opportunity Type]= [Opportunity Type]then 1 end",
+      "col_to_table_map": {},
+      "col_to_datatype": {
+        "Opportunity Type": "string"
+      },
+      "measures": {}
+    }
+  ]
+}
