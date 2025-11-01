@@ -1,0 +1,46 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Parameters",
+      "name": "Select date",
+      "dax_expression": "Select date = DATE(2022, 11, 17)",
+      "solution_explanation": "Converted Tableau date literal #2022-11-17# to a DAX scalar date using DATE(2022,11,17). Created as a measure to return a single constant value."
+    },
+    {
+      "type": "measure",
+      "table": "Parameters",
+      "name": "Select Period",
+      "dax_expression": "Select Period = 1",
+      "solution_explanation": "Converted Tableau numeric literal 1 to a DAX scalar measure returning 1."
+    },
+    {
+      "type": "measure",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Previous year",
+      "dax_expression": "Previous year =\nVAR paramDate = SELECTEDVALUE('Select date'[Display As])\nVAR cutoffDate =\n    IF(\n        NOT(ISBLANK(paramDate)),\n        DATE(YEAR(paramDate) - 1, MONTH(paramDate), DAY(paramDate)),\n        BLANK()\n    )\nVAR lowerBound =\n    IF(\n        NOT(ISBLANK(paramDate)),\n        IF(\n            MONTH(paramDate) <= 3,\n            DATE(YEAR(paramDate) - 2, 4, 1),\n            BLANK()\n        ),\n        BLANK()\n    )\nRETURN\nIF(\n    NOT(ISBLANK(paramDate)) && NOT(ISBLANK(lowerBound)),\n    CALCULATE(\n        SUM('Orders+ (Sample - Superstore)'[Sales]),\n        'Orders+ (Sample - Superstore)'[Order Date] <= cutoffDate,\n        'Orders+ (Sample - Superstore)'[Order Date] >= lowerBound\n    ),\n    BLANK()\n)",
+      "solution_explanation": "Replaced Tableau parameter references with SELECTEDVALUE('Select date'[Display As]). DATEADD(year,-1, param) is translated to DATE(YEAR(param)-1, MONTH(param), DAY(param)) since DAX DATEADD requires a date column. The inner IF builds the lower bound date as in Tableau. Implemented as a measure that sums Sales over the filtered date range."
+    },
+    {
+      "type": "measure",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Current year",
+      "dax_expression": "Current year =\nVAR flag = 'Orders+ (Sample - Superstore)'[Dynamic Measure values with YTD/MTD/QTD]\nRETURN IF(flag, SUM('Orders+ (Sample - Superstore)'[Sales]))",
+      "solution_explanation": "Translated the Tableau IF returning [Sales] to a DAX measure that returns SUM(Sales) when the provided boolean flag is TRUE; otherwise returns BLANK."
+    },
+    {
+      "type": "measure",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Dynamic years",
+      "dax_expression": "Dynamic years = SELECTEDVALUE('Select date'[Display As])",
+      "solution_explanation": "Directly maps Tableau [Parameters].[Select date] to DAX SELECTEDVALUE('Select date'[Display As]) as required for parameter references."
+    },
+    {
+      "type": "measure",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Calculation1",
+      "dax_expression": "Calculation1 =\nVAR hasCY = NOT(ISBLANK('Orders+ (Sample - Superstore)'[Current year]))\nVAR hasPY = NOT(ISBLANK('Orders+ (Sample - Superstore)'[Previous year]))\nRETURN hasCY || hasPY",
+      "solution_explanation": "Tableau NOT(ISNULL(SUM([Current year]))) OR NOT(ISNULL(SUM([Previous year]))) becomes NOT(ISBLANK([Current year])) OR NOT(ISBLANK([Previous year])) in DAX since both are measures."
+    }
+  ]
+}
