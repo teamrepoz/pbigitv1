@@ -1,0 +1,199 @@
+table 'Orders (Sample - Superstore (1))'
+	lineageTag: 08e08d1a-a384-40ac-83f2-d74dfffb3cc8
+
+	column 'Row ID'
+		dataType: int64
+		formatString: 0
+		lineageTag: e2944cfb-4155-4a9d-af9d-fb59882a0b69
+		summarizeBy: sum
+		sourceColumn: 'Row ID'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order ID'
+		dataType: string
+		lineageTag: b374c4d4-483a-480c-8153-e72b9591aa40
+		summarizeBy: none
+		sourceColumn: 'Order ID'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Date'
+		dataType: datetime
+		lineageTag: dc50c222-3b31-46b3-92b0-0ddbae91c59e
+		summarizeBy: none
+		sourceColumn: 'Order Date'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ship Date'
+		dataType: datetime
+		lineageTag: 878755c4-119c-419f-9f8b-849c64a3433b
+		summarizeBy: none
+		sourceColumn: 'Ship Date'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ship Mode'
+		dataType: string
+		lineageTag: b90331f5-01b1-47fc-96b0-7506016b7774
+		summarizeBy: none
+		sourceColumn: 'Ship Mode'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer ID'
+		dataType: string
+		lineageTag: 2c7a345e-91c9-4f46-8f41-a60bee039a03
+		summarizeBy: none
+		sourceColumn: 'Customer ID'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Name'
+		dataType: string
+		lineageTag: e53acd0a-5732-4ec6-b610-ed02cd9bfbde
+		summarizeBy: none
+		sourceColumn: 'Customer Name'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Segment
+		dataType: string
+		lineageTag: 54cd72a7-b449-48c6-8e1f-c64d5d64fa1e
+		summarizeBy: none
+		sourceColumn: Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: b46f66a8-d103-4c26-bec2-a0b96fe5d414
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: 94b21d0e-432a-4496-9d5e-19a4cb0c4e98
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column State
+		dataType: string
+		lineageTag: 2e6d9027-2f6d-446c-8b6d-a290fb9f7621
+		summarizeBy: none
+		sourceColumn: State
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Postal Code'
+		dataType: int64
+		formatString: 0
+		lineageTag: 5eca855f-f8d5-4119-93b1-25042eca6270
+		summarizeBy: sum
+		sourceColumn: 'Postal Code'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		lineageTag: 33a8ea2f-4ceb-4328-ad25-67f4a9fa2263
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product ID'
+		dataType: string
+		lineageTag: f54c1213-71ec-40b3-9ccf-162ee7ac46c4
+		summarizeBy: none
+		sourceColumn: 'Product ID'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		lineageTag: 6faafbda-69fa-4086-807a-07e3854d6e8e
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sub-Category'
+		dataType: string
+		lineageTag: f3690018-add6-40da-aea7-49b0db351aa2
+		summarizeBy: none
+		sourceColumn: 'Sub-Category'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Name'
+		dataType: string
+		lineageTag: 92369103-99f3-4a18-bba0-e49e939f7b75
+		summarizeBy: none
+		sourceColumn: 'Product Name'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sales
+		dataType: double
+		formatString: General Number
+		lineageTag: 31c556ee-2364-429d-9a15-a93d8c60d3a5
+		summarizeBy: sum
+		sourceColumn: Sales
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Quantity
+		dataType: int64
+		formatString: 0
+		lineageTag: 8ad52379-d39f-4eea-933a-af68bfa7d7b5
+		summarizeBy: sum
+		sourceColumn: Quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column Discount
+		dataType: double
+		formatString: General Number
+		lineageTag: 602024c5-c87a-40d8-8d2b-194ba415fd5c
+		summarizeBy: sum
+		sourceColumn: Discount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Profit
+		dataType: double
+		formatString: General Number
+		lineageTag: ee609f24-1c83-4cab-bb47-f4eee1916ae7
+		summarizeBy: sum
+		sourceColumn: Profit
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Orders (Sample - Superstore (1))' = m
+		mode: import
+		source =
+				let
+					    Source = Csv.Document(
+					        File.Contents("/"),
+					        [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.None]
+					    ),
+					    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+					    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Row ID", Int64.Type}, {"Order ID", type text}, {"Order Date", type date}, {"Ship Date", type date}, {"Ship Mode", type text}, {"Customer ID", type text}, {"Customer Name", type text}, {"Segment", type text}, {"Country", type text}, {"City", type text}, {"State", type text}, {"Postal Code", Int64.Type}, {"Region", type text}, {"Product ID", type text}, {"Category", type text}, {"Sub-Category", type text}, {"Product Name", type text}, {"Sales", type number}, {"Quantity", Int64.Type}, {"Discount", type number}, {"Profit", type number}})
+					in
+					    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
