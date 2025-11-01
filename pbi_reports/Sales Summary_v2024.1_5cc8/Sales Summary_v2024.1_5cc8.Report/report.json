@@ -1,0 +1,69 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.63\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "name": "Section_Sales Summary",
+      "ordinal": 0,
+      "displayName": "Sales Summary",
+      "visualContainers": [
+        {
+          "x": 124.79,
+          "y": 179.02,
+          "z": 0,
+          "width": 420.7,
+          "height": 813.17,
+          "config": "{\"name\": \"a4a32c4764653e50488b\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 96.0, \"y\": 24.0, \"z\": 1000, \"width\": 640.0, \"height\": 420.0, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"lineChart\", \"projections\": {\"Category\": [{\"queryRef\": \"Salesforce.Sales\", \"active\": true}], \"Y\": [{\"queryRef\": \"Sum(Salesforce.Week of the Quarter Index)\"}], \"Series\": [{\"queryRef\": \"Salesforce.Close Date\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"S\", \"Entity\": \"Salesforce\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}, \"Property\": \"Sales\"}, \"Name\": \"Salesforce.Sales\", \"NativeReferenceName\": \"Sales\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}, \"Property\": \"Week of the Quarter Index\"}}, \"Function\": 0}, \"Name\": \"Sum(Salesforce.Week of the Quarter Index)\", \"NativeReferenceName\": \"Sum of Week of the Quarter Index\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}, \"Property\": \"Close Date\"}, \"Name\": \"Salesforce.Close Date\", \"NativeReferenceName\": \"Close Date\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Aggregation\": {\"Expression\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}, \"Property\": \"Week of the Quarter Index\"}}, \"Function\": 0}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'8D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"titleBold\": {\"expr\": {\"Literal\": {\"Value\": \"normal\"}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"12D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Accumulated Sales by Week of the Quarter'\"}}}}}]}}}"
+        },
+        {
+          "x": null,
+          "y": 6.00032,
+          "z": 0,
+          "width": null,
+          "height": 58.9968,
+          "config": "{\"name\": \"7b340baa4ec5591ef90e\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": null, \"y\": 6.00032, \"width\": null, \"height\": 58.9968}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"Salesforce.Days Left before EOQ\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"S\", \"Entity\": \"Salesforce\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}, \"Property\": \"Days Left before EOQ\"}, \"Name\": \"Salesforce.Days Left before EOQ\", \"NativeReferenceName\": \"Days Left before EOQ\"}], \"OrderBy\": []}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryLabels\": [], \"labels\": []}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"8D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Days Left to EoQ'\"}}}, \"italic\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}"
+        },
+        {
+          "x": 868.34,
+          "y": 7.81,
+          "z": 0,
+          "width": 124.63,
+          "height": 71.29,
+          "config": "{\"name\": \"f5395c9793af8a11b406\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 0, \"y\": 0, \"z\": 1000, \"width\": 300, \"height\": 120, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"Quota.Learn More\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"Q\", \"Entity\": \"Quota\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"Q\"}}, \"Property\": \"Learn More\"}, \"Name\": \"Quota.Learn More\", \"NativeReferenceName\": \"Learn More\"}], \"OrderBy\": []}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}], \"labels\": [{\"properties\": {\"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"bold\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"15D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"''\"}}}, \"italic\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}"
+        },
+        {
+          "x": 145.86,
+          "y": 86.92,
+          "z": 0,
+          "width": 847.08,
+          "height": 52.72,
+          "config": "{\"name\": \"59a08d92c7b0c123b68c\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 0, \"y\": 0, \"z\": 0, \"width\": 600, \"height\": 600, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"projections\": {\"Values\": [{\"queryRef\": \"Salesforce.Close Date.Variation.Date Hierarchy.Year\"}, {\"queryRef\": \"Salesforce.:Measure Names\"}, {\"queryRef\": \"Salesforce.Multiple Values\"}, {\"queryRef\": \"Salesforce.Days Left before EOQ\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"S\", \"Entity\": \"Salesforce\", \"Type\": 0}], \"Select\": [{\"HierarchyLevel\": {\"Expression\": {\"Hierarchy\": {\"Expression\": {\"PropertyVariationSource\": {\"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}, \"Name\": \"Variation\", \"Property\": \"Close Date\"}}, \"Hierarchy\": \"Date Hierarchy\"}}, \"Level\": \"Year\"}, \"Name\": \"Salesforce.Close Date.Variation.Date Hierarchy.Year\", \"NativeReferenceName\": \"Close Date Year\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}, \"Property\": \":Measure Names\"}, \"Name\": \"Salesforce.:Measure Names\", \"NativeReferenceName\": \":Measure Names\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}, \"Property\": \"Multiple Values\"}, \"Name\": \"Salesforce.Multiple Values\", \"NativeReferenceName\": \"Multiple Values\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}, \"Property\": \"Days Left before EOQ\"}, \"Name\": \"Salesforce.Days Left before EOQ\", \"NativeReferenceName\": \"Days Left before EOQ\"}], \"OrderBy\": []}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#555555'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"15D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'QTD Sales vs Quota'\"}}}}}]}}}"
+        },
+        {
+          "x": null,
+          "y": 143.9968,
+          "z": 0,
+          "width": null,
+          "height": 400.0032,
+          "config": "{\"name\": \"ef204be74036bc2e9c20\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 0, \"y\": 143.9968, \"z\": 1000, \"width\": 0, \"height\": 400.0032, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"clusteredColumnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"Salesforce.Close Date.Variation.Date Hierarchy.Year\", \"active\": true}, {\"queryRef\": \"Salesforce.Close Date.Variation.Date Hierarchy.Quarter\", \"active\": true}], \"Y\": [{\"queryRef\": \"Sum(Salesforce.Sales)\"}], \"Series\": [{\"queryRef\": \"Salesforce.Close Date\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"S\", \"Entity\": \"Salesforce\", \"Type\": 0}], \"Select\": [{\"HierarchyLevel\": {\"Expression\": {\"Hierarchy\": {\"Expression\": {\"PropertyVariationSource\": {\"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}, \"Name\": \"Variation\", \"Property\": \"Close Date\"}}, \"Hierarchy\": \"Date Hierarchy\"}}, \"Level\": \"Year\"}, \"Name\": \"Salesforce.Close Date.Variation.Date Hierarchy.Year\", \"NativeReferenceName\": \"Close Date Year\"}, {\"HierarchyLevel\": {\"Expression\": {\"Hierarchy\": {\"Expression\": {\"PropertyVariationSource\": {\"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}, \"Name\": \"Variation\", \"Property\": \"Close Date\"}}, \"Hierarchy\": \"Date Hierarchy\"}}, \"Level\": \"Quarter\"}, \"Name\": \"Salesforce.Close Date.Variation.Date Hierarchy.Quarter\", \"NativeReferenceName\": \"Close Date Quarter\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}, \"Property\": \"Sales\"}}, \"Function\": 0}, \"Name\": \"Sum(Salesforce.Sales)\", \"NativeReferenceName\": \"Sum of Sales\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}, \"Property\": \"Close Date\"}, \"Name\": \"Salesforce.Close Date\", \"NativeReferenceName\": \"Close Date\"}], \"OrderBy\": []}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"8D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"8D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"12D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Sales Trend by Quarter'\"}}}}}]}}}"
+        }
+      ]
+    }
+  ]
+}
