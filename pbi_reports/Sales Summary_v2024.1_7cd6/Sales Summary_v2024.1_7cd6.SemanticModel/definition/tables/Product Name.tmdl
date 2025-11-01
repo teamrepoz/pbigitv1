@@ -1,0 +1,47 @@
+table 'Product Name'
+	lineageTag: b3c97d72-41f4-41f2-bade-e51dec75a702
+
+	column Index
+		formatString: 0
+		lineageTag: b1801679-9a35-4c94-8078-32b2ac392214
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 2b623acf-b2bc-44c2-80fd-d2cffad41a48
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: f16a0b7d-1292-4f2c-9435-5aeb28c25c90
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Product Name' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "All", "All" },
+				{ 1, "MOL Standard", "MOL Standard" },
+				{ 2, "MOL Premium", "MOL Premium" },
+				{ 3, "MOL Mobile", "MOL Mobile" }
+			    }
+			)
+
+	annotation PBI_Id = c68abcd3e27b4e458a2386df466b9bb9
+
