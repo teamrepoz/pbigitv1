@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Bar Chart Menu 1_46f0"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "896a469e-8a7a-4e2f-ab5e-2c1bf1e3a8ff"
+  }
+}
