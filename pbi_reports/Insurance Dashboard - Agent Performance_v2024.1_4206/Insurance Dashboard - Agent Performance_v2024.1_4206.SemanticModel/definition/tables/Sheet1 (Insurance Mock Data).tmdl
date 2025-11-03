@@ -1,0 +1,168 @@
+table 'Sheet1 (Insurance Mock Data)'
+	lineageTag: 55f141ea-4db8-47cf-ba89-ed6aa7466623
+
+	measure 'Loss Ratio' = SUM('Sheet1 (Insurance Mock Data)'[Loss Amount]) / SUM('Sheet1 (Insurance Mock Data)'[Inforce Premiums])
+		formatString: 0
+		lineageTag: 2a49a793-0800-4318-a68a-fa2127b0d2a3
+
+	measure 'Decline Ratio' = SUM('Sheet1 (Insurance Mock Data)'[Declines]) / SUM('Sheet1 (Insurance Mock Data)'[Submissions])
+		formatString: 0
+		lineageTag: 176ffcd2-f8e9-4c74-ba62-f168ebf68409
+
+	measure 'Hit Ratio' = SUM('Sheet1 (Insurance Mock Data)'[Issued]) / SUM('Sheet1 (Insurance Mock Data)'[Submissions])
+		formatString: 0
+		lineageTag: 144ceed0-e848-43ea-b2b8-d9b0fbedbd4d
+
+	measure 'Efficiency Ratio' = SUM('Sheet1 (Insurance Mock Data)'[Quoted]) / SUM('Sheet1 (Insurance Mock Data)'[Submissions])
+		formatString: 0
+		lineageTag: 861dbd1a-ee77-42dc-a697-f2e2f93aee45
+
+	measure Constant = 1
+		lineageTag: 7ab706d7-44a5-468c-9aba-e3d9d472ed5a
+
+	column 'Data Source'
+		dataType: string
+		lineageTag: d3446826-2cee-4c04-8ec6-a617d57f5e02
+		summarizeBy: none
+		sourceColumn: 'Data Source'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Agent
+		dataType: string
+		lineageTag: f3652ced-88ae-40db-9911-4f2c66177c9c
+		summarizeBy: none
+		sourceColumn: Agent
+
+		annotation SummarizationSetBy = Automatic
+
+	column Agency
+		dataType: string
+		lineageTag: 3577334c-f8b6-4bd8-a9fd-fdd5477f8023
+		summarizeBy: none
+		sourceColumn: Agency
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Inforce Premiums'
+		dataType: int64
+		formatString: 0
+		lineageTag: 9c685956-2075-44ea-aab7-17c85565b633
+		summarizeBy: sum
+		sourceColumn: 'Inforce Premiums'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'New Business Premiums'
+		dataType: int64
+		formatString: 0
+		lineageTag: f468889e-cdd6-4631-bfec-aac1e5dd535a
+		summarizeBy: sum
+		sourceColumn: 'New Business Premiums'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Earned Premium'
+		dataType: int64
+		formatString: 0
+		lineageTag: 546a6c21-4134-47f4-a551-cd89c135ab24
+		summarizeBy: sum
+		sourceColumn: 'Earned Premium'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Number of Policies'
+		dataType: int64
+		formatString: 0
+		lineageTag: e19fcf92-c646-4c79-9e20-32f3960eb535
+		summarizeBy: sum
+		sourceColumn: 'Number of Policies'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Number of Open Claims'
+		dataType: int64
+		formatString: 0
+		lineageTag: 844b7b66-7abd-4ecb-a615-07d0df2f4ee1
+		summarizeBy: sum
+		sourceColumn: 'Number of Open Claims'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Loss Amount'
+		dataType: int64
+		formatString: 0
+		lineageTag: e54a9ca3-35cd-4542-bac5-dfdc15f3038d
+		summarizeBy: sum
+		sourceColumn: 'Loss Amount'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Submissions
+		dataType: int64
+		formatString: 0
+		lineageTag: 2c43dd5a-df3d-4e55-a458-5e727dea9529
+		summarizeBy: sum
+		sourceColumn: Submissions
+
+		annotation SummarizationSetBy = Automatic
+
+	column Declines
+		dataType: int64
+		formatString: 0
+		lineageTag: 2b882851-f892-4314-9dac-f1e60dbb8304
+		summarizeBy: sum
+		sourceColumn: Declines
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quoted
+		dataType: int64
+		formatString: 0
+		lineageTag: 18e20d99-d58e-4d15-9e5b-af5719010bbd
+		summarizeBy: sum
+		sourceColumn: Quoted
+
+		annotation SummarizationSetBy = Automatic
+
+	column Issued
+		dataType: int64
+		formatString: 0
+		lineageTag: 1de101b2-b88f-4ea0-ad8a-9050c23ad2de
+		summarizeBy: sum
+		sourceColumn: Issued
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: datetime
+		lineageTag: ffe87228-f3bb-4468-952e-6bf178fa6a9c
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Insured Name'
+		dataType: string
+		lineageTag: 475d42a3-ced8-4782-8273-cfbb3e1688cf
+		summarizeBy: none
+		sourceColumn: 'Insured Name'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Sheet1 (Insurance Mock Data)' = m
+		mode: import
+		source =
+				let
+					    Source = Csv.Document(
+					        File.Contents("https://saastestlatest.blob.core.windows.net/saas-test-reports/Sheet1%20%28Insurance%20Mock%20Data%29.csv?se=2025-11-03T16%3A44%3A28Z&sp=r&sv=2025-11-05&sr=b&sig=gJH0Ct3dPdZqQymfJeSKFNPv/yRzOS%2BF3dXSh382FvY%3D"),
+					        [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.None]
+					    ),
+					    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+					    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Data Source", type text}, {"Agent", type text}, {"Agency", type text}, {"Inforce Premiums", Int64.Type}, {"New Business Premiums", Int64.Type}, {"Earned Premium", Int64.Type}, {"Number of Policies", Int64.Type}, {"Number of Open Claims", Int64.Type}, {"Loss Amount", Int64.Type}, {"Submissions", Int64.Type}, {"Declines", Int64.Type}, {"Quoted", Int64.Type}, {"Issued", Int64.Type}, {"Date", type date}, {"Insured Name", type text}})
+					in
+					    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
