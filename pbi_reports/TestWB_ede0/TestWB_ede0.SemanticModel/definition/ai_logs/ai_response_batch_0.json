@@ -1,0 +1,46 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Parameters",
+      "name": "Top Customers",
+      "dax_expression": "5",
+      "solution_explanation": "Parameter converted to a simple numeric measure since it is a constant without field references."
+    },
+    {
+      "type": "measure",
+      "table": "Parameters",
+      "name": "Profit Bin Size",
+      "dax_expression": "200",
+      "solution_explanation": "Parameter converted to a simple numeric measure since it is a constant without field references."
+    },
+    {
+      "type": "measure",
+      "table": "Sample - Superstore",
+      "name": "Profit Ratio",
+      "dax_expression": "SUM('Sample - Superstore'[Profit]) / SUM('Sample - Superstore'[Sales])",
+      "solution_explanation": "Uses aggregation (SUM), so it must be created as a measure. Direct translation of Tableau SUM([Profit]) / SUM([Sales])."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Sample - Superstore",
+      "name": "Calculation2",
+      "dax_expression": "'Sample - Superstore'[Discount]",
+      "solution_explanation": "Row-level reference to a single column; implemented as a calculated column."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Sample - Superstore",
+      "name": "Calculation1",
+      "dax_expression": "'Sample - Superstore'[Ship Date]",
+      "solution_explanation": "Row-level reference to a date column; implemented as a calculated column."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Sample - Superstore",
+      "name": "Profit (bin)",
+      "dax_expression": "'Sample - Superstore'[Profit]",
+      "solution_explanation": "Row-level reference to a single column; implemented as a calculated column."
+    }
+  ]
+}
