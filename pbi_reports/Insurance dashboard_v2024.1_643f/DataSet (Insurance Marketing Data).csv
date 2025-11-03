@@ -1,6 +1,0 @@
-Customer,State,Customer Lifetime Value,Response,Coverage,Education,Effective To Date,EmploymentStatus,Gender,Income,Location Code,Marital Status,Monthly Premium Auto,Months Since Last Claim,Months Since Policy Inception,Number of Open Complaints,Number of Policies,Policy Type,Policy,Renew Offer Type,Sales Channel,Total Claim Amount,Vehicle Class,Vehicle Size,Effective To Date (2),Year,Quarter,Month,Day
-John A. Carter,CA,12540.5,Yes,Full Coverage,Graduate,2025-12-31,Employed,Male,78000,LOC-CA1,Married,150,9,30,0,2,Auto,Policy A,Offer A,Agent,3200.75,SUV,Large,2026-04-30,2025,4,12,31
-Emily Rivera,TX,15640.2,No,Extended,College,2025-11-15,Self-employed,Female,64000,LOC-TX1,Single,95,24,48,1,1,Auto,Policy B,Offer B,Web,1200.5,Sedan,Medium,2026-05-31,2025,4,11,15
-Michael Chen,NY,24120.75,Yes,Premium,Graduate,2026-03-01,Employed,Male,120000,LOC-NY2,Married,210,6,72,0,3,Auto,Policy C,Offer C,Agent,9800.35,Truck,Large,2027-01-31,2026,1,1,1
-Sophia Patel,FL,9800.1,No,Basic,High School,2025-07-31,Unemployed,Female,38000,LOC-FL3,Divorced,60,60,24,2,1,Auto,Policy D,Offer D,Phone,300.0,Sedan,Small,2026-08-31,2025,3,7,31
-Daniel Kim,IL,32050.0,Yes,Full,PhD,2025-02-28,Employed,Male,150000,LOC-IL5,Married,320,3,84,0,4,Auto,Policy E,Offer B,Web,2600.25,SUV,Large,2026-02-28,2025,1,2,28

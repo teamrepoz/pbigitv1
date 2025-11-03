@@ -1,6 +1,0 @@
-Row ID,Order ID,Order Date,Ship Date,Ship Mode,Customer ID,Customer Name,Segment,Country/Region,City,State/Province,Postal Code,Region,Product ID,Category,Sub-Category,Product Name,Sales,Quantity,Discount,Profit
-1,ORD-10001,2024-03-12,2024-03-16,Standard Class,CUST-0001,Alex Johnson,Consumer,United States,Seattle,WA,98101,West,P-1001,Technology,Phones,Smartphone X Pro 128GB,1299.99,1,0.05,182.0
-2,ORD-10002,2024-03-15,2024-03-18,First Class,CUST-0002,Maria Lopez,Corporate,United States,New York,NY,10001,East,P-2020-02,Furniture,Chairs,Ergo Office Chair,399.99,2,0.1,110.0
-3,ORD-10003,2024-04-02,2024-04-05,Standard Class,CUST-0003,David Chen,Consumer,United States,San Francisco,CA,94107,West,P-3005,Technology,Accessories,Wireless Mouse Pro,59.99,3,0.0,18.0
-4,ORD-10004,2024-04-20,2024-04-24,Second Class,CUST-0004,Emma Thompson,Consumer,United States,Chicago,IL,60601,Central,P-4012,Furniture,Tables,Oak Desk Table,249.5,2,0.15,68.0
-5,ORD-10005,2024-05-10,2024-05-12,First Class,CUST-0005,Priya Singh,Corporate,United States,Atlanta,GA,30301,South,P-2101,Technology,Components,Laptop Sleeve 15-inch,29.99,4,0.0,15.0

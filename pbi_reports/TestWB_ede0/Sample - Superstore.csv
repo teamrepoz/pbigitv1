@@ -1,6 +1,0 @@
-Row ID,Order ID,Order Date,Ship Date,Ship Mode,Customer ID,Customer Name,Segment,Country/Region,City,State/Province,Postal Code,Region,Product ID,Category,Sub-Category,Product Name,Sales,Quantity,Discount,Profit
-1,SO-100001,2023-07-14,2023-07-18,Standard Class,CUST-1001,James Smith,Consumer,United States,Seattle,WA,98101,West,P-1001,Technology,Phones,Smartphone X200,1200.5,2,10.0,162.07
-2,SO-100002,2023-08-02,2023-08-04,First Class,CUST-1002,Emily Chen,Consumer,United States,San Francisco,CA,94105,West,P-1002,Furniture,Chairs,ErgoPlus Executive Chair,899.99,1,5.0,136.8
-3,SO-100003,2023-11-20,2023-11-24,Standard Class,CUST-1003,Michael Rivera,Corporate,United States,New York,NY,10001,East,P-2001,Office Supplies,Binders,UltraLock Binders 3-inch,324.75,4,7.5,66.09
-4,SO-100004,2024-02-14,2024-02-16,Second Class,CUST-1004,Sarah Johnson,Home Office,United States,Austin,TX,73301,South,P-3001,Technology,Accessories,Wireless Keyboard Plus,149.99,3,12.0,31.68
-5,SO-100005,2024-07-08,2024-07-12,Standard Class,CUST-1005,David Kim,Consumer,United States,Chicago,IL,60601,Central,P-4001,Furniture,Tables,Oakwork Adjustable Desk,799.49,2,8.5,131.68
