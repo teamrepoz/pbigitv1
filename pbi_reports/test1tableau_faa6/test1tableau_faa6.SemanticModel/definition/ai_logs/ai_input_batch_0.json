@@ -1,0 +1,35 @@
+{
+  "calculations": [
+    {
+      "table_name": "trulia_dataset_cleaned (trulia_dataset_cleanedTBL)",
+      "name": "Median Sales Price National",
+      "formula": "MEDIAN([Price])",
+      "col_to_table_map": {},
+      "col_to_datatype": {
+        "Price": "integer"
+      },
+      "measures": {}
+    },
+    {
+      "table_name": "trulia_dataset_cleaned (trulia_dataset_cleanedTBL)",
+      "name": "Median Sales Price % Increase",
+      "formula": "((MEDIAN([Price])-MEDIAN([Last Sold For]))/MEDIAN([Last Sold For]))*100",
+      "col_to_table_map": {},
+      "col_to_datatype": {
+        "Price": "integer",
+        "Last Sold For": "integer"
+      },
+      "measures": {}
+    },
+    {
+      "table_name": "trulia_dataset_cleaned (trulia_dataset_cleanedTBL)",
+      "name": "County Drill Down ",
+      "formula": "IF [State Set] THEN [COUNTYNAME] END",
+      "col_to_table_map": {},
+      "col_to_datatype": {
+        "COUNTYNAME": "string"
+      },
+      "measures": {}
+    }
+  ]
+}
