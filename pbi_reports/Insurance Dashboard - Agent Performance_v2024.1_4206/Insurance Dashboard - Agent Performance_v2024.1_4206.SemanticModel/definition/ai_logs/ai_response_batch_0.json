@@ -1,0 +1,39 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Sheet1 (Insurance Mock Data)",
+      "name": "Loss Ratio",
+      "dax_expression": "SUM('Sheet1 (Insurance Mock Data)'[Loss Amount]) / SUM('Sheet1 (Insurance Mock Data)'[Inforce Premiums])",
+      "solution_explanation": "Uses aggregation (SUM), so it should be a measure. Column references are fully qualified with the table name."
+    },
+    {
+      "type": "measure",
+      "table": "Sheet1 (Insurance Mock Data)",
+      "name": "Decline Ratio",
+      "dax_expression": "SUM('Sheet1 (Insurance Mock Data)'[Declines]) / SUM('Sheet1 (Insurance Mock Data)'[Submissions])",
+      "solution_explanation": "Uses aggregation (SUM), so it should be a measure. Column references are fully qualified with the table name."
+    },
+    {
+      "type": "measure",
+      "table": "Sheet1 (Insurance Mock Data)",
+      "name": "Hit Ratio",
+      "dax_expression": "SUM('Sheet1 (Insurance Mock Data)'[Issued]) / SUM('Sheet1 (Insurance Mock Data)'[Submissions])",
+      "solution_explanation": "Uses aggregation (SUM), so it should be a measure. Column references are fully qualified with the table name."
+    },
+    {
+      "type": "measure",
+      "table": "Sheet1 (Insurance Mock Data)",
+      "name": "Efficiency Ratio",
+      "dax_expression": "SUM('Sheet1 (Insurance Mock Data)'[Quoted]) / SUM('Sheet1 (Insurance Mock Data)'[Submissions])",
+      "solution_explanation": "Uses aggregation (SUM), so it should be a measure. Column references are fully qualified with the table name."
+    },
+    {
+      "type": "measure",
+      "table": "Sheet1 (Insurance Mock Data)",
+      "name": "Constant",
+      "dax_expression": "1",
+      "solution_explanation": "Constant expression with no field references; implemented as a measure so it evaluates consistently in any filter context."
+    }
+  ]
+}
