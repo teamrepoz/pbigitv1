@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Insurance Dashboard - Agent Performance_v2024.1_4206"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "bff3770f-4370-4c1c-8953-02508ecc5863"
+  }
+}
