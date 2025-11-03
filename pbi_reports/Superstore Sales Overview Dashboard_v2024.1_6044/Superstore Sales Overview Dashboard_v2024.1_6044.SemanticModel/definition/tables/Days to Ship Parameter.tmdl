@@ -1,0 +1,44 @@
+table 'Days to Ship Parameter'
+	lineageTag: 433ec586-9978-4331-9f08-139f54b078bc
+
+	column Index
+		formatString: 0
+		lineageTag: 453dccb3-75c6-4370-8ff7-bb63721370a1
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: bd403883-febe-4c47-9e25-56d02a981fb8
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: cb9427e5-95c2-4283-aefd-567e6b0acb20
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Days to Ship Parameter' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", INTEGER,
+			    "Value", INTEGER,
+			    {
+			        {0, 5, 5}
+			    }
+			)
+
+	annotation PBI_Id = e171ad8b66d440f883bc65dea6397762
+
