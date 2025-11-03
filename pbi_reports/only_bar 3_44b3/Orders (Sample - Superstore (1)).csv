@@ -1,0 +1,6 @@
+Row ID,Order ID,Order Date,Ship Date,Ship Mode,Customer ID,Customer Name,Segment,Country,City,State,Postal Code,Region,Product ID,Category,Sub-Category,Product Name,Sales,Quantity,Discount,Profit
+1,ORD-10001,2023-11-01,2023-11-05,Standard Class,CUST-001,John Doe,Consumer,United States,Seattle,WA,98101,West,P-10001,Technology,Accessories,Wireless Keyboard and Mouse Combo,299.99,2,5.0,60.0
+2,ORD-10002,2023-11-02,2023-11-07,First Class,CUST-005,Emily Carter,Corporate,United States,San Francisco,CA,94107,West,P-20008,Office Supplies,Paper,Legal Size 500-Sheet Paper Reams,62.75,5,0.0,16.0
+3,ORD-10003,2023-11-04,2023-11-08,Standard Class,CUST-011,Michael Chen,Home Office,United States,Austin,TX,73301,South,P-30012,Furniture,Chairs,ErgoComfort Executive Chair,329.99,1,15.0,60.0
+4,ORD-10004,2023-11-10,2023-11-12,Standard Class,CUST-019,Sophia Lee,Consumer,United States,Chicago,IL,60607,Midwest,P-40023,Technology,Accessories,Bluetooth Headset,89.95,2,10.0,12.0
+5,ORD-10005,2023-11-15,2023-11-16,Second Class,CUST-042,Daniel Patel,Corporate,United States,New York,NY,10001,Northeast,P-50066,Furniture,Office Furnishings,Ergonomic Desk with Keyboard Tray,540.0,3,7.0,120.0
