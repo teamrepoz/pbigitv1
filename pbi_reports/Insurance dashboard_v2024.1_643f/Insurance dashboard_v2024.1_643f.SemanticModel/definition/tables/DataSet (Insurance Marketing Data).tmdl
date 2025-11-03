@@ -1,0 +1,274 @@
+table 'DataSet (Insurance Marketing Data)'
+	lineageTag: d218cb2a-18c1-441a-aa4c-552cdabf17d5
+
+	column Customer
+		dataType: string
+		lineageTag: 515751c7-b87a-4db0-93e5-9547eebf0bfe
+		summarizeBy: none
+		sourceColumn: Customer
+
+		annotation SummarizationSetBy = Automatic
+
+	column State
+		dataType: string
+		lineageTag: 8f8bf624-1844-48fc-a2d2-30d8e3ddb40a
+		summarizeBy: none
+		sourceColumn: State
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Lifetime Value'
+		dataType: double
+		formatString: General Number
+		lineageTag: 7df12e96-5d4f-4699-9aad-7587d1ff6eea
+		summarizeBy: sum
+		sourceColumn: 'Customer Lifetime Value'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Response
+		dataType: string
+		lineageTag: ac1630e4-a33c-4fad-bd32-7043c37dd6df
+		summarizeBy: none
+		sourceColumn: Response
+
+		annotation SummarizationSetBy = Automatic
+
+	column Coverage
+		dataType: string
+		lineageTag: 3b83e01a-3110-4469-8aed-fc0d29c2ea7f
+		summarizeBy: none
+		sourceColumn: Coverage
+
+		annotation SummarizationSetBy = Automatic
+
+	column Education
+		dataType: string
+		lineageTag: 1194cf60-1526-4257-b7c8-42cd8e1587f8
+		summarizeBy: none
+		sourceColumn: Education
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Effective To Date'
+		dataType: datetime
+		lineageTag: b2935bc9-119a-48a0-befb-de4777c04d2c
+		summarizeBy: none
+		sourceColumn: 'Effective To Date'
+
+		annotation SummarizationSetBy = Automatic
+
+	column EmploymentStatus
+		dataType: string
+		lineageTag: 299b0f09-f398-400c-958e-5dbb54528a0c
+		summarizeBy: none
+		sourceColumn: EmploymentStatus
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gender
+		dataType: string
+		lineageTag: 3210eca6-a264-48d9-ab2f-37b002ed6316
+		summarizeBy: none
+		sourceColumn: Gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column Income
+		dataType: int64
+		formatString: 0
+		lineageTag: 5f83524e-00ed-4074-8977-39070fd95003
+		summarizeBy: sum
+		sourceColumn: Income
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Location Code'
+		dataType: string
+		lineageTag: a0ded206-2443-424d-8ebb-e74861f980ca
+		summarizeBy: none
+		sourceColumn: 'Location Code'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Marital Status'
+		dataType: string
+		lineageTag: 5a9955ee-5634-4fa4-8dd4-c2e182baf291
+		summarizeBy: none
+		sourceColumn: 'Marital Status'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Monthly Premium Auto'
+		dataType: int64
+		formatString: 0
+		lineageTag: 5ce3a385-c3fd-408a-a15c-9a4a73154627
+		summarizeBy: sum
+		sourceColumn: 'Monthly Premium Auto'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Months Since Last Claim'
+		dataType: int64
+		formatString: 0
+		lineageTag: 7a0d8f42-c647-4073-a2b3-f8c920dbce40
+		summarizeBy: sum
+		sourceColumn: 'Months Since Last Claim'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Months Since Policy Inception'
+		dataType: int64
+		formatString: 0
+		lineageTag: 16a5718f-9e87-43e4-ab9a-3a61922f0833
+		summarizeBy: sum
+		sourceColumn: 'Months Since Policy Inception'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Number of Open Complaints'
+		dataType: int64
+		formatString: 0
+		lineageTag: 980420fe-b5bd-4a27-8b57-aff7dbc09a31
+		summarizeBy: sum
+		sourceColumn: 'Number of Open Complaints'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Number of Policies'
+		dataType: int64
+		formatString: 0
+		lineageTag: ac611383-c64a-4305-8649-927bb583a28a
+		summarizeBy: sum
+		sourceColumn: 'Number of Policies'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Policy Type'
+		dataType: string
+		lineageTag: 533fa92c-87e0-4949-a7fb-5dd897b3f52f
+		summarizeBy: none
+		sourceColumn: 'Policy Type'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Policy
+		dataType: string
+		lineageTag: c1deeeda-0cbf-4564-b6ca-f9c5116b74a5
+		summarizeBy: none
+		sourceColumn: Policy
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Renew Offer Type'
+		dataType: string
+		lineageTag: adcac3b8-24d5-44f9-8c8d-f59ff9dcd83a
+		summarizeBy: none
+		sourceColumn: 'Renew Offer Type'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sales Channel'
+		dataType: string
+		lineageTag: 6435b355-b1c1-4a02-8b55-a7f4c74a233f
+		summarizeBy: none
+		sourceColumn: 'Sales Channel'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Claim Amount'
+		dataType: double
+		formatString: General Number
+		lineageTag: c18d46c2-6a29-4fb4-9073-30cb342e578f
+		summarizeBy: sum
+		sourceColumn: 'Total Claim Amount'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Vehicle Class'
+		dataType: string
+		lineageTag: 0988ed2a-8c6a-4d11-bbd0-3e7734870231
+		summarizeBy: none
+		sourceColumn: 'Vehicle Class'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Vehicle Size'
+		dataType: string
+		lineageTag: debf8b85-3b65-48e8-a17f-2d490abe588f
+		summarizeBy: none
+		sourceColumn: 'Vehicle Size'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Effective To Date (2)'
+		dataType: datetime
+		lineageTag: 460b9e06-adc6-487c-915a-cca06212a5bc
+		summarizeBy: none
+		sourceColumn: 'Effective To Date (2)'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 60274ceb-705a-4a67-868e-97e39027d728
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter
+		dataType: int64
+		formatString: 0
+		lineageTag: 6d920d1b-d775-4d56-92a2-720e75a2a28b
+		summarizeBy: sum
+		sourceColumn: Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: int64
+		formatString: 0
+		lineageTag: 4dc84a52-a000-47b1-975b-052382b02c67
+		summarizeBy: sum
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column Day
+		dataType: int64
+		formatString: 0
+		lineageTag: 2a8f3a18-dfcc-4ae4-b69a-2c5a768e3353
+		summarizeBy: sum
+		sourceColumn: Day
+
+		annotation SummarizationSetBy = Automatic
+
+	column dummy = 0
+		formatString: 0
+		lineageTag: 60a931ce-6d9b-478a-82eb-1f1672f9d04d
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'DataSet (Insurance Marketing Data)' = m
+		mode: import
+		source =
+				let
+					    Source = Csv.Document(
+					        File.Contents("https://saastestlatest.blob.core.windows.net/saas-test-reports/DataSet%20%28Insurance%20Marketing%20Data%29.csv?se=2025-11-03T15%3A31%3A07Z&sp=r&sv=2025-11-05&sr=b&sig=hOt5w6ElPLtAd5sgnf%2BHAOFGdnywutZxcVNsldmY30o%3D"),
+					        [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.None]
+					    ),
+					    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+					    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Customer", type text}, {"State", type text}, {"Customer Lifetime Value", type number}, {"Response", type text}, {"Coverage", type text}, {"Education", type text}, {"Effective To Date", type date}, {"EmploymentStatus", type text}, {"Gender", type text}, {"Income", Int64.Type}, {"Location Code", type text}, {"Marital Status", type text}, {"Monthly Premium Auto", Int64.Type}, {"Months Since Last Claim", Int64.Type}, {"Months Since Policy Inception", Int64.Type}, {"Number of Open Complaints", Int64.Type}, {"Number of Policies", Int64.Type}, {"Policy Type", type text}, {"Policy", type text}, {"Renew Offer Type", type text}, {"Sales Channel", type text}, {"Total Claim Amount", type number}, {"Vehicle Class", type text}, {"Vehicle Size", type text}, {"Effective To Date (2)", type date}, {"Year", Int64.Type}, {"Quarter", Int64.Type}, {"Month", Int64.Type}, {"Day", Int64.Type}})
+					in
+					    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
