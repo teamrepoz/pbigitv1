@@ -1,0 +1,431 @@
+table 'Sample - Superstore'
+	lineageTag: d83da5c1-1013-4214-8f40-79bc51c2285d
+
+	measure 'Profit Ratio' = DIVIDE(SUM('Sample - Superstore'[Profit]), SUM('Sample - Superstore'[Sales]))
+		formatString: 0
+		lineageTag: ad9f427e-7b84-4ac1-ac6f-5600428d643a
+
+	measure 'Current Year Sales' = VAR currentYear = SELECTEDVALUE('Current Year'[Display As]) RETURN CALCULATE( SUM('Sample - Superstore'[Sales]), FILTER( 'Sample - Superstore', YEAR('Sample - Superstore'[Order Date]) = currentYear ) )
+		formatString: 0
+		lineageTag: 8d5bb10f-d124-4830-b47e-48534189e4a7
+
+	measure 'Previous Year Sales' = VAR currentYear = SELECTEDVALUE('Current Year'[Display As]) VAR prevYear = currentYear - 1 RETURN CALCULATE( SUM('Sample - Superstore'[Sales]), FILTER( 'Sample - Superstore', YEAR('Sample - Superstore'[Order Date]) = prevYear ) )
+		formatString: 0
+		lineageTag: 1a3033fb-3a0b-4a09-a658-a091d038e783
+
+	measure 'Sales Difference' = DIVIDE([Current Year Sales] - [Previous Year Sales], [Previous Year Sales])
+		formatString: 0
+		lineageTag: 89e3a518-ea2a-402c-a308-4d9fe439749d
+
+	measure 'Previous Year' = SELECTEDVALUE('Current Year'[Display As]) - 1
+		formatString: 0
+		lineageTag: 99134e2a-b2ac-43e4-9f01-32316088b3ae
+
+	measure 'Returns count (order date)' = CALCULATE( COUNTA('Sample - Superstore'[Returned]), ALLEXCEPT('Sample - Superstore', 'Sample - Superstore'[Order Date]) )
+		formatString: 0
+		lineageTag: c5b18aad-5664-4eee-8eef-1aaea15314e0
+
+	measure 'Sales Color Filter (KPI)' = IF([Sales Difference] > 0, "GOOD", "BAD")
+		lineageTag: 41a4e526-cb00-4dc4-b9f9-e5212a4d25fb
+
+	measure 'Returned Y/N for Table' = IF(SELECTEDVALUE('Sample - Superstore'[Returned]) = "Yes", "⚑", "")
+		lineageTag: 88645b70-ac6b-49f8-a610-fd13d97eb6dd
+
+	measure 'Days to Ship param title' = SELECTEDVALUE('Days to Ship Parameter'[Display As])
+		formatString: 0
+		lineageTag: f11fdd36-b8e0-477b-9aa7-9170d39db288
+
+	measure 'Days to ship + 1' = SELECTEDVALUE('Days to Ship Parameter'[Display As]) + 1
+		formatString: 0
+		lineageTag: 5f373e2d-2671-4a7f-8a61-d1bdcf804b63
+
+	measure 'Custom Sort by' = VAR sortParam = SELECTEDVALUE('Sort by'[Display As]) RETURN SWITCH( sortParam, "Profit", - SUMX(VALUES('Sample - Superstore'[Order ID]), SUM('Sample - Superstore'[Profit])), "Sales", - SUMX(VALUES('Sample - Superstore'[Order ID]), SUM('Sample - Superstore'[Sales])), "Days to Ship", - AVERAGE('Sample - Superstore'[Days to Ship]) )
+		formatString: 0
+		lineageTag: 59b84b0d-715e-4922-8965-a50aa4e75bd1
+
+	measure 'Rank CY' = RANKX( ALLSELECTED('Sample - Superstore'), CALCULATE(SUM('Sample - Superstore'[Current Year Sales])), , DESC, Dense )
+		formatString: 0
+		lineageTag: 88b9fee2-0f3a-43a3-8ff0-836e7d6c228a
+
+	measure 'Rank Difference' = IF( [Rank CY] < [Rank PY], "🡽", IF( [Rank CY] > [Rank PY], "🡾", "🡺" ) )
+		lineageTag: f06a878a-2c0f-4f52-b805-aa8b2a007ba8
+
+	measure 'Sales Target' = [Previous Year Sales] * SELECTEDVALUE('Sales Target (PY + X%)'[Display As])
+		formatString: 0
+		lineageTag: 70c12234-6d5e-4367-aebf-15ff2a028679
+
+	measure 'Target Reached' = IF( CALCULATE(SUM('Sample - Superstore'[Current Year Sales])) >= [Sales Target], "⬤", " " )
+		lineageTag: 578a6942-4c94-43b8-9813-4651cc8dd5d4
+
+	measure 'Difference from Target' = CALCULATE(SUM('Sample - Superstore'[Current Year Sales])) - [Sales Target]
+		formatString: 0
+		lineageTag: 37ddac95-577a-4695-89bf-0c12e9c9bb1c
+
+	measure 'CY Sales Total' = CY Sales Total = CALCULATE( SUM('Sample - Superstore'[Current Year Sales]), ALL('Sample - Superstore') )
+		formatString: 0
+		lineageTag: ecdd0850-f605-40bf-9ee1-9b60aa68e965
+
+	measure 'CY Total Sales/Subcat' = CY Total Sales/Subcat = CALCULATE( SUM('Sample - Superstore'[Current Year Sales]), ALLEXCEPT('Sample - Superstore', 'Sample - Superstore'[Sub-Category]) )
+		formatString: 0
+		lineageTag: 3a952017-b990-4afa-b953-43c8342c9230
+
+	measure '% of total sales CY' = % of total sales CY = DIVIDE( [CY Total Sales/Subcat], [CY Sales Total] )
+		formatString: 0
+		lineageTag: ec5d333d-b80e-47e9-b7ca-c06630ed602a
+
+	measure 'Other % of total' = Other % of total = 1 - [% of total sales CY]
+		formatString: 0
+		lineageTag: 90e87c80-7b36-4342-b1ee-a62e5bf13697
+
+	measure 'Sales Percentage' = Sales Percentage = VAR SumCY = SUM('Sample - Superstore'[Current Year Sales]) VAR SumTarget = SUM('Sample - Superstore'[Sales Target]) VAR IncludeSalesTarget = SUMX( VALUES('Sample - Superstore'[Segment]), CALCULATE(SUM('Sample - Superstore'[Sales Target])) ) VAR IncludeCY = SUMX( VALUES('Sample - Superstore'[Segment]), CALCULATE(SUM('Sample - Superstore'[Current Year Sales])) ) VAR Denominator = SUM('Sample - Superstore'[Sales Target]) RETURN IF( SumCY >= SumTarget, 1.0, 1 - DIVIDE(IncludeSalesTarget - IncludeCY, Denominator) )
+		formatString: 0
+		lineageTag: abb84b6a-4f2d-4702-b184-6cb3137fab4d
+
+	measure 'Bottom Half of gauge' = Bottom Half of gauge = 1
+		formatString: 0
+		lineageTag: 73df8b22-1eb2-40fc-af91-e3a7177bb496
+
+	measure 'Current Year Quantity' = VAR currentYear = SELECTEDVALUE('Current Year'[Display As]) RETURN SUMX( FILTER( 'Sample - Superstore', YEAR('Sample - Superstore'[Order Date]) = currentYear ), 'Sample - Superstore'[Quantity] )
+		formatString: 0
+		lineageTag: 7ee606dc-82b2-40e2-a3ee-804f98a06b94
+
+	measure 'Current Year Returns' = IF( YEAR('Sample - Superstore'[Order Date]) = SELECTEDVALUE('Current Year'[Display As]), 'Sample - Superstore'[Returns count (order date)] )
+		formatString: 0
+		lineageTag: b7f95904-d072-4f6f-8480-0bbd05efbb5a
+
+	measure 'Current Year Profit' = IF( YEAR('Sample - Superstore'[Order Date]) = SELECTEDVALUE('Current Year'[Display As]), 'Sample - Superstore'[Profit] )
+		formatString: 0
+		lineageTag: bb83ac1f-5807-49fd-b2c1-e9a040561513
+
+	measure 'Days to ship - 1' = SELECTEDVALUE('Days to Ship Parameter'[Display As]) - 1
+		formatString: 0
+		lineageTag: 5c8919ce-8651-4d71-a914-32e7f1da7647
+
+	measure 'Current Year' = SELECTEDVALUE('Current Year'[Display As])
+		formatString: 0
+		lineageTag: 9cac136e-6889-418e-8d60-252357b1cd32
+
+	measure 'Previous Year Returns' = IF( YEAR('Sample - Superstore'[Order Date]) = SELECTEDVALUE('Current Year'[Display As]) - 1, 'Sample - Superstore'[Returns count (order date)] )
+		formatString: 0
+		lineageTag: bb05453b-19d5-425f-b142-e96ec647974c
+
+	measure 'Previous Year Profit' = VAR currentYear = SELECTEDVALUE('Current Year'[Display As]) RETURN CALCULATE( SUM('Sample - Superstore'[Profit]), FILTER( ALL('Sample - Superstore'[Order Date]), YEAR('Sample - Superstore'[Order Date]) = currentYear - 1 ) )
+		formatString: 0
+		lineageTag: 316dadf5-8b0d-4467-8f81-d438b2f5ade0
+
+	measure 'Previous Year Quantity' = VAR currentYear = SELECTEDVALUE('Current Year'[Display As]) RETURN CALCULATE( SUM('Sample - Superstore'[Quantity]), FILTER( ALL('Sample - Superstore'[Order Date]), YEAR('Sample - Superstore'[Order Date]) = currentYear - 1 ) )
+		formatString: 0
+		lineageTag: 4a84375a-2c89-4cbe-8a63-be574983b481
+
+	measure 'Rank PY' = RANKX( ALLSELECTED('Sample - Superstore'), [Previous Year Sales], , DESC, Dense )
+		formatString: 0
+		lineageTag: b49dba0a-f86b-4c21-a282-06fef5ebb64b
+
+	measure 'Quantity Color Filter (KPI)' = IF([Quantity Difference ] > 0, "GOOD", "BAD")
+		lineageTag: 2a0f2ed9-9293-414a-af41-524bb345518f
+
+	measure 'Returns Difference' = VAR numerator = [Current Year Returns] - [Previous Year Returns] RETURN DIVIDE(numerator, [Previous Year Returns])
+		formatString: 0
+		lineageTag: 6d06b35c-789f-4009-b8e5-020d1207b156
+
+	measure 'Quantity Difference' = VAR numerator = [Current Year Quantity] - [Previous Year Quantity] RETURN DIVIDE(numerator, [Previous Year Quantity])
+		formatString: 0
+		lineageTag: a14cb9b3-ddab-4f89-a68a-befdf295b79f
+
+	measure 'Returns Color Filter (KPI)' = IF( [Returns Difference] < 0, "GOOD", "BAD" )
+		lineageTag: eab7d48d-7158-4686-92d9-c013398c4af2
+
+	measure 'Profit Color Filter (KPI)' = IF( [Profit Difference] > 0, "GOOD", "BAD" )
+		lineageTag: 5bf5c981-a3bd-4b4a-9427-cc1224b03741
+
+	measure 'Profit Difference' = ( SUM('Sample - Superstore'[Current Year Profit]) - SUM('Sample - Superstore'[Previous Year Profit]) ) / SUM('Sample - Superstore'[Previous Year Profit])
+		formatString: 0
+		lineageTag: 4f749f78-97a7-407d-ae28-35fd13beecce
+
+	measure 'Target Reached (map) (tooltips)' = IF( SUM('Sample - Superstore'[Current Year Sales]) >= SUM('Sample - Superstore'[Sales Target]), "Target Met", "Target NOT Met" )
+		lineageTag: bc049e30-fca3-4f7b-b516-f48fa29a72bd
+
+	measure 'Profit color (table)' = VAR profitByOrder = CALCULATE( SUM('Sample - Superstore'[Profit]), ALLEXCEPT('Sample - Superstore', 'Sample - Superstore'[Order ID]) ) RETURN IF(profitByOrder > 0, "YES", "NO")
+		lineageTag: 11908684-f1ff-459e-bcf5-b9941df2d2d3
+
+	measure 'Days to ship FLAG' = VAR threshold = SELECTEDVALUE('Days to Ship Parameter'[Display As]) RETURN IF('Sample - Superstore'[Days to Ship] >= threshold, "⬤", "")
+		lineageTag: f6b5f418-65fa-4638-a574-641e818b9517
+
+	measure 'Year Filter' = YEAR('Sample - Superstore'[Order Date]) = SELECTEDVALUE('Current Year'[Display As])
+		lineageTag: 879b2f1f-d0fe-4e32-a6c7-37d9f537ca75
+
+	column 'Row ID'
+		dataType: int64
+		formatString: 0
+		lineageTag: 4a272c2d-9c90-41f3-8de4-dd1a68b794d3
+		summarizeBy: sum
+		sourceColumn: 'Row ID'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order ID'
+		dataType: string
+		lineageTag: af9f4611-dea1-4d28-9244-a23f426554ea
+		summarizeBy: none
+		sourceColumn: 'Order ID'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Date'
+		dataType: datetime
+		lineageTag: 2fc2bd94-bf14-42c8-ac6a-38d385bc9ffa
+		summarizeBy: none
+		sourceColumn: 'Order Date'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ship Date'
+		dataType: datetime
+		lineageTag: 0a410cd3-9841-4177-b8b2-d2e04f9c1db8
+		summarizeBy: none
+		sourceColumn: 'Ship Date'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ship Mode'
+		dataType: string
+		lineageTag: b003dfe1-31ee-4efc-a41a-c13de253b164
+		summarizeBy: none
+		sourceColumn: 'Ship Mode'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer ID'
+		dataType: string
+		lineageTag: 62153a6b-5265-48e3-8506-8cd53ede55d2
+		summarizeBy: none
+		sourceColumn: 'Customer ID'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Name'
+		dataType: string
+		lineageTag: bd8a5b17-0987-4d8a-8b66-b052076caf8d
+		summarizeBy: none
+		sourceColumn: 'Customer Name'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Segment
+		dataType: string
+		lineageTag: 8c59ce7b-696c-4cf0-85df-4918f26df417
+		summarizeBy: none
+		sourceColumn: Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Country/Region'
+		dataType: string
+		lineageTag: 540eb8da-fe46-4395-8522-0e062bc3ff6e
+		summarizeBy: none
+		sourceColumn: 'Country/Region'
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: 917c25a3-0563-47c8-a697-a2a8f2fb2a81
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'State/Province'
+		dataType: string
+		lineageTag: c82b68ad-1bc3-4a46-b303-b3bc99fe5a5f
+		summarizeBy: none
+		sourceColumn: 'State/Province'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Postal Code'
+		dataType: string
+		lineageTag: 1f72d5fa-5eca-4b62-b691-82ef424fef7a
+		summarizeBy: none
+		sourceColumn: 'Postal Code'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		lineageTag: 7b9e5829-ae3a-495c-b1ab-0a2243438cd0
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product ID'
+		dataType: string
+		lineageTag: deaca9cb-ec05-4b71-b63d-079cad9950e1
+		summarizeBy: none
+		sourceColumn: 'Product ID'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		lineageTag: ec1eb5af-3fdb-469c-8260-ee6d28f7b1c4
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sub-Category'
+		dataType: string
+		lineageTag: 1869851b-1f81-48dc-83ec-d66ff1a9ffa5
+		summarizeBy: none
+		sourceColumn: 'Sub-Category'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Name'
+		dataType: string
+		lineageTag: 05d97d9b-af59-4f5d-aa1f-699a66b2eb00
+		summarizeBy: none
+		sourceColumn: 'Product Name'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sales
+		dataType: double
+		formatString: General Number
+		lineageTag: 8db71274-d9a8-452a-aca3-45b5b0466886
+		summarizeBy: sum
+		sourceColumn: Sales
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Quantity
+		dataType: int64
+		formatString: 0
+		lineageTag: 7fd30a13-dcfb-4b07-8ba5-e3d39f53677f
+		summarizeBy: sum
+		sourceColumn: Quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column Discount
+		dataType: double
+		formatString: General Number
+		lineageTag: 2538a307-8087-4b70-a5da-e87a889dc5be
+		summarizeBy: sum
+		sourceColumn: Discount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Profit
+		dataType: double
+		formatString: General Number
+		lineageTag: dd60c6ad-0cdc-46bc-acec-e85440e83525
+		summarizeBy: sum
+		sourceColumn: Profit
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column dummy = "dummy"
+		lineageTag: 420b32bc-3414-4d7d-8c65-6a71a329bc05
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Button Highlight' = IF('Sample - Superstore'[Current Year 1] = YEAR('Sample - Superstore'[Order Date]), "RED", "BLIUE")
+		lineageTag: 87b97a6d-4986-4be1-be93-9e0d8f5d4b61
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Gauge dummy' = "dummy"
+		lineageTag: 2eaddd7e-4b1b-4f29-8004-1cbd04e839b7
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Profit (bin)' = 'Sample - Superstore'[Profit]
+		formatString: 0
+		lineageTag: 6eb38119-df33-48b7-ae69-cd19551dd892
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Days to Ship' = DATEDIFF('Sample - Superstore'[Order Date], 'Sample - Superstore'[Ship Date], DAY)
+		formatString: 0
+		lineageTag: 2cc5e699-af09-4a3a-900d-09164d86af96
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Colored<50 = IF('Sample - Superstore'[Sales Percentage] < 0.5, 'Sample - Superstore'[Sales Percentage], 0.5)
+		lineageTag: 3f2627bc-8fa7-43fa-b968-65ca08bdc034
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Grey<50 = IF('Sample - Superstore'[Sales Percentage] < 0.5, 0.5 - 'Sample - Superstore'[Sales Percentage])
+		lineageTag: 1f05e982-45e0-49c9-976a-23aadda3e6d2
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Colored>50 = IF('Sample - Superstore'[Sales Percentage] > 0.5, 'Sample - Superstore'[Sales Percentage] - 0.5)
+		lineageTag: eb7d7b51-2eeb-4bb5-8631-1d9e63b2542e
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Grey>50 = IF('Sample - Superstore'[Sales Percentage] > 0.5, 1 - 'Sample - Superstore'[Sales Percentage], 0.5)
+		lineageTag: f9d88437-daa4-45bd-be9b-39067d01ce90
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Pointer 1' = IF('Sample - Superstore'[Sales Percentage] <= 0.5, 0.005)
+		lineageTag: 439c7bdb-be06-46c0-859e-eb601bb1aa5d
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Pointer 2' = IF('Sample - Superstore'[Sales Percentage] > 0.5, 0.005)
+		lineageTag: 02279d8e-fdaa-49a6-82a8-176cecb94c3d
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Sample - Superstore' = m
+		mode: import
+		source =
+				let
+					    Source = Csv.Document(
+					        File.Contents("https://saastestlatest.blob.core.windows.net/saas-test-reports/Sample%20-%20Superstore.csv?se=2025-11-03T10%3A46%3A26Z&sp=r&sv=2025-11-05&sr=b&sig=uStdTfZ87dUuXltqreN8DLlnuEJq67S/tYdwjoRR2Os%3D"),
+					        [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.None]
+					    ),
+					    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+					    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Row ID", Int64.Type}, {"Order ID", type text}, {"Order Date", type date}, {"Ship Date", type date}, {"Ship Mode", type text}, {"Customer ID", type text}, {"Customer Name", type text}, {"Segment", type text}, {"Country/Region", type text}, {"City", type text}, {"State/Province", type text}, {"Postal Code", type text}, {"Region", type text}, {"Product ID", type text}, {"Category", type text}, {"Sub-Category", type text}, {"Product Name", type text}, {"Sales", type number}, {"Quantity", Int64.Type}, {"Discount", type number}, {"Profit", type number}})
+					in
+					    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
