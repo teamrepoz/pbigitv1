@@ -1,0 +1,20 @@
+relationship 0b91119a-803f-4843-afe4-6b32b361dde6
+	toCardinality: many
+	fromColumn: Orders.Region
+	toColumn: People.Region
+
+relationship e4cb373e-5076-4926-ac9c-dc349f55440b
+	toCardinality: many
+	fromColumn: Orders.'Order ID'
+	toColumn: Returns.'Order ID'
+
+relationship 307b711c-4a79-42ef-8783-c557f7262535
+	toCardinality: many
+	fromColumn: 'Sample - Superstore (2)'.Region
+	toColumn: 'Sample - Superstore (2)_People'.Region
+
+relationship 7ec310e2-bff6-49d5-8c41-1bfcb5203998
+	toCardinality: many
+	fromColumn: 'Sample - Superstore (2)'.'Order ID'
+	toColumn: 'Sample - Superstore (2)_Returns'.'Order ID'
+
