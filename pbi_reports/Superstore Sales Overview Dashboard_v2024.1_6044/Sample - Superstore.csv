@@ -1,0 +1,6 @@
+Row ID,Order ID,Order Date,Ship Date,Ship Mode,Customer ID,Customer Name,Segment,Country/Region,City,State/Province,Postal Code,Region,Product ID,Category,Sub-Category,Product Name,Sales,Quantity,Discount,Profit
+1,ORD-10001,2021-03-15,2021-03-18,Standard Class,CUST-0001,Alex Johnson,Corporate,United States,New York,NY,10001,Americas,P-1001,Furniture,Chairs,Lumina Ergonomic Chair,389.6,2,0.07,55.0
+2,ORD-10002,2021-04-22,2021-04-24,Second Class,CUST-0002,Maria Lopez,Consumer,United States,Chicago,IL,60601,Americas,P-1002,Office Supplies,Binders,Avery Durable Binders - 1 inch,78.75,3,0.05,12.0
+3,ORD-10003,2021-05-13,2021-05-16,First Class,CUST-0003,Daniel Kim,Small Business,Canada,Toronto,ON,M5H 2N2,Americas,P-1003,Technology,Phones,XPhone 12 Pro,1250.0,1,0.12,180.0
+4,ORD-10004,2021-07-10,2021-07-12,Standard Class,CUST-0004,Sarah Patel,Corporate,United States,San Francisco,CA,94105,Americas,P-1004,Furniture,Tables,Glass Top Conference Table 6ft,610.4,2,0.1,85.0
+5,ORD-10005,2021-08-03,2021-08-05,Second Class,CUST-0005,Emily Chen,Consumer,United States,Seattle,WA,98101,Americas,P-1005,Technology,Accessories,Wireless Keyboard and Mouse Combo,199.99,2,0.0,40.0
