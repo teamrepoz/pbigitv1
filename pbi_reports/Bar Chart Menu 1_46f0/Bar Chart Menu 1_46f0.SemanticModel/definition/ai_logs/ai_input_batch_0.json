@@ -1,0 +1,64 @@
+{
+  "calculations": [
+    {
+      "table_name": "Sample - Superstore",
+      "name": "KPI Color",
+      "formula": "IF SUM([Sales])/SUM([Category Benchmark]) >1 THEN \"Green\"\r\nELSEIF SUM([Sales])/SUM([Category Benchmark]) <.7 \r\nTHEN \"Red\"\r\nELSE \"Yellow\"\r\nEND",
+      "col_to_table_map": {},
+      "col_to_datatype": {
+        "Sales": "real"
+      },
+      "measures": {}
+    },
+    {
+      "table_name": "Sample - Superstore",
+      "name": "Below Target",
+      "formula": "IF SUM([Sales])<SUM([Category KPI]) THEN \"×\" \r\nELSE \"\"\r\nEND",
+      "col_to_table_map": {},
+      "col_to_datatype": {
+        "Sales": "real"
+      },
+      "measures": {}
+    },
+    {
+      "table_name": "Sample - Superstore",
+      "name": "Profit Ratio",
+      "formula": "SUM([Profit])/SUM([Sales])",
+      "col_to_table_map": {},
+      "col_to_datatype": {
+        "Profit": "real",
+        "Sales": "real"
+      },
+      "measures": {}
+    },
+    {
+      "table_name": "Sample - Superstore",
+      "name": "Category KPI",
+      "formula": "//this is arbitrary. Usually you'd get this from a data table\r\nIF YEAR([Order Date])=2015 THEN [Sales]*4.5 END",
+      "col_to_table_map": {},
+      "col_to_datatype": {
+        "Order Date": "date",
+        "Sales": "real"
+      },
+      "measures": {}
+    },
+    {
+      "table_name": "Sample - Superstore",
+      "name": null,
+      "formula": "1",
+      "col_to_table_map": {},
+      "col_to_datatype": {},
+      "measures": {}
+    },
+    {
+      "table_name": "Sample - Superstore",
+      "name": "Profit (bin)",
+      "formula": "[Profit]",
+      "col_to_table_map": {},
+      "col_to_datatype": {
+        "Profit": "real"
+      },
+      "measures": {}
+    }
+  ]
+}
