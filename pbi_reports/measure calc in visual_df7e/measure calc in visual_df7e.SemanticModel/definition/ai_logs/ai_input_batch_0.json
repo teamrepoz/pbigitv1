@@ -1,0 +1,20 @@
+{
+  "calculations": [
+    {
+      "table_name": "ORDERS",
+      "name": "TotalPrice Sum",
+      "formula": "SUM([O_TOTALPRICE])",
+      "col_to_table_map": {},
+      "col_to_datatype": {},
+      "measures": {}
+    },
+    {
+      "table_name": "ORDERS",
+      "name": "duplicate totalprice",
+      "formula": "[O_TOTALPRICE]",
+      "col_to_table_map": {},
+      "col_to_datatype": {},
+      "measures": {}
+    }
+  ]
+}
