@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Worksheet Parser Scenarios All Bars_7547"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "7f4637c9-d56f-461a-95ee-c678d1ae0371"
+  }
+}
