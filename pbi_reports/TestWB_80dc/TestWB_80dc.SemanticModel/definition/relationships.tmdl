@@ -1,0 +1,10 @@
+relationship ac0cfe3d-a0db-4d05-801f-56e6ceab5b6b
+	toCardinality: many
+	fromColumn: Orders.Region
+	toColumn: People.Region
+
+relationship 51f350be-1c44-45f6-811a-22844a4fc462
+	toCardinality: many
+	fromColumn: Orders.'Order ID'
+	toColumn: Returns.'Order ID'
+
