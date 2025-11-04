@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "ORDERS (SNOWFLAKE_SAMPLE_DATA.ORDERS) (TPCH_SF1)",
+      "name": "TotalPrice Sum",
+      "dax_expression": "SUM('ORDERS (SNOWFLAKE_SAMPLE_DATA.ORDERS) (TPCH_SF1)'[O_TOTALPRICE])",
+      "solution_explanation": "Uses SUM over O_TOTALPRICE, which makes it a measure; column reference updated to 'table_name'[column] format."
+    }
+  ]
+}
