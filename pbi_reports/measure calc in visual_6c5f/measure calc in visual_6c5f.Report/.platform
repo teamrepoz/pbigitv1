@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "measure calc in visual_6c5f"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "0f33c099-73bb-4fae-84fe-fdfc62c84ca9"
+  }
+}
