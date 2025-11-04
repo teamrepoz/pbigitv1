@@ -1,0 +1,46 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "HR Dataset",
+      "name": "dep calc 1",
+      "dax_expression": "'HR Dataset'[DeptID]",
+      "solution_explanation": "Row-level reference to a single column; translated directly to 'HR Dataset'[DeptID]. Created as a calculated column."
+    },
+    {
+      "type": "calculated_column",
+      "table": "HR Dataset",
+      "name": "dep calc 2",
+      "dax_expression": "'HR Dataset'[dep calc 1] * 'HR Dataset'[MarriedID]",
+      "solution_explanation": "Row-level multiplication using a prior calculated column; created as a calculated column."
+    },
+    {
+      "type": "measure",
+      "table": "HR Dataset",
+      "name": "dep calc 3",
+      "dax_expression": "SUM('HR Dataset'[dep calc 2])",
+      "solution_explanation": "Uses aggregation (SUM) over a column; therefore implemented as a measure."
+    },
+    {
+      "type": "calculated_column",
+      "table": "HR Dataset",
+      "name": "Calculation1",
+      "dax_expression": "'HR Dataset'[DeptID] + 'HR Dataset'[GenderID]",
+      "solution_explanation": "Row-level arithmetic addition without aggregation; created as a calculated column."
+    },
+    {
+      "type": "calculated_column",
+      "table": "HR Dataset",
+      "name": "Calculation2",
+      "dax_expression": "'HR Dataset'[Termd] * 'HR Dataset'[Salary] * 'HR Dataset'[EngagementSurvey]",
+      "solution_explanation": "Row-level multiplication of columns; created as a calculated column."
+    },
+    {
+      "type": "calculated_column",
+      "table": "HR Dataset",
+      "name": "Calculation3",
+      "dax_expression": "'HR Dataset'[TermReason] & FORMAT('HR Dataset'[Termd], \"0\")",
+      "solution_explanation": "String concatenation mapped to & and STR() mapped to FORMAT(..., \"0\"); row-level logic so created as a calculated column."
+    }
+  ]
+}
