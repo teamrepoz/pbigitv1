@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "measure calc in visual_df7e"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "8ddbe20f-e1a9-4b83-97db-a9d86a39a93e"
+  }
+}
