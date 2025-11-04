@@ -1,0 +1,35 @@
+table 'Sample - Superstore_People'
+	lineageTag: 81a6ae5f-6d2b-4eff-8a3a-572277d7e539
+
+	column 'Regional Manager'
+		dataType: string
+		lineageTag: 70ac3388-e426-46da-8db4-e944f0616e11
+		summarizeBy: none
+		sourceColumn: 'Regional Manager'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		lineageTag: 2bd52436-bfaa-4d84-8e50-fc271b44f3ca
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Sample - Superstore_People' = m
+		mode: import
+		source =
+				let
+					    Source = Csv.Document(
+					        File.Contents("https://saastestlatest.blob.core.windows.net/saas-test-reports/Sample%20-%20Superstore_People.csv?se=2025-11-04T15%3A00%3A34Z&sp=r&sv=2025-11-05&sr=b&sig=ypaFwCBJgvQjIAgfqq0eNnNjtK%2BgA5CVQQvSaRILar0%3D"),
+					        [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.None]
+					    ),
+					    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+					    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Regional Manager", type text}, {"Region", type text}})
+					in
+					    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
