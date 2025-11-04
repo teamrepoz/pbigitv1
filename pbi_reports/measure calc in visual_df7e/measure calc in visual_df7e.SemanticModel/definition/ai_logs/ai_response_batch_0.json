@@ -1,0 +1,18 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "ORDERS",
+      "name": "TotalPrice Sum",
+      "dax_expression": "SUM('ORDERS'[O_TOTALPRICE])",
+      "solution_explanation": "Aggregates O_TOTALPRICE using SUM, so it is a measure. Converted to DAX as SUM('ORDERS'[O_TOTALPRICE])."
+    },
+    {
+      "type": "calculated_column",
+      "table": "ORDERS",
+      "name": "duplicate totalprice",
+      "dax_expression": "'ORDERS'[O_TOTALPRICE]",
+      "solution_explanation": "Row-level reference without aggregation; implemented as a calculated column mirroring the source column."
+    }
+  ]
+}
