@@ -1,0 +1,120 @@
+table 'RDV_SNAPSHOT_DAYS_LOG_Risk_GFIRates_Reports_Excel_Rolling (local copy)'
+	lineageTag: 164df99c-5c41-4a68-ad77-7889d1adaac4
+
+	column RUN_NUMBER
+		dataType: double
+		formatString: General Number
+		lineageTag: 07e7d880-69ae-44fa-9178-0a0325aaffac
+		summarizeBy: sum
+		sourceColumn: RUN_NUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column RDV_DAYS_TYPE
+		dataType: string
+		lineageTag: dbae3b04-aa38-4967-8a1f-3725f34c8f74
+		summarizeBy: none
+		sourceColumn: RDV_DAYS_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column EFFECTIVE_DATE
+		dataType: datetime
+		lineageTag: ce686e2d-a5e5-47e5-b5e8-da055231f52e
+		summarizeBy: none
+		sourceColumn: EFFECTIVE_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column SOURCE_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: c2b5d6cc-6512-4438-beef-4026e775722f
+		summarizeBy: sum
+		sourceColumn: SOURCE_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column EXEC_DURATION
+		dataType: double
+		formatString: General Number
+		lineageTag: 1fe75dd2-40dc-4bab-9799-b93d808a364e
+		summarizeBy: sum
+		sourceColumn: EXEC_DURATION
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column RECORD_COUNT
+		dataType: double
+		formatString: General Number
+		lineageTag: 87527607-8c19-490c-9bc7-0da79302997d
+		summarizeBy: sum
+		sourceColumn: RECORD_COUNT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PROCESS_END_DTTM
+		dataType: datetime
+		lineageTag: a7b73744-6435-4fbb-9c59-4b12d109dbee
+		summarizeBy: none
+		sourceColumn: PROCESS_END_DTTM
+
+		annotation SummarizationSetBy = Automatic
+
+	column SOURCE_NAME
+		dataType: string
+		lineageTag: b14841de-23c0-4922-aa13-e52585ceb5c8
+		summarizeBy: none
+		sourceColumn: SOURCE_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column PERFORMANCE_MEASURE
+		dataType: double
+		formatString: General Number
+		lineageTag: 47485508-5240-4248-9234-5ac743339568
+		summarizeBy: sum
+		sourceColumn: PERFORMANCE_MEASURE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ALERT_TYPE
+		dataType: string
+		lineageTag: 0e9a822c-c0b2-46f2-b9a2-f2e92b5c39cc
+		summarizeBy: none
+		sourceColumn: ALERT_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column RISK_LOAD_END_DTTM
+		dataType: datetime
+		lineageTag: 52d74b09-5daf-413e-a06d-64a191d02f56
+		summarizeBy: none
+		sourceColumn: RISK_LOAD_END_DTTM
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'RDV_SNAPSHOT_DAYS_LOG_Risk_GFIRates_Reports_Excel_Rolling (local copy)' = m
+		mode: import
+		source =
+				let
+					    Source = Csv.Document(
+					        File.Contents("https://saastestlatest.blob.core.windows.net/saas-test-reports/RDV_SNAPSHOT_DAYS_LOG_Risk_GFIRates_Reports_Excel_Rolling%20%28local%20copy%29.csv?se=2025-11-05T15%3A04%3A01Z&sp=r&sv=2025-11-05&sr=b&sig=ccR5WNHUYl2NSc7qEpaWvvrp/76t1UHksky2py/HfZc%3D"),
+					        [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.None]
+					    ),
+					    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+					    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"RUN_NUMBER", type number}, {"RDV_DAYS_TYPE", type text}, {"EFFECTIVE_DATE", type datetime}, {"SOURCE_ID", Int64.Type}, {"EXEC_DURATION", type number}, {"RECORD_COUNT", type number}, {"PROCESS_END_DTTM", type datetime}, {"SOURCE_NAME", type text}, {"PERFORMANCE_MEASURE", type number}, {"ALERT_TYPE", type text}, {"RISK_LOAD_END_DTTM", type datetime}})
+					in
+					    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
