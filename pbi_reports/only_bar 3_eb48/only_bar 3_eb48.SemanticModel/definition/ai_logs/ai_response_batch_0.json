@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders (Sample - Superstore (1))",
+      "name": "Calculation1",
+      "dax_expression": "SWITCH('Orders (Sample - Superstore (1))'[Category], \"Furniture\", \"furniture\", \"Office Supplies\", \"office supplier\", \"Technology\", \"technology\", 'Orders (Sample - Superstore (1))'[Category])",
+      "solution_explanation": "This calculation uses row-level logic on the Category field to map specific category values to strings and falls back to the original Category for any other value. Implemented as a calculated column since it operates per row without aggregation."
+    }
+  ]
+}
