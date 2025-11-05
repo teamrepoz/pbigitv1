@@ -1,0 +1,28 @@
+table 'Top Customers'
+	lineageTag: 2ca84ce9-8d01-495d-8d71-0451c54979e9
+
+	measure 'Top Customers Value' = SELECTEDVALUE('Top Customers'[Top Customers], 5)
+		lineageTag: 5a34eea3-a4d5-480c-8dbc-c65f75f8f8bb
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Top Customers'
+		dataType: double
+		formatString: 0
+		lineageTag: 1972690f-4de5-43e2-82ee-036ea668fdac
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Top Customers' = calculated
+		mode: import
+		source = GENERATESERIES(5, 20, 5)
+
+	annotation PBI_Id = 8f65a7c96a0c41d5a3eb785a7b7945c2
+
