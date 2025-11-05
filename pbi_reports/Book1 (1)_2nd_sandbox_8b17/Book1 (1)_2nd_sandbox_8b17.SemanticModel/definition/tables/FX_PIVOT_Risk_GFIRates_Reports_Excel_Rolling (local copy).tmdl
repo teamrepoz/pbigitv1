@@ -1,0 +1,357 @@
+table 'FX_PIVOT_Risk_GFIRates_Reports_Excel_Rolling (local copy)'
+	lineageTag: 010671fe-d89c-488e-98ef-80cb83a26023
+
+	column SLICE_DATE
+		dataType: datetime
+		lineageTag: 2b732e5d-3b7c-4fc8-8e49-82559147fc71
+		summarizeBy: none
+		sourceColumn: SLICE_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column CURR_FROM
+		dataType: string
+		lineageTag: 767a5e15-fb6a-4005-b6fd-3ea15091f092
+		summarizeBy: none
+		sourceColumn: CURR_FROM
+
+		annotation SummarizationSetBy = Automatic
+
+	column TO_AUD
+		dataType: double
+		formatString: General Number
+		lineageTag: 35670e33-a7a0-42e1-9fb0-fd82cdfa7252
+		summarizeBy: sum
+		sourceColumn: TO_AUD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO_CAD
+		dataType: double
+		formatString: General Number
+		lineageTag: 6d723446-7d7f-4649-98e3-2594e990eb97
+		summarizeBy: sum
+		sourceColumn: TO_CAD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO_CHF
+		dataType: double
+		formatString: General Number
+		lineageTag: 9e7e9761-1698-46ee-856c-ba13edf8eb56
+		summarizeBy: sum
+		sourceColumn: TO_CHF
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO_EUR
+		dataType: double
+		formatString: General Number
+		lineageTag: f9783370-0f3d-45cf-8204-964a0c5e4574
+		summarizeBy: sum
+		sourceColumn: TO_EUR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO_GBP
+		dataType: double
+		formatString: General Number
+		lineageTag: 72ae0513-c6ee-452d-ba39-bcef236f90c1
+		summarizeBy: sum
+		sourceColumn: TO_GBP
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO_HKD
+		dataType: double
+		formatString: General Number
+		lineageTag: 17d0ff69-f5da-4782-a8f9-67a160db0c24
+		summarizeBy: sum
+		sourceColumn: TO_HKD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO_JPY
+		dataType: double
+		formatString: General Number
+		lineageTag: b063c7c0-14b4-4069-ac8c-c69883a8fc51
+		summarizeBy: sum
+		sourceColumn: TO_JPY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO_MXN
+		dataType: double
+		formatString: General Number
+		lineageTag: 43103d6a-385f-45c1-bd92-aa1b7b75e081
+		summarizeBy: sum
+		sourceColumn: TO_MXN
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO_NZD
+		dataType: double
+		formatString: General Number
+		lineageTag: a11f5d01-30d4-4d8c-96f4-036e136ff5d6
+		summarizeBy: sum
+		sourceColumn: TO_NZD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO_SEK
+		dataType: double
+		formatString: General Number
+		lineageTag: ee2a9e9f-eeed-4e41-8945-a4dc758937c1
+		summarizeBy: sum
+		sourceColumn: TO_SEK
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO_SGD
+		dataType: double
+		formatString: General Number
+		lineageTag: 5019d4d8-1f1d-4483-aac3-e0aec40533a4
+		summarizeBy: sum
+		sourceColumn: TO_SGD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO_USD
+		dataType: double
+		formatString: General Number
+		lineageTag: 34285604-ddf8-443f-837a-a37d0283153f
+		summarizeBy: sum
+		sourceColumn: TO_USD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO_MEX
+		dataType: double
+		formatString: General Number
+		lineageTag: 5441afc7-afd7-40d4-a7d7-9dd208267d5a
+		summarizeBy: sum
+		sourceColumn: TO_MEX
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ADDED_DATE
+		dataType: datetime
+		lineageTag: 9b88ead6-57ea-450a-92b2-5b0758e1f5b9
+		summarizeBy: none
+		sourceColumn: ADDED_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column ADDED_USER
+		dataType: string
+		lineageTag: 90d5f128-e053-4470-9bef-6bb45409ae72
+		summarizeBy: none
+		sourceColumn: ADDED_USER
+
+		annotation SummarizationSetBy = Automatic
+
+	column TO_BRL
+		dataType: double
+		formatString: General Number
+		lineageTag: a3d90c65-c2bc-482b-9866-cb8db5ea1d90
+		summarizeBy: sum
+		sourceColumn: TO_BRL
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO_BRO
+		dataType: double
+		formatString: General Number
+		lineageTag: 61481c3d-9cf2-48a8-84b0-9789e2c2672b
+		summarizeBy: sum
+		sourceColumn: TO_BRO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO_CLF
+		dataType: double
+		formatString: General Number
+		lineageTag: 4a2d7d99-f182-4194-8220-ba7c50bb7539
+		summarizeBy: sum
+		sourceColumn: TO_CLF
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO_CLP
+		dataType: double
+		formatString: General Number
+		lineageTag: 2159e426-9a8f-449e-8471-f73043bfca78
+		summarizeBy: sum
+		sourceColumn: TO_CLP
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO_CNH
+		dataType: double
+		formatString: General Number
+		lineageTag: 2374c0ca-52a6-4bda-a7b0-f396d33182b0
+		summarizeBy: sum
+		sourceColumn: TO_CNH
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO_COP
+		dataType: double
+		formatString: General Number
+		lineageTag: 11192af4-e19d-44cb-a530-5a5354e1b63c
+		summarizeBy: sum
+		sourceColumn: TO_COP
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO_CRC
+		dataType: double
+		formatString: General Number
+		lineageTag: c1d9e558-1023-42a8-b4a9-418d5e62f31d
+		summarizeBy: sum
+		sourceColumn: TO_CRC
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO_INR
+		dataType: double
+		formatString: General Number
+		lineageTag: 49b5deac-a833-45f9-89d8-9a0135bc8df8
+		summarizeBy: sum
+		sourceColumn: TO_INR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO_KRW
+		dataType: double
+		formatString: General Number
+		lineageTag: 99f14296-98da-472b-b7a9-aca922848169
+		summarizeBy: sum
+		sourceColumn: TO_KRW
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO_MXC
+		dataType: double
+		formatString: General Number
+		lineageTag: 45c85fbf-1465-485c-8d8b-05c4cf03b1d0
+		summarizeBy: sum
+		sourceColumn: TO_MXC
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO_MYR
+		dataType: double
+		formatString: General Number
+		lineageTag: 438a2ec3-e478-4fee-a23d-935e42c9b147
+		summarizeBy: sum
+		sourceColumn: TO_MYR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO_PEN
+		dataType: double
+		formatString: General Number
+		lineageTag: 48b9a861-4256-48c0-99fc-4289574fd0a8
+		summarizeBy: sum
+		sourceColumn: TO_PEN
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO_UVR
+		dataType: double
+		formatString: General Number
+		lineageTag: a2272bd2-864b-44ea-bb09-d43bb9250587
+		summarizeBy: sum
+		sourceColumn: TO_UVR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO_UYU
+		dataType: double
+		formatString: General Number
+		lineageTag: 16f8ee49-5e4c-4f98-8d49-b2d77f6b3d3c
+		summarizeBy: sum
+		sourceColumn: TO_UYU
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MARKET_DATA_SOURCE_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: a775df23-b853-416c-97f4-02c7242abf13
+		summarizeBy: sum
+		sourceColumn: MARKET_DATA_SOURCE_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'FX_PIVOT_Risk_GFIRates_Reports_Excel_Rolling (local copy)' = m
+		mode: import
+		source =
+				let
+					    Source = Csv.Document(
+					        File.Contents("https://saastestlatest.blob.core.windows.net/saas-test-reports/FX_PIVOT_Risk_GFIRates_Reports_Excel_Rolling%20%28local%20copy%29.csv?se=2025-11-05T15%3A05%3A34Z&sp=r&sv=2025-11-05&sr=b&sig=cqyfSD6vUajM3h9O6bKbx%2BAaSFbL4z6lpP%2BdUhI5hyc%3D"),
+					        [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.None]
+					    ),
+					    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+					    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"SLICE_DATE", type datetime}, {"CURR_FROM", type text}, {"TO_AUD", type number}, {"TO_CAD", type number}, {"TO_CHF", type number}, {"TO_EUR", type number}, {"TO_GBP", type number}, {"TO_HKD", type number}, {"TO_JPY", type number}, {"TO_MXN", type number}, {"TO_NZD", type number}, {"TO_SEK", type number}, {"TO_SGD", type number}, {"TO_USD", type number}, {"TO_MEX", type number}, {"ADDED_DATE", type datetime}, {"ADDED_USER", type text}, {"TO_BRL", type number}, {"TO_BRO", type number}, {"TO_CLF", type number}, {"TO_CLP", type number}, {"TO_CNH", type number}, {"TO_COP", type number}, {"TO_CRC", type number}, {"TO_INR", type number}, {"TO_KRW", type number}, {"TO_MXC", type number}, {"TO_MYR", type number}, {"TO_PEN", type number}, {"TO_UVR", type number}, {"TO_UYU", type number}, {"MARKET_DATA_SOURCE_ID", Int64.Type}})
+					in
+					    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
