@@ -1,0 +1,229 @@
+table 'Orders (Sample - Superstore (1))'
+	lineageTag: d42b6edc-4ace-4eb7-a07b-8fb8f3723d9f
+
+	column 'Row ID'
+		dataType: int64
+		formatString: 0
+		lineageTag: 4a8afab0-f56d-400f-a6f0-cc7bebe1838b
+		summarizeBy: sum
+		sourceColumn: 'Row ID'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order ID'
+		dataType: string
+		lineageTag: ea176eff-0aae-4d73-b49f-c38327666b21
+		summarizeBy: none
+		sourceColumn: 'Order ID'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Date'
+		dataType: datetime
+		lineageTag: 72b188f5-0054-4995-a0ff-dbbbe60b5d64
+		summarizeBy: none
+		sourceColumn: 'Order Date'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ship Date'
+		dataType: datetime
+		lineageTag: 3f4d2a58-5e7c-44e3-bff4-276194966f59
+		summarizeBy: none
+		sourceColumn: 'Ship Date'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ship Mode'
+		dataType: string
+		lineageTag: b026b566-42b3-4d22-a279-f0e81170c92f
+		summarizeBy: none
+		sourceColumn: 'Ship Mode'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer ID'
+		dataType: string
+		lineageTag: 81484d86-dfaf-467a-be97-708beee36cc3
+		summarizeBy: none
+		sourceColumn: 'Customer ID'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Name'
+		dataType: string
+		lineageTag: f3c7bb21-6285-4325-97a2-e00db7125a91
+		summarizeBy: none
+		sourceColumn: 'Customer Name'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Segment
+		dataType: string
+		lineageTag: 2e299f29-afda-4f42-a0a7-23ce540d9e0a
+		summarizeBy: none
+		sourceColumn: Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: d4145f76-8c04-4a1b-bbe5-11a54766fd4e
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: cb211e73-f31c-4c24-8a5b-2bd73f8bade9
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column State
+		dataType: string
+		lineageTag: 18870412-ecc9-44e8-a7be-36b76657bbc8
+		summarizeBy: none
+		sourceColumn: State
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Postal Code'
+		dataType: int64
+		formatString: 0
+		lineageTag: 111a9015-208a-4cb8-b7ab-a0638c7a838a
+		summarizeBy: sum
+		sourceColumn: 'Postal Code'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		lineageTag: 29c055ad-6c47-49dd-96c7-7786c09f0e22
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product ID'
+		dataType: string
+		lineageTag: f7a719a5-417c-438b-a617-b13d75a248d6
+		summarizeBy: none
+		sourceColumn: 'Product ID'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		lineageTag: 1b117f3c-fe3a-4fc5-a90f-78a2061b9b9b
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sub-Category'
+		dataType: string
+		lineageTag: 52d50acb-6fcd-4980-862e-b1eae856ac2f
+		summarizeBy: none
+		sourceColumn: 'Sub-Category'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Name'
+		dataType: string
+		lineageTag: 89fffed7-d4a6-4111-8552-8a947dac1182
+		summarizeBy: none
+		sourceColumn: 'Product Name'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sales
+		dataType: double
+		formatString: General Number
+		lineageTag: 3a0acb2c-4902-4588-916a-1d518dc8d3f7
+		summarizeBy: sum
+		sourceColumn: Sales
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Quantity
+		dataType: int64
+		formatString: 0
+		lineageTag: ebbe31ac-fed6-44ea-8971-aca36e65fa5c
+		summarizeBy: sum
+		sourceColumn: Quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column Discount
+		dataType: double
+		formatString: General Number
+		lineageTag: 643009af-077a-453b-b6f6-1c3623ede330
+		summarizeBy: sum
+		sourceColumn: Discount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Profit
+		dataType: double
+		formatString: General Number
+		lineageTag: 712a6276-2298-4fad-ab2b-553ec9ed6d4d
+		summarizeBy: sum
+		sourceColumn: Profit
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Calculation1 = SWITCH(TRUE(), 'Orders (Sample - Superstore (1))'[Category] = \"Furniture\", \"furniture\", 'Orders (Sample - Superstore (1))'[Category] = \"Office Supplies\", \"office supplier\", 'Orders (Sample - Superstore (1))'[Category] = \"Technology\", \"technology\", 'Orders (Sample - Superstore (1))'[Category])
+		lineageTag: 53f3062b-97cb-48f6-b2fd-d0162bfcc02c
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Orders (Sample - Superstore (1))' = m
+		mode: import
+		source =
+				let
+					    Source = Table.FromRecords({
+					        [Row ID = 1, Order ID = "ORD-10001", Order Date = #date(2023, 6, 15), Ship Date = #date(2023, 6, 20), Ship Mode = "Standard Class", Customer ID = "CUST-1001", Customer Name = "Jordan Smith", Segment = "Consumer", Country = "United States", City = "San Francisco", State = "CA", Postal Code = 94105, Region = "West", Product ID = "FUR-CH-01", Category = "Furniture", Sub-Category = "Chairs", Product Name = "ErgoFlex Chair", Sales = 623.45, Quantity = 2, Discount = 0.07, Profit = 83.8],
+					        [Row ID = 2, Order ID = "ORD-10002", Order Date = #date(2023, 7, 2), Ship Date = #date(2023, 7, 4), Ship Mode = "First Class", Customer ID = "CUST-1002", Customer Name = "Maria Gonzalez", Segment = "Corporate", Country = "United States", City = "New York", State = "NY", Postal Code = 10001, Region = "East", Product ID = "TEC-PHN-01", Category = "Technology", Sub-Category = "Phones", Product Name = "Smartphone X100", Sales = 1299.99, Quantity = 1, Discount = 0.05, Profit = 200.0],
+					        [Row ID = 3, Order ID = "ORD-10003", Order Date = #date(2023, 8, 19), Ship Date = #date(2023, 8, 22), Ship Mode = "Standard Class", Customer ID = "CUST-1003", Customer Name = "William Chen", Segment = "Home Office", Country = "United States", City = "Chicago", State = "IL", Postal Code = 60601, Region = "Central", Product ID = "OFF-PPR-02", Category = "Office Supplies", Sub-Category = "Paper", Product Name = "Premium Printer Paper 500-Sheets", Sales = 412.5, Quantity = 3, Discount = 0.08, Profit = 25.0],
+					        [Row ID = 4, Order ID = "ORD-10004", Order Date = #date(2023, 4, 10), Ship Date = #date(2023, 4, 12), Ship Mode = "Same Day", Customer ID = "CUST-1004", Customer Name = "Sophia Patel", Segment = "Consumer", Country = "United States", City = "Atlanta", State = "GA", Postal Code = 30301, Region = "South", Product ID = "FUR-TA-02", Category = "Furniture", Sub-Category = "Tables", Product Name = "Executive Glass Table", Sales = 999.95, Quantity = 1, Discount = 0.12, Profit = 60.0],
+					        [Row ID = 5, Order ID = "ORD-10005", Order Date = #date(2023, 5, 28), Ship Date = #date(2023, 6, 1), Ship Mode = "Standard Class", Customer ID = "CUST-1005", Customer Name = "Daniel Kim", Segment = "Corporate", Country = "United States", City = "Seattle", State = "WA", Postal Code = 98101, Region = "West", Product ID = "TEC-ACC-01", Category = "Technology", Sub-Category = "Accessories", Product Name = "Wireless Keyboard and Mouse Combo", Sales = 149.99, Quantity = 2, Discount = 0.04, Profit = 24.0]
+					    }}),
+					    Typed = Table.TransformColumnTypes(Source, {
+					        {"Row ID", Int64.Type},
+					        {"Order ID", type text},
+					        {"Order Date", type date},
+					        {"Ship Date", type date},
+					        {"Ship Mode", type text},
+					        {"Customer ID", type text},
+					        {"Customer Name", type text},
+					        {"Segment", type text},
+					        {"Country", type text},
+					        {"City", type text},
+					        {"State", type text},
+					        {"Postal Code", Int64.Type},
+					        {"Region", type text},
+					        {"Product ID", type text},
+					        {"Category", type text},
+					        {"Sub-Category", type text},
+					        {"Product Name", type text},
+					        {"Sales", type number},
+					        {"Quantity", Int64.Type},
+					        {"Discount", type number},
+					        {"Profit", type number}
+					    }})
+					in
+					    Typed
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
