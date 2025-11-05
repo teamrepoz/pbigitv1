@@ -1,0 +1,35 @@
+table 'Sample - Superstore_Returns'
+	lineageTag: cf160c43-947f-497f-9868-0e3baa6a3623
+
+	column 'Order ID'
+		dataType: string
+		lineageTag: 33d9369d-a132-44ba-9aff-c4a421645f13
+		summarizeBy: none
+		sourceColumn: 'Order ID'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Returned
+		dataType: string
+		lineageTag: ab391190-2624-4d13-86a2-b9eaf12c2c80
+		summarizeBy: none
+		sourceColumn: Returned
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Sample - Superstore_Returns' = m
+		mode: import
+		source =
+				let
+					    Source = Csv.Document(
+					        File.Contents("https://saastestlatest.blob.core.windows.net/saas-test-reports/Sample%20-%20Superstore_Returns.csv?se=2025-11-05T08%3A50%3A44Z&sp=r&sv=2025-11-05&sr=b&sig=W/fAHoc1FhOBscBVe6utRc1vaL7YA2ju0g3nMI0VhIg%3D"),
+					        [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.None]
+					    ),
+					    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+					    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Order ID", type text}, {"Returned", type text}})
+					in
+					    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
