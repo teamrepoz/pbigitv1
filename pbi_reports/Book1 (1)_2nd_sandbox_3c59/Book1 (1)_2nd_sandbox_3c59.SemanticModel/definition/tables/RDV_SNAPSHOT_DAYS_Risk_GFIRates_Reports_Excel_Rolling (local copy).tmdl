@@ -1,0 +1,4711 @@
+table 'RDV_SNAPSHOT_DAYS_Risk_GFIRates_Reports_Excel_Rolling (local copy)'
+	lineageTag: ffa356cb-2c03-49f1-9977-70e9b98da08f
+
+	column BOOKING_POINT_ID
+		dataType: string
+		lineageTag: aca08417-9aee-4ecd-b762-389d4b2a0af7
+		summarizeBy: none
+		sourceColumn: BOOKING_POINT_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CNPTY_REF_ID
+		dataType: string
+		lineageTag: 88c0dcd8-7f14-4322-a627-da12f49d1d9d
+		summarizeBy: none
+		sourceColumn: CNPTY_REF_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CURVE_TYPE
+		dataType: string
+		lineageTag: 2a4b697d-c9a7-41f3-a0d7-52c410d7be96
+		summarizeBy: none
+		sourceColumn: CURVE_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column DEAL_END_DATE
+		dataType: datetime
+		lineageTag: 1091b6ee-f2e1-4418-ab52-8feae1c0b8fd
+		summarizeBy: none
+		sourceColumn: DEAL_END_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column DEAL_REF_ID_LEVEL_1
+		dataType: string
+		lineageTag: c5b8924f-6ea0-44ed-8cf7-cdf3cd6a3b50
+		summarizeBy: none
+		sourceColumn: DEAL_REF_ID_LEVEL_1
+
+		annotation SummarizationSetBy = Automatic
+
+	column DEAL_REF_ID_LEVEL_2
+		dataType: string
+		lineageTag: 36bb1da7-090b-461e-bf1a-41180752fb3a
+		summarizeBy: none
+		sourceColumn: DEAL_REF_ID_LEVEL_2
+
+		annotation SummarizationSetBy = Automatic
+
+	column DEAL_START_DATE
+		dataType: datetime
+		lineageTag: cb5b7ea4-b4bc-4755-b582-7293a841de8b
+		summarizeBy: none
+		sourceColumn: DEAL_START_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column DEAL_TYPE
+		dataType: string
+		lineageTag: 25cb16a6-2b6f-428d-abc8-b0f071a6038b
+		summarizeBy: none
+		sourceColumn: DEAL_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column FEDS_INSTRUMENT_TYPE
+		dataType: string
+		lineageTag: 86ef9961-4685-4b49-a627-b83137464ec5
+		summarizeBy: none
+		sourceColumn: FEDS_INSTRUMENT_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column FEDS_THEORETICAL_MODEL
+		dataType: string
+		lineageTag: 64bae1e7-7ecb-46d1-8ca9-86a5fb45de1e
+		summarizeBy: none
+		sourceColumn: FEDS_THEORETICAL_MODEL
+
+		annotation SummarizationSetBy = Automatic
+
+	column FXDELTA_SPOT2
+		dataType: double
+		formatString: General Number
+		lineageTag: 717d758b-258e-4543-b254-4a95c7c99f3e
+		summarizeBy: sum
+		sourceColumn: FXDELTA_SPOT2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FXDELTA_SPOT_2
+		dataType: double
+		formatString: General Number
+		lineageTag: 3bd95553-bd25-4f92-bff8-035e5302265d
+		summarizeBy: sum
+		sourceColumn: FXDELTA_SPOT_2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column INTERNAL_SECURITIES_CD
+		dataType: string
+		lineageTag: 6228158a-4bf6-4b31-9161-18b097ce80a5
+		summarizeBy: none
+		sourceColumn: INTERNAL_SECURITIES_CD
+
+		annotation SummarizationSetBy = Automatic
+
+	column IS_OTC
+		dataType: string
+		lineageTag: 9a3c9c70-667a-45f6-ac50-001d09be5d3e
+		summarizeBy: none
+		sourceColumn: IS_OTC
+
+		annotation SummarizationSetBy = Automatic
+
+	column LEGAL_ENTITY_REF_ID
+		dataType: string
+		lineageTag: 2f5c4ae6-9b15-4112-93e9-cf00313529bf
+		summarizeBy: none
+		sourceColumn: LEGAL_ENTITY_REF_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column MATURITY_DATE
+		dataType: datetime
+		lineageTag: ab71a4e7-b1d3-4a16-bb33-b96c632cfa37
+		summarizeBy: none
+		sourceColumn: MATURITY_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOTIONAL_PAY
+		dataType: double
+		formatString: General Number
+		lineageTag: 1a317604-e546-491a-b7f5-1fd7e0c42574
+		summarizeBy: sum
+		sourceColumn: NOTIONAL_PAY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column NOTIONAL_PAY_UOM
+		dataType: string
+		lineageTag: f5dc4882-5c93-4436-a2d3-0cbd0e2334ef
+		summarizeBy: none
+		sourceColumn: NOTIONAL_PAY_UOM
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOTIONAL_RECEIVE
+		dataType: double
+		formatString: General Number
+		lineageTag: 04f8a833-d7f1-4840-a65e-b115ae156eda
+		summarizeBy: sum
+		sourceColumn: NOTIONAL_RECEIVE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column NOTIONAL_RECEIVE_UOM
+		dataType: string
+		lineageTag: 0a27e844-336b-4783-82a0-7b5803606229
+		summarizeBy: none
+		sourceColumn: NOTIONAL_RECEIVE_UOM
+
+		annotation SummarizationSetBy = Automatic
+
+	column OIS_IND
+		dataType: string
+		lineageTag: 0aa8a24b-774a-47b4-8aaa-12a664eb8a64
+		summarizeBy: none
+		sourceColumn: OIS_IND
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLACE_HOLDER
+		dataType: string
+		lineageTag: d2ddd548-70a0-478d-ba40-01e298de092f
+		summarizeBy: none
+		sourceColumn: PLACE_HOLDER
+
+		annotation SummarizationSetBy = Automatic
+
+	column PORTFOLIO_ID
+		dataType: double
+		formatString: General Number
+		lineageTag: ec85a444-6849-4904-a30c-9cf2e393ed9a
+		summarizeBy: sum
+		sourceColumn: PORTFOLIO_ID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PRIMARY_IND
+		dataType: string
+		lineageTag: d06ca318-07db-4fe9-952c-2df6ee2e1c71
+		summarizeBy: none
+		sourceColumn: PRIMARY_IND
+
+		annotation SummarizationSetBy = Automatic
+
+	column RISK_FACTOR_TYPE
+		dataType: string
+		lineageTag: b01df100-a6fb-493e-b4c0-3bdf0c101638
+		summarizeBy: none
+		sourceColumn: RISK_FACTOR_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column SHIFT_CURRENCY
+		dataType: string
+		lineageTag: c0cf8d8b-c21a-4fd3-a8f1-f2a652593828
+		summarizeBy: none
+		sourceColumn: SHIFT_CURRENCY
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRADE_TYPE_LEVEL1
+		dataType: string
+		lineageTag: 83b61e13-edce-4f15-b92f-a3e950d691ae
+		summarizeBy: none
+		sourceColumn: TRADE_TYPE_LEVEL1
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRANSIT_ID
+		dataType: string
+		lineageTag: f63febf3-5acf-4ac7-a08e-94ba2d94dcaf
+		summarizeBy: none
+		sourceColumn: TRANSIT_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ACCRUED_INTEREST
+		dataType: double
+		formatString: General Number
+		lineageTag: aa29c059-a708-4c24-b73f-1acc0ddce437
+		summarizeBy: sum
+		sourceColumn: ACCRUED_INTEREST
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ADP_REUSED_FLAG
+		dataType: string
+		lineageTag: 8475db32-c27c-47c4-b513-c64907a8ad24
+		summarizeBy: none
+		sourceColumn: ADP_REUSED_FLAG
+
+		annotation SummarizationSetBy = Automatic
+
+	column ASSET_TYPE
+		dataType: string
+		lineageTag: 0af05488-a864-4c17-b425-e2005fe1fc87
+		summarizeBy: none
+		sourceColumn: ASSET_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column BASIS_IND
+		dataType: double
+		formatString: General Number
+		lineageTag: b0a9b192-e743-4e9d-bd3b-40a78b73efdf
+		summarizeBy: sum
+		sourceColumn: BASIS_IND
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column BASKET_MEMBER_FLAG
+		dataType: double
+		formatString: General Number
+		lineageTag: 9642db23-ccd7-4bdc-8904-d57541dd0436
+		summarizeBy: sum
+		sourceColumn: BASKET_MEMBER_FLAG
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column BASKET_MODE_IND
+		dataType: string
+		lineageTag: 12dcc26c-4e2c-4052-9d7e-c6c790f50bbf
+		summarizeBy: none
+		sourceColumn: BASKET_MODE_IND
+
+		annotation SummarizationSetBy = Automatic
+
+	column BASKET_NAME
+		dataType: string
+		lineageTag: c42c4c29-8654-4f83-b6bc-4c4b5000ac87
+		summarizeBy: none
+		sourceColumn: BASKET_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column BASKET_REF_ID
+		dataType: string
+		lineageTag: 1a6b9484-66b9-4e01-b278-2840d0e35371
+		summarizeBy: none
+		sourceColumn: BASKET_REF_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column BOOK_CLASSIFICATION
+		dataType: string
+		lineageTag: abe600b3-d1b5-4967-9429-f4047a923f57
+		summarizeBy: none
+		sourceColumn: BOOK_CLASSIFICATION
+
+		annotation SummarizationSetBy = Automatic
+
+	column BOOK_GROUP
+		dataType: string
+		lineageTag: dedc227c-7283-449b-a43f-0174a74b9842
+		summarizeBy: none
+		sourceColumn: BOOK_GROUP
+
+		annotation SummarizationSetBy = Automatic
+
+	column BOOK_LEVEL1
+		dataType: string
+		lineageTag: b7dc81e2-c7d1-4dd8-b21c-05a67b0344c4
+		summarizeBy: none
+		sourceColumn: BOOK_LEVEL1
+
+		annotation SummarizationSetBy = Automatic
+
+	column BOOK_LEVEL2
+		dataType: string
+		lineageTag: 39f2f739-196f-44cb-9615-a052bc6d7119
+		summarizeBy: none
+		sourceColumn: BOOK_LEVEL2
+
+		annotation SummarizationSetBy = Automatic
+
+	column BOOK_LEVEL3
+		dataType: string
+		lineageTag: 939c2730-3b77-45c3-ab8e-e44858003403
+		summarizeBy: none
+		sourceColumn: BOOK_LEVEL3
+
+		annotation SummarizationSetBy = Automatic
+
+	column BOOK_LEVEL4
+		dataType: string
+		lineageTag: 9f44e324-d88a-4b37-a82d-db8e3ee6e4b5
+		summarizeBy: none
+		sourceColumn: BOOK_LEVEL4
+
+		annotation SummarizationSetBy = Automatic
+
+	column BOOK_LEVEL5
+		dataType: string
+		lineageTag: 3fa89b3c-3e5d-418a-9a34-3477076bf4dd
+		summarizeBy: none
+		sourceColumn: BOOK_LEVEL5
+
+		annotation SummarizationSetBy = Automatic
+
+	column BOOK_LEVEL6
+		dataType: string
+		lineageTag: eaf786d2-f10a-4248-899d-2b426eb5e7ae
+		summarizeBy: none
+		sourceColumn: BOOK_LEVEL6
+
+		annotation SummarizationSetBy = Automatic
+
+	column BOOK_LEVEL7
+		dataType: string
+		lineageTag: 67032994-4c4b-437f-83e0-e3311f34a00a
+		summarizeBy: none
+		sourceColumn: BOOK_LEVEL7
+
+		annotation SummarizationSetBy = Automatic
+
+	column BOOK_LOCATION
+		dataType: string
+		lineageTag: 9a975283-1071-49bb-b102-7289cca4d423
+		summarizeBy: none
+		sourceColumn: BOOK_LOCATION
+
+		annotation SummarizationSetBy = Automatic
+
+	column BUCKET_MODE_IND
+		dataType: string
+		lineageTag: 0283d0eb-3678-4da7-8aa7-c0b0e36c42a0
+		summarizeBy: none
+		sourceColumn: BUCKET_MODE_IND
+
+		annotation SummarizationSetBy = Automatic
+
+	column CLEARED
+		dataType: string
+		lineageTag: a04fbbc8-a689-48e5-9c44-de24af001299
+		summarizeBy: none
+		sourceColumn: CLEARED
+
+		annotation SummarizationSetBy = Automatic
+
+	column CNPTY_CODE
+		dataType: string
+		lineageTag: 803d05cc-8c18-4c0c-b97e-39aab3b3df3d
+		summarizeBy: none
+		sourceColumn: CNPTY_CODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column CNPTY_ID
+		dataType: double
+		formatString: General Number
+		lineageTag: cbef65d4-58d4-418b-bbac-527e63dd3434
+		summarizeBy: sum
+		sourceColumn: CNPTY_ID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CNPTY_NAME
+		dataType: string
+		lineageTag: 766d0949-0465-45d1-9e25-8420b96e389f
+		summarizeBy: none
+		sourceColumn: CNPTY_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column CONTRACT_EXPIRY_DATE
+		dataType: datetime
+		lineageTag: 4c98c6b0-99b9-4f17-b2f7-1b04e989c5cf
+		summarizeBy: none
+		sourceColumn: CONTRACT_EXPIRY_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column CONTRACT_SCHEDULE_ID
+		dataType: double
+		formatString: General Number
+		lineageTag: 75e41c7d-be4e-4042-9526-076ba6b197a1
+		summarizeBy: sum
+		sourceColumn: CONTRACT_SCHEDULE_ID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CONTRACT_SIZE
+		dataType: double
+		formatString: General Number
+		lineageTag: 8320c353-20f1-4b08-8175-4831859d7fd9
+		summarizeBy: sum
+		sourceColumn: CONTRACT_SIZE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CONTRACT_UNIT_ID
+		dataType: double
+		formatString: General Number
+		lineageTag: ff4bb782-d77f-4ee2-a357-1c7fb152bac1
+		summarizeBy: sum
+		sourceColumn: CONTRACT_UNIT_ID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CONTRACT_UOM
+		dataType: string
+		lineageTag: 5f41286b-d20d-43f3-97cc-96541a0aad4c
+		summarizeBy: none
+		sourceColumn: CONTRACT_UOM
+
+		annotation SummarizationSetBy = Automatic
+
+	column CONTRACT_UOM_CLASS
+		dataType: string
+		lineageTag: bc115dda-619e-4e7e-af58-480354381849
+		summarizeBy: none
+		sourceColumn: CONTRACT_UOM_CLASS
+
+		annotation SummarizationSetBy = Automatic
+
+	column CONVERSION_RATIO
+		dataType: double
+		formatString: General Number
+		lineageTag: 9e2e06b2-9cf2-44ab-bb19-abd9b6368d19
+		summarizeBy: sum
+		sourceColumn: CONVERSION_RATIO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CONVERTED_TO_UNDERLYING_FLAG
+		dataType: string
+		lineageTag: ac836dc4-5637-418e-8508-67d018351e96
+		summarizeBy: none
+		sourceColumn: CONVERTED_TO_UNDERLYING_FLAG
+
+		annotation SummarizationSetBy = Automatic
+
+	column COUNTRY_OF_DOMICILE
+		dataType: string
+		lineageTag: c20ff62a-38e8-4b30-b8a0-70d74d228351
+		summarizeBy: none
+		sourceColumn: COUNTRY_OF_DOMICILE
+
+		annotation SummarizationSetBy = Automatic
+
+	column COUNTRY_OF_INCORPORATION
+		dataType: string
+		lineageTag: b29b04e1-4834-4855-87b9-d002b8d8f6a7
+		summarizeBy: none
+		sourceColumn: COUNTRY_OF_INCORPORATION
+
+		annotation SummarizationSetBy = Automatic
+
+	column COUNTRY_OF_ISSUE
+		dataType: string
+		lineageTag: fc9511f3-afd8-4961-b7f8-b600d4fc65b0
+		summarizeBy: none
+		sourceColumn: COUNTRY_OF_ISSUE
+
+		annotation SummarizationSetBy = Automatic
+
+	column COUNTRY_OF_RISK
+		dataType: string
+		lineageTag: 0e97e22f-359f-4f1d-9d40-cf44f29a6ee0
+		summarizeBy: none
+		sourceColumn: COUNTRY_OF_RISK
+
+		annotation SummarizationSetBy = Automatic
+
+	column COUPON_CURRENCY_COUNTRY_NAME
+		dataType: string
+		lineageTag: 2dd084bb-4c8b-49a8-928f-fc83e1e0730e
+		summarizeBy: none
+		sourceColumn: COUPON_CURRENCY_COUNTRY_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column COUPON_CURR_CD
+		dataType: string
+		lineageTag: 94d80ea3-54a5-445c-8803-f067fc3a8f7c
+		summarizeBy: none
+		sourceColumn: COUPON_CURR_CD
+
+		annotation SummarizationSetBy = Automatic
+
+	column COUPON_FREQUENCY
+		dataType: string
+		lineageTag: f5998420-f286-4ffc-84fd-3928593d17af
+		summarizeBy: none
+		sourceColumn: COUPON_FREQUENCY
+
+		annotation SummarizationSetBy = Automatic
+
+	column COUPON_RATE
+		dataType: string
+		lineageTag: 650f5d35-89d8-4e9d-8563-b833d417f0b3
+		summarizeBy: none
+		sourceColumn: COUPON_RATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column CREDITDELTA1PCT
+		dataType: double
+		formatString: General Number
+		lineageTag: 67355335-39f3-4403-ab48-927f4fe8f9c8
+		summarizeBy: sum
+		sourceColumn: CREDITDELTA1PCT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CREDITDELTA_1PCT
+		dataType: double
+		formatString: General Number
+		lineageTag: a3714ecf-2fa4-4c74-89b1-ffae63f66f48
+		summarizeBy: sum
+		sourceColumn: CREDITDELTA_1PCT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CREDIT_JTD
+		dataType: double
+		formatString: General Number
+		lineageTag: cbc2cbd8-1fd0-4fc7-a67f-e41c1ff06ced
+		summarizeBy: sum
+		sourceColumn: CREDIT_JTD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CREDIT_JTD0RR
+		dataType: double
+		formatString: General Number
+		lineageTag: 9b1bb251-9992-4bf3-856f-a81b1d61342a
+		summarizeBy: sum
+		sourceColumn: CREDIT_JTD0RR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CREDIT_JTP
+		dataType: double
+		formatString: General Number
+		lineageTag: 7019d911-683d-4911-8b8b-569d84bd90f9
+		summarizeBy: sum
+		sourceColumn: CREDIT_JTP
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CREDIT_RECOVERY_DELTA10
+		dataType: double
+		formatString: General Number
+		lineageTag: 3559b0ad-78da-4471-9704-2ce72e337713
+		summarizeBy: sum
+		sourceColumn: CREDIT_RECOVERY_DELTA10
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CREDIT_RECOVERY_DELTA_10
+		dataType: double
+		formatString: General Number
+		lineageTag: 1b96ecc1-1f9a-4092-8a58-fbd1be9e21b9
+		summarizeBy: sum
+		sourceColumn: CREDIT_RECOVERY_DELTA_10
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CURRENCY
+		dataType: string
+		lineageTag: a33e0115-5db6-4121-9e55-a22f9c4d9734
+		summarizeBy: none
+		sourceColumn: CURRENCY
+
+		annotation SummarizationSetBy = Automatic
+
+	column CUSIP
+		dataType: string
+		lineageTag: 9f41161f-338c-477a-840f-ae8381c40cab
+		summarizeBy: none
+		sourceColumn: CUSIP
+
+		annotation SummarizationSetBy = Automatic
+
+	column CUSIPBBG_ID
+		dataType: string
+		lineageTag: c5ba19d0-505d-4b36-9f91-f0d390bef5b0
+		summarizeBy: none
+		sourceColumn: CUSIPBBG_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column DEAL_LEVEL_FLAG
+		dataType: double
+		formatString: General Number
+		lineageTag: e38d9784-931c-4fcb-a7b6-62414a9c7f59
+		summarizeBy: sum
+		sourceColumn: DEAL_LEVEL_FLAG
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DELTA
+		dataType: double
+		formatString: General Number
+		lineageTag: b68b0dc9-076d-482f-a019-e663652be9d4
+		summarizeBy: sum
+		sourceColumn: DELTA
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DELTA10
+		dataType: double
+		formatString: General Number
+		lineageTag: 4e5e426e-e74c-4e29-b20f-757cddf3ff68
+		summarizeBy: sum
+		sourceColumn: DELTA10
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DELTA25
+		dataType: double
+		formatString: General Number
+		lineageTag: 681b887b-6073-4b81-9f65-a1e183511bc5
+		summarizeBy: sum
+		sourceColumn: DELTA25
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DELTA30
+		dataType: double
+		formatString: General Number
+		lineageTag: f973ca05-c08e-43a3-a2c0-ca7a6950a430
+		summarizeBy: sum
+		sourceColumn: DELTA30
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DELTA5
+		dataType: double
+		formatString: General Number
+		lineageTag: 8587bf29-b39b-4ad8-8832-cb4c2d624304
+		summarizeBy: sum
+		sourceColumn: DELTA5
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DELTA50
+		dataType: double
+		formatString: General Number
+		lineageTag: 334e597d-581b-46dd-b878-31584d9c5494
+		summarizeBy: sum
+		sourceColumn: DELTA50
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DELTA_10
+		dataType: double
+		formatString: General Number
+		lineageTag: f47f5104-9bd0-4fbf-b15a-23f45b47e511
+		summarizeBy: sum
+		sourceColumn: DELTA_10
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DELTA_25
+		dataType: double
+		formatString: General Number
+		lineageTag: ae61a769-cb72-4283-96a7-a47228b190d0
+		summarizeBy: sum
+		sourceColumn: DELTA_25
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DELTA_30
+		dataType: double
+		formatString: General Number
+		lineageTag: 7d61dfe5-551a-4389-9fea-99b1499302fc
+		summarizeBy: sum
+		sourceColumn: DELTA_30
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DELTA_5
+		dataType: double
+		formatString: General Number
+		lineageTag: c5e61e72-a191-4dd2-b886-52bad89291ee
+		summarizeBy: sum
+		sourceColumn: DELTA_5
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DELTA_50
+		dataType: double
+		formatString: General Number
+		lineageTag: 66380035-c3ae-4ef2-91d3-f16dae32a597
+		summarizeBy: sum
+		sourceColumn: DELTA_50
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DELTA_DOWN
+		dataType: double
+		formatString: General Number
+		lineageTag: 09ef4c68-aa23-4f7d-8fb2-b746463f974c
+		summarizeBy: sum
+		sourceColumn: DELTA_DOWN
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DELTA_UP
+		dataType: double
+		formatString: General Number
+		lineageTag: 794aec5d-4307-488d-a7aa-c22012bc13ac
+		summarizeBy: sum
+		sourceColumn: DELTA_UP
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DIRTY_CLEAN_PRICE
+		dataType: string
+		lineageTag: 976696bb-a5b9-452e-96d7-2e90c66ff48d
+		summarizeBy: none
+		sourceColumn: DIRTY_CLEAN_PRICE
+
+		annotation SummarizationSetBy = Automatic
+
+	column DIVIDEND_AMOUNT
+		dataType: double
+		formatString: General Number
+		lineageTag: 467a3a8b-6ed4-47f4-9129-f0426e7fdcc0
+		summarizeBy: sum
+		sourceColumn: DIVIDEND_AMOUNT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DIVIDEND_CURRENCY
+		dataType: string
+		lineageTag: 2166773e-cacd-4070-b50c-6ac09411339b
+		summarizeBy: none
+		sourceColumn: DIVIDEND_CURRENCY
+
+		annotation SummarizationSetBy = Automatic
+
+	column DIVIDEND_EX_DATE
+		dataType: datetime
+		lineageTag: 528310b8-19ab-4cf5-a6ad-34b58b090463
+		summarizeBy: none
+		sourceColumn: DIVIDEND_EX_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column DIVIDEND_FREQUENCY
+		dataType: string
+		lineageTag: 21f81921-cf66-4efd-9f92-9075f2d09230
+		summarizeBy: none
+		sourceColumn: DIVIDEND_FREQUENCY
+
+		annotation SummarizationSetBy = Automatic
+
+	column EFFECTIVE_DATE
+		dataType: datetime
+		lineageTag: f35fc032-ab80-4986-ba00-21d346a2ebb7
+		summarizeBy: none
+		sourceColumn: EFFECTIVE_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column EQUITIES_ISSUER_ID
+		dataType: double
+		formatString: General Number
+		lineageTag: 0e8beaa5-6b75-4ed6-93b6-8448ad7132c4
+		summarizeBy: sum
+		sourceColumn: EQUITIES_ISSUER_ID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column EQUITIES_ISSUER_NAME
+		dataType: string
+		lineageTag: 4d9c3515-c110-4e0c-a5ed-ed8e5cb561a6
+		summarizeBy: none
+		sourceColumn: EQUITIES_ISSUER_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column EQUITIES_PRICE_SOURCE
+		dataType: string
+		lineageTag: ef8d7d63-a2f7-4058-8c18-d845f2676c60
+		summarizeBy: none
+		sourceColumn: EQUITIES_PRICE_SOURCE
+
+		annotation SummarizationSetBy = Automatic
+
+	column EXCHANGE
+		dataType: string
+		lineageTag: 4ff1c0a3-cf5b-4622-aa97-dadf670971d7
+		summarizeBy: none
+		sourceColumn: EXCHANGE
+
+		annotation SummarizationSetBy = Automatic
+
+	column EXCHANGE_CD
+		dataType: string
+		lineageTag: 5186265b-a3c6-4c81-90d1-83d2071e4371
+		summarizeBy: none
+		sourceColumn: EXCHANGE_CD
+
+		annotation SummarizationSetBy = Automatic
+
+	column EXPIRY_DATE
+		dataType: datetime
+		lineageTag: 4ca6b73e-af11-4487-bdd1-75d8a0d064fe
+		summarizeBy: none
+		sourceColumn: EXPIRY_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column FIRST_DELIVERY_NOTICE_DATE
+		dataType: datetime
+		lineageTag: adea107e-c983-4fe3-ba93-884e35fb4fdc
+		summarizeBy: none
+		sourceColumn: FIRST_DELIVERY_NOTICE_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column FUND_TYPE
+		dataType: string
+		lineageTag: a3c8fb8b-aeb0-4505-b003-2f9661822ea4
+		summarizeBy: none
+		sourceColumn: FUND_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column FXDELTA_SPOT1
+		dataType: double
+		formatString: General Number
+		lineageTag: 412f8df1-753c-4101-a197-0eb0209a56db
+		summarizeBy: sum
+		sourceColumn: FXDELTA_SPOT1
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FXDELTA_SPOT_1
+		dataType: double
+		formatString: General Number
+		lineageTag: 1d44f99a-d9fd-4ac3-890e-fe29ddb0c854
+		summarizeBy: sum
+		sourceColumn: FXDELTA_SPOT_1
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_CORRELATION
+		dataType: double
+		formatString: General Number
+		lineageTag: f910abb1-9d45-4448-9da9-1b1dcd4dec53
+		summarizeBy: sum
+		sourceColumn: FX_CORRELATION
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_VEGA
+		dataType: double
+		formatString: General Number
+		lineageTag: 85a9988c-d144-4242-b5e1-14dd7525595c
+		summarizeBy: sum
+		sourceColumn: FX_VEGA
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column GAMMA
+		dataType: double
+		formatString: General Number
+		lineageTag: b1961d5e-dfcb-42ab-bfbf-a908deb9114b
+		summarizeBy: sum
+		sourceColumn: GAMMA
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column GAMMA10
+		dataType: double
+		formatString: General Number
+		lineageTag: 121ad165-7b03-483c-af55-c1e8d93892c4
+		summarizeBy: sum
+		sourceColumn: GAMMA10
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column GAMMA25
+		dataType: double
+		formatString: General Number
+		lineageTag: 07e6f789-5b29-4620-b5c4-d1d24f2374ac
+		summarizeBy: sum
+		sourceColumn: GAMMA25
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column GAMMA50
+		dataType: double
+		formatString: General Number
+		lineageTag: 8544dc91-18e4-41de-ad41-9810a5c719d9
+		summarizeBy: sum
+		sourceColumn: GAMMA50
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column GAMMA_10
+		dataType: double
+		formatString: General Number
+		lineageTag: 04bb9291-8ed2-4238-9ae0-0fb489e339f5
+		summarizeBy: sum
+		sourceColumn: GAMMA_10
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column GAMMA_25
+		dataType: double
+		formatString: General Number
+		lineageTag: a10081d3-385c-49b8-9b48-f4efe972773f
+		summarizeBy: sum
+		sourceColumn: GAMMA_25
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column GAMMA_50
+		dataType: double
+		formatString: General Number
+		lineageTag: d8641280-432b-4a6b-9885-b1a7d8a2ec98
+		summarizeBy: sum
+		sourceColumn: GAMMA_50
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column GAMMA_DOWN
+		dataType: double
+		formatString: General Number
+		lineageTag: 791e0bf6-4fda-4342-b40c-b2a7a2cda680
+		summarizeBy: sum
+		sourceColumn: GAMMA_DOWN
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column GAMMA_UP
+		dataType: double
+		formatString: General Number
+		lineageTag: 5ae80fb0-4a7d-415d-9002-786da0173c06
+		summarizeBy: sum
+		sourceColumn: GAMMA_UP
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column GICS_SECTOR_NAME
+		dataType: string
+		lineageTag: 451f63c1-6a42-4480-928c-8bf5f452c2aa
+		summarizeBy: none
+		sourceColumn: GICS_SECTOR_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column GICS_SUBINDUSTRY
+		dataType: string
+		lineageTag: a18eb9d2-c7d9-49dc-93a6-6aecda51a2c8
+		summarizeBy: none
+		sourceColumn: GICS_SUBINDUSTRY
+
+		annotation SummarizationSetBy = Automatic
+
+	column GROUP_NAME
+		dataType: string
+		lineageTag: ff45c4f7-42b3-4730-bdc4-44d61ed5aa0a
+		summarizeBy: none
+		sourceColumn: GROUP_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column GROUP_TIER
+		dataType: double
+		formatString: General Number
+		lineageTag: 3c3f5769-055e-46b9-9ab8-e0816ccd88f6
+		summarizeBy: sum
+		sourceColumn: GROUP_TIER
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column IG_RATING
+		dataType: double
+		formatString: General Number
+		lineageTag: 0884df56-e86d-4ab5-832f-17102362eef8
+		summarizeBy: sum
+		sourceColumn: IG_RATING
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column INDEX_BASIS_DELTA_UP
+		dataType: double
+		formatString: General Number
+		lineageTag: ecb72434-5321-4363-b19c-5f68efe329b8
+		summarizeBy: sum
+		sourceColumn: INDEX_BASIS_DELTA_UP
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column INDEX_NAME
+		dataType: string
+		lineageTag: bf3e89d8-7861-462e-819b-3627811387b5
+		summarizeBy: none
+		sourceColumn: INDEX_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column INSTRUMENT_CLASS
+		dataType: string
+		lineageTag: c94bd421-fa9e-4065-9586-c7dfe75d23f9
+		summarizeBy: none
+		sourceColumn: INSTRUMENT_CLASS
+
+		annotation SummarizationSetBy = Automatic
+
+	column INSTRUMENT_SUBTYPE
+		dataType: string
+		lineageTag: fce28c08-3e0d-4903-9bc6-605c5115f265
+		summarizeBy: none
+		sourceColumn: INSTRUMENT_SUBTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column INSTRUMENT_TYPE
+		dataType: string
+		lineageTag: ae66ec10-2268-4858-b983-e0a3dbb24f13
+		summarizeBy: none
+		sourceColumn: INSTRUMENT_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column INTERNAL
+		dataType: string
+		lineageTag: 3e83a268-06f4-44b1-a005-aa6357e18b52
+		summarizeBy: none
+		sourceColumn: INTERNAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column ISIN
+		dataType: string
+		lineageTag: 00d99b26-5cc9-4b1b-b926-839656eacc5c
+		summarizeBy: none
+		sourceColumn: ISIN
+
+		annotation SummarizationSetBy = Automatic
+
+	column ISSUER_COUNTRY
+		dataType: string
+		lineageTag: 015a8cc0-b7b6-4e39-bae9-8950b17173e1
+		summarizeBy: none
+		sourceColumn: ISSUER_COUNTRY
+
+		annotation SummarizationSetBy = Automatic
+
+	column ISSUER_CURRENCY
+		dataType: string
+		lineageTag: 23f3923a-9968-4880-905e-5ba6d0252d2b
+		summarizeBy: none
+		sourceColumn: ISSUER_CURRENCY
+
+		annotation SummarizationSetBy = Automatic
+
+	column ISSUER_CUSIP
+		dataType: string
+		lineageTag: afeddbd6-f1cb-458c-aeb9-1120b1881c33
+		summarizeBy: none
+		sourceColumn: ISSUER_CUSIP
+
+		annotation SummarizationSetBy = Automatic
+
+	column ISSUER_TYPE
+		dataType: string
+		lineageTag: bdce67a6-799d-4d05-a56a-5bdcbc21f0e0
+		summarizeBy: none
+		sourceColumn: ISSUER_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column ISSUE_DATE
+		dataType: datetime
+		lineageTag: feede663-d392-4bc0-a5bf-1492104e77de
+		summarizeBy: none
+		sourceColumn: ISSUE_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column IS_CALLABLE
+		dataType: string
+		lineageTag: f85ec624-2205-40ca-9806-385fbb1ea973
+		summarizeBy: none
+		sourceColumn: IS_CALLABLE
+
+		annotation SummarizationSetBy = Automatic
+
+	column IS_COCO
+		dataType: string
+		lineageTag: 1e662573-9023-4741-ae6f-5d7047db76fe
+		summarizeBy: none
+		sourceColumn: IS_COCO
+
+		annotation SummarizationSetBy = Automatic
+
+	column IS_CONVERTIBLE
+		dataType: string
+		lineageTag: 6c37431f-95a4-43e8-b10f-b6c2da5bf474
+		summarizeBy: none
+		sourceColumn: IS_CONVERTIBLE
+
+		annotation SummarizationSetBy = Automatic
+
+	column IS_COVERED
+		dataType: string
+		lineageTag: c4715a79-ecc8-4d3c-8f86-1ac5c5a798fe
+		summarizeBy: none
+		sourceColumn: IS_COVERED
+
+		annotation SummarizationSetBy = Automatic
+
+	column IS_FLOATER
+		dataType: string
+		lineageTag: 620f2b52-c1e5-421d-8e76-8dc90c311442
+		summarizeBy: none
+		sourceColumn: IS_FLOATER
+
+		annotation SummarizationSetBy = Automatic
+
+	column IS_INFLATION_LINKED
+		dataType: string
+		lineageTag: 304fb7e3-5cd2-446f-98bb-58ae3e8253a5
+		summarizeBy: none
+		sourceColumn: IS_INFLATION_LINKED
+
+		annotation SummarizationSetBy = Automatic
+
+	column IS_SECURED
+		dataType: string
+		lineageTag: 606bb71d-40fc-40e5-bf99-b885c3dc8ecc
+		summarizeBy: none
+		sourceColumn: IS_SECURED
+
+		annotation SummarizationSetBy = Automatic
+
+	column IS_STEP_UP
+		dataType: string
+		lineageTag: 9ad74f6b-f0be-46ee-9cfd-3efa70b609d2
+		summarizeBy: none
+		sourceColumn: IS_STEP_UP
+
+		annotation SummarizationSetBy = Automatic
+
+	column LEGAL_ENTITY
+		dataType: string
+		lineageTag: eb25ad52-1529-47ea-aea8-627c27360ad7
+		summarizeBy: none
+		sourceColumn: LEGAL_ENTITY
+
+		annotation SummarizationSetBy = Automatic
+
+	column LEGAL_ENTITY_CODE
+		dataType: string
+		lineageTag: ccba706f-1859-4477-b5bf-a0a5f2ccaf86
+		summarizeBy: none
+		sourceColumn: LEGAL_ENTITY_CODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column LINEAGE
+		dataType: string
+		lineageTag: 125b1ec9-711c-40a9-9bc9-f34a1d812485
+		summarizeBy: none
+		sourceColumn: LINEAGE
+
+		annotation SummarizationSetBy = Automatic
+
+	column MAKE_WHOLE_CALL_IND
+		dataType: string
+		lineageTag: 84497419-10cf-4690-bbf8-31119db29a4e
+		summarizeBy: none
+		sourceColumn: MAKE_WHOLE_CALL_IND
+
+		annotation SummarizationSetBy = Automatic
+
+	column MARKET_CAPITALIZATION
+		dataType: double
+		formatString: General Number
+		lineageTag: f8a0f1f3-ae23-43ef-a81e-f7522452d73a
+		summarizeBy: sum
+		sourceColumn: MARKET_CAPITALIZATION
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MARKET_CLASS
+		dataType: string
+		lineageTag: 40a4de9c-f3a0-4059-acfd-94b399052133
+		summarizeBy: none
+		sourceColumn: MARKET_CLASS
+
+		annotation SummarizationSetBy = Automatic
+
+	column MARKET_GROUP
+		dataType: string
+		lineageTag: 110c6ae3-a994-4258-9fa7-7a27d33bb10a
+		summarizeBy: none
+		sourceColumn: MARKET_GROUP
+
+		annotation SummarizationSetBy = Automatic
+
+	column MARKET_NAME
+		dataType: string
+		lineageTag: 4f9af2e7-643d-42f1-8b1b-cf77c92d050a
+		summarizeBy: none
+		sourceColumn: MARKET_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column MARKET_SUBTYPE
+		dataType: string
+		lineageTag: ca24e9cd-89a5-4294-8475-c7f97675c937
+		summarizeBy: none
+		sourceColumn: MARKET_SUBTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column MARKET_TITLE
+		dataType: string
+		lineageTag: 9bc6fee0-95a9-4443-ae7c-436b9d7cf894
+		summarizeBy: none
+		sourceColumn: MARKET_TITLE
+
+		annotation SummarizationSetBy = Automatic
+
+	column MARKET_TYPE
+		dataType: string
+		lineageTag: 1aa4f11d-fa7b-4340-811e-bb70a3588819
+		summarizeBy: none
+		sourceColumn: MARKET_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column MSD_CLASS_CODE
+		dataType: double
+		formatString: General Number
+		lineageTag: 25913c7f-f182-47b2-a496-da602791f1f5
+		summarizeBy: sum
+		sourceColumn: MSD_CLASS_CODE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column NOTIONAL_AMOUNT
+		dataType: double
+		formatString: General Number
+		lineageTag: cefdd76b-c0a3-47da-affb-4ff77d9e7afa
+		summarizeBy: sum
+		sourceColumn: NOTIONAL_AMOUNT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column NVEGA
+		dataType: double
+		formatString: General Number
+		lineageTag: ccd92af4-823d-4294-9f26-d815f96a76dd
+		summarizeBy: sum
+		sourceColumn: NVEGA
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column NVEGA_DOWN
+		dataType: double
+		formatString: General Number
+		lineageTag: a2ead412-5a1f-47b3-9f2b-04a900e417b5
+		summarizeBy: sum
+		sourceColumn: NVEGA_DOWN
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column NVEGA_UP
+		dataType: double
+		formatString: General Number
+		lineageTag: 83a01be1-dc12-41e5-93be-ee0c0e8fcfe8
+		summarizeBy: sum
+		sourceColumn: NVEGA_UP
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column OBLIGOR_CODE
+		dataType: string
+		lineageTag: e650824b-93cf-4973-9b7f-c32940f76290
+		summarizeBy: none
+		sourceColumn: OBLIGOR_CODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column OBLIGOR_COUNTRY
+		dataType: string
+		lineageTag: 16d56853-d171-4b1d-97c0-110d99e8ade3
+		summarizeBy: none
+		sourceColumn: OBLIGOR_COUNTRY
+
+		annotation SummarizationSetBy = Automatic
+
+	column OBLIGOR_ENTITY_TYPE
+		dataType: string
+		lineageTag: 05d832e5-372d-4b98-b54d-9d01f960765e
+		summarizeBy: none
+		sourceColumn: OBLIGOR_ENTITY_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column OBLIGOR_ID
+		dataType: double
+		formatString: General Number
+		lineageTag: 6a41ae78-a7e4-4a92-a216-847965671237
+		summarizeBy: sum
+		sourceColumn: OBLIGOR_ID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column OBLIGOR_INDUSTRY
+		dataType: string
+		lineageTag: cfa708b4-61c9-4980-bc61-76ff80f74dbb
+		summarizeBy: none
+		sourceColumn: OBLIGOR_INDUSTRY
+
+		annotation SummarizationSetBy = Automatic
+
+	column OBLIGOR_INDUSTRY_SUB_GROUP
+		dataType: string
+		lineageTag: 4fc75de4-fc74-4adf-8939-bd76a82405d0
+		summarizeBy: none
+		sourceColumn: OBLIGOR_INDUSTRY_SUB_GROUP
+
+		annotation SummarizationSetBy = Automatic
+
+	column OBLIGOR_NAME
+		dataType: string
+		lineageTag: d356bded-a3a3-46a7-92fc-b9b1df511288
+		summarizeBy: none
+		sourceColumn: OBLIGOR_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column OBLIGOR_SECTOR
+		dataType: string
+		lineageTag: a38c90be-003d-490b-9c0c-fe1881e9305a
+		summarizeBy: none
+		sourceColumn: OBLIGOR_SECTOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column OBL_SUBORDINATED_FLAG
+		dataType: string
+		lineageTag: b7180f8a-164e-4db9-9d36-e6170c079321
+		summarizeBy: none
+		sourceColumn: OBL_SUBORDINATED_FLAG
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORIGINAL_CP_SHORT_CD
+		dataType: string
+		lineageTag: 44ec87c5-e41c-471c-810f-706b95d1af32
+		summarizeBy: none
+		sourceColumn: ORIGINAL_CP_SHORT_CD
+
+		annotation SummarizationSetBy = Automatic
+
+	column OUTRIGHT_IND
+		dataType: double
+		formatString: General Number
+		lineageTag: 67896b4b-70dc-4ee7-b7cc-a3b7da49650f
+		summarizeBy: sum
+		sourceColumn: OUTRIGHT_IND
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column OUTSTANDING_ISSUANCE_AMT
+		dataType: double
+		formatString: General Number
+		lineageTag: 6dfe9464-4eb2-4ee1-931b-f42cff106cfa
+		summarizeBy: sum
+		sourceColumn: OUTSTANDING_ISSUANCE_AMT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PARALLEL_FLAG
+		dataType: double
+		formatString: General Number
+		lineageTag: 97355a30-9cd8-436c-a90f-bb2d4ecfd6d5
+		summarizeBy: sum
+		sourceColumn: PARALLEL_FLAG
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PARENT_ADP
+		dataType: string
+		lineageTag: b2e624ec-82b9-49f2-a9aa-b496a397a038
+		summarizeBy: none
+		sourceColumn: PARENT_ADP
+
+		annotation SummarizationSetBy = Automatic
+
+	column PARENT_COUNTRY_CODE
+		dataType: string
+		lineageTag: 3bb9b9c7-b762-444d-9fc4-393d4e6ca7fc
+		summarizeBy: none
+		sourceColumn: PARENT_COUNTRY_CODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column PAY_DISCOUNT_CURVE
+		dataType: string
+		lineageTag: e76362c8-10c3-4277-9963-b76ad68b1369
+		summarizeBy: none
+		sourceColumn: PAY_DISCOUNT_CURVE
+
+		annotation SummarizationSetBy = Automatic
+
+	column PAY_FORWARD_CURVE
+		dataType: string
+		lineageTag: 6f789d47-0f14-4404-bb46-df9f0b06332d
+		summarizeBy: none
+		sourceColumn: PAY_FORWARD_CURVE
+
+		annotation SummarizationSetBy = Automatic
+
+	column PAY_RECEIVE_IND
+		dataType: string
+		lineageTag: 95603edb-8f1b-4387-b16e-9a0ca33a007b
+		summarizeBy: none
+		sourceColumn: PAY_RECEIVE_IND
+
+		annotation SummarizationSetBy = Automatic
+
+	column PEAKNESS
+		dataType: string
+		lineageTag: c98d98ec-e43c-4afd-8643-d7c0f9618a50
+		summarizeBy: none
+		sourceColumn: PEAKNESS
+
+		annotation SummarizationSetBy = Automatic
+
+	column PERIOD_END_DATE
+		dataType: datetime
+		lineageTag: c20bc50c-85c9-4e00-a210-15c68f5d068b
+		summarizeBy: none
+		sourceColumn: PERIOD_END_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column PERIOD_START_DATE
+		dataType: datetime
+		lineageTag: d1078513-e4a7-4f2f-a10d-5f53eae9f788
+		summarizeBy: none
+		sourceColumn: PERIOD_START_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column PERPETUAL_IND
+		dataType: string
+		lineageTag: 9a22508b-9740-491f-af5e-380ce03dc405
+		summarizeBy: none
+		sourceColumn: PERPETUAL_IND
+
+		annotation SummarizationSetBy = Automatic
+
+	column PL_PK
+		dataType: double
+		formatString: General Number
+		lineageTag: 101668f3-01ad-4197-afa8-cfa37815d7a8
+		summarizeBy: sum
+		sourceColumn: PL_PK
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column POSITION_TYPE
+		dataType: string
+		lineageTag: 2df199ba-45b3-40db-90fc-1ffb8189fc8c
+		summarizeBy: none
+		sourceColumn: POSITION_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRICE_LAST
+		dataType: double
+		formatString: General Number
+		lineageTag: 753e4dd0-aa99-4a3f-b341-9143483dd637
+		summarizeBy: sum
+		sourceColumn: PRICE_LAST
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PUT_CALL
+		dataType: string
+		lineageTag: fd621320-ab27-43d9-ba9e-161c25d856d3
+		summarizeBy: none
+		sourceColumn: PUT_CALL
+
+		annotation SummarizationSetBy = Automatic
+
+	column RECOVERY_TYPE_DESC
+		dataType: string
+		lineageTag: ad0e2364-52cb-4150-a543-0e4e97cdbc20
+		summarizeBy: none
+		sourceColumn: RECOVERY_TYPE_DESC
+
+		annotation SummarizationSetBy = Automatic
+
+	column REC_DISCOUNT_CURVE
+		dataType: string
+		lineageTag: 37c52d9b-2ef7-414f-8945-b6c5af89a2cb
+		summarizeBy: none
+		sourceColumn: REC_DISCOUNT_CURVE
+
+		annotation SummarizationSetBy = Automatic
+
+	column REC_FORWARD_CURVE
+		dataType: string
+		lineageTag: 2c82b844-4307-46ee-bdbb-87782b7eb6c3
+		summarizeBy: none
+		sourceColumn: REC_FORWARD_CURVE
+
+		annotation SummarizationSetBy = Automatic
+
+	column RISK_CURRENCY_COUNTRY_NAME
+		dataType: string
+		lineageTag: 3ad3e0a0-5124-470a-a4ef-e9a3abbe65cf
+		summarizeBy: none
+		sourceColumn: RISK_CURRENCY_COUNTRY_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column RISK_DATE
+		dataType: datetime
+		lineageTag: 88e622d3-2274-4ad6-ab01-f25b15cdfad4
+		summarizeBy: none
+		sourceColumn: RISK_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column RISK_DAY
+		dataType: double
+		formatString: General Number
+		lineageTag: 4d77ec4e-6982-4ce8-bfce-69e822f64efd
+		summarizeBy: sum
+		sourceColumn: RISK_DAY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column RISK_MONTH
+		dataType: double
+		formatString: General Number
+		lineageTag: 8d7a179b-1d16-4ece-809d-dbfd532befcb
+		summarizeBy: sum
+		sourceColumn: RISK_MONTH
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column RISK_YEAR
+		dataType: double
+		formatString: General Number
+		lineageTag: 172f8b49-9143-41a2-b735-23784c36c5a2
+		summarizeBy: sum
+		sourceColumn: RISK_YEAR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SAG_CONSOLIDATED_RATING
+		dataType: string
+		lineageTag: c3b0ba35-402b-4f46-97d4-cee961d23110
+		summarizeBy: none
+		sourceColumn: SAG_CONSOLIDATED_RATING
+
+		annotation SummarizationSetBy = Automatic
+
+	column SAG_OBLIGOR_ID
+		dataType: double
+		formatString: General Number
+		lineageTag: 19b15205-c091-42e6-81fb-97dc7479299f
+		summarizeBy: sum
+		sourceColumn: SAG_OBLIGOR_ID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SAG_SHORT_NAME
+		dataType: string
+		lineageTag: 9832e4fd-4993-4dc4-88aa-f320e14d13c2
+		summarizeBy: none
+		sourceColumn: SAG_SHORT_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column SECURITY_CONTRACT_SIZE
+		dataType: double
+		formatString: General Number
+		lineageTag: b76a28a1-897a-442d-b84a-01dc6b58da94
+		summarizeBy: sum
+		sourceColumn: SECURITY_CONTRACT_SIZE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SECURITY_COUPON_CURR_CD
+		dataType: string
+		lineageTag: a9f9756d-3e07-4ad6-815b-76750c4c7a43
+		summarizeBy: none
+		sourceColumn: SECURITY_COUPON_CURR_CD
+
+		annotation SummarizationSetBy = Automatic
+
+	column SECURITY_ID
+		dataType: string
+		lineageTag: 51ce4939-f3de-4d91-aab1-f2271017a8c3
+		summarizeBy: none
+		sourceColumn: SECURITY_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column SECURITY_MASTER_TYPE
+		dataType: string
+		lineageTag: 670f9019-da75-4f0f-bf9e-aecbf8d465d5
+		summarizeBy: none
+		sourceColumn: SECURITY_MASTER_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column SECURITY_MATURITY
+		dataType: datetime
+		lineageTag: 5366c037-0aff-44f2-9f1f-7fa616b0c146
+		summarizeBy: none
+		sourceColumn: SECURITY_MATURITY
+
+		annotation SummarizationSetBy = Automatic
+
+	column SECURITY_NAME
+		dataType: string
+		lineageTag: 1c6c7ac6-f091-4e45-97f7-dbf82714096c
+		summarizeBy: none
+		sourceColumn: SECURITY_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column SECURITY_RATING
+		dataType: string
+		lineageTag: 987bc3f4-eff9-4e02-be07-c49c22acebbc
+		summarizeBy: none
+		sourceColumn: SECURITY_RATING
+
+		annotation SummarizationSetBy = Automatic
+
+	column SECURITY_SOURCE_NAME
+		dataType: string
+		lineageTag: d7c44590-4d9b-4849-9b6d-fc1b27013ac2
+		summarizeBy: none
+		sourceColumn: SECURITY_SOURCE_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column SECURITY_TIER_BUSINESS_NAME
+		dataType: string
+		lineageTag: 8dd9c77d-d939-4771-bc79-565b8f997940
+		summarizeBy: none
+		sourceColumn: SECURITY_TIER_BUSINESS_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column SECURITY_TIER_NAME
+		dataType: string
+		lineageTag: 236e3fbf-4088-4ea3-9340-d52c96491d72
+		summarizeBy: none
+		sourceColumn: SECURITY_TIER_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column SECURITY_TYP
+		dataType: string
+		lineageTag: cd99eb5b-9209-4cb2-bdf9-49fa22968393
+		summarizeBy: none
+		sourceColumn: SECURITY_TYP
+
+		annotation SummarizationSetBy = Automatic
+
+	column SECURITY_TYP2
+		dataType: string
+		lineageTag: 0d592570-f986-4766-bf72-27af1c98e8c2
+		summarizeBy: none
+		sourceColumn: SECURITY_TYP2
+
+		annotation SummarizationSetBy = Automatic
+
+	column SEC_UNDERLYING_SECURITY_ID
+		dataType: string
+		lineageTag: 6b8457aa-7380-4ee0-96ae-d965435aabeb
+		summarizeBy: none
+		sourceColumn: SEC_UNDERLYING_SECURITY_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column SEDOL_ID
+		dataType: string
+		lineageTag: 920330b4-6e79-4bd7-85be-db1765e7fb52
+		summarizeBy: none
+		sourceColumn: SEDOL_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column SERIES
+		dataType: string
+		lineageTag: 76ffd357-1e9f-4e76-a214-5c1aa29a8c94
+		summarizeBy: none
+		sourceColumn: SERIES
+
+		annotation SummarizationSetBy = Automatic
+
+	column SETTLE_CURRENCY_CD
+		dataType: string
+		lineageTag: 00816363-229d-431c-a66b-46e870fddfb0
+		summarizeBy: none
+		sourceColumn: SETTLE_CURRENCY_CD
+
+		annotation SummarizationSetBy = Automatic
+
+	column SOURCE
+		dataType: string
+		lineageTag: a845205e-8937-493f-b682-404b482d4761
+		summarizeBy: none
+		sourceColumn: SOURCE
+
+		annotation SummarizationSetBy = Automatic
+
+	column SOURCE_ID
+		dataType: double
+		formatString: General Number
+		lineageTag: 602f26f2-755f-4c8d-b5c5-4d36c880ae8d
+		summarizeBy: sum
+		sourceColumn: SOURCE_ID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SPLIT_ANNOUNCEMENT
+		dataType: datetime
+		lineageTag: d282c7be-fb93-4166-8340-95a8ad0a7f0e
+		summarizeBy: none
+		sourceColumn: SPLIT_ANNOUNCEMENT
+
+		annotation SummarizationSetBy = Automatic
+
+	column SPLIT_DATE
+		dataType: datetime
+		lineageTag: 734e079f-4cd1-497d-8771-c308d4912f1a
+		summarizeBy: none
+		sourceColumn: SPLIT_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column SPLIT_RATIO
+		dataType: string
+		lineageTag: bf475444-f670-4eeb-bd12-75f4a3cdcdeb
+		summarizeBy: none
+		sourceColumn: SPLIT_RATIO
+
+		annotation SummarizationSetBy = Automatic
+
+	column STRIKE
+		dataType: double
+		formatString: General Number
+		lineageTag: 7207723d-6d5a-45e2-b0cf-2430ada889e3
+		summarizeBy: sum
+		sourceColumn: STRIKE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TERM_FLAG
+		dataType: double
+		formatString: General Number
+		lineageTag: d327c720-3479-410f-bad0-fce14a795bc6
+		summarizeBy: sum
+		sourceColumn: TERM_FLAG
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TERM_LABEL
+		dataType: string
+		lineageTag: 13ff01fd-66cd-4e98-a8a0-a2a0360b71ba
+		summarizeBy: none
+		sourceColumn: TERM_LABEL
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRADE_DATE
+		dataType: datetime
+		lineageTag: acea3ea6-ed00-41ee-939a-62fb0a3d3fec
+		summarizeBy: none
+		sourceColumn: TRADE_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRADE_ID
+		dataType: string
+		lineageTag: f96363db-da98-4edd-9f02-c3020df32fb6
+		summarizeBy: none
+		sourceColumn: TRADE_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRADE_TYPE_ID
+		dataType: double
+		formatString: General Number
+		lineageTag: 89b82f1a-4d5b-41cb-acb9-27e0cfb42104
+		summarizeBy: sum
+		sourceColumn: TRADE_TYPE_ID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column UNDERLYING_ADP_CODE
+		dataType: string
+		lineageTag: a1884554-6da4-4c69-82a3-956cda0469c6
+		summarizeBy: none
+		sourceColumn: UNDERLYING_ADP_CODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column UNDERLYING_CURRENCY
+		dataType: string
+		lineageTag: 3855e600-5835-4d63-87a6-5ac8979f7b02
+		summarizeBy: none
+		sourceColumn: UNDERLYING_CURRENCY
+
+		annotation SummarizationSetBy = Automatic
+
+	column UNDERLYING_INDEX_NAME
+		dataType: string
+		lineageTag: 792e354d-421f-442d-83b7-3c8ca9eaf73b
+		summarizeBy: none
+		sourceColumn: UNDERLYING_INDEX_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column UNDERLYING_SECURITY_ID
+		dataType: string
+		lineageTag: b08be32b-1638-4440-89da-853870c7ed03
+		summarizeBy: none
+		sourceColumn: UNDERLYING_SECURITY_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column UOM
+		dataType: string
+		lineageTag: 8c8a07f1-09ca-4d87-b062-6ebdcc9301b3
+		summarizeBy: none
+		sourceColumn: UOM
+
+		annotation SummarizationSetBy = Automatic
+
+	column UOM_CLASS
+		dataType: string
+		lineageTag: f3da77c1-10fc-40f3-8b20-4951553e2b6e
+		summarizeBy: none
+		sourceColumn: UOM_CLASS
+
+		annotation SummarizationSetBy = Automatic
+
+	column VAL_DATE
+		dataType: string
+		lineageTag: 94447685-8edb-4244-8d8f-5463fbc3dcde
+		summarizeBy: none
+		sourceColumn: VAL_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column VOLCKER_DESK
+		dataType: string
+		lineageTag: 8b3bf7b2-c4df-4d18-bb5a-1dbce3d1fc1f
+		summarizeBy: none
+		sourceColumn: VOLCKER_DESK
+
+		annotation SummarizationSetBy = Automatic
+
+	column VOLUME_AVG_6M
+		dataType: double
+		formatString: General Number
+		lineageTag: 80aa4007-3498-4539-a10f-472c5051265d
+		summarizeBy: sum
+		sourceColumn: VOLUME_AVG_6M
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VOLUMN_AVG_3M
+		dataType: double
+		formatString: General Number
+		lineageTag: 70cd0698-7f1a-42e7-a479-928cf1e83ec8
+		summarizeBy: sum
+		sourceColumn: VOLUMN_AVG_3M
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VOLUMN_AVG_5D
+		dataType: double
+		formatString: General Number
+		lineageTag: f2109bdf-5130-4865-84ec-6c9893e72dcd
+		summarizeBy: sum
+		sourceColumn: VOLUMN_AVG_5D
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VOL_10DAY
+		dataType: double
+		formatString: General Number
+		lineageTag: 47cf18da-5e65-42d7-98fe-1748bfb86b5c
+		summarizeBy: sum
+		sourceColumn: VOL_10DAY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VOL_180DAY
+		dataType: double
+		formatString: General Number
+		lineageTag: 1c88996b-e06f-41e5-9818-696fac10c335
+		summarizeBy: sum
+		sourceColumn: VOL_180DAY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VOL_30DAY
+		dataType: double
+		formatString: General Number
+		lineageTag: 647d332a-aeb1-4d25-a14d-f7e056d95c24
+		summarizeBy: sum
+		sourceColumn: VOL_30DAY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VOL_360DAY
+		dataType: double
+		formatString: General Number
+		lineageTag: f93cd4d3-4503-429d-b17a-a013e0c8cde6
+		summarizeBy: sum
+		sourceColumn: VOL_360DAY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VOL_60DAY
+		dataType: double
+		formatString: General Number
+		lineageTag: a0b81f85-595c-4a6f-b64c-0ffdeb91fc23
+		summarizeBy: sum
+		sourceColumn: VOL_60DAY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VOL_90DAY
+		dataType: double
+		formatString: General Number
+		lineageTag: 377728e5-013e-4e84-88a5-51daab9b95e6
+		summarizeBy: sum
+		sourceColumn: VOL_90DAY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column WORKOUT_DATE_MID_TO_WORST
+		dataType: datetime
+		lineageTag: 2ebbb995-cd9f-4399-b788-514bee8a8ed5
+		summarizeBy: none
+		sourceColumn: WORKOUT_DATE_MID_TO_WORST
+
+		annotation SummarizationSetBy = Automatic
+
+	column ASK_PRICE_EXT1
+		dataType: double
+		formatString: General Number
+		lineageTag: c283085a-433c-40fa-bae3-57e810ee055b
+		summarizeBy: sum
+		sourceColumn: ASK_PRICE_EXT1
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ASK_PRICE_EXT2
+		dataType: double
+		formatString: General Number
+		lineageTag: 999df544-c21a-4e2e-a5b7-fbfc5af3667e
+		summarizeBy: sum
+		sourceColumn: ASK_PRICE_EXT2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ASK_PRICE_INT
+		dataType: double
+		formatString: General Number
+		lineageTag: 2027d34a-c6e2-4b0f-b8a7-eb53b114cec5
+		summarizeBy: sum
+		sourceColumn: ASK_PRICE_INT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column BASKET_UNITS
+		dataType: double
+		formatString: General Number
+		lineageTag: b46e4b79-0023-4b36-b335-f7583551128b
+		summarizeBy: sum
+		sourceColumn: BASKET_UNITS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column BID_PRICE_EXT1
+		dataType: double
+		formatString: General Number
+		lineageTag: 4690be90-a929-4e3d-bb65-810608383b0a
+		summarizeBy: sum
+		sourceColumn: BID_PRICE_EXT1
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column BID_PRICE_EXT2
+		dataType: double
+		formatString: General Number
+		lineageTag: 4d2e5209-9ae5-4c2f-8d10-460d9a702554
+		summarizeBy: sum
+		sourceColumn: BID_PRICE_EXT2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column BID_PRICE_INT
+		dataType: double
+		formatString: General Number
+		lineageTag: 402a68a6-ec2d-4ad7-9bec-128cb4116177
+		summarizeBy: sum
+		sourceColumn: BID_PRICE_INT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column BOOKING_PURPOSE
+		dataType: string
+		lineageTag: 765459e1-998e-4fba-bf7b-55ac3ad8815f
+		summarizeBy: none
+		sourceColumn: BOOKING_PURPOSE
+
+		annotation SummarizationSetBy = Automatic
+
+	column BOOK_VALUE
+		dataType: double
+		formatString: General Number
+		lineageTag: 8d32cbe7-799e-475e-93cd-cfda196c8ef2
+		summarizeBy: sum
+		sourceColumn: BOOK_VALUE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column BUY_CURRENCY
+		dataType: string
+		lineageTag: 021d2f86-3378-4a09-808a-25ff1f29d685
+		summarizeBy: none
+		sourceColumn: BUY_CURRENCY
+
+		annotation SummarizationSetBy = Automatic
+
+	column CALENDAR_PROMPTNESS
+		dataType: double
+		formatString: General Number
+		lineageTag: 0eb5cb4a-648c-4177-aa25-320b020ae392
+		summarizeBy: sum
+		sourceColumn: CALENDAR_PROMPTNESS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CARRY_VALUE
+		dataType: double
+		formatString: General Number
+		lineageTag: 871b076c-6c19-4cb2-90f7-b1da30ca1956
+		summarizeBy: sum
+		sourceColumn: CARRY_VALUE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CLEARED_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 1e5c9235-38ac-40d0-b0e9-59549be0dfe9
+		summarizeBy: sum
+		sourceColumn: CLEARED_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CONTRACT_PROMPTNESS
+		dataType: int64
+		formatString: 0
+		lineageTag: daad45e3-d964-4e21-8705-34c52985fa46
+		summarizeBy: sum
+		sourceColumn: CONTRACT_PROMPTNESS
+
+		annotation SummarizationSetBy = Automatic
+
+	column CURRENT_PRICE
+		dataType: double
+		formatString: General Number
+		lineageTag: 0b35694e-d396-4f2f-b867-c12e09c71f80
+		summarizeBy: sum
+		sourceColumn: CURRENT_PRICE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CUSTOMER_ALIAS
+		dataType: string
+		lineageTag: 7434ef3b-ea58-4585-bdd7-8a7421735232
+		summarizeBy: none
+		sourceColumn: CUSTOMER_ALIAS
+
+		annotation SummarizationSetBy = Automatic
+
+	column DIFF_IN_YEARS_MAT_FUTURE_EXP
+		dataType: double
+		formatString: General Number
+		lineageTag: 4a499c76-d0a5-4634-b001-1c571c501fbf
+		summarizeBy: sum
+		sourceColumn: DIFF_IN_YEARS_MAT_FUTURE_EXP
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column EMIS_ID
+		dataType: string
+		lineageTag: 961ae253-6396-4956-9c7f-45f6723cbacc
+		summarizeBy: none
+		sourceColumn: EMIS_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column END_DATE
+		dataType: datetime
+		lineageTag: 148f8590-1896-4cae-b43a-81426658709b
+		summarizeBy: none
+		sourceColumn: END_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column ETA
+		dataType: double
+		formatString: General Number
+		lineageTag: 126a7d6c-ac8c-4567-a5f4-8f86ffae5b6e
+		summarizeBy: sum
+		sourceColumn: ETA
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column EXPIRY_LABEL
+		dataType: string
+		lineageTag: 55041819-03c7-436d-8555-22369eac09f5
+		summarizeBy: none
+		sourceColumn: EXPIRY_LABEL
+
+		annotation SummarizationSetBy = Automatic
+
+	column FIRST_ASSET_RESET_DATE
+		dataType: datetime
+		lineageTag: baf6abc6-f1b7-40d5-95ec-2a3f1ca76440
+		summarizeBy: none
+		sourceColumn: FIRST_ASSET_RESET_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column FIXED_RATE
+		dataType: double
+		formatString: General Number
+		lineageTag: 6c75d877-2636-4d79-9367-dcdce8e4b8b3
+		summarizeBy: sum
+		sourceColumn: FIXED_RATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FIXED_RECOVERY_RATE
+		dataType: string
+		lineageTag: 01a8ba1b-3966-4241-a6ae-2ecc27eb8b31
+		summarizeBy: none
+		sourceColumn: FIXED_RECOVERY_RATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column FORWARD_INDEX
+		dataType: string
+		lineageTag: abb9bed3-fea7-45c1-924b-5c70b4250e25
+		summarizeBy: none
+		sourceColumn: FORWARD_INDEX
+
+		annotation SummarizationSetBy = Automatic
+
+	column GROUP_NAME_ID
+		dataType: double
+		formatString: General Number
+		lineageTag: 56dc3cae-4615-484c-bc87-62caeded9f2c
+		summarizeBy: sum
+		sourceColumn: GROUP_NAME_ID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column GROUP_TIER_ID
+		dataType: double
+		formatString: General Number
+		lineageTag: b1d628ae-93e1-4b58-a514-24372e2d3174
+		summarizeBy: sum
+		sourceColumn: GROUP_TIER_ID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column HAIRCUT
+		dataType: double
+		formatString: General Number
+		lineageTag: aba2f78c-0bc7-414f-82ae-b7da10240a4a
+		summarizeBy: sum
+		sourceColumn: HAIRCUT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column INDEX_SERIES
+		dataType: int64
+		formatString: 0
+		lineageTag: c1e8e628-7e15-409e-a653-bcf87318ff5d
+		summarizeBy: sum
+		sourceColumn: INDEX_SERIES
+
+		annotation SummarizationSetBy = Automatic
+
+	column INDEX_TERM
+		dataType: int64
+		formatString: 0
+		lineageTag: 07bcaa20-66f8-4b1a-aa0e-233158f0631b
+		summarizeBy: sum
+		sourceColumn: INDEX_TERM
+
+		annotation SummarizationSetBy = Automatic
+
+	column IS_OPEN
+		dataType: string
+		lineageTag: 8f194b2d-06cb-41ac-8863-41db7130ebbe
+		summarizeBy: none
+		sourceColumn: IS_OPEN
+
+		annotation SummarizationSetBy = Automatic
+
+	column LAST_ASSET_RESET_DATE
+		dataType: datetime
+		lineageTag: 5885d837-a669-4830-810d-6b754d13ca6c
+		summarizeBy: none
+		sourceColumn: LAST_ASSET_RESET_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column MARGIN
+		dataType: double
+		formatString: General Number
+		lineageTag: ead1a853-9435-49df-b7bf-90659b0536ff
+		summarizeBy: sum
+		sourceColumn: MARGIN
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MATURITY
+		dataType: datetime
+		lineageTag: b876d09e-10e0-4c5f-82ee-b0aecf676308
+		summarizeBy: none
+		sourceColumn: MATURITY
+
+		annotation SummarizationSetBy = Automatic
+
+	column MID_PRICE_EXT1
+		dataType: double
+		formatString: General Number
+		lineageTag: 48d361bc-4f6d-484c-b128-96bdaffa5e2a
+		summarizeBy: sum
+		sourceColumn: MID_PRICE_EXT1
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MID_PRICE_EXT2
+		dataType: double
+		formatString: General Number
+		lineageTag: 72d5b5ff-68e6-4aa5-8365-8debea58f8b9
+		summarizeBy: sum
+		sourceColumn: MID_PRICE_EXT2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MID_PRICE_INT
+		dataType: double
+		formatString: General Number
+		lineageTag: 82389982-858b-4b39-b13d-bae30a2a5e76
+		summarizeBy: sum
+		sourceColumn: MID_PRICE_INT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column NO_OF_CONTRACTS
+		dataType: double
+		formatString: General Number
+		lineageTag: 6fdeaf49-a1ca-4ee7-b262-114a9ad7a755
+		summarizeBy: sum
+		sourceColumn: NO_OF_CONTRACTS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column NPV
+		dataType: double
+		formatString: General Number
+		lineageTag: 02c296fb-f240-4387-bbe4-e0c91e5eb2a5
+		summarizeBy: sum
+		sourceColumn: NPV
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column OIS_FLAG
+		dataType: string
+		lineageTag: 245b942a-de94-4be9-8d8e-c2de91a21d46
+		summarizeBy: none
+		sourceColumn: OIS_FLAG
+
+		annotation SummarizationSetBy = Automatic
+
+	column OIS_SWAP
+		dataType: string
+		lineageTag: 96f670e9-2edb-4a9f-9f32-3599cf8b925f
+		summarizeBy: none
+		sourceColumn: OIS_SWAP
+
+		annotation SummarizationSetBy = Automatic
+
+	column OPEN_INTEREST
+		dataType: double
+		formatString: General Number
+		lineageTag: 01788c07-f136-4d7d-ab00-6b3f15dd7c3b
+		summarizeBy: sum
+		sourceColumn: OPEN_INTEREST
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column OPTION_TYPE_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: e0fa4d8e-8d09-4474-ab26-40a3297da47f
+		summarizeBy: sum
+		sourceColumn: OPTION_TYPE_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column PCT_DELTA
+		dataType: double
+		formatString: General Number
+		lineageTag: d9ce3d03-154a-4b7e-b658-4c1df1ac19e9
+		summarizeBy: sum
+		sourceColumn: PCT_DELTA
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PEAKNESS_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 3deb100f-530e-442d-95d1-168d450ba4fd
+		summarizeBy: sum
+		sourceColumn: PEAKNESS_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column PREMIUM
+		dataType: double
+		formatString: General Number
+		lineageTag: 3349d745-d139-4e34-aed4-6a37249ca825
+		summarizeBy: sum
+		sourceColumn: PREMIUM
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column QUANTITY
+		dataType: double
+		formatString: General Number
+		lineageTag: 87c1954b-9330-4962-9d9c-6276a9351f90
+		summarizeBy: sum
+		sourceColumn: QUANTITY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column REMAINING_AMT
+		dataType: double
+		formatString: General Number
+		lineageTag: 37fa3899-3e28-4e4c-abd8-aad08d3c5b0a
+		summarizeBy: sum
+		sourceColumn: REMAINING_AMT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column RESTRUCTURING_CE
+		dataType: string
+		lineageTag: 8c558795-9d49-4182-b887-3e10b60cd197
+		summarizeBy: none
+		sourceColumn: RESTRUCTURING_CE
+
+		annotation SummarizationSetBy = Automatic
+
+	column RISK_CURR_ID
+		dataType: double
+		formatString: General Number
+		lineageTag: 253a099c-f480-4740-aa8a-1710829b9c25
+		summarizeBy: sum
+		sourceColumn: RISK_CURR_ID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column RISK_DISC_FACTOR
+		dataType: double
+		formatString: General Number
+		lineageTag: 727fba60-b56f-4cc4-b410-348ed99d0c24
+		summarizeBy: sum
+		sourceColumn: RISK_DISC_FACTOR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column RISK_FILE_FLAG
+		dataType: string
+		lineageTag: d7f7d82c-016c-49b5-811f-1c7fcbb3fd74
+		summarizeBy: none
+		sourceColumn: RISK_FILE_FLAG
+
+		annotation SummarizationSetBy = Automatic
+
+	column RISK_RHO
+		dataType: double
+		formatString: General Number
+		lineageTag: 9d512f56-18fc-4d59-9de8-987ee77aeed4
+		summarizeBy: sum
+		sourceColumn: RISK_RHO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SECURITIES_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 106acd23-03f7-48fe-bc5e-51fb3f7402fa
+		summarizeBy: sum
+		sourceColumn: SECURITIES_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column SELL_CURRENCY
+		dataType: string
+		lineageTag: faedf2c2-2e44-4ec8-a641-e1a66d248eb9
+		summarizeBy: none
+		sourceColumn: SELL_CURRENCY
+
+		annotation SummarizationSetBy = Automatic
+
+	column SETTLE_CURR_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: c585edaf-166a-4822-b9ee-241832f3ed4c
+		summarizeBy: sum
+		sourceColumn: SETTLE_CURR_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column SETTLE_CURVE_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: d50e63e5-0574-4e50-9c55-5e37c75cbb51
+		summarizeBy: sum
+		sourceColumn: SETTLE_CURVE_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column SPREAD
+		dataType: double
+		formatString: General Number
+		lineageTag: 9db34faa-0c87-4219-af42-410f24269da3
+		summarizeBy: sum
+		sourceColumn: SPREAD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SPREAD_FLAG
+		dataType: string
+		lineageTag: 832c9c19-40bb-4611-b3ac-3f17fea30b6e
+		summarizeBy: none
+		sourceColumn: SPREAD_FLAG
+
+		annotation SummarizationSetBy = Automatic
+
+	column SPREAD_TO_ZERO
+		dataType: double
+		formatString: General Number
+		lineageTag: c9eaeff6-a701-440a-b9ee-79dde9f00714
+		summarizeBy: sum
+		sourceColumn: SPREAD_TO_ZERO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column START_DATE
+		dataType: datetime
+		lineageTag: e01a3272-d1c5-4e49-890d-4a9dd3aec965
+		summarizeBy: none
+		sourceColumn: START_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column STRIKE_LABEL
+		dataType: string
+		lineageTag: a87f8cdd-9534-469f-bb9e-8e874f0290a1
+		summarizeBy: none
+		sourceColumn: STRIKE_LABEL
+
+		annotation SummarizationSetBy = Automatic
+
+	column THETA
+		dataType: double
+		formatString: General Number
+		lineageTag: 87f8384d-14cb-40f1-8c85-3273149f8242
+		summarizeBy: sum
+		sourceColumn: THETA
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TRANCHE_ATTACH
+		dataType: double
+		formatString: General Number
+		lineageTag: d6b59b37-e385-4fd2-9f4c-7303656ec1bd
+		summarizeBy: sum
+		sourceColumn: TRANCHE_ATTACH
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TRANCHE_ATTACH_ORIG
+		dataType: double
+		formatString: General Number
+		lineageTag: 4b78396b-5189-4507-bf8b-a8484b355ee3
+		summarizeBy: sum
+		sourceColumn: TRANCHE_ATTACH_ORIG
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TRANCHE_DETACH
+		dataType: double
+		formatString: General Number
+		lineageTag: c7afdae3-f822-4f9f-874e-1bb673e474ab
+		summarizeBy: sum
+		sourceColumn: TRANCHE_DETACH
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TRANCHE_DETACH_ORIG
+		dataType: double
+		formatString: General Number
+		lineageTag: a8fb5ac3-50b0-4c5b-bfe9-06fa8ebbccea
+		summarizeBy: sum
+		sourceColumn: TRANCHE_DETACH_ORIG
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column UNDERLYING_FUTURE_EXPIRY_DATE
+		dataType: datetime
+		lineageTag: d210d704-e6f7-489d-9892-abd0de140e65
+		summarizeBy: none
+		sourceColumn: UNDERLYING_FUTURE_EXPIRY_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column UNDERLYING_MAX_MATURITY_DT
+		dataType: datetime
+		lineageTag: 1b3ab7a2-7d72-4f42-a492-97b00dadd1f4
+		summarizeBy: none
+		sourceColumn: UNDERLYING_MAX_MATURITY_DT
+
+		annotation SummarizationSetBy = Automatic
+
+	column UNITS_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: a769ec76-bd83-48ad-b3fe-4fe187bceb6a
+		summarizeBy: sum
+		sourceColumn: UNITS_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column UNIT_PRICE
+		dataType: double
+		formatString: General Number
+		lineageTag: c3149eaa-f84f-4c22-b792-4fd46db81356
+		summarizeBy: sum
+		sourceColumn: UNIT_PRICE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VEGA
+		dataType: double
+		formatString: General Number
+		lineageTag: 20564f40-600d-4976-9adb-fbda0a539fe9
+		summarizeBy: sum
+		sourceColumn: VEGA
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VEGA_DOWN
+		dataType: double
+		formatString: General Number
+		lineageTag: 51ea5721-931b-49ad-a647-278d19b46751
+		summarizeBy: sum
+		sourceColumn: VEGA_DOWN
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VEGA_UP
+		dataType: double
+		formatString: General Number
+		lineageTag: 1e27211c-dbb3-42c5-bbea-4fcd811073e4
+		summarizeBy: sum
+		sourceColumn: VEGA_UP
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column BUY_SELL
+		dataType: string
+		lineageTag: 34e78dfc-305c-4223-8826-f1ffcb3acb45
+		summarizeBy: none
+		sourceColumn: BUY_SELL
+
+		annotation SummarizationSetBy = Automatic
+
+	column ACCOUNT_NAME
+		dataType: string
+		lineageTag: 7ac9608e-e924-460a-b5e7-4d7f43df8924
+		summarizeBy: none
+		sourceColumn: ACCOUNT_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column SETTLEMENT_DATE
+		dataType: datetime
+		lineageTag: a1c1f007-2f2e-4020-a08f-4da3a2fb2c50
+		summarizeBy: none
+		sourceColumn: SETTLEMENT_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column IS_PFE
+		dataType: string
+		lineageTag: cc34aefa-26c6-4fc6-bd26-5a783627796d
+		summarizeBy: none
+		sourceColumn: IS_PFE
+
+		annotation SummarizationSetBy = Automatic
+
+	column LIQUIDITY_HORIZON
+		dataType: double
+		formatString: General Number
+		lineageTag: 73967761-beaf-4571-b483-20d88acb9481
+		summarizeBy: sum
+		sourceColumn: LIQUIDITY_HORIZON
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FUND_NAME
+		dataType: string
+		lineageTag: 42640daf-dc2a-4a72-9c3c-e9180b1ab004
+		summarizeBy: none
+		sourceColumn: FUND_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column LEGAL_ENTITY_ID
+		dataType: double
+		formatString: General Number
+		lineageTag: d7d3c5b6-037f-4ec1-9508-bdb31f7f1d8f
+		summarizeBy: sum
+		sourceColumn: LEGAL_ENTITY_ID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SETTLE_CURVE
+		dataType: string
+		lineageTag: 0e75852a-d79c-4017-aab6-e8c1134caac2
+		summarizeBy: none
+		sourceColumn: SETTLE_CURVE
+
+		annotation SummarizationSetBy = Automatic
+
+	column CONTRACT_SOURCE_CODE
+		dataType: string
+		lineageTag: 3c172205-5ab8-433b-aef9-dc77037eadea
+		summarizeBy: none
+		sourceColumn: CONTRACT_SOURCE_CODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column BARRIER_STYLE
+		dataType: string
+		lineageTag: 53122812-cc9b-46e5-a9f5-755c64026836
+		summarizeBy: none
+		sourceColumn: BARRIER_STYLE
+
+		annotation SummarizationSetBy = Automatic
+
+	column LOWER_BARRIER
+		dataType: double
+		formatString: General Number
+		lineageTag: 219f1367-9b0f-4664-9387-eaff4c56f547
+		summarizeBy: sum
+		sourceColumn: LOWER_BARRIER
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column UPPER_BARRIER
+		dataType: double
+		formatString: General Number
+		lineageTag: 4bad74f7-5549-4f07-8f81-38810bb25de6
+		summarizeBy: sum
+		sourceColumn: UPPER_BARRIER
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column OPTION_STYLE
+		dataType: string
+		lineageTag: 0e5ed98d-05dd-4cfb-ab0f-3b11c2d38348
+		summarizeBy: none
+		sourceColumn: OPTION_STYLE
+
+		annotation SummarizationSetBy = Automatic
+
+	column RISK_COST
+		dataType: double
+		formatString: General Number
+		lineageTag: c789abce-019e-4bd3-8512-d69a0c652f99
+		summarizeBy: sum
+		sourceColumn: RISK_COST
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column RISK_MARK
+		dataType: double
+		formatString: General Number
+		lineageTag: 733de58f-7f97-4a90-a6fd-32d14d9033ba
+		summarizeBy: sum
+		sourceColumn: RISK_MARK
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SETTLE_DATE
+		dataType: datetime
+		lineageTag: 04c28d9e-a563-4bea-9ff6-c966995f0bab
+		summarizeBy: none
+		sourceColumn: SETTLE_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column ASSUMED_SPREAD
+		dataType: double
+		formatString: General Number
+		lineageTag: 48cc8014-8f25-4ae1-8732-18ba836daa11
+		summarizeBy: sum
+		sourceColumn: ASSUMED_SPREAD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ASSUMED_VOL
+		dataType: double
+		formatString: General Number
+		lineageTag: 74cd6acd-7f77-4c55-b753-93de394a0aa6
+		summarizeBy: sum
+		sourceColumn: ASSUMED_VOL
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column NOMINAL
+		dataType: double
+		formatString: General Number
+		lineageTag: a0fd10cc-585c-4f0d-9075-b692faea4edf
+		summarizeBy: sum
+		sourceColumn: NOMINAL
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column KYNEX_SEC_TYPE
+		dataType: string
+		lineageTag: 42827fcd-d68e-4321-8711-6268a72279f9
+		summarizeBy: none
+		sourceColumn: KYNEX_SEC_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column DOLLAR_THETA
+		dataType: double
+		formatString: General Number
+		lineageTag: 62c3605d-d6c2-44ea-a215-60995c340751
+		summarizeBy: sum
+		sourceColumn: DOLLAR_THETA
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column NORMALIZED_DELTA
+		dataType: double
+		formatString: General Number
+		lineageTag: 24d39f4e-3bee-4e3c-8bce-1132f8309c66
+		summarizeBy: sum
+		sourceColumn: NORMALIZED_DELTA
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column NORMALIZED_BOOK_HEDGE
+		dataType: double
+		formatString: General Number
+		lineageTag: 10dc93b6-892f-4fb9-8d79-63552a7be103
+		summarizeBy: sum
+		sourceColumn: NORMALIZED_BOOK_HEDGE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CDS_SPREAD_5YR
+		dataType: double
+		formatString: General Number
+		lineageTag: 048e8dad-c884-488a-aaf2-5e17d4f07415
+		summarizeBy: sum
+		sourceColumn: CDS_SPREAD_5YR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MARKET_RISK_CUR
+		dataType: string
+		lineageTag: 51135659-2eea-48fd-9a2b-f49157d00079
+		summarizeBy: none
+		sourceColumn: MARKET_RISK_CUR
+
+		annotation SummarizationSetBy = Automatic
+
+	column MARKET_BASE_CUR
+		dataType: string
+		lineageTag: 3e581dbd-6779-484e-b7f1-ae77e4428363
+		summarizeBy: none
+		sourceColumn: MARKET_BASE_CUR
+
+		annotation SummarizationSetBy = Automatic
+
+	column IS_SWAP_SPREAD
+		dataType: string
+		lineageTag: 4365d6e4-2ec9-455d-83ca-5801a66a1a20
+		summarizeBy: none
+		sourceColumn: IS_SWAP_SPREAD
+
+		annotation SummarizationSetBy = Automatic
+
+	column MARKET_RISK_CUR_ID
+		dataType: double
+		formatString: General Number
+		lineageTag: db79aad3-5410-4548-9883-897af0e4938f
+		summarizeBy: sum
+		sourceColumn: MARKET_RISK_CUR_ID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MARKET_BASE_CUR_ID
+		dataType: double
+		formatString: General Number
+		lineageTag: 8eb4e5e6-9636-4872-8c5e-73cf35684ba2
+		summarizeBy: sum
+		sourceColumn: MARKET_BASE_CUR_ID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column COLVA_MTM_D1T
+		dataType: double
+		formatString: General Number
+		lineageTag: 8ae97603-ecec-4a45-9922-4e6b93edf73f
+		summarizeBy: sum
+		sourceColumn: COLVA_MTM_D1T
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PRIMARY_TRADERS
+		dataType: string
+		lineageTag: e22ce11f-bcce-4e83-949e-bbb526762b84
+		summarizeBy: none
+		sourceColumn: PRIMARY_TRADERS
+
+		annotation SummarizationSetBy = Automatic
+
+	column PIN_CURRENCY_CODE
+		dataType: string
+		lineageTag: 31f1f5b8-74fd-4fbc-96f0-dab3eefef62a
+		summarizeBy: none
+		sourceColumn: PIN_CURRENCY_CODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column PIN_CURRENCY_ID
+		dataType: double
+		formatString: General Number
+		lineageTag: fd28790c-300e-4d27-a2e7-b1291a61e857
+		summarizeBy: sum
+		sourceColumn: PIN_CURRENCY_ID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column OPTION_STYLE_ID
+		dataType: double
+		formatString: General Number
+		lineageTag: 5e44361e-1356-416a-9366-5c393352b723
+		summarizeBy: sum
+		sourceColumn: OPTION_STYLE_ID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column COLVA_MTM_D1
+		dataType: double
+		formatString: General Number
+		lineageTag: c73ac30b-86fb-45c0-b456-d37fae165ca6
+		summarizeBy: sum
+		sourceColumn: COLVA_MTM_D1
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ALIAS_NAME
+		dataType: string
+		lineageTag: cea7df89-be47-4315-b6c8-3975d7301c96
+		summarizeBy: none
+		sourceColumn: ALIAS_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column EOM_EOQ_IND
+		dataType: string
+		lineageTag: 70141957-f7d0-4bb1-9f6d-c7cc9008d6b3
+		summarizeBy: none
+		sourceColumn: EOM_EOQ_IND
+
+		annotation SummarizationSetBy = Automatic
+
+	column MARKET_DATA_SOURCE
+		dataType: string
+		lineageTag: 51cbb07a-a001-4a3c-873b-0c64a82af197
+		summarizeBy: none
+		sourceColumn: MARKET_DATA_SOURCE
+
+		annotation SummarizationSetBy = Automatic
+
+	column MARKET_DATA_SOURCE_ID
+		dataType: double
+		formatString: General Number
+		lineageTag: e685e53a-8174-47d6-a86a-2ad2269c5587
+		summarizeBy: sum
+		sourceColumn: MARKET_DATA_SOURCE_ID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FX_CONV_MARKET_DATA_SRC_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: d0b1c9a1-caf2-4c6f-bee0-1f933ec3166a
+		summarizeBy: sum
+		sourceColumn: FX_CONV_MARKET_DATA_SRC_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column PAY_NDF_FX_RESET_DATE
+		dataType: datetime
+		lineageTag: 289b175e-6a2f-4e62-b377-5a6f069808ab
+		summarizeBy: none
+		sourceColumn: PAY_NDF_FX_RESET_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column REC_NDF_FX_RESET_DATE
+		dataType: datetime
+		lineageTag: d312b2b5-3c75-4ec3-95c9-5020537b2005
+		summarizeBy: none
+		sourceColumn: REC_NDF_FX_RESET_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOTIONAL_AMOUNT_UOM
+		dataType: string
+		lineageTag: 01813546-d1ff-411c-8ff3-bd12b68e959f
+		summarizeBy: none
+		sourceColumn: NOTIONAL_AMOUNT_UOM
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOTIONAL_AMOUNT_UNITS_ID
+		dataType: double
+		formatString: General Number
+		lineageTag: 13c81c05-6a9e-41a3-ba12-0586d778ceed
+		summarizeBy: sum
+		sourceColumn: NOTIONAL_AMOUNT_UNITS_ID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column NPV_UOM
+		dataType: string
+		lineageTag: 249f66ac-785c-4759-b9fe-459e880c5449
+		summarizeBy: none
+		sourceColumn: NPV_UOM
+
+		annotation SummarizationSetBy = Automatic
+
+	column NPV_UNITS_ID
+		dataType: double
+		formatString: General Number
+		lineageTag: e6515702-7ccb-4350-9af4-74ac41360395
+		summarizeBy: sum
+		sourceColumn: NPV_UNITS_ID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column QUANTITY_UOM
+		dataType: string
+		lineageTag: 63a15ee9-c4a9-468c-afed-b74f6fa998f5
+		summarizeBy: none
+		sourceColumn: QUANTITY_UOM
+
+		annotation SummarizationSetBy = Automatic
+
+	column QUANTITY_UNITS_ID
+		dataType: double
+		formatString: General Number
+		lineageTag: 716e17b8-437a-4ff0-b1b8-1da7f626a8b6
+		summarizeBy: sum
+		sourceColumn: QUANTITY_UNITS_ID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CARRY_VALUE_UOM
+		dataType: string
+		lineageTag: 3aa3cdf7-8377-4527-b200-33d8c41a303f
+		summarizeBy: none
+		sourceColumn: CARRY_VALUE_UOM
+
+		annotation SummarizationSetBy = Automatic
+
+	column CARRY_VALUE_UNITS_ID
+		dataType: double
+		formatString: General Number
+		lineageTag: 86fbe1e7-d694-42f5-a6f6-64967f70a30b
+		summarizeBy: sum
+		sourceColumn: CARRY_VALUE_UNITS_ID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column NOTIONAL_PAY_UNITS_ID
+		dataType: double
+		formatString: General Number
+		lineageTag: c90b398f-746a-4b7f-bb37-f9993e2bf0d2
+		summarizeBy: sum
+		sourceColumn: NOTIONAL_PAY_UNITS_ID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column NOTIONAL_RECEIVE_UNITS_ID
+		dataType: double
+		formatString: General Number
+		lineageTag: a0bb6b0c-d978-4e03-9004-0c502863c1c0
+		summarizeBy: sum
+		sourceColumn: NOTIONAL_RECEIVE_UNITS_ID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FXGAMMA1
+		dataType: double
+		formatString: General Number
+		lineageTag: f081aa8a-04c6-47fa-92b1-09396b9b0cb9
+		summarizeBy: sum
+		sourceColumn: FXGAMMA1
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FXGAMMA_1
+		dataType: double
+		formatString: General Number
+		lineageTag: 752997ab-aff6-4d6e-9395-41328be447b0
+		summarizeBy: sum
+		sourceColumn: FXGAMMA_1
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FXGAMMA5
+		dataType: double
+		formatString: General Number
+		lineageTag: 5987811c-eb9a-4124-ad24-f1162cb3dfa4
+		summarizeBy: sum
+		sourceColumn: FXGAMMA5
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FXGAMMA_5
+		dataType: double
+		formatString: General Number
+		lineageTag: 2b40cac1-51c2-4518-975a-44dac6aeb18f
+		summarizeBy: sum
+		sourceColumn: FXGAMMA_5
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TRADE_GROUP_STRATEGY
+		dataType: string
+		lineageTag: c64000f5-4c00-44cd-9af4-cd12e03dbf99
+		summarizeBy: none
+		sourceColumn: TRADE_GROUP_STRATEGY
+
+		annotation SummarizationSetBy = Automatic
+
+	column EXPIRY_SEQUENCE_NUMBER
+		dataType: double
+		formatString: General Number
+		lineageTag: a65b8bf3-f7e3-45a0-a01d-f7cb8608992b
+		summarizeBy: sum
+		sourceColumn: EXPIRY_SEQUENCE_NUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column STRIKE_SEQUENCE_NUMBER
+		dataType: double
+		formatString: General Number
+		lineageTag: 362f292b-1633-4555-87fe-1cad6b274ab4
+		summarizeBy: sum
+		sourceColumn: STRIKE_SEQUENCE_NUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TERM_SEQUENCE_NUMBER
+		dataType: double
+		formatString: General Number
+		lineageTag: 802394ee-02b2-4ba6-85a1-3e488b35f6b2
+		summarizeBy: sum
+		sourceColumn: TERM_SEQUENCE_NUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MARKET_SECTOR
+		dataType: string
+		lineageTag: d1568edc-eeaa-45d8-a1e7-e36889225e13
+		summarizeBy: none
+		sourceColumn: MARKET_SECTOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column CATASTROPHE
+		dataType: string
+		lineageTag: 8586d3e2-3671-478e-8f50-e5cf7414a172
+		summarizeBy: none
+		sourceColumn: CATASTROPHE
+
+		annotation SummarizationSetBy = Automatic
+
+	column RATING_CLASS
+		dataType: string
+		lineageTag: 9ff2323f-ec02-4a58-9250-6928357409d8
+		summarizeBy: none
+		sourceColumn: RATING_CLASS
+
+		annotation SummarizationSetBy = Automatic
+
+	column NEXT_PAY_RESET_DATE
+		dataType: datetime
+		lineageTag: 330da8fd-0417-4e49-9a36-cbe84aea49c1
+		summarizeBy: none
+		sourceColumn: NEXT_PAY_RESET_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column NEXT_REC_RESET_DATE
+		dataType: datetime
+		lineageTag: c5b1d079-75b0-4679-a39d-06bf87cf0c6c
+		summarizeBy: none
+		sourceColumn: NEXT_REC_RESET_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column NDF_FLAG
+		dataType: string
+		lineageTag: 2117077a-a5f2-4fbe-ac25-fde6fe878cd3
+		summarizeBy: none
+		sourceColumn: NDF_FLAG
+
+		annotation SummarizationSetBy = Automatic
+
+	column DELIVERY_START_DATE
+		dataType: datetime
+		lineageTag: 02000550-be36-4b44-9d0d-91f3631f6bdc
+		summarizeBy: none
+		sourceColumn: DELIVERY_START_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column DELIVERY_END_DATE
+		dataType: datetime
+		lineageTag: cbe56aae-79d7-4016-837d-974af110c318
+		summarizeBy: none
+		sourceColumn: DELIVERY_END_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column RW_MTM_D1
+		dataType: double
+		formatString: General Number
+		lineageTag: fcc14895-f066-44a8-8a15-fdc9b660e73a
+		summarizeBy: sum
+		sourceColumn: RW_MTM_D1
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column RW_MTM_D1_UOM
+		dataType: string
+		lineageTag: 4b46f9bf-78f6-4d33-93e3-fb45a1935f53
+		summarizeBy: none
+		sourceColumn: RW_MTM_D1_UOM
+
+		annotation SummarizationSetBy = Automatic
+
+	column RW_MTM_D1T
+		dataType: double
+		formatString: General Number
+		lineageTag: 6696d0df-7253-4593-9f54-f5e9f37fc24e
+		summarizeBy: sum
+		sourceColumn: RW_MTM_D1T
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column RW_MTM_D1T_UOM
+		dataType: string
+		lineageTag: 64e34e75-d19e-45b3-bb20-f03ad82744ce
+		summarizeBy: none
+		sourceColumn: RW_MTM_D1T_UOM
+
+		annotation SummarizationSetBy = Automatic
+
+	column RIC
+		dataType: string
+		lineageTag: 40fe8c28-5347-4f11-b599-dad26ab1b804
+		summarizeBy: none
+		sourceColumn: RIC
+
+		annotation SummarizationSetBy = Automatic
+
+	column FUND_ASSET_CLASS_FOCUS
+		dataType: string
+		lineageTag: 73a4fba0-f0a5-4201-9bad-c4b801b31fb3
+		summarizeBy: none
+		sourceColumn: FUND_ASSET_CLASS_FOCUS
+
+		annotation SummarizationSetBy = Automatic
+
+	column PAY_NDF_FX_RESET_RATES
+		dataType: double
+		formatString: General Number
+		lineageTag: e928dc9e-fbfd-4646-ab97-da3129b4411f
+		summarizeBy: sum
+		sourceColumn: PAY_NDF_FX_RESET_RATES
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PAY_NDF_FX_RESET_HOLIDAY
+		dataType: string
+		lineageTag: e3365958-cf5f-4fff-80a6-1e4429f22f45
+		summarizeBy: none
+		sourceColumn: PAY_NDF_FX_RESET_HOLIDAY
+
+		annotation SummarizationSetBy = Automatic
+
+	column PAY_NDF_FX_RESET_LAG
+		dataType: double
+		formatString: General Number
+		lineageTag: 2faac0bd-62a4-4ff1-8fbc-fd9ac4e2bcd6
+		summarizeBy: sum
+		sourceColumn: PAY_NDF_FX_RESET_LAG
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PAY_NDF_SETTLEMENT_CURRENCY
+		dataType: string
+		lineageTag: 0c96fb43-2082-44fd-99df-dcb962040cbd
+		summarizeBy: none
+		sourceColumn: PAY_NDF_SETTLEMENT_CURRENCY
+
+		annotation SummarizationSetBy = Automatic
+
+	column PAY_NDF_SETTL_DISCOUNT_CURVE
+		dataType: string
+		lineageTag: aa5de591-bc01-46c7-a5e2-03c8b1ab69da
+		summarizeBy: none
+		sourceColumn: PAY_NDF_SETTL_DISCOUNT_CURVE
+
+		annotation SummarizationSetBy = Automatic
+
+	column REC_NDF_FX_RESET_HOLIDAY
+		dataType: string
+		lineageTag: 6741f085-9735-483b-87ea-e679a06756fe
+		summarizeBy: none
+		sourceColumn: REC_NDF_FX_RESET_HOLIDAY
+
+		annotation SummarizationSetBy = Automatic
+
+	column REC_NDF_FX_RESET_LAG
+		dataType: double
+		formatString: General Number
+		lineageTag: 97d27d60-b2fa-41c2-b5b2-66d2cc051ade
+		summarizeBy: sum
+		sourceColumn: REC_NDF_FX_RESET_LAG
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column REC_NDF_SETTLEMENT_CURRENCY
+		dataType: string
+		lineageTag: d2f2208f-6e0a-4d3c-8a06-e6d0cd02cf29
+		summarizeBy: none
+		sourceColumn: REC_NDF_SETTLEMENT_CURRENCY
+
+		annotation SummarizationSetBy = Automatic
+
+	column REC_NDF_SETTL_DISCOUNT_CURVE
+		dataType: string
+		lineageTag: dacc4def-2dd5-416f-89b8-8a85cfeefbce
+		summarizeBy: none
+		sourceColumn: REC_NDF_SETTL_DISCOUNT_CURVE
+
+		annotation SummarizationSetBy = Automatic
+
+	column REC_NDF_FX_RESET_RATES
+		dataType: double
+		formatString: General Number
+		lineageTag: d6e57da1-f7b2-4005-afad-792254db2600
+		summarizeBy: sum
+		sourceColumn: REC_NDF_FX_RESET_RATES
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SETTLEMENT_TYPE
+		dataType: string
+		lineageTag: bd4561cc-aff9-4676-b15a-7b422781bfe2
+		summarizeBy: none
+		sourceColumn: SETTLEMENT_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column MARKET_STATUS
+		dataType: string
+		lineageTag: 85498387-49ef-482f-8203-84f06ed61c0b
+		summarizeBy: none
+		sourceColumn: MARKET_STATUS
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRADE_STATUS
+		dataType: string
+		lineageTag: 686f7f83-a1ff-4abc-a713-61c7a85681c0
+		summarizeBy: none
+		sourceColumn: TRADE_STATUS
+
+		annotation SummarizationSetBy = Automatic
+
+	column INDUSTRY_SECTOR
+		dataType: string
+		lineageTag: df30e231-237f-480c-893f-4f0741a40631
+		summarizeBy: none
+		sourceColumn: INDUSTRY_SECTOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column EQY_SH_OUT
+		dataType: double
+		formatString: General Number
+		lineageTag: c3786b66-9582-4cd8-af64-1257fa07d417
+		summarizeBy: sum
+		sourceColumn: EQY_SH_OUT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VOLUME_AVG_20D
+		dataType: double
+		formatString: General Number
+		lineageTag: f5c5ee59-bc4a-45f3-8fb6-8d2a03dff70a
+		summarizeBy: sum
+		sourceColumn: VOLUME_AVG_20D
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VOLUME_AVG_30D
+		dataType: double
+		formatString: General Number
+		lineageTag: fa295484-2aef-48b5-aa51-f659b44ab760
+		summarizeBy: sum
+		sourceColumn: VOLUME_AVG_30D
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SHORT_INT
+		dataType: double
+		formatString: General Number
+		lineageTag: 4d7ac274-850f-4467-a15b-f462e9474f06
+		summarizeBy: sum
+		sourceColumn: SHORT_INT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column RTG_SP_LT_LI_CREDIT
+		dataType: string
+		lineageTag: 37bbe641-e9a2-46de-89ff-62e71a94b93f
+		summarizeBy: none
+		sourceColumn: RTG_SP_LT_LI_CREDIT
+
+		annotation SummarizationSetBy = Automatic
+
+	column DVD_RECORD_DT
+		dataType: datetime
+		lineageTag: aa09354f-086c-4e71-ae7a-e55b7ffa2753
+		summarizeBy: none
+		sourceColumn: DVD_RECORD_DT
+
+		annotation SummarizationSetBy = Automatic
+
+	column LAST_UPDATE_DT_EXCH_TZ
+		dataType: datetime
+		lineageTag: 077b1fb1-6e26-48df-b60e-6e7c5d36450f
+		summarizeBy: none
+		sourceColumn: LAST_UPDATE_DT_EXCH_TZ
+
+		annotation SummarizationSetBy = Automatic
+
+	column PX_CLOSE_1D
+		dataType: double
+		formatString: General Number
+		lineageTag: 38b6e594-db51-4ce2-ac5d-98d366146344
+		summarizeBy: sum
+		sourceColumn: PX_CLOSE_1D
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PCT_PAR_QUOTED
+		dataType: string
+		lineageTag: 053e6085-4ad6-420f-a240-8ff8ec772efe
+		summarizeBy: none
+		sourceColumn: PCT_PAR_QUOTED
+
+		annotation SummarizationSetBy = Automatic
+
+	column WINDOW_START_DATE
+		dataType: datetime
+		lineageTag: 0b1549dc-a406-4f56-a4de-cfca8f046ac4
+		summarizeBy: none
+		sourceColumn: WINDOW_START_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column WINDOW_END_DATE
+		dataType: datetime
+		lineageTag: 35c04e30-a4bc-42ea-8ba9-491ff126c0c1
+		summarizeBy: none
+		sourceColumn: WINDOW_END_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column BARRIER_TYPE
+		dataType: string
+		lineageTag: 468f088a-e11b-4682-991f-26d12b7ef23e
+		summarizeBy: none
+		sourceColumn: BARRIER_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column DIGITAL
+		dataType: string
+		lineageTag: 40d8027e-9e21-4082-b2ea-2fc84b7961c2
+		summarizeBy: none
+		sourceColumn: DIGITAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column DIGITAL_AMT
+		dataType: double
+		formatString: General Number
+		lineageTag: b8739703-87b3-41bf-afa2-b0ffae3425bf
+		summarizeBy: sum
+		sourceColumn: DIGITAL_AMT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ALGO_NAME
+		dataType: string
+		lineageTag: d871a4eb-f4f3-4ae3-96a4-97c92170c558
+		summarizeBy: none
+		sourceColumn: ALGO_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column CARDS_ID
+		dataType: double
+		formatString: General Number
+		lineageTag: 9b314218-d8e9-4175-8926-0207f1396afa
+		summarizeBy: sum
+		sourceColumn: CARDS_ID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CSA_NAMES
+		dataType: string
+		lineageTag: 9e15d879-bfe8-4645-af7c-5acc7e997aee
+		summarizeBy: none
+		sourceColumn: CSA_NAMES
+
+		annotation SummarizationSetBy = Automatic
+
+	column CSA_ID
+		dataType: string
+		lineageTag: bd9a4098-b38b-4726-b630-48b987a83664
+		summarizeBy: none
+		sourceColumn: CSA_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ALGO_CSA_ID
+		dataType: string
+		lineageTag: 0de83a5e-a3ce-4ccc-b6bf-b46b20984708
+		summarizeBy: none
+		sourceColumn: ALGO_CSA_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column IS_CLOSEOUTNETTED
+		dataType: string
+		lineageTag: 274984c7-04b0-4450-aa36-c68bcfb0e575
+		summarizeBy: none
+		sourceColumn: IS_CLOSEOUTNETTED
+
+		annotation SummarizationSetBy = Automatic
+
+	column IS_SETTLEMENTNETTED
+		dataType: string
+		lineageTag: f52164c9-3121-4039-bb14-7998e9b62ecb
+		summarizeBy: none
+		sourceColumn: IS_SETTLEMENTNETTED
+
+		annotation SummarizationSetBy = Automatic
+
+	column IS_BNSREHYPOTHECATING
+		dataType: string
+		lineageTag: 2acf7216-0416-4324-b967-3f45e62a8a8c
+		summarizeBy: none
+		sourceColumn: IS_BNSREHYPOTHECATING
+
+		annotation SummarizationSetBy = Automatic
+
+	column IS_CPREHYPOTHECATING
+		dataType: string
+		lineageTag: b27f10d3-e7b3-4b55-961c-d0350a54e84b
+		summarizeBy: none
+		sourceColumn: IS_CPREHYPOTHECATING
+
+		annotation SummarizationSetBy = Automatic
+
+	column CPARTY_MARGIN
+		dataType: double
+		formatString: General Number
+		lineageTag: 7bcec82b-2428-4c05-b45e-aa15b4b32e08
+		summarizeBy: sum
+		sourceColumn: CPARTY_MARGIN
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column COLLINE_CSA
+		dataType: string
+		lineageTag: 357e85e3-9f54-4dd0-93ea-a7999067457d
+		summarizeBy: none
+		sourceColumn: COLLINE_CSA
+
+		annotation SummarizationSetBy = Automatic
+
+	column BNS_THRESHOLD_AMT
+		dataType: double
+		formatString: General Number
+		lineageTag: f4c09cf6-f374-4b6f-8914-6a6f26abd697
+		summarizeBy: sum
+		sourceColumn: BNS_THRESHOLD_AMT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CP_THRESHOLD_AMT
+		dataType: double
+		formatString: General Number
+		lineageTag: 79237d76-3d14-43d7-a088-2a8a4fd28556
+		summarizeBy: sum
+		sourceColumn: CP_THRESHOLD_AMT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column BNS_MINIMUM_TRANSFER_AMT
+		dataType: double
+		formatString: General Number
+		lineageTag: be88e65d-c82e-4a79-a368-8b76b6d6291e
+		summarizeBy: sum
+		sourceColumn: BNS_MINIMUM_TRANSFER_AMT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CP_MINIMUM_TRANSFER_AMT
+		dataType: double
+		formatString: General Number
+		lineageTag: abc6c96b-4fe8-46ea-828f-6557d42f74a0
+		summarizeBy: sum
+		sourceColumn: CP_MINIMUM_TRANSFER_AMT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column BNS_INDEPENDENT_AMT
+		dataType: double
+		formatString: General Number
+		lineageTag: 3b22ada9-062f-4bca-bfb9-1715ecc5a306
+		summarizeBy: sum
+		sourceColumn: BNS_INDEPENDENT_AMT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CP_INDEPENDENT_AMT
+		dataType: double
+		formatString: General Number
+		lineageTag: 1963c699-d0e1-4d29-a283-22038e8b32fe
+		summarizeBy: sum
+		sourceColumn: CP_INDEPENDENT_AMT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FLOAT_INDEX
+		dataType: string
+		lineageTag: 5984f331-aca0-4eee-9866-2528118fd5b1
+		summarizeBy: none
+		sourceColumn: FLOAT_INDEX
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRIMARY_EXCHANGE_NAME
+		dataType: string
+		lineageTag: f18e0dda-b7b0-4b6f-9386-68b6b5b87ec0
+		summarizeBy: none
+		sourceColumn: PRIMARY_EXCHANGE_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column CDS_CURVE_NAME
+		dataType: string
+		lineageTag: 1abf7605-8830-4635-9911-1a66c5a7b4a0
+		summarizeBy: none
+		sourceColumn: CDS_CURVE_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column TOT_OR_EXCESS_RETURN
+		dataType: string
+		lineageTag: ae5ea02e-dd94-44eb-8e6a-0bcdc8de81bd
+		summarizeBy: none
+		sourceColumn: TOT_OR_EXCESS_RETURN
+
+		annotation SummarizationSetBy = Automatic
+
+	column NEXT_INTEREST_RESET_DATE
+		dataType: datetime
+		lineageTag: 8c5b25ce-12bf-457e-a97a-54ce1e550b8c
+		summarizeBy: none
+		sourceColumn: NEXT_INTEREST_RESET_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column JACOBIAN_DELTA
+		dataType: double
+		formatString: General Number
+		lineageTag: 10160c1d-5787-4311-bd23-c5e9b7c13f12
+		summarizeBy: sum
+		sourceColumn: JACOBIAN_DELTA
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column JACOBIAN_DELTA1
+		dataType: double
+		formatString: General Number
+		lineageTag: 9ca48e40-1f87-4d1d-9830-70dc777eb570
+		summarizeBy: sum
+		sourceColumn: JACOBIAN_DELTA1
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column JACOBIAN_DELTA_1
+		dataType: double
+		formatString: General Number
+		lineageTag: 7a22178f-9a7d-4ebf-9938-02271ffe3d79
+		summarizeBy: sum
+		sourceColumn: JACOBIAN_DELTA_1
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column EXPECTED_LIFE
+		dataType: double
+		formatString: General Number
+		lineageTag: aaa9645f-d922-4fa1-9c63-70fd6d17a3f4
+		summarizeBy: sum
+		sourceColumn: EXPECTED_LIFE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SPONSORED_REPO_FLAG
+		dataType: string
+		lineageTag: 553e6a34-c89d-4e4d-a539-394b0d235e4b
+		summarizeBy: none
+		sourceColumn: SPONSORED_REPO_FLAG
+
+		annotation SummarizationSetBy = Automatic
+
+	column FIGI
+		dataType: string
+		lineageTag: b5454400-7eb0-4ae9-9e4b-5656d4b05eeb
+		summarizeBy: none
+		sourceColumn: FIGI
+
+		annotation SummarizationSetBy = Automatic
+
+	column SENIORITY
+		dataType: string
+		lineageTag: 4eee0f35-3172-42aa-8944-b48c310f8a9c
+		summarizeBy: none
+		sourceColumn: SENIORITY
+
+		annotation SummarizationSetBy = Automatic
+
+	column ONGOING_TRANCH_SIZE
+		dataType: double
+		formatString: General Number
+		lineageTag: eda8296d-203a-4a56-a2b8-248adf86898d
+		summarizeBy: sum
+		sourceColumn: ONGOING_TRANCH_SIZE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column AMOUNT_ISSUED
+		dataType: double
+		formatString: General Number
+		lineageTag: d1096288-6692-48a9-9950-07a1d2a85040
+		summarizeBy: sum
+		sourceColumn: AMOUNT_ISSUED
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CUSTOM_CODE
+		dataType: string
+		lineageTag: ff4016ee-0114-48a0-9c33-48a4f29f564a
+		summarizeBy: none
+		sourceColumn: CUSTOM_CODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column SECURITY_CURRENCY
+		dataType: string
+		lineageTag: c1e6809f-39a9-48f3-9756-290d8a92352c
+		summarizeBy: none
+		sourceColumn: SECURITY_CURRENCY
+
+		annotation SummarizationSetBy = Automatic
+
+	column DIVIDEND_NEXT_PROJ_AMT
+		dataType: double
+		formatString: General Number
+		lineageTag: 892a4bc6-b20b-456c-8e7e-2a7b60bbecfd
+		summarizeBy: sum
+		sourceColumn: DIVIDEND_NEXT_PROJ_AMT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DIVIDEND_NEXT_EST_PAY_DT
+		dataType: datetime
+		lineageTag: 7d51cc18-05d7-4a88-a52d-5c8c7e740a06
+		summarizeBy: none
+		sourceColumn: DIVIDEND_NEXT_EST_PAY_DT
+
+		annotation SummarizationSetBy = Automatic
+
+	column DIVIDEND_NEXT_EST_EX_DT
+		dataType: datetime
+		lineageTag: 73f68a99-a56f-40b2-9780-bbc4bdae8a99
+		summarizeBy: none
+		sourceColumn: DIVIDEND_NEXT_EST_EX_DT
+
+		annotation SummarizationSetBy = Automatic
+
+	column DIVIDEND_PAY_DT
+		dataType: datetime
+		lineageTag: aa45fb46-5132-4254-abc5-a512a0fa5e90
+		summarizeBy: none
+		sourceColumn: DIVIDEND_PAY_DT
+
+		annotation SummarizationSetBy = Automatic
+
+	column IS_FIXED_TO_FLOAT_FLAG
+		dataType: string
+		lineageTag: 04f6426e-a6fe-4346-b7df-0085b8f5502b
+		summarizeBy: none
+		sourceColumn: IS_FIXED_TO_FLOAT_FLAG
+
+		annotation SummarizationSetBy = Automatic
+
+	column LEVERAGE_UP
+		dataType: double
+		formatString: General Number
+		lineageTag: e3b5a1b7-2723-4d58-a3d5-3013b048fbe6
+		summarizeBy: sum
+		sourceColumn: LEVERAGE_UP
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LEVERAGE_DOWN
+		dataType: double
+		formatString: General Number
+		lineageTag: 94103dcd-af11-47d5-93e1-6f33874ea72a
+		summarizeBy: sum
+		sourceColumn: LEVERAGE_DOWN
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PERFORMANCE_CHOICE
+		dataType: string
+		lineageTag: 3ca34b0a-edec-4db5-b5c8-2ec27bc2b82f
+		summarizeBy: none
+		sourceColumn: PERFORMANCE_CHOICE
+
+		annotation SummarizationSetBy = Automatic
+
+	column OBSERVATION_CHOICE
+		dataType: string
+		lineageTag: 410abb83-e04b-4ebe-bf1a-f06fe88e12e2
+		summarizeBy: none
+		sourceColumn: OBSERVATION_CHOICE
+
+		annotation SummarizationSetBy = Automatic
+
+	column IS_SETTLED
+		dataType: string
+		lineageTag: 5b5d8976-6f8b-4a8a-9321-a804c1032c71
+		summarizeBy: none
+		sourceColumn: IS_SETTLED
+
+		annotation SummarizationSetBy = Automatic
+
+	column AVERAGE_COST_PRICE
+		dataType: double
+		formatString: General Number
+		lineageTag: 76244ebe-b899-44d0-beff-f504503b69e0
+		summarizeBy: sum
+		sourceColumn: AVERAGE_COST_PRICE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TICKER
+		dataType: string
+		lineageTag: cbbb0d57-06ee-4ad5-b162-faa8079dcb71
+		summarizeBy: none
+		sourceColumn: TICKER
+
+		annotation SummarizationSetBy = Automatic
+
+	column DISCOUNT_CURVE
+		dataType: string
+		lineageTag: 10947ee4-343c-4443-8882-3e5c7123c871
+		summarizeBy: none
+		sourceColumn: DISCOUNT_CURVE
+
+		annotation SummarizationSetBy = Automatic
+
+	column RISK_COUNTERPARTY
+		dataType: string
+		lineageTag: ce8f8e40-1b2e-403d-b3fc-c2ce7af6ba34
+		summarizeBy: none
+		sourceColumn: RISK_COUNTERPARTY
+
+		annotation SummarizationSetBy = Automatic
+
+	column RESET_IDX
+		dataType: string
+		lineageTag: db0253a8-588f-435e-a048-5282b9c47770
+		summarizeBy: none
+		sourceColumn: RESET_IDX
+
+		annotation SummarizationSetBy = Automatic
+
+	column PARENT_CNPTY_REF_ID
+		dataType: string
+		lineageTag: 86740320-0054-4cc1-8bfb-f33ea930cd91
+		summarizeBy: none
+		sourceColumn: PARENT_CNPTY_REF_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column PARENT_CNPTY_NAME
+		dataType: string
+		lineageTag: e9cb23e0-ab29-43e2-865f-d5c9b7b5ecda
+		summarizeBy: none
+		sourceColumn: PARENT_CNPTY_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLLATERAL_TYPE
+		dataType: string
+		lineageTag: 2c1623a9-443c-4b37-9b53-96ad3810f7df
+		summarizeBy: none
+		sourceColumn: COLLATERAL_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column POSTING_TYPE
+		dataType: string
+		lineageTag: f234fabf-9056-42dc-8abd-1dca46f6e01b
+		summarizeBy: none
+		sourceColumn: POSTING_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRADE_CATEGORY
+		dataType: string
+		lineageTag: c66a2601-c458-42cb-a7b9-c60ee5f2ca96
+		summarizeBy: none
+		sourceColumn: TRADE_CATEGORY
+
+		annotation SummarizationSetBy = Automatic
+
+	column TYPE_DESCR
+		dataType: string
+		lineageTag: 7216923c-bfd5-499b-9c30-4d0dfee13428
+		summarizeBy: none
+		sourceColumn: TYPE_DESCR
+
+		annotation SummarizationSetBy = Automatic
+
+	column TERM_TYPE
+		dataType: string
+		lineageTag: 814582aa-a02d-432d-beed-a593ced7a84e
+		summarizeBy: none
+		sourceColumn: TERM_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column BUSINESS_TYPE
+		dataType: string
+		lineageTag: 4ba1e256-8705-4f94-b294-fc26d3e7f82d
+		summarizeBy: none
+		sourceColumn: BUSINESS_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column CLEARING
+		dataType: string
+		lineageTag: 883edc8a-81d4-415c-bbe7-ec2aecdaca4c
+		summarizeBy: none
+		sourceColumn: CLEARING
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLLATERAL_PERCENT
+		dataType: string
+		lineageTag: 051e18f1-ae26-46c1-8c07-847b783aed7e
+		summarizeBy: none
+		sourceColumn: COLLATERAL_PERCENT
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRAN_TYPE
+		dataType: string
+		lineageTag: 5b36b2b4-3a59-4d73-b444-9eda84e3cb22
+		summarizeBy: none
+		sourceColumn: TRAN_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column FACILITY_ID
+		dataType: string
+		lineageTag: 37416e43-746b-4204-8b36-3294f9aa6cf7
+		summarizeBy: none
+		sourceColumn: FACILITY_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column DURATION
+		dataType: double
+		formatString: General Number
+		lineageTag: 212f9a74-2b67-4526-85ba-beb2385934ec
+		summarizeBy: sum
+		sourceColumn: DURATION
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column BENCHMARK_RATE
+		dataType: double
+		formatString: General Number
+		lineageTag: 2e37d67a-eb1f-41f8-9a84-5109616b2ad3
+		summarizeBy: sum
+		sourceColumn: BENCHMARK_RATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VOLATILITY_SURFACE
+		dataType: string
+		lineageTag: acf2d0a1-b548-43bc-829c-1863982310a5
+		summarizeBy: none
+		sourceColumn: VOLATILITY_SURFACE
+
+		annotation SummarizationSetBy = Automatic
+
+	column MARGIN_RULE
+		dataType: string
+		lineageTag: c6224e72-1e24-4e9f-8dd1-6375fdfc51c8
+		summarizeBy: none
+		sourceColumn: MARGIN_RULE
+
+		annotation SummarizationSetBy = Automatic
+
+	column ACCOUNT_ID
+		dataType: string
+		lineageTag: 22d887f6-ed56-4646-9f3c-9d3784bc37bf
+		summarizeBy: none
+		sourceColumn: ACCOUNT_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column MARGIN_PCT
+		dataType: double
+		formatString: General Number
+		lineageTag: 9fa1a772-a6cd-4b76-aba7-9b80f87506f7
+		summarizeBy: sum
+		sourceColumn: MARGIN_PCT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FINANCING_TYPE
+		dataType: string
+		lineageTag: 1854acab-9e60-4715-8ced-901b0dccdc76
+		summarizeBy: none
+		sourceColumn: FINANCING_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column NDF_RESET_DATE
+		dataType: datetime
+		lineageTag: bc1d78de-9be6-4552-8599-b4e59463e1cd
+		summarizeBy: none
+		sourceColumn: NDF_RESET_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column NDF_FX_RESET_HOLIDAY
+		dataType: string
+		lineageTag: b796e1bf-8ac7-4d31-a356-b86c724b7263
+		summarizeBy: none
+		sourceColumn: NDF_FX_RESET_HOLIDAY
+
+		annotation SummarizationSetBy = Automatic
+
+	column NDF_FX_RESET_LAG
+		dataType: double
+		formatString: General Number
+		lineageTag: 7f2c9977-6e41-4dd9-a63c-4eed207ec67e
+		summarizeBy: sum
+		sourceColumn: NDF_FX_RESET_LAG
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column NDF_FX_RESET_RATES
+		dataType: double
+		formatString: General Number
+		lineageTag: 924d2549-7722-478b-88e4-849d70eeb788
+		summarizeBy: sum
+		sourceColumn: NDF_FX_RESET_RATES
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column NDF_DELIVERY_CURR
+		dataType: string
+		lineageTag: 8dcd4b26-1c96-4252-953f-a0d158237ee4
+		summarizeBy: none
+		sourceColumn: NDF_DELIVERY_CURR
+
+		annotation SummarizationSetBy = Automatic
+
+	column DISCOUNT_CURVE_FOR_CURR
+		dataType: string
+		lineageTag: 998f5273-a6cd-4188-bcd8-3461e1856f15
+		summarizeBy: none
+		sourceColumn: DISCOUNT_CURVE_FOR_CURR
+
+		annotation SummarizationSetBy = Automatic
+
+	column TIME_UNIT_FX_RESET_LAG
+		dataType: string
+		lineageTag: decc85c4-80ed-4c4c-92f6-d728e674144d
+		summarizeBy: none
+		sourceColumn: TIME_UNIT_FX_RESET_LAG
+
+		annotation SummarizationSetBy = Automatic
+
+	column BOND_CLOSING_PRICE_SOURCE
+		dataType: string
+		lineageTag: b27480eb-6331-449b-ba38-b896dbd02893
+		summarizeBy: none
+		sourceColumn: BOND_CLOSING_PRICE_SOURCE
+
+		annotation SummarizationSetBy = Automatic
+
+	column CLOSING_PRICE_FOR_UNDER_BOND
+		dataType: double
+		formatString: General Number
+		lineageTag: 12f40f6b-6083-42be-ad3e-945231140e9a
+		summarizeBy: sum
+		sourceColumn: CLOSING_PRICE_FOR_UNDER_BOND
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column GEO_ZONE
+		dataType: string
+		lineageTag: 15c1f180-e028-4785-bc61-f2fe82bce1ea
+		summarizeBy: none
+		sourceColumn: GEO_ZONE
+
+		annotation SummarizationSetBy = Automatic
+
+	column BICS_SUB_INDUSTRY
+		dataType: string
+		lineageTag: eebfbc04-7741-41e7-9ae8-12eba339c672
+		summarizeBy: none
+		sourceColumn: BICS_SUB_INDUSTRY
+
+		annotation SummarizationSetBy = Automatic
+
+	column BICS_SEGMENT_NAME
+		dataType: string
+		lineageTag: f62e4d5e-cb5b-4ba2-a600-43d7f4defe50
+		summarizeBy: none
+		sourceColumn: BICS_SEGMENT_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column HEDGE_IND
+		dataType: string
+		lineageTag: d0c74969-2c56-40d1-a0a4-cd4b7e949c39
+		summarizeBy: none
+		sourceColumn: HEDGE_IND
+
+		annotation SummarizationSetBy = Automatic
+
+	column UNMARGINED
+		dataType: double
+		formatString: General Number
+		lineageTag: 46be1d2e-146e-4d10-ad94-b30393b05c66
+		summarizeBy: sum
+		sourceColumn: UNMARGINED
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column UNDERLYING_MARGIN_RATE
+		dataType: double
+		formatString: General Number
+		lineageTag: 27abbe6e-e2f6-4e1e-aaa6-ef6053ba249a
+		summarizeBy: sum
+		sourceColumn: UNDERLYING_MARGIN_RATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CLIENT_TYPE
+		dataType: string
+		lineageTag: 70451214-6328-406f-8156-3f25341d6ee3
+		summarizeBy: none
+		sourceColumn: CLIENT_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column IS_BEARISH
+		dataType: string
+		lineageTag: fdb83ff7-d318-4f96-8fc9-b3e5a7cd966a
+		summarizeBy: none
+		sourceColumn: IS_BEARISH
+
+		annotation SummarizationSetBy = Automatic
+
+	column BRANCH_CODE
+		dataType: string
+		lineageTag: 4392ed53-4a24-4a42-9678-7f33951a97a5
+		summarizeBy: none
+		sourceColumn: BRANCH_CODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column ACCOUNT_CODE
+		dataType: string
+		lineageTag: 17c9cff5-8e20-4e9d-b0d4-1688b4b17834
+		summarizeBy: none
+		sourceColumn: ACCOUNT_CODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column ISSUER_NAME
+		dataType: string
+		lineageTag: 7492ba75-44c3-4e08-99f0-9e5401998789
+		summarizeBy: none
+		sourceColumn: ISSUER_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column SETTLEMENT_DT_QUANTITY
+		dataType: double
+		formatString: General Number
+		lineageTag: 9cf3a230-6f2f-4eeb-be33-1a0278132f61
+		summarizeBy: sum
+		sourceColumn: SETTLEMENT_DT_QUANTITY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TRADE_DT_QUANTITY
+		dataType: double
+		formatString: General Number
+		lineageTag: 507751b6-d928-485b-be78-1fc9f0f79ec8
+		summarizeBy: sum
+		sourceColumn: TRADE_DT_QUANTITY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column GICS_INDUSTRY_NAME
+		dataType: string
+		lineageTag: 7a505e34-0790-431f-ba2c-fccd111993a3
+		summarizeBy: none
+		sourceColumn: GICS_INDUSTRY_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column GICS_SUB_INDUSTRY_NAME
+		dataType: string
+		lineageTag: 285234b3-db02-45ea-a4a9-ed480103fd05
+		summarizeBy: none
+		sourceColumn: GICS_SUB_INDUSTRY_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column SOFR_TERM_INDEX_TYPE
+		dataType: string
+		lineageTag: 06385c91-5acb-4ed2-9395-14f5a789c901
+		summarizeBy: none
+		sourceColumn: SOFR_TERM_INDEX_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column CONTRACT_PROMPTNESS_MONTHLY
+		dataType: int64
+		formatString: 0
+		lineageTag: 8859f24c-9911-4eb4-b1e9-d256b89a8c52
+		summarizeBy: sum
+		sourceColumn: CONTRACT_PROMPTNESS_MONTHLY
+
+		annotation SummarizationSetBy = Automatic
+
+	column CONTRACT_PROMPTNESS_QUARTERLY
+		dataType: int64
+		formatString: 0
+		lineageTag: 499a684d-0ff4-4455-98b7-c38f348b6829
+		summarizeBy: sum
+		sourceColumn: CONTRACT_PROMPTNESS_QUARTERLY
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'RDV_SNAPSHOT_DAYS_Risk_GFIRates_Reports_Excel_Rolling (local copy)' = m
+		mode: import
+		source =
+				let
+					    Source = Csv.Document(
+					        File.Contents("https://saastestlatest.blob.core.windows.net/saas-test-reports/RDV_SNAPSHOT_DAYS_Risk_GFIRates_Reports_Excel_Rolling%20%28local%20copy%29.csv?se=2025-11-05T16%3A14%3A11Z&sp=r&sv=2025-11-05&sr=b&sig=tHQ%2BTROz0EY0fOHA4j8iv2/pBFwImrn0oHVMHksyV%2BQ%3D"),
+					        [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.None]
+					    ),
+					    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+					    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"BOOKING_POINT_ID", type text}, {"CNPTY_REF_ID", type text}, {"CURVE_TYPE", type text}, {"DEAL_END_DATE", type datetime}, {"DEAL_REF_ID_LEVEL_1", type text}, {"DEAL_REF_ID_LEVEL_2", type text}, {"DEAL_START_DATE", type datetime}, {"DEAL_TYPE", type text}, {"FEDS_INSTRUMENT_TYPE", type text}, {"FEDS_THEORETICAL_MODEL", type text}, {"FXDELTA_SPOT2", type number}, {"FXDELTA_SPOT_2", type number}, {"INTERNAL_SECURITIES_CD", type text}, {"IS_OTC", type text}, {"LEGAL_ENTITY_REF_ID", type text}, {"MATURITY_DATE", type datetime}, {"NOTIONAL_PAY", type number}, {"NOTIONAL_PAY_UOM", type text}, {"NOTIONAL_RECEIVE", type number}, {"NOTIONAL_RECEIVE_UOM", type text}, {"OIS_IND", type text}, {"PLACE_HOLDER", type text}, {"PORTFOLIO_ID", type number}, {"PRIMARY_IND", type text}, {"RISK_FACTOR_TYPE", type text}, {"SHIFT_CURRENCY", type text}, {"TRADE_TYPE_LEVEL1", type text}, {"TRANSIT_ID", type text}, {"ACCRUED_INTEREST", type number}, {"ADP_REUSED_FLAG", type text}, {"ASSET_TYPE", type text}, {"BASIS_IND", type number}, {"BASKET_MEMBER_FLAG", type number}, {"BASKET_MODE_IND", type text}, {"BASKET_NAME", type text}, {"BASKET_REF_ID", type text}, {"BOOK_CLASSIFICATION", type text}, {"BOOK_GROUP", type text}, {"BOOK_LEVEL1", type text}, {"BOOK_LEVEL2", type text}, {"BOOK_LEVEL3", type text}, {"BOOK_LEVEL4", type text}, {"BOOK_LEVEL5", type text}, {"BOOK_LEVEL6", type text}, {"BOOK_LEVEL7", type text}, {"BOOK_LOCATION", type text}, {"BUCKET_MODE_IND", type text}, {"CLEARED", type text}, {"CNPTY_CODE", type text}, {"CNPTY_ID", type number}, {"CNPTY_NAME", type text}, {"CONTRACT_EXPIRY_DATE", type datetime}, {"CONTRACT_SCHEDULE_ID", type number}, {"CONTRACT_SIZE", type number}, {"CONTRACT_UNIT_ID", type number}, {"CONTRACT_UOM", type text}, {"CONTRACT_UOM_CLASS", type text}, {"CONVERSION_RATIO", type number}, {"CONVERTED_TO_UNDERLYING_FLAG", type text}, {"COUNTRY_OF_DOMICILE", type text}, {"COUNTRY_OF_INCORPORATION", type text}, {"COUNTRY_OF_ISSUE", type text}, {"COUNTRY_OF_RISK", type text}, {"COUPON_CURRENCY_COUNTRY_NAME", type text}, {"COUPON_CURR_CD", type text}, {"COUPON_FREQUENCY", type text}, {"COUPON_RATE", type text}, {"CREDITDELTA1PCT", type number}, {"CREDITDELTA_1PCT", type number}, {"CREDIT_JTD", type number}, {"CREDIT_JTD0RR", type number}, {"CREDIT_JTP", type number}, {"CREDIT_RECOVERY_DELTA10", type number}, {"CREDIT_RECOVERY_DELTA_10", type number}, {"CURRENCY", type text}, {"CUSIP", type text}, {"CUSIPBBG_ID", type text}, {"DEAL_LEVEL_FLAG", type number}, {"DELTA", type number}, {"DELTA10", type number}, {"DELTA25", type number}, {"DELTA30", type number}, {"DELTA5", type number}, {"DELTA50", type number}, {"DELTA_10", type number}, {"DELTA_25", type number}, {"DELTA_30", type number}, {"DELTA_5", type number}, {"DELTA_50", type number}, {"DELTA_DOWN", type number}, {"DELTA_UP", type number}, {"DIRTY_CLEAN_PRICE", type text}, {"DIVIDEND_AMOUNT", type number}, {"DIVIDEND_CURRENCY", type text}, {"DIVIDEND_EX_DATE", type datetime}, {"DIVIDEND_FREQUENCY", type text}, {"EFFECTIVE_DATE", type datetime}, {"EQUITIES_ISSUER_ID", type number}, {"EQUITIES_ISSUER_NAME", type text}, {"EQUITIES_PRICE_SOURCE", type text}, {"EXCHANGE", type text}, {"EXCHANGE_CD", type text}, {"EXPIRY_DATE", type datetime}, {"FIRST_DELIVERY_NOTICE_DATE", type datetime}, {"FUND_TYPE", type text}, {"FXDELTA_SPOT1", type number}, {"FXDELTA_SPOT_1", type number}, {"FX_CORRELATION", type number}, {"FX_VEGA", type number}, {"GAMMA", type number}, {"GAMMA10", type number}, {"GAMMA25", type number}, {"GAMMA50", type number}, {"GAMMA_10", type number}, {"GAMMA_25", type number}, {"GAMMA_50", type number}, {"GAMMA_DOWN", type number}, {"GAMMA_UP", type number}, {"GICS_SECTOR_NAME", type text}, {"GICS_SUBINDUSTRY", type text}, {"GROUP_NAME", type text}, {"GROUP_TIER", type number}, {"IG_RATING", type number}, {"INDEX_BASIS_DELTA_UP", type number}, {"INDEX_NAME", type text}, {"INSTRUMENT_CLASS", type text}, {"INSTRUMENT_SUBTYPE", type text}, {"INSTRUMENT_TYPE", type text}, {"INTERNAL", type text}, {"ISIN", type text}, {"ISSUER_COUNTRY", type text}, {"ISSUER_CURRENCY", type text}, {"ISSUER_CUSIP", type text}, {"ISSUER_TYPE", type text}, {"ISSUE_DATE", type datetime}, {"IS_CALLABLE", type text}, {"IS_COCO", type text}, {"IS_CONVERTIBLE", type text}, {"IS_COVERED", type text}, {"IS_FLOATER", type text}, {"IS_INFLATION_LINKED", type text}, {"IS_SECURED", type text}, {"IS_STEP_UP", type text}, {"LEGAL_ENTITY", type text}, {"LEGAL_ENTITY_CODE", type text}, {"LINEAGE", type text}, {"MAKE_WHOLE_CALL_IND", type text}, {"MARKET_CAPITALIZATION", type number}, {"MARKET_CLASS", type text}, {"MARKET_GROUP", type text}, {"MARKET_NAME", type text}, {"MARKET_SUBTYPE", type text}, {"MARKET_TITLE", type text}, {"MARKET_TYPE", type text}, {"MSD_CLASS_CODE", type number}, {"NOTIONAL_AMOUNT", type number}, {"NVEGA", type number}, {"NVEGA_DOWN", type number}, {"NVEGA_UP", type number}, {"OBLIGOR_CODE", type text}, {"OBLIGOR_COUNTRY", type text}, {"OBLIGOR_ENTITY_TYPE", type text}, {"OBLIGOR_ID", type number}, {"OBLIGOR_INDUSTRY", type text}, {"OBLIGOR_INDUSTRY_SUB_GROUP", type text}, {"OBLIGOR_NAME", type text}, {"OBLIGOR_SECTOR", type text}, {"OBL_SUBORDINATED_FLAG", type text}, {"ORIGINAL_CP_SHORT_CD", type text}, {"OUTRIGHT_IND", type number}, {"OUTSTANDING_ISSUANCE_AMT", type number}, {"PARALLEL_FLAG", type number}, {"PARENT_ADP", type text}, {"PARENT_COUNTRY_CODE", type text}, {"PAY_DISCOUNT_CURVE", type text}, {"PAY_FORWARD_CURVE", type text}, {"PAY_RECEIVE_IND", type text}, {"PEAKNESS", type text}, {"PERIOD_END_DATE", type datetime}, {"PERIOD_START_DATE", type datetime}, {"PERPETUAL_IND", type text}, {"PL_PK", type number}, {"POSITION_TYPE", type text}, {"PRICE_LAST", type number}, {"PUT_CALL", type text}, {"RECOVERY_TYPE_DESC", type text}, {"REC_DISCOUNT_CURVE", type text}, {"REC_FORWARD_CURVE", type text}, {"RISK_CURRENCY_COUNTRY_NAME", type text}, {"RISK_DATE", type datetime}, {"RISK_DAY", type number}, {"RISK_MONTH", type number}, {"RISK_YEAR", type number}, {"SAG_CONSOLIDATED_RATING", type text}, {"SAG_OBLIGOR_ID", type number}, {"SAG_SHORT_NAME", type text}, {"SECURITY_CONTRACT_SIZE", type number}, {"SECURITY_COUPON_CURR_CD", type text}, {"SECURITY_ID", type text}, {"SECURITY_MASTER_TYPE", type text}, {"SECURITY_MATURITY", type datetime}, {"SECURITY_NAME", type text}, {"SECURITY_RATING", type text}, {"SECURITY_SOURCE_NAME", type text}, {"SECURITY_TIER_BUSINESS_NAME", type text}, {"SECURITY_TIER_NAME", type text}, {"SECURITY_TYP", type text}, {"SECURITY_TYP2", type text}, {"SEC_UNDERLYING_SECURITY_ID", type text}, {"SEDOL_ID", type text}, {"SERIES", type text}, {"SETTLE_CURRENCY_CD", type text}, {"SOURCE", type text}, {"SOURCE_ID", type number}, {"SPLIT_ANNOUNCEMENT", type datetime}, {"SPLIT_DATE", type datetime}, {"SPLIT_RATIO", type text}, {"STRIKE", type number}, {"TERM_FLAG", type number}, {"TERM_LABEL", type text}, {"TRADE_DATE", type datetime}, {"TRADE_ID", type text}, {"TRADE_TYPE_ID", type number}, {"UNDERLYING_ADP_CODE", type text}, {"UNDERLYING_CURRENCY", type text}, {"UNDERLYING_INDEX_NAME", type text}, {"UNDERLYING_SECURITY_ID", type text}, {"UOM", type text}, {"UOM_CLASS", type text}, {"VAL_DATE", type text}, {"VOLCKER_DESK", type text}, {"VOLUME_AVG_6M", type number}, {"VOLUMN_AVG_3M", type number}, {"VOLUMN_AVG_5D", type number}, {"VOL_10DAY", type number}, {"VOL_180DAY", type number}, {"VOL_30DAY", type number}, {"VOL_360DAY", type number}, {"VOL_60DAY", type number}, {"VOL_90DAY", type number}, {"WORKOUT_DATE_MID_TO_WORST", type datetime}, {"ASK_PRICE_EXT1", type number}, {"ASK_PRICE_EXT2", type number}, {"ASK_PRICE_INT", type number}, {"BASKET_UNITS", type number}, {"BID_PRICE_EXT1", type number}, {"BID_PRICE_EXT2", type number}, {"BID_PRICE_INT", type number}, {"BOOKING_PURPOSE", type text}, {"BOOK_VALUE", type number}, {"BUY_CURRENCY", type text}, {"CALENDAR_PROMPTNESS", type number}, {"CARRY_VALUE", type number}, {"CLEARED_ID", Int64.Type}, {"CONTRACT_PROMPTNESS", Int64.Type}, {"CURRENT_PRICE", type number}, {"CUSTOMER_ALIAS", type text}, {"DIFF_IN_YEARS_MAT_FUTURE_EXP", type number}, {"EMIS_ID", type text}, {"END_DATE", type datetime}, {"ETA", type number}, {"EXPIRY_LABEL", type text}, {"FIRST_ASSET_RESET_DATE", type datetime}, {"FIXED_RATE", type number}, {"FIXED_RECOVERY_RATE", type text}, {"FORWARD_INDEX", type text}, {"GROUP_NAME_ID", type number}, {"GROUP_TIER_ID", type number}, {"HAIRCUT", type number}, {"INDEX_SERIES", Int64.Type}, {"INDEX_TERM", Int64.Type}, {"IS_OPEN", type text}, {"LAST_ASSET_RESET_DATE", type datetime}, {"MARGIN", type number}, {"MATURITY", type datetime}, {"MID_PRICE_EXT1", type number}, {"MID_PRICE_EXT2", type number}, {"MID_PRICE_INT", type number}, {"NO_OF_CONTRACTS", type number}, {"NPV", type number}, {"OIS_FLAG", type text}, {"OIS_SWAP", type text}, {"OPEN_INTEREST", type number}, {"OPTION_TYPE_ID", Int64.Type}, {"PCT_DELTA", type number}, {"PEAKNESS_ID", Int64.Type}, {"PREMIUM", type number}, {"QUANTITY", type number}, {"REMAINING_AMT", type number}, {"RESTRUCTURING_CE", type text}, {"RISK_CURR_ID", type number}, {"RISK_DISC_FACTOR", type number}, {"RISK_FILE_FLAG", type text}, {"RISK_RHO", type number}, {"SECURITIES_ID", Int64.Type}, {"SELL_CURRENCY", type text}, {"SETTLE_CURR_ID", Int64.Type}, {"SETTLE_CURVE_ID", Int64.Type}, {"SPREAD", type number}, {"SPREAD_FLAG", type text}, {"SPREAD_TO_ZERO", type number}, {"START_DATE", type datetime}, {"STRIKE_LABEL", type text}, {"THETA", type number}, {"TRANCHE_ATTACH", type number}, {"TRANCHE_ATTACH_ORIG", type number}, {"TRANCHE_DETACH", type number}, {"TRANCHE_DETACH_ORIG", type number}, {"UNDERLYING_FUTURE_EXPIRY_DATE", type datetime}, {"UNDERLYING_MAX_MATURITY_DT", type datetime}, {"UNITS_ID", Int64.Type}, {"UNIT_PRICE", type number}, {"VEGA", type number}, {"VEGA_DOWN", type number}, {"VEGA_UP", type number}, {"BUY_SELL", type text}, {"ACCOUNT_NAME", type text}, {"SETTLEMENT_DATE", type datetime}, {"IS_PFE", type text}, {"LIQUIDITY_HORIZON", type number}, {"FUND_NAME", type text}, {"LEGAL_ENTITY_ID", type number}, {"SETTLE_CURVE", type text}, {"CONTRACT_SOURCE_CODE", type text}, {"BARRIER_STYLE", type text}, {"LOWER_BARRIER", type number}, {"UPPER_BARRIER", type number}, {"OPTION_STYLE", type text}, {"RISK_COST", type number}, {"RISK_MARK", type number}, {"SETTLE_DATE", type datetime}, {"ASSUMED_SPREAD", type number}, {"ASSUMED_VOL", type number}, {"NOMINAL", type number}, {"KYNEX_SEC_TYPE", type text}, {"DOLLAR_THETA", type number}, {"NORMALIZED_DELTA", type number}, {"NORMALIZED_BOOK_HEDGE", type number}, {"CDS_SPREAD_5YR", type number}, {"MARKET_RISK_CUR", type text}, {"MARKET_BASE_CUR", type text}, {"IS_SWAP_SPREAD", type text}, {"MARKET_RISK_CUR_ID", type number}, {"MARKET_BASE_CUR_ID", type number}, {"COLVA_MTM_D1T", type number}, {"PRIMARY_TRADERS", type text}, {"PIN_CURRENCY_CODE", type text}, {"PIN_CURRENCY_ID", type number}, {"OPTION_STYLE_ID", type number}, {"COLVA_MTM_D1", type number}, {"ALIAS_NAME", type text}, {"EOM_EOQ_IND", type text}, {"MARKET_DATA_SOURCE", type text}, {"MARKET_DATA_SOURCE_ID", type number}, {"FX_CONV_MARKET_DATA_SRC_ID", Int64.Type}, {"PAY_NDF_FX_RESET_DATE", type datetime}, {"REC_NDF_FX_RESET_DATE", type datetime}, {"NOTIONAL_AMOUNT_UOM", type text}, {"NOTIONAL_AMOUNT_UNITS_ID", type number}, {"NPV_UOM", type text}, {"NPV_UNITS_ID", type number}, {"QUANTITY_UOM", type text}, {"QUANTITY_UNITS_ID", type number}, {"CARRY_VALUE_UOM", type text}, {"CARRY_VALUE_UNITS_ID", type number}, {"NOTIONAL_PAY_UNITS_ID", type number}, {"NOTIONAL_RECEIVE_UNITS_ID", type number}, {"FXGAMMA1", type number}, {"FXGAMMA_1", type number}, {"FXGAMMA5", type number}, {"FXGAMMA_5", type number}, {"TRADE_GROUP_STRATEGY", type text}, {"EXPIRY_SEQUENCE_NUMBER", type number}, {"STRIKE_SEQUENCE_NUMBER", type number}, {"TERM_SEQUENCE_NUMBER", type number}, {"MARKET_SECTOR", type text}, {"CATASTROPHE", type text}, {"RATING_CLASS", type text}, {"NEXT_PAY_RESET_DATE", type datetime}, {"NEXT_REC_RESET_DATE", type datetime}, {"NDF_FLAG", type text}, {"DELIVERY_START_DATE", type datetime}, {"DELIVERY_END_DATE", type datetime}, {"RW_MTM_D1", type number}, {"RW_MTM_D1_UOM", type text}, {"RW_MTM_D1T", type number}, {"RW_MTM_D1T_UOM", type text}, {"RIC", type text}, {"FUND_ASSET_CLASS_FOCUS", type text}, {"PAY_NDF_FX_RESET_RATES", type number}, {"PAY_NDF_FX_RESET_HOLIDAY", type text}, {"PAY_NDF_FX_RESET_LAG", type number}, {"PAY_NDF_SETTLEMENT_CURRENCY", type text}, {"PAY_NDF_SETTL_DISCOUNT_CURVE", type text}, {"REC_NDF_FX_RESET_HOLIDAY", type text}, {"REC_NDF_FX_RESET_LAG", type number}, {"REC_NDF_SETTLEMENT_CURRENCY", type text}, {"REC_NDF_SETTL_DISCOUNT_CURVE", type text}, {"REC_NDF_FX_RESET_RATES", type number}, {"SETTLEMENT_TYPE", type text}, {"MARKET_STATUS", type text}, {"TRADE_STATUS", type text}, {"INDUSTRY_SECTOR", type text}, {"EQY_SH_OUT", type number}, {"VOLUME_AVG_20D", type number}, {"VOLUME_AVG_30D", type number}, {"SHORT_INT", type number}, {"RTG_SP_LT_LI_CREDIT", type text}, {"DVD_RECORD_DT", type datetime}, {"LAST_UPDATE_DT_EXCH_TZ", type datetime}, {"PX_CLOSE_1D", type number}, {"PCT_PAR_QUOTED", type text}, {"WINDOW_START_DATE", type datetime}, {"WINDOW_END_DATE", type datetime}, {"BARRIER_TYPE", type text}, {"DIGITAL", type text}, {"DIGITAL_AMT", type number}, {"ALGO_NAME", type text}, {"CARDS_ID", type number}, {"CSA_NAMES", type text}, {"CSA_ID", type text}, {"ALGO_CSA_ID", type text}, {"IS_CLOSEOUTNETTED", type text}, {"IS_SETTLEMENTNETTED", type text}, {"IS_BNSREHYPOTHECATING", type text}, {"IS_CPREHYPOTHECATING", type text}, {"CPARTY_MARGIN", type number}, {"COLLINE_CSA", type text}, {"BNS_THRESHOLD_AMT", type number}, {"CP_THRESHOLD_AMT", type number}, {"BNS_MINIMUM_TRANSFER_AMT", type number}, {"CP_MINIMUM_TRANSFER_AMT", type number}, {"BNS_INDEPENDENT_AMT", type number}, {"CP_INDEPENDENT_AMT", type number}, {"FLOAT_INDEX", type text}, {"PRIMARY_EXCHANGE_NAME", type text}, {"CDS_CURVE_NAME", type text}, {"TOT_OR_EXCESS_RETURN", type text}, {"NEXT_INTEREST_RESET_DATE", type datetime}, {"JACOBIAN_DELTA", type number}, {"JACOBIAN_DELTA1", type number}, {"JACOBIAN_DELTA_1", type number}, {"EXPECTED_LIFE", type number}, {"SPONSORED_REPO_FLAG", type text}, {"FIGI", type text}, {"SENIORITY", type text}, {"ONGOING_TRANCH_SIZE", type number}, {"AMOUNT_ISSUED", type number}, {"CUSTOM_CODE", type text}, {"SECURITY_CURRENCY", type text}, {"DIVIDEND_NEXT_PROJ_AMT", type number}, {"DIVIDEND_NEXT_EST_PAY_DT", type datetime}, {"DIVIDEND_NEXT_EST_EX_DT", type datetime}, {"DIVIDEND_PAY_DT", type datetime}, {"IS_FIXED_TO_FLOAT_FLAG", type text}, {"LEVERAGE_UP", type number}, {"LEVERAGE_DOWN", type number}, {"PERFORMANCE_CHOICE", type text}, {"OBSERVATION_CHOICE", type text}, {"IS_SETTLED", type text}, {"AVERAGE_COST_PRICE", type number}, {"TICKER", type text}, {"DISCOUNT_CURVE", type text}, {"RISK_COUNTERPARTY", type text}, {"RESET_IDX", type text}, {"PARENT_CNPTY_REF_ID", type text}, {"PARENT_CNPTY_NAME", type text}, {"COLLATERAL_TYPE", type text}, {"POSTING_TYPE", type text}, {"TRADE_CATEGORY", type text}, {"TYPE_DESCR", type text}, {"TERM_TYPE", type text}, {"BUSINESS_TYPE", type text}, {"CLEARING", type text}, {"COLLATERAL_PERCENT", type text}, {"TRAN_TYPE", type text}, {"FACILITY_ID", type text}, {"DURATION", type number}, {"BENCHMARK_RATE", type number}, {"VOLATILITY_SURFACE", type text}, {"MARGIN_RULE", type text}, {"ACCOUNT_ID", type text}, {"MARGIN_PCT", type number}, {"FINANCING_TYPE", type text}, {"NDF_RESET_DATE", type datetime}, {"NDF_FX_RESET_HOLIDAY", type text}, {"NDF_FX_RESET_LAG", type number}, {"NDF_FX_RESET_RATES", type number}, {"NDF_DELIVERY_CURR", type text}, {"DISCOUNT_CURVE_FOR_CURR", type text}, {"TIME_UNIT_FX_RESET_LAG", type text}, {"BOND_CLOSING_PRICE_SOURCE", type text}, {"CLOSING_PRICE_FOR_UNDER_BOND", type number}, {"GEO_ZONE", type text}, {"BICS_SUB_INDUSTRY", type text}, {"BICS_SEGMENT_NAME", type text}, {"HEDGE_IND", type text}, {"UNMARGINED", type number}, {"UNDERLYING_MARGIN_RATE", type number}, {"CLIENT_TYPE", type text}, {"IS_BEARISH", type text}, {"BRANCH_CODE", type text}, {"ACCOUNT_CODE", type text}, {"ISSUER_NAME", type text}, {"SETTLEMENT_DT_QUANTITY", type number}, {"TRADE_DT_QUANTITY", type number}, {"GICS_INDUSTRY_NAME", type text}, {"GICS_SUB_INDUSTRY_NAME", type text}, {"SOFR_TERM_INDEX_TYPE", type text}, {"CONTRACT_PROMPTNESS_MONTHLY", Int64.Type}, {"CONTRACT_PROMPTNESS_QUARTERLY", Int64.Type}})
+					in
+					    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
