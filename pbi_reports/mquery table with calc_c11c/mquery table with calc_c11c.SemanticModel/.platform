@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "mquery table with calc_c11c"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "b1075c85-d883-4f19-a7f1-8fdb7dec8f03"
+  }
+}
