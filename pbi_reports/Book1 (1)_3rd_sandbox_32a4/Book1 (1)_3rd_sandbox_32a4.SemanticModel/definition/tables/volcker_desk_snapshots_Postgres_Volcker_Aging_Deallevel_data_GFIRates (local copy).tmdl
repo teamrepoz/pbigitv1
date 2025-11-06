@@ -1,0 +1,144 @@
+table 'volcker_desk_snapshots_Postgres_Volcker_Aging_Deallevel_data_GFIRates (local copy)'
+	lineageTag: ee4b0f80-39d1-4a59-a887-953388cbe45c
+
+	column snapshot_date
+		dataType: datetime
+		lineageTag: 9794546a-ef25-40a6-91a5-8916b7f5efc7
+		summarizeBy: none
+		sourceColumn: snapshot_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column id
+		dataType: int64
+		formatString: 0
+		lineageTag: d662c796-e595-4140-b3c1-7de831cbeb28
+		summarizeBy: sum
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column desk_name
+		dataType: string
+		lineageTag: 413b613b-be98-46ac-86db-477cc51da70f
+		summarizeBy: none
+		sourceColumn: desk_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column sub_desk
+		dataType: string
+		lineageTag: 18844357-ddc6-46a0-a015-80e953532ddf
+		summarizeBy: none
+		sourceColumn: sub_desk
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: string
+		lineageTag: 10e3571c-2a2e-4d2f-bbf3-6fe4a0aa67c7
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column utilization_incl_all_products
+		dataType: string
+		lineageTag: 507cf7c5-a575-47ce-abe9-6b6429790cdb
+		summarizeBy: none
+		sourceColumn: utilization_incl_all_products
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_date
+		dataType: datetime
+		lineageTag: 26c2c941-6233-468e-8d98-cc764505bcb2
+		summarizeBy: none
+		sourceColumn: created_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column modified_date
+		dataType: datetime
+		lineageTag: 6a5fc42d-f0fd-49ea-bea3-4dc39458a81b
+		summarizeBy: none
+		sourceColumn: modified_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column fixed_client_ratio
+		dataType: double
+		formatString: General Number
+		lineageTag: c5df1090-c513-4590-9545-83132bfd278d
+		summarizeBy: sum
+		sourceColumn: fixed_client_ratio
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column report_group
+		dataType: string
+		lineageTag: 8867ebe0-83f8-446c-874b-0a0925b0a7c1
+		summarizeBy: none
+		sourceColumn: report_group
+
+		annotation SummarizationSetBy = Automatic
+
+	column var_portfolio_id
+		dataType: int64
+		formatString: 0
+		lineageTag: d73691fb-bcf0-4482-9b85-a6858e825aae
+		summarizeBy: sum
+		sourceColumn: var_portfolio_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_edit_username
+		dataType: string
+		lineageTag: 1e0f1e31-9a11-42e2-aa56-a2ce9bc1ecd2
+		summarizeBy: none
+		sourceColumn: last_edit_username
+
+		annotation SummarizationSetBy = Automatic
+
+	column desk_description
+		dataType: string
+		lineageTag: fd55adda-614c-448b-841a-b61197a236ee
+		summarizeBy: none
+		sourceColumn: desk_description
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'volcker_desk_snapshots_Postgres_Volcker_Aging_Deallevel_data_GFIRates (local copy)' = m
+		mode: import
+		source =
+				let
+					    Source = Table.FromRecords({
+					        [#"snapshot_date" = #date(2021, 11, 14), #"id" = 7405, #"desk_name" = "Yevette Dunn", #"sub_desk" = "lighting", #"status" = False, #"utilization_incl_all_products" = True, #"created_date" = #date(2023, 9, 23), #"modified_date" = #datetime(2020, 2, 7, 13, 0, 19), #"fixed_client_ratio" = 212.13, #"report_group" = "satisfaction", #"var_portfolio_id" = 5582, #"last_edit_username" = "Bird", #"desk_description" = "197.113.132.11"],
+					        [#"snapshot_date" = #date(2024, 2, 23), #"id" = 5904, #"desk_name" = "Boyce Gill", #"sub_desk" = "instead", #"status" = False, #"utilization_incl_all_products" = False, #"created_date" = #date(2024, 3, 4), #"modified_date" = #datetime(2020, 6, 26, 15, 20, 14), #"fixed_client_ratio" = 43.15, #"report_group" = "charlotte", #"var_portfolio_id" = 9801, #"last_edit_username" = "Stark", #"desk_description" = "226.176.68.252"],
+					        [#"snapshot_date" = #date(2020, 11, 2), #"id" = 3492, #"desk_name" = "Whitney West", #"sub_desk" = "imaging", #"status" = True, #"utilization_incl_all_products" = False, #"created_date" = #date(2024, 5, 5), #"modified_date" = #datetime(2020, 5, 17, 20, 29, 23), #"fixed_client_ratio" = 494.45, #"report_group" = "separate", #"var_portfolio_id" = 3809, #"last_edit_username" = "Hess", #"desk_description" = "140.200.53.81"],
+					        [#"snapshot_date" = #date(2024, 10, 23), #"id" = 5558, #"desk_name" = "Merrill Calhoun", #"sub_desk" = "preference", #"status" = True, #"utilization_incl_all_products" = True, #"created_date" = #date(2023, 10, 11), #"modified_date" = #datetime(2020, 4, 21, 19, 9, 32), #"fixed_client_ratio" = 157.09, #"report_group" = "partner", #"var_portfolio_id" = 7525, #"last_edit_username" = "Jensen", #"desk_description" = "212.135.46.171"],
+					        [#"snapshot_date" = #date(2023, 6, 10), #"id" = 1263, #"desk_name" = "Clint Sloan", #"sub_desk" = "ian", #"status" = False, #"utilization_incl_all_products" = False, #"created_date" = #date(2020, 2, 22), #"modified_date" = #datetime(2020, 10, 24, 7, 30, 40), #"fixed_client_ratio" = 435.56, #"report_group" = "median", #"var_portfolio_id" = 6801, #"last_edit_username" = "Christian", #"desk_description" = "5.6.166.233"]
+					    }),
+					    Typed = Table.TransformColumnTypes(Source, {
+					        {"snapshot_date", type date},
+					        {"id", Int64.Type},
+					        {"desk_name", type text},
+					        {"sub_desk", type text},
+					        {"status", type text},
+					        {"utilization_incl_all_products", type logical},
+					        {"created_date", type date},
+					        {"modified_date", type datetime},
+					        {"fixed_client_ratio", type number},
+					        {"report_group", type text},
+					        {"var_portfolio_id", Int64.Type},
+					        {"last_edit_username", type text},
+					        {"desk_description", type text}
+					    })
+					in
+					    Typed
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
