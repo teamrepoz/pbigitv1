@@ -1,0 +1,51 @@
+table Query1
+	lineageTag: e2457403-fde1-4fa6-b361-7a829fc99c54
+
+	column ID
+		dataType: int64
+		formatString: 0
+		lineageTag: a71b1c1b-e6f9-4b47-891f-7f4d11cb6ea4
+		summarizeBy: sum
+		sourceColumn: ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		lineageTag: fa48da64-af22-4e2b-b0a2-8b290265b686
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Salary
+		dataType: int64
+		formatString: 0
+		lineageTag: 484dce4f-2a3b-4bd4-8187-6ae6012a6d3b
+		summarizeBy: sum
+		sourceColumn: Salary
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Query1 = m
+		mode: import
+		source =
+				let
+					    Source = Table.FromRecords({
+					        [ID = 1, Name = "Olivia Chen", Salary = 85000],
+					        [ID = 2, Name = "Liam Patel", Salary = 97000],
+					        [ID = 3, Name = "Sophia Rossi", Salary = 120000],
+					        [ID = 4, Name = "Noah Kim", Salary = 65000],
+					        [ID = 5, Name = "Emma Garcia", Salary = 110000]
+					    }}),
+					    Typed = Table.TransformColumnTypes(Source, {
+					        {"ID", Int64.Type},
+					        {"Name", type text},
+					        {"Salary", Int64.Type}
+					    }})
+					in
+					    Typed
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
