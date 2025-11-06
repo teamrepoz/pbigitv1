@@ -1,0 +1,45 @@
+table 'Deal Netted_ByLeg'
+	lineageTag: bc94f3be-028f-4391-8ad6-092581612944
+
+	column Index
+		formatString: 0
+		lineageTag: a4dd550e-e4b7-44b7-a305-8a41fc0f271b
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: c261c9b0-66ad-43d1-abcf-bc1b0e4eec69
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 702224f4-fcf9-4edd-8ffc-09f7e9e9b0c6
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Deal Netted_ByLeg' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", BOOLEAN,
+			    "Value", BOOLEAN,
+			    {
+			        { 0, FALSE, TRUE },
+				{ 1, FALSE, FALSE }
+			    }
+			)
+
+	annotation PBI_Id = 08d4cec979814e19a394df0660d2fa42
+
