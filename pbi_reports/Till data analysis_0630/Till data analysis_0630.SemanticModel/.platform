@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Till data analysis_0630"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "64c8784e-3760-4943-b6a9-8e5f54925999"
+  }
+}
