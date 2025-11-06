@@ -1,0 +1,77 @@
+table 'volcker_rpt_security_mapping_Postgres_Volcker_Aging_Deallevel_data_GFIRates (local copy)'
+	lineageTag: f435eb8c-a213-43bf-ab56-2a6ca37f4fef
+
+	column id
+		dataType: int64
+		formatString: 0
+		lineageTag: ac058d94-904c-45d6-b794-0ffa1ce75aad
+		summarizeBy: sum
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column effective_date
+		dataType: datetime
+		lineageTag: 2ce10dcb-055c-42fa-a892-ff0afa2315d2
+		summarizeBy: none
+		sourceColumn: effective_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column source_system
+		dataType: string
+		lineageTag: 358d5b67-136f-4ed6-bb6e-62065dc13e4a
+		summarizeBy: none
+		sourceColumn: source_system
+
+		annotation SummarizationSetBy = Automatic
+
+	column security_id
+		dataType: string
+		lineageTag: e888237c-e303-49e0-b56f-0f7776e8e134
+		summarizeBy: none
+		sourceColumn: security_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column security_name
+		dataType: string
+		lineageTag: aad85c7d-c427-4730-acff-9ece1b219e39
+		summarizeBy: none
+		sourceColumn: security_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_date
+		dataType: datetime
+		lineageTag: 94c0fce7-834e-406c-8a2d-fe6740745741
+		summarizeBy: none
+		sourceColumn: created_date
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'volcker_rpt_security_mapping_Postgres_Volcker_Aging_Deallevel_data_GFIRates (local copy)' = m
+		mode: import
+		source =
+				let
+					    Source = Table.FromRecords({
+					        [#"id" = 1170, #"effective_date" = #date(2021, 2, 3), #"source_system" = "var", #"security_id" = 3650, #"security_name" = "Clyde Kaufman", #"created_date" = #datetime(2024, 3, 21, 4, 40, 30)],
+					        [#"id" = 9785, #"effective_date" = #date(2024, 5, 10), #"source_system" = "maps", #"security_id" = 1193, #"security_name" = "Leonida Ellison", #"created_date" = #datetime(2021, 1, 15, 17, 48, 2)],
+					        [#"id" = 9084, #"effective_date" = #date(2023, 4, 9), #"source_system" = "waiting", #"security_id" = 9375, #"security_name" = "Gilberto Battle", #"created_date" = #datetime(2024, 8, 10, 16, 1, 12)],
+					        [#"id" = 6299, #"effective_date" = #date(2021, 7, 30), #"source_system" = "tune", #"security_id" = 6489, #"security_name" = "Isidra Vincent", #"created_date" = #datetime(2021, 8, 18, 1, 4, 24)],
+					        [#"id" = 1438, #"effective_date" = #date(2022, 6, 5), #"source_system" = "sean", #"security_id" = 9182, #"security_name" = "Kenny Little", #"created_date" = #datetime(2020, 10, 4, 23, 53, 29)]
+					    }),
+					    Typed = Table.TransformColumnTypes(Source, {
+					        {"id", Int64.Type},
+					        {"effective_date", type date},
+					        {"source_system", type text},
+					        {"security_id", type text},
+					        {"security_name", type text},
+					        {"created_date", type datetime}
+					    })
+					in
+					    Typed
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
