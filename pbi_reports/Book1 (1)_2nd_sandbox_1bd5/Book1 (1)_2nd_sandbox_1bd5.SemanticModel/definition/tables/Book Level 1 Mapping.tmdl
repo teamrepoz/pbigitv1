@@ -1,0 +1,48 @@
+table 'Book Level 1 Mapping'
+	lineageTag: ecfe310b-1ad9-477e-8442-6e975edc9b14
+
+	column Index
+		formatString: 0
+		lineageTag: 5380ccd4-7f28-4c8d-9c4e-162c139a9bc2
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 877e8c70-7bfe-4cbe-9a3f-087316cfd18d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: a3b83aba-94b6-4a27-929e-104880fbbdb0
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Book Level 1 Mapping' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Default", "Default" },
+				{ 1, "IRD", "IRD" },
+				{ 2, "CAD Cash Rates", "CAD Cash Rates" },
+				{ 3, "CMF", "CMF" },
+				{ 4, "ToH", "ToH" }
+			    }
+			)
+
+	annotation PBI_Id = f0286973d60240a3b46bea44825862de
+
