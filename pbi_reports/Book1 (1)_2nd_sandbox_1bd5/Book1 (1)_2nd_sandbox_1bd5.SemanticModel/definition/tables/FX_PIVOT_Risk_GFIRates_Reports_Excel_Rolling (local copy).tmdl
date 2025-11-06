@@ -1,0 +1,392 @@
+table 'FX_PIVOT_Risk_GFIRates_Reports_Excel_Rolling (local copy)'
+	lineageTag: d149d3e8-3533-4c66-9de4-9c4a9c2905b9
+
+	column SLICE_DATE
+		dataType: datetime
+		lineageTag: bca2a069-dfe3-4901-bad1-9c7196686eb3
+		summarizeBy: none
+		sourceColumn: SLICE_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column CURR_FROM
+		dataType: string
+		lineageTag: 29cd1f80-0355-490b-8b30-c0fe97da5eee
+		summarizeBy: none
+		sourceColumn: CURR_FROM
+
+		annotation SummarizationSetBy = Automatic
+
+	column TO_AUD
+		dataType: double
+		formatString: General Number
+		lineageTag: f4f7ebaa-5bee-4182-b324-34da6f0cb5c0
+		summarizeBy: sum
+		sourceColumn: TO_AUD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO_CAD
+		dataType: double
+		formatString: General Number
+		lineageTag: fd33f6e8-0fde-4a65-a706-bb270598f75c
+		summarizeBy: sum
+		sourceColumn: TO_CAD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO_CHF
+		dataType: double
+		formatString: General Number
+		lineageTag: 04f21ef4-cf5c-4af6-af69-55726a5946f3
+		summarizeBy: sum
+		sourceColumn: TO_CHF
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO_EUR
+		dataType: double
+		formatString: General Number
+		lineageTag: 336a9a81-ccf5-4b6a-b061-fa79ef3edb01
+		summarizeBy: sum
+		sourceColumn: TO_EUR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO_GBP
+		dataType: double
+		formatString: General Number
+		lineageTag: e83282c2-72a3-4cec-a5a3-f1a4268961c9
+		summarizeBy: sum
+		sourceColumn: TO_GBP
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO_HKD
+		dataType: double
+		formatString: General Number
+		lineageTag: dacdd081-adfb-4607-8f65-a3f87e34efa1
+		summarizeBy: sum
+		sourceColumn: TO_HKD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO_JPY
+		dataType: double
+		formatString: General Number
+		lineageTag: 559ba8fa-e571-4dff-add1-ae9b663c56f5
+		summarizeBy: sum
+		sourceColumn: TO_JPY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO_MXN
+		dataType: double
+		formatString: General Number
+		lineageTag: d19af884-45b0-4a1d-9b56-4bde3bcdef6f
+		summarizeBy: sum
+		sourceColumn: TO_MXN
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO_NZD
+		dataType: double
+		formatString: General Number
+		lineageTag: cfd5ac21-452e-4799-a5cf-b19459841960
+		summarizeBy: sum
+		sourceColumn: TO_NZD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO_SEK
+		dataType: double
+		formatString: General Number
+		lineageTag: 70514470-021e-4b28-ade7-06a00d50742f
+		summarizeBy: sum
+		sourceColumn: TO_SEK
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO_SGD
+		dataType: double
+		formatString: General Number
+		lineageTag: 2a63fc1b-6e16-4073-abb4-e8a19b0de5eb
+		summarizeBy: sum
+		sourceColumn: TO_SGD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO_USD
+		dataType: double
+		formatString: General Number
+		lineageTag: 3c0f7202-43f4-4b10-afb6-0747c721cc3e
+		summarizeBy: sum
+		sourceColumn: TO_USD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO_MEX
+		dataType: double
+		formatString: General Number
+		lineageTag: 3fb56e21-c18c-4cf4-a84f-73f161386714
+		summarizeBy: sum
+		sourceColumn: TO_MEX
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ADDED_DATE
+		dataType: datetime
+		lineageTag: 7c7c4c43-1921-4a0e-8290-0ed5b8b1748f
+		summarizeBy: none
+		sourceColumn: ADDED_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column ADDED_USER
+		dataType: string
+		lineageTag: a26a1289-4f28-44d5-a64f-eaeb194fefba
+		summarizeBy: none
+		sourceColumn: ADDED_USER
+
+		annotation SummarizationSetBy = Automatic
+
+	column TO_BRL
+		dataType: double
+		formatString: General Number
+		lineageTag: 33cca183-73d3-4593-bbcd-adc0093d440c
+		summarizeBy: sum
+		sourceColumn: TO_BRL
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO_BRO
+		dataType: double
+		formatString: General Number
+		lineageTag: 1853266b-992c-4f30-ba2f-b38334b341ac
+		summarizeBy: sum
+		sourceColumn: TO_BRO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO_CLF
+		dataType: double
+		formatString: General Number
+		lineageTag: f9350386-eca5-4238-9696-c9ca97c863f2
+		summarizeBy: sum
+		sourceColumn: TO_CLF
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO_CLP
+		dataType: double
+		formatString: General Number
+		lineageTag: 485ce341-e780-4619-abf0-70923b7d5208
+		summarizeBy: sum
+		sourceColumn: TO_CLP
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO_CNH
+		dataType: double
+		formatString: General Number
+		lineageTag: 7c8ace3d-3af8-42ff-8217-e1e4ccbe1272
+		summarizeBy: sum
+		sourceColumn: TO_CNH
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO_COP
+		dataType: double
+		formatString: General Number
+		lineageTag: 51b11efe-12e1-4181-933e-e8cccf474f19
+		summarizeBy: sum
+		sourceColumn: TO_COP
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO_CRC
+		dataType: double
+		formatString: General Number
+		lineageTag: d3a24cac-0f09-4b3a-b44c-6d2b8007f2d0
+		summarizeBy: sum
+		sourceColumn: TO_CRC
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO_INR
+		dataType: double
+		formatString: General Number
+		lineageTag: 4ea9df60-ae96-4138-a4de-5a0980a61ec3
+		summarizeBy: sum
+		sourceColumn: TO_INR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO_KRW
+		dataType: double
+		formatString: General Number
+		lineageTag: d3328879-6af8-457d-aee5-0fd5fed543d7
+		summarizeBy: sum
+		sourceColumn: TO_KRW
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO_MXC
+		dataType: double
+		formatString: General Number
+		lineageTag: 03b7016b-df51-4a61-8e84-bd4df489523f
+		summarizeBy: sum
+		sourceColumn: TO_MXC
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO_MYR
+		dataType: double
+		formatString: General Number
+		lineageTag: 048fe925-405f-4c41-8963-498b3f25f3e8
+		summarizeBy: sum
+		sourceColumn: TO_MYR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO_PEN
+		dataType: double
+		formatString: General Number
+		lineageTag: 97a05f8c-dbc2-4a3e-8739-57e735176d92
+		summarizeBy: sum
+		sourceColumn: TO_PEN
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO_UVR
+		dataType: double
+		formatString: General Number
+		lineageTag: ec8ace48-c532-4a94-8266-6df592cecf01
+		summarizeBy: sum
+		sourceColumn: TO_UVR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO_UYU
+		dataType: double
+		formatString: General Number
+		lineageTag: 4519c542-b792-4ce7-a606-e86a83a5392b
+		summarizeBy: sum
+		sourceColumn: TO_UYU
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MARKET_DATA_SOURCE_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 524d8321-d925-47b5-bdce-c1eba677f000
+		summarizeBy: sum
+		sourceColumn: MARKET_DATA_SOURCE_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'FX_PIVOT_Risk_GFIRates_Reports_Excel_Rolling (local copy)' = m
+		mode: import
+		source =
+				let
+					    Source = Table.FromRecords({
+					        [#"SLICE_DATE" = #datetime(2021, 8, 26, 10, 13, 37), #"CURR_FROM" = "hell", #"TO_AUD" = 737.76, #"TO_CAD" = 583.75, #"TO_CHF" = 74.56, #"TO_EUR" = 313.74, #"TO_GBP" = 37.81, #"TO_HKD" = 496.18, #"TO_JPY" = 222.6, #"TO_MXN" = 450.74, #"TO_NZD" = 791.74, #"TO_SEK" = 14.56, #"TO_SGD" = 431.17, #"TO_USD" = 324.25, #"TO_MEX" = 42.12, #"ADDED_DATE" = #datetime(2023, 1, 17, 6, 13, 51), #"ADDED_USER" = "longest_1976", #"TO_BRL" = 395.89, #"TO_BRO" = 796.07, #"TO_CLF" = 662.35, #"TO_CLP" = 186.85, #"TO_CNH" = 171.97, #"TO_COP" = 622.26, #"TO_CRC" = 50.56, #"TO_INR" = 906.66, #"TO_KRW" = 711.99, #"TO_MXC" = 155.99, #"TO_MYR" = 816.71, #"TO_PEN" = 412.01, #"TO_UVR" = 313.99, #"TO_UYU" = 215.63, #"MARKET_DATA_SOURCE_ID" = 3534],
+					        [#"SLICE_DATE" = #datetime(2021, 5, 8, 15, 25, 11), #"CURR_FROM" = "shared", #"TO_AUD" = 829.35, #"TO_CAD" = 510.51, #"TO_CHF" = 16.1, #"TO_EUR" = 239.24, #"TO_GBP" = 919.02, #"TO_HKD" = 331.14, #"TO_JPY" = 445.52, #"TO_MXN" = 424.8, #"TO_NZD" = 777.83, #"TO_SEK" = 451.34, #"TO_SGD" = 742.99, #"TO_USD" = 425.86, #"TO_MEX" = 914.55, #"ADDED_DATE" = #datetime(2021, 5, 4, 22, 41, 21), #"ADDED_USER" = "inbox_2061", #"TO_BRL" = 312.68, #"TO_BRO" = 197.94, #"TO_CLF" = 869.97, #"TO_CLP" = 93.13, #"TO_CNH" = 571.0, #"TO_COP" = 979.46, #"TO_CRC" = 762.6, #"TO_INR" = 549.67, #"TO_KRW" = 630.21, #"TO_MXC" = 902.69, #"TO_MYR" = 851.06, #"TO_PEN" = 908.05, #"TO_UVR" = 659.05, #"TO_UYU" = 316.9, #"MARKET_DATA_SOURCE_ID" = 3242],
+					        [#"SLICE_DATE" = #datetime(2021, 9, 4, 23, 15, 23), #"CURR_FROM" = "competition", #"TO_AUD" = 162.57, #"TO_CAD" = 699.05, #"TO_CHF" = 84.3, #"TO_EUR" = 42.82, #"TO_GBP" = 812.81, #"TO_HKD" = 245.94, #"TO_JPY" = 127.84, #"TO_MXN" = 309.36, #"TO_NZD" = 446.77, #"TO_SEK" = 141.73, #"TO_SGD" = 19.87, #"TO_USD" = 583.64, #"TO_MEX" = 990.74, #"ADDED_DATE" = #datetime(2020, 12, 26, 1, 53, 53), #"ADDED_USER" = "points_1853", #"TO_BRL" = 848.91, #"TO_BRO" = 329.05, #"TO_CLF" = 205.93, #"TO_CLP" = 759.54, #"TO_CNH" = 433.8, #"TO_COP" = 431.39, #"TO_CRC" = 294.66, #"TO_INR" = 326.37, #"TO_KRW" = 425.25, #"TO_MXC" = 583.09, #"TO_MYR" = 611.51, #"TO_PEN" = 588.28, #"TO_UVR" = 309.61, #"TO_UYU" = 533.34, #"MARKET_DATA_SOURCE_ID" = 5065],
+					        [#"SLICE_DATE" = #datetime(2020, 2, 6, 13, 26, 3), #"CURR_FROM" = "bear", #"TO_AUD" = 713.57, #"TO_CAD" = 963.43, #"TO_CHF" = 308.76, #"TO_EUR" = 792.51, #"TO_GBP" = 13.22, #"TO_HKD" = 999.59, #"TO_JPY" = 112.37, #"TO_MXN" = 150.91, #"TO_NZD" = 681.95, #"TO_SEK" = 362.17, #"TO_SGD" = 63.05, #"TO_USD" = 211.73, #"TO_MEX" = 995.56, #"ADDED_DATE" = #datetime(2020, 3, 25, 3, 14, 41), #"ADDED_USER" = "soul_1993", #"TO_BRL" = 948.79, #"TO_BRO" = 355.63, #"TO_CLF" = 258.49, #"TO_CLP" = 708.24, #"TO_CNH" = 337.9, #"TO_COP" = 748.75, #"TO_CRC" = 744.58, #"TO_INR" = 87.87, #"TO_KRW" = 713.12, #"TO_MXC" = 924.2, #"TO_MYR" = 980.09, #"TO_PEN" = 479.31, #"TO_UVR" = 982.96, #"TO_UYU" = 81.57, #"MARKET_DATA_SOURCE_ID" = 2206],
+					        [#"SLICE_DATE" = #datetime(2021, 3, 23, 0, 41, 38), #"CURR_FROM" = "film", #"TO_AUD" = 385.03, #"TO_CAD" = 562.9, #"TO_CHF" = 456.74, #"TO_EUR" = 47.45, #"TO_GBP" = 544.11, #"TO_HKD" = 354.83, #"TO_JPY" = 586.09, #"TO_MXN" = 137.1, #"TO_NZD" = 604.91, #"TO_SEK" = 651.83, #"TO_SGD" = 868.35, #"TO_USD" = 298.92, #"TO_MEX" = 534.91, #"ADDED_DATE" = #datetime(2021, 8, 9, 5, 33, 35), #"ADDED_USER" = "enormous_1951", #"TO_BRL" = 693.39, #"TO_BRO" = 722.04, #"TO_CLF" = 815.14, #"TO_CLP" = 297.88, #"TO_CNH" = 814.6, #"TO_COP" = 798.19, #"TO_CRC" = 520.35, #"TO_INR" = 408.45, #"TO_KRW" = 79.35, #"TO_MXC" = 26.81, #"TO_MYR" = 533.54, #"TO_PEN" = 850.71, #"TO_UVR" = 803.09, #"TO_UYU" = 13.32, #"MARKET_DATA_SOURCE_ID" = 8973]
+					    }),
+					    Typed = Table.TransformColumnTypes(Source, {
+					        {"SLICE_DATE", type datetime},
+					        {"CURR_FROM", type text},
+					        {"TO_AUD", type number},
+					        {"TO_CAD", type number},
+					        {"TO_CHF", type number},
+					        {"TO_EUR", type number},
+					        {"TO_GBP", type number},
+					        {"TO_HKD", type number},
+					        {"TO_JPY", type number},
+					        {"TO_MXN", type number},
+					        {"TO_NZD", type number},
+					        {"TO_SEK", type number},
+					        {"TO_SGD", type number},
+					        {"TO_USD", type number},
+					        {"TO_MEX", type number},
+					        {"ADDED_DATE", type datetime},
+					        {"ADDED_USER", type text},
+					        {"TO_BRL", type number},
+					        {"TO_BRO", type number},
+					        {"TO_CLF", type number},
+					        {"TO_CLP", type number},
+					        {"TO_CNH", type number},
+					        {"TO_COP", type number},
+					        {"TO_CRC", type number},
+					        {"TO_INR", type number},
+					        {"TO_KRW", type number},
+					        {"TO_MXC", type number},
+					        {"TO_MYR", type number},
+					        {"TO_PEN", type number},
+					        {"TO_UVR", type number},
+					        {"TO_UYU", type number},
+					        {"MARKET_DATA_SOURCE_ID", Int64.Type}
+					    })
+					in
+					    Typed
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
