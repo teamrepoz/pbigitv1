@@ -1,0 +1,40 @@
+table 'Orders+ (Sample - Superstore)_People'
+	lineageTag: 04636c31-168f-4d8e-bd18-d0b97598307f
+
+	column 'Regional Manager'
+		dataType: string
+		lineageTag: 01ffa04e-a657-47a8-8633-781e8b2b3dc0
+		summarizeBy: none
+		sourceColumn: 'Regional Manager'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		lineageTag: 87032dd4-8cea-457b-a620-e0320da2d5d9
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Orders+ (Sample - Superstore)_People' = m
+		mode: import
+		source =
+				let
+					    Source = Table.FromRecords({
+					        [#"Regional Manager" = "North Carolina", #"Region" = "Missouri"],
+					        [#"Regional Manager" = "Arizona", #"Region" = "North Carolina"],
+					        [#"Regional Manager" = "Maine", #"Region" = "Maryland"],
+					        [#"Regional Manager" = "Florida", #"Region" = "Ohio"],
+					        [#"Regional Manager" = "Florida", #"Region" = "Minnesota"]
+					    }),
+					    Typed = Table.TransformColumnTypes(Source, {
+					        {"Regional Manager", type text},
+					        {"Region", type text}
+					    })
+					in
+					    Typed
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
