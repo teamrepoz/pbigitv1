@@ -1,0 +1,134 @@
+table 'RDV_SNAPSHOT_DAYS_LOG_Risk_GFIRates_Reports_Excel_Rolling (local copy)'
+	lineageTag: 70688fb7-01ab-4228-b5c3-2b1b5f2d0bad
+
+	column RUN_NUMBER
+		dataType: double
+		formatString: General Number
+		lineageTag: 8617705c-6a02-4c5c-b7fc-4aa542f74b4f
+		summarizeBy: sum
+		sourceColumn: RUN_NUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column RDV_DAYS_TYPE
+		dataType: string
+		lineageTag: 9089d8dd-1659-40f2-b970-7958d2e9c117
+		summarizeBy: none
+		sourceColumn: RDV_DAYS_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column EFFECTIVE_DATE
+		dataType: datetime
+		lineageTag: 268445de-1899-4d63-9c98-45ee11fe9926
+		summarizeBy: none
+		sourceColumn: EFFECTIVE_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column SOURCE_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 0e970eae-bd5d-4acb-96a3-f9f7f4657f5a
+		summarizeBy: sum
+		sourceColumn: SOURCE_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column EXEC_DURATION
+		dataType: double
+		formatString: General Number
+		lineageTag: 498b477c-9f3f-4c52-9f8a-cc02d18ef8c3
+		summarizeBy: sum
+		sourceColumn: EXEC_DURATION
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column RECORD_COUNT
+		dataType: double
+		formatString: General Number
+		lineageTag: 38d729a8-88ad-4bff-b686-dbc8ae698e86
+		summarizeBy: sum
+		sourceColumn: RECORD_COUNT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PROCESS_END_DTTM
+		dataType: datetime
+		lineageTag: b3aeb0af-9566-45de-b7df-4dd95141b5af
+		summarizeBy: none
+		sourceColumn: PROCESS_END_DTTM
+
+		annotation SummarizationSetBy = Automatic
+
+	column SOURCE_NAME
+		dataType: string
+		lineageTag: 717e0e3e-9c00-4c69-a48c-7a9f87d68035
+		summarizeBy: none
+		sourceColumn: SOURCE_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column PERFORMANCE_MEASURE
+		dataType: double
+		formatString: General Number
+		lineageTag: 2c47201a-8795-471e-97e9-9ef30b9d4769
+		summarizeBy: sum
+		sourceColumn: PERFORMANCE_MEASURE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ALERT_TYPE
+		dataType: string
+		lineageTag: ae7131b9-7cf6-4d28-8074-3344dcd403ea
+		summarizeBy: none
+		sourceColumn: ALERT_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column RISK_LOAD_END_DTTM
+		dataType: datetime
+		lineageTag: bca68d7b-ea03-4d54-b7b7-435ef788ade4
+		summarizeBy: none
+		sourceColumn: RISK_LOAD_END_DTTM
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'RDV_SNAPSHOT_DAYS_LOG_Risk_GFIRates_Reports_Excel_Rolling (local copy)' = m
+		mode: import
+		source =
+				let
+					    Source = Table.FromRecords({
+					        [#"RUN_NUMBER" = 443.91, #"RDV_DAYS_TYPE" = "dodge", #"EFFECTIVE_DATE" = #datetime(2022, 9, 15, 17, 10, 13), #"SOURCE_ID" = 3687, #"EXEC_DURATION" = 315.06, #"RECORD_COUNT" = 591.38, #"PROCESS_END_DTTM" = #datetime(2022, 12, 4, 12, 54, 15), #"SOURCE_NAME" = "Kevin Roy", #"PERFORMANCE_MEASURE" = 428.44, #"ALERT_TYPE" = "formal", #"RISK_LOAD_END_DTTM" = #datetime(2023, 11, 7, 3, 33, 40)],
+					        [#"RUN_NUMBER" = 510.09, #"RDV_DAYS_TYPE" = "privacy", #"EFFECTIVE_DATE" = #datetime(2022, 2, 5, 3, 45, 51), #"SOURCE_ID" = 3788, #"EXEC_DURATION" = 853.83, #"RECORD_COUNT" = 724.66, #"PROCESS_END_DTTM" = #datetime(2023, 6, 18, 12, 21, 13), #"SOURCE_NAME" = "Mauricio Sims", #"PERFORMANCE_MEASURE" = 826.68, #"ALERT_TYPE" = "los", #"RISK_LOAD_END_DTTM" = #datetime(2021, 2, 9, 3, 28, 42)],
+					        [#"RUN_NUMBER" = 908.69, #"RDV_DAYS_TYPE" = "voltage", #"EFFECTIVE_DATE" = #datetime(2023, 11, 3, 2, 24, 41), #"SOURCE_ID" = 5894, #"EXEC_DURATION" = 361.09, #"RECORD_COUNT" = 573.0, #"PROCESS_END_DTTM" = #datetime(2023, 8, 22, 14, 4, 39), #"SOURCE_NAME" = "Ginette Key", #"PERFORMANCE_MEASURE" = 796.4, #"ALERT_TYPE" = "consumers", #"RISK_LOAD_END_DTTM" = #datetime(2024, 11, 19, 19, 8, 25)],
+					        [#"RUN_NUMBER" = 754.36, #"RDV_DAYS_TYPE" = "dictionary", #"EFFECTIVE_DATE" = #datetime(2021, 6, 16, 1, 32, 38), #"SOURCE_ID" = 420, #"EXEC_DURATION" = 307.59, #"RECORD_COUNT" = 912.97, #"PROCESS_END_DTTM" = #datetime(2023, 2, 19, 2, 6, 48), #"SOURCE_NAME" = "Kenny Wells", #"PERFORMANCE_MEASURE" = 341.79, #"ALERT_TYPE" = "families", #"RISK_LOAD_END_DTTM" = #datetime(2022, 12, 26, 5, 10, 14)],
+					        [#"RUN_NUMBER" = 884.42, #"RDV_DAYS_TYPE" = "seller", #"EFFECTIVE_DATE" = #datetime(2022, 5, 23, 4, 9, 14), #"SOURCE_ID" = 2086, #"EXEC_DURATION" = 705.57, #"RECORD_COUNT" = 836.76, #"PROCESS_END_DTTM" = #datetime(2020, 5, 25, 6, 0, 43), #"SOURCE_NAME" = "Raeann Solomon", #"PERFORMANCE_MEASURE" = 203.36, #"ALERT_TYPE" = "configuration", #"RISK_LOAD_END_DTTM" = #datetime(2020, 12, 22, 3, 29, 32)]
+					    }),
+					    Typed = Table.TransformColumnTypes(Source, {
+					        {"RUN_NUMBER", type number},
+					        {"RDV_DAYS_TYPE", type text},
+					        {"EFFECTIVE_DATE", type datetime},
+					        {"SOURCE_ID", Int64.Type},
+					        {"EXEC_DURATION", type number},
+					        {"RECORD_COUNT", type number},
+					        {"PROCESS_END_DTTM", type datetime},
+					        {"SOURCE_NAME", type text},
+					        {"PERFORMANCE_MEASURE", type number},
+					        {"ALERT_TYPE", type text},
+					        {"RISK_LOAD_END_DTTM", type datetime}
+					    })
+					in
+					    Typed
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
