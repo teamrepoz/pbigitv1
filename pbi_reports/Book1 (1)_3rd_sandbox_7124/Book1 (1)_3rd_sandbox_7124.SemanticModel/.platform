@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Book1 (1)_3rd_sandbox_7124"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "003dad36-dfe8-4afd-8390-4be7d0bfb262"
+  }
+}
