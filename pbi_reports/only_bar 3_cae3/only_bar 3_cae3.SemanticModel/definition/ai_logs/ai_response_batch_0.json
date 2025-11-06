@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders (Sample - Superstore (1))",
+      "name": "Calculation1",
+      "dax_expression": "IF('Orders (Sample - Superstore (1))'[Category] = \"Furniture\", \"furniture\", IF('Orders (Sample - Superstore (1))'[Category] = \"Office Supplies\", \"office supplier\", IF('Orders (Sample - Superstore (1))'[Category] = \"Technology\", \"technology\", 'Orders (Sample - Superstore (1))'[Category])))",
+      "solution_explanation": "Converted Tableau IF-ELSEIF chain on [Category] into a DAX calculated column using nested IF statements. This is row-level logic (no aggregation), so it should be created as a calculated column.",
+      "type_changed_reason": "This calculation uses only row-level fields (Category) with conditional logic and no aggregations, so it should be created as a calculated column."
+    }
+  ]
+}
