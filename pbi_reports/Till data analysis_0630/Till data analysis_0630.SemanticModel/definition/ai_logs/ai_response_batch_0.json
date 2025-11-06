@@ -1,0 +1,34 @@
+[
+  {
+    "type": "calculated_column",
+    "table": "Orders+ (Sample - Superstore)",
+    "name": "QTD",
+    "dax_expression": "'Orders+ (Sample - Superstore)'[Order Date] <= 'Orders+ (Sample - Superstore)'[Dynamic years] && QUARTER('Orders+ (Sample - Superstore)'[Order Date]) = QUARTER('Orders+ (Sample - Superstore)'[Dynamic years]) && YEAR('Orders+ (Sample - Superstore)'[Order Date]) = YEAR('Orders+ (Sample - Superstore)'[Dynamic years])",
+    "solution_explanation": "Converted the Tableau row-level boolean calculation to DAX by using && for logical AND and replacing DATEPART with QUARTER and YEAR. References to [Order Date] and [Dynamic years] are mapped to the Orders+ (Sample - Superstore) table.",
+    "type_changed_reason": ""
+  },
+  {
+    "type": "measure",
+    "table": "Orders+ (Sample - Superstore)",
+    "name": "MTD",
+    "dax_expression": "VAR selDate = SELECTEDVALUE('Select date'[Display As]) RETURN 'Orders+ (Sample - Superstore)'[Order Date] <= selDate && 'Orders+ (Sample - Superstore)'[Order Date] >= IF(MONTH(selDate) <= 3, DATE(YEAR(selDate) - 1, 4, 1), IF(MONTH(selDate) >= 4 && YEAR(selDate) = YEAR('Orders+ (Sample - Superstore)'[Order Date]), DATE(YEAR(selDate), 4, 1), BLANK()))",
+    "solution_explanation": "Parameter [Select date] forces this to be a measure. Replaced [Parameters].[Select date] with SELECTEDVALUE('Select date'[Display As]). Replaced DATEPART with MONTH and YEAR when comparing dates.",
+    "type_changed_reason": "The calculation references a parameter, and all parameter-based calculations must be measures."
+  },
+  {
+    "type": "measure",
+    "table": "Orders+ (Sample - Superstore)",
+    "name": "Dynamic Measure values with YTD/MTD/QTD",
+    "dax_expression": "VAR period = SELECTEDVALUE('Select Period'[Display As]) VAR selDate = SELECTEDVALUE('Select date'[Display As]) VAR lowerBound = IF(MONTH(selDate) <= 3, DATE(YEAR(selDate) - 1, 4, 1), IF(MONTH(selDate) >= 4 && YEAR(selDate) = YEAR('Orders+ (Sample - Superstore)'[Order Date]), DATE(YEAR(selDate), 4, 1), BLANK())) RETURN SWITCH(TRUE(), period = 1, 'Orders+ (Sample - Superstore)'[Order Date] <= selDate && 'Orders+ (Sample - Superstore)'[Order Date] >= lowerBound, period = 2, [MTD], period = 3, [QTD], BLANK())",
+    "solution_explanation": "Because parameters are involved, this becomes a measure. Converted CASE to SWITCH(TRUE()) and replaced [Select Period], [Select date], [MTD], [QTD] with their DAX equivalents. Uses SELECTEDVALUE for parameter values.",
+    "type_changed_reason": "The calculation references a parameter, and all parameter-based calculations must be measures."
+  },
+  {
+    "type": "calculated_column",
+    "table": "Orders+ (Sample - Superstore)",
+    "name": null,
+    "dax_expression": "DATE(YEAR('Orders+ (Sample - Superstore)'[Order Date]), MONTH('Orders+ (Sample - Superstore)'[Order Date]), 1)",
+    "solution_explanation": "Transforms the Tableau date truncation to the first day of the month using DATE(YEAR(...), MONTH(...), 1) in DAX.",
+    "type_changed_reason": ""
+  }
+]
