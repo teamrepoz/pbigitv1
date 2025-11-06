@@ -1,0 +1,193 @@
+table 'volcker_rpt_inventory_aging_Postgres_Volcker_Aging_Deallevel_data_GFIRates (local copy)'
+	lineageTag: 4b6e3b96-ff29-4e08-9d5e-e07f6371daf3
+
+	column id
+		dataType: int64
+		formatString: 0
+		lineageTag: 14d81f12-5f3b-467d-8612-b59172940ca1
+		summarizeBy: sum
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column effective_date
+		dataType: datetime
+		lineageTag: 52419dce-da90-467c-9722-cffbaa7ac4e4
+		summarizeBy: none
+		sourceColumn: effective_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column position_id_position
+		dataType: string
+		lineageTag: 1936acfc-3bd4-4298-8368-42f428884dea
+		summarizeBy: none
+		sourceColumn: position_id_position
+
+		annotation SummarizationSetBy = Automatic
+
+	column product
+		dataType: string
+		lineageTag: 4f3ecbf0-4bf6-4f13-9f13-57fd71066870
+		summarizeBy: none
+		sourceColumn: product
+
+		annotation SummarizationSetBy = Automatic
+
+	column volcker_desk_id
+		dataType: int64
+		formatString: 0
+		lineageTag: a3be8a29-95a4-4232-948a-d8b15d3c05eb
+		summarizeBy: sum
+		sourceColumn: volcker_desk_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column counterparty_name
+		dataType: string
+		lineageTag: 0049a027-af2b-40b9-9196-b1699e7d53ba
+		summarizeBy: none
+		sourceColumn: counterparty_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column source_system
+		dataType: string
+		lineageTag: 4d762a35-36f9-4136-8679-2af50695dd68
+		summarizeBy: none
+		sourceColumn: source_system
+
+		annotation SummarizationSetBy = Automatic
+
+	column aging_report_value
+		dataType: double
+		formatString: General Number
+		lineageTag: f7a94376-1a51-4e6c-92e0-a7e9725ef663
+		summarizeBy: sum
+		sourceColumn: aging_report_value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column age_of_trade
+		dataType: int64
+		formatString: 0
+		lineageTag: fdb0049f-9f3c-4a8b-a9e5-784e2eb00381
+		summarizeBy: sum
+		sourceColumn: age_of_trade
+
+		annotation SummarizationSetBy = Automatic
+
+	column bucket
+		dataType: string
+		lineageTag: b1ab0812-3f01-4725-98e8-0e367d7eb2e6
+		summarizeBy: none
+		sourceColumn: bucket
+
+		annotation SummarizationSetBy = Automatic
+
+	column classification
+		dataType: string
+		lineageTag: 6ddeb49e-06bc-4c3c-8434-adaafb5c2c51
+		summarizeBy: none
+		sourceColumn: classification
+
+		annotation SummarizationSetBy = Automatic
+
+	column trade_id
+		dataType: string
+		lineageTag: 6dc87e9f-85d0-4abf-884b-cd96cf407b16
+		summarizeBy: none
+		sourceColumn: trade_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column aging_report_value_abs
+		dataType: double
+		formatString: General Number
+		lineageTag: b7f5b5ed-198d-4721-9399-974d908e48cd
+		summarizeBy: sum
+		sourceColumn: aging_report_value_abs
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column file_path
+		dataType: string
+		lineageTag: 7edfab20-825c-4dc8-a68b-405577d7e6a0
+		summarizeBy: none
+		sourceColumn: file_path
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_date
+		dataType: datetime
+		lineageTag: 0fe6a9bf-45ce-4432-87e4-4300fb96ee7b
+		summarizeBy: none
+		sourceColumn: created_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column security_id_position
+		dataType: string
+		lineageTag: 894a6144-b174-45fe-87e5-10dfbe97ca2b
+		summarizeBy: none
+		sourceColumn: security_id_position
+
+		annotation SummarizationSetBy = Automatic
+
+	column source_book
+		dataType: string
+		lineageTag: 98148300-f4f7-4cea-a52b-0323bd2d151a
+		summarizeBy: none
+		sourceColumn: source_book
+
+		annotation SummarizationSetBy = Automatic
+
+	column book
+		dataType: string
+		lineageTag: 4d2d9de8-09d2-4cd7-a3a9-d786b2addc77
+		summarizeBy: none
+		sourceColumn: book
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'volcker_rpt_inventory_aging_Postgres_Volcker_Aging_Deallevel_data_GFIRates (local copy)' = m
+		mode: import
+		source =
+				let
+					    Source = Table.FromRecords({
+					        [id = 2500, effective_date = #date(2022, 9, 5), position_id_position = "Meter Reader", product = "say", volcker_desk_id = 4795, counterparty_name = "Cody Chang", source_system = "geographic", aging_report_value = 426.84, age_of_trade = 98, bucket = "computer", classification = "up", trade_id = 6371, aging_report_value_abs = 803.96, file_path = "pm", created_date = #datetime(2020, 5, 12, 13, 10, 42), security_id_position = "Machine Setter", source_book = "behavior", book = "telecom"],
+					        [id = 1411, effective_date = #date(2024, 1, 12), position_id_position = "Registrar", product = "simple", volcker_desk_id = 9275, counterparty_name = "Gudrun Mason", source_system = "sony", aging_report_value = 99.66, age_of_trade = 21, bucket = "gathering", classification = "liberal", trade_id = 8390, aging_report_value_abs = 463.81, file_path = "let", created_date = #datetime(2021, 5, 10, 4, 51, 51), security_id_position = "Administrator", source_book = "crop", book = "orders"],
+					        [id = 7042, effective_date = #date(2023, 5, 13), position_id_position = "Telephonist", product = "images", volcker_desk_id = 3638, counterparty_name = "Lazaro Crawford", source_system = "appendix", aging_report_value = 395.82, age_of_trade = 81, bucket = "mature", classification = "june", trade_id = 2816, aging_report_value_abs = 896.85, file_path = "mistake", created_date = #datetime(2023, 12, 18, 17, 55, 29), security_id_position = "Millwright", source_book = "comment", book = "pda"],
+					        [id = 9505, effective_date = #date(2024, 7, 20), position_id_position = "Taxi Controller", product = "fy", volcker_desk_id = 8912, counterparty_name = "Evita Rivers", source_system = "girls", aging_report_value = 873.55, age_of_trade = 35, bucket = "editions", classification = "broken", trade_id = 8103, aging_report_value_abs = 122.06, file_path = "circumstances", created_date = #datetime(2021, 6, 16, 22, 35, 56), security_id_position = "Research Scientist", source_book = "pa", book = "bc"],
+					        [id = 8020, effective_date = #date(2020, 2, 26), position_id_position = "Claims Manager", product = "grey", volcker_desk_id = 9990, counterparty_name = "Jacki Shepherd", source_system = "included", aging_report_value = 663.64, age_of_trade = 54, bucket = "truth", classification = "aside", trade_id = 8072, aging_report_value_abs = 808.04, file_path = "governor", created_date = #datetime(2021, 11, 20, 15, 57, 30), security_id_position = "Hotel Worker", source_book = "activities", book = "scholarship"]
+					    }),
+					    Typed = Table.TransformColumnTypes(Source, {
+					        {"id", Int64.Type},
+					        {"effective_date", type date},
+					        {"position_id_position", type text},
+					        {"product", type text},
+					        {"volcker_desk_id", Int64.Type},
+					        {"counterparty_name", type text},
+					        {"source_system", type text},
+					        {"aging_report_value", type number},
+					        {"age_of_trade", Int64.Type},
+					        {"bucket", type text},
+					        {"classification", type text},
+					        {"trade_id", type text},
+					        {"aging_report_value_abs", type number},
+					        {"file_path", type text},
+					        {"created_date", type datetime},
+					        {"security_id_position", type text},
+					        {"source_book", type text},
+					        {"book", type text}
+					    })
+					in
+					    Typed
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
