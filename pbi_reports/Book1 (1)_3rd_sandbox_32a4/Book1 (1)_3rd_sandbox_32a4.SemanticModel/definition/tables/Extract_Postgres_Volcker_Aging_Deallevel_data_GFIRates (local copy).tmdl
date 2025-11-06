@@ -1,0 +1,504 @@
+table 'Extract_Postgres_Volcker_Aging_Deallevel_data_GFIRates (local copy)'
+	lineageTag: 13e288e1-bf39-49a8-95cc-6594a04f9807
+
+	column id
+		dataType: int64
+		formatString: 0
+		lineageTag: a331c139-7ad8-4bfd-8c1a-b798cec58b56
+		summarizeBy: sum
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column effective_date
+		dataType: datetime
+		lineageTag: 7ae943ec-19dd-4d79-9669-a4b11a68d621
+		summarizeBy: none
+		sourceColumn: effective_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column position_id_position
+		dataType: string
+		lineageTag: 431ed29d-e22d-4635-98c0-88658d71b4f6
+		summarizeBy: none
+		sourceColumn: position_id_position
+
+		annotation SummarizationSetBy = Automatic
+
+	column product
+		dataType: string
+		lineageTag: c720d5b2-3f0c-4d61-a730-57617c965293
+		summarizeBy: none
+		sourceColumn: product
+
+		annotation SummarizationSetBy = Automatic
+
+	column volcker_desk_id
+		dataType: int64
+		formatString: 0
+		lineageTag: e56afa54-7b59-40d3-b39a-080d9f741314
+		summarizeBy: sum
+		sourceColumn: volcker_desk_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column counterparty_name
+		dataType: string
+		lineageTag: 3432cca1-14ba-4889-9315-21a729e2dff7
+		summarizeBy: none
+		sourceColumn: counterparty_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column source_system
+		dataType: string
+		lineageTag: 7032f93b-cb68-462d-ba0c-2fcdd4ecb770
+		summarizeBy: none
+		sourceColumn: source_system
+
+		annotation SummarizationSetBy = Automatic
+
+	column aging_report_value
+		dataType: double
+		formatString: General Number
+		lineageTag: a9f616f9-3c11-4595-bf31-e94813c3a084
+		summarizeBy: sum
+		sourceColumn: aging_report_value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column age_of_trade
+		dataType: int64
+		formatString: 0
+		lineageTag: df7ffcbc-dd1b-496a-b991-6ab5deb2b4d4
+		summarizeBy: sum
+		sourceColumn: age_of_trade
+
+		annotation SummarizationSetBy = Automatic
+
+	column bucket
+		dataType: string
+		lineageTag: f6b033d1-e5a2-456d-a11f-e11b7ac6b5f8
+		summarizeBy: none
+		sourceColumn: bucket
+
+		annotation SummarizationSetBy = Automatic
+
+	column classification
+		dataType: string
+		lineageTag: 6e3043e8-4401-4cb3-b244-0737703792c2
+		summarizeBy: none
+		sourceColumn: classification
+
+		annotation SummarizationSetBy = Automatic
+
+	column trade_id
+		dataType: string
+		lineageTag: 64cdeaef-7485-4eba-83d7-9cdc9eb7dd03
+		summarizeBy: none
+		sourceColumn: trade_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column aging_report_value_abs
+		dataType: double
+		formatString: General Number
+		lineageTag: 380b2f86-d0ff-4e10-b42c-6873fa4259ca
+		summarizeBy: sum
+		sourceColumn: aging_report_value_abs
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column file_path
+		dataType: string
+		lineageTag: c04e3143-d27e-4c4f-8453-0afb53078029
+		summarizeBy: none
+		sourceColumn: file_path
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_date
+		dataType: datetime
+		lineageTag: 02230ff7-98c4-4b46-b796-af2847c238ec
+		summarizeBy: none
+		sourceColumn: created_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column security_id_position
+		dataType: string
+		lineageTag: 87b45b99-9365-45d9-b6c8-06dee9aa1498
+		summarizeBy: none
+		sourceColumn: security_id_position
+
+		annotation SummarizationSetBy = Automatic
+
+	column source_book
+		dataType: string
+		lineageTag: f71b041d-e042-4a9a-a134-5c6aadb22b39
+		summarizeBy: none
+		sourceColumn: source_book
+
+		annotation SummarizationSetBy = Automatic
+
+	column book
+		dataType: string
+		lineageTag: 4fba14e1-1ba1-4735-afaf-ff0434782ceb
+		summarizeBy: none
+		sourceColumn: book
+
+		annotation SummarizationSetBy = Automatic
+
+	column security_id
+		dataType: string
+		lineageTag: 6f14140c-a232-4a9c-ab86-61f32217441f
+		summarizeBy: none
+		sourceColumn: security_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column security_name
+		dataType: string
+		lineageTag: 59b4237f-6af7-42c4-8dbd-a15f37d5a976
+		summarizeBy: none
+		sourceColumn: security_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column snapshot_date
+		dataType: datetime
+		lineageTag: 54f029a3-a579-4cdb-9eaa-4a0286c91763
+		summarizeBy: none
+		sourceColumn: snapshot_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column desk_name
+		dataType: string
+		lineageTag: 3b804017-5ae4-4f84-b115-565be03b6fbb
+		summarizeBy: none
+		sourceColumn: desk_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column sub_desk
+		dataType: string
+		lineageTag: 2849036b-f058-445d-85b0-ebae74515c90
+		summarizeBy: none
+		sourceColumn: sub_desk
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: string
+		lineageTag: 35e46489-1e0c-49cb-9ff2-601a281b4ed4
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column utilization_incl_all_products
+		dataType: string
+		lineageTag: 05be75b6-6bb7-4004-b54d-3576414dfa92
+		summarizeBy: none
+		sourceColumn: utilization_incl_all_products
+
+		annotation SummarizationSetBy = Automatic
+
+	column modified_date
+		dataType: datetime
+		lineageTag: e3286ec2-2834-4788-861f-0da426b12126
+		summarizeBy: none
+		sourceColumn: modified_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column fixed_client_ratio
+		dataType: double
+		formatString: General Number
+		lineageTag: 545b1a56-0613-42b0-8526-03f53f7c3236
+		summarizeBy: sum
+		sourceColumn: fixed_client_ratio
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column report_group
+		dataType: string
+		lineageTag: 988a684a-90a0-404a-897c-66ac66cfceea
+		summarizeBy: none
+		sourceColumn: report_group
+
+		annotation SummarizationSetBy = Automatic
+
+	column var_portfolio_id
+		dataType: int64
+		formatString: 0
+		lineageTag: fff0b96b-b420-4092-adb9-bef550a77b76
+		summarizeBy: sum
+		sourceColumn: var_portfolio_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_edit_username
+		dataType: string
+		lineageTag: 699be5d1-2482-4704-a820-26e644313cc0
+		summarizeBy: none
+		sourceColumn: last_edit_username
+
+		annotation SummarizationSetBy = Automatic
+
+	column desk_description
+		dataType: string
+		lineageTag: 2b0fd34d-93a6-4cce-bd12-66bc67669f61
+		summarizeBy: none
+		sourceColumn: desk_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column EFFECTIVE_DATE
+		dataType: datetime
+		lineageTag: 2cb830bb-24d3-4df8-b701-024c0fed74d7
+		summarizeBy: none
+		sourceColumn: EFFECTIVE_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column SECURITY_NAME
+		dataType: string
+		lineageTag: 7528c4a3-eabf-49ba-a956-6980b4d3dd51
+		summarizeBy: none
+		sourceColumn: SECURITY_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column MID_PRICE_INT
+		dataType: double
+		formatString: General Number
+		lineageTag: c9fc8084-772c-4fcc-9670-2fcc55771584
+		summarizeBy: sum
+		sourceColumn: MID_PRICE_INT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ASK_PRICE_INT
+		dataType: double
+		formatString: General Number
+		lineageTag: 29d98c0e-3e60-44f2-b2b8-91de8927c924
+		summarizeBy: sum
+		sourceColumn: ASK_PRICE_INT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column BID_PRICE_INT
+		dataType: double
+		formatString: General Number
+		lineageTag: 7facead8-014a-41ce-9dde-cc263050d692
+		summarizeBy: sum
+		sourceColumn: BID_PRICE_INT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VOLCKER_DESK
+		dataType: string
+		lineageTag: cefbd6db-8e3d-4e5d-81fb-0800d841b7f0
+		summarizeBy: none
+		sourceColumn: VOLCKER_DESK
+
+		annotation SummarizationSetBy = Automatic
+
+	column SECURITY_ID
+		dataType: string
+		lineageTag: 206c1d1f-9425-4eb0-932a-99fcacf7982f
+		summarizeBy: none
+		sourceColumn: SECURITY_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column SECURITY_MATURITY
+		dataType: datetime
+		lineageTag: 357b4e3b-e0a2-42ac-aa68-7d90364b765c
+		summarizeBy: none
+		sourceColumn: SECURITY_MATURITY
+
+		annotation SummarizationSetBy = Automatic
+
+	column CURRENCY
+		dataType: string
+		lineageTag: 0e89da35-fffd-49d9-8309-db693653da8a
+		summarizeBy: none
+		sourceColumn: CURRENCY
+
+		annotation SummarizationSetBy = Automatic
+
+	column OBLIGOR_NAME
+		dataType: string
+		lineageTag: 9867d2e7-dda3-412a-a14d-8678cf5b04c7
+		summarizeBy: none
+		sourceColumn: OBLIGOR_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column IS_CALLABLE
+		dataType: string
+		lineageTag: b697e2c5-23c4-48f7-b825-4f4775bd9c0d
+		summarizeBy: none
+		sourceColumn: IS_CALLABLE
+
+		annotation SummarizationSetBy = Automatic
+
+	column FX_CONV_MARKET_DATA_SRC_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 4957f391-5644-4de0-a307-145d91116f98
+		summarizeBy: sum
+		sourceColumn: FX_CONV_MARKET_DATA_SRC_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column TO_USD
+		dataType: double
+		formatString: General Number
+		lineageTag: 84da8554-d84f-480f-824c-f4cf4fbea066
+		summarizeBy: sum
+		sourceColumn: TO_USD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO_CAD
+		dataType: double
+		formatString: General Number
+		lineageTag: e4f8754f-5fff-4b25-8ec5-180bad6c1ffc
+		summarizeBy: sum
+		sourceColumn: TO_CAD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO_EUR
+		dataType: double
+		formatString: General Number
+		lineageTag: 094c3921-4d36-4886-89e2-64810d2baba2
+		summarizeBy: sum
+		sourceColumn: TO_EUR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TO_GBP
+		dataType: double
+		formatString: General Number
+		lineageTag: 06424089-8f32-4d75-9b01-dd60cea8a410
+		summarizeBy: sum
+		sourceColumn: TO_GBP
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'SUM(QUANTITY)'
+		dataType: double
+		formatString: General Number
+		lineageTag: f09e8570-dfb8-4892-ada4-dc6b88770b9a
+		summarizeBy: sum
+		sourceColumn: 'SUM(QUANTITY)'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'SUM(NOTIONAL_AMOUNT)'
+		dataType: double
+		formatString: General Number
+		lineageTag: 5595dc99-6a4d-4fd3-829f-e6a6e41e8b0f
+		summarizeBy: sum
+		sourceColumn: 'SUM(NOTIONAL_AMOUNT)'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Extract_Postgres_Volcker_Aging_Deallevel_data_GFIRates (local copy)' = m
+		mode: import
+		source =
+				let
+					    Source = Table.FromRecords({
+					        [#"id" = 10, #"effective_date" = #date(2024, 1, 1), #"position_id_position" = "Sample_position_id_position_1", #"product" = "Sample_product_1", #"volcker_desk_id" = 10, #"counterparty_name" = "Sample_counterparty_name_1", #"source_system" = "Sample_source_system_1", #"aging_report_value" = "Sample_aging_report_value_1", #"age_of_trade" = 10, #"bucket" = "Sample_bucket_1", #"classification" = "Sample_classification_1", #"trade_id" = "Sample_trade_id_1", #"aging_report_value_abs" = "Sample_aging_report_value_abs_1", #"file_path" = "Sample_file_path_1", #"created_date" = #date(2024, 1, 1), #"security_id_position" = "Sample_security_id_position_1", #"source_book" = "Sample_source_book_1", #"book" = "Sample_book_1", #"security_id" = "Sample_security_id_1", #"security_name" = "Sample_security_name_1", #"snapshot_date" = #date(2024, 1, 1), #"desk_name" = "Sample_desk_name_1", #"sub_desk" = "Sample_sub_desk_1", #"status" = "Sample_status_1", #"utilization_incl_all_products" = True, #"modified_date" = #datetime(2024, 1, 1, 0, 0, 0), #"fixed_client_ratio" = "Sample_fixed_client_ratio_1", #"report_group" = "Sample_report_group_1", #"var_portfolio_id" = 10, #"last_edit_username" = "Sample_last_edit_username_1", #"desk_description" = "Sample_desk_description_1", #"EFFECTIVE_DATE" = #datetime(2024, 1, 1, 0, 0, 0), #"SECURITY_NAME" = "Sample_SECURITY_NAME_1", #"MID_PRICE_INT" = "Sample_MID_PRICE_INT_1", #"ASK_PRICE_INT" = "Sample_ASK_PRICE_INT_1", #"BID_PRICE_INT" = "Sample_BID_PRICE_INT_1", #"VOLCKER_DESK" = "Sample_VOLCKER_DESK_1", #"SECURITY_ID" = "Sample_SECURITY_ID_1", #"SECURITY_MATURITY" = #datetime(2024, 1, 1, 0, 0, 0), #"CURRENCY" = "Sample_CURRENCY_1", #"OBLIGOR_NAME" = "Sample_OBLIGOR_NAME_1", #"IS_CALLABLE" = "Sample_IS_CALLABLE_1", #"FX_CONV_MARKET_DATA_SRC_ID" = 10, #"TO_USD" = "Sample_TO_USD_1", #"TO_CAD" = "Sample_TO_CAD_1", #"TO_EUR" = "Sample_TO_EUR_1", #"TO_GBP" = "Sample_TO_GBP_1", #"SUM(QUANTITY)" = "Sample_SUM(QUANTITY)_1", #"SUM(NOTIONAL_AMOUNT)" = "Sample_SUM(NOTIONAL_AMOUNT)_1"],
+					        [#"id" = 20, #"effective_date" = #date(2024, 1, 2), #"position_id_position" = "Sample_position_id_position_2", #"product" = "Sample_product_2", #"volcker_desk_id" = 20, #"counterparty_name" = "Sample_counterparty_name_2", #"source_system" = "Sample_source_system_2", #"aging_report_value" = "Sample_aging_report_value_2", #"age_of_trade" = 20, #"bucket" = "Sample_bucket_2", #"classification" = "Sample_classification_2", #"trade_id" = "Sample_trade_id_2", #"aging_report_value_abs" = "Sample_aging_report_value_abs_2", #"file_path" = "Sample_file_path_2", #"created_date" = #date(2024, 1, 2), #"security_id_position" = "Sample_security_id_position_2", #"source_book" = "Sample_source_book_2", #"book" = "Sample_book_2", #"security_id" = "Sample_security_id_2", #"security_name" = "Sample_security_name_2", #"snapshot_date" = #date(2024, 1, 2), #"desk_name" = "Sample_desk_name_2", #"sub_desk" = "Sample_sub_desk_2", #"status" = "Sample_status_2", #"utilization_incl_all_products" = False, #"modified_date" = #datetime(2024, 1, 2, 0, 0, 0), #"fixed_client_ratio" = "Sample_fixed_client_ratio_2", #"report_group" = "Sample_report_group_2", #"var_portfolio_id" = 20, #"last_edit_username" = "Sample_last_edit_username_2", #"desk_description" = "Sample_desk_description_2", #"EFFECTIVE_DATE" = #datetime(2024, 1, 2, 0, 0, 0), #"SECURITY_NAME" = "Sample_SECURITY_NAME_2", #"MID_PRICE_INT" = "Sample_MID_PRICE_INT_2", #"ASK_PRICE_INT" = "Sample_ASK_PRICE_INT_2", #"BID_PRICE_INT" = "Sample_BID_PRICE_INT_2", #"VOLCKER_DESK" = "Sample_VOLCKER_DESK_2", #"SECURITY_ID" = "Sample_SECURITY_ID_2", #"SECURITY_MATURITY" = #datetime(2024, 1, 2, 0, 0, 0), #"CURRENCY" = "Sample_CURRENCY_2", #"OBLIGOR_NAME" = "Sample_OBLIGOR_NAME_2", #"IS_CALLABLE" = "Sample_IS_CALLABLE_2", #"FX_CONV_MARKET_DATA_SRC_ID" = 20, #"TO_USD" = "Sample_TO_USD_2", #"TO_CAD" = "Sample_TO_CAD_2", #"TO_EUR" = "Sample_TO_EUR_2", #"TO_GBP" = "Sample_TO_GBP_2", #"SUM(QUANTITY)" = "Sample_SUM(QUANTITY)_2", #"SUM(NOTIONAL_AMOUNT)" = "Sample_SUM(NOTIONAL_AMOUNT)_2"],
+					        [#"id" = 30, #"effective_date" = #date(2024, 1, 3), #"position_id_position" = "Sample_position_id_position_3", #"product" = "Sample_product_3", #"volcker_desk_id" = 30, #"counterparty_name" = "Sample_counterparty_name_3", #"source_system" = "Sample_source_system_3", #"aging_report_value" = "Sample_aging_report_value_3", #"age_of_trade" = 30, #"bucket" = "Sample_bucket_3", #"classification" = "Sample_classification_3", #"trade_id" = "Sample_trade_id_3", #"aging_report_value_abs" = "Sample_aging_report_value_abs_3", #"file_path" = "Sample_file_path_3", #"created_date" = #date(2024, 1, 3), #"security_id_position" = "Sample_security_id_position_3", #"source_book" = "Sample_source_book_3", #"book" = "Sample_book_3", #"security_id" = "Sample_security_id_3", #"security_name" = "Sample_security_name_3", #"snapshot_date" = #date(2024, 1, 3), #"desk_name" = "Sample_desk_name_3", #"sub_desk" = "Sample_sub_desk_3", #"status" = "Sample_status_3", #"utilization_incl_all_products" = True, #"modified_date" = #datetime(2024, 1, 3, 0, 0, 0), #"fixed_client_ratio" = "Sample_fixed_client_ratio_3", #"report_group" = "Sample_report_group_3", #"var_portfolio_id" = 30, #"last_edit_username" = "Sample_last_edit_username_3", #"desk_description" = "Sample_desk_description_3", #"EFFECTIVE_DATE" = #datetime(2024, 1, 3, 0, 0, 0), #"SECURITY_NAME" = "Sample_SECURITY_NAME_3", #"MID_PRICE_INT" = "Sample_MID_PRICE_INT_3", #"ASK_PRICE_INT" = "Sample_ASK_PRICE_INT_3", #"BID_PRICE_INT" = "Sample_BID_PRICE_INT_3", #"VOLCKER_DESK" = "Sample_VOLCKER_DESK_3", #"SECURITY_ID" = "Sample_SECURITY_ID_3", #"SECURITY_MATURITY" = #datetime(2024, 1, 3, 0, 0, 0), #"CURRENCY" = "Sample_CURRENCY_3", #"OBLIGOR_NAME" = "Sample_OBLIGOR_NAME_3", #"IS_CALLABLE" = "Sample_IS_CALLABLE_3", #"FX_CONV_MARKET_DATA_SRC_ID" = 30, #"TO_USD" = "Sample_TO_USD_3", #"TO_CAD" = "Sample_TO_CAD_3", #"TO_EUR" = "Sample_TO_EUR_3", #"TO_GBP" = "Sample_TO_GBP_3", #"SUM(QUANTITY)" = "Sample_SUM(QUANTITY)_3", #"SUM(NOTIONAL_AMOUNT)" = "Sample_SUM(NOTIONAL_AMOUNT)_3"],
+					        [#"id" = 40, #"effective_date" = #date(2024, 1, 4), #"position_id_position" = "Sample_position_id_position_4", #"product" = "Sample_product_4", #"volcker_desk_id" = 40, #"counterparty_name" = "Sample_counterparty_name_4", #"source_system" = "Sample_source_system_4", #"aging_report_value" = "Sample_aging_report_value_4", #"age_of_trade" = 40, #"bucket" = "Sample_bucket_4", #"classification" = "Sample_classification_4", #"trade_id" = "Sample_trade_id_4", #"aging_report_value_abs" = "Sample_aging_report_value_abs_4", #"file_path" = "Sample_file_path_4", #"created_date" = #date(2024, 1, 4), #"security_id_position" = "Sample_security_id_position_4", #"source_book" = "Sample_source_book_4", #"book" = "Sample_book_4", #"security_id" = "Sample_security_id_4", #"security_name" = "Sample_security_name_4", #"snapshot_date" = #date(2024, 1, 4), #"desk_name" = "Sample_desk_name_4", #"sub_desk" = "Sample_sub_desk_4", #"status" = "Sample_status_4", #"utilization_incl_all_products" = False, #"modified_date" = #datetime(2024, 1, 4, 0, 0, 0), #"fixed_client_ratio" = "Sample_fixed_client_ratio_4", #"report_group" = "Sample_report_group_4", #"var_portfolio_id" = 40, #"last_edit_username" = "Sample_last_edit_username_4", #"desk_description" = "Sample_desk_description_4", #"EFFECTIVE_DATE" = #datetime(2024, 1, 4, 0, 0, 0), #"SECURITY_NAME" = "Sample_SECURITY_NAME_4", #"MID_PRICE_INT" = "Sample_MID_PRICE_INT_4", #"ASK_PRICE_INT" = "Sample_ASK_PRICE_INT_4", #"BID_PRICE_INT" = "Sample_BID_PRICE_INT_4", #"VOLCKER_DESK" = "Sample_VOLCKER_DESK_4", #"SECURITY_ID" = "Sample_SECURITY_ID_4", #"SECURITY_MATURITY" = #datetime(2024, 1, 4, 0, 0, 0), #"CURRENCY" = "Sample_CURRENCY_4", #"OBLIGOR_NAME" = "Sample_OBLIGOR_NAME_4", #"IS_CALLABLE" = "Sample_IS_CALLABLE_4", #"FX_CONV_MARKET_DATA_SRC_ID" = 40, #"TO_USD" = "Sample_TO_USD_4", #"TO_CAD" = "Sample_TO_CAD_4", #"TO_EUR" = "Sample_TO_EUR_4", #"TO_GBP" = "Sample_TO_GBP_4", #"SUM(QUANTITY)" = "Sample_SUM(QUANTITY)_4", #"SUM(NOTIONAL_AMOUNT)" = "Sample_SUM(NOTIONAL_AMOUNT)_4"],
+					        [#"id" = 50, #"effective_date" = #date(2024, 1, 5), #"position_id_position" = "Sample_position_id_position_5", #"product" = "Sample_product_5", #"volcker_desk_id" = 50, #"counterparty_name" = "Sample_counterparty_name_5", #"source_system" = "Sample_source_system_5", #"aging_report_value" = "Sample_aging_report_value_5", #"age_of_trade" = 50, #"bucket" = "Sample_bucket_5", #"classification" = "Sample_classification_5", #"trade_id" = "Sample_trade_id_5", #"aging_report_value_abs" = "Sample_aging_report_value_abs_5", #"file_path" = "Sample_file_path_5", #"created_date" = #date(2024, 1, 5), #"security_id_position" = "Sample_security_id_position_5", #"source_book" = "Sample_source_book_5", #"book" = "Sample_book_5", #"security_id" = "Sample_security_id_5", #"security_name" = "Sample_security_name_5", #"snapshot_date" = #date(2024, 1, 5), #"desk_name" = "Sample_desk_name_5", #"sub_desk" = "Sample_sub_desk_5", #"status" = "Sample_status_5", #"utilization_incl_all_products" = True, #"modified_date" = #datetime(2024, 1, 5, 0, 0, 0), #"fixed_client_ratio" = "Sample_fixed_client_ratio_5", #"report_group" = "Sample_report_group_5", #"var_portfolio_id" = 50, #"last_edit_username" = "Sample_last_edit_username_5", #"desk_description" = "Sample_desk_description_5", #"EFFECTIVE_DATE" = #datetime(2024, 1, 5, 0, 0, 0), #"SECURITY_NAME" = "Sample_SECURITY_NAME_5", #"MID_PRICE_INT" = "Sample_MID_PRICE_INT_5", #"ASK_PRICE_INT" = "Sample_ASK_PRICE_INT_5", #"BID_PRICE_INT" = "Sample_BID_PRICE_INT_5", #"VOLCKER_DESK" = "Sample_VOLCKER_DESK_5", #"SECURITY_ID" = "Sample_SECURITY_ID_5", #"SECURITY_MATURITY" = #datetime(2024, 1, 5, 0, 0, 0), #"CURRENCY" = "Sample_CURRENCY_5", #"OBLIGOR_NAME" = "Sample_OBLIGOR_NAME_5", #"IS_CALLABLE" = "Sample_IS_CALLABLE_5", #"FX_CONV_MARKET_DATA_SRC_ID" = 50, #"TO_USD" = "Sample_TO_USD_5", #"TO_CAD" = "Sample_TO_CAD_5", #"TO_EUR" = "Sample_TO_EUR_5", #"TO_GBP" = "Sample_TO_GBP_5", #"SUM(QUANTITY)" = "Sample_SUM(QUANTITY)_5", #"SUM(NOTIONAL_AMOUNT)" = "Sample_SUM(NOTIONAL_AMOUNT)_5"]
+					    }),
+					    Typed = Table.TransformColumnTypes(Source, {
+					        {"id", Int64.Type},
+					        {"effective_date", type date},
+					        {"position_id_position", type text},
+					        {"product", type text},
+					        {"volcker_desk_id", Int64.Type},
+					        {"counterparty_name", type text},
+					        {"source_system", type text},
+					        {"aging_report_value", type number},
+					        {"age_of_trade", Int64.Type},
+					        {"bucket", type text},
+					        {"classification", type text},
+					        {"trade_id", type text},
+					        {"aging_report_value_abs", type number},
+					        {"file_path", type text},
+					        {"created_date", type date},
+					        {"security_id_position", type text},
+					        {"source_book", type text},
+					        {"book", type text},
+					        {"security_id", type text},
+					        {"security_name", type text},
+					        {"snapshot_date", type date},
+					        {"desk_name", type text},
+					        {"sub_desk", type text},
+					        {"status", type text},
+					        {"utilization_incl_all_products", type logical},
+					        {"modified_date", type datetime},
+					        {"fixed_client_ratio", type number},
+					        {"report_group", type text},
+					        {"var_portfolio_id", Int64.Type},
+					        {"last_edit_username", type text},
+					        {"desk_description", type text},
+					        {"EFFECTIVE_DATE", type datetime},
+					        {"SECURITY_NAME", type text},
+					        {"MID_PRICE_INT", type number},
+					        {"ASK_PRICE_INT", type number},
+					        {"BID_PRICE_INT", type number},
+					        {"VOLCKER_DESK", type text},
+					        {"SECURITY_ID", type text},
+					        {"SECURITY_MATURITY", type datetime},
+					        {"CURRENCY", type text},
+					        {"OBLIGOR_NAME", type text},
+					        {"IS_CALLABLE", type text},
+					        {"FX_CONV_MARKET_DATA_SRC_ID", Int64.Type},
+					        {"TO_USD", type number},
+					        {"TO_CAD", type number},
+					        {"TO_EUR", type number},
+					        {"TO_GBP", type number},
+					        {"SUM(QUANTITY)", type number},
+					        {"SUM(NOTIONAL_AMOUNT)", type number}
+					    })
+					in
+					    Typed
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
