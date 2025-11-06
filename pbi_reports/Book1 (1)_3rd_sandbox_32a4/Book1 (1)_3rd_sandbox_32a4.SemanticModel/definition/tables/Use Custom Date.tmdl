@@ -1,0 +1,45 @@
+table 'Use Custom Date'
+	lineageTag: 40b0f032-1d81-4471-8877-a6bc3830821f
+
+	column Index
+		formatString: 0
+		lineageTag: e6c165b7-ae24-4b86-a6d6-a553bf210f7a
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 00352830-c47f-4259-80c5-c34b44ab7c3f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 56aca705-a9ee-4877-be69-95dc0189d977
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Use Custom Date' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", BOOLEAN,
+			    "Value", BOOLEAN,
+			    {
+			        { 0, FALSE, TRUE },
+				{ 1, FALSE, FALSE }
+			    }
+			)
+
+	annotation PBI_Id = 2996db854e954612be4f89ae84a611d5
+
