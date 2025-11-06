@@ -1,0 +1,10 @@
+[
+  {
+    "type": "calculated_column",
+    "table": "Orders (Sample - Superstore (1))",
+    "name": "Calculation1",
+    "dax_expression": "SWITCH('Orders (Sample - Superstore (1))'[Category], \"Furniture\", \"furniture\", \"Office Supplies\", \"office supplier\", \"Technology\", \"technology\", 'Orders (Sample - Superstore (1))'[Category])",
+    "solution_explanation": "Converted Tableau IF/ELSE IF CASE to a DAX SWITCH construct using the Category column. Per-row, non-aggregating mapping from Category values to corresponding strings; otherwise returns the original Category. All column references use the table-qualified syntax.",
+    "type_changed_reason": "This calculation applies row-level logic (no aggregation) so it should be a dimension."
+  }
+]
