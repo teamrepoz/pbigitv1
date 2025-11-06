@@ -1,0 +1,49 @@
+table 'Aggregator'
+	lineageTag: d3dfd950-99d1-4315-bd26-d6db3106c535
+
+	column Index
+		formatString: 0
+		lineageTag: dc2a334f-7c9a-4548-a477-6f9f10d1fa77
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 13391faf-2722-41a8-a531-becf868eb088
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: e2e72b42-8980-4bbf-8e61-76f2454c9c61
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Aggregator' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Position Id", "Position Id" },
+				{ 1, "Security Name", "Security Name" },
+				{ 2, "Obligor Name", "Obligor Name" },
+				{ 3, "Obligor Mapping", "Obligor Mapping" },
+				{ 4, "Maturity Year", "Maturity Year" },
+				{ 5, "Book", "Book" }
+			    }
+			)
+
+	annotation PBI_Id = dd7105311070419ebacc3d0555c172b0
+
