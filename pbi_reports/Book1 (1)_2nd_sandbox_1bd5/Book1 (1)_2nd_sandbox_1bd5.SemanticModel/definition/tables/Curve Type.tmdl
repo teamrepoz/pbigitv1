@@ -1,0 +1,56 @@
+table 'Curve Type'
+	lineageTag: c087f724-88f8-41ae-8ae7-9629e078b1d9
+
+	column Index
+		formatString: 0
+		lineageTag: 932bd7da-cf94-4f89-8d0d-e7804afa2f1e
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 38804dc5-22f6-4a5a-a851-dea2a35bde9f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: b7877f57-79cd-4e39-9204-57242e2099d9
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Curve Type' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "All Curves", "All Curves" },
+				{ 1, "All IR", "All IR" },
+				{ 2, "All Credit", "All Credit" },
+				{ 3, "All FX", "All FX" },
+				{ 4, "* All IR CAD/USD/EUR/GBP", "All CAD/USD/EUR/GBP" },
+				{ 5, "Major IR", "Major Curve" },
+				{ 6, "* Major CAD/USD/EUR/GBP", "Major CAD/USD/EUR/GBP" },
+				{ 7, "Minor IR", "Minor IR - All" },
+				{ 8, "* OIS Basis", "OIS Basis" },
+				{ 9, "* 1m Basis", "1m Basis" },
+				{ 10, "* 3m Basis", "3m Basis" },
+				{ 11, "* 6m Basis", "6m Basis" },
+				{ 12, "* CCIRS Basis", "CCIRS Basis" }
+			    }
+			)
+
+	annotation PBI_Id = 84f95232597c4bc1a38892b9ddb6858b
+
