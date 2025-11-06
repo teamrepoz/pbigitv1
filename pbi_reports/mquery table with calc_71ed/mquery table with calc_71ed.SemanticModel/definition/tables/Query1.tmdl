@@ -1,0 +1,51 @@
+table Query1
+	lineageTag: 1ab11bb0-6921-4c07-abd0-62c22ca016bc
+
+	column ID
+		dataType: int64
+		formatString: 0
+		lineageTag: e863b6a6-d235-4e53-9b14-7815c0385b3b
+		summarizeBy: sum
+		sourceColumn: ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		lineageTag: bc74e465-57c1-4b8f-a07b-c0c56b0625ba
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Salary
+		dataType: int64
+		formatString: 0
+		lineageTag: e1c0503f-9a42-4032-8d78-8607b78a5620
+		summarizeBy: sum
+		sourceColumn: Salary
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Query1 = m
+		mode: import
+		source =
+				let
+					    Source = Table.FromRecords({
+					        [ID = 6101, Name = "Luke Woodard", Salary = 256],
+					        [ID = 8173, Name = "Alease Gomez", Salary = 677],
+					        [ID = 3079, Name = "Perry Briggs", Salary = 570],
+					        [ID = 1219, Name = "Keena Rosales", Salary = 92],
+					        [ID = 3365, Name = "Ling Pace", Salary = 757]
+					    }),
+					    Typed = Table.TransformColumnTypes(Source, {
+					        {"ID", Int64.Type},
+					        {"Name", type text},
+					        {"Salary", Int64.Type}
+					    })
+					in
+					    Typed
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
