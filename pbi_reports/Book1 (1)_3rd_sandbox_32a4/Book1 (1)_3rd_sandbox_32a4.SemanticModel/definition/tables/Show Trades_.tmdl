@@ -1,0 +1,45 @@
+table 'Show Trades_'
+	lineageTag: 396ae5bb-40cd-456b-8af6-c477f680b05b
+
+	column Index
+		formatString: 0
+		lineageTag: b0d7d241-0a62-4b16-99ae-28c39b7a09a3
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: d2c14c5e-c627-4e9d-abb7-1233a897a0ed
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 4a7d1c72-0b3a-4e30-9216-fad1de6eb7ea
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Show Trades_' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", BOOLEAN,
+			    "Value", BOOLEAN,
+			    {
+			        { 0, FALSE, TRUE },
+				{ 1, FALSE, FALSE }
+			    }
+			)
+
+	annotation PBI_Id = af64c1ba9c034473974cc22595a0097c
+
