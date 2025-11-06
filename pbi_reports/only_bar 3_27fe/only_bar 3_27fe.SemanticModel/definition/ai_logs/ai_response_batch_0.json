@@ -1,0 +1,10 @@
+[
+  {
+    "type": "calculated_column",
+    "table": "Orders (Sample - Superstore (1))",
+    "name": "Calculation1",
+    "dax_expression": "SWITCH(TRUE(),\n  'Orders (Sample - Superstore (1))'[Category] = \"Furniture\", \"furniture\",\n  'Orders (Sample - Superstore (1))'[Category] = \"Office Supplies\", \"office supplier\",\n  'Orders (Sample - Superstore (1))'[Category] = \"Technology\", \"technology\",\n  'Orders (Sample - Superstore (1))'[Category]\n)",
+    "solution_explanation": "Converted a Tableau IF/ELSEIF/ELSE row-level mapping into a DAX calculated column using SWITCH(TRUE()) to map Category values to corresponding labels. Returns the original Category when no condition matches.",
+    "type_changed_reason": "This calculation applies row-level logic with no aggregation, so it should be created as a calculated column instead of a measure."
+  }
+]
