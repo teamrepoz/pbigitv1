@@ -1,0 +1,51 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Parameters",
+      "name": "Select date",
+      "dax_expression": "DATE(2022, 11, 17)",
+      "solution_explanation": "Converted the Tableau date literal #2022-11-17# to the DAX DATE(2022, 11, 17). This is produced as a measure to represent the parameter value.",
+      "type_changed_reason": "This calculation represents a parameter value. Parameter-based calculations should be created as measures in Power BI."
+    },
+    {
+      "type": "measure",
+      "table": "Parameters",
+      "name": "Select Period",
+      "dax_expression": "1",
+      "solution_explanation": "Converted the Tableau numeric parameter value \"1\" to a DAX scalar measure returning 1.",
+      "type_changed_reason": "This calculation represents a parameter value. Parameter-based calculations should be created as measures in Power BI."
+    },
+    {
+      "type": "measure",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Previous year",
+      "dax_expression": "VAR selDate = SELECTEDVALUE('Select date'[Display As])\nVAR upperBound = DATE(YEAR(selDate) - 1, MONTH(selDate), DAY(selDate))\nRETURN\nCALCULATE(\n    SUM('Orders+ (Sample - Superstore)'[Sales]),\n    FILTER(\n        'Orders+ (Sample - Superstore)',\n        'Orders+ (Sample - Superstore)'[Order Date] <= upperBound\n        &&\n        'Orders+ (Sample - Superstore)'[Order Date] >=\n            IF(\n                MONTH(selDate) <= 3,\n                DATE(YEAR(selDate) - 2, 4, 1),\n                IF(\n                    MONTH(selDate) >= 4 && YEAR(selDate) - 1 = YEAR('Orders+ (Sample - Superstore)'[Order Date]),\n                    DATE(YEAR(selDate) - 1, 4, 1),\n                    BLANK()\n                )\n            )\n    )\n)",
+      "solution_explanation": "Recreated the Tableau IF/DATEADD/MAKEDATE logic using DAX. Replaced the Tableau parameter reference with SELECTEDVALUE('Select date'[Display As]) and computed the upper bound as DATE(YEAR(selDate)-1, MONTH(selDate), DAY(selDate)). Used CALCULATE with FILTER over the Orders+ (Sample - Superstore) table to sum Sales for rows matching the original date-range conditions.",
+      "type_changed_reason": "The original formula references a Tableau parameter ([Parameters].[Select date]). Per rules, any calculation that references a parameter must be implemented as a measure."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Current year",
+      "dax_expression": "IF(\n    'Orders+ (Sample - Superstore)'[Dynamic Measure values with YTD/MTD/QTD],\n    'Orders+ (Sample - Superstore)'[Sales],\n    BLANK()\n)",
+      "solution_explanation": "Translated the Tableau IF expression to DAX row-level logic. When the Dynamic Measure boolean is true, return the row's Sales; otherwise BLANK(). This is implemented as a calculated column because it is row-level logic operating on fields from the same row."
+    },
+    {
+      "type": "measure",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Calculation1",
+      "dax_expression": "NOT(ISBLANK(SUM('Orders+ (Sample - Superstore)'[Current year]))) || NOT(ISBLANK(SUM('Orders+ (Sample - Superstore)'[Previous year])))",
+      "solution_explanation": "Translated the Tableau not(isnull(SUM(...))) checks to DAX using NOT(ISBLANK(SUM(...))). The expression tests whether aggregated Current year or Previous year values are non-blank and returns a boolean.",
+      "type_changed_reason": "The Tableau formula contains aggregations (SUM), so it must be implemented as a measure in Power BI."
+    },
+    {
+      "type": "measure",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Dynamic years",
+      "dax_expression": "SELECTEDVALUE('Select date'[Display As])",
+      "solution_explanation": "Replaced the Tableau parameter reference [Parameters].[Select date] with the required DAX parameter pattern SELECTEDVALUE('Select date'[Display As]). This returns the selected parameter value.",
+      "type_changed_reason": "The formula references a Tableau parameter, and per rules any parameter-based calculation must be created as a measure."
+    }
+  ]
+}
