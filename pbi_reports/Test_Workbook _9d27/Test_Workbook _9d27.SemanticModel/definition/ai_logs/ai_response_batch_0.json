@@ -1,0 +1,46 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Order Level Sales (LOD)",
+      "dax_expression": "VAR __result = CALCULATE(\n    SUM('Orders+ (Sample - Superstore)'[Sales]),\n    ALLEXCEPT('Orders+ (Sample - Superstore)', 'Orders+ (Sample - Superstore)'[Order ID])\n)\nRETURN __result",
+      "solution_explanation": "Converted the Tableau FIXED LOD ({ FIXED [Order ID] : SUM([Sales]) }) to a DAX measure using CALCULATE with ALLEXCEPT to fix the context to Order ID and then SUM the Sales."
+    },
+    {
+      "type": "measure",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Running Sales",
+      "dax_expression": "VAR CurrentSales = SUM('Orders+ (Sample - Superstore)'[Sales])\nVAR RunningSales =\n    SUMX(\n        FILTER(\n            ALLSELECTED('Orders+ (Sample - Superstore)'),\n            'Orders+ (Sample - Superstore)'[Sales] <= CurrentSales\n        ),\n        'Orders+ (Sample - Superstore)'[Sales]\n    )\nRETURN RunningSales",
+      "solution_explanation": "Translated the table calculation RUNNING_SUM(SUM([Sales])) into a DAX measure. Since a row ordering field is not provided, this implementation uses ALLSELECTED and accumulates Sales values less than or equal to the current row's Sales to approximate a running total using SUMX over the filtered set."
+    },
+    {
+      "type": "measure",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "% of Total Sales",
+      "dax_expression": "DIVIDE(\n    SUM('Orders+ (Sample - Superstore)'[Sales]),\n    CALCULATE(\n        SUM('Orders+ (Sample - Superstore)'[Sales]),\n        ALLSELECTED('Orders+ (Sample - Superstore)')\n    )\n)",
+      "solution_explanation": "Converted SUM([Sales]) / WINDOW_SUM(SUM([Sales])) into a DAX measure by dividing the row SUM by the total SUM across the current selection. WINDOW_SUM over the window is approximated with CALCULATE and ALLSELECTED to get the window/selection total."
+    },
+    {
+      "type": "measure",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Calculation2",
+      "dax_expression": "VAR result = CALCULATE(\n    MINX(\n        VALUES('Orders+ (Sample - Superstore)'[Order Date]),\n        YEAR('Orders+ (Sample - Superstore)'[Order Date])\n    ),\n    ALLEXCEPT('Orders+ (Sample - Superstore)', 'Orders+ (Sample - Superstore)'[Customer ID])\n)\nRETURN result",
+      "solution_explanation": "Converted the FIXED LOD { FIXED [Customer ID] : MIN(YEAR([Order Date])) } to a DAX measure. Used CALCULATE with ALLEXCEPT to fix the context to Customer ID, and MINX over the Order Date values with YEAR applied to obtain the minimum year per customer."
+    },
+    {
+      "type": "measure",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Calculation3",
+      "dax_expression": "VAR CurrentSales = SUM('Orders+ (Sample - Superstore)'[Sales])\nVAR WindowTable =\n    TOPN(\n        3,\n        FILTER(\n            ALLSELECTED('Orders+ (Sample - Superstore)'),\n            'Orders+ (Sample - Superstore)'[Sales] <= CurrentSales\n        ),\n        'Orders+ (Sample - Superstore)'[Sales], DESC\n    )\nRETURN AVERAGEX(WindowTable, 'Orders+ (Sample - Superstore)'[Sales])",
+      "solution_explanation": "Approximated WINDOW_AVG(SUM([Sales]), -2, 0) as a DAX measure. Without a specific ordering column, this implementation selects the current and two prior values based on Sales using TOPN over ALLSELECTED, then computes the average via AVERAGEX to mimic a -2 to 0 window average of SUM([Sales])."
+    },
+    {
+      "type": "measure",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Calculation4",
+      "dax_expression": "DIVIDE(\n    CALCULATE(\n        SUM('Orders+ (Sample - Superstore)'[Sales]),\n        ALLEXCEPT('Orders+ (Sample - Superstore)', 'Orders+ (Sample - Superstore)'[Customer ID], 'Orders+ (Sample - Superstore)'[Category])\n    ),\n    CALCULATE(\n        SUM('Orders+ (Sample - Superstore)'[Sales]),\n        ALLEXCEPT('Orders+ (Sample - Superstore)', 'Orders+ (Sample - Superstore)'[Customer ID])\n    )\n)",
+      "solution_explanation": "Converted the ratio of two FIXED LOD expressions into DAX measures. The numerator ({ FIXED [Customer ID], [Category] : SUM([Sales]) }) is implemented with CALCULATE and ALLEXCEPT keeping Customer ID and Category; the denominator ({ FIXED [Customer ID] : SUM([Sales]) }) keeps only Customer ID. DIVIDE is used to compute the ratio safely."
+    }
+  ]
+}
