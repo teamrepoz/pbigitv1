@@ -1,0 +1,25 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Product-Sales-Region",
+      "name": "Quantity vs Returned",
+      "dax_expression": "'Product-Sales-Region'[Quantity] - 'Product-Sales-Region'[Returned]",
+      "solution_explanation": "This is a row-level subtraction using only columns from the same table, so it should be implemented as a calculated column."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Product-Sales-Region",
+      "name": "New Cust Name",
+      "dax_expression": "'Product-Sales-Region'[CustomerName]",
+      "solution_explanation": "This simply returns the value of a row-level field from the same table, so it should be implemented as a calculated column."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Product-Sales-Region",
+      "name": "Date of Delivery",
+      "dax_expression": "'Product-Sales-Region'[DeliveryDate]",
+      "solution_explanation": "This simply returns the row-level date field from the same table, so it should be implemented as a calculated column."
+    }
+  ]
+}
