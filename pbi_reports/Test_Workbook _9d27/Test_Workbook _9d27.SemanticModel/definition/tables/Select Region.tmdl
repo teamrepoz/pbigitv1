@@ -1,0 +1,47 @@
+table 'Select Region'
+	lineageTag: c302d125-35d9-4f84-8b00-27b8f85bdee5
+
+	column Index
+		formatString: 0
+		lineageTag: f4e04bd8-c88a-48ff-a53a-607363772337
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: f3c13e5a-e5a8-4967-8d61-69837a22f336
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 2b939793-6c6d-44a6-ab7c-90629eca4ca2
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Select Region' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Central", "Central" },
+				{ 1, "East", "East" },
+				{ 2, "South", "South" },
+				{ 3, "West", "West" }
+			    }
+			)
+
+	annotation PBI_Id = b04a729084d5466b8ccf5b1d923c8d8c
+
