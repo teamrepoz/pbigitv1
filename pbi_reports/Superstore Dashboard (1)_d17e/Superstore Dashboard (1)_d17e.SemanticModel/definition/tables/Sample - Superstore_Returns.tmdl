@@ -1,0 +1,40 @@
+table 'Sample - Superstore_Returns'
+	lineageTag: 1f8392a1-f464-4112-89f1-a3fbe3262eea
+
+	column 'Order ID'
+		dataType: string
+		lineageTag: 146e7c8d-da1d-4681-a6bc-385672ea856a
+		summarizeBy: none
+		sourceColumn: 'Order ID'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Returned
+		dataType: string
+		lineageTag: 71a85159-2f04-4680-88f7-1803f7d1a9c3
+		summarizeBy: none
+		sourceColumn: Returned
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Sample - Superstore_Returns' = m
+		mode: import
+		source =
+				let
+					    Source = Table.FromRecords({
+					        [#"Order ID" = 2398, #"Returned" = "safe"],
+					        [#"Order ID" = 5765, #"Returned" = "plasma"],
+					        [#"Order ID" = 3765, #"Returned" = "voip"],
+					        [#"Order ID" = 5646, #"Returned" = "jul"],
+					        [#"Order ID" = 9349, #"Returned" = "intent"]
+					    }),
+					    Typed = Table.TransformColumnTypes(Source, {
+					        {"Order ID", type text},
+					        {"Returned", type text}
+					    })
+					in
+					    Typed
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
