@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Test_Workbook _9d27"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "88b6eb55-cef5-4629-ae9d-b83ea0fdbfdf"
+  }
+}
