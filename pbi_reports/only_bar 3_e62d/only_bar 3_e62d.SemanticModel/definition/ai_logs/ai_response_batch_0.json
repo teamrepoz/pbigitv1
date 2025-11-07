@@ -1,0 +1,10 @@
+[
+  {
+    "type": "calculated_column",
+    "table": "Orders (Sample - Superstore (1))",
+    "name": "Calculation1",
+    "dax_expression": "SWITCH('Orders (Sample - Superstore (1))'[Category], \"Furniture\", \"furniture\", \"Office Supplies\", \"office supplier\", \"Technology\", \"technology\", 'Orders (Sample - Superstore (1))'[Category])",
+    "solution_explanation": "Row-level transformation: maps Category values to descriptive labels based on exact matches for Furniture, Office Supplies, and Technology, returning the original Category when no match is found.",
+    "type_changed_reason": "This calculation applies row-level value mapping on Category without aggregation, so it should be created as a calculated column."
+  }
+]
