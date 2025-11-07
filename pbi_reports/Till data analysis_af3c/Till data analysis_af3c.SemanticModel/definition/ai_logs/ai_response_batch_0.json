@@ -1,0 +1,51 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Parameters",
+      "name": "Select date",
+      "dax_expression": "DATE(2022, 11, 17)",
+      "solution_explanation": "Converted Tableau date literal #2022-11-17# to DAX DATE(2022, 11, 17) as a scalar measure representing the parameter value.",
+      "type_changed_reason": "This is a parameter value; parameter-based calculations must be created as measures."
+    },
+    {
+      "type": "measure",
+      "table": "Parameters",
+      "name": "Select Period",
+      "dax_expression": "1",
+      "solution_explanation": "Converted Tableau parameter literal 1 to a numeric DAX measure.",
+      "type_changed_reason": "This is a parameter value; parameter-based calculations must be created as measures."
+    },
+    {
+      "type": "measure",
+      "table": "Parameters",
+      "name": "Dynamic years",
+      "dax_expression": "SELECTEDVALUE('Select date'[Display As])",
+      "solution_explanation": "Mapped Tableau parameter reference [Parameters].[Select date] to the required DAX parameter pattern SELECTEDVALUE('Select date'[Display As]).",
+      "type_changed_reason": "The calculation references a parameter, and all parameter-based calculations must be measures."
+    },
+    {
+      "type": "measure",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Previous year",
+      "dax_expression": "VAR SelectedDate = SELECTEDVALUE('Select date'[Display As])\nVAR PrevYearDate = DATE(YEAR(SelectedDate) - 1, MONTH(SelectedDate), DAY(SelectedDate))\nVAR LowerBound =\n    IF(\n        MONTH(SelectedDate) <= 3,\n        DATE(YEAR(SelectedDate) - 2, 4, 1),\n        IF(\n            MONTH(SelectedDate) >= 4 && YEAR(SelectedDate) - 1 = YEAR('Orders+ (Sample - Superstore)'[Order Date]),\n            DATE(YEAR(SelectedDate) - 1, 4, 1),\n            BLANK()\n        )\n    )\nRETURN\nIF(\n    'Orders+ (Sample - Superstore)'[Order Date] <= PrevYearDate &&\n    'Orders+ (Sample - Superstore)'[Order Date] >= LowerBound,\n    'Orders+ (Sample - Superstore)'[Sales],\n    BLANK()\n)",
+      "solution_explanation": "Translated the nested Tableau IF logic to DAX using VARs. Parameter references [Parameters].[Select date] were converted to SELECTEDVALUE('Select date'[Display As]). DATEADD('year', -1, ...) was implemented as DATE(YEAR(...)-1, MONTH(...), DAY(...)). The inner conditional that builds the lower bound was preserved using nested IFs and BLANK() when the condition doesn't apply.",
+      "type_changed_reason": "The calculation references a parameter, and all parameter-based calculations must be measures."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Current year",
+      "dax_expression": "IF(\n    'Orders+ (Sample - Superstore)'[Dynamic Measure values with YTD/MTD/QTD],\n    'Orders+ (Sample - Superstore)'[Sales],\n    BLANK()\n)",
+      "solution_explanation": "Converted the row-level Tableau IF that returns [Sales] when a row-level condition is true into a DAX calculated column. The logic only depends on row fields so it is implemented as a calculated column."
+    },
+    {
+      "type": "measure",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Calculation1",
+      "dax_expression": "NOT(ISBLANK(SUM('Orders+ (Sample - Superstore)'[Current year]))) || NOT(ISBLANK(SUM('Orders+ (Sample - Superstore)'[Previous year])))",
+      "solution_explanation": "Translated Tableau's not(isnull(SUM(...))) expressions to DAX using NOT(ISBLANK(SUM(...))). SUM aggregations remain SUM in DAX and the OR was mapped to ||.",
+      "type_changed_reason": "This calculation uses aggregation (SUM), so it must be created as a measure."
+    }
+  ]
+}
