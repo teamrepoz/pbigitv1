@@ -1,0 +1,28 @@
+table 'Min Profit Display'
+	lineageTag: e0a90d5f-c11e-4811-bc2f-abbf1dcd5934
+
+	measure 'Min Profit Display Value' = SELECTEDVALUE('Min Profit Display'[Min Profit Display], -500)
+		lineageTag: de784f8f-2d56-4d31-a211-70dd71ce5824
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Min Profit Display'
+		dataType: double
+		formatString: 0
+		lineageTag: 8211cb70-6714-4f3f-9321-a214153ebcf5
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Min Profit Display' = calculated
+		mode: import
+		source = GENERATESERIES(-500, 500)
+
+	annotation PBI_Id = a3e9e16364254492bd82fc2be20323a7
+
