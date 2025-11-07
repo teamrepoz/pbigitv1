@@ -1,0 +1,46 @@
+table 'Select Period'
+	lineageTag: af61f169-0d2a-4b3d-b745-d0f136963c62
+
+	column Index
+		formatString: 0
+		lineageTag: 7a9db7d1-a29e-464a-9979-8d5bc68551e6
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 0c81da68-5be9-4a98-90fc-db32e51b073d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 8ae14df6-97d7-47be-8f02-9de4cec0d76b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Select Period' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", INTEGER,
+			    "Value", INTEGER,
+			    {
+			        { 0, YTD, 1 },
+				{ 1, MTD, 2 },
+				{ 2, QTD, 3 }
+			    }
+			)
+
+	annotation PBI_Id = 2edf1bc206ef4b3fb55cec05f86d2045
+
