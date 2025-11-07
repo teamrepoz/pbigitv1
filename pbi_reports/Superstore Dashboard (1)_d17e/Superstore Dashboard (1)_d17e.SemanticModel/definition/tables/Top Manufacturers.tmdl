@@ -1,0 +1,28 @@
+table 'Top Manufacturers'
+	lineageTag: dfcd6a4c-f745-4219-9ee6-2c83f3baf3a4
+
+	measure 'Top Manufacturers Value' = SELECTEDVALUE('Top Manufacturers'[Top Manufacturers], 10)
+		lineageTag: ae8b021b-8d85-4c4c-99cc-f583c5cd6906
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Top Manufacturers'
+		dataType: double
+		formatString: 0
+		lineageTag: e78b25bc-4f22-48ba-b4de-e47e9f491bc3
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Top Manufacturers' = calculated
+		mode: import
+		source = GENERATESERIES(10, 50, 1)
+
+	annotation PBI_Id = e22c55b9eda546b5b6824b3c4327b473
+
