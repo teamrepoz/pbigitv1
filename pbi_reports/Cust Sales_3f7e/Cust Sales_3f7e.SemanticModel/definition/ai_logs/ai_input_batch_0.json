@@ -1,0 +1,35 @@
+{
+  "calculations": [
+    {
+      "table_name": "Product-Sales-Region",
+      "name": "Quantity vs Returned",
+      "formula": "[Quantity] - [Returned]",
+      "col_to_table_map": {},
+      "col_to_datatype": {
+        "Quantity": "integer",
+        "Returned": "integer"
+      },
+      "measures": {}
+    },
+    {
+      "table_name": "Product-Sales-Region",
+      "name": "New Cust Name",
+      "formula": "[CustomerName]",
+      "col_to_table_map": {},
+      "col_to_datatype": {
+        "CustomerName": "string"
+      },
+      "measures": {}
+    },
+    {
+      "table_name": "Product-Sales-Region",
+      "name": "Date of Delivery",
+      "formula": "[DeliveryDate]",
+      "col_to_table_map": {},
+      "col_to_datatype": {
+        "DeliveryDate": "date"
+      },
+      "measures": {}
+    }
+  ]
+}
