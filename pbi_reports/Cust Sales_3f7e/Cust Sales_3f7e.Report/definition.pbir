@@ -1,0 +1,8 @@
+{
+  "version": "4.0",
+  "datasetReference": {
+    "byPath": {
+      "path": "../Cust Sales_3f7e.SemanticModel"
+    }
+  }
+}
