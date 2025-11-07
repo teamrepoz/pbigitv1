@@ -1,0 +1,62 @@
+{
+  "calculations": [
+    {
+      "table_name": "Sample - Superstore",
+      "name": "Status",
+      "formula": "{ FIXED [Order ID] : if MAX([Ship Date])<=MAX([Max Order Date])\r\nTHEN \"Complete\"\r\nELSE \"Pending\"\r\nEND}\r\n\r\n//IIF(MAX([Ship Date])<MAX([Order Date]),'Complete','Pending')}",
+      "col_to_table_map": {},
+      "col_to_datatype": {
+        "Order ID": "string",
+        "Ship Date": "date",
+        "Order Date": "date"
+      },
+      "measures": {}
+    },
+    {
+      "table_name": "Sample - Superstore",
+      "name": "Max Order Date",
+      "formula": "DATEADD('month', -6,{ FIXED : MAX([Order Date])} )",
+      "col_to_table_map": {},
+      "col_to_datatype": {
+        "Order Date": "date"
+      },
+      "measures": {}
+    },
+    {
+      "table_name": "Sample - Superstore",
+      "name": "Segments Abbrev",
+      "formula": "IF [Segment] = \"Consumer\"\r\nTHEN \"CON\"\r\nELSEIF [Segment] = \"Corporate\"\r\nTHEN \"COR\"\r\nELSE \"HO\"\r\nEND",
+      "col_to_table_map": {},
+      "col_to_datatype": {
+        "Segment": "string"
+      },
+      "measures": {}
+    },
+    {
+      "table_name": "Sample - Superstore",
+      "name": "Profit (bin)",
+      "formula": "[Profit]",
+      "col_to_table_map": {},
+      "col_to_datatype": {
+        "Profit": "real"
+      },
+      "measures": {}
+    },
+    {
+      "table_name": "Sample - Superstore",
+      "name": "Selected Metric (Profit) Colour",
+      "formula": "[Parameters].[Metric Swap Param] = \"Profit\"",
+      "col_to_table_map": {},
+      "col_to_datatype": {},
+      "measures": {}
+    },
+    {
+      "table_name": "Sample - Superstore",
+      "name": "Selected Metric (Orders) Colour",
+      "formula": "[Parameters].[Metric Swap Param] = \"Orders\"",
+      "col_to_table_map": {},
+      "col_to_datatype": {},
+      "measures": {}
+    }
+  ]
+}
