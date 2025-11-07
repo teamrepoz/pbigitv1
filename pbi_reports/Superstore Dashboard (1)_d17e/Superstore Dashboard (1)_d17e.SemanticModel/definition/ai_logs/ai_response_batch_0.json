@@ -1,0 +1,52 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Sample - Superstore",
+      "name": "Total Orders % Chg",
+      "dax_expression": "('Sample - Superstore'[Total Orders CY] - 'Sample - Superstore'[Total Orders PY]) / 'Sample - Superstore'[Total Orders PY]",
+      "solution_explanation": "Translated the Tableau arithmetic to DAX using table-qualified references. This computes the percent change between current year and prior year total orders.",
+      "type_changed_reason": "This calculation performs arithmetic on existing aggregated measures (Total Orders CY and Total Orders PY), so it should be created as a measure."
+    },
+    {
+      "type": "measure",
+      "table": "Sample - Superstore",
+      "name": "Total Orders % Chg (Neg)",
+      "dax_expression": "IF('Sample - Superstore'[Total Orders % Chg] < 0, \"▼\")",
+      "solution_explanation": "Converted the Tableau IF that returns a symbol for negative percent change into DAX, referencing the Total Orders % Chg measure in the table-qualified format.",
+      "type_changed_reason": "The calculation references the measure 'Total Orders % Chg', so it must be implemented as a measure."
+    },
+    {
+      "type": "measure",
+      "table": "Sample - Superstore",
+      "name": "Total Orders % Chg (Pos)",
+      "dax_expression": "IF('Sample - Superstore'[Total Orders % Chg] > 0, \"▲\")",
+      "solution_explanation": "Converted the Tableau IF that returns a symbol for positive percent change into DAX, referencing the Total Orders % Chg measure in the table-qualified format.",
+      "type_changed_reason": "The calculation references the measure 'Total Orders % Chg', so it must be implemented as a measure."
+    },
+    {
+      "type": "measure",
+      "table": "Sample - Superstore",
+      "name": "Profit PY",
+      "dax_expression": "IF(YEAR('Sample - Superstore'[Order Date]) = SELECTEDVALUE('Year'[Display As]) - 1, 'Sample - Superstore'[Profit])",
+      "solution_explanation": "Replaced DATEPART(\"year\", [Order Date]) with YEAR('Sample - Superstore'[Order Date]) and replaced the Tableau parameter with SELECTEDVALUE('Year'[Display As]). The IF returns Profit when the order year equals the selected Year minus one.",
+      "type_changed_reason": "The calculation references a Tableau parameter ([Parameters].[Year]), and per rules all parameter-based calculations must be measures."
+    },
+    {
+      "type": "measure",
+      "table": "Sample - Superstore",
+      "name": "Top N Filter (Manufacturer)",
+      "dax_expression": "VAR TopN = SELECTEDVALUE('Top Manufacturers'[Display As])\nRETURN IF(RANKX(ALLSELECTED('Sample - Superstore'), 0, , ASC) <= TopN, TRUE(), FALSE())",
+      "solution_explanation": "Tableau's INDEX() (a table calculation) and the parameter were mapped to a DAX approach using RANKX and SELECTEDVALUE for the parameter. The expression returns TRUE for ranks within the selected Top N.",
+      "type_changed_reason": "This uses a Tableau table calculation (INDEX()) and a parameter; table calculations must be expressed as measures in DAX and parameter usage mandates a measure."
+    },
+    {
+      "type": "measure",
+      "table": "Sample - Superstore",
+      "name": "Total Customers PY",
+      "dax_expression": "VAR selYear = SELECTEDVALUE('Year'[Display As])\nRETURN CALCULATE(\n    DISTINCTCOUNT('Sample - Superstore'[Customer Name]),\n    FILTER('Sample - Superstore', YEAR('Sample - Superstore'[Order Date]) = selYear - 1)\n)",
+      "solution_explanation": "Converted COUNTD(...) to DISTINCTCOUNT and moved the row-level IF condition into a FILTER over the table using YEAR('Sample - Superstore'[Order Date]) = selected year - 1. The parameter was translated to SELECTEDVALUE('Year'[Display As]).",
+      "type_changed_reason": "This calculation uses COUNTD (an aggregation) and references a parameter; aggregations and parameters require a measure."
+    }
+  ]
+}
