@@ -1,0 +1,14 @@
+{
+  "calculations": [
+    {
+      "table_name": "Orders (Sample - Superstore (1))",
+      "name": "Calculation1",
+      "formula": "if [Category]=\"Furniture\" then \"furniture\"\r\nELSEIF [Category]=\"Office Supplies\" then \"office supplier\"\r\nELSEIF  [Category] = \"Technology\" then \"technology\"\r\nelse [Category]\r\nend",
+      "col_to_table_map": {},
+      "col_to_datatype": {
+        "Category": "string"
+      },
+      "measures": {}
+    }
+  ]
+}
