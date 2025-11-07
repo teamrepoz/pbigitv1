@@ -1,0 +1,10 @@
+relationship f59a7ce4-c82f-4760-a50f-2ce877e54c06
+	toCardinality: many
+	fromColumn: 'Sample - Superstore'.Region
+	toColumn: 'Sample - Superstore_People'.Region
+
+relationship e07f695c-4179-45bc-ac04-af17b3c064ff
+	toCardinality: many
+	fromColumn: 'Sample - Superstore'.'Order ID'
+	toColumn: 'Sample - Superstore_Returns'.'Order ID'
+
