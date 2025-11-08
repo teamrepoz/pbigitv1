@@ -1,0 +1,69 @@
+{
+  "calculations": [
+    {
+      "table_name": "HR Dataset",
+      "name": "calculation3",
+      "formula": "\"abc\"",
+      "col_to_table_map": {},
+      "col_to_datatype": {},
+      "measures": {}
+    },
+    {
+      "table_name": "HR Dataset",
+      "name": "C_Employee_Status",
+      "formula": "[EmploymentStatus]",
+      "col_to_table_map": {},
+      "col_to_datatype": {
+        "EmploymentStatus": "string"
+      },
+      "measures": {}
+    }
+  ]
+}l_to_datatype": {
+        "Termd": "integer",
+        "Salary": "integer",
+        "EngagementSurvey": "real"
+      },
+      "measures": {}
+    },
+    {
+      "table_name": "HR Dataset",
+      "name": "dep calc 1",
+      "formula": "[DeptID]",
+      "col_to_table_map": {},
+      "col_to_datatype": {
+        "DeptID": "integer"
+      },
+      "measures": {}
+    },
+    {
+      "table_name": "HR Dataset",
+      "name": "dep calc 2",
+      "formula": "[dep calc 1] * [MarriedID]",
+      "col_to_table_map": {},
+      "col_to_datatype": {
+        "MarriedID": "integer"
+      },
+      "measures": {}
+    },
+    {
+      "table_name": "HR Dataset",
+      "name": "dep calc 3",
+      "formula": "SUM([dep calc 2])",
+      "col_to_table_map": {},
+      "col_to_datatype": {},
+      "measures": {}
+    },
+    {
+      "table_name": "HR Dataset",
+      "name": "Calculation3",
+      "formula": "[TermReason] + STR([Termd])",
+      "col_to_table_map": {},
+      "col_to_datatype": {
+        "TermReason": "string",
+        "Termd": "integer"
+      },
+      "measures": {}
+    }
+  ]
+}
