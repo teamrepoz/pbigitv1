@@ -1,0 +1,46 @@
+table 'Metric Swap Param'
+	lineageTag: a84d6557-bce9-4066-8814-f8ace7053fed
+
+	column Index
+		formatString: 0
+		lineageTag: 03491cbd-32fc-447d-bf64-442ef8df849d
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 778cf786-9b60-4a1c-990f-1ca3376b746d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 11d87474-035b-406d-93b4-08bc77ff5602
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Metric Swap Param' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Sales", "Sales" },
+				{ 1, "Profit", "Profit" },
+				{ 2, "Orders", "Orders" }
+			    }
+			)
+
+	annotation PBI_Id = 34e21bf963824440a8d3f95a2bd4111c
+
