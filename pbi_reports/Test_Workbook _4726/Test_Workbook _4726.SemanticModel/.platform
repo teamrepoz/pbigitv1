@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Test_Workbook _4726"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "d3af6c7a-0577-4b34-953b-399cdaa0587a"
+  }
+}
