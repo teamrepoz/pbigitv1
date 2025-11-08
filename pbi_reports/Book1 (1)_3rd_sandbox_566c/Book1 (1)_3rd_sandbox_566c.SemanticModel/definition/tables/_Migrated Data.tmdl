@@ -1,0 +1,501 @@
+table '_Migrated Data'
+	lineageTag: 8079004b-a0f2-4162-9830-186c556734f9
+
+	column id
+		dataType: int64
+		formatString: 0
+		lineageTag: 4e71e4c3-da80-4983-9381-4b403da3e3ad
+		summarizeBy: sum
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column effective_date
+		dataType: datetime
+		lineageTag: 641d5a83-73d0-47fd-8f61-f6519af656dd
+		summarizeBy: none
+		sourceColumn: effective_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column position_id_position
+		dataType: string
+		lineageTag: 55be7580-67ce-4257-a6b6-8f4888a01103
+		summarizeBy: none
+		sourceColumn: position_id_position
+
+		annotation SummarizationSetBy = Automatic
+
+	column product
+		dataType: string
+		lineageTag: bb754cf6-8105-4cde-8833-125fada5a1c0
+		summarizeBy: none
+		sourceColumn: product
+
+		annotation SummarizationSetBy = Automatic
+
+	column volcker_desk_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 1d8060e6-31e3-4e34-9f46-9aa61ac206fb
+		summarizeBy: sum
+		sourceColumn: volcker_desk_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column counterparty_name
+		dataType: string
+		lineageTag: 99ca814b-d295-4832-8471-d9a66f724c6d
+		summarizeBy: none
+		sourceColumn: counterparty_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column source_system
+		dataType: string
+		lineageTag: 602e6861-f186-44e2-bc29-d2f51a564c82
+		summarizeBy: none
+		sourceColumn: source_system
+
+		annotation SummarizationSetBy = Automatic
+
+	column aging_report_value
+		dataType: double
+		formatString: General Number
+		lineageTag: 4753ce5a-1be2-4818-891f-7d43f0edefab
+		summarizeBy: sum
+		sourceColumn: aging_report_value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column age_of_trade
+		dataType: int64
+		formatString: 0
+		lineageTag: efafcac7-7cf9-4f3c-a9c0-3992b06192b2
+		summarizeBy: sum
+		sourceColumn: age_of_trade
+
+		annotation SummarizationSetBy = Automatic
+
+	column bucket
+		dataType: string
+		lineageTag: 5b3d61fb-4b2a-40e0-81df-5e0e935c4f89
+		summarizeBy: none
+		sourceColumn: bucket
+
+		annotation SummarizationSetBy = Automatic
+
+	column classification
+		dataType: string
+		lineageTag: 0d967687-1664-405b-a4a6-74f266614d6b
+		summarizeBy: none
+		sourceColumn: classification
+
+		annotation SummarizationSetBy = Automatic
+
+	column trade_id
+		dataType: string
+		lineageTag: 30375838-b30e-40a7-90d7-9a0355ed2fdb
+		summarizeBy: none
+		sourceColumn: trade_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column aging_report_value_abs
+		dataType: double
+		formatString: General Number
+		lineageTag: 9bc8be24-cf5a-4af9-a5d0-363e06c74658
+		summarizeBy: sum
+		sourceColumn: aging_report_value_abs
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column file_path
+		dataType: string
+		lineageTag: c158398b-7428-462d-9123-9ee8d019ebd5
+		summarizeBy: none
+		sourceColumn: file_path
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_date
+		dataType: datetime
+		lineageTag: 1385f126-c7a2-4dd6-8558-baba218b8928
+		summarizeBy: none
+		sourceColumn: created_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column security_id_position
+		dataType: string
+		lineageTag: c631a8e1-ee79-4da5-8163-80ff218ff9e4
+		summarizeBy: none
+		sourceColumn: security_id_position
+
+		annotation SummarizationSetBy = Automatic
+
+	column source_book
+		dataType: string
+		lineageTag: 26d4d9d4-0bc7-4ec4-a36d-318c9efbaa4a
+		summarizeBy: none
+		sourceColumn: source_book
+
+		annotation SummarizationSetBy = Automatic
+
+	column book
+		dataType: string
+		lineageTag: 3ef90c6a-3053-414e-afbf-0ed2ab76f9df
+		summarizeBy: none
+		sourceColumn: book
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'id 1'
+		dataType: int64
+		formatString: 0
+		lineageTag: 74d5265a-f80d-4ee3-abf9-a5a2e4271ea3
+		summarizeBy: sum
+		sourceColumn: 'id 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'effective_date 1'
+		dataType: datetime
+		lineageTag: c1b82af2-7700-4912-b55f-963b94fa8280
+		summarizeBy: none
+		sourceColumn: 'effective_date 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'source_system 1'
+		dataType: string
+		lineageTag: 6dd67073-29cc-41f3-beb3-41ff8c2fea2c
+		summarizeBy: none
+		sourceColumn: 'source_system 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column security_id
+		dataType: string
+		lineageTag: 89569e83-e171-442d-85a8-6171feb4d0c1
+		summarizeBy: none
+		sourceColumn: security_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column security_name
+		dataType: string
+		lineageTag: dac05716-abd4-4015-af38-5e74d0b66f17
+		summarizeBy: none
+		sourceColumn: security_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'created_date 1'
+		dataType: datetime
+		lineageTag: 3f9e07c7-d22a-4fac-9a8b-400870605d5e
+		summarizeBy: none
+		sourceColumn: 'created_date 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column snapshot_date
+		dataType: datetime
+		lineageTag: 531ca9b3-a7b3-4c42-993a-2892d735f091
+		summarizeBy: none
+		sourceColumn: snapshot_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'id 2'
+		dataType: int64
+		formatString: 0
+		lineageTag: b1dc6697-e19e-450b-ae45-31e83e3af284
+		summarizeBy: sum
+		sourceColumn: 'id 2'
+
+		annotation SummarizationSetBy = Automatic
+
+	column desk_name
+		dataType: string
+		lineageTag: 33175ef6-1d61-49e6-a2c7-bca8476dc88a
+		summarizeBy: none
+		sourceColumn: desk_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column sub_desk
+		dataType: string
+		lineageTag: 67fc6188-5381-4af6-b6cf-5eef4feb6267
+		summarizeBy: none
+		sourceColumn: sub_desk
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: string
+		lineageTag: 6d182b28-1284-4ce3-8fab-5c54b5900b66
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column utilization_incl_all_products
+		dataType: string
+		lineageTag: 53b70eb9-b8cd-43dd-972b-f52c8b789932
+		summarizeBy: none
+		sourceColumn: utilization_incl_all_products
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'created_date 2'
+		dataType: datetime
+		lineageTag: 34ace682-e4f0-4b5b-8cd6-ad6522701a96
+		summarizeBy: none
+		sourceColumn: 'created_date 2'
+
+		annotation SummarizationSetBy = Automatic
+
+	column modified_date
+		dataType: datetime
+		lineageTag: f17a4526-5aaf-43d3-b977-4af1706ca903
+		summarizeBy: none
+		sourceColumn: modified_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column fixed_client_ratio
+		dataType: double
+		formatString: General Number
+		lineageTag: a282fef0-75f1-4eee-ba01-afd3fc674a18
+		summarizeBy: sum
+		sourceColumn: fixed_client_ratio
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column report_group
+		dataType: string
+		lineageTag: afe51ade-8f7c-4f48-ab5b-530a3d0eb959
+		summarizeBy: none
+		sourceColumn: report_group
+
+		annotation SummarizationSetBy = Automatic
+
+	column var_portfolio_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 95999319-bef5-419e-a605-55431d8da68b
+		summarizeBy: sum
+		sourceColumn: var_portfolio_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_edit_username
+		dataType: string
+		lineageTag: 23c4367b-e065-47ac-b590-84d8c32239c7
+		summarizeBy: none
+		sourceColumn: last_edit_username
+
+		annotation SummarizationSetBy = Automatic
+
+	column desk_description
+		dataType: string
+		lineageTag: d0a22aae-fe38-45b0-b7db-3584ea3aeafa
+		summarizeBy: none
+		sourceColumn: desk_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'EFFECTIVE_DATE 4'
+		dataType: datetime
+		lineageTag: b272f203-bd15-4732-b6ce-622c2f1b9f0a
+		summarizeBy: none
+		sourceColumn: 'EFFECTIVE_DATE 4'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SECURITY_NAME 3'
+		dataType: string
+		lineageTag: f4e2b54f-64f0-4a55-9895-7d97db5e4359
+		summarizeBy: none
+		sourceColumn: 'SECURITY_NAME 3'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'MID_PRICE_INT 1'
+		dataType: double
+		formatString: General Number
+		lineageTag: 897f8772-226e-41ba-8856-81ddd710315a
+		summarizeBy: sum
+		sourceColumn: 'MID_PRICE_INT 1'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'ASK_PRICE_INT 1'
+		dataType: double
+		formatString: General Number
+		lineageTag: a8f480cb-6d7b-4b85-9821-f7314a9f5d4b
+		summarizeBy: sum
+		sourceColumn: 'ASK_PRICE_INT 1'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'BID_PRICE_INT 1'
+		dataType: double
+		formatString: General Number
+		lineageTag: 2d2d919c-597d-441e-98ed-19f2890f2694
+		summarizeBy: sum
+		sourceColumn: 'BID_PRICE_INT 1'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'VOLCKER_DESK 1'
+		dataType: string
+		lineageTag: 5a764f46-9b92-4ed7-9007-86527778cbce
+		summarizeBy: none
+		sourceColumn: 'VOLCKER_DESK 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SECURITY_ID 3'
+		dataType: string
+		lineageTag: 8e20dc49-065a-4eab-8da9-2cc000c00e48
+		summarizeBy: none
+		sourceColumn: 'SECURITY_ID 3'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SECURITY_MATURITY 1'
+		dataType: datetime
+		lineageTag: 35a69020-cf4d-4a61-9372-ba07ee0d1484
+		summarizeBy: none
+		sourceColumn: 'SECURITY_MATURITY 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CURRENCY 1'
+		dataType: string
+		lineageTag: dca4fd19-a377-4972-950d-df19a6b07c43
+		summarizeBy: none
+		sourceColumn: 'CURRENCY 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'OBLIGOR_NAME 1'
+		dataType: string
+		lineageTag: b253f95e-4ddf-4658-8ca1-c9a5ea30f4eb
+		summarizeBy: none
+		sourceColumn: 'OBLIGOR_NAME 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'IS_CALLABLE 1'
+		dataType: string
+		lineageTag: 5dc64669-e173-4c16-98fa-ff0687f8aa19
+		summarizeBy: none
+		sourceColumn: 'IS_CALLABLE 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FX_CONV_MARKET_DATA_SRC_ID 1'
+		dataType: int64
+		formatString: 0
+		lineageTag: 325c6ad3-986b-4f92-bba1-5ef596b501a3
+		summarizeBy: sum
+		sourceColumn: 'FX_CONV_MARKET_DATA_SRC_ID 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'TO_USD 1'
+		dataType: double
+		formatString: General Number
+		lineageTag: 4d2058e4-04d4-4a70-b01a-cde9dcef456b
+		summarizeBy: sum
+		sourceColumn: 'TO_USD 1'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'TO_CAD 1'
+		dataType: double
+		formatString: General Number
+		lineageTag: 577fd886-a489-474d-9f2c-226772de9628
+		summarizeBy: sum
+		sourceColumn: 'TO_CAD 1'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'TO_EUR 1'
+		dataType: double
+		formatString: General Number
+		lineageTag: 68ce3b56-8d16-4237-b8c7-d66068fdd615
+		summarizeBy: sum
+		sourceColumn: 'TO_EUR 1'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'TO_GBP 1'
+		dataType: double
+		formatString: General Number
+		lineageTag: 84691443-61a6-4a89-b9b7-edeae4bbe01d
+		summarizeBy: sum
+		sourceColumn: 'TO_GBP 1'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'SUM(QUANTITY) 1'
+		dataType: double
+		formatString: General Number
+		lineageTag: de05dac7-a53f-464c-8fa7-13d3dbae5ce5
+		summarizeBy: sum
+		sourceColumn: 'SUM(QUANTITY) 1'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'SUM(NOTIONAL_AMOUNT) 1'
+		dataType: double
+		formatString: General Number
+		lineageTag: 1e9b255d-e75f-4687-af4e-20b15917edfa
+		summarizeBy: sum
+		sourceColumn: 'SUM(NOTIONAL_AMOUNT) 1'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition '_Migrated Data' = m
+		mode: import
+		source =
+				let 
+					#"Source0" = Table.NestedJoin(#"volcker_rpt_inventory_aging_Postgres_Volcker_Aging_Deallevel_data_GFIRates (local copy)", {"security_id_position", "source_system", "effective_date"}, #"volcker_rpt_security_mapping_Postgres_Volcker_Aging_Deallevel_data_GFIRates (local copy)", {"security_id", "source_system", "effective_date"}, "volcker_rpt_security_mapping_Postgres_Volcker_Aging_Deallevel_data_GFIRates (local copy)", JoinKind.LeftOuter),
+					#"Expand0" = Table.ExpandTableColumn(#"Source0", "volcker_rpt_security_mapping_Postgres_Volcker_Aging_Deallevel_data_GFIRates (local copy)", {"id", "effective_date", "source_system", "security_id", "security_name", "created_date"}, {"id 1", "effective_date 1", "source_system 1", "security_id", "security_name", "created_date 1"}),
+					#"Source1" = Table.NestedJoin(#"Expand0", {"volcker_desk_id", "effective_date"}, #"volcker_desk_snapshots_Postgres_Volcker_Aging_Deallevel_data_GFIRates (local copy)", {"id", "snapshot_date"}, "volcker_desk_snapshots_Postgres_Volcker_Aging_Deallevel_data_GFIRates (local copy)", JoinKind.Inner),
+					#"Expand1" = Table.ExpandTableColumn(#"Source1", "volcker_desk_snapshots_Postgres_Volcker_Aging_Deallevel_data_GFIRates (local copy)", {"snapshot_date", "id", "desk_name", "sub_desk", "status", "utilization_incl_all_products", "created_date", "modified_date", "fixed_client_ratio", "report_group", "var_portfolio_id", "last_edit_username", "desk_description"}, {"snapshot_date", "id 2", "desk_name", "sub_desk", "status", "utilization_incl_all_products", "created_date 2", "modified_date", "fixed_client_ratio", "report_group", "var_portfolio_id", "last_edit_username", "desk_description"}),
+					#"Source2" = Table.NestedJoin(#"Expand1", {"datetime([effective_date])", "security_id_position"}, #"Custom SQL Query_Postgres_Volcker_Aging_Deallevel_data_GFIRates (local copy)", {"EFFECTIVE_DATE", "SECURITY_ID"}, "Custom SQL Query_Postgres_Volcker_Aging_Deallevel_data_GFIRates (local copy)", JoinKind.LeftOuter),
+					#"Expand2" = Table.ExpandTableColumn(#"Source2", "Custom SQL Query_Postgres_Volcker_Aging_Deallevel_data_GFIRates (local copy)", {"EFFECTIVE_DATE", "SECURITY_NAME", "MID_PRICE_INT", "ASK_PRICE_INT", "BID_PRICE_INT", "VOLCKER_DESK", "SECURITY_ID", "SECURITY_MATURITY", "CURRENCY", "OBLIGOR_NAME", "IS_CALLABLE", "FX_CONV_MARKET_DATA_SRC_ID", "TO_USD", "TO_CAD", "TO_EUR", "TO_GBP", "SUM(QUANTITY)", "SUM(NOTIONAL_AMOUNT)"}, {"EFFECTIVE_DATE 4", "SECURITY_NAME 3", "MID_PRICE_INT 1", "ASK_PRICE_INT 1", "BID_PRICE_INT 1", "VOLCKER_DESK 1", "SECURITY_ID 3", "SECURITY_MATURITY 1", "CURRENCY 1", "OBLIGOR_NAME 1", "IS_CALLABLE 1", "FX_CONV_MARKET_DATA_SRC_ID 1", "TO_USD 1", "TO_CAD 1", "TO_EUR 1", "TO_GBP 1", "SUM(QUANTITY) 1", "SUM(NOTIONAL_AMOUNT) 1"})
+					in #"Expand2"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
