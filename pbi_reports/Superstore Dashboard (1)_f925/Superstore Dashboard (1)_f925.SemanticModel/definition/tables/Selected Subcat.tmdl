@@ -1,0 +1,60 @@
+table 'Selected Subcat'
+	lineageTag: c8a94bd3-da6b-46b4-86e3-36430c313ef8
+
+	column Index
+		formatString: 0
+		lineageTag: e7a20794-ffde-4ebe-8952-812b9bd79d13
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: ba14260e-a9af-4d86-a855-4027350523fb
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 584db4f6-1336-4f40-914b-7f7123bb3c1d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Selected Subcat' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Accessories", "Accessories" },
+				{ 1, "Appliances", "Appliances" },
+				{ 2, "Art", "Art" },
+				{ 3, "Binders", "Binders" },
+				{ 4, "Bookcases", "Bookcases" },
+				{ 5, "Chairs", "Chairs" },
+				{ 6, "Copiers", "Copiers" },
+				{ 7, "Envelopes", "Envelopes" },
+				{ 8, "Fasteners", "Fasteners" },
+				{ 9, "Furnishings", "Furnishings" },
+				{ 10, "Labels", "Labels" },
+				{ 11, "Machines", "Machines" },
+				{ 12, "Paper", "Paper" },
+				{ 13, "Phones", "Phones" },
+				{ 14, "Storage", "Storage" },
+				{ 15, "Supplies", "Supplies" },
+				{ 16, "Tables", "Tables" }
+			    }
+			)
+
+	annotation PBI_Id = 54959322776c4cc1b5ac98d269797c92
+
