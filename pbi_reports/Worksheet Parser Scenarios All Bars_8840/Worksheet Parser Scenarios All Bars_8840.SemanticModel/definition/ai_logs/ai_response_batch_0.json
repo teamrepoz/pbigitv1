@@ -1,0 +1,47 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "HR Dataset",
+      "name": "dep calc 1",
+      "dax_expression": "'HR Dataset'[DeptID]",
+      "solution_explanation": "Row-level passthrough of the DeptID column. This is a calculated column because it operates at the row level and references only row fields."
+    },
+    {
+      "type": "calculated_column",
+      "table": "HR Dataset",
+      "name": "dep calc 2",
+      "dax_expression": "'HR Dataset'[dep calc 1] * 'HR Dataset'[MarriedID]",
+      "solution_explanation": "Row-level arithmetic multiplying the previously created calculated column 'dep calc 1' by MarriedID. This is a calculated column because it operates per row."
+    },
+    {
+      "type": "measure",
+      "table": "HR Dataset",
+      "name": "dep calc 3",
+      "dax_expression": "SUM('HR Dataset'[dep calc 2])",
+      "solution_explanation": "Aggregation of the row-level field 'dep calc 2' using SUM. This requires a measure because it performs aggregation across rows.",
+      "type_changed_reason": "This calculation uses aggregation (SUM), so it should be created as a measure."
+    },
+    {
+      "type": "calculated_column",
+      "table": "HR Dataset",
+      "name": "Calculation1",
+      "dax_expression": "'HR Dataset'[DeptID] + 'HR Dataset'[GenderID]",
+      "solution_explanation": "Row-level arithmetic adding DeptID and GenderID. Implemented as a calculated column because it operates on fields from the same row without aggregation."
+    },
+    {
+      "type": "calculated_column",
+      "table": "HR Dataset",
+      "name": "Calculation2",
+      "dax_expression": "'HR Dataset'[Termd] * 'HR Dataset'[Salary] * 'HR Dataset'[EngagementSurvey]",
+      "solution_explanation": "Row-level multiplication of Termd, Salary, and EngagementSurvey. Implemented as a calculated column because it uses only row-level fields and no aggregations."
+    },
+    {
+      "type": "calculated_column",
+      "table": "HR Dataset",
+      "name": "Calculation3",
+      "dax_expression": "'HR Dataset'[TermReason] & FORMAT('HR Dataset'[Termd], \"0\")",
+      "solution_explanation": "Concatenates the string TermReason with the string representation of Termd. Implemented as a calculated column because it performs row-level string operations without aggregation."
+    }
+  ]
+}
