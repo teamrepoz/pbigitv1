@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "calc with dependency and string_int transformation 3 (1)_1c31"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "deb57c24-6fa4-4878-b73c-e139162ca9f4"
+  }
+}
