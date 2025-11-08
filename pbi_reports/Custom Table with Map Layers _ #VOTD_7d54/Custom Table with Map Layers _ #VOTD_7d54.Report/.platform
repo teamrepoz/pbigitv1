@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Custom Table with Map Layers _ #VOTD_7d54"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "bc0b92e3-13f1-492a-b83a-88b4af592817"
+  }
+}
