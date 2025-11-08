@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Custom Table with Map Layers _ #VOTD_7d54"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "becbb02a-c50f-42f3-8a6d-967e0002d887"
+  }
+}
