@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "calc with dependency and string_int transformation 3 (1)_1c31"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "dea73be0-5c8c-43c7-b058-62027b09fcf2"
+  }
+}
