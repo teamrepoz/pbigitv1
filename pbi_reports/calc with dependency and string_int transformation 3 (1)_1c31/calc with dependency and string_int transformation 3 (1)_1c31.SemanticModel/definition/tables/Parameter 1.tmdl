@@ -1,0 +1,46 @@
+table 'Parameter 1'
+	lineageTag: 562c2eb2-0b82-4c78-99cd-d76279872b72
+
+	column Index
+		formatString: 0
+		lineageTag: 3e3c1a9f-c560-4999-9f14-8d511fb867d4
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 80d7b9a7-0bc5-4f62-97cd-0b4aade565fd
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 76449a20-de83-44b0-b32a-48baa07e8a71
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Parameter 1' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "fsdskdf", "fsdskdf" },
+				{ 1, "sdkfjslijf", "sdkfjslijf" },
+				{ 2, "seroiuweoijfw", "seroiuweoijfw" }
+			    }
+			)
+
+	annotation PBI_Id = ce453200902245d49b8262a7e2bd3f1c
+
