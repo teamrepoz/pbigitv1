@@ -1,0 +1,44 @@
+table 'Header Height Adjuster'
+	lineageTag: 1f164f8d-6995-40e4-b419-23dbbcc91ec6
+
+	column Index
+		formatString: 0
+		lineageTag: 239183a6-c17c-4e7e-a5d2-82ba162e268e
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 063d17ea-da83-4797-851d-4d79d408bcf1
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: d42d20f4-8bfa-457f-b325-10a85d9a9deb
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Header Height Adjuster' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", DOUBLE,
+			    "Value", DOUBLE,
+			    {
+			        {0, 1.0, 1.0}
+			    }
+			)
+
+	annotation PBI_Id = 8b01fdf0bd0941fe9d02faa2f56307ce
+
