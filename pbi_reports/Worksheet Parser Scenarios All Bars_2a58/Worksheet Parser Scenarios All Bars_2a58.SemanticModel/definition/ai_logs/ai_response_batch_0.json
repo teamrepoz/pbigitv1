@@ -1,0 +1,52 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "HR Dataset",
+      "name": "Calculation1",
+      "dax_expression": "'HR Dataset'[DeptID] + 'HR Dataset'[GenderID]",
+      "solution_explanation": "Adds the DeptID and GenderID columns at the row level using direct column references.",
+      "type_changed_reason": "This calculation performs row-level arithmetic without aggregation, so it should be a calculated column."
+    },
+    {
+      "type": "calculated_column",
+      "table": "HR Dataset",
+      "name": "Calculation2",
+      "dax_expression": "'HR Dataset'[Termd] * 'HR Dataset'[Salary] * 'HR Dataset'[EngagementSurvey]",
+      "solution_explanation": "Multiplies Termd, Salary, and EngagementSurvey for each row using direct column references.",
+      "type_changed_reason": "This calculation performs row-level arithmetic without aggregation, so it should be a calculated column."
+    },
+    {
+      "type": "calculated_column",
+      "table": "HR Dataset",
+      "name": "dep calc 1",
+      "dax_expression": "'HR Dataset'[DeptID]",
+      "solution_explanation": "Returns the DeptID value for each row (direct column pass-through).",
+      "type_changed_reason": "This is a row-level reference to a single column, so it should be a calculated column."
+    },
+    {
+      "type": "calculated_column",
+      "table": "HR Dataset",
+      "name": "dep calc 2",
+      "dax_expression": "'HR Dataset'[dep calc 1] * 'HR Dataset'[MarriedID]",
+      "solution_explanation": "Multiplies the previously defined dep calc 1 column by MarriedID at the row level.",
+      "type_changed_reason": "This calculation performs row-level arithmetic using columns from the same row, so it should be a calculated column."
+    },
+    {
+      "type": "measure",
+      "table": "HR Dataset",
+      "name": "dep calc 3",
+      "dax_expression": "SUM('HR Dataset'[dep calc 2])",
+      "solution_explanation": "Aggregates the dep calc 2 values across the table using SUM.",
+      "type_changed_reason": "This calculation uses aggregation (SUM), so it should be created as a measure."
+    },
+    {
+      "type": "calculated_column",
+      "table": "HR Dataset",
+      "name": "Calculation3",
+      "dax_expression": "'HR Dataset'[TermReason] & FORMAT('HR Dataset'[Termd], \"0\")",
+      "solution_explanation": "Concatenates the TermReason string with Termd converted to text (formatted as integer) at the row level.",
+      "type_changed_reason": "This calculation performs row-level string concatenation and type conversion, so it should be a calculated column."
+    }
+  ]
+}
