@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Delta Down All CCY 9M",
+      "dax_expression": "IF(\n    'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TERM_LABEL] = \"9 Month\" ||\n    'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TERM_LABEL] = \"9 Month Swap\" ||\n    'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TERM_LABEL] = \"7 Month\" ||\n    'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TERM_LABEL] = \"8 Month\" ||\n    'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TERM_LABEL] = \"7 Month Swap\" ||\n    'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TERM_LABEL] = \"8 Month Swap\" ||\n    (\n        'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Market Subtype] = \"Major Curve\" &&\n        'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Risk Date # of Days] > 183 &&\n        'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Risk Date # of Days] <= 274\n    ) ||\n    (\n        'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Market Subtype] = \"6m Basis\" &&\n        'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Risk Date # of Days] > 183 &&\n        'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Risk Date # of Days] <= 274 &&\n        CONTAINSSTRING('Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TERM_LABEL], \"FRA\")\n    ),\n    'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Delta Down T USD] + 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Fix Value T],\n    0\n)",
+      "solution_explanation": "Translated the Tableau IF logic to DAX IF, converted CONTAINS(...) to CONTAINSSTRING(...), and replaced all Tableau bracketed field references with 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[ColumnName] format. Preserved original row-level logic and return values."
+    }
+  ]
+}
