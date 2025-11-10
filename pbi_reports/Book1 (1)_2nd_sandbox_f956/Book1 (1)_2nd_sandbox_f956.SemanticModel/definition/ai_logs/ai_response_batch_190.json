@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Risk Currency",
+      "dax_expression": "SWITCH(\n    'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Market Title],\n    \"Major CAD\", \"CAD\",\n    \"Major USD\", \"USD\",\n    \"Major EUR\", \"EUR\",\n    \"Major GBP\", \"GBP\",\n    BLANK()\n)",
+      "solution_explanation": "Converted the Tableau CASE expression to a DAX SWITCH that compares the row-level 'Market Title' column to each value. All column references use the 'TableName'[Column] format and unmatched cases return BLANK()."
+    }
+  ]
+}
