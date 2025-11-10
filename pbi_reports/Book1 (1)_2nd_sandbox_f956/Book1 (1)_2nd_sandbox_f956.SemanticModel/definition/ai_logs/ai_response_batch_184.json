@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Maturity Normalized",
+      "dax_expression": "VAR mat = 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[MATURITY]\nVAR secMat = 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[SECURITY_MATURITY]\nVAR endDate = 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[END_DATE]\nVAR settle = 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[SETTLE_DATE]\nRETURN\nIF(YEAR(mat) <> 1980,\n    mat,\n    IF(YEAR(secMat) <> 1980,\n       secMat,\n       IF(YEAR(endDate) <> 1980,\n          endDate,\n          IF(YEAR(settle) <> 1980,\n             settle,\n             mat\n          )\n       )\n    )\n)",
+      "solution_explanation": "Translated the Tableau nested IF logic to a DAX calculated column. Created VARs for each referenced date field from 'Risk_GFIRates_Reports_Excel_Rolling (local copy)' and applied YEAR(...) <> 1980 checks in the same order as the Tableau expression, returning the first matching date or MATURITY as the fallback."
+    }
+  ]
+}
