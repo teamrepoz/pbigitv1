@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "Curve Type",
+      "table_name": "Parameters",
+      "tableau_expression": "\"Major Curve\"",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "\"Major Curve\"",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
