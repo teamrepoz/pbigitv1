@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Book Level 1 NA IRD Title",
+      "dax_expression": "VAR distinctCount = DISTINCTCOUNT('Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Book Level 1 NA IRD])\nVAR singleValue = SELECTEDVALUE('Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Book Level 1 NA IRD])\nRETURN\nIF(\n    distinctCount > 1,\n    \"All Books\",\n    IF(\n        singleValue = \"NY Books\",\n        singleValue,\n        singleValue & \" Book\"\n    )\n)",
+      "solution_explanation": "Converted Tableau COUNTD(...) to DAX DISTINCTCOUNT(...). Tableau ATTR(...) (returns a single value when uniform) is mapped to SELECTEDVALUE(...). String concatenation uses &. Logic preserved: when more than one distinct Book Level 1 NA IRD return \"All Books\", otherwise return the single value or append \" Book\" unless it equals \"NY Books\".",
+      "type_changed_reason": "The Tableau formula uses an aggregation (COUNTD), so the equivalent should be created as a measure in Power BI."
+    }
+  ]
+}
