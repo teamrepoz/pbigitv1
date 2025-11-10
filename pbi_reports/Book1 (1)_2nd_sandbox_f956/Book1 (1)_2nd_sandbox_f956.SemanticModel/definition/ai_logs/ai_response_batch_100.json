@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Delta Down CAD 1Y Diff",
+      "dax_expression": "'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Delta Down T CAD 1Y] * 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Date Sign]",
+      "solution_explanation": "Row-level multiplication of two calculated fields converted to a calculated column. Tableau field references replaced with 'TableName'[ColumnName] format to match Power BI DAX."
+    }
+  ]
+}
