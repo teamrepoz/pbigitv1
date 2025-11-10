@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Term Label CAD Formatting",
+      "table_name": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "tableau_expression": "if [TERM_LABEL]=\"3 Month\" or  [TERM_LABEL]=\"3M Cash\" or [TERM_LABEL]= \"BAX2\" or [TERM_LABEL]= \"BAX1\"   or [TERM_LABEL]= \"BAX3\" then 1\r\nELSEIF  [TERM_LABEL] =\"BAX5\"  or [TERM_LABEL]= \"BAX4\" or [TERM_LABEL]=\"BAX6\"   then 2\r\nELSEIF  [TERM_LABEL] =\"BAX9\"  or [TERM_LABEL]= \"BAX10\" or [TERM_LABEL]= \"BAX7\" or [TERM_LABEL]= \"BAX8\" then 3\r\nelse 4 end",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "if [TERM_LABEL]=\"3 Month\" or  [TERM_LABEL]=\"3M Cash\" or [TERM_LABEL]= \"BAX2\" or [TERM_LABEL]= \"BAX1\"   or [TERM_LABEL]= \"BAX3\" then 1\r\nELSEIF  [TERM_LABEL] =\"BAX5\"  or [TERM_LABEL]= \"BAX4\" or [TERM_LABEL]=\"BAX6\"   then 2\r\nELSEIF  [TERM_LABEL] =\"BAX9\"  or [TERM_LABEL]= \"BAX10\" or [TERM_LABEL]= \"BAX7\" or [TERM_LABEL]= \"BAX8\" then 3\r\nelse 4 end",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "TERM_LABEL": "string"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
