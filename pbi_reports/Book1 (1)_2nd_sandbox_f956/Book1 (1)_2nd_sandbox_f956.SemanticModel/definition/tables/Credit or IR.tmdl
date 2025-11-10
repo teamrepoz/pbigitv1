@@ -1,0 +1,46 @@
+table 'Credit or IR'
+	lineageTag: 47f7edf3-9fab-460a-ba46-f4a51eaa65bb
+
+	column Index
+		formatString: 0
+		lineageTag: a049a48a-5917-4703-bdf0-bb56af7e0e72
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 288b86fc-c0f7-4b31-a953-59a4af34022a
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 12eaf26b-d38e-4816-a195-aaa9817dce5f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Credit or IR' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Credit", "Credit" },
+				{ 1, "IR", "IR" },
+				{ 2, "Both", "Both" }
+			    }
+			)
+
+	annotation PBI_Id = 7d9d241805834790a4e6be3575455b3b
+
