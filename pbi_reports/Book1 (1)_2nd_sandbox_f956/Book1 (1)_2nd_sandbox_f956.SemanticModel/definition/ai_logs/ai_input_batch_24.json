@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Max Date",
+      "table_name": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "tableau_expression": "Max(date([EFFECTIVE_DATE]))",
+      "datatype": "date",
+      "calculation_context": {
+        "Expression": "Max(date([EFFECTIVE_DATE]))",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "EFFECTIVE_DATE": "datetime"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
