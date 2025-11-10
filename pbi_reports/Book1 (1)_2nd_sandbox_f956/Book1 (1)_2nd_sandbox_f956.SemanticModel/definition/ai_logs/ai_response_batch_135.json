@@ -1,0 +1,25 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Fix Value T",
+      "dax_expression": "0",
+      "solution_explanation": "Tableau calculated field Fix Value T is defined as ZN([Sheet1 - Value]) and [Sheet1 - Value] is INT(NULL) in the provided context; this results in zero. Implemented as a row-level calculated column with constant 0."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Delta Down T USD",
+      "dax_expression": "'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[DELTA_DOWN] * 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TO_USD]",
+      "solution_explanation": "Tableau Delta Down T USD = [Delta Down T] * [TO_USD]. [Delta Down T] maps to [DELTA_DOWN] in the table. Implemented as a row-level calculated column multiplying the base DELTA_DOWN column by TO_USD."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Delta Down T USD 10Y",
+      "dax_expression": "VAR Market = 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[MARKET_NAME]\nVAR Term = 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TERM_LABEL]\nVAR DD = 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Delta Down T USD]\nVAR FV = 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Fix Value T]\nRETURN\nSWITCH(\n    TRUE(),\n    Market = \"sUSDMid\",\n        IF(Term = \"8 Yr\" || Term = \"8 Yr Swap\", 1/3 * (DD + FV), 0)\n        + IF(Term = \"9 Yr\" || Term = \"9 Yr Swap\", 2/3 * (DD + FV), 0)\n        + IF(Term = \"10 Yr\" || Term = \"10 Yr Swap\", (DD + FV), 0)\n        + IF(Term = \"12 Yr\" || Term = \"12 Yr Swap\", 18/20 * (DD + FV), 0)\n        + IF(Term = \"15 Yr\" || Term = \"15 Yr Swap\", 15/20 * (DD + FV), 0)\n        + IF(Term = \"20 Yr\" || Term = \"20 Yr Swap\", 10/20 * (DD + FV), 0)\n        + IF(Term = \"25 Yr\" || Term = \"25 Yr Swap\", 5/20 * (DD + FV), 0),\n    Market = \"USDsUSD1mMid\",\n        IF(\n            Term = \"10 Yr\" || Term = \"10 Yr Swap\" || Term = \"12 Yr\" || Term = \"12 Yr Swap\" || Term = \"15 Yr\" || Term = \"15 Yr Swap\" || Term = \"20 Yr\" || Term = \"20 Yr Swap\",\n            (DD + FV),\n            0\n        )\n        + IF(Term = \"8 Yr\" || Term = \"8 Yr Swap\", 1/3 * (DD + FV), 0)\n        + IF(Term = \"9 Yr\" || Term = \"9 Yr Swap\", 2/3 * (DD + FV), 0),\n    Market = \"USDsUSD6mMid\",\n        IF(\n            Term = \"10 Yr\" || Term = \"10 Yr Swap\" || Term = \"12 Yr\" || Term = \"12 Yr Swap\" || Term = \"15 Yr\" || Term = \"15 Yr Swap\" || Term = \"20 Yr\" || Term = \"20 Yr Swap\",\n            (DD + FV),\n            0\n        ),\n    Market = \"USDsUSD12mMid\",\n        IF(\n            Term = \"10 Yr\" || Term = \"10 Yr Swap\" || Term = \"12 Yr\" || Term = \"12 Yr Swap\" || Term = \"15 Yr\" || Term = \"15 Yr Swap\" || Term = \"20 Yr\" || Term = \"20 Yr Swap\",\n            (DD + FV),\n            0\n        ),\n    Market = \"USDsUSD1dMid\",\n        IF(Term = \"8 Yr\" || Term = \"8 Yr Swap\", 1/3 * (DD + FV), 0)\n        + IF(Term = \"9 Yr\" || Term = \"9 Yr Swap\", 2/3 * (DD + FV), 0)\n        + IF(\n            Term = \"10 Yr\" || Term = \"10 Yr Swap\" || Term = \"12 Yr\" || Term = \"12 Yr Swap\" || Term = \"15 Yr\" || Term = \"15 Yr Swap\" || Term = \"20 Yr\" || Term = \"20 Yr Swap\",\n            (DD + FV),\n            0\n        )\n        + IF(Term = \"25 Yr\" || Term = \"25 Yr Swap\", 5/20 * (DD + FV), 0),\n    Market = \"USDsUSDs1dMid\",\n        IF(Term = \"8 Yr\" || Term = \"8 Yr Swap\", 1/3 * (DD + FV), 0)\n        + IF(Term = \"9 Yr\" || Term = \"9 Yr Swap\", 2/3 * (DD + FV), 0)\n        + IF(Term = \"10 Yr\" || Term = \"10 Yr Swap\", (DD + FV), 0)\n        + IF(Term = \"11 Yr\" || Term = \"11 Yr Swap\", 19/20 * (DD + FV), 0)\n        + IF(Term = \"12 Yr\" || Term = \"12 Yr Swap\", 18/20 * (DD + FV), 0)\n        + IF(Term = \"15 Yr\" || Term = \"15 Yr Swap\", 15/20 * (DD + FV), 0)\n        + IF(Term = \"20 Yr\" || Term = \"20 Yr Swap\", 10/20 * (DD + FV), 0)\n        + IF(Term = \"25 Yr\" || Term = \"25 Yr Swap\", 5/20 * (DD + FV), 0),\n    0\n)",
+      "solution_explanation": "Translated the Tableau CASE/WHEN and nested IF logic into DAX using SWITCH(TRUE()) and IF conditions. Column references were converted to 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[ColumnName] format. Dependent calculated columns (Delta Down T USD and Fix Value T) were implemented first and then used in this row-level calculated column."
+    }
+  ]
+}
