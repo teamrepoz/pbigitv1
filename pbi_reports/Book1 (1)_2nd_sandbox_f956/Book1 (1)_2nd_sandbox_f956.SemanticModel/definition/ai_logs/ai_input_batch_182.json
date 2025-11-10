@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "Now()",
+      "table_name": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "tableau_expression": "now()",
+      "datatype": "datetime",
+      "calculation_context": {
+        "Expression": "now()",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
