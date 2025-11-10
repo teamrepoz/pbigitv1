@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Swap Spread",
+      "dax_expression": "\"Swap Spread\"",
+      "solution_explanation": "The Tableau expression is a literal string \"Swap Spread\". In DAX a string literal also uses double quotes, so the calculated column simply returns \"Swap Spread\" for each row. There are no aggregations or parameters, so this is a row-level calculation and should be a calculated column."
+    }
+  ]
+}
