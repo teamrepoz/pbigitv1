@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Zero",
+      "dax_expression": "1",
+      "solution_explanation": "The Tableau expression is a constant literal with no aggregates or parameters. It evaluates at the row level, so create a calculated column that returns 1."
+    }
+  ]
+}
