@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "ShowHide : CurveType",
+      "dax_expression": "VAR curveType = SELECTEDVALUE('Curve Type'[Display As])\nVAR marketSub = 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Market Subtype]\nVAR marketClass = 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[MARKET_CLASS]\nVAR marketCCY = 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[marketCCY]\nVAR marketType = 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Market Type]\nRETURN\nIF(\n    marketSub = curveType,\n    \"SHOW\",\n    SWITCH(\n        TRUE(),\n        curveType = \"All Curves\", \"SHOW\",\n        curveType = \"All IR\" && marketClass = \"IR\", \"SHOW\",\n        curveType = \"All FX\" && marketClass = \"FX\", \"SHOW\",\n        curveType = \"All Credit\" && marketClass = \"Credit\", \"SHOW\",\n        curveType = \"All CAD/USD/EUR/GBP\" && (\n            CONTAINSSTRING(marketCCY, \"CAD\") ||\n            CONTAINSSTRING(marketCCY, \"USD\") ||\n            CONTAINSSTRING(marketCCY, \"EUR\") ||\n            CONTAINSSTRING(marketCCY, \"GBP\")\n        ), \"SHOW\",\n        curveType = \"All CAD/USD/EUR/GBP\", \"HIDE\",\n        curveType = \"Major CAD/USD/EUR/GBP\" && (\n            CONTAINSSTRING(marketCCY, \"Major\") || CONTAINSSTRING(marketCCY, \"Vol\")\n        ) && (\n            CONTAINSSTRING(marketCCY, \"CAD\") ||\n            CONTAINSSTRING(marketCCY, \"USD\") ||\n            CONTAINSSTRING(marketCCY, \"EUR\") ||\n            CONTAINSSTRING(marketCCY, \"GBP\")\n        ), \"SHOW\",\n        curveType = \"Major CAD/USD/EUR/GBP\", \"HIDE\",\n        curveType = \"Minor IR - All\" && marketType = \"Minor IR\", \"SHOW\",\n        curveType = \"Minor IR - All\", \"HIDE\",\n        \"HIDE\"\n    )\n)",
+      "solution_explanation": "Replaced the Tableau parameter reference with SELECTEDVALUE('Curve Type'[Display As]) and converted row-level field references to 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Column]. Used VARs for intermediate values and SWITCH(TRUE()) with CONTAINSSTRING for Tableau CONTAINS logic. Preserved original branching: direct match -> SHOW, specific parameter values -> conditional SHOW/HIDE, default -> HIDE.",
+      "type_changed_reason": "The calculation references a Tableau parameter ([Parameters].[Curve Type]); per rules, any formula using parameters must be implemented as a measure."
+    }
+  ]
+}
