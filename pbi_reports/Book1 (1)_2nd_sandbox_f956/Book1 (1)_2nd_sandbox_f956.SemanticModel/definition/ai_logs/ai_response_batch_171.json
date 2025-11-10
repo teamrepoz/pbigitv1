@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "marketCCY",
+      "dax_expression": "VAR m = 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Market Name]\nVAR posS = SEARCH(\"s\", m, 1, 0)\nVAR inner = LEFT(REPLACE(REPLACE(m, \"Mid\", \"\"), \"s\", \"\"), 3)\nRETURN\nSWITCH(\n    TRUE(),\n    LEFT(m, 3) = \"IR \", REPLACE(m, \"IR \", \"\"),\n    CONTAINSSTRING(m, \"1dMid\"), LEFT(m, posS - 1),\n    CONTAINSSTRING(m, \"6mMid\"), LEFT(m, posS - 1),\n    CONTAINSSTRING(m, \"12mMid\"), LEFT(m, posS - 1),\n    CONTAINSSTRING(m, \"1mMid\"), LEFT(REPLACE(MID(m, posS + 1, 1000), \"1mMid\", \"\"), 3),\n    CONTAINSSTRING(m, \"3-monthMid\"), LEFT(REPLACE(MID(m, posS + 1, 1000), \"3-monthMid\", \"\"), 3),\n    CONTAINSSTRING(m, \"USDMid\") && LEFT(m, 3) = \"USD\", LEFT(REPLACE(REPLACE(m, \"USDs\", \"\"), \"USDMid\", \"\"), 3),\n    LEFT(m, 1) = \"s\" && (RIGHT(m, 3) = \"Mid\" || RIGHT(m, 9) = \"Mid_colva\"),\n        SWITCH(inner, \"USO\", \"USD\", \"CBO\", \"CAD\", \"EBO\", \"EUR\", \"GBO\", \"GBP\", inner),\n    LEFT(m, 1) = \"p\" && RIGHT(m, 3) = \"Mid\", REPLACE(REPLACE(m, \"Mid\", \"\"), \"p\", \"\"),\n    (LEFT(m, 1) = \"f\" || LEFT(m, 1) = \"i\") && (RIGHT(m, 3) = \"Mid\" || RIGHT(m, 9) = \"Mid_colva\"), MID(m, 2, 3),\n    (LEFT(m, 1) = \"f\" && RIGHT(m, 3) = \"Mid\") || CONTAINSSTRING(m, \"Skew\") || CONTAINSSTRING(m, \"SABR\"), MID(m, 2, 3),\n    RIGHT(m, 4) = \":Std\", LEFT(m, 3),\n    m = \"USDsUSDCUPOMMid\", \"USD\",\n    CONTAINSSTRING(m, \"xSpot\"), MID(m, 6, 3),\n    CONTAINSSTRING(m, \"USCPI\"), \"USD\",\n    CONTAINSSTRING(m, \"HICPX\"), \"EUR\",\n    \"ERR\"\n)",
+      "solution_explanation": "Translated the row-level Tableau IF/ELSEIF/CASE logic into a DAX calculated column. Used VAR m for the 'Market Name' field, posS for the position of \"s\", and inner to handle the CASE branch. Replaced Tableau CONTAINS with DAX CONTAINSSTRING and FIND with SEARCH; preserved REPLACE, LEFT, RIGHT, MID semantics. Implemented the IF/ELSEIF chain using SWITCH(TRUE(), ...) to mirror original evaluation order. Chosen as a calculated column because the calculation operates at row-level on a single field without aggregation or parameters."
+    }
+  ]
+}
