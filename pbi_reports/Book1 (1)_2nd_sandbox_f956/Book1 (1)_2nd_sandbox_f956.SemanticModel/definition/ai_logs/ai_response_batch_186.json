@@ -1,0 +1,19 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Deal",
+      "dax_expression": "IF('Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TRADE_ID] = \"N/A\", 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[SECURITY_ID], 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TRADE_ID])",
+      "solution_explanation": "Converted the row-level Tableau IF that returns SECURITY_ID when TRADE_ID = \"N/A\" otherwise TRADE_ID into a DAX calculated column with table-qualified column references."
+    },
+    {
+      "type": "measure",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Deal ",
+      "dax_expression": "VAR param = SELECTEDVALUE('Deal Netted/ByLeg'[Display As])\nRETURN\nIF(\n    param,\n    IF(\n        'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[INSTRUMENT_SUBTYPE] = \"CC Swap\" ||\n        'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[INSTRUMENT_SUBTYPE] = \"Forex Forward\" ||\n        'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[INSTRUMENT_SUBTYPE] = \"Forex Swap\" ||\n        'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[INSTRUMENT_SUBTYPE] = \"Forex Strip\",\n        LEFT('Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Deal], 6),\n        'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Deal]\n    ),\n    'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Deal]\n)",
+      "solution_explanation": "Mapped the Tableau parameter to SELECTEDVALUE('Deal Netted/ByLeg'[Display As]) and converted the nested IF logic and LEFT operation, qualifying all column references with the table name. Uses the previously created calculated column 'Deal' for the inner logic.",
+      "type_changed_reason": "The calculation references a parameter, and all parameter-based calculations must be measures."
+    }
+  ]
+}
