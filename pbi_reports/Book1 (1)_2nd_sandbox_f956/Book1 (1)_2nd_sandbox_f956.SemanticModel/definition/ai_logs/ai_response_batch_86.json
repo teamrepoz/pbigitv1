@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Delta Down All CCY 10Y",
+      "dax_expression": "VAR term = 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TERM_LABEL]\nVAR valueBase = 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Delta Down T USD] + 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Fix Value T]\nRETURN\nSWITCH(\n    TRUE(),\n    term = \"10 Yr\" || term = \"10 Yr Swap\", valueBase,\n    term = \"9 Yr\" || term = \"9 Yr Swap\", (4/5) * valueBase,\n    term = \"8 Yr\" || term = \"8 Yr Swap\", (3/5) * valueBase,\n    term = \"7 Yr\" || term = \"7 Yr Swap\", (2/5) * valueBase,\n    term = \"6 Yr\" || term = \"6 Yr Swap\", (1/5) * valueBase,\n    term = \"12 Yr\" || term = \"12 Yr Swap\", (9/10) * valueBase,\n    term = \"15 Yr\" || term = \"15 Yr Swap\", (3/4) * valueBase,\n    term = \"20 Yr\" || term = \"20 Yr Swap\", (1/2) * valueBase,\n    term = \"25 Yr\" || term = \"25 Yr Swap\", (1/4) * valueBase,\n    term = \"11 Yr\" || term = \"11 Yr Swap\", (19/20) * valueBase,\n    0\n)",
+      "solution_explanation": "Converted the row-level IF chains to a SWITCH(TRUE(), ...) structure. All column references were transformed to the 'TableName'[Column] format and the summed base value uses the existing calculated fields 'Delta Down T USD' and 'Fix Value T' from the same table.",
+      "type_changed_reason": "This calculation evaluates TERM_LABEL and combines row-level calculated fields without any aggregations or parameters, so it should be created as a calculated column (row-level/dimension)."
+    }
+  ]
+}
