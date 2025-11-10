@@ -1,0 +1,20 @@
+{
+  "calculations": [
+    {
+      "name": "Instrument Count Filter",
+      "table_name": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "tableau_expression": "if max({exclude [INSTRUMENT_TYPE], [TERM_LABEL]:(countd([INSTRUMENT_TYPE]))})>6 then \"Dynamic Height\" else \"Dynamic View\"\r\nend",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "if max({exclude [INSTRUMENT_TYPE], [TERM_LABEL]:(countd([INSTRUMENT_TYPE]))})>6 then \"Dynamic Height\" else \"Dynamic View\"\r\nend",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "INSTRUMENT_TYPE": "string",
+          "TERM_LABEL": "string"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
