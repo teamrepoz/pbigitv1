@@ -1,0 +1,25 @@
+{
+  "calculations": [
+    {
+      "name": "Tenor CMF ToH",
+      "table_name": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "tableau_expression": "// Created to match the CMF TOH buckets - Antoine Des Aulniers Favreau 24-Mai-2017\r\n// New edit to fix Term Date and match RLC buckets - ADF 11/1/2018\r\n\r\nif year([RISK_DATE]) = 1980 and [BUCKET_MODE_IND]=\"PARALLEL\" then \"Parallel\" else \r\n\r\n\r\n    IF [Risk Date # of Days]<=96 then \"0-3M\"\r\n    else if [Risk Date # of Days]<=189 then \"3-6M\"\r\n    else if [Risk Date # of Days]<=371 then \"6M-1Y\"\r\n    else if [Risk Date # of Days]<=556 then \"1-1.5Y\"\r\n    else if [Risk Date # of Days]<=1102 then \"1.5-3Y\"\r\n    else if [Risk Date # of Days]<=1832 then \"3-5Y\"\r\n    else if [Risk Date # of Days]>1832 then \">5Y\"\r\n     \r\nelse \"Error\"\r\n\r\n\r\nEND\r\nend\r\nEND\r\nEND\r\nEND\r\nEND\r\nEND\r\nEND",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "// Created to match the CMF TOH buckets - Antoine Des Aulniers Favreau 24-Mai-2017\r\n// New edit to fix Term Date and match RLC buckets - ADF 11/1/2018\r\n\r\nif year([RISK_DATE]) = 1980 and [BUCKET_MODE_IND]=\"PARALLEL\" then \"Parallel\" else \r\n\r\n\r\n    IF [Risk Date # of Days]<=96 then \"0-3M\"\r\n    else if [Risk Date # of Days]<=189 then \"3-6M\"\r\n    else if [Risk Date # of Days]<=371 then \"6M-1Y\"\r\n    else if [Risk Date # of Days]<=556 then \"1-1.5Y\"\r\n    else if [Risk Date # of Days]<=1102 then \"1.5-3Y\"\r\n    else if [Risk Date # of Days]<=1832 then \"3-5Y\"\r\n    else if [Risk Date # of Days]>1832 then \">5Y\"\r\n     \r\nelse \"Error\"\r\n\r\n\r\nEND\r\nend\r\nEND\r\nEND\r\nEND\r\nEND\r\nEND\r\nEND",
+        "calculated_fields": {
+          "Risk Date # of Days": "[RISK_DATE]-[EFFECTIVE_DATE]"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "BUCKET_MODE_IND": "string",
+          "EFFECTIVE_DATE": "datetime",
+          "RISK_DATE": "datetime"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Risk Date # of Days": "real"
+        }
+      }
+    }
+  ]
+}
