@@ -1,0 +1,20 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Date Sign",
+      "dax_expression": "VAR useCustom = SELECTEDVALUE('Use Custom Date'[Display As])\nRETURN\nIF(\n    useCustom,\n    IF(\n        'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Max Date Exclude] = 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[EFFECTIVE_DATE],\n        1,\n        IF(\n            'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[MAX_DATE -1day] = 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[EFFECTIVE_DATE],\n            -1,\n            0\n        )\n    ),\n    IF(\n        'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[EFFECTIVE_DATE] = SELECTEDVALUE('End Date'[Display As]),\n        1,\n        IF(\n            'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[EFFECTIVE_DATE] = SELECTEDVALUE('Start Date'[Display As]),\n            -1,\n            0\n        )\n    )\n)",
+      "solution_explanation": "Converted the Tableau nested IF that references parameters into a DAX measure. Parameter references use SELECTEDVALUE('ParameterName'[Display As]) and row-level comparisons reference the table's columns.",
+      "type_changed_reason": "This calculation references Tableau parameters ([Parameters]...), and per rules any parameter-based calculation must be created as a measure."
+    },
+    {
+      "type": "measure",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Delta Down All CCY 9M Diff",
+      "dax_expression": "VAR delta = 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Delta Down All CCY 9M]\nVAR sign = 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Date Sign]\nRETURN\ndelta * sign",
+      "solution_explanation": "Converted the Tableau multiplication of two fields into a DAX measure. References use the table-qualified column/measure names.",
+      "type_changed_reason": "The expression depends on [Date Sign], which itself references parameters; per rules any parameter-based calculation must be a measure, so this calculation is a measure."
+    }
+  ]
+}
