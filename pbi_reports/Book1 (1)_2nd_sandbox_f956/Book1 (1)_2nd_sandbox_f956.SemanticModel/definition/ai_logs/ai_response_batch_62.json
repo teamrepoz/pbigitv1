@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Size()",
+      "dax_expression": "COUNTROWS(ALLSELECTED('Risk_GFIRates_Reports_Excel_Rolling (local copy)'))",
+      "solution_explanation": "Tableau's SIZE() is a table calculation that returns the number of rows in the partition. In DAX this is represented as a measure that counts rows in the current selection/context; COUNTROWS(ALLSELECTED('Risk_GFIRates_Reports_Excel_Rolling (local copy)')) approximates the table calculation while respecting user/visual filters."
+    }
+  ]
+}
