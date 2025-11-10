@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "Size()",
+      "table_name": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "tableau_expression": "size()",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "size()",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
