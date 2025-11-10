@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "Delta Down Title",
+      "table_name": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "tableau_expression": "\"Delta Down\"",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "\"Delta Down\"",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
