@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Term Label CAD Formatting",
+      "dax_expression": "SWITCH(\n    TRUE(),\n    'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TERM_LABEL] = \"3 Month\" || 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TERM_LABEL] = \"3M Cash\" || 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TERM_LABEL] = \"BAX2\" || 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TERM_LABEL] = \"BAX1\" || 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TERM_LABEL] = \"BAX3\", 1,\n    'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TERM_LABEL] = \"BAX5\" || 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TERM_LABEL] = \"BAX4\" || 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TERM_LABEL] = \"BAX6\", 2,\n    'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TERM_LABEL] = \"BAX9\" || 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TERM_LABEL] = \"BAX10\" || 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TERM_LABEL] = \"BAX7\" || 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TERM_LABEL] = \"BAX8\", 3,\n    4\n)",
+      "solution_explanation": "Converted the row-level IF/ELSEIF string comparisons into a calculated column using SWITCH(TRUE()). All column references were rewritten to the 'Table'[Column] format and string literals kept in double quotes."
+    }
+  ]
+}
