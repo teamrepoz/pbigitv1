@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Total",
+      "dax_expression": "\"Total\"",
+      "solution_explanation": "Converted Tableau string literal \"Total\" to a DAX string literal \"Total\". The expression contains no aggregations or parameters and does not reference other columns, so it is implemented as a calculated column."
+    }
+  ]
+}
