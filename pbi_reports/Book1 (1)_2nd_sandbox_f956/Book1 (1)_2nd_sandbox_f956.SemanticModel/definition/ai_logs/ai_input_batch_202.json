@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Market Name",
+      "table_name": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "tableau_expression": "[MARKET_NAME]",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "[MARKET_NAME]",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "MARKET_NAME": "string"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
