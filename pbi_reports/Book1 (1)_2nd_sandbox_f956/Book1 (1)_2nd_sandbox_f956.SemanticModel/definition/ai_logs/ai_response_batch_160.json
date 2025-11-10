@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Zero 2",
+      "dax_expression": "0",
+      "solution_explanation": "Tableau constant 0 is a row-level expression with no aggregates or parameters. In DAX the equivalent calculated column can be the literal 0."
+    }
+  ]
+}
