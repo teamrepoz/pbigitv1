@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Date Filter",
+      "dax_expression": "VAR useCustom = SELECTEDVALUE('Use Custom Date'[Display As])\nVAR startDate = SELECTEDVALUE('Start Date'[Display As])\nVAR endDate = SELECTEDVALUE('End Date'[Display As])\nRETURN\nIF(\n    useCustom,\n    IF(\n        OR(\n            'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Max Date Exclude] = 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[EFFECTIVE_DATE],\n            'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[MAX_DATE -1day] = 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[EFFECTIVE_DATE]\n        ),\n        1,\n        0\n    ),\n    IF(\n        OR(\n            'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[EFFECTIVE_DATE] = startDate,\n            'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[EFFECTIVE_DATE] = endDate\n        ),\n        1,\n        0\n    )\n)",
+      "solution_explanation": "Converted the nested Tableau IF logic to DAX using VARs for parameter values (SELECTEDVALUE for each parameter) and IF/OR for conditional checks. All field references were transformed to 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[ColumnName] format to match Power BI syntax.",
+      "type_changed_reason": "The calculation references Tableau parameters ([Parameters]), and per rules all parameter-based calculations must be created as measures."
+    }
+  ]
+}
