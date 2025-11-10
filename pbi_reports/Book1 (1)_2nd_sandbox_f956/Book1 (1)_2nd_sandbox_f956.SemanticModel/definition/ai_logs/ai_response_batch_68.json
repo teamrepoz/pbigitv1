@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Delta +50 T",
+      "dax_expression": "VAR UseCustom = SELECTEDVALUE('Use Custom Date'[Display As])\nVAR EndDate = SELECTEDVALUE('End Date'[Display As])\nRETURN\nIF(\n    UseCustom,\n    IF(\n        'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Max Date Exclude] = 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[EFFECTIVE_DATE],\n        'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[DELTA50],\n        0\n    ),\n    IF(\n        'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[EFFECTIVE_DATE] = EndDate,\n        'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[DELTA50],\n        0\n    )\n)",
+      "solution_explanation": "Replaced parameter references with SELECTEDVALUE(...) per rules: [Parameters].[Use Custom Date] -> SELECTEDVALUE('Use Custom Date'[Display As]) and [Parameters].[End Date] -> SELECTEDVALUE('End Date'[Display As]). Transformed all field references to the table-qualified form 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Column]. Implemented the nested IF logic from Tableau using DAX IF and VAR for readability. Result is a measure because it depends on parameter values.",
+      "type_changed_reason": "The calculation references parameter(s) [Use Custom Date] and [End Date]; all parameter-based calculations must be measures."
+    }
+  ]
+}
