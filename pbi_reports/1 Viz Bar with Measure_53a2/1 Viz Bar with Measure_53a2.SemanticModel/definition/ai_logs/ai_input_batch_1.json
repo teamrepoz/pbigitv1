@@ -1,0 +1,21 @@
+{
+  "calculations": [
+    {
+      "name": "Calculation2",
+      "table_name": "HR Dataset",
+      "tableau_expression": "[Termd] * [Salary] * [EngagementSurvey]",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "[Termd] * [Salary] * [EngagementSurvey]",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Salary": "integer",
+          "Termd": "integer",
+          "EngagementSurvey": "real"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
