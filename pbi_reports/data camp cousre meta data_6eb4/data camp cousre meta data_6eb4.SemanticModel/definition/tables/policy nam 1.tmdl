@@ -1,0 +1,44 @@
+table 'policy nam 1'
+	lineageTag: 5a7d385b-acc9-4ef1-ace0-73c8829fc7c6
+
+	column Index
+		formatString: 0
+		lineageTag: 216e7671-f349-4a31-a731-7d4da72a88b3
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: af8cac15-5e0e-4084-8bc6-3cb6deaf68fc
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 29d67744-fd66-4972-825a-6be3115af11e
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'policy nam 1' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        {0, "29", "29"}
+			    }
+			)
+
+	annotation PBI_Id = db7be70bcbb24a8790f12634b83bcb6a
+
