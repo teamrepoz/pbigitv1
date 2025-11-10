@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "HR Dataset",
+      "name": "Calculation4",
+      "dax_expression": "INT(BLANK())",
+      "solution_explanation": "Tableau INT(NULL) converts a null to an integer; in DAX NULL is BLANK(), so the equivalent row-level expression is INT(BLANK())."
+    }
+  ]
+}
