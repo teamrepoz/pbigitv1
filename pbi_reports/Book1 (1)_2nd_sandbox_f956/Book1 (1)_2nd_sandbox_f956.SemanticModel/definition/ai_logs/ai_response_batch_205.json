@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Tenor Vega",
+      "dax_expression": "VAR DaysDiff = 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[RISK_DATE] - 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[EFFECTIVE_DATE]\nRETURN\nIF(\n    YEAR('Risk_GFIRates_Reports_Excel_Rolling (local copy)'[RISK_DATE]) = 1980,\n    \"Parallel\",\n    IF(DaysDiff <= 30, \"1M\",\n    IF(DaysDiff <= 61, \"2M\",\n    IF(DaysDiff <= 91, \"3M\",\n    IF(DaysDiff <= 182, \"6M\",\n    IF(DaysDiff <= 365, \"1Y\",\n    IF(DaysDiff <= 730, \"2Y\",\n    IF(DaysDiff <= 1095, \"3Y\",\n    IF(DaysDiff <= 1461, \"4Y\",\n    IF(DaysDiff <= 1826, \"5Y\",\n    IF(DaysDiff <= 2557, \"7Y\",\n    IF(DaysDiff <= 3652, \"10Y\",\n    IF(DaysDiff <= 5479, \"15Y\",\n    IF(DaysDiff <= 7306, \"20Y\",\n    IF(DaysDiff > 7306, \">20Y\", \"Error\")))))))))))))))\n)",
+      "solution_explanation": "Converted the row-level nested IF logic to a calculated column. The dependent calculated field [Risk Date # of Days] was inlined as 'RISK_DATE' - 'EFFECTIVE_DATE' and all column references were converted to the 'TableName'[Column] format. YEAR(...) check preserved and string literals kept in double quotes."
+    }
+  ]
+}
