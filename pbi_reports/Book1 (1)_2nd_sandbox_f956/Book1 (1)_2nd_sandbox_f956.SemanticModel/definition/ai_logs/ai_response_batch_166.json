@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Sheet1 - Market Name1",
+      "dax_expression": "BLANK()",
+      "solution_explanation": "Tableau STR(NULL) returns a NULL value. In DAX the equivalent representation of a null is BLANK(), so the calculated column returns BLANK(). This is a row-level (non-aggregated) transformation, so it is created as a calculated column."
+    }
+  ]
+}
