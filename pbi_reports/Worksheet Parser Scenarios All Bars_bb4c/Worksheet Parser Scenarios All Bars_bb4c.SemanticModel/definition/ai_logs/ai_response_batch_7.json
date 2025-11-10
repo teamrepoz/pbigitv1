@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "HR Dataset",
+      "name": "calculation3",
+      "dax_expression": "\"abc\"",
+      "solution_explanation": "Direct string literal; Tableau \"abc\" maps to DAX string \"abc\" and can be created as a calculated column since it has no aggregations or parameter references."
+    }
+  ]
+}
