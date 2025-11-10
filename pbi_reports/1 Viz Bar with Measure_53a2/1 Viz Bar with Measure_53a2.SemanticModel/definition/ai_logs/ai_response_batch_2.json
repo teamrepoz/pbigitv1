@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "HR Dataset",
+      "name": "dep calc 1",
+      "dax_expression": "'HR Dataset'[DeptID]",
+      "solution_explanation": "Row-level direct column reference; converted Tableau [DeptID] to DAX 'HR Dataset'[DeptID]. This is a calculated column because it operates at the row level without aggregation."
+    }
+  ]
+}
