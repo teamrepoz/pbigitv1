@@ -1,0 +1,34 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Delta Down T",
+      "dax_expression": "'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[DELTA_DOWN]",
+      "solution_explanation": "Delta Down T in Tableau resolves to the row-level field [DELTA_DOWN]. This is a row-level pass-through, so create a calculated column that references the source column directly."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Delta Down T USD",
+      "dax_expression": "'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Delta Down T] * 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TO_USD]",
+      "solution_explanation": "Delta Down T USD multiplies two row-level fields ([Delta Down T] and [TO_USD]). This is row-level arithmetic, so implement as a calculated column using the table-qualified column references."
+    },
+    {
+      "type": "measure",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Date Sign",
+      "dax_expression": "VAR UseCustom = SELECTEDVALUE('Use Custom Date'[Display As])\nVAR EffDate = SELECTEDVALUE('Risk_GFIRates_Reports_Excel_Rolling (local copy)'[EFFECTIVE_DATE])\nVAR MaxDateExclude = SELECTEDVALUE('Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Max Date Exclude])\nVAR MaxDateMinus1 = SELECTEDVALUE('Risk_GFIRates_Reports_Excel_Rolling (local copy)'[MAX_DATE -1day])\nVAR ParamEndDate = SELECTEDVALUE('End Date'[Display As])\nVAR ParamStartDate = SELECTEDVALUE('Start Date'[Display As])\nRETURN\nIF(\n    UseCustom,\n    IF(MaxDateExclude = EffDate, 1, IF(MaxDateMinus1 = EffDate, -1, 0)),\n    IF(EffDate = ParamEndDate, 1, IF(EffDate = ParamStartDate, -1, 0))\n)",
+      "solution_explanation": "The Tableau logic uses parameters ([Parameters].[Use Custom Date], [Parameters].[End Date], [Parameters].[Start Date]) and row-level date comparisons. Per rules, parameter references become SELECTEDVALUE('ParameterName'[Display As]) and the calculation must be a measure. The measure captures the current row's EFFECTIVE_DATE and compares it to the parameter values and calculated Max Date fields, returning 1, -1 or 0.",
+      "type_changed_reason": "The calculation references parameters (e.g., [Parameters].[Use Custom Date]), and all parameter-based calculations must be created as measures."
+    },
+    {
+      "type": "measure",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Delta Down USD Diff",
+      "dax_expression": "SUMX(\n    'Risk_GFIRates_Reports_Excel_Rolling (local copy)',\n    'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Delta Down T USD] * [Date Sign]\n)",
+      "solution_explanation": "The original Tableau expression multiplies two fields. Because one dependency (Date Sign) references parameters it must be a measure; thus the top-level calculation must also be a measure. To preserve row-level multiplication behavior in an aggregated measure context, use SUMX over the table and multiply the row-level calculated column 'Delta Down T USD' by the measure [Date Sign].",
+      "type_changed_reason": "The calculation references a parameter via the dependent field 'Date Sign', and all parameter-based calculations must be measures."
+    }
+  ]
+}
