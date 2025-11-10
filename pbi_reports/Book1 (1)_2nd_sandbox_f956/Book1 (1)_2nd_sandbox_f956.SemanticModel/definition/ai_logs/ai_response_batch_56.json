@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Delta Down T CAD Fix",
+      "dax_expression": "'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Delta Down T CAD] + 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Fix Value T]",
+      "solution_explanation": "Removed commented-out Tableau branches and converted the row-level addition ([Delta Down T CAD]) + [Fix Value T] to DAX by qualifying each field with the table name: 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Delta Down T CAD] + 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Fix Value T]. This is a row-level calculation, implemented as a calculated column."
+    }
+  ]
+}
