@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Bull Steepener Normal Shock",
+      "dax_expression": "VAR days = 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Risk Date # of Days]\nRETURN\nIF(\n    days < 750, -5,\n    IF(\n        days > 10950, -1,\n        -5 * (1 - (days - 750) / (10950 - 750)) + -1 * (days - 750) / (10950 - 750)\n    )\n)",
+      "solution_explanation": "Converted the Tableau nested IF into DAX nested IF. Comments were removed. The calculated field [Risk Date # of Days] is referenced as a table-qualified column and stored in a VAR for clarity; the same linear interpolation expression is preserved for the else branch."
+    }
+  ]
+}
