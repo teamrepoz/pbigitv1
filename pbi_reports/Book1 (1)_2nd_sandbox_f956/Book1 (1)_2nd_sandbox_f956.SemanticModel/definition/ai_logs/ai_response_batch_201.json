@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Deal Partial Exclusion",
+      "dax_expression": "IF('Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TRADE_ID] = \"N/A\", 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[SECURITY_ID], 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TRADE_ID])",
+      "solution_explanation": "Converted Tableau IF to DAX IF and transformed column references to 'TableName'[Column] format. This is row-level logic (no aggregations or parameters), so it is implemented as a calculated column."
+    }
+  ]
+}
