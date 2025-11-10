@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "HR Dataset",
+      "name": "Calculation2",
+      "dax_expression": "'HR Dataset'[Termd] * 'HR Dataset'[Salary] * 'HR Dataset'[EngagementSurvey]",
+      "solution_explanation": "This is a row-level calculation multiplying three columns; translated by referencing each column as 'HR Dataset'[ColumnName]."
+    }
+  ]
+}
