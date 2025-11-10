@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Delta Down USD 10Y Diff",
+      "dax_expression": "'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Delta Down T USD 10Y] * 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Date Sign]",
+      "solution_explanation": "Converted the Tableau row-level multiplication ([Delta Down T USD 10Y] * [Date Sign]) into an equivalent DAX calculated column using fully qualified table-column references. Both referenced fields are row-level calculated fields, so the result is implemented as a calculated column."
+    }
+  ]
+}
