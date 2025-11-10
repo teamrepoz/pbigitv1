@@ -1,0 +1,56 @@
+{
+  "calculations": [
+    {
+      "name": "Delta Down Fix FX",
+      "table_name": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "tableau_expression": "case [Parameters].[FXConversion]\r\nwhen \"Reported\" then [Delta Down Fix]\r\nwhen \"Natural\" then \r\n    case [marketCCY]\r\n    when \"AUD\" then [Delta Down Fix]*[TO_AUD]\r\n    when \"CAD\" then [Delta Down Fix]*[TO_CAD]\r\n    when \"CHF\" then [Delta Down Fix]*[TO_CHF]\r\n    when \"EUR\" then [Delta Down Fix]*[TO_EUR]\r\n    when \"GBP\" then [Delta Down Fix]*[TO_GBP]\r\n    when \"HKD\" then [Delta Down Fix]*[TO_HKD]\r\n    when \"JPY\" then [Delta Down Fix]*[TO_JPY]\r\n    when \"MXN\" then [Delta Down Fix]*[TO_MXN]\r\n    when \"NZD\" then [Delta Down Fix]*[TO_NZD]\r\n    when \"SEK\" then [Delta Down Fix]*[TO_SEK]\r\n    when \"SGD\" then [Delta Down Fix]*[TO_SGD]\r\n    when \"USD\" then [Delta Down Fix]*[TO_USD]\r\n    else null\r\n    end\r\nwhen \"CAD\" then [Delta Down Fix]*[TO_CAD]\r\nwhen \"USD\" then [Delta Down Fix]*[TO_USD]\r\nwhen \"EUR\" then [Delta Down Fix]*[TO_EUR]\r\nwhen \"GBP\" then [Delta Down Fix]*[TO_GBP]\r\nelse  null\r\nend",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "case [Parameters].[FXConversion]\r\nwhen \"Reported\" then [Delta Down Fix]\r\nwhen \"Natural\" then \r\n    case [marketCCY]\r\n    when \"AUD\" then [Delta Down Fix]*[TO_AUD]\r\n    when \"CAD\" then [Delta Down Fix]*[TO_CAD]\r\n    when \"CHF\" then [Delta Down Fix]*[TO_CHF]\r\n    when \"EUR\" then [Delta Down Fix]*[TO_EUR]\r\n    when \"GBP\" then [Delta Down Fix]*[TO_GBP]\r\n    when \"HKD\" then [Delta Down Fix]*[TO_HKD]\r\n    when \"JPY\" then [Delta Down Fix]*[TO_JPY]\r\n    when \"MXN\" then [Delta Down Fix]*[TO_MXN]\r\n    when \"NZD\" then [Delta Down Fix]*[TO_NZD]\r\n    when \"SEK\" then [Delta Down Fix]*[TO_SEK]\r\n    when \"SGD\" then [Delta Down Fix]*[TO_SGD]\r\n    when \"USD\" then [Delta Down Fix]*[TO_USD]\r\n    else null\r\n    end\r\nwhen \"CAD\" then [Delta Down Fix]*[TO_CAD]\r\nwhen \"USD\" then [Delta Down Fix]*[TO_USD]\r\nwhen \"EUR\" then [Delta Down Fix]*[TO_EUR]\r\nwhen \"GBP\" then [Delta Down Fix]*[TO_GBP]\r\nelse  null\r\nend",
+        "calculated_fields": {
+          "Delta Down Fix": "zn([DELTA_DOWN]) + [Fix Value T]",
+          "marketCCY": "// Created by Antoine Des Aulniers Favreau\r\n// Updated on 10/13/2017 by Antoine Des Aulniers Favreau\r\n// Updated on 11/22/107 by Antoine Des Aulniers Favreau to take into account Skew/Sabr vol surface and ColVa curves.\r\n// This tries to identify the currency of the curve. Using the “FXConversion Parameter” = Natural, it will right FX Rate to display the risk in the currency of the curve.\r\n// Originally intended for IR curves. Also applied to Inflation curves and Vol. surfaces.\r\n\r\nIF left([Market Name], 3)=\"IR \" THEN REPLACE([Market Name],\"IR \",\"\") //Old format\r\nELSEIF CONTAINS([Market Name],\"1dMid\") then LEFT([Market Name],FIND([Market Name],\"s\")-1) //OIS Basis\r\nELSEIF CONTAINS([Market Name],\"6mMid\") then LEFT([Market Name],FIND([Market Name],\"s\")-1) //6m Basis\r\nELSEIF CONTAINS([Market Name],\"12mMid\") then LEFT([Market Name],FIND([Market Name],\"s\")-1) //12m Basis\r\nELSEIF CONTAINS([Market Name],\"1mMid\") then left(REPLACE(MID([Market Name],FIND([Market Name],\"s\")+1),\"1mMid\",\"\"),3) //1m Basis\r\nELSEIF CONTAINS([Market Name],\"3-monthMid\") then left(REPLACE(MID([Market Name],FIND([Market Name],\"s\")+1),\"3-monthMid\",\"\"),3) //3m Basis\r\nELSEIF CONTAINS([Market Name],\"USDMid\") and LEFT([Market Name],3)=\"USD\" THEN left(REPLACE(REPLACE([Market Name],\"USDs\",\"\"),\"USDMid\",\"\"),3) //CCIRS Basis\r\nELSEIF LEFT([Market Name],1)=\"s\" and (RIGHT([Market Name],3)=\"Mid\" OR RIGHT([Market Name],9)=\"Mid_colva\") then\r\n    CASE left(REPLACE(REPLACE([Market Name],\"Mid\",\"\"),\"s\",\"\"),3)\r\n    WHEN \"USO\" THEN \"USD\"\r\n    WHEN \"CBO\" THEN \"CAD\"\r\n    WHEN \"EBO\" THEN \"EUR\"\r\n    WHEN \"GBO\" THEN \"GBP\"\r\n    ELSE left(REPLACE(REPLACE([Market Name],\"Mid\",\"\"),\"s\",\"\"),3)\r\n    END\r\nELSEIF LEFT([Market Name],1)=\"p\" and RIGHT([Market Name],3)=\"Mid\"  then REPLACE(REPLACE([Market Name],\"Mid\",\"\"),\"p\",\"\")\r\nELSEIF (LEFT([Market Name],1)=\"f\" or LEFT([Market Name],1)=\"i\") and (RIGHT([Market Name],3)=\"Mid\"  or right([Market Name],9)=\"Mid_colva\") then MID([Market Name],2,3) //vol surface + inf. curve\r\nELSEIF (LEFT([Market Name],1)=\"f\" and (RIGHT([Market Name],3)=\"Mid\")) or contains([Market Name],\"Skew\")  or contains([Market Name],\"SABR\")\r\n    then MID([Market Name],2,3)                                         // Skew & SABR vol surface\r\nelseif right([Market Name],4)= \":Std\" then left([Market Name],3)\r\n// Exceptions\r\nELSEIF [Market Name]=\"USDsUSDCUPOMMid\" then \"USD\"\r\nELSEIF contains([Market Name],\"xSpot\")  then mid([Market Name],6,3) //FX Spot Curve\r\nELSEIF contains([Market Name],\"USCPI\")  then \"USD\"\r\nELSEIF contains([Market Name],\"HICPX\")  then \"EUR\"\r\n\r\nELSE \"ERR\"\r\n\r\nEND",
+          "FXConversion": "\"Natural\"",
+          "Market Name": "[MARKET_NAME]",
+          "Fix Value T": "zn([Sheet1 - Value])\r\n//if [Use Custom Date] then \r\n  //  (if [Max Date Exclude]= [Effective Date] then \r\n//        (if [Fix Date 1]=[Date (End Date)] then ([Fix Value 1]) else 0 end) +\r\n //       (if [Fix Date 2]=[Date (End Date)] then ([Fix Value 2]) else 0 end) +\r\n  //      (if [Fix Date 3]=[Date (End Date)] then ([Fix Value 3]) else 0 end) +\r\n   //     (if [Fix Date 4]=[Date (End Date)] then ([Fix Value 4]) else 0 end) +\r\n  //      (if [Fix Date 5]=[Date (End Date)] then ([Fix Value 5]) else 0 end) +\r\n  //      (if [Fix Date 6]=[Date (End Date)] then ([Fix Value 6]) else 0 end) +\r\n   //     (if [Fix Date 7]=[Date (End Date)] then ([Fix Value 7]) else 0 end) +\r\n   //     (if [Fix Date 8]=[Date (End Date)] then ([Fix Value 8]) else 0 end) +\r\n    //    (if [Fix Date 9]=[Date (End Date)] then ([Fix Value 9]) else 0 end) +\r\n   //     (if [Fix Date 10]=[Date (End Date)] then ([Fix Value 10]) else 0 end) +\r\n    //    (if [Fix Date 11]=[Date (End Date)] then ([Fix Value 11]) else 0 end) +\r\n    //    (if [Fix Date 12]=[Date (End Date)] then ([Fix Value 12]) else 0 end) +\r\n        //(if [Fix Date 13]=[Date (End Date)] then ([Fix Value 13]) else 0 end) +\r\n    //    (if [Fix Date 14]=[Date (End Date)] then ([Fix Value 14]) else 0 end) +\r\n    //    (if [Fix Date 15]=[Date (End Date)] then ([Fix Value 15]) else 0 end)\r\n\r\n  //  else 0 END)\r\n//else if [Effective Date]= [End Date] then \r\n    //    (if [Fix Date 1]=[Date (End Date)] then ([Fix Value 1]) else 0 end) +\r\n    //    (if [Fix Date 2]=[Date (End Date)] then ([Fix Value 2]) else 0 end) +\r\n    //    (if [Fix Date 3]=[Date (End Date)] then ([Fix Value 3]) else 0 end) +\r\n     //   (if [Fix Date 4]=[Date (End Date)] then ([Fix Value 4]) else 0 end) +\r\n       // (if [Fix Date 5]=[Date (End Date)] then ([Fix Value 5]) else 0 end) +\r\n       // (if [Fix Date 6]=[Date (End Date)] then ([Fix Value 6]) else 0 end) +\r\n      //  (if [Fix Date 7]=[Date (End Date)] then ([Fix Value 7]) else 0 end) +\r\n     //   (if [Fix Date 8]=[Date (End Date)] then ([Fix Value 8]) else 0 end) +\r\n    //    (if [Fix Date 9]=[Date (End Date)] then ([Fix Value 9]) else 0 end) +\r\n    //    (if [Fix Date 10]=[Date (End Date)] then ([Fix Value 10]) else 0 end) +\r\n      //  (if [Fix Date 11]=[Date (End Date)] then ([Fix Value 11]) else 0 end) +\r\n        //(if [Fix Date 12]=[Date (End Date)] then ([Fix Value 12]) else 0 end) +\r\n       // (if [Fix Date 13]=[Date (End Date)] then ([Fix Value 13]) else 0 end) +\r\n      //  (if [Fix Date 14]=[Date (End Date)] then ([Fix Value 14]) else 0 end) +\r\n       // (if [Fix Date 15]=[Date (End Date)] then ([Fix Value 15]) else 0 end)\r\n\r\n   // else 0 END END",
+          "Use Custom Date": "false",
+          "Date (End Date)": "if [Parameters].[Use Custom Date] then \r\n    [Max Date Exclude] else [Parameters].[End Date]\r\nend",
+          "Sheet1 - Value": "INT(NULL)",
+          "End Date": "#2017-01-06#",
+          "Max Date Exclude": "//if today() = date(\"12/26/2016\") or \r\n   // today() = date(\"01/02/2017\") or \r\n   // today() = date(\"12/26/2017\") or \r\n   // today() = date(\"01/02/2018\") or \r\n   // today() = date(\"12/26/2018\") or \r\n   // today() = date(\"01/02/2019\") or \r\n   // today() = date(\"12/26/2019\") or   \r\n   // today() = date(\"01/02/2020\")  \r\n\r\n\r\n//then \r\n\r\n   // case datepart('weekday',today())\r\n   // when 1 then today()-3\r\n   // when 2 then today()-4\r\n   // else today()-2\r\n   // end\r\n\r\n//else \r\n\r\n    case datepart('weekday',today())\r\n    when 1 then today()-2\r\n    when 2 then today()-3\r\n    else today()-1\r\n    end\r\n//end"
+        },
+        "parameters": [
+          "FXConversion"
+        ],
+        "col_to_datatype_mapping": {
+          "DELTA_DOWN": "real",
+          "MARKET_NAME": "string",
+          "TO_AUD": "real",
+          "TO_CAD": "real",
+          "TO_CHF": "real",
+          "TO_EUR": "real",
+          "TO_GBP": "real",
+          "TO_HKD": "real",
+          "TO_JPY": "real",
+          "TO_MXN": "real",
+          "TO_NZD": "real",
+          "TO_SEK": "real",
+          "TO_SGD": "real",
+          "TO_USD": "real"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Delta Down Fix": "real",
+          "FXConversion": "string",
+          "Fix Value T": "integer",
+          "Use Custom Date": "boolean",
+          "Sheet1 - Value": "integer",
+          "End Date": "date",
+          "marketCCY": "String",
+          "Market Name": "String",
+          "Date (End Date)": "DateTime",
+          "Max Date Exclude": "DateTime"
+        }
+      }
+    }
+  ]
+}
