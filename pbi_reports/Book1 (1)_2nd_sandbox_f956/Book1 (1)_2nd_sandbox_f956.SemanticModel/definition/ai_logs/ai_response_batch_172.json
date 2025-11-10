@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Date (End Date)",
+      "dax_expression": "VAR useCustomDate = SELECTEDVALUE('Use Custom Date'[Display As])\nVAR endDateParam = SELECTEDVALUE('End Date'[Display As])\nRETURN IF(\n    useCustomDate,\n    'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Max Date Exclude],\n    endDateParam\n)",
+      "solution_explanation": "Converted the Tableau IF that references parameters into DAX. Parameter references were replaced with SELECTEDVALUE('ParameterName'[Display As]). The IF(...) THEN ELSE END was mapped to IF(condition, value_if_true, value_if_false). The calculated field [Max Date Exclude] was converted to 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Max Date Exclude] to use table[column] notation.",
+      "type_changed_reason": "The calculation references parameters ([Parameters].[Use Custom Date] and [Parameters].[End Date]), and all parameter-based calculations must be created as measures."
+    }
+  ]
+}
