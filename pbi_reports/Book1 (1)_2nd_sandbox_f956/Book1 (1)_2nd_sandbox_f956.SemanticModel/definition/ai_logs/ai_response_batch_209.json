@@ -1,0 +1,18 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Risk Date # of Days",
+      "dax_expression": "'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[RISK_DATE] - 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[EFFECTIVE_DATE]",
+      "solution_explanation": "Converted the Tableau calculated field [RISK_DATE]-[EFFECTIVE_DATE] to a DAX calculated column by subtracting the two datetime columns directly. This preserves the row-level day difference behavior from Tableau."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Tenor",
+      "dax_expression": "VAR riskYear = YEAR('Risk_GFIRates_Reports_Excel_Rolling (local copy)'[RISK_DATE])\nVAR days = 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Risk Date # of Days]\nRETURN\nSWITCH(\n    TRUE(),\n    riskYear = 1980, \"Parallel\",\n    days <= 91, \"0-3M\",\n    days <= 365, \"3-12M\",\n    days <= 730, \"1-2Y\",\n    days <= 1826, \"2-5Y\",\n    days <= 3652, \"5-10Y\",\n    days <= 10958, \"10-30Y\",\n    days > 10958, \">30Y\",\n    \"Error\"\n)",
+      "solution_explanation": "Translated the Tableau nested IF logic to a DAX row-level expression using VARs and SWITCH(TRUE()). YEAR('RISK_DATE') is evaluated first to return \"Parallel\" for 1980; otherwise the day thresholds use the calculated column 'Risk Date # of Days' to determine the tenor buckets. Implemented as a calculated column because the logic is row-level and contains no aggregations or parameters."
+    }
+  ]
+}
