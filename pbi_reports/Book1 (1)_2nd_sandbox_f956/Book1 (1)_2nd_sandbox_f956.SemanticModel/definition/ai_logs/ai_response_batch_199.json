@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Book Level 1",
+      "dax_expression": "VAR sel = SELECTEDVALUE('Book Level 1 Mapping'[Display As])\nRETURN\nSWITCH(\n    sel,\n    \"Default\", 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[BOOK_LEVEL1],\n    \"IRD\", 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Book Level 1 NA IRD],\n    \"CAD Cash Rates\", 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Book Level 1 SCI],\n    \"CMF\", 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Book Level 1 CMF],\n    'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[BOOK_LEVEL1]\n)",
+      "solution_explanation": "Replaced the Tableau parameter reference with SELECTEDVALUE('Book Level 1 Mapping'[Display As]) and converted the CASE...WHEN mapping to a DAX SWITCH on that selected value. All field references were converted to 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[ColumnName] format. The default ELSE maps to [BOOK_LEVEL1].",
+      "type_changed_reason": "The calculation references a Tableau parameter ([Parameters].[Book Level 1 Mapping]); per rules, parameter-based calculations must be created as a measure."
+    }
+  ]
+}
