@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "MUSH Delta Down T CAD",
+      "dax_expression": "IF('Risk_GFIRates_Reports_Excel_Rolling (local copy)'[CURRENCY] = \"CAD\", 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Delta Down T CAD], 0)",
+      "solution_explanation": "Converted Tableau row-level IF to DAX IF. All column references were mapped to 'TableName'[ColumnName] format and the calculated field [Delta Down T CAD] is referenced as a column on the same table."
+    }
+  ]
+}
