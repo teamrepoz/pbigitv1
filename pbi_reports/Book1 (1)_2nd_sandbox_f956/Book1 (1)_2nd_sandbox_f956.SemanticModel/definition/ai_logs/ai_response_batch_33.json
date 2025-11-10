@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Delta Down All CCY Parallel",
+      "dax_expression": "COALESCE('Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Delta Down All CCY 3M], 0) + COALESCE('Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Delta Down All CCY 6M], 0) + COALESCE('Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Delta Down All CCY 9M], 0) + COALESCE('Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Delta Down All CCY 1Y], 0) + COALESCE('Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Delta Down All CCY 2Y], 0) + COALESCE('Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Delta Down All CCY 5Y], 0) + COALESCE('Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Delta Down All CCY 10Y], 0) + COALESCE('Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Delta Down All CCY 30Y], 0)",
+      "solution_explanation": "Replaced Tableau ZN(...) with DAX COALESCE(..., 0) and converted all field references to the 'Table'[Column] format. The original Tableau expression is a row-level sum of multiple calculated fields, so no aggregations or parameters are introduced in the DAX.",
+      "type_changed_reason": "This calculation performs row-level summation of other row-level calculated fields without aggregation or parameters, so it should be a calculated column."
+    }
+  ]
+}
