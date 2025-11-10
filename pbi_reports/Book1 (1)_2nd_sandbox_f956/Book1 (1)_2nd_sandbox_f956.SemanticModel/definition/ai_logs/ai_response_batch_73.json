@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Delta Down All CCY 10Y CAD Diff ",
+      "dax_expression": "'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Delta Down All CCY 10Y CAD] * 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Date Sign]",
+      "solution_explanation": "Removed Tableau comments and converted the row-level multiplication to a DAX calculated column using the table-qualified column references. Both referenced fields are row-level calculated fields, so this is implemented as a calculated column."
+    }
+  ]
+}
