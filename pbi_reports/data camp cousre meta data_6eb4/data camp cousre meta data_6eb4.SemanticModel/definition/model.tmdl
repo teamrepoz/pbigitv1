@@ -1,0 +1,28 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["BCR_2022_07_DDM_ROLLOUT_BCR_2022_07_DDM_ROLLOUT+ (Multiple Connections)", "all_tracks.csv_BCR_2022_07_DDM_ROLLOUT+ (Multiple Connections)", "courses.csv1_BCR_2022_07_DDM_ROLLOUT+ (Multiple Connections)", "topic_mapping.csv_BCR_2022_07_DDM_ROLLOUT+ (Multiple Connections)", "all_tracks.csv1_BCR_2022_07_DDM_ROLLOUT+ (Multiple Connections)", "technology_mapping.csv1_BCR_2022_07_DDM_ROLLOUT+ (Multiple Connections)", "technology_mapping.csv_BCR_2022_07_DDM_ROLLOUT+ (Multiple Connections)", "all_tracks.csv2_BCR_2022_07_DDM_ROLLOUT+ (Multiple Connections)", "courses.csv_BCR_2022_07_DDM_ROLLOUT+ (Multiple Connections)", "BCR_2022_07_DDM_ROLLOUT"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.142.928.0 (25.04)+de52df9f0bb74ad93a80d89c52d63fe6d07e0e1b
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 'BCR_2022_07_DDM_ROLLOUT_BCR_2022_07_DDM_ROLLOUT+ (Multiple Connections)'
+ref table 'all_tracks.csv_BCR_2022_07_DDM_ROLLOUT+ (Multiple Connections)'
+ref table 'courses.csv1_BCR_2022_07_DDM_ROLLOUT+ (Multiple Connections)'
+ref table 'topic_mapping.csv_BCR_2022_07_DDM_ROLLOUT+ (Multiple Connections)'
+ref table 'all_tracks.csv1_BCR_2022_07_DDM_ROLLOUT+ (Multiple Connections)'
+ref table 'technology_mapping.csv1_BCR_2022_07_DDM_ROLLOUT+ (Multiple Connections)'
+ref table 'technology_mapping.csv_BCR_2022_07_DDM_ROLLOUT+ (Multiple Connections)'
+ref table 'all_tracks.csv2_BCR_2022_07_DDM_ROLLOUT+ (Multiple Connections)'
+ref table 'courses.csv_BCR_2022_07_DDM_ROLLOUT+ (Multiple Connections)'
+ref table BCR_2022_07_DDM_ROLLOUT
+
+ref cultureInfo en-US
