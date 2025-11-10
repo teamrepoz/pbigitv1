@@ -1,0 +1,43 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Max Date Exclude",
+      "dax_expression": "SWITCH(WEEKDAY(TODAY()),\n    1, TODAY() - 2,\n    2, TODAY() - 3,\n    TODAY() - 1\n)",
+      "solution_explanation": "Represents the most-recent business date based on TODAY(); implemented as a measure using SWITCH and WEEKDAY to adjust TODAY() for weekends.",
+      "type_changed_reason": "This uses TODAY() (dynamic evaluation). In Power BI such dynamic date calculations must be measures rather than calculated columns."
+    },
+    {
+      "type": "measure",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "MAX_DATE -1day",
+      "dax_expression": "VAR md = [Max Date Exclude]\nRETURN\nSWITCH(WEEKDAY(md),\n    1, md - 2,\n    2, md - 3,\n    md - 1\n)",
+      "solution_explanation": "Calculates Max Date Exclude minus one business day by inspecting the weekday of the computed Max Date Exclude; implemented as a measure referencing the Max Date Exclude measure.",
+      "type_changed_reason": "This depends on the dynamic Max Date Exclude (which uses TODAY()), so it must be a measure rather than a calculated column."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "MUSH Delta Down T USD",
+      "dax_expression": "IF(\n    'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[CURRENCY] = \"USD\",\n    'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[DELTA_DOWN] * 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TO_USD],\n    0\n)",
+      "solution_explanation": "Row-level transformation: when currency = \"USD\" multiply DELTA_DOWN by TO_USD, otherwise 0. Implemented as a calculated column since it is pure row-level logic and does not require dynamic/time-aware functions."
+    },
+    {
+      "type": "measure",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Date Sign",
+      "dax_expression": "VAR useCustom = SELECTEDVALUE('Use Custom Date'[Display As])\nVAR endDate = SELECTEDVALUE('End Date'[Display As])\nVAR startDate = SELECTEDVALUE('Start Date'[Display As])\nVAR effDate = SELECTEDVALUE('Risk_GFIRates_Reports_Excel_Rolling (local copy)'[EFFECTIVE_DATE])\nRETURN\nIF(\n    useCustom,\n    IF(\n        [Max Date Exclude] = effDate, 1,\n        IF([MAX_DATE -1day] = effDate, -1, 0)\n    ),\n    IF(\n        effDate = endDate, 1,\n        IF(effDate = startDate, -1, 0)\n    )\n)",
+      "solution_explanation": "Implements the nested IF logic from Tableau. Parameter references are converted to SELECTEDVALUE('ParameterName'[Display As]). Compares the row's EFFECTIVE_DATE (via SELECTEDVALUE) to computed Max Date values to return 1, -1 or 0.",
+      "type_changed_reason": "The original logic referenced Tableau parameters ([Parameters].*). Per rules, any calculation that depends on parameters must be created as a measure in Power BI."
+    },
+    {
+      "type": "measure",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "MUSH Delta Down Diff USD",
+      "dax_expression": "VAR mushVal = SELECTEDVALUE('Risk_GFIRates_Reports_Excel_Rolling (local copy)'[MUSH Delta Down T USD])\nRETURN\nmushVal * [Date Sign]",
+      "solution_explanation": "Multiplies the row-level MUSH Delta Down T USD value by the Date Sign measure. Uses SELECTEDVALUE for the calculated column to obtain the row's scalar value and multiplies by the Date Sign measure.",
+      "type_changed_reason": "Although the original expression is row-level multiplication, it depends (indirectly) on Date Sign which references parameters; therefore the final calculation must be a measure."
+    }
+  ]
+}
