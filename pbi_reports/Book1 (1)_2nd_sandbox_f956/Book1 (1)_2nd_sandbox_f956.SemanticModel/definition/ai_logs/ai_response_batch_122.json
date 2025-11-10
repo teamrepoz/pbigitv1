@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Delta Down T EUR Fix",
+      "dax_expression": "'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Delta Down T EUR] + 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Fix Value T]",
+      "solution_explanation": "Translated a row-level addition of two fields to a calculated column. No aggregations or parameters are present, so this is implemented as a calculated column with fully qualified table column references."
+    }
+  ]
+}
