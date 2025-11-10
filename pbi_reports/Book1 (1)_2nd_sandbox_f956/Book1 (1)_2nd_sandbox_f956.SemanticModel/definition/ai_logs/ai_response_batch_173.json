@@ -1,0 +1,28 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Max Date Exclude",
+      "dax_expression": "VAR weekdayToday = WEEKDAY(TODAY())\nRETURN\nSWITCH(\n    TRUE(),\n    weekdayToday = 1, TODAY() - 2,\n    weekdayToday = 2, TODAY() - 3,\n    TODAY() - 1\n)",
+      "solution_explanation": "Converted the Tableau CASE on DATEPART('weekday', TODAY()) to DAX using WEEKDAY(TODAY()) and SWITCH(TRUE(), ...). Returns today offset by days depending on weekday.",
+      "type_changed_reason": "The calculation uses TODAY() and global date logic (not row-level). It should be a measure because it's context/aggregation-like and dynamic."
+    },
+    {
+      "type": "measure",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "MAX_DATE -1day",
+      "dax_expression": "VAR md = 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Max Date Exclude]\nVAR wd = WEEKDAY(md)\nRETURN\nSWITCH(\n    TRUE(),\n    wd = 1, md - 2,\n    wd = 2, md - 3,\n    md - 1\n)",
+      "solution_explanation": "Translated the Tableau CASE that uses DATEPART('weekday',[Max Date Exclude]) to DAX by computing WEEKDAY(md) and using SWITCH(TRUE(), ...). References the dependent measure 'Max Date Exclude'.",
+      "type_changed_reason": "This logic operates on computed/global dates rather than per-row fields, so it should be a measure."
+    },
+    {
+      "type": "measure",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Date (Start Date)",
+      "dax_expression": "IF(\n    SELECTEDVALUE('Use Custom Date'[Display As]),\n    'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[MAX_DATE -1day],\n    SELECTEDVALUE('Start Date'[Display As])\n)",
+      "solution_explanation": "Replaced Tableau parameter references with SELECTEDVALUE('ParameterName'[Display As]) and translated the IF conditional. When the parameter Use Custom Date is selected (true), returns the computed MAX_DATE -1day measure; otherwise returns the Start Date parameter value.",
+      "type_changed_reason": "The calculation references Parameters; per rules, any parameter-based calculation must be a measure."
+    }
+  ]
+}
