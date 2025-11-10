@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Book1 (1)_2nd_sandbox_f956"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "3fddd5b4-71b8-4e7c-9c25-cb1b27f36d98"
+  }
+}
