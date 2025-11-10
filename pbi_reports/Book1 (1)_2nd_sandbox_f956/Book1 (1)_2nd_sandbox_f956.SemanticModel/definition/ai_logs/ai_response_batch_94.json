@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Delta Down All CCY Parallel New York",
+      "dax_expression": "IF(\n    'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[BOOK_LOCATION] = \"New York\",\n    'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Delta Down All CCY Parallel],\n    0\n)",
+      "solution_explanation": "Converted Tableau IF ... THEN ... ELSE ... END to DAX IF(). Replaced Tableau column references with 'table_name'[ColumnName] format: [BOOK_LOCATION] -> 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[BOOK_LOCATION] and [Delta Down All CCY Parallel] -> 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Delta Down All CCY Parallel]. This is a row-level calculation (no aggregations or parameters), so it is a calculated column."
+    }
+  ]
+}
