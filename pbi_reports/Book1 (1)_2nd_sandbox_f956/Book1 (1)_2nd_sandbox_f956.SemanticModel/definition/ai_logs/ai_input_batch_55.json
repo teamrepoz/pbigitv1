@@ -1,0 +1,20 @@
+{
+  "calculations": [
+    {
+      "name": "Risk Date # of Days",
+      "table_name": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "tableau_expression": "[RISK_DATE]-[EFFECTIVE_DATE]",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "[RISK_DATE]-[EFFECTIVE_DATE]",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "EFFECTIVE_DATE": "datetime",
+          "RISK_DATE": "datetime"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
