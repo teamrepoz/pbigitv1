@@ -1,0 +1,27 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Date Sign",
+      "dax_expression": "VAR UseCustomDate = SELECTEDVALUE('Use Custom Date'[Display As])\nVAR EndDate = SELECTEDVALUE('End Date'[Display As])\nVAR StartDate = SELECTEDVALUE('Start Date'[Display As])\nRETURN\nIF(\n    UseCustomDate,\n    IF(\n        'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Max Date Exclude] = 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[EFFECTIVE_DATE],\n        1,\n        IF(\n            'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[MAX_DATE -1day] = 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[EFFECTIVE_DATE],\n            -1,\n            0\n        )\n    ),\n    IF(\n        'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[EFFECTIVE_DATE] = EndDate,\n        1,\n        IF(\n            'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[EFFECTIVE_DATE] = StartDate,\n            -1,\n            0\n        )\n    )\n)",
+      "solution_explanation": "Converted the nested IF logic and replaced Tableau parameter references with SELECTEDVALUE('ParameterName'[Display As]). All table column references use the 'table'[column] format.",
+      "type_changed_reason": "The original calculation references Tableau parameters; per rules, any parameter-based calculation must be implemented as a measure."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Delta Down T CAD",
+      "dax_expression": "COALESCE('Risk_GFIRates_Reports_Excel_Rolling (local copy)'[DELTA_DOWN] * 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TO_CAD], 0)",
+      "solution_explanation": "Translated ZN(...) to COALESCE(...) and used the base DELTA_DOWN column multiplied by TO_CAD. Column references use 'table'[column] format."
+    },
+    {
+      "type": "measure",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Delta Down CAD Diff",
+      "dax_expression": "SUMX(\n    'Risk_GFIRates_Reports_Excel_Rolling (local copy)',\n    'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Delta Down T CAD] * [Date Sign]\n)",
+      "solution_explanation": "Per-row multiplication of Delta Down T CAD by the Date Sign measure is performed inside SUMX to evaluate row context, then summed. All column references use 'table'[column] format and Date Sign is referenced as a measure.",
+      "type_changed_reason": "This calculation depends on Date Sign which references parameters; per rules, calculations that use parameters must be measures."
+    }
+  ]
+}
