@@ -1,0 +1,18 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "NVega Up + Vega Up",
+      "dax_expression": "'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[NVEGA_UP] + 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[VEGA_UP]",
+      "solution_explanation": "Converted the Tableau calculated field [NVEGA_UP]+[VEGA_UP] to a DAX calculated column using row-level addition of the two columns."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Vega & NVega Up CAD",
+      "dax_expression": "'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[NVega Up + Vega Up] * 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TO_CAD]",
+      "solution_explanation": "Converted the Tableau expression [NVega Up + Vega Up]*[TO_CAD] to a DAX calculated column multiplying the previously created calculated column by the TO_CAD column."
+    }
+  ]
+}
