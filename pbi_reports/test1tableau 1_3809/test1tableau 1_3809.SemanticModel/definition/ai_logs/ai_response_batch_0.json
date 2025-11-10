@@ -1,0 +1,25 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "trulia_dataset_cleaned (trulia_dataset_cleanedTBL)",
+      "name": "Median Sales Price National",
+      "dax_expression": "MEDIAN('trulia_dataset_cleaned (trulia_dataset_cleanedTBL)'[Price])",
+      "solution_explanation": "Converted Tableau MEDIAN([Price]) to DAX MEDIAN on the column. Kept the aggregation as a measure and transformed the column reference to the 'TableName'[ColumnName] format."
+    },
+    {
+      "type": "measure",
+      "table": "trulia_dataset_cleaned (trulia_dataset_cleanedTBL)",
+      "name": "Median Sales Price % Increase",
+      "dax_expression": "((MEDIAN('trulia_dataset_cleaned (trulia_dataset_cleanedTBL)'[Price]) - MEDIAN('trulia_dataset_cleaned (trulia_dataset_cleanedTBL)'[Last Sold For])) / MEDIAN('trulia_dataset_cleaned (trulia_dataset_cleanedTBL)'[Last Sold For])) * 100",
+      "solution_explanation": "Translated the Tableau expression using MEDIAN aggregates into DAX by applying MEDIAN to each referenced column and preserving the arithmetic. This is an aggregate-based calculation, so it is implemented as a measure. All column references were converted to the 'TableName'[ColumnName] format."
+    },
+    {
+      "type": "calculated_column",
+      "table": "trulia_dataset_cleaned (trulia_dataset_cleanedTBL)",
+      "name": "County Drill Down ",
+      "dax_expression": "IF('trulia_dataset_cleaned (trulia_dataset_cleanedTBL)'[State Set], 'trulia_dataset_cleaned (trulia_dataset_cleanedTBL)'[COUNTYNAME], BLANK())",
+      "solution_explanation": "Converted the row-level Tableau IF [State Set] THEN [COUNTYNAME] END into a DAX IF expression that returns COUNTYNAME when the State Set condition is true, otherwise BLANK(). This operates at the row level, so it is implemented as a calculated column."
+    }
+  ]
+}
