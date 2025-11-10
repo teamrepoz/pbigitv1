@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "HR Dataset",
+      "name": "Calculation1",
+      "dax_expression": "'HR Dataset'[DeptID] + 'HR Dataset'[GenderID]",
+      "solution_explanation": "Converted row-level addition to a calculated column. Both [DeptID] and [GenderID] are row-level integer fields, so the expression is implemented as a calculated column. Column references were transformed to 'TableName'[ColumnName] format."
+    }
+  ]
+}
