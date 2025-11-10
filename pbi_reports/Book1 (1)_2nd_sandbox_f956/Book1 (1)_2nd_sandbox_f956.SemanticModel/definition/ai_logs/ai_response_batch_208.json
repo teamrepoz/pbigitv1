@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Tenor CMF ToH",
+      "dax_expression": "VAR days = 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[RISK_DATE] - 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[EFFECTIVE_DATE]\nRETURN\nIF(\n    YEAR('Risk_GFIRates_Reports_Excel_Rolling (local copy)'[RISK_DATE]) = 1980 && 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[BUCKET_MODE_IND] = \"PARALLEL\",\n    \"Parallel\",\n    IF(\n        days <= 96, \"0-3M\",\n        IF(\n            days <= 189, \"3-6M\",\n            IF(\n                days <= 371, \"6M-1Y\",\n                IF(\n                    days <= 556, \"1-1.5Y\",\n                    IF(\n                        days <= 1102, \"1.5-3Y\",\n                        IF(\n                            days <= 1832, \"3-5Y\",\n                            IF(days > 1832, \">5Y\", \"Error\")\n                        )\n                    )\n                )\n            )\n        )\n    )\n)",
+      "solution_explanation": "Converted the row-level Tableau IF/ELSE bucket logic into a DAX calculated column. Inlined the calculated field [Risk Date # of Days] as the difference ('RISK_DATE' - 'EFFECTIVE_DATE') and preserved the top-level override returning \"Parallel\" when YEAR(RISK_DATE)=1980 and BUCKET_MODE_IND=\"PARALLEL\". All column references were converted to the 'Table'[Column] format."
+    }
+  ]
+}
