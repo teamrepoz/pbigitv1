@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Min Date",
+      "dax_expression": "VAR MinDate = MINX(\n    'Risk_GFIRates_Reports_Excel_Rolling (local copy)',\n    DATE(\n        YEAR('Risk_GFIRates_Reports_Excel_Rolling (local copy)'[EFFECTIVE_DATE]),\n        MONTH('Risk_GFIRates_Reports_Excel_Rolling (local copy)'[EFFECTIVE_DATE]),\n        DAY('Risk_GFIRates_Reports_Excel_Rolling (local copy)'[EFFECTIVE_DATE])\n    )\n)\nRETURN\nMinDate",
+      "solution_explanation": "Tableau's Min(date([EFFECTIVE_DATE])) converts the datetime to a date per row and then takes the minimum. In DAX this is implemented with MINX over the table, converting each row's datetime to a date using DATE(YEAR(...), MONTH(...), DAY(...)) before aggregation.",
+      "type_changed_reason": "The calculation uses an aggregation (MIN), so it must be implemented as a measure."
+    }
+  ]
+}
