@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "trulia_dataset_cleaned (trulia_dataset_cleanedTBL)",
+      "name": "Median Sales Price % Increase",
+      "dax_expression": "VAR medPrice = MEDIAN('trulia_dataset_cleaned (trulia_dataset_cleanedTBL)'[Price])\nVAR medLast = MEDIAN('trulia_dataset_cleaned (trulia_dataset_cleanedTBL)'[Last Sold For])\nRETURN ((medPrice - medLast) / medLast) * 100",
+      "solution_explanation": "Converted Tableau MEDIAN aggregations to DAX MEDIAN for each column and formatted column references to 'TableName'[Column]. Used VARs for clarity and returned the same arithmetic ((MEDIAN(Price)-MEDIAN(Last Sold For))/MEDIAN(Last Sold For))*100 as in Tableau.",
+      "type_changed_reason": "The calculation uses aggregate MEDIAN() functions (aggregations), therefore it must be implemented as a measure."
+    }
+  ]
+}
