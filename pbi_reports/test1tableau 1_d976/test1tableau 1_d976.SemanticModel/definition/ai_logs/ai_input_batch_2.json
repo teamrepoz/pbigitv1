@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "County Drill Down ",
+      "table_name": "trulia_dataset_cleaned (trulia_dataset_cleanedTBL)",
+      "tableau_expression": "IF [State Set] THEN [COUNTYNAME] END",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "IF [State Set] THEN [COUNTYNAME] END",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "COUNTYNAME": "string"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
