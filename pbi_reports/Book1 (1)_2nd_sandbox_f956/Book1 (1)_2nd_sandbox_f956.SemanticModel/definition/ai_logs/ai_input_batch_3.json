@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "FXSelection",
+      "table_name": "Parameters",
+      "tableau_expression": "\"EUR\"",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "\"EUR\"",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
