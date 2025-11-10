@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "Swap Spread",
+      "table_name": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "tableau_expression": "\"Swap Spread\"",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "\"Swap Spread\"",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
