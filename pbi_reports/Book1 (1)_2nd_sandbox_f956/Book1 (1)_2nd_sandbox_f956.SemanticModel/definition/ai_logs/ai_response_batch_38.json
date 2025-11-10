@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Delta Down All CCY 3M Diff",
+      "dax_expression": "'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Delta Down All CCY 3M] * 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Date Sign]",
+      "solution_explanation": "Converted the row-level multiplication of two calculated fields to a calculated column. Replaced Tableau field references with table-scoped references: [Delta Down All CCY 3M] -> 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Delta Down All CCY 3M] and [Date Sign] -> 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Date Sign]."
+    }
+  ]
+}
