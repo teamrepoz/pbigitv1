@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "Daily Change",
+      "table_name": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "tableau_expression": "\"Daily Change\"",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "\"Daily Change\"",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
