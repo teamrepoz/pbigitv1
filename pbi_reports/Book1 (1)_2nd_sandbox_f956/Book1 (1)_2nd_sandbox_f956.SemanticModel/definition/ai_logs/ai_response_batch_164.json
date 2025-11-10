@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Sheet1 - Book Level11",
+      "dax_expression": "\"\"",
+      "solution_explanation": "Tableau STR(NULL) produces a null string; in DAX this is represented as an empty string literal. The expression contains no aggregations or parameters and operates at row-level, so it is created as a calculated column."
+    }
+  ]
+}
