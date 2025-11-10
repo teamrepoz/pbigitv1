@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "End of Month Date",
+      "table_name": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "tableau_expression": "// Created by Antoine Des Aulniers Favreau\r\n// Updated on 10/13/2017 by Antoine Des Aulniers Favreau \r\n// Updated on 11/22/2017 by Antoine Des Aulniers Favreau \r\n// Return the last day of the Month for each Effective Date.\r\n\r\ncase  datepart('weekday',DATE(DATEADD('day',-1,DATEADD('month',1,DATETRUNC('month',[EFFECTIVE_DATE])))))\r\nwhen 7 then DATE(DATEADD('weekday',-2,DATEADD('month',1,DATETRUNC('month',[EFFECTIVE_DATE]))))\r\nwhen 1 then DATE(DATEADD('weekday',-3,DATEADD('month',1,DATETRUNC('month',[EFFECTIVE_DATE]))))\r\nelse DATE(DATEADD('weekday',-1,DATEADD('month',1,DATETRUNC('month',[EFFECTIVE_DATE]))))\r\nend",
+      "datatype": "date",
+      "calculation_context": {
+        "Expression": "// Created by Antoine Des Aulniers Favreau\r\n// Updated on 10/13/2017 by Antoine Des Aulniers Favreau \r\n// Updated on 11/22/2017 by Antoine Des Aulniers Favreau \r\n// Return the last day of the Month for each Effective Date.\r\n\r\ncase  datepart('weekday',DATE(DATEADD('day',-1,DATEADD('month',1,DATETRUNC('month',[EFFECTIVE_DATE])))))\r\nwhen 7 then DATE(DATEADD('weekday',-2,DATEADD('month',1,DATETRUNC('month',[EFFECTIVE_DATE]))))\r\nwhen 1 then DATE(DATEADD('weekday',-3,DATEADD('month',1,DATETRUNC('month',[EFFECTIVE_DATE]))))\r\nelse DATE(DATEADD('weekday',-1,DATEADD('month',1,DATETRUNC('month',[EFFECTIVE_DATE]))))\r\nend",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "EFFECTIVE_DATE": "datetime"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
