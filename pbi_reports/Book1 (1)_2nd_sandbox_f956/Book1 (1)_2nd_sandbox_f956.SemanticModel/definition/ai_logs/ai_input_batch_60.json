@@ -1,0 +1,28 @@
+{
+  "calculations": [
+    {
+      "name": "Credit or IR Filter",
+      "table_name": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "tableau_expression": "case [Parameters].[Credit or IR]\r\nwhen \"Credit\" then if [Credit/IR]=0 then 1 else 0 END\r\nwhen \"IR\" then if [Credit/IR]=1 then 1 else 0 end\r\nwhen \"Both\" then 1 else null end",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "case [Parameters].[Credit or IR]\r\nwhen \"Credit\" then if [Credit/IR]=0 then 1 else 0 END\r\nwhen \"IR\" then if [Credit/IR]=1 then 1 else 0 end\r\nwhen \"Both\" then 1 else null end",
+        "calculated_fields": {
+          "Credit/IR": "case [SOURCE_ID]\r\nwhen 32 then 1    //1 Means Rates, 0 means credit\r\nwhen 37 then 0\r\nelse if [INSTRUMENT_TYPE]= \"CDS\" then 0 else 1 END END",
+          "Credit or IR": "\"Both\""
+        },
+        "parameters": [
+          "Credit or IR"
+        ],
+        "col_to_datatype_mapping": {
+          "INSTRUMENT_TYPE": "string",
+          "SOURCE_ID": "integer"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Credit/IR": "integer",
+          "Credit or IR": "string"
+        }
+      }
+    }
+  ]
+}
