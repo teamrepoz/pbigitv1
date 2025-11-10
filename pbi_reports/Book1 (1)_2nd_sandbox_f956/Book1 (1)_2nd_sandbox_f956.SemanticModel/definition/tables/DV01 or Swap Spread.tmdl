@@ -1,0 +1,46 @@
+table 'DV01 or Swap Spread'
+	lineageTag: e2f759f3-80d0-490d-96c6-45ca0a6ce88b
+
+	column Index
+		formatString: 0
+		lineageTag: 19845106-a2b8-4242-9022-e54bc0c2b535
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: da0486bf-7b09-4bcb-a431-6eb29b3c39b2
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: c99bf2f2-4ed9-40e6-a6e7-2872d46a43a8
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'DV01 or Swap Spread' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "All DV01", "All DV01" },
+				{ 1, "Swap Spread", "Swap Spread" },
+				{ 2, "Non Swap Spread", "Non Swap Spread" }
+			    }
+			)
+
+	annotation PBI_Id = 705ea3bc5229482f8aa9694870108031
+
