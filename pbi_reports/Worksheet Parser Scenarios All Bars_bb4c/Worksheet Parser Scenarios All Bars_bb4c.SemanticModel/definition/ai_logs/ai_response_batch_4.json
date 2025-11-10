@@ -1,0 +1,25 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "HR Dataset",
+      "name": "dep calc 1",
+      "dax_expression": "'HR Dataset'[DeptID]",
+      "solution_explanation": "Row-level reference to DeptID; created as a calculated column because it uses only fields from the same row."
+    },
+    {
+      "type": "calculated_column",
+      "table": "HR Dataset",
+      "name": "dep calc 2",
+      "dax_expression": "'HR Dataset'[dep calc 1] * 'HR Dataset'[MarriedID]",
+      "solution_explanation": "Row-level arithmetic multiplying dep calc 1 by MarriedID; implemented as a calculated column since it operates per row."
+    },
+    {
+      "type": "measure",
+      "table": "HR Dataset",
+      "name": "dep calc 3",
+      "dax_expression": "SUM('HR Dataset'[dep calc 2])",
+      "solution_explanation": "Aggregates dep calc 2 using SUM; created as a measure because it contains an aggregation."
+    }
+  ]
+}
