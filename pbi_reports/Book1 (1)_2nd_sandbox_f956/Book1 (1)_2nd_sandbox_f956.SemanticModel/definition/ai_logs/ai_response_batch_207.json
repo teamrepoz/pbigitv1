@@ -1,0 +1,18 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Risk Date # of Days",
+      "dax_expression": "'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[RISK_DATE] - 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[EFFECTIVE_DATE]",
+      "solution_explanation": "Converted the row-level date difference from Tableau to a DAX calculated column by subtracting the EFFECTIVE_DATE from RISK_DATE. In DAX this returns the difference in days as a decimal number."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Tenor CS01",
+      "dax_expression": "VAR rYear = YEAR('Risk_GFIRates_Reports_Excel_Rolling (local copy)'[RISK_DATE])\nVAR termLabel = 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TERM_LABEL]\nVAR days = 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Risk Date # of Days]\nRETURN\nIF(\n    rYear = 1980,\n    \"Parallel\",\n    IF(\n        termLabel = \"10 Year\",\n        \">10Y\",\n        IF(\n            days <= 730, \"0-2Y\",\n            IF(\n                days <= 1825, \"2-5Y\",\n                IF(\n                    days <= 3650, \"5-10Y\",\n                    IF(days > 3650, \">10Y\", \"Error\")\n                )\n            )\n        )\n    )\n)",
+      "solution_explanation": "Translated the Tableau IF logic into a DAX calculated column using VARs for readability. It first checks for the special year (1980) to return \"Parallel\", then evaluates TERM_LABEL = \"10 Year\" and otherwise classifies by the number of days using the calculated column 'Risk Date # of Days'."
+    }
+  ]
+}
