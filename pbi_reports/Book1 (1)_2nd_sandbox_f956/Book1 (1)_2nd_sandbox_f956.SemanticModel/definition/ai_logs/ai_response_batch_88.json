@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Delta Down All CCY 6M CAD",
+      "dax_expression": "VAR TermLabel = 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TERM_LABEL]\nVAR MarketSubtype = 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Market Subtype]\nVAR RiskDays = 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Risk Date # of Days]\nRETURN\nIF(\n    TermLabel = \"4 Month\" ||\n    TermLabel = \"4 Month Swap\" ||\n    TermLabel = \"5 Month\" ||\n    TermLabel = \"6 Month Swap\" ||\n    TermLabel = \"6 Month\" ||\n    TermLabel = \"6 Month Swap\" ||\n    (MarketSubtype = \"Major Curve\" && RiskDays > 91 && RiskDays <= 183),\n    'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Delta Down T CAD] + 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Fix Value T],\n    0\n)",
+      "solution_explanation": "Converted the Tableau IF with OR conditions to a DAX calculated column. All field references were mapped to 'TableName'[ColumnName]. The expression is row-level (no aggregations or parameters), so it is implemented as a calculated column."
+    }
+  ]
+}
