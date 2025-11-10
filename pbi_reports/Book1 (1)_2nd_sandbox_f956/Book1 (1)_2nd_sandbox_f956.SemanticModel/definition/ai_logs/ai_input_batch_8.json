@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "Book Level 1 Mapping",
+      "table_name": "Parameters",
+      "tableau_expression": "\"Default\"",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "\"Default\"",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
