@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Median Sales Price National",
+      "table_name": "trulia_dataset_cleaned (trulia_dataset_cleanedTBL)",
+      "tableau_expression": "MEDIAN([Price])",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "MEDIAN([Price])",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Price": "integer"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
