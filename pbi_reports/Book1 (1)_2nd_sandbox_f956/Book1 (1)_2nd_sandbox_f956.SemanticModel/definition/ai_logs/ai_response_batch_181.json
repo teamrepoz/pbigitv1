@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Daily Change",
+      "dax_expression": "\"Daily Change\"",
+      "solution_explanation": "The Tableau expression is a constant string literal. Create a calculated column that returns the same string for every row."
+    }
+  ]
+}
