@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "trulia_dataset_cleaned (trulia_dataset_cleanedTBL)",
+      "name": "County Drill Down ",
+      "dax_expression": "IF('trulia_dataset_cleaned (trulia_dataset_cleanedTBL)'[State Set], 'trulia_dataset_cleaned (trulia_dataset_cleanedTBL)'[COUNTYNAME], BLANK())",
+      "solution_explanation": "Translated Tableau IF [State Set] THEN [COUNTYNAME] END into DAX IF(condition, trueResult, BLANK()). This is a row-level conditional returning the COUNTYNAME when State Set is true, so implemented as a calculated column."
+    }
+  ]
+}
