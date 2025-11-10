@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "NVega Up + Vega Up",
+      "dax_expression": "'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[NVEGA_UP] + 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[VEGA_UP]",
+      "solution_explanation": "Row-level addition converted to a calculated column using fully qualified column references. Inline Tableau comments were removed."
+    }
+  ]
+}
