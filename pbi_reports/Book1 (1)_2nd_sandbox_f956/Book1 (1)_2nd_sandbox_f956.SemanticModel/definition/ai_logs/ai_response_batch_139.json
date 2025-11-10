@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Delta Down USD 5Y Diff",
+      "dax_expression": "'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Delta Down T USD 5Y] * 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Date Sign]",
+      "solution_explanation": "Converted the Tableau row-level multiplication [Delta Down T USD 5Y]* [Date Sign] into a DAX measure by mapping each field to 'TableName'[ColumnName] format and using the * operator for multiplication.",
+      "type_changed_reason": "The 'Date Sign' field references a Tableau parameter ([Parameters].[Use Custom Date]); any calculation depending on parameters must be implemented as a measure."
+    }
+  ]
+}
