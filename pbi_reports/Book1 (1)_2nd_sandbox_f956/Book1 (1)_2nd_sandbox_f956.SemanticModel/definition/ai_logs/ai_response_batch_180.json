@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Date Color",
+      "dax_expression": "VAR UseCustomDate = SELECTEDVALUE('Use Custom Date'[Display As])\nVAR StartDateParam = SELECTEDVALUE('Start Date'[Display As])\nVAR EndDateParam = SELECTEDVALUE('End Date'[Display As])\nRETURN\nIF(\n    UseCustomDate,\n    IF(\n        'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[EFFECTIVE_DATE] = 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[MAX_DATE -1day],\n        1,\n        IF(\n            'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[EFFECTIVE_DATE] = 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Max Date Exclude],\n            2,\n            BLANK()\n        )\n    ),\n    IF(\n        'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[EFFECTIVE_DATE] = StartDateParam,\n        1,\n        IF(\n            'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[EFFECTIVE_DATE] = EndDateParam,\n            2,\n            0\n        )\n    )\n)",
+      "solution_explanation": "Converted nested Tableau IF blocks to DAX using VARs for parameter SELECTEDVALUE replacements and nested IFs. Replaced [Parameters].[Use Custom Date], [Parameters].[Start Date], and [Parameters].[End Date] with SELECTEDVALUE('Use Custom Date'[Display As]), SELECTEDVALUE('Start Date'[Display As]), and SELECTEDVALUE('End Date'[Display As]) respectively. All column and calculated field references were transformed to the 'Table'[Column] format using the provided table name.",
+      "type_changed_reason": "The calculation references parameters, and all parameter-based calculations must be measures."
+    }
+  ]
+}
