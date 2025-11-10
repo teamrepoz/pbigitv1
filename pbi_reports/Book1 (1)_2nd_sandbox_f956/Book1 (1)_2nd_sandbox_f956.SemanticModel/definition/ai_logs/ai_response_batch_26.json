@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Instrument Count Filter",
+      "dax_expression": "VAR LOD_Value =\n    CALCULATE(\n        DISTINCTCOUNT('Risk_GFIRates_Reports_Excel_Rolling (local copy)'[INSTRUMENT_TYPE]),\n        ALL(\n            'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[INSTRUMENT_TYPE],\n            'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TERM_LABEL]\n        )\n    )\nRETURN\nIF(LOD_Value > 6, \"Dynamic Height\", \"Dynamic View\")",
+      "solution_explanation": "Converted the Tableau LOD EXCLUDE and aggregations into DAX: COUNTD -> DISTINCTCOUNT, the LOD EXCLUDE on [INSTRUMENT_TYPE] and [TERM_LABEL] is implemented by removing filters on those columns using ALL(...) inside CALCULATE. The outer MAX around the LOD in Tableau is redundant for a scalar LOD, so the scalar LOD value is compared directly to 6 and the IF returns the same string results.",
+      "type_changed_reason": "The Tableau expression uses an LOD ({EXCLUDE ...}) and an aggregation (countd), which are context/aggregate-based operations. Per the rules, this must be implemented as a measure."
+    }
+  ]
+}
