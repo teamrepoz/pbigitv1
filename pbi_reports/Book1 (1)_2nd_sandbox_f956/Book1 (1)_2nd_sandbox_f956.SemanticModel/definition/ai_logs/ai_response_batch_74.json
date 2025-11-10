@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Delta Down All CCY 1Y CAD",
+      "dax_expression": "IF(\n    'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TERM_LABEL] = \"12 Month\" ||\n    'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TERM_LABEL] = \"12 Month Swap\" ||\n    'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TERM_LABEL] = \"1 Yr\" ||\n    'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TERM_LABEL] = \"1 Yr Swap\" ||\n    'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TERM_LABEL] = \"10 Month\" ||\n    'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TERM_LABEL] = \"11 Month\" ||\n    'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TERM_LABEL] = \"10 Month Swap\" ||\n    'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TERM_LABEL] = \"11 Month Swap\" ||\n    (\n        'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Market Subtype] = \"Major Curve\" &&\n        'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Risk Date # of Days] > 274 &&\n        'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Risk Date # of Days] <= 365\n    ) ||\n    (\n        'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Market Subtype] = \"6m Basis\" &&\n        'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Risk Date # of Days] > 274 &&\n        'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Risk Date # of Days] <= 365 &&\n        CONTAINSSTRING('Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TERM_LABEL], \"FRA\")\n    ),\n    'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Delta Down T CAD] + 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Fix Value T],\n    0\n)",
+      "solution_explanation": "Converted the Tableau IF...THEN...ELSE to DAX IF(), replaced Tableau CONTAINS(...) with DAX CONTAINSSTRING(), and transformed all field references to the 'Table'[Column] format using the calculation's table name. This is a row-level expression (no aggregations or parameters), so it is implemented as a calculated column."
+    }
+  ]
+}
