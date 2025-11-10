@@ -1,0 +1,18 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "HR Dataset",
+      "name": "dep calc 1",
+      "dax_expression": "'HR Dataset'[DeptID]",
+      "solution_explanation": "This is a direct row-level reference to the DeptID column. It operates per row without aggregation, so it is implemented as a calculated column."
+    },
+    {
+      "type": "calculated_column",
+      "table": "HR Dataset",
+      "name": "BATCH",
+      "dax_expression": "'HR Dataset'[BATCH]",
+      "solution_explanation": "The Tableau expression is a direct field reference to BATCH. This is row-level logic (no aggregation or parameters), so it should be created as a calculated column."
+    }
+  ]
+}
