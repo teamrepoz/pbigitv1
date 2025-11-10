@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "End of Month Date",
+      "dax_expression": "VAR LastDay = EOMONTH('Risk_GFIRates_Reports_Excel_Rolling (local copy)'[EFFECTIVE_DATE], 0)\nVAR wk = WEEKDAY(LastDay, 1)\nRETURN\nSWITCH(\n    TRUE(),\n    wk = 7, LastDay - 1,\n    wk = 1, LastDay - 2,\n    LastDay\n)",
+      "solution_explanation": "Converted the Tableau CASE that examined the weekday of the month-end into DAX: compute the calendar month end with EOMONTH, get its weekday with WEEKDAY(...,1) (1=Sunday..7=Saturday), and adjust weekends to the prior Friday (Saturday -> -1 day, Sunday -> -2 days). Used SWITCH(TRUE(), ...) to replicate the CASE/WHEN logic and preserved row-level calculation as a calculated column."
+    }
+  ]
+}
