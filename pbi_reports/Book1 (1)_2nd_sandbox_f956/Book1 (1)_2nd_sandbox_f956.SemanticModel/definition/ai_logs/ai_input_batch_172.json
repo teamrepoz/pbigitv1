@@ -1,0 +1,28 @@
+{
+  "calculations": [
+    {
+      "name": "Date (End Date)",
+      "table_name": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "tableau_expression": "if [Parameters].[Use Custom Date] then \r\n    [Max Date Exclude] else [Parameters].[End Date]\r\nend",
+      "datatype": "date",
+      "calculation_context": {
+        "Expression": "if [Parameters].[Use Custom Date] then \r\n    [Max Date Exclude] else [Parameters].[End Date]\r\nend",
+        "calculated_fields": {
+          "Use Custom Date": "false",
+          "End Date": "#2017-01-06#",
+          "Max Date Exclude": "//if today() = date(\"12/26/2016\") or \r\n   // today() = date(\"01/02/2017\") or \r\n   // today() = date(\"12/26/2017\") or \r\n   // today() = date(\"01/02/2018\") or \r\n   // today() = date(\"12/26/2018\") or \r\n   // today() = date(\"01/02/2019\") or \r\n   // today() = date(\"12/26/2019\") or   \r\n   // today() = date(\"01/02/2020\")  \r\n\r\n\r\n//then \r\n\r\n   // case datepart('weekday',today())\r\n   // when 1 then today()-3\r\n   // when 2 then today()-4\r\n   // else today()-2\r\n   // end\r\n\r\n//else \r\n\r\n    case datepart('weekday',today())\r\n    when 1 then today()-2\r\n    when 2 then today()-3\r\n    else today()-1\r\n    end\r\n//end"
+        },
+        "parameters": [
+          "Use Custom Date",
+          "End Date"
+        ],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {
+          "Use Custom Date": "boolean",
+          "End Date": "date",
+          "Max Date Exclude": "DateTime"
+        }
+      }
+    }
+  ]
+}
