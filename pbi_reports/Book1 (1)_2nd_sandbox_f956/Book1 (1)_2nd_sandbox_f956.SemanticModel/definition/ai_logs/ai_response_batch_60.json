@@ -1,0 +1,19 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Credit/IR",
+      "dax_expression": "IF('Risk_GFIRates_Reports_Excel_Rolling (local copy)'[SOURCE_ID] = 32, 1, IF('Risk_GFIRates_Reports_Excel_Rolling (local copy)'[SOURCE_ID] = 37, 0, IF('Risk_GFIRates_Reports_Excel_Rolling (local copy)'[INSTRUMENT_TYPE] = \"CDS\", 0, 1)))",
+      "solution_explanation": "Converted the Tableau CASE/IF logic to nested DAX IF expressions. It checks SOURCE_ID = 32 -> 1, SOURCE_ID = 37 -> 0, otherwise evaluates INSTRUMENT_TYPE = \"CDS\" -> 0 else 1. This is row-level logic, so implemented as a calculated column."
+    },
+    {
+      "type": "measure",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Credit or IR Filter",
+      "dax_expression": "VAR _param = SELECTEDVALUE('Credit or IR'[Display As])\nVAR _creditIR = SELECTEDVALUE('Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Credit/IR])\nRETURN\nSWITCH(\n    TRUE(),\n    _param = \"Credit\" && _creditIR = 0, 1,\n    _param = \"IR\" && _creditIR = 1, 1,\n    _param = \"Both\", 1,\n    BLANK()\n)",
+      "solution_explanation": "Recreated the Tableau CASE over the parameter using SELECTEDVALUE for the parameter and the dependent calculated column. SWITCH(TRUE(), ...) mirrors the CASE WHEN branches: when parameter = \"Credit\" check Credit/IR = 0 -> 1; when parameter = \"IR\" check Credit/IR = 1 -> 1; when \"Both\" -> 1; otherwise BLANK(). Implemented as a measure because it references a parameter.",
+      "type_changed_reason": "The calculation references a parameter, and all parameter-based calculations must be measures."
+    }
+  ]
+}
