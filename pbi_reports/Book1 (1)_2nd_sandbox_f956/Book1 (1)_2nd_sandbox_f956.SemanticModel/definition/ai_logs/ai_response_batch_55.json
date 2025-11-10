@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Risk Date # of Days",
+      "dax_expression": "'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[RISK_DATE] - 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[EFFECTIVE_DATE]",
+      "solution_explanation": "Row-level subtraction of two datetime fields converted to a calculated column. In DAX subtracting two datetimes yields the difference in days (decimal)."
+    }
+  ]
+}
