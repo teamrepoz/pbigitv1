@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Parameters",
+      "name": "Use Custom Date",
+      "dax_expression": "FALSE()",
+      "solution_explanation": "Tableau 'false' is a boolean literal. This has no aggregations or parameter usage and is row-level (constant per row), so it should be implemented as a calculated column using the DAX boolean FALSE()."
+    }
+  ]
+}
