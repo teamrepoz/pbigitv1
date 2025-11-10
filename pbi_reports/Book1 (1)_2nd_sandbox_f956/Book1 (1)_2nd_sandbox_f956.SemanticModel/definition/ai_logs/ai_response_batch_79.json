@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Delta Down All CCY 2Y CAD Diff",
+      "dax_expression": "SUMX(\n    'Risk_GFIRates_Reports_Excel_Rolling (local copy)',\n    'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Delta Down All CCY 2Y CAD] * 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Date Sign]\n)",
+      "solution_explanation": "Mapped each column reference to the table-qualified format and translated the row-level multiplication into a measure by aggregating the per-row product with SUMX so the result is a scalar measure. Date Sign remains referenced as a column within the SUMX iterator.",
+      "type_changed_reason": "The referenced calculated field 'Date Sign' relies on Tableau [Parameters], and per rules any formula that references parameters must be converted to a measure. Additionally, measures must return a scalar, so the row-level product is aggregated using SUMX."
+    }
+  ]
+}
