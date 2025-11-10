@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "1 Viz Bar with Measure_53a2"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "201327d9-0d49-4d75-99f6-10de26ad8403"
+  }
+}
