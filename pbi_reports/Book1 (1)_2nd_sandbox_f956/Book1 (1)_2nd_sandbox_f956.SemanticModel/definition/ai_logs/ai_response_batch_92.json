@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Delta Down All CCY 1Y",
+      "dax_expression": "VAR TermLabel = 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TERM_LABEL]\nVAR MarketSubtype = 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Market Subtype]\nVAR Days = 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Risk Date # of Days]\nRETURN\nIF(\n    (\n        TermLabel = \"12 Month\" ||\n        TermLabel = \"12 Month Swap\" ||\n        TermLabel = \"1 Yr\" ||\n        TermLabel = \"1 Yr Swap\" ||\n        TermLabel = \"10 Month\" ||\n        TermLabel = \"11 Month\" ||\n        TermLabel = \"10 Month Swap\" ||\n        TermLabel = \"11 Month Swap\"\n    )\n    || (MarketSubtype = \"Major Curve\" && Days > 274 && Days <= 365)\n    || (MarketSubtype = \"6m Basis\" && Days > 274 && Days <= 365 && CONTAINSSTRING(TermLabel, \"FRA\")),\n    'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Delta Down T USD] + 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Fix Value T],\n    0\n)",
+      "solution_explanation": "Converted the Tableau IF expression to a DAX calculated column. Replaced Tableau CONTAINS(...) with DAX CONTAINSSTRING, mapped logical operators to DAX (||, &&), and transformed all field references to 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[ColumnName] format. The result returns the sum of Delta Down T USD and Fix Value T when any of the TERM_LABEL conditions or Market Subtype/Days conditions are met, otherwise 0."
+    }
+  ]
+}
