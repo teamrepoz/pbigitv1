@@ -1,0 +1,392 @@
+table 'BCR_2022_07_DDM_ROLLOUT+ (Multiple Connections)_Union1'
+	lineageTag: 41b080c8-243e-4016-85d2-775fd0efee3f
+
+	column track_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 496064b6-a490-4f7f-8eb4-e0f5ae03a086
+		summarizeBy: sum
+		sourceColumn: track_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column track_title
+		dataType: string
+		lineageTag: 0b22dd4f-93cb-405f-aac0-a7c34ffbf0ec
+		summarizeBy: none
+		sourceColumn: track_title
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_career
+		dataType: string
+		lineageTag: 79ecf68a-f987-4842-903f-118f816a38f4
+		summarizeBy: none
+		sourceColumn: is_career
+
+		annotation SummarizationSetBy = Automatic
+
+	column course_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 4385f799-3fff-48cc-9a86-8adc46cf8b12
+		summarizeBy: sum
+		sourceColumn: course_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_chapters
+		dataType: int64
+		formatString: 0
+		lineageTag: e6a7b5c6-8bd7-4ef7-a45a-812d39545d95
+		summarizeBy: sum
+		sourceColumn: total_chapters
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_exercises
+		dataType: int64
+		formatString: 0
+		lineageTag: 641d6fbf-22db-476d-aed3-1cd199c6307d
+		summarizeBy: sum
+		sourceColumn: total_exercises
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_videos
+		dataType: int64
+		formatString: 0
+		lineageTag: 16d63a8c-c620-421a-a19e-a3186c4dc698
+		summarizeBy: sum
+		sourceColumn: total_videos
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_xp
+		dataType: double
+		formatString: General Number
+		lineageTag: 5bdde4ca-db8c-477d-bcd6-598481e2e145
+		summarizeBy: sum
+		sourceColumn: total_xp
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_xp_per_course
+		dataType: double
+		formatString: General Number
+		lineageTag: 7119105e-d282-4a30-b942-3b2d8e896a4d
+		summarizeBy: sum
+		sourceColumn: avg_xp_per_course
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_time_hours
+		dataType: double
+		formatString: General Number
+		lineageTag: ed425856-66b4-4599-a18a-cc72a20f8337
+		summarizeBy: sum
+		sourceColumn: avg_time_hours
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column total_duration_hours
+		dataType: double
+		formatString: General Number
+		lineageTag: 6f843560-2371-4654-9d72-9eac5a77e40b
+		summarizeBy: sum
+		sourceColumn: total_duration_hours
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column datasets_count
+		dataType: int64
+		formatString: 0
+		lineageTag: f2a9616e-51f7-4eb9-a9c2-0630d686d969
+		summarizeBy: sum
+		sourceColumn: datasets_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column programming_languages
+		dataType: string
+		lineageTag: 52272068-afb0-44a9-8945-4d1396a32fea
+		summarizeBy: none
+		sourceColumn: programming_languages
+
+		annotation SummarizationSetBy = Automatic
+
+	column course_difficulty_levels
+		dataType: string
+		lineageTag: fdd60483-d78b-4c5b-92dc-608959adf516
+		summarizeBy: none
+		sourceColumn: course_difficulty_levels
+
+		annotation SummarizationSetBy = Automatic
+
+	column predominant_difficulty
+		dataType: int64
+		formatString: 0
+		lineageTag: 463ec02e-423f-4450-8226-dd00aff73b3e
+		summarizeBy: sum
+		sourceColumn: predominant_difficulty
+
+		annotation SummarizationSetBy = Automatic
+
+	column course_titles
+		dataType: string
+		lineageTag: aa4ba6c1-f2dc-4f46-ad8c-c9e37fd87cc9
+		summarizeBy: none
+		sourceColumn: course_titles
+
+		annotation SummarizationSetBy = Automatic
+
+	column instructors
+		dataType: string
+		lineageTag: 5a6135af-f48c-442d-a794-d4ace419e0f4
+		summarizeBy: none
+		sourceColumn: instructors
+
+		annotation SummarizationSetBy = Automatic
+
+	column participant_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 32c5f31c-28cf-41d6-8f07-89826d79f8a3
+		summarizeBy: sum
+		sourceColumn: participant_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column id
+		dataType: int64
+		formatString: 0
+		lineageTag: 437901f8-35c1-4836-9154-b2cc7a7be118
+		summarizeBy: sum
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column title
+		dataType: string
+		lineageTag: 4967e287-9844-430a-9a87-96c89c8b4575
+		summarizeBy: none
+		sourceColumn: title
+
+		annotation SummarizationSetBy = Automatic
+
+	column description
+		dataType: string
+		lineageTag: 80098b66-0ab5-4829-9f0d-a1b5230d314b
+		summarizeBy: none
+		sourceColumn: description
+
+		annotation SummarizationSetBy = Automatic
+
+	column short_description
+		dataType: string
+		lineageTag: 7aac9b16-0e93-4263-8533-47e27c7c766a
+		summarizeBy: none
+		sourceColumn: short_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column programming_language
+		dataType: string
+		lineageTag: 11186a19-d71e-4f30-b6e4-86c0ed634c32
+		summarizeBy: none
+		sourceColumn: programming_language
+
+		annotation SummarizationSetBy = Automatic
+
+	column difficulty_level
+		dataType: int64
+		formatString: 0
+		lineageTag: 0c4183da-2892-4777-a921-f6035ca1d3f5
+		summarizeBy: sum
+		sourceColumn: difficulty_level
+
+		annotation SummarizationSetBy = Automatic
+
+	column xp
+		dataType: int64
+		formatString: 0
+		lineageTag: d9cc6a0e-7882-4713-b5ab-f936e3659028
+		summarizeBy: sum
+		sourceColumn: xp
+
+		annotation SummarizationSetBy = Automatic
+
+	column time_needed_in_hours
+		dataType: int64
+		formatString: 0
+		lineageTag: 7da34c8b-48ff-405e-8553-4201b67162e3
+		summarizeBy: sum
+		sourceColumn: time_needed_in_hours
+
+		annotation SummarizationSetBy = Automatic
+
+	column topic_id
+		dataType: double
+		formatString: General Number
+		lineageTag: 7e9ea21a-198e-4ba1-9864-ff67d87a46c3
+		summarizeBy: sum
+		sourceColumn: topic_id
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column technology_id
+		dataType: int64
+		formatString: 0
+		lineageTag: d5a6f734-776d-4642-a2f4-c02654fbe8a9
+		summarizeBy: sum
+		sourceColumn: technology_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column content_area
+		dataType: string
+		lineageTag: f3c5662d-18fa-47b1-8d39-03d291c2d3a4
+		summarizeBy: none
+		sourceColumn: content_area
+
+		annotation SummarizationSetBy = Automatic
+
+	column link
+		dataType: string
+		lineageTag: 4e4b1bd3-d53f-49b7-845d-968b1a08fb3f
+		summarizeBy: none
+		sourceColumn: link
+
+		annotation SummarizationSetBy = Automatic
+
+	column image_url
+		dataType: string
+		lineageTag: af0a3cff-fb9d-4c00-9271-1b8abfd14a1b
+		summarizeBy: none
+		sourceColumn: image_url
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_updated_on
+		dataType: datetime
+		lineageTag: 30b9d706-0849-4fe4-a59a-517393690f88
+		summarizeBy: none
+		sourceColumn: last_updated_on
+
+		annotation SummarizationSetBy = Automatic
+
+	column nb_of_subscriptions
+		dataType: int64
+		formatString: 0
+		lineageTag: eea7fb5a-39b5-45d5-ad7e-4cfcea25f115
+		summarizeBy: sum
+		sourceColumn: nb_of_subscriptions
+
+		annotation SummarizationSetBy = Automatic
+
+	column num_chapters
+		dataType: int64
+		formatString: 0
+		lineageTag: ed31ad12-c827-4cfc-9e8d-eb358f7ed774
+		summarizeBy: sum
+		sourceColumn: num_chapters
+
+		annotation SummarizationSetBy = Automatic
+
+	column num_exercises
+		dataType: int64
+		formatString: 0
+		lineageTag: ca151966-7721-4530-91c1-f01e27e5596b
+		summarizeBy: sum
+		sourceColumn: num_exercises
+
+		annotation SummarizationSetBy = Automatic
+
+	column num_videos
+		dataType: int64
+		formatString: 0
+		lineageTag: 903c6204-a99b-4540-805b-a78305791324
+		summarizeBy: sum
+		sourceColumn: num_videos
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'datasets_count.1'
+		dataType: int64
+		formatString: 0
+		lineageTag: c07f3c3f-7616-43f3-959d-23bfc3d6f689
+		summarizeBy: sum
+		sourceColumn: 'datasets_count.1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column instructors_names
+		dataType: string
+		lineageTag: ac16c1d9-cf62-499c-9dad-f08aefb48000
+		summarizeBy: none
+		sourceColumn: instructors_names
+
+		annotation SummarizationSetBy = Automatic
+
+	column collaborators_names
+		dataType: string
+		lineageTag: 26e9c98a-1724-41fa-ad63-cbc9ecadc526
+		summarizeBy: none
+		sourceColumn: collaborators_names
+
+		annotation SummarizationSetBy = Automatic
+
+	column tracks_titles
+		dataType: string
+		lineageTag: 8b1b0035-1c93-44c8-8b7e-6d4cc33fce6a
+		summarizeBy: none
+		sourceColumn: tracks_titles
+
+		annotation SummarizationSetBy = Automatic
+
+	column prerequisites_titles
+		dataType: string
+		lineageTag: 8ba2696c-901e-45b3-8394-2fa39da31e1b
+		summarizeBy: none
+		sourceColumn: prerequisites_titles
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'technology_id.1'
+		dataType: int64
+		formatString: 0
+		lineageTag: 4bc2a297-b6c7-40f1-a35d-c66988c5d0e7
+		summarizeBy: sum
+		sourceColumn: 'technology_id.1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column technology_name
+		dataType: string
+		lineageTag: f85f7904-9cdf-4b4e-af57-868c4f9c3573
+		summarizeBy: none
+		sourceColumn: technology_name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'BCR_2022_07_DDM_ROLLOUT+ (Multiple Connections)_Union1' = m
+		mode: import
+		source =
+				let
+					    Source = Table.Combine({#"all_tracks.csv2_BCR_2022_07_DDM_ROLLOUT+ (Multiple Connections)", #"courses.csv_BCR_2022_07_DDM_ROLLOUT+ (Multiple Connections)", #"technology_mapping.csv_BCR_2022_07_DDM_ROLLOUT+ (Multiple Connections)"})
+					in
+					    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
