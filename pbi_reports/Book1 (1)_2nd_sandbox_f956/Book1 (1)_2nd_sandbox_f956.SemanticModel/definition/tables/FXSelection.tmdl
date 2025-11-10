@@ -1,0 +1,47 @@
+table 'FXSelection'
+	lineageTag: 85f148b3-857a-4d7a-b4f4-188a9d81698f
+
+	column Index
+		formatString: 0
+		lineageTag: 7e87cdcc-3c5e-4d5b-913d-70cf5b627314
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 086d802a-73da-4b84-a3f8-268ad04b3dda
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 9f52d87b-cb28-405c-9225-f7a6505783dc
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'FXSelection' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "CAD", "CAD" },
+				{ 1, "USD", "USD" },
+				{ 2, "EUR", "EUR" },
+				{ 3, "GBP", "GBP" }
+			    }
+			)
+
+	annotation PBI_Id = d98d8eff4bb845fd9a73e01307b4662d
+
