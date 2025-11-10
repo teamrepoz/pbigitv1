@@ -1,0 +1,27 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Delta Down All CCY 5Y",
+      "dax_expression": "VAR deltaSum = 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Delta Down T USD] + 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Fix Value T]\nRETURN\nIF(\n    'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TERM_LABEL] = \"5 Yr\" ||\n    'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TERM_LABEL] = \"5 Yr Swap\" ||\n    (\n        'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Market Subtype] = \"Major Curve\" &&\n        'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Risk Date # of Days] > 731 &&\n        'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Risk Date # of Days] <= 1150 &&\n        'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Market Name] = \"USDsUSDs1dMid\"\n    ) ||\n    (\n        'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Market Subtype] = \"Major Curve\" &&\n        'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Risk Date # of Days] > 731 &&\n        'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Risk Date # of Days] <= 1097\n    ),\n    deltaSum,\n    0\n)\n+\nIF(\n    'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TERM_LABEL] = \"4 Yr\" ||\n    'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TERM_LABEL] = \"4 Yr Swap\",\n    (2/3) * deltaSum,\n    0\n)\n+\nIF(\n    'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TERM_LABEL] = \"3 Yr\" ||\n    'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TERM_LABEL] = \"3 Yr Swap\",\n    (1/3) * deltaSum,\n    0\n)\n+\nIF(\n    'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TERM_LABEL] = \"6 Yr\" ||\n    'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TERM_LABEL] = \"6 Yr Swap\",\n    (4/5) * deltaSum,\n    0\n)\n+\nIF(\n    'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TERM_LABEL] = \"7 Yr\" ||\n    'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TERM_LABEL] = \"7 Yr Swap\",\n    (3/5) * deltaSum,\n    0\n)\n+\nIF(\n    'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TERM_LABEL] = \"8 Yr\" ||\n    'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TERM_LABEL] = \"8 Yr Swap\",\n    (2/5) * deltaSum,\n    0\n)\n+\nIF(\n    'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TERM_LABEL] = \"9 Yr\" ||\n    'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TERM_LABEL] = \"9 Yr Swap\",\n    (1/5) * deltaSum,\n    0\n)",
+      "solution_explanation": "Converted the row-level Tableau IF blocks into DAX using VAR for the repeated sum (Delta Down T USD + Fix Value T) and IF expressions. All column references were transformed to 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Column] format. This is a calculated column because the logic is row-level (no aggregation or parameters)."
+    },
+    {
+      "type": "measure",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Date Sign",
+      "dax_expression": "VAR UseCustom = SELECTEDVALUE('Use Custom Date'[Display As])\nVAR EffDate = MAX('Risk_GFIRates_Reports_Excel_Rolling (local copy)'[EFFECTIVE_DATE])\nVAR MaxDateExc = MAX('Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Max Date Exclude])\nVAR MaxDateMinus1 = MAX('Risk_GFIRates_Reports_Excel_Rolling (local copy)'[MAX_DATE -1day])\nVAR EndDate = SELECTEDVALUE('End Date'[Display As])\nVAR StartDate = SELECTEDVALUE('Start Date'[Display As])\nRETURN\nIF(\n    UseCustom,\n    IF(MaxDateExc = EffDate, 1, IF(MaxDateMinus1 = EffDate, -1, 0)),\n    IF(EffDate = EndDate, 1, IF(EffDate = StartDate, -1, 0))\n)",
+      "solution_explanation": "Translated the nested Tableau IF that references parameters into a DAX measure. Parameters were replaced using SELECTEDVALUE('ParameterName'[Display As]) as required. Because measures do not have implicit row context, MAX(...) is used to obtain the column values in the current filter context before comparisons. All column references use the 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Column] format.",
+      "type_changed_reason": "The original calculation references Tableau parameters ([Parameters]...), and per rules any parameter-based calculation must be implemented as a measure."
+    },
+    {
+      "type": "measure",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Delta Down All CCY 5Y Diff",
+      "dax_expression": "SUMX(\n    'Risk_GFIRates_Reports_Excel_Rolling (local copy)',\n    'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Delta Down All CCY 5Y] * [Date Sign]\n)",
+      "solution_explanation": "The original Tableau expression multiplied two fields: [Delta Down All CCY 5Y] and [Date Sign]. Because [Date Sign] depends on parameters (now implemented as a measure), the overall calculation must be a measure. Implemented SUMX over the table to aggregate the row-level product of the calculated column 'Delta Down All CCY 5Y' and the measure [Date Sign]. Column references use the required 'table'[column] format.",
+      "type_changed_reason": "The calculation references a parameter-dependent field ([Date Sign]) so it must be a measure."
+    }
+  ]
+}
