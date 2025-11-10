@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "MUSH Delta Down Diff CAD ",
+      "dax_expression": "VAR DeltaDown_T_CAD = COALESCE('Risk_GFIRates_Reports_Excel_Rolling (local copy)'[DELTA_DOWN] * 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[TO_CAD], 0)\nVAR UseCustom = SELECTEDVALUE('Use Custom Date'[Display As])\nVAR ParamEnd = SELECTEDVALUE('End Date'[Display As])\nVAR ParamStart = SELECTEDVALUE('Start Date'[Display As])\nVAR MaxDateExclude =\n    SWITCH(\n        TRUE(),\n        WEEKDAY(TODAY()) = 1, TODAY() - 2,\n        WEEKDAY(TODAY()) = 2, TODAY() - 3,\n        TODAY() - 1\n    )\nVAR MaxDateMinus1 =\n    SWITCH(\n        TRUE(),\n        WEEKDAY(MaxDateExclude) = 1, MaxDateExclude - 2,\n        WEEKDAY(MaxDateExclude) = 2, MaxDateExclude - 3,\n        MaxDateExclude - 1\n    )\nVAR DateSign =\n    IF(\n        UseCustom,\n        IF(\n            MaxDateExclude = 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[EFFECTIVE_DATE], 1,\n            IF(MaxDateMinus1 = 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[EFFECTIVE_DATE], -1, 0)\n        ),\n        IF(\n            'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[EFFECTIVE_DATE] = ParamEnd, 1,\n            IF('Risk_GFIRates_Reports_Excel_Rolling (local copy)'[EFFECTIVE_DATE] = ParamStart, -1, 0)\n        )\n    )\nRETURN\n    DeltaDown_T_CAD * DateSign",
+      "solution_explanation": "Converted the Tableau calculation [Delta Down CAD Diff] = [Delta Down T CAD] * [Date Sign] into a DAX measure. Delta Down T CAD was implemented as COALESCE([DELTA_DOWN] * [TO_CAD], 0) to mirror ZN(). Date Sign logic was translated using SELECTEDVALUE(...) for parameter references (Use Custom Date, End Date, Start Date) and inlined Max Date Exclude / MAX_DATE -1day logic using WEEKDAY(TODAY()) to match Tableau's datepart behavior. All column references use the 'TableName'[Column] format.",
+      "type_changed_reason": "The calculation depends (directly or indirectly) on Tableau parameters (via Date Sign). Per the rules, any formula referencing parameters must be created as a measure."
+    }
+  ]
+}
