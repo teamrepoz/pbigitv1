@@ -1,0 +1,20 @@
+{
+  "calculations": [
+    {
+      "name": "Calculation3",
+      "table_name": "HR Dataset",
+      "tableau_expression": "[TermReason] + STR([Termd])",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "[TermReason] + STR([Termd])",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Termd": "integer",
+          "TermReason": "string"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
