@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Parameters",
+      "name": "Curve Type",
+      "dax_expression": "\"Major Curve\"",
+      "solution_explanation": "This is a constant string value; create a row-level calculated column that returns \"Major Curve\" for every row."
+    }
+  ]
+}
