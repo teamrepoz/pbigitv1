@@ -1,0 +1,45 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.63\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "name": "Section_Dashboard 4",
+      "ordinal": 0,
+      "displayName": "Dashboard 4",
+      "visualContainers": [
+        {
+          "x": 8,
+          "y": 41,
+          "z": 0,
+          "width": 392,
+          "height": 551,
+          "config": "{\"name\": \"412dfb789c7d82714e04\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 8, \"y\": 41, \"z\": 1000, \"width\": 392, \"height\": 551, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"columnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"trulia_dataset_cleaned (trulia_dataset_cleanedTBL).Property Type\", \"active\": true}], \"Y\": [{\"queryRef\": \"med(trulia_dataset_cleaned (trulia_dataset_cleanedTBL).Price)\"}], \"Series\": []}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t\", \"Entity\": \"trulia_dataset_cleaned (trulia_dataset_cleanedTBL)\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t\"}}, \"Property\": \"Property Type\"}, \"Name\": \"trulia_dataset_cleaned (trulia_dataset_cleanedTBL).Property Type\", \"NativeReferenceName\": \"Property Type\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t\"}}, \"Property\": \"Price\"}}, \"Function\": 0}, \"Name\": \"Med(trulia_dataset_cleaned (trulia_dataset_cleanedTBL).Price)\", \"NativeReferenceName\": \"Median of Price\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Aggregation\": {\"Expression\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t\"}}, \"Property\": \"Price\"}}, \"Function\": 0}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"titleBold\": {\"expr\": {\"Literal\": {\"Value\": \"\"}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"15D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Median Sales Price'\"}}}}}]}}}"
+        },
+        {
+          "x": 400,
+          "y": 41,
+          "z": 0,
+          "width": 392,
+          "height": 551,
+          "config": "{\"name\": \"eaa0db68e9296616b928\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 400, \"y\": 41, \"z\": 1000, \"width\": 392, \"height\": 551, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"columnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"trulia_dataset_cleaned (trulia_dataset_cleanedTBL).Property Type\", \"active\": true}], \"Y\": [{\"queryRef\": \"med(trulia_dataset_cleaned (trulia_dataset_cleanedTBL).Price Sqr Ft)\"}], \"Series\": []}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t\", \"Entity\": \"trulia_dataset_cleaned (trulia_dataset_cleanedTBL)\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t\"}}, \"Property\": \"Property Type\"}, \"Name\": \"trulia_dataset_cleaned (trulia_dataset_cleanedTBL).Property Type\", \"NativeReferenceName\": \"Property Type\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t\"}}}}, \"Function\": 2}, \"Name\": \"Med(trulia_dataset_cleaned (trulia_dataset_cleanedTBL).Price Sqr Ft)\", \"NativeReferenceName\": \"Med of Price Sqr Ft\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Aggregation\": {\"Expression\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t\"}}, \"Property\": \"Price Sqr Ft\"}}, \"Function\": 2}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"titleBold\": {\"expr\": {\"Literal\": {\"Value\": \"\"}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"15D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Price per Sqft by Property Type'\"}}}}}]}}}"
+        }
+      ]
+    }
+  ]
+}
