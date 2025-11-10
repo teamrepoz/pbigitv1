@@ -1,0 +1,26 @@
+{
+  "calculations": [
+    {
+      "name": "Maturity Normalized",
+      "table_name": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "tableau_expression": "// Created by Antoine Des Aulniers Favreau\r\n// Updated on 10/13/2017 by Antoine Des Aulniers Favreau & Cathy Liu\r\n// Tries to bring together all the different field used for maturity date across product type and source. This should be used if you want to display a product maturity.\r\n\r\nif year([MATURITY])<>1980 then [MATURITY]\r\nelse if year([SECURITY_MATURITY])<> 1980 then [SECURITY_MATURITY]\r\nelse if year([END_DATE])<>1980 then [END_DATE] \r\n//else if year([Expiry Date])<>1980 then [Expiry Date] \r\n//else if year([Contract Expiry Date])<>1980 then [Contract Expiry Date]\r\n//else if year([DEAL_END_DATE])<>1980 then [DEAL_END_DATE]\r\n//else if year([SETTLEMENT_DATE])<>1980 then [SETTLEMENT_DATE]\r\nelse if year([SETTLE_DATE])<>1980 then [SETTLE_DATE] \r\nelse [MATURITY]\r\n//else if year([Underlying Max Maturity Dt])<>1980 then [Underlying Max Maturity Dt]\r\n//else if year([UNDERLYING_FUTURE_EXPIRY_DATE]) <> 1980 then [UNDERLYING_FUTURE_EXPIRY_DATE] \r\n//else if year([PERIOD_END_DATE]) <> 1980 then [PERIOD_END_DATE] else [Maturity]\r\nEND\r\nend\r\nend\r\nend\r\n//end \r\n//end\r\n//end\r\n//end\r\n//end\r\n//end\r\n//end",
+      "datatype": "datetime",
+      "calculation_context": {
+        "Expression": "// Created by Antoine Des Aulniers Favreau\r\n// Updated on 10/13/2017 by Antoine Des Aulniers Favreau & Cathy Liu\r\n// Tries to bring together all the different field used for maturity date across product type and source. This should be used if you want to display a product maturity.\r\n\r\nif year([MATURITY])<>1980 then [MATURITY]\r\nelse if year([SECURITY_MATURITY])<> 1980 then [SECURITY_MATURITY]\r\nelse if year([END_DATE])<>1980 then [END_DATE] \r\n//else if year([Expiry Date])<>1980 then [Expiry Date] \r\n//else if year([Contract Expiry Date])<>1980 then [Contract Expiry Date]\r\n//else if year([DEAL_END_DATE])<>1980 then [DEAL_END_DATE]\r\n//else if year([SETTLEMENT_DATE])<>1980 then [SETTLEMENT_DATE]\r\nelse if year([SETTLE_DATE])<>1980 then [SETTLE_DATE] \r\nelse [MATURITY]\r\n//else if year([Underlying Max Maturity Dt])<>1980 then [Underlying Max Maturity Dt]\r\n//else if year([UNDERLYING_FUTURE_EXPIRY_DATE]) <> 1980 then [UNDERLYING_FUTURE_EXPIRY_DATE] \r\n//else if year([PERIOD_END_DATE]) <> 1980 then [PERIOD_END_DATE] else [Maturity]\r\nEND\r\nend\r\nend\r\nend\r\n//end \r\n//end\r\n//end\r\n//end\r\n//end\r\n//end\r\n//end",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "DEAL_END_DATE": "datetime",
+          "PERIOD_END_DATE": "datetime",
+          "SECURITY_MATURITY": "datetime",
+          "END_DATE": "datetime",
+          "MATURITY": "datetime",
+          "UNDERLYING_FUTURE_EXPIRY_DATE": "datetime",
+          "SETTLEMENT_DATE": "datetime",
+          "SETTLE_DATE": "datetime"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
