@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Delta Down All CCY Parallel Diff New York",
+      "dax_expression": "IF('Risk_GFIRates_Reports_Excel_Rolling (local copy)'[BOOK_LOCATION] = \"New York\", 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Delta Down All CCY Parallel] * 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Date Sign], 0)",
+      "solution_explanation": "Converted the Tableau IF...THEN...ELSE to a DAX IF expression and mapped all field references to the 'TableName'[ColumnName] format. This is a row-level calculation that multiplies the Delta Down All CCY Parallel by Date Sign only for BOOK_LOCATION = \"New York\"; otherwise returns 0."
+    }
+  ]
+}
