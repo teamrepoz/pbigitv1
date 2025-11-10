@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "1 Viz Bar with Measure_e637"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "a26d660e-84cc-4a83-93e4-f6b1ccba4f14"
+  }
+}
