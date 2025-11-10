@@ -1,0 +1,10 @@
+relationship 79f76b4d-ff6b-4780-b37e-87f90086ede1
+	toCardinality: many
+	fromColumn: 'BCR_2022_07_DDM_ROLLOUT+ (Multiple Connections)'.avg_time_hours
+	toColumn: 'BCR_2022_07_DDM_ROLLOUT+ (Multiple Connections)_Union1'.avg_time_hours
+
+relationship 3d9ca1d1-0602-4efd-918b-8086c9b6ab84
+	toCardinality: many
+	fromColumn: 'BCR_2022_07_DDM_ROLLOUT+ (Multiple Connections)'.POLICY_ID
+	toColumn: 'courses.csv_BCR_2022_07_DDM_ROLLOUT+ (Multiple Connections)'.id
+
