@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Risk_GFIRates_Reports_Excel_Rolling (local copy)",
+      "name": "Delta Down Fix FX T",
+      "dax_expression": "VAR UseCustom = SELECTEDVALUE('Use Custom Date'[Display As])\nVAR EndDateParam = SELECTEDVALUE('End Date'[Display As])\nRETURN\nIF(\n    UseCustom,\n    IF(\n        'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Max Date Exclude] = 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[EFFECTIVE_DATE],\n        'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Delta Down Fix FX],\n        0\n    ),\n    IF(\n        'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[EFFECTIVE_DATE] = EndDateParam,\n        'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[Delta Down Fix FX],\n        0\n    )\n)",
+      "solution_explanation": "Converted the nested IF structure to DAX using VAR for parameter values. Replaced [Parameters].[Use Custom Date] with SELECTEDVALUE('Use Custom Date'[Display As]) and [Parameters].[End Date] with SELECTEDVALUE('End Date'[Display As]). All field references were transformed to 'Risk_GFIRates_Reports_Excel_Rolling (local copy)'[ColumnName].",
+      "type_changed_reason": "The calculation references Tableau parameters ([Parameters].[Use Custom Date] and [Parameters].[End Date]); per the rules, any parameter-based calculation must be created as a measure."
+    }
+  ]
+}
