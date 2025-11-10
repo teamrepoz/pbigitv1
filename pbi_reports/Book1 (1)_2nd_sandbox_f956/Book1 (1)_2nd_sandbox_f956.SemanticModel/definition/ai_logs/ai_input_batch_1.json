@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "Start Date",
+      "table_name": "Parameters",
+      "tableau_expression": "#2017-01-05#",
+      "datatype": "date",
+      "calculation_context": {
+        "Expression": "#2017-01-05#",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
