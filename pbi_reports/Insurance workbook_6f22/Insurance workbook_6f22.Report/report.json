@@ -1,0 +1,69 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.63\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "name": "Section_Dashboard 1",
+      "ordinal": 0,
+      "displayName": "Dashboard 1",
+      "visualContainers": [
+        {
+          "x": 20,
+          "y": 95,
+          "z": 0,
+          "width": 546,
+          "height": 294,
+          "config": "{\"name\": \"719986a0c79055\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 95, \"z\": 1000, \"width\": 546, \"height\": 294, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"lineChart\", \"projections\": {\"Category\": [{\"queryRef\": \"customers+.ClaimDate.Variation.Date Hierarchy.Month\", \"active\": true}], \"Y\": [{\"queryRef\": \"customers+.Total Claims Amount\"}], \"Series\": []}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"c\", \"Entity\": \"customers+\", \"Type\": 0}], \"Select\": [{\"HierarchyLevel\": {\"Expression\": {\"Hierarchy\": {\"Expression\": {\"PropertyVariationSource\": {\"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}, \"Name\": \"Variation\", \"Property\": \"ClaimDate\"}}, \"Hierarchy\": \"Date Hierarchy\"}}, \"Level\": \"Month\"}, \"Name\": \"customers+.ClaimDate.Variation.Date Hierarchy.Month\", \"NativeReferenceName\": \"ClaimDate Month\"}, {\"Measure\": {\"Property\": \"Total Claims Amount\", \"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}}, \"Name\": \"customers+.Total Claims Amount\", \"NativeReferenceName\": \"Total Claims Amount\"}], \"OrderBy\": []}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#000000'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"12D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Tableau Book'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Monthly Claim Amount Trend'\"}}}}}]}}}"
+        },
+        {
+          "x": 426,
+          "y": 399,
+          "z": 0,
+          "width": 365,
+          "height": 375,
+          "config": "{\"name\": \"be02ed53\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 426, \"y\": 399, \"z\": 1000, \"width\": 365, \"height\": 375, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"barChart\", \"projections\": {\"Category\": [{\"queryRef\": \"customers+.Cause\", \"active\": true}], \"Y\": [{\"queryRef\": \"Sum(customers+.ClaimAmount)\"}], \"Series\": [{\"queryRef\": \"customers+.ClaimStatus\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"c\", \"Entity\": \"customers+\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Property\": \"Cause\", \"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}}, \"Name\": \"customers+.Cause\", \"NativeReferenceName\": \"Cause\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"ClaimAmount\", \"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}}}, \"Function\": 0}, \"Name\": \"Sum(customers+.ClaimAmount)\", \"NativeReferenceName\": \"Sum of ClaimAmount\"}, {\"Column\": {\"Property\": \"ClaimStatus\", \"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}}, \"Name\": \"customers+.ClaimStatus\", \"NativeReferenceName\": \"ClaimStatus\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"ClaimAmount\", \"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}}}, \"Function\": 0}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"titleBold\": {\"expr\": {\"Literal\": {\"Value\": \"\"}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#000000'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"12D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Tableau Book'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Total Claims by Cause'\"}}}}}]}}}"
+        },
+        {
+          "x": 19,
+          "y": 400,
+          "z": 0,
+          "width": 400,
+          "height": 375,
+          "config": "{\"name\": \"fcfbedbb5\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 19, \"y\": 400, \"z\": 1000, \"width\": 400, \"height\": 375, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"columnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"customers+.BranchID\", \"active\": true}], \"Y\": [{\"queryRef\": \"Sum(customers+.SumInsured)\"}], \"Series\": []}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"c\", \"Entity\": \"customers+\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Property\": \"BranchID\", \"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}}, \"Name\": \"customers+.BranchID\", \"NativeReferenceName\": \"BranchID\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"SumInsured\", \"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}}}, \"Function\": 0}, \"Name\": \"Sum(customers+.SumInsured)\", \"NativeReferenceName\": \"Sum of SumInsured\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"SumInsured\", \"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}}}, \"Function\": 0}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"titleBold\": {\"expr\": {\"Literal\": {\"Value\": \"\"}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#000000'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"12D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Tableau Book'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Sum Insured by Branch'\"}}}}}]}}}"
+        },
+        {
+          "x": 575,
+          "y": 94,
+          "z": 0,
+          "width": 506,
+          "height": 293,
+          "config": "{\"name\": \"f8c6b878281555\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 575, \"y\": 94, \"z\": 0, \"width\": 506, \"height\": 293, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"pieChart\", \"projections\": {\"Values\": [{\"queryRef\": \"customers+.PolicyType\"}, {\"queryRef\": \"customers+.Total Premium\"}, {\"queryRef\": \"customers+.Premium\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"c\", \"Entity\": \"customers+\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}, \"Property\": \"PolicyType\"}, \"Name\": \"customers+.PolicyType\", \"NativeReferenceName\": \"PolicyType\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}, \"Property\": \"Total Premium\"}, \"Name\": \"customers+.Total Premium\", \"NativeReferenceName\": \"Total Premium\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}, \"Property\": \"Premium\"}, \"Name\": \"customers+.Premium\", \"NativeReferenceName\": \"Premium\"}], \"OrderBy\": []}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#000000'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"12D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Tableau Book'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Policy Type Distribution by Premium'\"}}}}}]}}}"
+        },
+        {
+          "x": 796,
+          "y": 399,
+          "z": 0,
+          "width": 287,
+          "height": 373,
+          "config": "{\"name\": \"e5077db\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 796, \"y\": 399, \"z\": 1000, \"width\": 287, \"height\": 373, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"barChart\", \"projections\": {\"Category\": [{\"queryRef\": \"customers+.CustomerID\", \"active\": true}], \"Y\": [{\"queryRef\": \"Sum(customers+.ClaimAmount)\"}], \"Series\": [{\"queryRef\": \"customers+.CustomerID\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"c\", \"Entity\": \"customers+\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Property\": \"CustomerID\", \"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}}, \"Name\": \"customers+.CustomerID\", \"NativeReferenceName\": \"CustomerID\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"ClaimAmount\", \"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}}}, \"Function\": 0}, \"Name\": \"Sum(customers+.ClaimAmount)\", \"NativeReferenceName\": \"Sum of ClaimAmount\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"ClaimAmount\", \"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}}}, \"Function\": 0}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"titleBold\": {\"expr\": {\"Literal\": {\"Value\": \"\"}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#000000'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"12D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Tableau Book'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Top N Customers by  Claim Amount'\"}}}}}]}}}"
+        }
+      ]
+    }
+  ]
+}
