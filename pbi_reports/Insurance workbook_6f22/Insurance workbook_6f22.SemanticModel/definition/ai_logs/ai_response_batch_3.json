@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "customers+",
+      "name": "Claim Amount(approved)",
+      "dax_expression": "SUM('customers+'[Premium])",
+      "solution_explanation": "Converted Tableau aggregation SUM([Premium]) to DAX SUM('customers+'[Premium]). This uses aggregation so it should be a measure."
+    }
+  ]
+}
