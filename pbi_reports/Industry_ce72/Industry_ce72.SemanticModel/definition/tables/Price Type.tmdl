@@ -1,0 +1,47 @@
+table 'Price Type'
+	lineageTag: 2ce969c6-7c23-4efa-abb2-8428a15e2b22
+
+	column Index
+		formatString: 0
+		lineageTag: 31724ddb-98de-4510-8775-368ea04ada62
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: f84c4a82-a96d-41c2-807b-0eedca1b8f6b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: d223e2f4-7997-4a63-b437-247fa717d8a3
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Price Type' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Open", "Open" },
+				{ 1, "Close", "Close" },
+				{ 2, "High", "High" },
+				{ 3, "Low", "Low" }
+			    }
+			)
+
+	annotation PBI_Id = 7856d46b47514a409e949ed62afc8130
+
