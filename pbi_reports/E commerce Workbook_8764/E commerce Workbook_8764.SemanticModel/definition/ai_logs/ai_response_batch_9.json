@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "order_items+",
+      "name": "Order Count",
+      "dax_expression": "DISTINCTCOUNT('order_items+'[OrderID])",
+      "solution_explanation": "Converted Tableau COUNTD([OrderID]) to DAX DISTINCTCOUNT('order_items+'[OrderID]). Column reference updated to 'TableName'[ColumnName] format. Defined as a measure because it performs an aggregation across rows.",
+      "type_changed_reason": "The calculation uses an aggregation (COUNTD / distinct count), so it should be created as a measure."
+    }
+  ]
+}
