@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "accounts+",
+      "name": "Net Flow",
+      "dax_expression": "VAR Dep = CALCULATE(SUM('accounts+'[Amount]), 'accounts+'[TransactionType] = \"Deposit\")\nVAR Withd = CALCULATE(SUM('accounts+'[Amount]), 'accounts+'[TransactionType] = \"Withdrawal\")\nRETURN\nDep - Withd",
+      "solution_explanation": "Converted the Tableau aggregation of two calculated fields into DAX by summing 'Amount' with filters on 'TransactionType'. Used CALCULATE(SUM(...), filter) for each side and subtracted Withdrawal from Deposit. Created as a measure because the original uses aggregations (SUM)."
+    }
+  ]
+}
