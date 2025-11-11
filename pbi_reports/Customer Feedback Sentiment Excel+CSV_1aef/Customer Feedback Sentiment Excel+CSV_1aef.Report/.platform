@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Customer Feedback Sentiment Excel+CSV_1aef"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "93c6a35b-1f5b-4ea1-a03b-a953aea46895"
+  }
+}
