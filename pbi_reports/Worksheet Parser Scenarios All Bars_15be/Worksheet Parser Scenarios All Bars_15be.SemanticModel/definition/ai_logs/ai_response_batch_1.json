@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "HR Dataset",
+      "name": "Calculation2",
+      "dax_expression": "'HR Dataset'[Termd] * 'HR Dataset'[Salary] * 'HR Dataset'[EngagementSurvey]",
+      "solution_explanation": "This is a row-level arithmetic calculation using only columns from the same row. Converted each Tableau column reference to the DAX table-column format 'HR Dataset'[ColumnName] and preserved the multiplication logic."
+    }
+  ]
+}
