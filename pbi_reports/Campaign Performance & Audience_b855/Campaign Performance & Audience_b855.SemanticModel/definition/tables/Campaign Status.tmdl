@@ -1,0 +1,46 @@
+table 'Campaign Status'
+	lineageTag: 65cc933b-b788-43a8-a081-8d52bac6ae9f
+
+	column Index
+		formatString: 0
+		lineageTag: feba896f-6e3c-46c7-b95f-9f7a802ac286
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 875fb1ca-cd79-4a17-90c1-331c9df31945
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 937e462b-c242-43c0-9c68-0e2d3511a82d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Campaign Status' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Active", "Active" },
+				{ 1, "Upcoming", "Upcoming" },
+				{ 2, "Completed ", "Completed " }
+			    }
+			)
+
+	annotation PBI_Id = 6695d3295c1f4de38363a62447f069a6
+
