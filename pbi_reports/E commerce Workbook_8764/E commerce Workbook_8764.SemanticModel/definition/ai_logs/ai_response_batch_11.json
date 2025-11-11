@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "order_items+",
+      "name": "Discount Amount",
+      "dax_expression": "('order_items+'[UnitPrice] * 'order_items+'[Quantity]) * ('order_items+'[DiscountPct] / 100)",
+      "solution_explanation": "This is a row-level arithmetic calculation using only columns from the same row (UnitPrice, Quantity, DiscountPct), so it should be implemented as a calculated column in Power BI."
+    }
+  ]
+}
