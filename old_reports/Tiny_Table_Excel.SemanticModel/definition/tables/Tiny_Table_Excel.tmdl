@@ -1,0 +1,31 @@
+table Tiny_Table_Excel
+	lineageTag: cda02f54-ffde-40ec-bd16-de7ef033168f
+
+	column ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 7366b722-fe2b-4cb8-bd3e-fdbe950b8d77
+		summarizeBy: count
+		sourceColumn: ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		lineageTag: cb30c3fe-a55f-49cf-896a-939fcb93c6ea
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Tiny_Table_Excel = m
+		mode: import
+		source =
+				let
+				  Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WMjQwMFTSUQrKL05VitUB842AfJ/MnJxKpdhYAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [ID = _t, Name = _t]),
+				  #"Changed column type" = Table.TransformColumnTypes(Source, {{"ID", Int64.Type}, {"Name", type text}})
+				in
+				  #"Changed column type"
+
+	annotation PBI_ResultType = Table
+
