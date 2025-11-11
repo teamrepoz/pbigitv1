@@ -1,0 +1,47 @@
+table 'Select Department'
+	lineageTag: 068896b0-6472-45dc-a6c1-f62c91361038
+
+	column Index
+		formatString: 0
+		lineageTag: a39e57d1-6daa-42ae-87e2-5da48ad106ec
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 3c44a262-fc40-4304-9ba5-b3e53e19dde2
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 215f7515-e3cc-4d92-b065-27ddea228bbd
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Select Department' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Sales", "Sales" },
+				{ 1, " HR", " HR" },
+				{ 2, " Finance)", " Finance)" },
+				{ 3, "IT", "IT" }
+			    }
+			)
+
+	annotation PBI_Id = 0925faf96c48493cb29b0a19a5ad6b7a
+
