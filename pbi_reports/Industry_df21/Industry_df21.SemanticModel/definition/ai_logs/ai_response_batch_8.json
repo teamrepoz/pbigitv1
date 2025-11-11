@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "stock_data+",
+      "name": "View By",
+      "dax_expression": "SWITCH(SELECTEDVALUE('View By'[Display As]), \"Industry Name\", 'stock_data+'[TRBC Industry Name], \"Activity Name\", 'stock_data+'[TRBC Activity Name], 'stock_data+'[TRBC Economic Sector Name])",
+      "solution_explanation": "Replaced the Tableau CASE on the parameter with a DAX SWITCH. Parameter reference converted to SELECTEDVALUE('View By'[Display As]) and all column references were converted to 'stock_data+'[Column] format.",
+      "type_changed_reason": "The calculation references a parameter, and all parameter-based calculations must be measures."
+    }
+  ]
+}
