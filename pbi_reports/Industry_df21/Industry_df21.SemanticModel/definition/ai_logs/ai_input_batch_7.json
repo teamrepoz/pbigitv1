@@ -1,0 +1,27 @@
+{
+  "calculations": [
+    {
+      "name": "Top N Stock",
+      "table_name": "stock_data+",
+      "tableau_expression": "[Rank Stocks]<=[Parameters].[Top N Stock]",
+      "datatype": "boolean",
+      "calculation_context": {
+        "Expression": "[Rank Stocks]<=[Parameters].[Top N Stock]",
+        "calculated_fields": {
+          "Rank Stocks": "RANK(SUM([Volume]))",
+          "Top N Stock": "[Rank Stocks]<=[Parameters].[Top N Stock]"
+        },
+        "parameters": [
+          "Top N Stock"
+        ],
+        "col_to_datatype_mapping": {
+          "Volume": "integer"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Rank Stocks": "integer",
+          "Top N Stock": "boolean"
+        }
+      }
+    }
+  ]
+}
