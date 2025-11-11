@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Average account balance",
+      "table_name": "accounts+",
+      "tableau_expression": "AVG([CurrentBalance])",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "AVG([CurrentBalance])",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "CurrentBalance": "real"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
