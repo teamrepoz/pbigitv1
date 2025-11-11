@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Worksheet Parser Scenarios All Bars_ca71"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "8cfe0bca-a188-4496-96e4-e45053424c89"
+  }
+}
