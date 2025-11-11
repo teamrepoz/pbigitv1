@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "order_items+",
+      "name": "High Discount Items",
+      "dax_expression": "'order_items+'[DiscountPct] >= SELECTEDVALUE('Discount Threshold %'[Display As])",
+      "solution_explanation": "Replaced [DiscountPct] with 'order_items+'[DiscountPct] and converted the parameter [Parameters].[Discount Threshold %] to SELECTEDVALUE('Discount Threshold %'[Display As]). The expression evaluates to TRUE/FALSE when the row DiscountPct is greater than or equal to the selected parameter value.",
+      "type_changed_reason": "The calculation references a parameter, and all parameter-based calculations must be measures."
+    }
+  ]
+}
