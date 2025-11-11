@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "accounts+",
+      "name": "Total Deposits",
+      "dax_expression": "IF('accounts+'[TransactionType] = \"Deposit\", 'accounts+'[Amount], BLANK())",
+      "solution_explanation": "Converted Tableau IF [TransactionType] = \"Deposit\" THEN [Amount] END into DAX IF. Transformed column references to 'accounts+'[TransactionType] and 'accounts+'[Amount]. Returned BLANK() for the ELSE to match Tableau's null behavior."
+    }
+  ]
+}
