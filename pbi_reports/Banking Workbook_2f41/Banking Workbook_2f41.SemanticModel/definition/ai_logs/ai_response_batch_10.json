@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "accounts+",
+      "name": "Selected Year Filter",
+      "dax_expression": "YEAR('accounts+'[TransactionDate]) = SELECTEDVALUE('Select Year'[Display As])",
+      "solution_explanation": "Converted YEAR([TransactionDate]) to YEAR('accounts+'[TransactionDate]) and replaced [Parameters].[Select Year] with SELECTEDVALUE('Select Year'[Display As]) according to the parameter mapping; the expression returns a boolean.",
+      "type_changed_reason": "The calculation references a parameter, and all parameter-based calculations must be measures."
+    }
+  ]
+}
