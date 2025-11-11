@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "stock_data+",
+      "name": "Avg Price",
+      "dax_expression": "('stock_data+'[Price High] + 'stock_data+'[Price Close] + 'stock_data+'[Price Open]) / 3",
+      "solution_explanation": "This is a row-level arithmetic calculation across three columns, so it becomes a calculated column. Column references were converted to the 'TableName'[ColumnName] format."
+    }
+  ]
+}
