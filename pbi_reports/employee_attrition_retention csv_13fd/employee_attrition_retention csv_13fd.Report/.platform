@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "employee_attrition_retention csv_13fd"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "6ca912d9-d2b7-442f-8e4c-28c82be3c344"
+  }
+}
