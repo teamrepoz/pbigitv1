@@ -1,0 +1,25 @@
+{
+  "calculations": [
+    {
+      "name": "Selected Year Filter",
+      "table_name": "accounts+",
+      "tableau_expression": "YEAR([TransactionDate]) = [Parameters].[Select Year]",
+      "datatype": "boolean",
+      "calculation_context": {
+        "Expression": "YEAR([TransactionDate]) = [Parameters].[Select Year]",
+        "calculated_fields": {
+          "Select Year": "2023"
+        },
+        "parameters": [
+          "Select Year"
+        ],
+        "col_to_datatype_mapping": {
+          "TransactionDate": "date"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Select Year": "integer"
+        }
+      }
+    }
+  ]
+}
