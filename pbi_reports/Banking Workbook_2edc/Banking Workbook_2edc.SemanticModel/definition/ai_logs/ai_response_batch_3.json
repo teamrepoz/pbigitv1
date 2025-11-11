@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "accounts+",
+      "name": "Total Withdrawals",
+      "dax_expression": "IF('accounts+'[TransactionType] = \"Withdrawal\", 'accounts+'[Amount], BLANK())",
+      "solution_explanation": "Translated Tableau IF [TransactionType] = \"Withdrawal\" THEN [Amount] END into DAX IF with an explicit false branch returning BLANK(). All column references use the 'accounts+'[Column] format. This is a row-level transformation (no aggregates or parameters), so it is implemented as a calculated column."
+    }
+  ]
+}
