@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "accounts+",
+      "name": "Accounts Above Threshold",
+      "dax_expression": "IF('accounts+'[CurrentBalance] >= SELECTEDVALUE('Balance Threshold'[Display As]), 'accounts+'[AccountID], BLANK())",
+      "solution_explanation": "Converted the Tableau IF that compares a row value to a parameter into a DAX measure. Replaced the parameter reference with SELECTEDVALUE('Balance Threshold'[Display As]) and transformed column references to the 'table'[column] format. The measure returns the AccountID when the CurrentBalance meets or exceeds the selected threshold, otherwise BLANK().",
+      "type_changed_reason": "The calculation references a Tableau parameter ([Parameters].[Balance Threshold]); per rules, any formula with parameters must be implemented as a measure."
+    }
+  ]
+}
