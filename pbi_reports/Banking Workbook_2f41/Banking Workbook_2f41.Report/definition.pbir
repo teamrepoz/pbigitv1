@@ -1,0 +1,8 @@
+{
+  "version": "4.0",
+  "datasetReference": {
+    "byPath": {
+      "path": "../Banking Workbook_2f41.SemanticModel"
+    }
+  }
+}
