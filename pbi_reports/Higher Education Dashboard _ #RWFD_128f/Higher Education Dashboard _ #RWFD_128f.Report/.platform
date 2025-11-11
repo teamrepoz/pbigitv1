@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Higher Education Dashboard _ #RWFD_128f"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "8df8ec69-291f-486d-9845-8276b3e8ba63"
+  }
+}
