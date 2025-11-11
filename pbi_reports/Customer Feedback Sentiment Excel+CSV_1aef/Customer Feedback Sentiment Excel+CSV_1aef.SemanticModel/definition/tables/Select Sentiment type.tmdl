@@ -1,0 +1,45 @@
+table 'Select Sentiment type'
+	lineageTag: c52297ce-3db0-482d-955b-6f76e399ab73
+
+	column Index
+		formatString: 0
+		lineageTag: 61cfadb0-30d6-469e-a9de-1ea244ec5209
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 57bf6258-f820-4dc7-95ee-afe9372bb2d4
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 97f8b166-7c28-4a4c-834d-51c1f231800a
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Select Sentiment type' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Positive", "Positive" },
+				{ 1, "Negative", "Negative" }
+			    }
+			)
+
+	annotation PBI_Id = 0d3b9af86f4d4d6a92874dfe4e9824bf
+
