@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "HR Dataset",
+      "name": "Calculation2",
+      "dax_expression": "'HR Dataset'[Termd] * 'HR Dataset'[Salary] * 'HR Dataset'[EngagementSurvey]",
+      "solution_explanation": "Converted row-level multiplication from Tableau to DAX. Each column reference was transformed to the 'TableName'[Column] format. This is a calculated column because the expression operates at the row level without any aggregations or parameters."
+    }
+  ]
+}
