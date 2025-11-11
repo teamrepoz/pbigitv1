@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "customers+",
+      "name": "Days Between Policy Start and First Claim",
+      "dax_expression": "DATEDIFF(MIN('customers+'[StartDate]), MIN('customers+'[ClaimDate]), DAY)",
+      "solution_explanation": "Translated Tableau DATEDIFF('day', MIN([StartDate]), MIN([ClaimDate])) to DAX. Reordered arguments to DAX DATEDIFF(start, end, interval) and converted column references to 'customers+'[ColumnName] format while preserving the MIN aggregations.",
+      "type_changed_reason": "The calculation uses aggregation functions (MIN), so it should be created as a measure."
+    }
+  ]
+}
