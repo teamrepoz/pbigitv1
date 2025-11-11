@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "customers+",
+      "name": "Policies Above Premium Threshold",
+      "dax_expression": "IF('customers+'[Premium] >= SELECTEDVALUE('Min Premium Threshold'[Display As]), 'customers+'[PolicyID])",
+      "solution_explanation": "Converted the Tableau IF expression to a DAX IF. Parameter [Min Premium Threshold] is mapped to SELECTEDVALUE('Min Premium Threshold'[Display As]) per parameter rules. All column references were converted to 'customers+'[ColumnName] format: [Premium] -> 'customers+'[Premium], [PolicyID] -> 'customers+'[PolicyID]. The measure returns the policy ID when the premium meets or exceeds the selected parameter value and BLANK() otherwise.",
+      "type_changed_reason": "The calculation references a parameter, and all parameter-based calculations must be measures."
+    }
+  ]
+}
