@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "HR Dataset",
+      "name": "C_Employee_Status",
+      "dax_expression": "'HR Dataset'[EmploymentStatus]",
+      "solution_explanation": "Row-level passthrough of [EmploymentStatus]; converted to a calculated column using 'HR Dataset'[EmploymentStatus]."
+    }
+  ]
+}
