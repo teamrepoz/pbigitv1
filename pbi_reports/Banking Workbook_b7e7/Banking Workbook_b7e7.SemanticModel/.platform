@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Banking Workbook_b7e7"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "9d6642f9-892e-4a31-9e6e-c51b3b336959"
+  }
+}
