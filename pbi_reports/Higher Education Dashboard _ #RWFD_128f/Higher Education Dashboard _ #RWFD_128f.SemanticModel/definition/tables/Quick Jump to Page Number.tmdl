@@ -1,0 +1,44 @@
+table 'Quick Jump to Page Number'
+	lineageTag: e9b97a71-cd22-4275-bb98-5af8ab71561c
+
+	column Index
+		formatString: 0
+		lineageTag: 8b78929e-4f24-46cd-9bd9-cb74bb8d555b
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 8926159d-fb0c-45d5-86bd-fe3978999361
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 932a4631-75da-46c2-a5ee-21262bd714dd
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Quick Jump to Page Number' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", INTEGER,
+			    "Value", INTEGER,
+			    {
+			        {0, 1, 1}
+			    }
+			)
+
+	annotation PBI_Id = 926c80e593db4b7db8333d561138749a
+
