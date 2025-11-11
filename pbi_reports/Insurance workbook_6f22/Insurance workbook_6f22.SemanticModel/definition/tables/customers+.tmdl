@@ -1,0 +1,246 @@
+table 'customers+'
+	lineageTag: 95ae78fa-bb7d-4ad3-8937-5f0e98e377de
+
+	measure 'Claim Amount(approved)' = SUM('customers+'[Premium])
+		formatString: 0
+		lineageTag: 2484b5fb-931c-4dde-8cb3-03aeae870f1b
+
+	measure 'Total Premium' = SUM('customers+'[Premium])
+		formatString: 0
+		lineageTag: 2414b076-e350-433d-b604-3ff23ecee132
+
+	measure 'Total Claims Amount' = SUM('customers+'[ClaimAmount])
+		formatString: 0
+		lineageTag: 3ddb4426-d9b7-4271-a520-d83a5629625f
+
+	measure 'Claim Frequency (per policy)' = VAR currentPolicy = SELECTEDVALUE('customers+'[PolicyID]) RETURN COUNTROWS( FILTER( ALL('customers+'), 'customers+'[PolicyID] = currentPolicy && NOT( ISBLANK('customers+'[ClaimID]) ) ) )
+		formatString: 0
+		lineageTag: 9bf1176c-7e71-4361-ba61-0b8a280169e6
+
+	measure 'Loss Ratio' = SUM('customers+'[ClaimAmount]) / SUM('customers+'[Premium])
+		formatString: 0
+		lineageTag: 5a489655-7fe5-417f-bd17-4fd9121d35ca
+
+	measure 'Average Claim Amount' = AVERAGE('customers+'[ClaimAmount])
+		formatString: 0
+		lineageTag: 1498e8b2-94b5-4f27-bd55-b9648bcbcae7
+
+	measure 'Days Between Policy Start and First Claim' = DATEDIFF(MIN('customers+'[StartDate]), MIN('customers+'[ClaimDate]), DAY)
+		formatString: 0
+		lineageTag: 1bf13f2e-47df-48b7-9137-4987aec24a1d
+
+	measure 'Top N Customers Flag' = VAR CurrentClaimAmount = CALCULATE(SUM('customers+'[ClaimAmount])) VAR RankValue = RANKX(ALL('customers+'), CALCULATE(SUM('customers+'[ClaimAmount])), CurrentClaimAmount, DESC, SKIP) VAR TopN = SELECTEDVALUE('Top N Customers'[Display As]) RETURN RankValue <= TopN
+		lineageTag: 1718b4f1-3541-4a13-a98a-01c32b973f41
+
+	measure 'Claims in Selected Year' = YEAR('customers+'[ClaimDate]) = SELECTEDVALUE('select year'[Display As])
+		lineageTag: d1853793-c96f-4883-aa8f-a2f3e77144d4
+
+	measure 'Policies Above Premium Threshold' = IF('customers+'[Premium] >= SELECTEDVALUE('Min Premium Threshold'[Display As]), 'customers+'[PolicyID])
+		lineageTag: 9dd2add9-9b03-488b-a8f0-21b07f059534
+
+	column CustomerID
+		dataType: string
+		lineageTag: 28d1b9c7-e8db-4baf-a4aa-738b33c70a53
+		summarizeBy: none
+		sourceColumn: CustomerID
+
+		annotation SummarizationSetBy = Automatic
+
+	column FirstName
+		dataType: string
+		lineageTag: cdcc3b50-a368-4e4d-abcb-b16579f1d493
+		summarizeBy: none
+		sourceColumn: FirstName
+
+		annotation SummarizationSetBy = Automatic
+
+	column LastName
+		dataType: string
+		lineageTag: 26a5edb0-1710-4c81-a04f-f45fd113fca6
+		summarizeBy: none
+		sourceColumn: LastName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gender
+		dataType: string
+		lineageTag: 1f5c101f-2cc4-4a6c-b06f-cf26d782118a
+		summarizeBy: none
+		sourceColumn: Gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column DOB
+		dataType: datetime
+		lineageTag: 5c9d28c6-182f-4731-94f3-4c613b530a96
+		summarizeBy: none
+		sourceColumn: DOB
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: 2a2c16fb-7334-4b54-9eb5-14b17ad0d831
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerSince
+		dataType: datetime
+		lineageTag: 5b75934a-4028-44e9-9d00-dd42e37d01bd
+		summarizeBy: none
+		sourceColumn: CustomerSince
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClaimID
+		dataType: string
+		lineageTag: 55295b9c-d2dd-4a03-9332-302d22fc993e
+		summarizeBy: none
+		sourceColumn: ClaimID
+
+		annotation SummarizationSetBy = Automatic
+
+	column PolicyID
+		dataType: string
+		lineageTag: feaa6a8a-f08a-4f8f-803f-1a5516dab676
+		summarizeBy: none
+		sourceColumn: PolicyID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CustomerID 1'
+		dataType: string
+		lineageTag: 793fe20a-e7b1-48cd-8ee9-934399040253
+		summarizeBy: none
+		sourceColumn: 'CustomerID 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClaimDate
+		dataType: datetime
+		lineageTag: 41f841c5-8ab4-4246-a8ad-bcda7cd1dd0f
+		summarizeBy: none
+		sourceColumn: ClaimDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClaimType
+		dataType: string
+		lineageTag: 1d2e3ead-7844-4d19-ae31-36bee3788390
+		summarizeBy: none
+		sourceColumn: ClaimType
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cause
+		dataType: string
+		lineageTag: f95a9066-c85b-4c2f-a523-66b147f7eafc
+		summarizeBy: none
+		sourceColumn: Cause
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClaimStatus
+		dataType: string
+		lineageTag: 19626e61-2510-4d10-9d0b-2960574f0c9d
+		summarizeBy: none
+		sourceColumn: ClaimStatus
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClaimAmount
+		dataType: double
+		formatString: General Number
+		lineageTag: d31b1440-88bf-4c53-bc46-e6efa4bb99ae
+		summarizeBy: sum
+		sourceColumn: ClaimAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'PolicyID 1'
+		dataType: string
+		lineageTag: ba96b6ff-5702-416d-a44b-008c2ccfa7f8
+		summarizeBy: none
+		sourceColumn: 'PolicyID 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CustomerID 2'
+		dataType: string
+		lineageTag: 2dad601b-70d1-4208-a6a9-3a2ab4450b35
+		summarizeBy: none
+		sourceColumn: 'CustomerID 2'
+
+		annotation SummarizationSetBy = Automatic
+
+	column PolicyType
+		dataType: string
+		lineageTag: 63baa2eb-cf7e-49f4-a355-d8f633c9b18b
+		summarizeBy: none
+		sourceColumn: PolicyType
+
+		annotation SummarizationSetBy = Automatic
+
+	column StartDate
+		dataType: datetime
+		lineageTag: 2ff3029d-b565-46f6-9655-a82fedd802b1
+		summarizeBy: none
+		sourceColumn: StartDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column EndDate
+		dataType: datetime
+		lineageTag: cf541b05-8131-44c5-87e4-0120fa465897
+		summarizeBy: none
+		sourceColumn: EndDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column Premium
+		dataType: double
+		formatString: General Number
+		lineageTag: cbc9ba0f-ffc7-44a1-a19c-dc375d9cbe65
+		summarizeBy: sum
+		sourceColumn: Premium
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SumInsured
+		dataType: double
+		formatString: General Number
+		lineageTag: 0a52c417-ff52-4bcf-89b4-b518fe631d3b
+		summarizeBy: sum
+		sourceColumn: SumInsured
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column BranchID
+		dataType: string
+		lineageTag: df8a31c2-e709-42f3-9d4b-992c64c22347
+		summarizeBy: none
+		sourceColumn: BranchID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'customers+' = m
+		mode: import
+		source =
+				let 
+					#"Source0" = Table.NestedJoin(#"customers.csv_customers+", {"CustomerID"}, #"customers+_claims.csv", {"CustomerID"}, "customers+_claims.csv", JoinKind.RightOuter),
+					#"Expand0" = Table.ExpandTableColumn(#"Source0", "customers+_claims.csv", {"ClaimID", "PolicyID", "CustomerID", "ClaimDate", "ClaimType", "Cause", "ClaimStatus", "ClaimAmount"}, {"ClaimID", "PolicyID", "CustomerID 1", "ClaimDate", "ClaimType", "Cause", "ClaimStatus", "ClaimAmount"}),
+					#"Source1" = Table.NestedJoin(#"Expand0", {"CustomerID"}, #"customers+_policies.csv", {"CustomerID"}, "customers+_policies.csv", JoinKind.Inner),
+					#"Expand1" = Table.ExpandTableColumn(#"Source1", "customers+_policies.csv", {"PolicyID", "CustomerID", "PolicyType", "StartDate", "EndDate", "Premium", "SumInsured", "BranchID"}, {"PolicyID 1", "CustomerID 2", "PolicyType", "StartDate", "EndDate", "Premium", "SumInsured", "BranchID"})
+					in #"Expand1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
