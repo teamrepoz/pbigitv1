@@ -1,0 +1,26 @@
+{
+  "calculations": [
+    {
+      "name": "Net Flow",
+      "table_name": "accounts+",
+      "tableau_expression": "SUM([Deposit amount]) - SUM([Withdrawal Amount])",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "SUM([Deposit amount]) - SUM([Withdrawal Amount])",
+        "calculated_fields": {
+          "Withdrawal Amount": "IF [TransactionType] = \"Withdrawal\" THEN [Amount] END",
+          "Deposit amount": "IF [TransactionType] = \"Deposit\" THEN [Amount] END"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "TransactionType": "string",
+          "Amount": "real"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Withdrawal Amount": "real",
+          "Deposit amount": "real"
+        }
+      }
+    }
+  ]
+}
