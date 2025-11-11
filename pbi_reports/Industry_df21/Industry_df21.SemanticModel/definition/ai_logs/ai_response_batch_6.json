@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "stock_data+",
+      "name": "Rank Stocks",
+      "dax_expression": "RANKX(ALL('stock_data+'), CALCULATE(SUM('stock_data+'[Volume])), , DESC)",
+      "solution_explanation": "Tableau's RANK(SUM([Volume])) is a table calculation over the aggregation of Volume. In DAX this is implemented with RANKX over the full set of rows (ALL('stock_data+')) and the aggregated expression CALCULATE(SUM('stock_data+'[Volume])). DESC is used so the highest volume ranks 1, matching Tableau's ranking behavior.",
+      "type_changed_reason": "The calculation uses an aggregation (SUM) and a table calculation (RANK), so it must be created as a measure."
+    }
+  ]
+}
