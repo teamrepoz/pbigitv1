@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "accounts+",
+      "name": "Selected Year Filter",
+      "dax_expression": "YEAR('accounts+'[TransactionDate]) = SELECTEDVALUE('Select Year'[Display As])",
+      "solution_explanation": "Replaced row-level column reference [TransactionDate] with 'accounts+'[TransactionDate] and mapped the Tableau parameter [Parameters].[Select Year] to SELECTEDVALUE('Select Year'[Display As]). The expression returns a boolean comparing the transaction year to the selected parameter value.",
+      "type_changed_reason": "The calculation references a parameter, and all parameter-based calculations must be measures."
+    }
+  ]
+}
