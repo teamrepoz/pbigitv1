@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "order_items+",
+      "name": "Order year",
+      "dax_expression": "YEAR('order_items+'[OrderDate])",
+      "solution_explanation": "Converted Tableau YEAR([OrderDate]) to DAX YEAR('order_items+'[OrderDate]). This is a row-level date transformation so it is implemented as a calculated column."
+    }
+  ]
+}
