@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "HR Dataset",
+      "name": "dep calc 3",
+      "dax_expression": "SUM('HR Dataset'[dep calc 2])",
+      "solution_explanation": "Converted Tableau SUM([dep calc 2]) to DAX SUM('HR Dataset'[dep calc 2]). The referenced calculated field 'dep calc 2' is treated as a column on the same table per the calculation context.",
+      "type_changed_reason": "This calculation uses aggregation (SUM), so it should be created as a measure."
+    }
+  ]
+}
