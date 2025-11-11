@@ -1,0 +1,44 @@
+table 'Age Cut Value'
+	lineageTag: f4dff8d3-199b-4b34-869b-9e707bfaac89
+
+	column Index
+		formatString: 0
+		lineageTag: 34af72cc-79ef-422d-87bc-cafa3d96a38f
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 87dc9cf2-8160-4b85-9ba1-51f21dd1138d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: a0b8ed58-2323-4ffb-b529-258e8d676c1f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Age Cut Value' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", INTEGER,
+			    "Value", INTEGER,
+			    {
+			        {0, 30, 30}
+			    }
+			)
+
+	annotation PBI_Id = 4b7ddd90d5494c6a80466c6e4cfbf549
+
