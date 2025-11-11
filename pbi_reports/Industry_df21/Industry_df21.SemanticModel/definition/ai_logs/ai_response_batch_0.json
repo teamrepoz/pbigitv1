@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Parameters",
+      "name": "Price Type",
+      "dax_expression": "\"Open\"",
+      "solution_explanation": "Tableau constant string \"Open\" is converted to a DAX string literal. No aggregates or parameter references, so created as a calculated column."
+    }
+  ]
+}
