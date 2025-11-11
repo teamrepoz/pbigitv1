@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "order_items+",
+      "name": "Top N Products Flag",
+      "dax_expression": "VAR RankValue = RANKX(ALLSELECTED('order_items+'), CALCULATE(SUM('order_items+'[LineTotal])), , DESC)\nRETURN RankValue <= SELECTEDVALUE('Top N Products'[Display As])",
+      "solution_explanation": "Converted Tableau RANK_UNIQUE over SUM([LineTotal]) to DAX using RANKX over ALLSELECTED('order_items+') with CALCULATE(SUM('order_items+'[LineTotal])). The Tableau parameter [Parameters].[Top N Products] is replaced with SELECTEDVALUE('Top N Products'[Display As]). The measure returns TRUE when the computed rank is less than or equal to the selected Top N value.",
+      "type_changed_reason": "The calculation references a parameter, and all parameter-based calculations must be measures."
+    }
+  ]
+}
