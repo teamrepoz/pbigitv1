@@ -1,0 +1,266 @@
+table 'accounts+'
+	lineageTag: 038e1b54-c08b-44a0-88c8-aea4febcac47
+
+	measure 'Net Flow' = SUM('accounts+'[Deposit amount]) - SUM('accounts+'[Withdrawal Amount])
+		formatString: 0
+		lineageTag: b1dbdcb2-2dbd-4af3-bfa7-0df1d6578c06
+
+	measure 'Average account balance' = AVERAGE('accounts+'[CurrentBalance])
+		formatString: 0
+		lineageTag: 70132d6d-088a-41c6-beac-7ef1f748c44d
+
+	measure 'Active Accounts Count' = DISTINCTCOUNT('accounts+'[AccountID])
+		formatString: 0
+		lineageTag: 514fe72c-6529-4786-97a2-a7369970a769
+
+	measure 'Accounts Above Threshold' = VAR threshold = SELECTEDVALUE('Balance Threshold'[Display As]) RETURN IF( MAX('accounts+'[CurrentBalance]) >= threshold, SELECTEDVALUE('accounts+'[AccountID]), BLANK() )
+		lineageTag: bad079a5-55d3-4a5c-a2e0-ae75bdae940a
+
+	measure 'Selected Year Filter' = YEAR('accounts+'[TransactionDate]) = SELECTEDVALUE('Select Year'[Display As])
+		lineageTag: bcb90402-606b-490f-8e7e-ac3d316babfc
+
+	column AccountID
+		dataType: string
+		lineageTag: 5ab6ed7c-8fe5-40e4-856e-692f1279fb21
+		summarizeBy: none
+		sourceColumn: AccountID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerID
+		dataType: string
+		lineageTag: fa1eb4ab-3d69-4eb1-91d0-684f9ee21936
+		summarizeBy: none
+		sourceColumn: CustomerID
+
+		annotation SummarizationSetBy = Automatic
+
+	column BranchID
+		dataType: string
+		lineageTag: 7384da3a-4853-469a-94b4-7f355951b7d4
+		summarizeBy: none
+		sourceColumn: BranchID
+
+		annotation SummarizationSetBy = Automatic
+
+	column AccountType
+		dataType: string
+		lineageTag: 8809e0c9-bca0-4525-b57d-13827e61cd49
+		summarizeBy: none
+		sourceColumn: AccountType
+
+		annotation SummarizationSetBy = Automatic
+
+	column OpenDate
+		dataType: datetime
+		lineageTag: bc7d8ea2-1c17-43d3-b8dd-b49b189f5601
+		summarizeBy: none
+		sourceColumn: OpenDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column CurrentBalance
+		dataType: double
+		formatString: General Number
+		lineageTag: 19582c03-5264-4969-a5c1-a37c174a5b11
+		summarizeBy: sum
+		sourceColumn: CurrentBalance
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'BranchID 1'
+		dataType: string
+		lineageTag: 9dd57ee3-ece0-450a-ac05-fc6a73f32db9
+		summarizeBy: none
+		sourceColumn: 'BranchID 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column BranchName
+		dataType: string
+		lineageTag: 388a685a-682d-43b2-85fc-ab24e3fbb816
+		summarizeBy: none
+		sourceColumn: BranchName
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: dc80c34e-39ba-4007-8a4b-8b7711eb21d7
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column Manager
+		dataType: string
+		lineageTag: eab18411-7652-4029-b3e3-c5bc951568d2
+		summarizeBy: none
+		sourceColumn: Manager
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CustomerID 1'
+		dataType: string
+		lineageTag: 2b78b636-a35a-4f5b-8015-3610b5f5c136
+		summarizeBy: none
+		sourceColumn: 'CustomerID 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column FirstName
+		dataType: string
+		lineageTag: 7ca62436-5ae8-47ae-a677-c61f1ebe29af
+		summarizeBy: none
+		sourceColumn: FirstName
+
+		annotation SummarizationSetBy = Automatic
+
+	column LastName
+		dataType: string
+		lineageTag: 315588b1-ddaa-4aaa-b4f9-13ef6794e10a
+		summarizeBy: none
+		sourceColumn: LastName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gender
+		dataType: string
+		lineageTag: bcab9ce1-ba94-4898-aab1-9abe48ed6464
+		summarizeBy: none
+		sourceColumn: Gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column DOB
+		dataType: datetime
+		lineageTag: 9b84856b-476c-4b40-b490-9afb001bcf22
+		summarizeBy: none
+		sourceColumn: DOB
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'City 1'
+		dataType: string
+		lineageTag: a57bfbe8-6232-435c-b1af-2cf4ed6a9bc8
+		summarizeBy: none
+		sourceColumn: 'City 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerSince
+		dataType: datetime
+		lineageTag: 0e4f873a-305e-423c-9484-d10693369bf7
+		summarizeBy: none
+		sourceColumn: CustomerSince
+
+		annotation SummarizationSetBy = Automatic
+
+	column TransactionID
+		dataType: string
+		lineageTag: c679145e-108f-4e9a-918b-020118ecdea1
+		summarizeBy: none
+		sourceColumn: TransactionID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'AccountID 1'
+		dataType: string
+		lineageTag: 1eeba4bd-c27f-4a21-987b-8cb3311abd79
+		summarizeBy: none
+		sourceColumn: 'AccountID 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'BranchID 2'
+		dataType: string
+		lineageTag: 48574051-4eee-4f34-9b19-c07809b5d0b3
+		summarizeBy: none
+		sourceColumn: 'BranchID 2'
+
+		annotation SummarizationSetBy = Automatic
+
+	column TransactionDate
+		dataType: datetime
+		lineageTag: 099ad8b2-af4a-40fb-905c-7a0571230022
+		summarizeBy: none
+		sourceColumn: TransactionDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column TransactionType
+		dataType: string
+		lineageTag: c27e4886-2d5c-4664-a6c7-cfd9c8c43ce2
+		summarizeBy: none
+		sourceColumn: TransactionType
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		lineageTag: ba5c5b0e-1be4-48e8-bb5a-7be5a01028c9
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column Amount
+		dataType: double
+		formatString: General Number
+		lineageTag: 4659d6a8-6951-41f1-8137-af0377e2cb76
+		summarizeBy: sum
+		sourceColumn: Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Total Deposits' = IF('accounts+'[TransactionType] = "Deposit", 'accounts+'[Amount], BLANK())
+		lineageTag: 67400c52-4006-407a-8d3a-ba38413997a0
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Total Withdrawals' = IF('accounts+'[TransactionType] = "Withdrawal", 'accounts+'[Amount], BLANK())
+		lineageTag: 789efc2c-5b49-4c19-bdf1-ffb0cc6df41d
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Deposit amount' = IF('accounts+'[TransactionType] = "Deposit", 'accounts+'[Amount], BLANK())
+		lineageTag: b7ae08fe-8c7b-4c02-83d7-621adff923c9
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Withdrawal Amount' = IF('accounts+'[TransactionType] = "Withdrawal", 'accounts+'[Amount], BLANK())
+		lineageTag: ba8b51d5-9c9d-478a-9d6b-f9aa43b8566b
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'accounts+' = m
+		mode: import
+		source =
+				let 
+					#"Source0" = Table.NestedJoin(#"accounts.csv_accounts+", {"BranchID"}, #"accounts+_branches.csv", {"BranchID"}, "accounts+_branches.csv", JoinKind.Inner),
+					#"Expand0" = Table.ExpandTableColumn(#"Source0", "accounts+_branches.csv", {"BranchID", "BranchName", "City", "Manager"}, {"BranchID 1", "BranchName", "City", "Manager"}),
+					#"Source1" = Table.NestedJoin(#"Expand0", {"CustomerID"}, #"accounts+_customers.csv", {"CustomerID"}, "accounts+_customers.csv", JoinKind.LeftOuter),
+					#"Expand1" = Table.ExpandTableColumn(#"Source1", "accounts+_customers.csv", {"CustomerID", "FirstName", "LastName", "Gender", "DOB", "City", "CustomerSince"}, {"CustomerID 1", "FirstName", "LastName", "Gender", "DOB", "City 1", "CustomerSince"}),
+					#"Source2" = Table.NestedJoin(#"Expand1", {"AccountID"}, #"accounts+_transactions.csv", {"AccountID"}, "accounts+_transactions.csv", JoinKind.RightOuter),
+					#"Expand2" = Table.ExpandTableColumn(#"Source2", "accounts+_transactions.csv", {"TransactionID", "AccountID", "BranchID", "TransactionDate", "TransactionType", "Category", "Amount"}, {"TransactionID", "AccountID 1", "BranchID 2", "TransactionDate", "TransactionType", "Category", "Amount"})
+					in #"Expand2"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
