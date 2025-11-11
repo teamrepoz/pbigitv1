@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Insurance workbook_6f22"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "f6b5515d-1b15-4aa6-b0c5-5fea24587843"
+  }
+}
