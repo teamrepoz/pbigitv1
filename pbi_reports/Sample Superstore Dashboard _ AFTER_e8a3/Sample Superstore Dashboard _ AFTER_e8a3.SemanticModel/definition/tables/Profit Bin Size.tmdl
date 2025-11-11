@@ -1,0 +1,28 @@
+table 'Profit Bin Size'
+	lineageTag: b30597e8-a5fc-452b-8a90-6afb22b9f3bd
+
+	measure 'Profit Bin Size Value' = SELECTEDVALUE('Profit Bin Size'[Profit Bin Size], 50)
+		lineageTag: 912eb014-ef35-417a-99b1-7f4d265cb7af
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Profit Bin Size'
+		dataType: double
+		formatString: 0
+		lineageTag: 5b114364-4aa2-4e14-9ab3-cf96ecc78c6c
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Profit Bin Size' = calculated
+		mode: import
+		source = GENERATESERIES(50, 200, 50)
+
+	annotation PBI_Id = 153d515cb19d4f85b2fbc3d08770f228
+
