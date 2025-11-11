@@ -1,0 +1,46 @@
+table 'View By'
+	lineageTag: d9997314-2f44-4b50-89fd-166ee0f93538
+
+	column Index
+		formatString: 0
+		lineageTag: 505c99f1-5b36-4011-b731-180bfdc0215e
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 7d62dbba-cf8c-41f7-9d33-51c40cec9ef4
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 51918b3e-9b70-49d6-a9cd-745ec00c4cd8
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'View By' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Industry Name", "Industry Name" },
+				{ 1, "Activity Name", "Activity Name" },
+				{ 2, "Economic Name", "Economic Name" }
+			    }
+			)
+
+	annotation PBI_Id = 094265145d0f4585b3e2e89e468709cf
+
