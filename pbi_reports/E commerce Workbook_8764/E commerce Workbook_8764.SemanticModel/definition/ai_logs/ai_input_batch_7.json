@@ -1,0 +1,20 @@
+{
+  "calculations": [
+    {
+      "name": "Gross Profit (line)",
+      "table_name": "order_items+",
+      "tableau_expression": "[LineTotal] - [LineCost]",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "[LineTotal] - [LineCost]",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "LineTotal": "real",
+          "LineCost": "real"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
