@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "accounts+",
+      "name": "Withdrawal Amount",
+      "dax_expression": "IF('accounts+'[TransactionType] = \"Withdrawal\", 'accounts+'[Amount], BLANK())",
+      "solution_explanation": "Converted Tableau IF ... THEN ... END to DAX IF(condition, value, BLANK()). Transformed column references to 'accounts+'[Column] format and preserved the string literal \"Withdrawal\". This is a row-level transformation using only row fields, so it is implemented as a calculated column."
+    }
+  ]
+}
