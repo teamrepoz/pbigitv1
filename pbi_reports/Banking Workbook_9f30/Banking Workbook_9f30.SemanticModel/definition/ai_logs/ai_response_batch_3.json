@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "accounts+",
+      "name": "Total Withdrawals",
+      "dax_expression": "IF('accounts+'[TransactionType] = \"Withdrawal\", 'accounts+'[Amount], BLANK())",
+      "solution_explanation": "Converted Tableau IF to DAX IF and mapped column references to 'accounts+'[Column]. This is row-level logic without aggregation, so created as a calculated column."
+    }
+  ]
+}
