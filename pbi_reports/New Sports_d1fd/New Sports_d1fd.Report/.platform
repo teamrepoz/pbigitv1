@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "New Sports_d1fd"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "b4768259-0e90-43b2-9dc1-053d563fa1e6"
+  }
+}
