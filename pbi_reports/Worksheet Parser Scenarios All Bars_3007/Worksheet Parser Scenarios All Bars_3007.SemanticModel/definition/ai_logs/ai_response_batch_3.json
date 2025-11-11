@@ -1,0 +1,18 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "HR Dataset",
+      "name": "dep calc 1",
+      "dax_expression": "'HR Dataset'[DeptID]",
+      "solution_explanation": "This is a row-level passthrough of [DeptID]; convert to a calculated column and map the column reference to 'HR Dataset'[DeptID]."
+    },
+    {
+      "type": "calculated_column",
+      "table": "HR Dataset",
+      "name": "dep calc 2",
+      "dax_expression": "'HR Dataset'[dep calc 1] * 'HR Dataset'[MarriedID]",
+      "solution_explanation": "Row-level multiplication of dep calc 1 and MarriedID; convert to a calculated column and update references to 'HR Dataset'[dep calc 1] and 'HR Dataset'[MarriedID]."
+    }
+  ]
+}
