@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "accounts+",
+      "name": "Active Accounts Count",
+      "dax_expression": "DISTINCTCOUNT('accounts+'[AccountID])",
+      "solution_explanation": "Tableau COUNTD([AccountID]) maps to DAX DISTINCTCOUNT. The expression uses an aggregation (distinct count) so it should be implemented as a measure."
+    }
+  ]
+}
