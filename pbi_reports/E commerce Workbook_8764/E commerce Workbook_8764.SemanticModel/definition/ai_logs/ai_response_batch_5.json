@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "order_items+",
+      "name": "Total Sales (Line-level)",
+      "dax_expression": "'order_items+'[LineTotal]",
+      "solution_explanation": "Row-level direct mapping: Tableau [LineTotal] is a row-level field so create a calculated column that references the column on the same table."
+    }
+  ]
+}
