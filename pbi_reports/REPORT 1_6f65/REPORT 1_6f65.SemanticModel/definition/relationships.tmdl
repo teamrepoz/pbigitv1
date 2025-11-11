@@ -1,0 +1,10 @@
+relationship 3466f325-414e-4f14-a0e9-ca28f9f6febf
+	toCardinality: many
+	fromColumn: 'CALL_CENTER+ (Multiple Connections)'.CC_CALL_CENTER_ID
+	toColumn: 'CALL_CENTER+ (Multiple Connections)_Detail View.csv'.'Current Emp'
+
+relationship ba5058c4-5606-44b6-a3c3-6dd3d489bf15
+	toCardinality: many
+	fromColumn: 'CALL_CENTER+ (Multiple Connections)'.CC_CALL_CENTER_ID
+	toColumn: 'CALL_CENTER+ (Multiple Connections)_Telecom Company Call-Center-Dataset.csv'.'Call Id'
+
