@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Higher Education Dashboard _ #RWFD_128f"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "d6a0f34b-b26b-4d2a-a579-95d52c72554f"
+  }
+}
