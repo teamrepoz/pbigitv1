@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "customers+",
+      "name": "Total Claims Amount",
+      "dax_expression": "SUM('customers+'[ClaimAmount])",
+      "solution_explanation": "Converted Tableau SUM([ClaimAmount]) to DAX SUM('customers+'[ClaimAmount]). This uses an aggregation, so it is implemented as a measure."
+    }
+  ]
+}
