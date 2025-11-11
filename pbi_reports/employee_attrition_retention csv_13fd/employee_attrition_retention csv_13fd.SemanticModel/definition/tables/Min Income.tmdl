@@ -1,0 +1,28 @@
+table 'Min Income'
+	lineageTag: f5648dca-6a3a-457d-882c-02ed9889d62d
+
+	measure 'Min Income Value' = SELECTEDVALUE('Min Income'[Min Income], 0)
+		lineageTag: 517933e6-4f0e-4e07-90d6-0847161c56a6
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Min Income'
+		dataType: double
+		formatString: 0
+		lineageTag: 43c29c79-fbe7-4f47-a849-1177131577ab
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Min Income' = calculated
+		mode: import
+		source = GENERATESERIES(0, 200000)
+
+	annotation PBI_Id = 88a3d91cd3f44d6bb77d34cdceb099f2
+
