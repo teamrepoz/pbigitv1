@@ -1,0 +1,28 @@
+table 'Balance Threshold'
+	lineageTag: 964ef20d-c79d-485d-a3dd-2462831a90a6
+
+	measure 'Balance Threshold Value' = SELECTEDVALUE('Balance Threshold'[Balance Threshold], 0.0)
+		lineageTag: f76d2405-1080-4250-b402-06a5d99096d3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Balance Threshold'
+		dataType: double
+		formatString: 0
+		lineageTag: 3b40c81a-64b7-48db-960f-21304204c0d4
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Balance Threshold' = calculated
+		mode: import
+		source = GENERATESERIES(0.0, 500000.0, 5000.0)
+
+	annotation PBI_Id = 2f282662dd454c6fa5f4337dd8333116
+
