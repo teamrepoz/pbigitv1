@@ -1,0 +1,28 @@
+table 'Target Threshold'
+	lineageTag: 44a6e1c3-8350-429d-8632-0d51e85c0a7c
+
+	measure 'Target Threshold Value' = SELECTEDVALUE('Target Threshold'[Target Threshold], 0.0)
+		lineageTag: 89cbed67-5683-4d22-9017-908a4dbecd87
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Target Threshold'
+		dataType: double
+		formatString: 0
+		lineageTag: 7479ada4-f728-4a3e-86ed-ff5cbd420b31
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Target Threshold' = calculated
+		mode: import
+		source = GENERATESERIES(0.0, 100.0, 0.5)
+
+	annotation PBI_Id = 4c36f814844a45649b4e2a718bcf2fb5
+
