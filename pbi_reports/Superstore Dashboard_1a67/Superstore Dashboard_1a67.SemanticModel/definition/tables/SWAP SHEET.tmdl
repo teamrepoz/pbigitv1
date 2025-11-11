@@ -1,0 +1,45 @@
+table 'SWAP SHEET'
+	lineageTag: 1f30dca5-ee22-4506-a16a-6881a2af4e92
+
+	column Index
+		formatString: 0
+		lineageTag: 2ef0fd4d-f803-44e3-b593-2b8b6fd8ff32
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 3493a5fc-464a-44e0-b25a-3faae67e0215
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 68dbcefa-b206-4503-9b68-86744b66d4cc
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'SWAP SHEET' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", INTEGER,
+			    "Value", INTEGER,
+			    {
+			        { 0, Sales, 1 },
+				{ 1, Profit, 2 }
+			    }
+			)
+
+	annotation PBI_Id = 57ac7c71b0694f94b62004d8663e0828
+
