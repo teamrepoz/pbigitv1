@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "accounts+",
+      "name": "Accounts Above Threshold",
+      "dax_expression": "VAR threshold = SELECTEDVALUE('Balance Threshold'[Display As])\nRETURN\nIF(\n    'accounts+'[CurrentBalance] >= threshold,\n    'accounts+'[AccountID],\n    BLANK()\n)",
+      "solution_explanation": "Replaced the Tableau parameter reference with SELECTEDVALUE('Balance Threshold'[Display As]). Preserved the IF logic and converted column references to the required 'table'[column] syntax: 'accounts+'[CurrentBalance] and 'accounts+'[AccountID]. The measure returns the AccountID when CurrentBalance is greater than or equal to the selected threshold, otherwise BLANK().",
+      "type_changed_reason": "The calculation references a parameter, and all parameter-based calculations must be measures."
+    }
+  ]
+}
