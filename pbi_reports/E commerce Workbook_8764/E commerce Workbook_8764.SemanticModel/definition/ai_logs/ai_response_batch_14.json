@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "order_items+",
+      "name": "Customer_Lifetime_Sales",
+      "dax_expression": "CALCULATE(\n    SUM('order_items+'[LineTotal]),\n    ALLEXCEPT('order_items+', 'order_items+'[CustomerID])\n)",
+      "solution_explanation": "The Tableau FIXED LOD { FIXED [CustomerID] : SUM([LineTotal]) } computes a customer-level aggregate that ignores other row/context filters. In DAX this is achieved with CALCULATE over SUM of LineTotal while removing all filters except CustomerID using ALLEXCEPT on the same table.",
+      "type_changed_reason": "This calculation uses a Tableau FIXED LOD expression (aggregate/context-based), so it should be created as a measure."
+    }
+  ]
+}
