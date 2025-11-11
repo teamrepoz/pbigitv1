@@ -1,0 +1,216 @@
+table 'accounts+'
+	lineageTag: cba18ba1-3c60-4e6b-8755-3674d1d74a0e
+
+	column AccountID
+		dataType: string
+		lineageTag: 5cdf722b-2a06-41da-b789-45401209479f
+		summarizeBy: none
+		sourceColumn: AccountID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerID
+		dataType: string
+		lineageTag: 5d633966-d51b-416c-ad2e-2b24d98063b0
+		summarizeBy: none
+		sourceColumn: CustomerID
+
+		annotation SummarizationSetBy = Automatic
+
+	column BranchID
+		dataType: string
+		lineageTag: 517b3ff3-0691-41a8-a62b-f38a22a0798a
+		summarizeBy: none
+		sourceColumn: BranchID
+
+		annotation SummarizationSetBy = Automatic
+
+	column AccountType
+		dataType: string
+		lineageTag: 9c444b03-2bab-457d-9705-fa40e6294804
+		summarizeBy: none
+		sourceColumn: AccountType
+
+		annotation SummarizationSetBy = Automatic
+
+	column OpenDate
+		dataType: datetime
+		lineageTag: 2dee0322-12b6-4e2c-bcbc-4f2c2122748b
+		summarizeBy: none
+		sourceColumn: OpenDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column CurrentBalance
+		dataType: double
+		formatString: General Number
+		lineageTag: 7025619f-a5db-45d4-a525-fd0cf3ad0353
+		summarizeBy: sum
+		sourceColumn: CurrentBalance
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'BranchID 1'
+		dataType: string
+		lineageTag: e6f35b40-f976-4bae-8258-d4777434c2aa
+		summarizeBy: none
+		sourceColumn: 'BranchID 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column BranchName
+		dataType: string
+		lineageTag: 60367714-84fe-4119-b321-cd6d309a3442
+		summarizeBy: none
+		sourceColumn: BranchName
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: 37f6177b-9694-46dd-bb93-f0e2f19a7449
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column Manager
+		dataType: string
+		lineageTag: f1053d1d-929c-4765-9e0b-e63be9ebd9cb
+		summarizeBy: none
+		sourceColumn: Manager
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CustomerID 1'
+		dataType: string
+		lineageTag: e747d484-0b1c-40a8-b2a2-4d8a3d4ba3fc
+		summarizeBy: none
+		sourceColumn: 'CustomerID 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column FirstName
+		dataType: string
+		lineageTag: eda9a011-62d6-4b90-bc49-c883b9d0781a
+		summarizeBy: none
+		sourceColumn: FirstName
+
+		annotation SummarizationSetBy = Automatic
+
+	column LastName
+		dataType: string
+		lineageTag: 964acfa5-6e7f-4062-a2e7-70dabf620422
+		summarizeBy: none
+		sourceColumn: LastName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gender
+		dataType: string
+		lineageTag: 65a65294-f23b-46fa-9077-ed2883cfb7fe
+		summarizeBy: none
+		sourceColumn: Gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column DOB
+		dataType: datetime
+		lineageTag: 470b98b0-a2a7-4779-b376-f2e1b52eec8b
+		summarizeBy: none
+		sourceColumn: DOB
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'City 1'
+		dataType: string
+		lineageTag: 32c58825-3e7d-4858-b82b-588b9e6fd65b
+		summarizeBy: none
+		sourceColumn: 'City 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerSince
+		dataType: datetime
+		lineageTag: 788c5b96-d34b-44f9-a659-26e11115ac7c
+		summarizeBy: none
+		sourceColumn: CustomerSince
+
+		annotation SummarizationSetBy = Automatic
+
+	column TransactionID
+		dataType: string
+		lineageTag: 367baf0d-e779-4528-98ec-98b9d2e0b207
+		summarizeBy: none
+		sourceColumn: TransactionID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'AccountID 1'
+		dataType: string
+		lineageTag: 854c40a0-8be4-4ee5-8f0c-b5c1b2185fbd
+		summarizeBy: none
+		sourceColumn: 'AccountID 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'BranchID 2'
+		dataType: string
+		lineageTag: 49eb2cce-8522-4ca5-9f46-47154581b718
+		summarizeBy: none
+		sourceColumn: 'BranchID 2'
+
+		annotation SummarizationSetBy = Automatic
+
+	column TransactionDate
+		dataType: datetime
+		lineageTag: 334db999-f7a3-47eb-a7aa-427a4f660065
+		summarizeBy: none
+		sourceColumn: TransactionDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column TransactionType
+		dataType: string
+		lineageTag: 97bc730a-b821-4797-8ca6-3c260e7ea892
+		summarizeBy: none
+		sourceColumn: TransactionType
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		lineageTag: a7dfe103-e8a4-488d-b7b7-b331cbc9fc53
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column Amount
+		dataType: double
+		formatString: General Number
+		lineageTag: de0b15f0-669f-4498-9749-26a5df5fa830
+		summarizeBy: sum
+		sourceColumn: Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'accounts+' = m
+		mode: import
+		source =
+				let 
+					#"Source0" = Table.NestedJoin(#"accounts.csv_accounts+", {"BranchID"}, #"accounts+_branches.csv", {"BranchID"}, "accounts+_branches.csv", JoinKind.Inner),
+					#"Expand0" = Table.ExpandTableColumn(#"Source0", "accounts+_branches.csv", {"BranchID", "BranchName", "City", "Manager"}, {"BranchID 1", "BranchName", "City", "Manager"}),
+					#"Source1" = Table.NestedJoin(#"Expand0", {"CustomerID"}, #"accounts+_customers.csv", {"CustomerID"}, "accounts+_customers.csv", JoinKind.LeftOuter),
+					#"Expand1" = Table.ExpandTableColumn(#"Source1", "accounts+_customers.csv", {"CustomerID", "FirstName", "LastName", "Gender", "DOB", "City", "CustomerSince"}, {"CustomerID 1", "FirstName", "LastName", "Gender", "DOB", "City 1", "CustomerSince"}),
+					#"Source2" = Table.NestedJoin(#"Expand1", {"AccountID"}, #"accounts+_transactions.csv", {"AccountID"}, "accounts+_transactions.csv", JoinKind.RightOuter),
+					#"Expand2" = Table.ExpandTableColumn(#"Source2", "accounts+_transactions.csv", {"TransactionID", "AccountID", "BranchID", "TransactionDate", "TransactionType", "Category", "Amount"}, {"TransactionID", "AccountID 1", "BranchID 2", "TransactionDate", "TransactionType", "Category", "Amount"})
+					in #"Expand2"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
