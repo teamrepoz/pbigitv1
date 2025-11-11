@@ -1,0 +1,28 @@
+table 'Min Premium Threshold'
+	lineageTag: f11e2556-282e-4960-9a7c-d6816b0130c5
+
+	measure 'Min Premium Threshold Value' = SELECTEDVALUE('Min Premium Threshold'[Min Premium Threshold], 0.0)
+		lineageTag: a46c8c11-9a09-40d3-b93e-b1b13934f2fb
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Min Premium Threshold'
+		dataType: double
+		formatString: 0
+		lineageTag: f804d8a9-de0c-4942-934b-a380b0af4c65
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Min Premium Threshold' = calculated
+		mode: import
+		source = GENERATESERIES(0.0, 200000.0, 1000.0)
+
+	annotation PBI_Id = 31b2ad49d5534582800bca4986252579
+
