@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Parameters",
+      "name": "Balance Threshold",
+      "dax_expression": "10000.0",
+      "solution_explanation": "The Tableau expression is a numeric constant (10000.). Converted to a calculated column that returns the same numeric value for each row in the 'Parameters' table."
+    }
+  ]
+}
