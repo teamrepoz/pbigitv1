@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "accounts+",
+      "name": "Total Deposits",
+      "dax_expression": "IF('accounts+'[TransactionType] = \"Deposit\", 'accounts+'[Amount])",
+      "solution_explanation": "Converted the Tableau IF expression to a DAX IF, mapping row-level columns to the 'accounts+'[Column] format. The expression returns the Amount when TransactionType equals \"Deposit\" and otherwise returns BLANK().",
+      "type_changed_reason": "The calculation performs row-level logic only (no aggregations or parameters), so it should be a calculated column."
+    }
+  ]
+}
