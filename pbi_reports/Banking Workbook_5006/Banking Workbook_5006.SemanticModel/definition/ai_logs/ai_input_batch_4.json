@@ -1,0 +1,20 @@
+{
+  "calculations": [
+    {
+      "name": "Deposit amount",
+      "table_name": "accounts+",
+      "tableau_expression": "IF [TransactionType] = \"Deposit\" THEN [Amount] END",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "IF [TransactionType] = \"Deposit\" THEN [Amount] END",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "TransactionType": "string",
+          "Amount": "real"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
