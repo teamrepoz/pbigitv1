@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "accounts+",
+      "name": "Average account balance",
+      "dax_expression": "AVERAGE('accounts+'[CurrentBalance])",
+      "solution_explanation": "Converted Tableau AVG([CurrentBalance]) to DAX AVERAGE('accounts+'[CurrentBalance]). This is an aggregation, so it is implemented as a measure."
+    }
+  ]
+}
