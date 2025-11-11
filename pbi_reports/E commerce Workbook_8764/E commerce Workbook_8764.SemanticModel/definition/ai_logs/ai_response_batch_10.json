@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "order_items+",
+      "name": "Average Order Value (AOV)",
+      "dax_expression": "SUM('order_items+'[LineTotal]) / DISTINCTCOUNT('order_items+'[OrderID])",
+      "solution_explanation": "Mapped SUM([LineTotal]) -> SUM('order_items+'[LineTotal]) and COUNTD([OrderID]) -> DISTINCTCOUNT('order_items+'[OrderID]). Because the expression uses aggregations, it is implemented as a measure."
+    }
+  ]
+}
