@@ -1,9 +1,0 @@
-[
-  {
-    "type": "calculated_column",
-    "table": "Orders (Sample - Superstore (1))",
-    "name": "Calculation1",
-    "dax_expression": "IF('Orders (Sample - Superstore (1))'[Category] = \"Furniture\", \"furniture\", IF('Orders (Sample - Superstore (1))'[Category] = \"Office Supplies\", \"office supplier\", IF('Orders (Sample - Superstore (1))'[Category] = \"Technology\", \"technology\", 'Orders (Sample - Superstore (1))'[Category])))",
-    "solution_explanation": "Per-row calculation converting Tableau IF/ELSEIF/ELSE over the Category field into nested DAX IF statements for a calculated column. Category is sourced from the Orders (Sample - Superstore (1)) table."
-  }
-]

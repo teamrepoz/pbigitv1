@@ -1,5 +1,0 @@
-relationship 2a984341-a255-4649-92c5-927aaedc061e
-	toCardinality: many
-	fromColumn: 'Custom Superstore Table'.1
-	toColumn: 'Custom Superstore Table_Sheet1'.1
-

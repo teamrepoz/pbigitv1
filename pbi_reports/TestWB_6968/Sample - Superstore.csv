@@ -1,6 +1,0 @@
-Row ID,Order ID,Order Date,Ship Date,Ship Mode,Customer ID,Customer Name,Segment,Country/Region,City,State/Province,Postal Code,Region,Product ID,Category,Sub-Category,Product Name,Sales,Quantity,Discount,Profit
-1,SO-100001,2023-03-12,2023-03-15,Standard Class,CUST-1001,Alex Johnson,Consumer,United States,Seattle,WA,98101,West,P-2310,Furniture,Chairs,ErgoPro Office Chair,349.99,2,12.0,58.5
-2,SO-100002,2023-04-10,2023-04-12,First Class,CUST-1002,Maria Lopez,Corporate,United States,New York,NY,10001,Northeast,P-4023,Office Supplies,Binders,Avery Durable Binders,75.25,3,5.0,15.75
-3,SO-100003,2023-05-22,2023-05-28,Standard Class,CUST-1003,James Chen,Consumer,Canada,Toronto,ON,M5H 2N2,East,P-7012,Technology,Accessories,Wireless Keyboard and Mouse Combo,199.99,1,0.0,40.0
-4,SO-100004,2023-06-08,2023-06-10,Second Class,CUST-1004,Pouria Khan,Home Office,United States,Chicago,IL,60601,Central,P-9003,Furniture,Tables,L-shaped Executive Desk,520.4,2,7.5,65.5
-5,SO-100005,2023-07-15,2023-07-16,Same Day,CUST-1005,Emily Davis,Consumer,United States,San Francisco,CA,94105,West,P-3050,Technology,Components,SSD 1TB NVMe,299.99,4,0.0,120.0

@@ -1,6 +1,0 @@
-Row ID,Order ID,Order Date,Ship Date,Ship Mode,Customer ID,Customer Name,Segment,Country/Region,City,State/Province,Postal Code,Region,Product ID,Category,Sub-Category,Product Name,Sales,Quantity,Discount,Profit
-1,SO-1000001,2023-01-12,2023-01-14,Standard Class,CUST-0001,John Doe,Consumer,United States,New York,New York,10001,East,P-1001,Furniture,Office Chairs,ErgoMesh Executive Chair,350.75,2,5.0,72.5
-2,SO-1000002,2023-02-05,2023-02-07,Second Class,CUST-0002,Michael Smith,Corporate,United States,Chicago,Illinois,60602,Central,P-1002,Furniture,Bookcases,Modular Bookcase,520.0,3,8.0,130.0
-3,SO-1000003,2023-03-12,2023-03-15,Express Air,CUST-0003,Sara Lee,Home Office,United States,San Francisco,California,94107,West,P-1003,Technology,Accessories,Bluetooth Keyboard,199.99,4,15.0,40.0
-4,SO-1000004,2023-04-20,2023-04-23,Standard Class,CUST-0004,David Kim,Corporate,United States,Houston,Texas,77002,South,P-1004,Office Supplies,Binders,Durable Binder Clips 2-in-1,75.5,6,0.0,18.0
-5,SO-1000005,2023-05-08,2023-05-11,Standard Class,CUST-0005,Emily Rodriguez,Consumer,United States,Miami,Florida,33101,South,P-1005,Technology,Components,Wireless Router Pro,299.99,2,10.0,60.0

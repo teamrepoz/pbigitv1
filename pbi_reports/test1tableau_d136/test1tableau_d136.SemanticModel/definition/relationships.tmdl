@@ -1,5 +1,0 @@
-relationship 42b5779f-4dff-4f6a-a5db-75318db5f5b4
-	toCardinality: many
-	fromColumn: 'trulia_dataset_cleaned (trulia_dataset_cleanedTBL)'.'Zip code'
-	toColumn: 'trulia_dataset_cleaned (trulia_dataset_cleanedTBL)_ZIP-COUNTY-FIPS_2017-06'.ZIP
-

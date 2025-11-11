@@ -1,6 +1,0 @@
-Row ID,Order ID,Order Date,Ship Date,Ship Mode,Customer ID,Customer Name,Segment,Country/Region,City,State/Province,Postal Code,Region,Product ID,Category,Sub-Category,Product Name,Sales,Quantity,Discount,Profit
-1,SO-100001,2024-07-03,2024-07-05,Standard Class,CUST-0001,Michael Carter,Consumer,United States,Seattle,WA,98101,West,P-1001,Office Supplies,Accessories,Ergonomic Keyboard,199.99,1,5.0,42.5
-2,SO-100002,2024-07-06,2024-07-08,Two Day Air,CUST-0002,Emily Chen,Corporate,United States,New York,NY,10001,East,P-2050,Furniture,Chairs,Ergonomic Executive Chair,549.99,2,12.0,170.0
-3,SO-100003,2024-07-09,2024-07-12,Standard Class,CUST-0003,Liam Patel,Home Office,United States,San Jose,CA,95112,West,P-3100,Technology,Accessories,Wireless Router,129.95,3,0.0,25.0
-4,SO-100004,2024-07-15,2024-07-18,First Class,CUST-0004,Sophia Martinez,Consumer,United States,Chicago,IL,60601,Central,P-4501,Furniture,Tables,Standing Desk,899.5,1,8.0,150.0
-5,SO-100005,2024-07-20,2024-07-25,Standard Class,CUST-0005,Daniel Kim,Corporate,United States,Austin,TX,73301,South,P-2100,Technology,Accessories,Wireless Keyboard & Mouse Combo,349.99,2,15.0,60.0
