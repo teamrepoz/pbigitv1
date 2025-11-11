@@ -1,0 +1,25 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "accounts+",
+      "name": "Deposit amount",
+      "dax_expression": "IF('accounts+'[TransactionType] = \"Deposit\", 'accounts+'[Amount], BLANK())",
+      "solution_explanation": "Converted the row-level Tableau calculated field IF [TransactionType] = \"Deposit\" THEN [Amount] END into a Power BI calculated column. Replaced Tableau IF ... THEN ... END with DAX IF(condition, value, BLANK()) and transformed column references to 'accounts+'[Column]."
+    },
+    {
+      "type": "calculated_column",
+      "table": "accounts+",
+      "name": "Withdrawal Amount",
+      "dax_expression": "IF('accounts+'[TransactionType] = \"Withdrawal\", 'accounts+'[Amount], BLANK())",
+      "solution_explanation": "Converted the row-level Tableau calculated field IF [TransactionType] = \"Withdrawal\" THEN [Amount] END into a Power BI calculated column. Replaced Tableau IF ... THEN ... END with DAX IF(condition, value, BLANK()) and transformed column references to 'accounts+'[Column]."
+    },
+    {
+      "type": "measure",
+      "table": "accounts+",
+      "name": "Net Flow",
+      "dax_expression": "SUM('accounts+'[Deposit amount]) - SUM('accounts+'[Withdrawal Amount])",
+      "solution_explanation": "Translated the Tableau aggregation SUM([Deposit amount]) - SUM([Withdrawal Amount]) into DAX. Uses SUM over the calculated columns created above ('accounts+'[Deposit amount] and 'accounts+'[Withdrawal Amount]) and subtracts them to produce the Net Flow measure."
+    }
+  ]
+}
