@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "accounts+",
+      "name": "Total Withdrawals",
+      "dax_expression": "IF('accounts+'[TransactionType] = \"Withdrawal\", 'accounts+'[Amount], BLANK())",
+      "solution_explanation": "Converted the row-level Tableau IF to a DAX calculated column. The expression returns 'accounts+'[Amount] when 'accounts+'[TransactionType] equals \"Withdrawal\", otherwise BLANK()."
+    }
+  ]
+}
