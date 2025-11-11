@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "order_items+",
+      "name": "Gross Profit (line)",
+      "dax_expression": "'order_items+'[LineTotal] - 'order_items+'[LineCost]",
+      "solution_explanation": "Converted row-level subtraction from Tableau to a DAX calculated column by mapping each column reference to the table-qualified form 'TableName'[Column]. This is a row-level calculation (no aggregates or parameters), so it is implemented as a calculated column."
+    }
+  ]
+}
