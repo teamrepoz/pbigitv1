@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "accounts+",
+      "name": "Deposit amount",
+      "dax_expression": "IF('accounts+'[TransactionType] = \"Deposit\", 'accounts+'[Amount], BLANK())",
+      "solution_explanation": "Translated Tableau IF to DAX IF. All column references converted to 'accounts+'[ColumnName] format. Returns the Amount when TransactionType equals \"Deposit\", otherwise BLANK() to match Tableau's implicit NULL behavior. Determined as a calculated column because the logic is row-level and uses no aggregations or parameters."
+    }
+  ]
+}

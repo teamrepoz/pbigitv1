@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "accounts+",
+      "name": "Active Accounts Count",
+      "dax_expression": "DISTINCTCOUNT('accounts+'[AccountID])",
+      "solution_explanation": "Converted Tableau COUNTD([AccountID]) to DAX DISTINCTCOUNT and transformed the column reference to 'accounts+'[AccountID]. This is an aggregation (distinct count) so it is implemented as a measure.",
+      "type_changed_reason": "The Tableau formula uses an aggregation (COUNTD), which maps to DAX DISTINCTCOUNT; aggregations must be created as measures."
+    }
+  ]
+}

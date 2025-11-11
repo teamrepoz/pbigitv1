@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "accounts+",
+      "name": "Net Flow",
+      "dax_expression": "CALCULATE(SUM('accounts+'[Amount]), 'accounts+'[TransactionType] = \"Deposit\") - CALCULATE(SUM('accounts+'[Amount]), 'accounts+'[TransactionType] = \"Withdrawal\")",
+      "solution_explanation": "Replaced SUM([Deposit amount]) and SUM([Withdrawal Amount]) (which are conditional row-level calcs) with CALCULATE(SUM('accounts+'[Amount]), 'accounts+'[TransactionType] = \"Deposit\") and CALCULATE(SUM('accounts+'[Amount]), 'accounts+'[TransactionType] = \"Withdrawal\") to reproduce the Tableau SUM(IF ... THEN ... END) behavior."
+    }
+  ]
+}

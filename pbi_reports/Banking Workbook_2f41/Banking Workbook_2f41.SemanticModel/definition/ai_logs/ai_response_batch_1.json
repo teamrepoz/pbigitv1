@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Parameters",
+      "name": "Select Year",
+      "dax_expression": "2023",
+      "solution_explanation": "The Tableau parameter Select Year is a constant value (2023). Represent this parameter in Power BI as a measure that returns the constant value.",
+      "type_changed_reason": "This item is a Tableau parameter (a global selection). Per the conversion rules, parameter-based items must be created as measures in Power BI."
+    }
+  ]
+}
