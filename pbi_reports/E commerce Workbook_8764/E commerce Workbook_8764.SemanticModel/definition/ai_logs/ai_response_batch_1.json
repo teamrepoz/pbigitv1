@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Parameters",
+      "name": "Top N Products",
+      "dax_expression": "1",
+      "solution_explanation": "The Tableau expression is a constant literal (1). It translates directly to the DAX constant 1. Because it contains no aggregations or parameter references and is row-level, it should be a calculated column."
+    }
+  ]
+}
