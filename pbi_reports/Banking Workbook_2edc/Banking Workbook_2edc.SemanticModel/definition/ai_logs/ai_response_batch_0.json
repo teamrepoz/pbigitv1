@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Parameters",
+      "name": "Balance Threshold",
+      "dax_expression": "10000.",
+      "solution_explanation": "Direct conversion of the Tableau numeric literal 10000. to a DAX numeric literal. This is a row-level constant (no aggregation or parameter usage), so it is implemented as a calculated column."
+    }
+  ]
+}
