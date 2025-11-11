@@ -1,0 +1,20 @@
+{
+  "calculations": [
+    {
+      "name": "Loss Ratio",
+      "table_name": "customers+",
+      "tableau_expression": "SUM([ClaimAmount]) / SUM([Premium])",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "SUM([ClaimAmount]) / SUM([Premium])",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "ClaimAmount": "real",
+          "Premium": "real"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
