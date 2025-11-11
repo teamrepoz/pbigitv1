@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Employee_Time_Tracking_Utilization_Report csv_68c9"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "bc7ec552-8c44-4e9e-8166-648c47830263"
+  }
+}
