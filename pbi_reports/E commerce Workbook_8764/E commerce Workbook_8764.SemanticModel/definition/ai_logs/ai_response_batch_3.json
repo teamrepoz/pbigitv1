@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Parameters",
+      "name": "Discount Threshold %",
+      "dax_expression": "0",
+      "solution_explanation": "The Tableau expression is a constant (0). A constant with no aggregations or parameter references maps directly to the DAX literal 0. No row-level fields or aggregates are used, so this is implemented as a calculated column.",
+      "type_changed_reason": "This calculation contains no aggregations or parameter references and evaluates at the row level (constant per row), so it should be a calculated column."
+    }
+  ]
+}
