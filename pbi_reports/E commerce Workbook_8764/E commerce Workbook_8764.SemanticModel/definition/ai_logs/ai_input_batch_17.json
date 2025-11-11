@@ -1,0 +1,26 @@
+{
+  "calculations": [
+    {
+      "name": "Products Above Threshold",
+      "table_name": "order_items+",
+      "tableau_expression": "{ FIXED [ProductID] : SUM([LineTotal]) } >= [Parameters].[Min Sales Threshold]",
+      "datatype": "boolean",
+      "calculation_context": {
+        "Expression": "{ FIXED [ProductID] : SUM([LineTotal]) } >= [Parameters].[Min Sales Threshold]",
+        "calculated_fields": {
+          "Min Sales Threshold": "0."
+        },
+        "parameters": [
+          "Min Sales Threshold"
+        ],
+        "col_to_datatype_mapping": {
+          "ProductID": "string",
+          "LineTotal": "real"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Min Sales Threshold": "real"
+        }
+      }
+    }
+  ]
+}
