@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Banking Workbook_fbde"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "1bb57586-e9ee-4ae8-8766-4b5e57674199"
+  }
+}
