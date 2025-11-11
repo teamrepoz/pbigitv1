@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Total Sales (Line-level)",
+      "table_name": "order_items+",
+      "tableau_expression": "[LineTotal]",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "[LineTotal]",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "LineTotal": "real"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
