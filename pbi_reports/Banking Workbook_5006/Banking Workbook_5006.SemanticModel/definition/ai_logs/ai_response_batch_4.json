@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "accounts+",
+      "name": "Deposit amount",
+      "dax_expression": "IF('accounts+'[TransactionType] = \"Deposit\", 'accounts+'[Amount])",
+      "solution_explanation": "Converted the row-level Tableau IF into a DAX calculated column. The expression returns 'accounts+'[Amount] when 'accounts+'[TransactionType] equals \"Deposit\" and BLANK() otherwise."
+    }
+  ]
+}
