@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "accounts+",
+      "name": "Net Flow",
+      "dax_expression": "CALCULATE(\n    SUM('accounts+'[Amount]),\n    'accounts+'[TransactionType] = \"Deposit\"\n) - CALCULATE(\n    SUM('accounts+'[Amount]),\n    'accounts+'[TransactionType] = \"Withdrawal\"\n)",
+      "solution_explanation": "Replaced Tableau aggregated calculated fields SUM([Deposit amount]) and SUM([Withdrawal Amount]) by applying filters directly in DAX using CALCULATE on the underlying 'accounts+'[Amount] column with 'accounts+'[TransactionType] = \"Deposit\" and \"Withdrawal\" respectively, then subtracting the two results.",
+      "type_changed_reason": "This calculation uses aggregation (SUM), so it should be created as a measure."
+    }
+  ]
+}
