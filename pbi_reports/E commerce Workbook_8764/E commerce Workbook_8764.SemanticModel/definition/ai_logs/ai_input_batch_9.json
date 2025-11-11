@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Order Count",
+      "table_name": "order_items+",
+      "tableau_expression": "COUNTD([OrderID])",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "COUNTD([OrderID])",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "OrderID": "string"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
