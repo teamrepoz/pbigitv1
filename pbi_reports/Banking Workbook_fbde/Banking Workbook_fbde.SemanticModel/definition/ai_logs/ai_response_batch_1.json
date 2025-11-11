@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Parameters",
+      "name": "Select Year",
+      "dax_expression": "2023",
+      "solution_explanation": "The Tableau expression is a constant integer (2023) with no row-level column references or aggregations. This is a row-level/static value, so it is represented as a calculated column containing the constant."
+    }
+  ]
+}
