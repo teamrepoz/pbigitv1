@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "order_items+",
+      "name": "Profit Margin (%)",
+      "dax_expression": "VAR totalLineTotal = SUM('order_items+'[LineTotal])\nVAR totalLineCost = SUM('order_items+'[LineCost])\nRETURN IF(totalLineTotal = 0, 0, (totalLineTotal - totalLineCost) / totalLineTotal)",
+      "solution_explanation": "Converted the Tableau IF statement with SUM aggregates into a DAX measure. Used VARs to calculate SUM('order_items+'[LineTotal]) and SUM('order_items+'[LineCost]) for clarity, then returned 0 when totalLineTotal is 0, otherwise computed (totalLineTotal - totalLineCost) / totalLineTotal. All column references were converted to the 'order_items+'[Column] format.",
+      "type_changed_reason": "This calculation uses aggregation (SUM), so it should be created as a measure."
+    }
+  ]
+}
