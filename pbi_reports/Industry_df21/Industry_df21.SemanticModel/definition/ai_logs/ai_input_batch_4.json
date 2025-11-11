@@ -1,0 +1,21 @@
+{
+  "calculations": [
+    {
+      "name": "Avg Price",
+      "table_name": "stock_data+",
+      "tableau_expression": "([Price High]+[Price Close]+[Price Open])/3",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "([Price High]+[Price Close]+[Price Open])/3",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Price High": "real",
+          "Price Close": "real",
+          "Price Open": "real"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
