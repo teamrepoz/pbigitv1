@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "HR Dataset",
+      "name": "Calculation4",
+      "dax_expression": "INT(BLANK())",
+      "solution_explanation": "Translated Tableau INT(NULL) to DAX INT(BLANK()). This is a row-level conversion (no aggregations or parameters), so it is implemented as a calculated column."
+    }
+  ]
+}
