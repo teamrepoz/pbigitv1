@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Insurance workbook_6f22"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "4e19830e-ea62-48b5-bb8a-87d81d87804a"
+  }
+}
