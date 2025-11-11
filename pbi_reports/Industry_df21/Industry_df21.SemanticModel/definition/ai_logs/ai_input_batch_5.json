@@ -1,0 +1,27 @@
+{
+  "calculations": [
+    {
+      "name": "Price Type",
+      "table_name": "stock_data+",
+      "tableau_expression": "CASE [Parameters].[Price Type]\r\nWHEN \"Open\" THEN [Price Open]\r\nWHEN \"Close\" THEN [Price Close]\r\nWHEN \"High\" THEN [Price High]\r\nEND",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "CASE [Parameters].[Price Type]\r\nWHEN \"Open\" THEN [Price Open]\r\nWHEN \"Close\" THEN [Price Close]\r\nWHEN \"High\" THEN [Price High]\r\nEND",
+        "calculated_fields": {
+          "Price Type": "CASE [Parameters].[Price Type]\r\nWHEN \"Open\" THEN [Price Open]\r\nWHEN \"Close\" THEN [Price Close]\r\nWHEN \"High\" THEN [Price High]\r\nEND"
+        },
+        "parameters": [
+          "Price Type"
+        ],
+        "col_to_datatype_mapping": {
+          "Price High": "real",
+          "Price Close": "real",
+          "Price Open": "real"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Price Type": "real"
+        }
+      }
+    }
+  ]
+}
