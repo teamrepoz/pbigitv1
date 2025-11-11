@@ -1,0 +1,20 @@
+{
+  "calculations": [
+    {
+      "name": "Profit Margin (%)",
+      "table_name": "order_items+",
+      "tableau_expression": "IF SUM([LineTotal]) = 0 THEN 0 ELSE (SUM([LineTotal]) - SUM([LineCost])) / SUM([LineTotal]) END",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "IF SUM([LineTotal]) = 0 THEN 0 ELSE (SUM([LineTotal]) - SUM([LineCost])) / SUM([LineTotal]) END",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "LineTotal": "real",
+          "LineCost": "real"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
