@@ -1,0 +1,45 @@
+table 'PARAMETER TOP SWAP SHEET'
+	lineageTag: 92b52cb9-799e-4676-b530-3f0ca4c62e5e
+
+	column Index
+		formatString: 0
+		lineageTag: 54256f3a-e0ec-4404-ad95-024199d32439
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 949b2855-9bcd-46a5-94aa-a447ce14b94e
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: eb109176-3718-4a08-b7d7-84338b5119cf
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'PARAMETER TOP SWAP SHEET' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "TOP  5 CUSTOMERS", "TOP CUSTOMER" },
+				{ 1, "BOTTOM  5 CUSTOMERS", "BOTTOM  CUSTOMER" }
+			    }
+			)
+
+	annotation PBI_Id = 789a860730d648cdabffcda5aa4f6b66
+
