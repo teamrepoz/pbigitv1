@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Parameters",
+      "name": "Top N Stock",
+      "dax_expression": "3",
+      "solution_explanation": "The Tableau expression is a constant numeric value (3). This maps directly to the same numeric literal in DAX. There are no aggregates or parameter references, and the expression is row-level (constant per row), so it is implemented as a calculated column."
+    }
+  ]
+}
