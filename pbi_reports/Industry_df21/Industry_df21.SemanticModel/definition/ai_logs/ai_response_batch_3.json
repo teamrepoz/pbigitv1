@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "stock_data+",
+      "name": "Daily Price Change ",
+      "dax_expression": "'stock_data+'[Price Close] - 'stock_data+'[Price Open]",
+      "solution_explanation": "Row-level subtraction converted to a calculated column. Mapped [Price Close] -> 'stock_data+'[Price Close] and [Price Open] -> 'stock_data+'[Price Open] and performed per-row subtraction."
+    }
+  ]
+}
