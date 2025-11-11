@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "stock_data+",
+      "name": "Price Type",
+      "dax_expression": "SWITCH(SELECTEDVALUE('Price Type'[Display As]), \"Open\", 'stock_data+'[Price Open], \"Close\", 'stock_data+'[Price Close], \"High\", 'stock_data+'[Price High], BLANK())",
+      "solution_explanation": "Replaced Tableau CASE on the parameter with DAX SWITCH using SELECTEDVALUE('Price Type'[Display As]) for the parameter. Mapped row fields to 'stock_data+'[Price Open], 'stock_data+'[Price Close], and 'stock_data+'[Price High]. No ELSE in Tableau becomes BLANK() in DAX.",
+      "type_changed_reason": "The calculation references a parameter ([Parameters].[Price Type]); parameter-based calculations must be created as measures."
+    }
+  ]
+}
