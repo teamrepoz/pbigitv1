@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Total Claims Amount",
+      "table_name": "customers+",
+      "tableau_expression": "SUM([ClaimAmount])",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "SUM([ClaimAmount])",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "ClaimAmount": "real"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
