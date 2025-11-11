@@ -1,0 +1,20 @@
+{
+  "calculations": [
+    {
+      "name": "Days Between Policy Start and First Claim",
+      "table_name": "customers+",
+      "tableau_expression": "DATEDIFF('day', MIN([StartDate]), MIN([ClaimDate]))",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "DATEDIFF('day', MIN([StartDate]), MIN([ClaimDate]))",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "ClaimDate": "date",
+          "StartDate": "date"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
