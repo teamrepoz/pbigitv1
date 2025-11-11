@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Media_fbb3"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "5b0e3d23-5155-4bc2-bffd-d6d2cb76a69d"
+  }
+}
