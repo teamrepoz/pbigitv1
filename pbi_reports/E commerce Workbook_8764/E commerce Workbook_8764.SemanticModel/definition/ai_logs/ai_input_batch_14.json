@@ -1,0 +1,20 @@
+{
+  "calculations": [
+    {
+      "name": "Customer_Lifetime_Sales",
+      "table_name": "order_items+",
+      "tableau_expression": "{ FIXED [CustomerID] : SUM([LineTotal]) }",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "{ FIXED [CustomerID] : SUM([LineTotal]) }",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "LineTotal": "real",
+          "CustomerID": "string"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
