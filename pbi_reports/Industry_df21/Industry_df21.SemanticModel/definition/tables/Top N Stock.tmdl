@@ -1,0 +1,47 @@
+table 'Top N Stock'
+	lineageTag: be1d10d6-9000-4879-b265-cbbacead370a
+
+	column Index
+		formatString: 0
+		lineageTag: c78c1a1c-2cd9-4f91-bd38-182e04ccc179
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 8662f0e2-4e67-43de-8e30-ea75abfc12c0
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: e053f160-028c-4699-80c2-58d26e5cb05f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Top N Stock' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", INTEGER,
+			    "Value", INTEGER,
+			    {
+			        { 0, 3, 3 },
+				{ 1, 5, 5 },
+				{ 2, 10, 10 },
+				{ 3, 20, 20 }
+			    }
+			)
+
+	annotation PBI_Id = 9d869a1cc1234dd8b4e15aea9d8f81f6
+
