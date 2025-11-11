@@ -1,0 +1,28 @@
+table 'Discount Threshold _'
+	lineageTag: 92ece544-a69d-4160-bf89-6b4576e439a1
+
+	measure 'Discount Threshold _ Value' = SELECTEDVALUE('Discount Threshold _'[Discount Threshold _], 0)
+		lineageTag: c4ece640-4884-4a93-ae54-131de85dd317
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Discount Threshold _'
+		dataType: double
+		formatString: 0
+		lineageTag: fa7d5cf5-9ca1-4a93-a6a7-37a24d2f0263
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Discount Threshold _' = calculated
+		mode: import
+		source = GENERATESERIES(0, 50, 5)
+
+	annotation PBI_Id = 0f962d765a154d7f91d0c34937882dcb
+
