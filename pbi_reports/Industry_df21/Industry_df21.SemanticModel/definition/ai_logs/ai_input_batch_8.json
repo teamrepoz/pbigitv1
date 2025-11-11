@@ -1,0 +1,27 @@
+{
+  "calculations": [
+    {
+      "name": "View By",
+      "table_name": "stock_data+",
+      "tableau_expression": "CASE [Parameters].[View By]\r\nWHEN \"Industry Name\" THEN [TRBC Industry Name]\r\nWHEN \"Activity Name\" THEN [TRBC Activity Name]\r\nELSE [TRBC Economic Sector Name]\r\nEND",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "CASE [Parameters].[View By]\r\nWHEN \"Industry Name\" THEN [TRBC Industry Name]\r\nWHEN \"Activity Name\" THEN [TRBC Activity Name]\r\nELSE [TRBC Economic Sector Name]\r\nEND",
+        "calculated_fields": {
+          "View By": "\"Industry Name\""
+        },
+        "parameters": [
+          "View By"
+        ],
+        "col_to_datatype_mapping": {
+          "TRBC Economic Sector Name": "string",
+          "TRBC Industry Name": "string",
+          "TRBC Activity Name": "string"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "View By": "string"
+        }
+      }
+    }
+  ]
+}
