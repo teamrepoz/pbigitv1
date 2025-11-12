@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "(Medical_Clinic_Dataset) Excel_5faf"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "271a4ffd-42c9-4c04-a122-636a0e45b622"
+  }
+}
