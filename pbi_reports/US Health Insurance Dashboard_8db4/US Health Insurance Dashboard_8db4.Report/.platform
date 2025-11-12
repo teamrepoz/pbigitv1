@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "US Health Insurance Dashboard_8db4"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "718bd442-15a2-435e-a897-543a684e18f5"
+  }
+}
