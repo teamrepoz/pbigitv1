@@ -1,0 +1,32 @@
+{
+  "calculations": [
+    {
+      "name": "WATM(d) T",
+      "table_name": "migration_Extract_POC (1) (local copy)",
+      "tableau_expression": "SUM([Initial Cash USD T (excl Int/FWD)]*[DTM])/SUM([Initial Cash USD T (excl Int/FWD)])",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "SUM([Initial Cash USD T (excl Int/FWD)]*[DTM])/SUM([Initial Cash USD T (excl Int/FWD)])",
+        "calculated_fields": {
+          "Initial Cash USD T (excl Int/FWD)": "if [Parameters].[Use Custom Date] then \r\n    (if [Max Date]= [RpDate] AND [Is Internal ? (group)]=\"external\" AND [Is Forward Start ?]=0 THEN [Ut. US MM] else 0 END)\r\nelse if [RpDate]= [Parameters].[End Date] AND [Is Internal ? (group)]=\"external\" AND [Is Forward Start ?]=0 then [Ut. US MM] else 0 END END",
+          "End Date": "#2023-11-01#",
+          "Use Custom Date": "true",
+          "Max Date": "case datepart('weekday',today())\r\n    when 1 then today()-2\r\n    when 2 then today()-3\r\n    else today()-1\r\n    END"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "RpDate": "date",
+          "Is Forward Start ?": "integer",
+          "DTM": "integer",
+          "Ut. US MM": "real"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Initial Cash USD T (excl Int/FWD)": "real",
+          "End Date": "date",
+          "Use Custom Date": "boolean",
+          "Max Date": "DateTime"
+        }
+      }
+    }
+  ]
+}
