@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "MTM Stress (in CAD)",
+      "dax_expression": "VAR cashCurr = 'migration_Extract_POC (1) (local copy)'[Cash curr]\nVAR param_Parameter_9 = SELECTEDVALUE('Parameter 9'[Display As])\nVAR param_EUR_Shift = SELECTEDVALUE('EUR Shift (copy)_2036471465060552715'[Display As])\nVAR param_UseCustomDate0 = SELECTEDVALUE('Use Custom Date0'[Display As])\nVAR firstPart =\n    IF(\n        cashCurr = \"EUR\",\n        param_Parameter_9,\n        IF(cashCurr = \"GBP\", param_EUR_Shift, BLANK())\n    )\nVAR secondPart =\n    IF(\n        cashCurr = \"EUR\",\n        - 'migration_Extract_POC (1) (local copy)'[DV01 (In USD)] * 100 * param_UseCustomDate0,\n        IF(\n            cashCurr = \"GBP\",\n            - 'migration_Extract_POC (1) (local copy)'[DV01 (In USD)] * 100 * param_UseCustomDate0,\n            BLANK()\n        )\n    )\nRETURN\nfirstPart * secondPart",
+      "solution_explanation": "Replaced Tableau IF/ELSEIF logic with nested DAX IF statements and converted all parameter references to SELECTEDVALUE('ParameterName'[Display As]). All column references use the table/column format 'migration_Extract_POC (1) (local copy)'[Column]. Used VARs for clarity and a RETURN for the final multiplication.",
+      "type_changed_reason": "The calculation references Tableau parameters; per rules, any formula using parameters must be created as a measure."
+    }
+  ]
+}
