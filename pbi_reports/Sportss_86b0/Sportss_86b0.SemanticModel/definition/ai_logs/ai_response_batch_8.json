@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "dictionary+",
+      "name": "Athlete Repeate Qualified Flag",
+      "dax_expression": "IF(DISTINCTCOUNT('dictionary+'[Year]) > 1, \"Repeat Athlete\", \"One Time Athlete\")",
+      "solution_explanation": "Translated COUNTD([Year]) to DISTINCTCOUNT('dictionary+'[Year]) and used IF to replicate Tableau CASE logic. Because the calculation uses an aggregation (COUNTD) it must be a measure."
+    }
+  ]
+}
