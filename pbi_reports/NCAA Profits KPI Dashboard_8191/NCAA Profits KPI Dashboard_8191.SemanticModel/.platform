@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "NCAA Profits KPI Dashboard_8191"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "5949641b-76ef-485f-8a5f-15f7c2e3f141"
+  }
+}
