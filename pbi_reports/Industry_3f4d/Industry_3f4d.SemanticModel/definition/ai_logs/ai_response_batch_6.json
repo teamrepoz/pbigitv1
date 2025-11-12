@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "stock_data+",
+      "name": "Rank Stocks",
+      "dax_expression": "RANKX(ALL('stock_data+'), CALCULATE(SUM('stock_data+'[Volume])),, DESC)",
+      "solution_explanation": "Tableau RANK(SUM([Volume])) is translated to DAX using RANKX over the full table. The SUM aggregation is expressed as CALCULATE(SUM('stock_data+'[Volume])) and the ranking is computed across ALL('stock_data+') to mirror Tableau's table calculation ranking context. This is implemented as a measure because the calculation relies on aggregation/table calculation (SUM and RANK)."
+    }
+  ]
+}
