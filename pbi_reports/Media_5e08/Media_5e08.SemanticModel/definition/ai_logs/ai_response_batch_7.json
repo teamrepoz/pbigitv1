@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "test+",
+      "name": "Text combine calculation",
+      "dax_expression": "'test+'[Gender] & \" - \" & 'test+'[Age]",
+      "solution_explanation": "Converted Tableau string concatenation using + to DAX string concatenation using &. Column references were transformed to 'TableName'[ColumnName] format. STR([Age]) was omitted because Age is already a string in the provided metadata, so direct concatenation is used."
+    }
+  ]
+}
