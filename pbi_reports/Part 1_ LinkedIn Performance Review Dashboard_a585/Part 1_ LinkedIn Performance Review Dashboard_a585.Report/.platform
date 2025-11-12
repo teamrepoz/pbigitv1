@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Part 1_ LinkedIn Performance Review Dashboard_a585"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "30f0fbec-7af1-48ea-af3c-db1ce6b66da8"
+  }
+}
