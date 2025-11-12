@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "[Initial Cash USD T (excl Int/FWD) Abs] / TOTAL([Initial Cash USD T (excl Int/FWD) Abs])",
+      "dax_expression": "VAR Numerator = SUM('migration_Extract_POC (1) (local copy)'[Initial Cash USD T (excl Int/FWD) Abs])\nVAR Denominator = CALCULATE(\n    SUM('migration_Extract_POC (1) (local copy)'[Initial Cash USD T (excl Int/FWD) Abs]),\n    ALL('migration_Extract_POC (1) (local copy)')\n)\nRETURN DIVIDE(Numerator, Denominator)",
+      "solution_explanation": "Converted the Tableau table calculation TOTAL(...) to a DAX measure by computing the numerator as SUM(...) and the total (denominator) as CALCULATE(SUM(...), ALL(Table)). All field references were transformed to 'TableName'[ColumnName] format.",
+      "type_changed_reason": "The calculation uses a table calculation (TOTAL) / aggregations, which requires evaluation across rows/partitions, so it must be created as a measure."
+    }
+  ]
+}
