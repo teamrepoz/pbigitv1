@@ -1,0 +1,20 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Initial Cash USD T (excl Int/FWD)",
+      "dax_expression": "VAR UseCustom = SELECTEDVALUE('Use Custom Date'[Display As])\nVAR MaxDate = SWITCH(\n    WEEKDAY(TODAY()),\n    1, TODAY() - 2,\n    2, TODAY() - 3,\n    TODAY() - 1\n)\nVAR RpDate = 'migration_Extract_POC (1) (local copy)'[RpDate]\nVAR IsInternalGroup = 'migration_Extract_POC (1) (local copy)'[Is Internal ? (group)]\nVAR IsForward = 'migration_Extract_POC (1) (local copy)'[Is Forward Start ?]\nVAR UtUSMM = 'migration_Extract_POC (1) (local copy)'[Ut. US MM]\nVAR EndDateParam = SELECTEDVALUE('End Date'[Display As])\nRETURN\nIF(\n    UseCustom,\n    IF(MaxDate = RpDate && IsInternalGroup = \"external\" && IsForward = 0, UtUSMM, 0),\n    IF(RpDate = EndDateParam && IsInternalGroup = \"external\" && IsForward = 0, UtUSMM, 0)\n)",
+      "solution_explanation": "Converted the nested IF logic to DAX using VARs for clarity. Replaced Tableau parameters with SELECTEDVALUE('ParameterName'[Display As]) for 'Use Custom Date' and 'End Date'. Implemented [Max Date] logic using SWITCH(WEEKDAY(TODAY()), ...). Transformed column references to the table format 'migration_Extract_POC (1) (local copy)'[Column]. String literal \"external\" preserved.",
+      "type_changed_reason": "The calculation references a parameter, and all parameter-based calculations must be measures."
+    },
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Initial Cash USD T W/o FWD",
+      "dax_expression": "IF(\n    'migration_Extract_POC (1) (local copy)'[Is Forward Start ?] = 0,\n    [Initial Cash USD T (excl Int/FWD)],\n    0\n)",
+      "solution_explanation": "Translated the Tableau IF to DAX IF and converted the column reference to 'migration_Extract_POC (1) (local copy)'[Is Forward Start ?]. The measure returns the dependent measure [Initial Cash USD T (excl Int/FWD)] when Is Forward Start ? = 0, otherwise 0.",
+      "type_changed_reason": "The calculation depends on a calculated field that references parameters, so it must be a measure."
+    }
+  ]
+}
