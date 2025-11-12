@@ -1,0 +1,24 @@
+{
+  "calculations": [
+    {
+      "name": "View by",
+      "table_name": "dictionary+",
+      "tableau_expression": "CASE [Parameters].[View By ]\r\nWHEN \"Country\" THEN [Country]\r\nWHEN \"Sport\" THEN [Sport]\r\nWHEN \"Athlete\" THEN [Athlete]\r\nEND",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "CASE [Parameters].[View By ]\r\nWHEN \"Country\" THEN [Country]\r\nWHEN \"Sport\" THEN [Sport]\r\nWHEN \"Athlete\" THEN [Athlete]\r\nEND",
+        "calculated_fields": {},
+        "parameters": [
+          "View By",
+          "View By "
+        ],
+        "col_to_datatype_mapping": {
+          "Sport": "string",
+          "Athlete": "string",
+          "Country": "string"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
