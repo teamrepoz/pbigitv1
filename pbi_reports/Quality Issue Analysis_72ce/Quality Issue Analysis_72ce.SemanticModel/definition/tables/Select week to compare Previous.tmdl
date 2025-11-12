@@ -1,0 +1,42 @@
+table 'Select week to compare Previous'
+	lineageTag: 8c8a00e4-9c53-40e4-aab5-a08693eee45c
+
+	column Index
+		formatString: 0
+		lineageTag: 560f6d00-e803-40e5-9d83-2c21738c043c
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 86e54fb7-33a1-4a9c-a9f4-8a46119af95e
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 6ae6b8f6-5649-4dd9-989c-5ce7ccd81d97
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Select week to compare Previous' = calculated
+		mode: import
+		source =
+				
+			SELECTCOLUMNS (
+			    DISTINCT ( 'Campaigns+ (New Data)'[Calculation_1552897506112253973] ),
+			    "Index", RANKX ( DISTINCT ( 'Campaigns+ (New Data)'[Calculation_1552897506112253973] ), 'Campaigns+ (New Data)'[Calculation_1552897506112253973], , ASC ) - 1,
+			    "Display As", 'Campaigns+ (New Data)'[Calculation_1552897506112253973],
+			    "Value", 'Campaigns+ (New Data)'[Calculation_1552897506112253973]
+			)
+
+	annotation PBI_Id = 332ebf6116be41548aa55d8b9676ac7c
+
