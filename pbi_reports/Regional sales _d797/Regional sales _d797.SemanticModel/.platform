@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Regional sales _d797"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "e99f8ede-977d-46e1-bf03-7add116d5479"
+  }
+}
