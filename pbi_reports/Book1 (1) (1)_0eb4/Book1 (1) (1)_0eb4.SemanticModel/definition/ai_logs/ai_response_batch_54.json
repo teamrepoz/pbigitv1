@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Change MTM stress (in CAD)",
+      "dax_expression": "'migration_Extract_POC (1) (local copy)'[MTM Stress T (In CAD)] - 'migration_Extract_POC (1) (local copy)'[MTM Stress T-1  (In CAD)]",
+      "solution_explanation": "Direct translation of the Tableau expression subtracting two calculated fields. All field references were converted to the table[column] format required for DAX. The expression returns the difference between 'MTM Stress T (In CAD)' and 'MTM Stress T-1  (In CAD)'.",
+      "type_changed_reason": "Dependent calculated fields reference Parameters and dynamic date logic; per rules, any calculation that references parameters must be a measure."
+    }
+  ]
+}
