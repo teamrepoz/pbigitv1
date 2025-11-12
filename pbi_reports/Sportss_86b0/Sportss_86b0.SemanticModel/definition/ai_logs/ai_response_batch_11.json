@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "dictionary+",
+      "name": "Team/Individual Split",
+      "dax_expression": "IF('dictionary+'[Event] = \"Team\", \"Team Event\", \"Individual Event\")",
+      "solution_explanation": "Converted Tableau IF ... THEN ... ELSE ... END to DAX IF. Replaced [Event] with the table-qualified reference 'dictionary+'[Event]. This is a row-level string classification (no aggregation or parameters), so it is implemented as a calculated column."
+    }
+  ]
+}
