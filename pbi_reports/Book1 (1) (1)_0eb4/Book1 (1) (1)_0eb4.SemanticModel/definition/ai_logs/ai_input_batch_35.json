@@ -1,0 +1,45 @@
+{
+  "calculations": [
+    {
+      "name": "Change in Netting",
+      "table_name": "migration_Extract_POC (1) (local copy)",
+      "tableau_expression": "[fixed netting (T)] - [fixed netting (T -1) ]",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "[fixed netting (T)] - [fixed netting (T -1) ]",
+        "calculated_fields": {
+          "fixed netting (T)": "{FIXED   [RpDate],[CounterParty],[Cash curr],[Maturity Date] : MIN(\r\n[fixed netting 3 R (T)],[fixed netting 3 RR (T)])}",
+          "fixed netting 3 R (T)": "Sum(ABS({FIXED   [RpDate],[Subs],[Counterpty],[Cash curr],[Maturity Date],[R/RR]: \r\n(\r\n(Sum(IF [Is Forward Start ?] = 0 AND [Is Approved for Netting] = \"1\" \r\nAND [Bucket]<>\"open\"  AND  [R/RR]=\"R\" AND [Title Date Filter]=1\r\n\r\nTHEN ([Ut. US MM]) ELSE 0 END)))}))",
+          "fixed netting 3 RR (T)": "Sum(ABS({FIXED   [RpDate],[Subs],[Counterpty],[Cash curr],[Maturity Date],[R/RR]: \r\n(\r\n(Sum(IF [Is Forward Start ?] = 0 AND [Is Approved for Netting] = \"1\" \r\nAND [Bucket]<>\"open\"  AND  [R/RR]=\"RR\" AND [Title Date Filter]=1\r\nTHEN ([Ut. US MM]) ELSE 0 END)))}))",
+          "Title Date Filter": "if [Parameters].[Use Custom Date] then \r\n    (if [Max Date]= [RpDate] then 1 else 0 END)\r\nelse if [RpDate]= [Parameters].[End Date] then 1 else 0 END END",
+          "Use Custom Date": "true",
+          "Max Date": "case datepart('weekday',today())\r\n    when 1 then today()-2\r\n    when 2 then today()-3\r\n    else today()-1\r\n    END",
+          "End Date": "#2023-11-01#"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "RpDate": "date",
+          "Cash curr": "string",
+          "Counterpty": "string",
+          "Subs": "string",
+          "R/RR": "string",
+          "Is Forward Start ?": "integer",
+          "Maturity Date": "date",
+          "Ut. US MM": "real",
+          "CounterParty": "string",
+          "Is Approved for Netting": "string",
+          "Bucket": "string"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "fixed netting (T)": "real",
+          "fixed netting 3 R (T)": "real",
+          "fixed netting 3 RR (T)": "real",
+          "Use Custom Date": "boolean",
+          "End Date": "date",
+          "Title Date Filter": "Int64",
+          "Max Date": "DateTime"
+        }
+      }
+    }
+  ]
+}
