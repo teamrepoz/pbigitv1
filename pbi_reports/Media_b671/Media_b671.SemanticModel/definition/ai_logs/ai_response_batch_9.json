@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "test+",
+      "name": "Platform Type ",
+      "dax_expression": "IF('test+'[Platform] = \"Instagram\", \"Meta\", IF('test+'[Platform] = \"Facebook\", \"Meta\", \"Other\"))",
+      "solution_explanation": "Converted Tableau IF/ELSEIF into nested DAX IF statements. Replaced [Platform] with 'test+'[Platform] to reference the column in the specified table. This is a row-level transformation, so created as a calculated column."
+    }
+  ]
+}
