@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Sales & Refunds Dashboard_f598"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "7fa59dfe-4fe1-44fd-b53f-f707c5b8369d"
+  }
+}
