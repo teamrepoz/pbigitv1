@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "BATCH",
+      "dax_expression": "VAR numerator = ABS( SUM( 'migration_Extract_POC (1) (local copy)'[Initial Cash USD T (excl Int/FWD)] ) )\nVAR denominator = CALCULATE( ABS( SUM( 'migration_Extract_POC (1) (local copy)'[Initial Cash USD T (excl Int/FWD)] ) ), ALL( 'migration_Extract_POC (1) (local copy)' ) )\nRETURN DIVIDE( numerator, denominator )",
+      "solution_explanation": "Translated the Tableau expression [Initial Cash USD T (excl Int/FWD) Abs] / TOTAL([Initial Cash USD T (excl Int/FWD) Abs]) into DAX. The per-context value is ABS(SUM(...)) (as provided by the calculated field mapping). The TOTAL table calculation is implemented using CALCULATE(..., ALL(Table)) to get the table-level total. DIVIDE is used to safely perform the division. All column references were converted to 'Table'[Column] format."
+    }
+  ]
+}
