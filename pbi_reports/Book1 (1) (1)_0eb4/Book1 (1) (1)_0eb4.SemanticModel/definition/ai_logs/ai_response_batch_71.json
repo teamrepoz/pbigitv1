@@ -1,0 +1,26 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Max Date",
+      "dax_expression": "VAR w = WEEKDAY(TODAY())\nRETURN\nSWITCH(\n    w,\n    1, TODAY() - 2,\n    2, TODAY() - 3,\n    TODAY() - 1\n)",
+      "solution_explanation": "Converted the Tableau CASE on DATEPART('weekday', TODAY()) to DAX using WEEKDAY(TODAY()) and SWITCH to return TODAY() minus the appropriate number of days."
+    },
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "MAX_DATE -1day",
+      "dax_expression": "VAR md = [Max Date]\nVAR wd = WEEKDAY(md)\nRETURN\nSWITCH(\n    wd,\n    1, md - 2,\n    2, md - 3,\n    md - 1\n)",
+      "solution_explanation": "Translated the Tableau CASE on DATEPART('weekday',[Max Date]) to DAX by using WEEKDAY([Max Date]) and SWITCH to subtract the correct number of days from the Max Date measure."
+    },
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Initial Cash X",
+      "dax_expression": "VAR useCustom = SELECTEDVALUE('Use Custom Date'[Display As])\nVAR dateX = SELECTEDVALUE('Date X (comparison date)'[Display As])\nRETURN\nIF(\n    useCustom,\n    IF(\n        [MAX_DATE -1day] = 'migration_Extract_POC (1) (local copy)'[RpDate],\n        'migration_Extract_POC (1) (local copy)'[Ut. US MM],\n        0\n    ),\n    IF(\n        dateX = 'migration_Extract_POC (1) (local copy)'[RpDate],\n        'migration_Extract_POC (1) (local copy)'[Ut. US MM],\n        0\n    )\n)",
+      "solution_explanation": "Replaced Tableau parameter references with SELECTEDVALUE(...) per mapping and converted nested IF logic to DAX IF. Row-level columns were converted to 'Table'[Column] format and the dependent measures ([MAX_DATE -1day], [Max Date]) are referenced.",
+      "type_changed_reason": "The calculation references parameters ([Parameters]...), and all parameter-based calculations must be created as measures."
+    }
+  ]
+}
