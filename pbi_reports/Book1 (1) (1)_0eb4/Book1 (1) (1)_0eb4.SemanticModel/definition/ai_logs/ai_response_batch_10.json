@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Initial Cash USD T (excl Int/FWD) Abs % of Total",
+      "dax_expression": "VAR Numerator = ABS( SUM('migration_Extract_POC (1) (local copy)'[Initial Cash USD T (excl Int/FWD)]) )\nVAR Denominator = CALCULATE(\n    ABS( SUM('migration_Extract_POC (1) (local copy)'[Initial Cash USD T (excl Int/FWD)]) ),\n    ALL('migration_Extract_POC (1) (local copy)')\n)\nRETURN\nDIVIDE(Numerator, Denominator)",
+      "solution_explanation": "Translated the Tableau expression [Initial Cash USD T (excl Int/FWD) Abs] / TOTAL([Initial Cash USD T (excl Int/FWD) Abs]) into DAX by computing the absolute SUM for the current filter context as Numerator and the absolute SUM over the entire table (ALL) as Denominator, then dividing. TOTAL(...) (a Tableau table calculation) maps to CALCULATE(..., ALL(table)) to get the total across the partition. Used ABS(SUM(...)) to match the calculated field definition.",
+      "type_changed_reason": "The Tableau formula uses the table calculation TOTAL (an aggregation across the partition), so it must be implemented as a measure in Power BI."
+    }
+  ]
+}
