@@ -1,0 +1,72 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.63\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "name": "Section_Dashboard 1",
+      "ordinal": 0,
+      "displayName": "Dashboard 1",
+      "visualContainers": [
+        {
+          "x": 3,
+          "y": 80,
+          "z": 0,
+          "width": 536,
+          "height": 335,
+          "config": "{\"name\": \"89b04f17b6a005b5\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 3, \"y\": 80, \"z\": 1000, \"width\": 536, \"height\": 335, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"columnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"test+.Likes_Received_Per_Day\", \"active\": true}], \"Y\": [{\"queryRef\": \"test+.Platform\"}], \"Series\": []}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t\", \"Entity\": \"test+\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Property\": \"Likes_Received_Per_Day\", \"Expression\": {\"SourceRef\": {\"Source\": \"t\"}}}, \"Name\": \"test+.Likes_Received_Per_Day\", \"NativeReferenceName\": \"Likes_Received_Per_Day\"}, {\"Measure\": {\"Property\": \"Platform\", \"Expression\": {\"SourceRef\": {\"Source\": \"t\"}}}, \"Name\": \"test+.Platform\", \"NativeReferenceName\": \"Platform\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t\"}}, \"Property\": \"Platform\"}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"titleBold\": {\"expr\": {\"Literal\": {\"Value\": \"\"}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"18D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Likes by Platform'\"}}}}}]}}}"
+        },
+        {
+          "x": 6,
+          "y": 423,
+          "z": 0,
+          "width": 531,
+          "height": 370,
+          "config": "{\"name\": \"cfc502319169ad0\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 6, \"y\": 423, \"z\": 1000, \"width\": 531, \"height\": 370, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"pieChart\", \"projections\": {\"Category\": [{\"queryRef\": \"test+.Dominant_Emotion\", \"active\": true}], \"Y\": [{\"queryRef\": \"test+.Likes_Received_Per_Day\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t\", \"Entity\": \"test+\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Property\": \"Dominant_Emotion\", \"Expression\": {\"SourceRef\": {\"Source\": \"t\"}}}, \"Name\": \"test+.Dominant_Emotion\", \"NativeReferenceName\": \"Dominant_Emotion\"}, {\"Measure\": {\"Property\": \"Likes_Received_Per_Day\", \"Expression\": {\"SourceRef\": {\"Source\": \"t\"}}}, \"Name\": \"test+.Likes_Received_Per_Day\", \"NativeReferenceName\": \"Likes_Received_Per_Day\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t\"}}, \"Property\": \"Likes_Received_Per_Day\"}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [], \"valueAxis\": []}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"18D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Likes by Dominant Emotion in Pie Chart'\"}}}}}]}}}"
+        },
+        {
+          "x": 1039,
+          "y": 420,
+          "z": 0,
+          "width": 560,
+          "height": 373,
+          "config": "{\"name\": \"0f915c1826\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1039, \"y\": 420, \"z\": 1000, \"width\": 560, \"height\": 373, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"barChart\", \"projections\": {\"Category\": [{\"queryRef\": \"test+.Gender\", \"active\": true}], \"Y\": [{\"queryRef\": \"test+.Messages_Sent_Per_Day\"}], \"Series\": []}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t\", \"Entity\": \"test+\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Property\": \"Gender\", \"Expression\": {\"SourceRef\": {\"Source\": \"t\"}}}, \"Name\": \"test+.Gender\", \"NativeReferenceName\": \"Gender\"}, {\"Measure\": {\"Property\": \"Messages_Sent_Per_Day\", \"Expression\": {\"SourceRef\": {\"Source\": \"t\"}}}, \"Name\": \"test+.Messages_Sent_Per_Day\", \"NativeReferenceName\": \"Messages_Sent_Per_Day\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t\"}}, \"Property\": \"Messages_Sent_Per_Day\"}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": 18}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Messages sent per day by Gender Wise '\"}}}}}]}}}"
+        },
+        {},
+        {
+          "x": 547,
+          "y": 419,
+          "z": 0,
+          "width": 478,
+          "height": 377,
+          "config": "{\"name\": \"2e099c15ef\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 547, \"y\": 419, \"z\": 1000, \"width\": 478, \"height\": 377, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"columnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"test+.Platform\", \"active\": true}], \"Y\": [{\"queryRef\": \"Sum(test+.Likes_Received_Per_Day)\"}], \"Series\": [{\"queryRef\": \"test+.Dominant_Emotion\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t\", \"Entity\": \"test+\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Property\": \"Platform\", \"Expression\": {\"SourceRef\": {\"Source\": \"t\"}}}, \"Name\": \"test+.Platform\", \"NativeReferenceName\": \"Platform\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Likes_Received_Per_Day\", \"Expression\": {\"SourceRef\": {\"Source\": \"t\"}}}}, \"Function\": 0}, \"Name\": \"Sum(test+.Likes_Received_Per_Day)\", \"NativeReferenceName\": \"Sum of Likes_Received_Per_Day\"}, {\"Column\": {\"Property\": \"Dominant_Emotion\", \"Expression\": {\"SourceRef\": {\"Source\": \"t\"}}}, \"Name\": \"test+.Dominant_Emotion\", \"NativeReferenceName\": \"Dominant_Emotion\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Likes_Received_Per_Day\", \"Expression\": {\"SourceRef\": {\"Source\": \"t\"}}}}, \"Function\": 0}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#000000'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": 18}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Platform wise likes received'\"}}}}}]}}}"
+        },
+        {
+          "x": 544,
+          "y": 76,
+          "z": 0,
+          "width": 462,
+          "height": 338,
+          "config": "{\"name\": \"1ca4c549cb5\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 544, \"y\": 76, \"z\": 1000, \"width\": 462, \"height\": 338, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"columnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"test+.Likes_Received_Per_Day\", \"active\": true}], \"Y\": [{\"queryRef\": \"test+.Gender\"}], \"Series\": []}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t\", \"Entity\": \"test+\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Property\": \"Likes_Received_Per_Day\", \"Expression\": {\"SourceRef\": {\"Source\": \"t\"}}}, \"Name\": \"test+.Likes_Received_Per_Day\", \"NativeReferenceName\": \"Likes_Received_Per_Day\"}, {\"Measure\": {\"Property\": \"Gender\", \"Expression\": {\"SourceRef\": {\"Source\": \"t\"}}}, \"Name\": \"test+.Gender\", \"NativeReferenceName\": \"Gender\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t\"}}, \"Property\": \"Gender\"}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"18D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Likes by Gender'\"}}}}}]}}}"
+        }
+      ],
+      "width": 1600.0,
+      "height": 800.0
+    }
+  ]
+}
