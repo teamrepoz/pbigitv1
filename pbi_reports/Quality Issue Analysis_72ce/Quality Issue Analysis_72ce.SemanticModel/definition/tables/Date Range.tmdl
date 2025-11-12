@@ -1,0 +1,52 @@
+table 'Date Range'
+	lineageTag: e61a0227-5871-4868-8ca7-24dca28b6de6
+
+	column Index
+		formatString: 0
+		lineageTag: c1bdb4df-9e8c-4416-bf62-84a98c509d8d
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: aa2c244f-8652-4f3e-9a0f-63ddf307eb13
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 44039e4d-fefb-44fa-a283-7e458ba4d947
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Date Range' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Over All", "Over All" },
+				{ 1, "Last Year", "Last Year" },
+				{ 2, "Last Quarter", "Last Quarter" },
+				{ 3, "Last Month", "Last Month" },
+				{ 4, "Last Week", "Last Week" },
+				{ 5, "Y T D", "Y T D" },
+				{ 6, "Q T D", "Q T D" },
+				{ 7, "M T D", "M T D" },
+				{ 8, "W T D", "W T D" }
+			    }
+			)
+
+	annotation PBI_Id = 2b931f08165349c7b00f7a53471fbd63
+
