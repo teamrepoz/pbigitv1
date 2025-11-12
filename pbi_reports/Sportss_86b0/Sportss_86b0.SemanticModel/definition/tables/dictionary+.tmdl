@@ -1,0 +1,655 @@
+table 'dictionary+'
+	lineageTag: 2de0336f-e5bb-42a5-90e9-dadd281ae79d
+
+	measure 'Total Medal Count' = COUNT('dictionary+'[Medal])
+		formatString: 0
+		lineageTag: e8e5ef96-67a5-4997-8b5c-ca3c86331086
+
+	measure 'Athlete Repeate Qualified Flag' = IF(DISTINCTCOUNT('dictionary+'[Year]) > 1, "Repeat Athlete", "One Time Athlete")
+		lineageTag: bffb6fd4-2057-4bcd-97e3-893bf4bde711
+
+	measure 'RankTop N Countries' = VAR TopN = SELECTEDVALUE('Top N Country'[Display As]) VAR currentRank = RANKX( ALLSELECTED('dictionary+'), 0, , ASC, DENSE ) RETURN IF(currentRank <= TopN, TRUE(), FALSE())
+		lineageTag: 32c68112-6124-4f4f-82e0-f42d67091dec
+
+	measure 'Select Year' = 'dictionary+'[Year] <= SELECTEDVALUE('Select Year'[Display As])
+		lineageTag: 66e2ef00-a6b2-439e-9acb-a28b5f07520c
+
+	measure 'View by' = SWITCH( SELECTEDVALUE('View By '[Display As]), "Country", 'dictionary+'[Country], "Sport", 'dictionary+'[Sport], "Athlete", 'dictionary+'[Athlete], BLANK() )
+		lineageTag: 077d6b2c-d057-4a53-b24c-cc80bbe67b2e
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 0787d7a6-e52d-4608-b410-7b4d4f7c2251
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: d4096795-be08-4f86-987c-e41178fb2536
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sport
+		dataType: string
+		lineageTag: c941de70-fdf5-41e5-92f8-bfb59abc99f8
+		summarizeBy: none
+		sourceColumn: Sport
+
+		annotation SummarizationSetBy = Automatic
+
+	column Discipline
+		dataType: string
+		lineageTag: b5333fa9-f8c8-4d8b-8cfe-2274495d6baf
+		summarizeBy: none
+		sourceColumn: Discipline
+
+		annotation SummarizationSetBy = Automatic
+
+	column Athlete
+		dataType: string
+		lineageTag: ede0483d-7a4e-4f52-b524-62ae3f5d49d6
+		summarizeBy: none
+		sourceColumn: Athlete
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: 195a14a7-e322-444a-91ec-a6afa3fe2504
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gender
+		dataType: string
+		lineageTag: 77c60c3e-fa00-486e-ae0a-46df006cf50f
+		summarizeBy: none
+		sourceColumn: Gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column Event
+		dataType: string
+		lineageTag: 1ae031ba-16ee-4cdb-831a-96d0fee49e2a
+		summarizeBy: none
+		sourceColumn: Event
+
+		annotation SummarizationSetBy = Automatic
+
+	column Medal
+		dataType: string
+		lineageTag: 3ee8a9bf-ed8b-40c2-a13d-95496850173b
+		summarizeBy: none
+		sourceColumn: Medal
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year Category' = IF('dictionary+'[Year] < 1950, "Early Era", IF('dictionary+'[Year] < 2000, "Modern Era", "Recent Era"))
+		lineageTag: 4b14535d-ff13-43ba-8c7a-e1bc469005de
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Team/Individual Split' = IF('dictionary+'[Event] = "Team", "Team Event", "Individual Event")
+		lineageTag: 32adb842-87b4-4558-81da-2d2affbe3e7c
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Gender Count' = IF('dictionary+'[Gender] = "Men ", 1, 0)
+		formatString: 0
+		lineageTag: 75be235b-9249-451e-8360-1af7858c738e
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Female Count' = IF('dictionary+'[Gender] = "Women", 1, 0)
+		formatString: 0
+		lineageTag: b9f1cf9b-f1eb-4108-9c6c-746c21af2f75
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Good Only Count' = IF('dictionary+'[Medal] = "Gold", 1, 0)
+		formatString: 0
+		lineageTag: d80bb27f-9198-4ff7-8df5-98ad4b85e2f8
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Decade Grp' = INT('dictionary+'[Year] / 10) * 10
+		formatString: 0
+		lineageTag: 93a999bb-8c8d-46a8-8f4a-d4d2bbadd4f0
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'dictionary+' = m
+		mode: import
+		source =
+				let
+					    Source = Table.FromRecords({
+					        [#"Year" = 2022, #"City" = "Colleyville", #"Sport" = "percent", #"Discipline" = "133.162.75.100", #"Athlete" = "enterprise", #"Country" = "China", #"Gender" = "tons", #"Event" = "web", #"Medal" = "reservation"],
+					        [#"Year" = 2020, #"City" = "Plant City", #"Sport" = "lock", #"Discipline" = "6.4.200.101", #"Athlete" = "plays", #"Country" = "Ireland", #"Gender" = "both", #"Event" = "wikipedia", #"Medal" = "webmaster"],
+					        [#"Year" = 2015, #"City" = "Sand Springs", #"Sport" = "allowed", #"Discipline" = "33.125.116.59", #"Athlete" = "virgin", #"Country" = "Thailand", #"Gender" = "long", #"Event" = "worth", #"Medal" = "annual"],
+					        [#"Year" = 2009, #"City" = "Beavercreek", #"Sport" = "quality", #"Discipline" = "13.175.157.19", #"Athlete" = "sur", #"Country" = "Kiribati", #"Gender" = "photographer", #"Event" = "rick", #"Medal" = "explain"],
+					        [#"Year" = 2017, #"City" = "El Paso", #"Sport" = "nobody", #"Discipline" = "160.239.86.238", #"Athlete" = "editor", #"Country" = "Yemen", #"Gender" = "attempt", #"Event" = "anime", #"Medal" = "infrastructure"],
+					        [#"Year" = 2004, #"City" = "Biloxi", #"Sport" = "luxury", #"Discipline" = "222.23.24.190", #"Athlete" = "crystal", #"Country" = "Ascension Island", #"Gender" = "security", #"Event" = "gas", #"Medal" = "columbia"],
+					        [#"Year" = 2021, #"City" = "Goleta", #"Sport" = "transaction", #"Discipline" = "106.22.185.247", #"Athlete" = "makes", #"Country" = "Tunisia", #"Gender" = "resolution", #"Event" = "sue", #"Medal" = "native"],
+					        [#"Year" = 2001, #"City" = "Utica", #"Sport" = "coal", #"Discipline" = "55.210.196.213", #"Athlete" = "stop", #"Country" = "Tuvalu", #"Gender" = "matters", #"Event" = "ten", #"Medal" = "archive"],
+					        [#"Year" = 2000, #"City" = "Riverton", #"Sport" = "more", #"Discipline" = "117.134.107.161", #"Athlete" = "identified", #"Country" = "Estonia", #"Gender" = "hairy", #"Event" = "makers", #"Medal" = "pottery"],
+					        [#"Year" = 2013, #"City" = "Palm Desert", #"Sport" = "lay", #"Discipline" = "100.183.243.105", #"Athlete" = "recommendations", #"Country" = "Samoa", #"Gender" = "winning", #"Event" = "fall", #"Medal" = "powder"],
+					        [#"Year" = 2013, #"City" = "Goodlettsville", #"Sport" = "fed", #"Discipline" = "205.149.46.149", #"Athlete" = "part", #"Country" = "Austria", #"Gender" = "receive", #"Event" = "produce", #"Medal" = "ship"],
+					        [#"Year" = 2024, #"City" = "Golden", #"Sport" = "ward", #"Discipline" = "186.179.165.236", #"Athlete" = "sunset", #"Country" = "Svalbard & Jan Mayen", #"Gender" = "wife", #"Event" = "satellite", #"Medal" = "colors"],
+					        [#"Year" = 2021, #"City" = "Berwyn", #"Sport" = "applicable", #"Discipline" = "227.103.183.41", #"Athlete" = "mail", #"Country" = "Kazakhstan", #"Gender" = "feet", #"Event" = "highly", #"Medal" = "reproduction"],
+					        [#"Year" = 2017, #"City" = "Payson", #"Sport" = "michael", #"Discipline" = "11.29.250.64", #"Athlete" = "installed", #"Country" = "Turkmenistan", #"Gender" = "lowest", #"Event" = "charm", #"Medal" = "www"],
+					        [#"Year" = 2014, #"City" = "Riverton", #"Sport" = "bits", #"Discipline" = "164.30.121.80", #"Athlete" = "actual", #"Country" = "Costa Rica", #"Gender" = "statements", #"Event" = "clients", #"Medal" = "trailers"],
+					        [#"Year" = 2004, #"City" = "South Milwaukee", #"Sport" = "global", #"Discipline" = "64.82.182.30", #"Athlete" = "toe", #"Country" = "China", #"Gender" = "clip", #"Event" = "leaves", #"Medal" = "rescue"],
+					        [#"Year" = 2017, #"City" = "Casselberry", #"Sport" = "term", #"Discipline" = "226.137.98.70", #"Athlete" = "individual", #"Country" = "Guinea-Bissau", #"Gender" = "false", #"Event" = "workshop", #"Medal" = "understanding"],
+					        [#"Year" = 2007, #"City" = "Sevierville", #"Sport" = "payments", #"Discipline" = "49.60.25.191", #"Athlete" = "calling", #"Country" = "Djibouti", #"Gender" = "blow", #"Event" = "congress", #"Medal" = "counsel"],
+					        [#"Year" = 2006, #"City" = "Grayslake", #"Sport" = "deal", #"Discipline" = "60.153.46.65", #"Athlete" = "operate", #"Country" = "Peru", #"Gender" = "result", #"Event" = "alliance", #"Medal" = "amsterdam"],
+					        [#"Year" = 2023, #"City" = "SeaTac", #"Sport" = "converter", #"Discipline" = "92.195.239.177", #"Athlete" = "enter", #"Country" = "Bahrain", #"Gender" = "cent", #"Event" = "tiffany", #"Medal" = "eminem"],
+					        [#"Year" = 2017, #"City" = "Cambridge", #"Sport" = "setup", #"Discipline" = "195.99.49.93", #"Athlete" = "intellectual", #"Country" = "Cuba", #"Gender" = "crown", #"Event" = "frequently", #"Medal" = "shoes"],
+					        [#"Year" = 2000, #"City" = "Seal Beach", #"Sport" = "blog", #"Discipline" = "50.187.220.187", #"Athlete" = "thumbs", #"Country" = "Jordan", #"Gender" = "latter", #"Event" = "src", #"Medal" = "el"],
+					        [#"Year" = 2016, #"City" = "Madisonville", #"Sport" = "consent", #"Discipline" = "189.47.218.85", #"Athlete" = "sort", #"Country" = "Isle of Man", #"Gender" = "matrix", #"Event" = "brochure", #"Medal" = "complete"],
+					        [#"Year" = 2008, #"City" = "Pittsburgh", #"Sport" = "seek", #"Discipline" = "212.127.189.93", #"Athlete" = "subjects", #"Country" = "Montserrat", #"Gender" = "veterans", #"Event" = "killer", #"Medal" = "provision"],
+					        [#"Year" = 2000, #"City" = "Boise City", #"Sport" = "kill", #"Discipline" = "139.195.157.110", #"Athlete" = "essay", #"Country" = "Kazakhstan", #"Gender" = "banking", #"Event" = "drivers", #"Medal" = "downloads"],
+					        [#"Year" = 2023, #"City" = "Holyoke", #"Sport" = "begins", #"Discipline" = "206.87.108.177", #"Athlete" = "opening", #"Country" = "St. Kitts & Nevis", #"Gender" = "spanish", #"Event" = "treat", #"Medal" = "above"],
+					        [#"Year" = 2016, #"City" = "Alpharetta", #"Sport" = "crazy", #"Discipline" = "165.124.160.197", #"Athlete" = "writer", #"Country" = "Chad", #"Gender" = "notification", #"Event" = "network", #"Medal" = "catholic"],
+					        [#"Year" = 2017, #"City" = "Linden", #"Sport" = "directory", #"Discipline" = "125.53.17.114", #"Athlete" = "transmission", #"Country" = "Samoa", #"Gender" = "made", #"Event" = "boss", #"Medal" = "participate"],
+					        [#"Year" = 2012, #"City" = "Boca Raton", #"Sport" = "camping", #"Discipline" = "16.108.182.244", #"Athlete" = "dolls", #"Country" = "Syria", #"Gender" = "ghost", #"Event" = "discs", #"Medal" = "marketplace"],
+					        [#"Year" = 2001, #"City" = "Cedar Hill", #"Sport" = "hd", #"Discipline" = "67.177.67.106", #"Athlete" = "switches", #"Country" = "Mayotte", #"Gender" = "dodge", #"Event" = "weblog", #"Medal" = "lord"],
+					        [#"Year" = 2017, #"City" = "Dania Beach", #"Sport" = "how", #"Discipline" = "180.45.176.4", #"Athlete" = "under", #"Country" = "Romania", #"Gender" = "modify", #"Event" = "expensive", #"Medal" = "counts"],
+					        [#"Year" = 2005, #"City" = "Wichita", #"Sport" = "olympic", #"Discipline" = "30.59.104.138", #"Athlete" = "committee", #"Country" = "Paraguay", #"Gender" = "di", #"Event" = "mental", #"Medal" = "decision"],
+					        [#"Year" = 2017, #"City" = "Hazelwood", #"Sport" = "doing", #"Discipline" = "92.150.149.176", #"Athlete" = "tips", #"Country" = "Bermuda", #"Gender" = "discussions", #"Event" = "queries", #"Medal" = "expect"],
+					        [#"Year" = 2019, #"City" = "Opelika", #"Sport" = "makers", #"Discipline" = "205.135.151.146", #"Athlete" = "cluster", #"Country" = "Comoros", #"Gender" = "spent", #"Event" = "slave", #"Medal" = "secret"],
+					        [#"Year" = 2002, #"City" = "North Chicago", #"Sport" = "drinking", #"Discipline" = "242.6.67.171", #"Athlete" = "target", #"Country" = "Argentina", #"Gender" = "environment", #"Event" = "pieces", #"Medal" = "carl"],
+					        [#"Year" = 2000, #"City" = "Stevens Point", #"Sport" = "portion", #"Discipline" = "80.130.229.175", #"Athlete" = "potential", #"Country" = "Sudan", #"Gender" = "jane", #"Event" = "lakes", #"Medal" = "guest"],
+					        [#"Year" = 2019, #"City" = "Naugatuck", #"Sport" = "votes", #"Discipline" = "96.22.125.72", #"Athlete" = "book", #"Country" = "Comoros", #"Gender" = "fully", #"Event" = "educational", #"Medal" = "defense"],
+					        [#"Year" = 2001, #"City" = "McHenry", #"Sport" = "switches", #"Discipline" = "202.121.158.124", #"Athlete" = "objective", #"Country" = "Cook Islands", #"Gender" = "path", #"Event" = "provides", #"Medal" = "img"],
+					        [#"Year" = 2007, #"City" = "Bangor", #"Sport" = "ae", #"Discipline" = "231.71.42.166", #"Athlete" = "dot", #"Country" = "Falkland Islands", #"Gender" = "reasonable", #"Event" = "farmers", #"Medal" = "judges"],
+					        [#"Year" = 2022, #"City" = "Ormond Beach", #"Sport" = "checkout", #"Discipline" = "108.74.230.101", #"Athlete" = "dealing", #"Country" = "Mongolia", #"Gender" = "discussions", #"Event" = "jose", #"Medal" = "amber"],
+					        [#"Year" = 2002, #"City" = "Reading", #"Sport" = "track", #"Discipline" = "28.163.239.64", #"Athlete" = "instant", #"Country" = "Somalia", #"Gender" = "viewed", #"Event" = "increasingly", #"Medal" = "cut"],
+					        [#"Year" = 2014, #"City" = "Chico", #"Sport" = "mozilla", #"Discipline" = "0.30.234.42", #"Athlete" = "mon", #"Country" = "Guinea", #"Gender" = "become", #"Event" = "members", #"Medal" = "contrast"],
+					        [#"Year" = 2007, #"City" = "Elk Grove", #"Sport" = "departments", #"Discipline" = "178.193.140.253", #"Athlete" = "raise", #"Country" = "Ghana", #"Gender" = "per", #"Event" = "replies", #"Medal" = "fourth"],
+					        [#"Year" = 2007, #"City" = "Melrose", #"Sport" = "dildos", #"Discipline" = "217.101.230.31", #"Athlete" = "russell", #"Country" = "Haiti", #"Gender" = "horse", #"Event" = "mountain", #"Medal" = "himself"],
+					        [#"Year" = 2002, #"City" = "New Orleans", #"Sport" = "winners", #"Discipline" = "24.239.93.222", #"Athlete" = "fix", #"Country" = "Dominican Republic", #"Gender" = "denmark", #"Event" = "throw", #"Medal" = "size"],
+					        [#"Year" = 2005, #"City" = "White Plains", #"Sport" = "cleaner", #"Discipline" = "177.202.68.176", #"Athlete" = "currently", #"Country" = "Laos", #"Gender" = "winning", #"Event" = "attempts", #"Medal" = "existence"],
+					        [#"Year" = 2003, #"City" = "Cheyenne", #"Sport" = "attended", #"Discipline" = "61.145.131.96", #"Athlete" = "bringing", #"Country" = "Romania", #"Gender" = "before", #"Event" = "domains", #"Medal" = "paradise"],
+					        [#"Year" = 2010, #"City" = "Las Vegas", #"Sport" = "tue", #"Discipline" = "205.140.13.58", #"Athlete" = "certificates", #"Country" = "Nicaragua", #"Gender" = "ah", #"Event" = "raise", #"Medal" = "string"],
+					        [#"Year" = 2009, #"City" = "Kansas City", #"Sport" = "expert", #"Discipline" = "36.42.193.176", #"Athlete" = "expert", #"Country" = "Macedonia", #"Gender" = "short", #"Event" = "meets", #"Medal" = "sell"],
+					        [#"Year" = 2000, #"City" = "Mustang", #"Sport" = "hub", #"Discipline" = "211.129.64.59", #"Athlete" = "integrated", #"Country" = "Belarus", #"Gender" = "wishlist", #"Event" = "detailed", #"Medal" = "took"],
+					        [#"Year" = 2024, #"City" = "Horn Lake", #"Sport" = "announcements", #"Discipline" = "219.162.61.121", #"Athlete" = "low", #"Country" = "Belize", #"Gender" = "drawn", #"Event" = "kids", #"Medal" = "cutting"],
+					        [#"Year" = 2007, #"City" = "Murrysville", #"Sport" = "va", #"Discipline" = "90.139.81.181", #"Athlete" = "write", #"Country" = "Costa Rica", #"Gender" = "love", #"Event" = "challenge", #"Medal" = "clothes"],
+					        [#"Year" = 2001, #"City" = "Yuba City", #"Sport" = "person", #"Discipline" = "163.19.185.46", #"Athlete" = "modern", #"Country" = "Martinique", #"Gender" = "recall", #"Event" = "pdf", #"Medal" = "superior"],
+					        [#"Year" = 2009, #"City" = "Lawrenceville", #"Sport" = "pool", #"Discipline" = "88.132.75.24", #"Athlete" = "contribute", #"Country" = "Japan", #"Gender" = "sometimes", #"Event" = "creator", #"Medal" = "cable"],
+					        [#"Year" = 2002, #"City" = "Lake Elsinore", #"Sport" = "planner", #"Discipline" = "66.243.102.60", #"Athlete" = "same", #"Country" = "Cape Verde", #"Gender" = "charged", #"Event" = "sit", #"Medal" = "informational"],
+					        [#"Year" = 2009, #"City" = "Margate", #"Sport" = "killer", #"Discipline" = "250.197.167.5", #"Athlete" = "college", #"Country" = "Malta", #"Gender" = "servers", #"Event" = "epa", #"Medal" = "song"],
+					        [#"Year" = 2000, #"City" = "Schertz", #"Sport" = "atlantic", #"Discipline" = "38.141.154.198", #"Athlete" = "tip", #"Country" = "Mauritania", #"Gender" = "debt", #"Event" = "whose", #"Medal" = "pro"],
+					        [#"Year" = 2000, #"City" = "Jeffersonville", #"Sport" = "settings", #"Discipline" = "131.96.193.56", #"Athlete" = "patches", #"Country" = "Greece", #"Gender" = "agencies", #"Event" = "human", #"Medal" = "basketball"],
+					        [#"Year" = 2014, #"City" = "Twin Falls", #"Sport" = "completely", #"Discipline" = "146.71.166.140", #"Athlete" = "take", #"Country" = "Malaysia", #"Gender" = "topic", #"Event" = "lat", #"Medal" = "rocks"],
+					        [#"Year" = 2019, #"City" = "Dyersburg", #"Sport" = "deadline", #"Discipline" = "184.130.254.8", #"Athlete" = "floral", #"Country" = "Kazakhstan", #"Gender" = "faqs", #"Event" = "review", #"Medal" = "partners"],
+					        [#"Year" = 2007, #"City" = "McDonough", #"Sport" = "dd", #"Discipline" = "122.92.248.174", #"Athlete" = "medicine", #"Country" = "Antigua & Barbuda", #"Gender" = "houston", #"Event" = "matt", #"Medal" = "angel"],
+					        [#"Year" = 2020, #"City" = "Jersey City", #"Sport" = "selection", #"Discipline" = "217.71.175.247", #"Athlete" = "bankruptcy", #"Country" = "Curaçao", #"Gender" = "toe", #"Event" = "actions", #"Medal" = "bowl"],
+					        [#"Year" = 2008, #"City" = "Cutler Bay", #"Sport" = "whom", #"Discipline" = "208.55.7.205", #"Athlete" = "moral", #"Country" = "Costa Rica", #"Gender" = "powered", #"Event" = "limits", #"Medal" = "applying"],
+					        [#"Year" = 2010, #"City" = "Ridgeland", #"Sport" = "killing", #"Discipline" = "220.183.80.179", #"Athlete" = "already", #"Country" = "Ireland", #"Gender" = "artists", #"Event" = "expectations", #"Medal" = "events"],
+					        [#"Year" = 2023, #"City" = "Oak Forest", #"Sport" = "cod", #"Discipline" = "41.50.90.212", #"Athlete" = "permits", #"Country" = "Afghanistan", #"Gender" = "switch", #"Event" = "upon", #"Medal" = "micro"],
+					        [#"Year" = 2008, #"City" = "Lawrence", #"Sport" = "guidance", #"Discipline" = "34.117.187.39", #"Athlete" = "needed", #"Country" = "Brazil", #"Gender" = "ethernet", #"Event" = "seats", #"Medal" = "correct"],
+					        [#"Year" = 2009, #"City" = "Merrillville", #"Sport" = "introduced", #"Discipline" = "201.252.100.202", #"Athlete" = "weather", #"Country" = "United Kingdom", #"Gender" = "lamp", #"Event" = "apart", #"Medal" = "cooperation"],
+					        [#"Year" = 2017, #"City" = "Gahanna", #"Sport" = "regularly", #"Discipline" = "185.241.57.225", #"Athlete" = "reports", #"Country" = "Bangladesh", #"Gender" = "finder", #"Event" = "download", #"Medal" = "variety"],
+					        [#"Year" = 2014, #"City" = "Altamonte Springs", #"Sport" = "sarah", #"Discipline" = "85.63.252.167", #"Athlete" = "und", #"Country" = "St. Kitts & Nevis", #"Gender" = "puts", #"Event" = "watches", #"Medal" = "vat"],
+					        [#"Year" = 2008, #"City" = "Muskegon", #"Sport" = "rpm", #"Discipline" = "242.215.198.104", #"Athlete" = "german", #"Country" = "Ukraine", #"Gender" = "thou", #"Event" = "tells", #"Medal" = "titans"],
+					        [#"Year" = 2010, #"City" = "Killeen", #"Sport" = "worth", #"Discipline" = "167.230.40.23", #"Athlete" = "blvd", #"Country" = "Djibouti", #"Gender" = "teens", #"Event" = "reproduction", #"Medal" = "columbia"],
+					        [#"Year" = 2004, #"City" = "North Plainfield", #"Sport" = "recommendations", #"Discipline" = "208.255.208.175", #"Athlete" = "road", #"Country" = "Suriname", #"Gender" = "barbara", #"Event" = "leaving", #"Medal" = "totally"],
+					        [#"Year" = 2007, #"City" = "Ormond Beach", #"Sport" = "would", #"Discipline" = "158.11.239.95", #"Athlete" = "progress", #"Country" = "Iraq", #"Gender" = "usb", #"Event" = "tested", #"Medal" = "suggests"],
+					        [#"Year" = 2007, #"City" = "Riverton", #"Sport" = "durham", #"Discipline" = "104.40.240.115", #"Athlete" = "switzerland", #"Country" = "Tokelau", #"Gender" = "welcome", #"Event" = "florida", #"Medal" = "stood"],
+					        [#"Year" = 2020, #"City" = "Galesburg", #"Sport" = "childhood", #"Discipline" = "237.240.238.21", #"Athlete" = "airline", #"Country" = "Cambodia", #"Gender" = "rolling", #"Event" = "pen", #"Medal" = "hispanic"],
+					        [#"Year" = 2016, #"City" = "New Port Richey", #"Sport" = "clothes", #"Discipline" = "116.171.138.88", #"Athlete" = "entry", #"Country" = "South Africa", #"Gender" = "informed", #"Event" = "xp", #"Medal" = "valentine"],
+					        [#"Year" = 2024, #"City" = "Darien", #"Sport" = "houses", #"Discipline" = "172.34.93.215", #"Athlete" = "gross", #"Country" = "Timor-Leste", #"Gender" = "van", #"Event" = "scores", #"Medal" = "ethnic"],
+					        [#"Year" = 2018, #"City" = "Montebello", #"Sport" = "areas", #"Discipline" = "241.131.188.41", #"Athlete" = "sit", #"Country" = "Tunisia", #"Gender" = "hop", #"Event" = "combat", #"Medal" = "illinois"],
+					        [#"Year" = 2020, #"City" = "Brooklyn Center", #"Sport" = "pick", #"Discipline" = "190.88.164.74", #"Athlete" = "concert", #"Country" = "Malawi", #"Gender" = "gate", #"Event" = "pointed", #"Medal" = "ja"],
+					        [#"Year" = 2008, #"City" = "Cicero", #"Sport" = "champion", #"Discipline" = "67.72.178.92", #"Athlete" = "zdnet", #"Country" = "St. Helena", #"Gender" = "production", #"Event" = "groups", #"Medal" = "coins"],
+					        [#"Year" = 2015, #"City" = "Winona", #"Sport" = "beta", #"Discipline" = "25.188.90.69", #"Athlete" = "weekly", #"Country" = "Denmark", #"Gender" = "eight", #"Event" = "broadway", #"Medal" = "hit"],
+					        [#"Year" = 2014, #"City" = "Farmers Branch", #"Sport" = "their", #"Discipline" = "186.207.46.150", #"Athlete" = "expensive", #"Country" = "Portugal", #"Gender" = "european", #"Event" = "court", #"Medal" = "french"],
+					        [#"Year" = 2002, #"City" = "Mountlake Terrace", #"Sport" = "informed", #"Discipline" = "61.37.181.234", #"Athlete" = "chance", #"Country" = "St. Kitts & Nevis", #"Gender" = "edwards", #"Event" = "system", #"Medal" = "legend"],
+					        [#"Year" = 2008, #"City" = "Deerfield", #"Sport" = "pat", #"Discipline" = "14.32.89.190", #"Athlete" = "toshiba", #"Country" = "British Indian Ocean Territory", #"Gender" = "phone", #"Event" = "supplier", #"Medal" = "shoe"],
+					        [#"Year" = 2020, #"City" = "Melbourne", #"Sport" = "illegal", #"Discipline" = "186.77.55.152", #"Athlete" = "anna", #"Country" = "Finland", #"Gender" = "zoo", #"Event" = "harris", #"Medal" = "shared"],
+					        [#"Year" = 2021, #"City" = "Parkland", #"Sport" = "po", #"Discipline" = "53.105.199.202", #"Athlete" = "joe", #"Country" = "Bahamas", #"Gender" = "software", #"Event" = "respectively", #"Medal" = "shape"],
+					        [#"Year" = 2002, #"City" = "Granite City", #"Sport" = "noted", #"Discipline" = "87.187.253.34", #"Athlete" = "railway", #"Country" = "Switzerland", #"Gender" = "punk", #"Event" = "slightly", #"Medal" = "corporate"],
+					        [#"Year" = 2009, #"City" = "Bellaire", #"Sport" = "is", #"Discipline" = "93.72.72.158", #"Athlete" = "individuals", #"Country" = "Bolivia", #"Gender" = "marketplace", #"Event" = "opens", #"Medal" = "field"],
+					        [#"Year" = 2011, #"City" = "Helena", #"Sport" = "exhibition", #"Discipline" = "199.116.86.14", #"Athlete" = "inside", #"Country" = "South Georgia & South Sandwich Islands", #"Gender" = "comment", #"Event" = "calendar", #"Medal" = "sought"],
+					        [#"Year" = 2003, #"City" = "Iowa City", #"Sport" = "involved", #"Discipline" = "16.32.219.205", #"Athlete" = "singing", #"Country" = "Guam", #"Gender" = "bone", #"Event" = "reflect", #"Medal" = "harris"],
+					        [#"Year" = 2019, #"City" = "Kinston", #"Sport" = "pounds", #"Discipline" = "130.69.187.69", #"Athlete" = "reached", #"Country" = "Fiji", #"Gender" = "nyc", #"Event" = "spectacular", #"Medal" = "submissions"],
+					        [#"Year" = 2012, #"City" = "Castle Rock", #"Sport" = "thermal", #"Discipline" = "91.164.122.63", #"Athlete" = "crew", #"Country" = "Kazakhstan", #"Gender" = "francis", #"Event" = "folk", #"Medal" = "moments"],
+					        [#"Year" = 2005, #"City" = "Sahuarita", #"Sport" = "walter", #"Discipline" = "136.221.17.175", #"Athlete" = "consulting", #"Country" = "Bolivia", #"Gender" = "alcohol", #"Event" = "full", #"Medal" = "decide"],
+					        [#"Year" = 2000, #"City" = "Des Moines", #"Sport" = "circuit", #"Discipline" = "12.245.228.25", #"Athlete" = "natural", #"Country" = "Ecuador", #"Gender" = "kg", #"Event" = "conservation", #"Medal" = "smart"],
+					        [#"Year" = 2022, #"City" = "Pleasanton", #"Sport" = "illness", #"Discipline" = "167.147.211.62", #"Athlete" = "folder", #"Country" = "Turkey", #"Gender" = "generally", #"Event" = "onto", #"Medal" = "format"],
+					        [#"Year" = 2004, #"City" = "Jamestown", #"Sport" = "cs", #"Discipline" = "209.129.203.243", #"Athlete" = "devel", #"Country" = "Iceland", #"Gender" = "southwest", #"Event" = "bureau", #"Medal" = "tim"],
+					        [#"Year" = 2001, #"City" = "Brentwood", #"Sport" = "www", #"Discipline" = "12.241.237.108", #"Athlete" = "performance", #"Country" = "Honduras", #"Gender" = "necessarily", #"Event" = "idaho", #"Medal" = "career"],
+					        [#"Year" = 2001, #"City" = "Anacortes", #"Sport" = "coal", #"Discipline" = "33.146.130.161", #"Athlete" = "upper", #"Country" = "Peru", #"Gender" = "bedding", #"Event" = "mill", #"Medal" = "engagement"],
+					        [#"Year" = 2006, #"City" = "Norman", #"Sport" = "tells", #"Discipline" = "6.83.241.249", #"Athlete" = "box", #"Country" = "Norfolk Island", #"Gender" = "roses", #"Event" = "dropped", #"Medal" = "depth"],
+					        [#"Year" = 2002, #"City" = "Vancouver", #"Sport" = "misc", #"Discipline" = "114.54.144.163", #"Athlete" = "usa", #"Country" = "Mayotte", #"Gender" = "apr", #"Event" = "pages", #"Medal" = "troops"],
+					        [#"Year" = 2009, #"City" = "Elgin", #"Sport" = "telling", #"Discipline" = "58.60.85.40", #"Athlete" = "orientation", #"Country" = "Slovakia", #"Gender" = "pdf", #"Event" = "soup", #"Medal" = "businesses"],
+					        [#"Year" = 2015, #"City" = "Indianapolis", #"Sport" = "struct", #"Discipline" = "47.61.50.78", #"Athlete" = "snow", #"Country" = "Turks & Caicos Islands", #"Gender" = "answers", #"Event" = "indianapolis", #"Medal" = "incorporated"],
+					        [#"Year" = 2021, #"City" = "El Cerrito", #"Sport" = "relationships", #"Discipline" = "120.147.48.107", #"Athlete" = "scheduled", #"Country" = "Burundi", #"Gender" = "sci", #"Event" = "memories", #"Medal" = "excel"],
+					        [#"Year" = 2000, #"City" = "Bettendorf", #"Sport" = "balance", #"Discipline" = "109.153.216.89", #"Athlete" = "ex", #"Country" = "Tunisia", #"Gender" = "pregnant", #"Event" = "prison", #"Medal" = "iraq"],
+					        [#"Year" = 2004, #"City" = "Southlake", #"Sport" = "bed", #"Discipline" = "194.103.65.58", #"Athlete" = "reports", #"Country" = "Qatar", #"Gender" = "heard", #"Event" = "rv", #"Medal" = "got"],
+					        [#"Year" = 2006, #"City" = "Savage", #"Sport" = "interest", #"Discipline" = "122.29.82.190", #"Athlete" = "total", #"Country" = "Turks & Caicos Islands", #"Gender" = "literacy", #"Event" = "nepal", #"Medal" = "basketball"],
+					        [#"Year" = 2004, #"City" = "Valdosta", #"Sport" = "fund", #"Discipline" = "194.234.50.61", #"Athlete" = "words", #"Country" = "St. Kitts & Nevis", #"Gender" = "operator", #"Event" = "technology", #"Medal" = "except"],
+					        [#"Year" = 2011, #"City" = "Machesney Park", #"Sport" = "canadian", #"Discipline" = "233.122.210.7", #"Athlete" = "joint", #"Country" = "Costa Rica", #"Gender" = "notices", #"Event" = "same", #"Medal" = "dutch"],
+					        [#"Year" = 2008, #"City" = "New York", #"Sport" = "conducted", #"Discipline" = "202.212.61.229", #"Athlete" = "tomorrow", #"Country" = "Cape Verde", #"Gender" = "known", #"Event" = "assurance", #"Medal" = "spain"],
+					        [#"Year" = 2006, #"City" = "Pico Rivera", #"Sport" = "back", #"Discipline" = "169.77.210.2", #"Athlete" = "written", #"Country" = "Guadeloupe", #"Gender" = "cultural", #"Event" = "humor", #"Medal" = "instructions"],
+					        [#"Year" = 2016, #"City" = "Perris", #"Sport" = "challenge", #"Discipline" = "247.7.121.144", #"Athlete" = "nsw", #"Country" = "Nicaragua", #"Gender" = "calls", #"Event" = "behavior", #"Medal" = "enterprises"],
+					        [#"Year" = 2001, #"City" = "Nicholasville", #"Sport" = "vehicle", #"Discipline" = "110.57.236.159", #"Athlete" = "thoughts", #"Country" = "French Polynesia", #"Gender" = "john", #"Event" = "dreams", #"Medal" = "consumption"],
+					        [#"Year" = 2016, #"City" = "Streamwood", #"Sport" = "transfer", #"Discipline" = "220.202.32.56", #"Athlete" = "automotive", #"Country" = "Qatar", #"Gender" = "given", #"Event" = "elite", #"Medal" = "editing"],
+					        [#"Year" = 2009, #"City" = "Birmingham", #"Sport" = "inc", #"Discipline" = "122.24.48.247", #"Athlete" = "county", #"Country" = "Uganda", #"Gender" = "rv", #"Event" = "romance", #"Medal" = "candy"],
+					        [#"Year" = 2013, #"City" = "Des Plaines", #"Sport" = "glance", #"Discipline" = "46.73.167.83", #"Athlete" = "chinese", #"Country" = "Cuba", #"Gender" = "telecom", #"Event" = "ph", #"Medal" = "mentioned"],
+					        [#"Year" = 2006, #"City" = "North Miami Beach", #"Sport" = "lat", #"Discipline" = "91.64.253.115", #"Athlete" = "leg", #"Country" = "Georgia", #"Gender" = "carter", #"Event" = "creator", #"Medal" = "poetry"],
+					        [#"Year" = 2020, #"City" = "East Orange", #"Sport" = "piece", #"Discipline" = "243.59.85.157", #"Athlete" = "computer", #"Country" = "Cape Verde", #"Gender" = "raised", #"Event" = "area", #"Medal" = "implemented"],
+					        [#"Year" = 2002, #"City" = "Arcata", #"Sport" = "appeal", #"Discipline" = "35.182.32.216", #"Athlete" = "communities", #"Country" = "Albania", #"Gender" = "execution", #"Event" = "morris", #"Medal" = "pioneer"],
+					        [#"Year" = 2017, #"City" = "Durham", #"Sport" = "itself", #"Discipline" = "232.73.195.184", #"Athlete" = "break", #"Country" = "Finland", #"Gender" = "final", #"Event" = "defined", #"Medal" = "separate"],
+					        [#"Year" = 2004, #"City" = "Rohnert Park", #"Sport" = "herein", #"Discipline" = "108.106.249.220", #"Athlete" = "duke", #"Country" = "U.S. Outlying Islands", #"Gender" = "plaza", #"Event" = "insider", #"Medal" = "lots"],
+					        [#"Year" = 2023, #"City" = "Calexico", #"Sport" = "lines", #"Discipline" = "104.54.240.84", #"Athlete" = "copy", #"Country" = "Kosovo", #"Gender" = "ring", #"Event" = "matter", #"Medal" = "copies"],
+					        [#"Year" = 2018, #"City" = "Fontana", #"Sport" = "date", #"Discipline" = "225.92.67.187", #"Athlete" = "biology", #"Country" = "Singapore", #"Gender" = "english", #"Event" = "europe", #"Medal" = "clark"],
+					        [#"Year" = 2000, #"City" = "New Orleans", #"Sport" = "shots", #"Discipline" = "225.85.185.65", #"Athlete" = "another", #"Country" = "Liberia", #"Gender" = "industrial", #"Event" = "experiment", #"Medal" = "walking"],
+					        [#"Year" = 2000, #"City" = "Salina", #"Sport" = "areas", #"Discipline" = "174.206.120.124", #"Athlete" = "consultant", #"Country" = "Russia", #"Gender" = "gathering", #"Event" = "industry", #"Medal" = "we"],
+					        [#"Year" = 2001, #"City" = "Hamilton", #"Sport" = "ocean", #"Discipline" = "146.67.86.81", #"Athlete" = "attacks", #"Country" = "United Arab Emirates", #"Gender" = "fans", #"Event" = "administrator", #"Medal" = "hearing"],
+					        [#"Year" = 2013, #"City" = "Cedar Rapids", #"Sport" = "watch", #"Discipline" = "62.187.241.68", #"Athlete" = "isp", #"Country" = "Qatar", #"Gender" = "extensions", #"Event" = "city", #"Medal" = "ea"],
+					        [#"Year" = 2005, #"City" = "San Juan Capistrano", #"Sport" = "holy", #"Discipline" = "157.253.130.236", #"Athlete" = "portland", #"Country" = "Bolivia", #"Gender" = "believed", #"Event" = "war", #"Medal" = "communication"],
+					        [#"Year" = 2001, #"City" = "Streamwood", #"Sport" = "script", #"Discipline" = "164.6.210.112", #"Athlete" = "knowing", #"Country" = "Suriname", #"Gender" = "important", #"Event" = "pain", #"Medal" = "pulled"],
+					        [#"Year" = 2022, #"City" = "Ennis", #"Sport" = "latinas", #"Discipline" = "147.110.231.229", #"Athlete" = "arrow", #"Country" = "Samoa", #"Gender" = "governments", #"Event" = "than", #"Medal" = "johnson"],
+					        [#"Year" = 2023, #"City" = "Glendale Heights", #"Sport" = "whole", #"Discipline" = "39.27.58.248", #"Athlete" = "diesel", #"Country" = "Bahamas", #"Gender" = "moderate", #"Event" = "internal", #"Medal" = "ch"],
+					        [#"Year" = 2021, #"City" = "Lauderhill", #"Sport" = "hr", #"Discipline" = "143.75.135.212", #"Athlete" = "download", #"Country" = "Cayman Islands", #"Gender" = "memorial", #"Event" = "learning", #"Medal" = "rhode"],
+					        [#"Year" = 2003, #"City" = "Pasadena", #"Sport" = "matching", #"Discipline" = "39.199.255.229", #"Athlete" = "persons", #"Country" = "Portugal", #"Gender" = "proxy", #"Event" = "ef", #"Medal" = "flat"],
+					        [#"Year" = 2021, #"City" = "Camden", #"Sport" = "german", #"Discipline" = "186.203.241.227", #"Athlete" = "contributed", #"Country" = "Czech Republic", #"Gender" = "pretty", #"Event" = "antonio", #"Medal" = "catch"],
+					        [#"Year" = 2013, #"City" = "Takoma Park", #"Sport" = "personally", #"Discipline" = "147.105.218.133", #"Athlete" = "notebook", #"Country" = "Mali", #"Gender" = "package", #"Event" = "subscription", #"Medal" = "timing"],
+					        [#"Year" = 2010, #"City" = "Gallatin", #"Sport" = "austin", #"Discipline" = "56.45.111.103", #"Athlete" = "too", #"Country" = "Kuwait", #"Gender" = "automotive", #"Event" = "annual", #"Medal" = "doctor"],
+					        [#"Year" = 2017, #"City" = "Sierra Vista", #"Sport" = "irish", #"Discipline" = "240.195.144.61", #"Athlete" = "valve", #"Country" = "Lithuania", #"Gender" = "medication", #"Event" = "shops", #"Medal" = "pic"],
+					        [#"Year" = 2013, #"City" = "Newport Beach", #"Sport" = "md", #"Discipline" = "234.244.40.66", #"Athlete" = "script", #"Country" = "Christmas Island", #"Gender" = "consulting", #"Event" = "editors", #"Medal" = "courtesy"],
+					        [#"Year" = 2018, #"City" = "Findlay", #"Sport" = "returns", #"Discipline" = "177.134.165.75", #"Athlete" = "warehouse", #"Country" = "Macedonia", #"Gender" = "poker", #"Event" = "want", #"Medal" = "activation"],
+					        [#"Year" = 2011, #"City" = "Laguna Niguel", #"Sport" = "unix", #"Discipline" = "74.53.211.14", #"Athlete" = "straight", #"Country" = "St. Helena", #"Gender" = "nearly", #"Event" = "songs", #"Medal" = "flashing"],
+					        [#"Year" = 2019, #"City" = "Kiryas Joel", #"Sport" = "qty", #"Discipline" = "35.73.56.41", #"Athlete" = "photos", #"Country" = "Chile", #"Gender" = "facilities", #"Event" = "median", #"Medal" = "investments"],
+					        [#"Year" = 2011, #"City" = "Corcoran", #"Sport" = "concepts", #"Discipline" = "64.104.89.234", #"Athlete" = "had", #"Country" = "Syria", #"Gender" = "notices", #"Event" = "attached", #"Medal" = "metal"],
+					        [#"Year" = 2012, #"City" = "Fairhope", #"Sport" = "poland", #"Discipline" = "123.109.121.63", #"Athlete" = "type", #"Country" = "Guyana", #"Gender" = "cycling", #"Event" = "graphic", #"Medal" = "marshall"],
+					        [#"Year" = 2005, #"City" = "Parma Heights", #"Sport" = "economic", #"Discipline" = "96.184.97.13", #"Athlete" = "possible", #"Country" = "Spain", #"Gender" = "class", #"Event" = "understood", #"Medal" = "former"],
+					        [#"Year" = 2013, #"City" = "Berwyn", #"Sport" = "payments", #"Discipline" = "190.130.190.71", #"Athlete" = "latina", #"Country" = "Djibouti", #"Gender" = "increasingly", #"Event" = "journal", #"Medal" = "burning"],
+					        [#"Year" = 2022, #"City" = "Lathrop", #"Sport" = "ideas", #"Discipline" = "29.241.208.138", #"Athlete" = "bar", #"Country" = "Nauru", #"Gender" = "resistance", #"Event" = "mounted", #"Medal" = "am"],
+					        [#"Year" = 2023, #"City" = "Westmont", #"Sport" = "contains", #"Discipline" = "157.44.47.92", #"Athlete" = "antonio", #"Country" = "Guam", #"Gender" = "social", #"Event" = "empty", #"Medal" = "obtained"],
+					        [#"Year" = 2007, #"City" = "Aberdeen", #"Sport" = "dual", #"Discipline" = "165.152.242.178", #"Athlete" = "southeast", #"Country" = "Cyprus", #"Gender" = "compact", #"Event" = "careful", #"Medal" = "ordinary"],
+					        [#"Year" = 2003, #"City" = "Napa", #"Sport" = "williams", #"Discipline" = "45.191.12.112", #"Athlete" = "tips", #"Country" = "Pitcairn Islands", #"Gender" = "wolf", #"Event" = "models", #"Medal" = "implement"],
+					        [#"Year" = 2024, #"City" = "Kiryas Joel", #"Sport" = "declared", #"Discipline" = "246.105.146.5", #"Athlete" = "lots", #"Country" = "Liberia", #"Gender" = "side", #"Event" = "portions", #"Medal" = "ibm"],
+					        [#"Year" = 2000, #"City" = "Barberton", #"Sport" = "berlin", #"Discipline" = "152.252.146.114", #"Athlete" = "inkjet", #"Country" = "Thailand", #"Gender" = "quick", #"Event" = "misc", #"Medal" = "boards"],
+					        [#"Year" = 2010, #"City" = "Trotwood", #"Sport" = "dirty", #"Discipline" = "88.244.125.1", #"Athlete" = "run", #"Country" = "Zimbabwe", #"Gender" = "anything", #"Event" = "rating", #"Medal" = "mitsubishi"],
+					        [#"Year" = 2015, #"City" = "Cleburne", #"Sport" = "catering", #"Discipline" = "188.101.2.249", #"Athlete" = "jewish", #"Country" = "Ukraine", #"Gender" = "volume", #"Event" = "hate", #"Medal" = "secrets"],
+					        [#"Year" = 2024, #"City" = "Annapolis", #"Sport" = "puts", #"Discipline" = "194.89.9.6", #"Athlete" = "portable", #"Country" = "El Salvador", #"Gender" = "cross", #"Event" = "body", #"Medal" = "memphis"],
+					        [#"Year" = 2005, #"City" = "Rogers", #"Sport" = "storage", #"Discipline" = "20.146.93.80", #"Athlete" = "ownership", #"Country" = "Serbia", #"Gender" = "scanner", #"Event" = "nokia", #"Medal" = "lookup"],
+					        [#"Year" = 2004, #"City" = "Midwest City", #"Sport" = "employee", #"Discipline" = "62.103.131.191", #"Athlete" = "offering", #"Country" = "Puerto Rico", #"Gender" = "tour", #"Event" = "flying", #"Medal" = "raw"],
+					        [#"Year" = 2009, #"City" = "Converse", #"Sport" = "artists", #"Discipline" = "242.118.30.215", #"Athlete" = "static", #"Country" = "Greece", #"Gender" = "exp", #"Event" = "state", #"Medal" = "wells"],
+					        [#"Year" = 2007, #"City" = "Olive Branch", #"Sport" = "recorded", #"Discipline" = "39.16.99.49", #"Athlete" = "feels", #"Country" = "Nicaragua", #"Gender" = "mon", #"Event" = "fields", #"Medal" = "black"],
+					        [#"Year" = 2002, #"City" = "Oak Forest", #"Sport" = "ensure", #"Discipline" = "1.149.133.38", #"Athlete" = "yellow", #"Country" = "Antigua & Barbuda", #"Gender" = "clips", #"Event" = "reviewed", #"Medal" = "rush"],
+					        [#"Year" = 2006, #"City" = "Waukegan", #"Sport" = "rock", #"Discipline" = "105.172.209.118", #"Athlete" = "appeared", #"Country" = "Mayotte", #"Gender" = "chi", #"Event" = "tim", #"Medal" = "agency"],
+					        [#"Year" = 2003, #"City" = "Durham", #"Sport" = "presents", #"Discipline" = "243.55.54.34", #"Athlete" = "patient", #"Country" = "Philippines", #"Gender" = "joseph", #"Event" = "driven", #"Medal" = "pursuant"],
+					        [#"Year" = 2011, #"City" = "Bountiful", #"Sport" = "currency", #"Discipline" = "52.189.177.204", #"Athlete" = "virus", #"Country" = "Burkina Faso", #"Gender" = "holes", #"Event" = "applicable", #"Medal" = "shopping"],
+					        [#"Year" = 2023, #"City" = "Sikeston", #"Sport" = "opposition", #"Discipline" = "91.111.108.56", #"Athlete" = "run", #"Country" = "Botswana", #"Gender" = "dynamics", #"Event" = "israeli", #"Medal" = "dear"],
+					        [#"Year" = 2005, #"City" = "Lindenhurst", #"Sport" = "pr", #"Discipline" = "84.145.175.89", #"Athlete" = "compensation", #"Country" = "Belarus", #"Gender" = "lots", #"Event" = "god", #"Medal" = "pin"],
+					        [#"Year" = 2004, #"City" = "Longmont", #"Sport" = "warning", #"Discipline" = "252.175.157.80", #"Athlete" = "resort", #"Country" = "Turks & Caicos Islands", #"Gender" = "low", #"Event" = "fri", #"Medal" = "alternative"],
+					        [#"Year" = 2021, #"City" = "Norco", #"Sport" = "glad", #"Discipline" = "117.127.19.111", #"Athlete" = "applications", #"Country" = "Gambia", #"Gender" = "rain", #"Event" = "waste", #"Medal" = "channels"],
+					        [#"Year" = 2014, #"City" = "La Puente", #"Sport" = "company", #"Discipline" = "169.183.109.188", #"Athlete" = "website", #"Country" = "Jersey", #"Gender" = "coal", #"Event" = "lay", #"Medal" = "household"],
+					        [#"Year" = 2008, #"City" = "Selma", #"Sport" = "drugs", #"Discipline" = "179.10.101.195", #"Athlete" = "maintained", #"Country" = "Bhutan", #"Gender" = "least", #"Event" = "richard", #"Medal" = "make"],
+					        [#"Year" = 2010, #"City" = "Atascadero", #"Sport" = "constitutes", #"Discipline" = "12.178.249.149", #"Athlete" = "dutch", #"Country" = "Afghanistan", #"Gender" = "bit", #"Event" = "portion", #"Medal" = "installed"],
+					        [#"Year" = 2023, #"City" = "New Braunfels", #"Sport" = "roman", #"Discipline" = "123.120.83.249", #"Athlete" = "palestinian", #"Country" = "Norfolk Island", #"Gender" = "caught", #"Event" = "independence", #"Medal" = "october"],
+					        [#"Year" = 2013, #"City" = "Elk River", #"Sport" = "faces", #"Discipline" = "85.197.183.133", #"Athlete" = "prev", #"Country" = "Spain", #"Gender" = "why", #"Event" = "usc", #"Medal" = "phoenix"],
+					        [#"Year" = 2009, #"City" = "Golden Valley", #"Sport" = "slot", #"Discipline" = "25.96.155.10", #"Athlete" = "sunset", #"Country" = "Kazakhstan", #"Gender" = "trademark", #"Event" = "linda", #"Medal" = "download"],
+					        [#"Year" = 2015, #"City" = "Alton", #"Sport" = "acting", #"Discipline" = "123.200.56.35", #"Athlete" = "auction", #"Country" = "Algeria", #"Gender" = "nj", #"Event" = "markets", #"Medal" = "came"],
+					        [#"Year" = 2015, #"City" = "South Milwaukee", #"Sport" = "faqs", #"Discipline" = "7.7.96.111", #"Athlete" = "documentation", #"Country" = "Lebanon", #"Gender" = "bikes", #"Event" = "announce", #"Medal" = "raising"],
+					        [#"Year" = 2018, #"City" = "Kennesaw", #"Sport" = "democrats", #"Discipline" = "63.18.18.225", #"Athlete" = "collector", #"Country" = "Greece", #"Gender" = "ts", #"Event" = "shut", #"Medal" = "heroes"],
+					        [#"Year" = 2000, #"City" = "Laredo", #"Sport" = "serve", #"Discipline" = "19.252.6.29", #"Athlete" = "news", #"Country" = "Yemen", #"Gender" = "lower", #"Event" = "nt", #"Medal" = "investing"],
+					        [#"Year" = 2009, #"City" = "Salem", #"Sport" = "meetings", #"Discipline" = "167.11.158.10", #"Athlete" = "foot", #"Country" = "Zimbabwe", #"Gender" = "crown", #"Event" = "see", #"Medal" = "arms"],
+					        [#"Year" = 2016, #"City" = "Ada", #"Sport" = "corps", #"Discipline" = "45.62.199.136", #"Athlete" = "absolutely", #"Country" = "Sudan", #"Gender" = "commands", #"Event" = "poetry", #"Medal" = "topics"],
+					        [#"Year" = 2014, #"City" = "Seal Beach", #"Sport" = "anne", #"Discipline" = "195.11.80.228", #"Athlete" = "injection", #"Country" = "St. Kitts & Nevis", #"Gender" = "postage", #"Event" = "connected", #"Medal" = "advertisement"],
+					        [#"Year" = 2017, #"City" = "Elmhurst", #"Sport" = "prescription", #"Discipline" = "106.210.88.24", #"Athlete" = "rather", #"Country" = "Norfolk Island", #"Gender" = "zero", #"Event" = "jason", #"Medal" = "catalogue"],
+					        [#"Year" = 2008, #"City" = "Monterey Park", #"Sport" = "court", #"Discipline" = "155.82.209.143", #"Athlete" = "combo", #"Country" = "Romania", #"Gender" = "am", #"Event" = "showed", #"Medal" = "yr"],
+					        [#"Year" = 2024, #"City" = "Ashtabula", #"Sport" = "directors", #"Discipline" = "237.222.181.25", #"Athlete" = "casinos", #"Country" = "United States", #"Gender" = "continuing", #"Event" = "recommended", #"Medal" = "lakes"],
+					        [#"Year" = 2013, #"City" = "St. Paul", #"Sport" = "grove", #"Discipline" = "102.191.193.206", #"Athlete" = "functionality", #"Country" = "Malta", #"Gender" = "submissions", #"Event" = "classroom", #"Medal" = "thousands"],
+					        [#"Year" = 2000, #"City" = "Wisconsin Rapids", #"Sport" = "form", #"Discipline" = "50.105.44.137", #"Athlete" = "reputation", #"Country" = "Argentina", #"Gender" = "introduced", #"Event" = "introduce", #"Medal" = "months"],
+					        [#"Year" = 2009, #"City" = "Milford", #"Sport" = "cluster", #"Discipline" = "224.157.191.84", #"Athlete" = "sydney", #"Country" = "Anguilla", #"Gender" = "af", #"Event" = "sustainable", #"Medal" = "diversity"],
+					        [#"Year" = 2011, #"City" = "Goldsboro", #"Sport" = "weeks", #"Discipline" = "75.89.149.80", #"Athlete" = "st", #"Country" = "Tuvalu", #"Gender" = "britain", #"Event" = "animal", #"Medal" = "twiki"],
+					        [#"Year" = 2005, #"City" = "Farmers Branch", #"Sport" = "mi", #"Discipline" = "17.217.204.255", #"Athlete" = "lo", #"Country" = "Togo", #"Gender" = "pennsylvania", #"Event" = "suggested", #"Medal" = "gp"],
+					        [#"Year" = 2012, #"City" = "Brooklyn Center", #"Sport" = "prints", #"Discipline" = "69.147.159.17", #"Athlete" = "data", #"Country" = "Taiwan", #"Gender" = "enhanced", #"Event" = "carry", #"Medal" = "swimming"],
+					        [#"Year" = 2016, #"City" = "Barstow", #"Sport" = "architecture", #"Discipline" = "74.208.56.215", #"Athlete" = "sensitive", #"Country" = "Algeria", #"Gender" = "drug", #"Event" = "saying", #"Medal" = "purpose"],
+					        [#"Year" = 2013, #"City" = "Farragut", #"Sport" = "stability", #"Discipline" = "198.233.68.56", #"Athlete" = "horizontal", #"Country" = "Ecuador", #"Gender" = "festival", #"Event" = "thursday", #"Medal" = "campbell"],
+					        [#"Year" = 2019, #"City" = "Anaheim", #"Sport" = "opportunities", #"Discipline" = "183.35.197.1", #"Athlete" = "rhode", #"Country" = "Mozambique", #"Gender" = "linked", #"Event" = "court", #"Medal" = "reproduction"],
+					        [#"Year" = 2008, #"City" = "Omaha", #"Sport" = "fantastic", #"Discipline" = "37.100.121.48", #"Athlete" = "ownership", #"Country" = "Guyana", #"Gender" = "beat", #"Event" = "invite", #"Medal" = "hairy"],
+					        [#"Year" = 2010, #"City" = "Dana Point", #"Sport" = "practical", #"Discipline" = "98.148.144.182", #"Athlete" = "pierre", #"Country" = "Turkey", #"Gender" = "mounted", #"Event" = "removed", #"Medal" = "demo"],
+					        [#"Year" = 2011, #"City" = "San Bruno", #"Sport" = "michelle", #"Discipline" = "168.69.51.237", #"Athlete" = "called", #"Country" = "South Georgia & South Sandwich Islands", #"Gender" = "jp", #"Event" = "movies", #"Medal" = "pen"],
+					        [#"Year" = 2008, #"City" = "Ceres", #"Sport" = "tie", #"Discipline" = "164.57.127.14", #"Athlete" = "neither", #"Country" = "Malaysia", #"Gender" = "hamilton", #"Event" = "settings", #"Medal" = "houston"],
+					        [#"Year" = 2021, #"City" = "Davis", #"Sport" = "fred", #"Discipline" = "104.35.87.98", #"Athlete" = "scores", #"Country" = "Uganda", #"Gender" = "francisco", #"Event" = "crack", #"Medal" = "rio"],
+					        [#"Year" = 2019, #"City" = "White Bear Lake", #"Sport" = "competition", #"Discipline" = "5.213.68.139", #"Athlete" = "torture", #"Country" = "Bermuda", #"Gender" = "decor", #"Event" = "db", #"Medal" = "having"],
+					        [#"Year" = 2007, #"City" = "Irving", #"Sport" = "suspension", #"Discipline" = "65.38.122.115", #"Athlete" = "great", #"Country" = "Pakistan", #"Gender" = "regarding", #"Event" = "reverse", #"Medal" = "choose"],
+					        [#"Year" = 2015, #"City" = "Cumberland", #"Sport" = "project", #"Discipline" = "44.115.86.192", #"Athlete" = "hs", #"Country" = "Venezuela", #"Gender" = "earlier", #"Event" = "egg", #"Medal" = "motors"],
+					        [#"Year" = 2013, #"City" = "Perris", #"Sport" = "spectrum", #"Discipline" = "59.27.82.131", #"Athlete" = "evidence", #"Country" = "Honduras", #"Gender" = "google", #"Event" = "basketball", #"Medal" = "failed"],
+					        [#"Year" = 2012, #"City" = "Carteret", #"Sport" = "nearby", #"Discipline" = "222.187.29.73", #"Athlete" = "sufficient", #"Country" = "Brazil", #"Gender" = "charges", #"Event" = "repeat", #"Medal" = "intelligence"],
+					        [#"Year" = 2010, #"City" = "Springfield", #"Sport" = "fans", #"Discipline" = "202.71.70.238", #"Athlete" = "backup", #"Country" = "Afghanistan", #"Gender" = "latest", #"Event" = "agricultural", #"Medal" = "pricing"],
+					        [#"Year" = 2023, #"City" = "Cuyahoga Falls", #"Sport" = "fruit", #"Discipline" = "121.178.218.118", #"Athlete" = "ed", #"Country" = "Montserrat", #"Gender" = "birthday", #"Event" = "featuring", #"Medal" = "pg"],
+					        [#"Year" = 2015, #"City" = "Loves Park", #"Sport" = "generation", #"Discipline" = "66.152.110.14", #"Athlete" = "tv", #"Country" = "Rwanda", #"Gender" = "lovely", #"Event" = "research", #"Medal" = "advisory"],
+					        [#"Year" = 2011, #"City" = "Ridgeland", #"Sport" = "yorkshire", #"Discipline" = "75.140.85.221", #"Athlete" = "proven", #"Country" = "U.S. Virgin Islands", #"Gender" = "bug", #"Event" = "commitment", #"Medal" = "lease"],
+					        [#"Year" = 2006, #"City" = "East St. Louis", #"Sport" = "mostly", #"Discipline" = "133.161.39.30", #"Athlete" = "safety", #"Country" = "New Zealand", #"Gender" = "early", #"Event" = "clients", #"Medal" = "hip"],
+					        [#"Year" = 2020, #"City" = "Athens", #"Sport" = "warm", #"Discipline" = "157.222.240.190", #"Athlete" = "banks", #"Country" = "Seychelles", #"Gender" = "portion", #"Event" = "engines", #"Medal" = "forward"],
+					        [#"Year" = 2015, #"City" = "Sherwood", #"Sport" = "excellent", #"Discipline" = "109.49.227.252", #"Athlete" = "lesson", #"Country" = "Réunion", #"Gender" = "worker", #"Event" = "investments", #"Medal" = "hang"],
+					        [#"Year" = 2012, #"City" = "American Fork", #"Sport" = "smoke", #"Discipline" = "159.28.85.91", #"Athlete" = "heads", #"Country" = "Romania", #"Gender" = "anytime", #"Event" = "twiki", #"Medal" = "cast"],
+					        [#"Year" = 2012, #"City" = "Yorkville", #"Sport" = "nikon", #"Discipline" = "219.169.146.165", #"Athlete" = "gospel", #"Country" = "Switzerland", #"Gender" = "feb", #"Event" = "cameras", #"Medal" = "costa"],
+					        [#"Year" = 2016, #"City" = "Miami Gardens", #"Sport" = "eligible", #"Discipline" = "168.95.2.152", #"Athlete" = "seat", #"Country" = "St. Helena", #"Gender" = "maximum", #"Event" = "calling", #"Medal" = "uk"],
+					        [#"Year" = 2011, #"City" = "Logansport", #"Sport" = "jewelry", #"Discipline" = "138.53.65.17", #"Athlete" = "ethernet", #"Country" = "French Polynesia", #"Gender" = "photos", #"Event" = "cool", #"Medal" = "discussion"],
+					        [#"Year" = 2000, #"City" = "Forest Park", #"Sport" = "sl", #"Discipline" = "14.183.203.197", #"Athlete" = "blow", #"Country" = "Angola", #"Gender" = "must", #"Event" = "latinas", #"Medal" = "newspapers"],
+					        [#"Year" = 2011, #"City" = "Gloucester", #"Sport" = "cultural", #"Discipline" = "25.14.61.13", #"Athlete" = "il", #"Country" = "Guyana", #"Gender" = "converter", #"Event" = "historic", #"Medal" = "ladies"],
+					        [#"Year" = 2008, #"City" = "Chambersburg", #"Sport" = "recovery", #"Discipline" = "224.111.48.101", #"Athlete" = "afternoon", #"Country" = "São Tomé & Príncipe", #"Gender" = "result", #"Event" = "proven", #"Medal" = "petition"],
+					        [#"Year" = 2017, #"City" = "Oklahoma City", #"Sport" = "right", #"Discipline" = "0.197.165.96", #"Athlete" = "reasonable", #"Country" = "Bosnia & Herzegovina", #"Gender" = "definition", #"Event" = "su", #"Medal" = "diesel"],
+					        [#"Year" = 2010, #"City" = "Waco", #"Sport" = "intermediate", #"Discipline" = "91.77.138.88", #"Athlete" = "branches", #"Country" = "Cook Islands", #"Gender" = "institutional", #"Event" = "thru", #"Medal" = "wage"],
+					        [#"Year" = 2010, #"City" = "Daytona Beach", #"Sport" = "southern", #"Discipline" = "254.148.178.63", #"Athlete" = "aa", #"Country" = "Romania", #"Gender" = "saturday", #"Event" = "accepted", #"Medal" = "proven"],
+					        [#"Year" = 2004, #"City" = "Beavercreek", #"Sport" = "philip", #"Discipline" = "148.99.18.92", #"Athlete" = "dreams", #"Country" = "Denmark", #"Gender" = "indicated", #"Event" = "memories", #"Medal" = "tourist"],
+					        [#"Year" = 2012, #"City" = "Newnan", #"Sport" = "gardening", #"Discipline" = "226.139.223.39", #"Athlete" = "blade", #"Country" = "Curaçao", #"Gender" = "reserve", #"Event" = "authorities", #"Medal" = "season"],
+					        [#"Year" = 2022, #"City" = "Doral", #"Sport" = "located", #"Discipline" = "133.225.26.68", #"Athlete" = "some", #"Country" = "Micronesia", #"Gender" = "gm", #"Event" = "team", #"Medal" = "everybody"],
+					        [#"Year" = 2008, #"City" = "Edinburg", #"Sport" = "remaining", #"Discipline" = "189.235.145.187", #"Athlete" = "corresponding", #"Country" = "Guinea-Bissau", #"Gender" = "mice", #"Event" = "miscellaneous", #"Medal" = "guest"],
+					        [#"Year" = 2010, #"City" = "Batavia", #"Sport" = "mode", #"Discipline" = "36.104.225.226", #"Athlete" = "peace", #"Country" = "Guyana", #"Gender" = "checks", #"Event" = "ringtones", #"Medal" = "pennsylvania"],
+					        [#"Year" = 2005, #"City" = "Hastings", #"Sport" = "lifestyle", #"Discipline" = "60.214.164.49", #"Athlete" = "rfc", #"Country" = "Russia", #"Gender" = "olympic", #"Event" = "women", #"Medal" = "big"],
+					        [#"Year" = 2005, #"City" = "Kentwood", #"Sport" = "senator", #"Discipline" = "5.214.150.78", #"Athlete" = "serving", #"Country" = "Kazakhstan", #"Gender" = "outcome", #"Event" = "nhl", #"Medal" = "decisions"],
+					        [#"Year" = 2019, #"City" = "Brentwood", #"Sport" = "cartoons", #"Discipline" = "73.164.220.181", #"Athlete" = "hip", #"Country" = "Tristan da Cunha", #"Gender" = "ages", #"Event" = "wine", #"Medal" = "period"],
+					        [#"Year" = 2008, #"City" = "North Chicago", #"Sport" = "reflect", #"Discipline" = "251.240.6.214", #"Athlete" = "generate", #"Country" = "Lesotho", #"Gender" = "holy", #"Event" = "competition", #"Medal" = "hair"],
+					        [#"Year" = 2016, #"City" = "Hurst", #"Sport" = "wheels", #"Discipline" = "89.47.42.95", #"Athlete" = "ri", #"Country" = "Jamaica", #"Gender" = "ha", #"Event" = "palace", #"Medal" = "novel"],
+					        [#"Year" = 2022, #"City" = "Creve Coeur", #"Sport" = "medline", #"Discipline" = "152.128.239.36", #"Athlete" = "von", #"Country" = "Malta", #"Gender" = "confirmed", #"Event" = "admissions", #"Medal" = "mechanical"],
+					        [#"Year" = 2014, #"City" = "Rancho Palos Verdes", #"Sport" = "commonwealth", #"Discipline" = "119.182.23.30", #"Athlete" = "truck", #"Country" = "Luxembourg", #"Gender" = "capital", #"Event" = "cancel", #"Medal" = "antenna"],
+					        [#"Year" = 2001, #"City" = "Paterson", #"Sport" = "covered", #"Discipline" = "39.61.211.2", #"Athlete" = "miles", #"Country" = "Greece", #"Gender" = "highway", #"Event" = "anniversary", #"Medal" = "see"],
+					        [#"Year" = 2001, #"City" = "Pleasant Hill", #"Sport" = "templates", #"Discipline" = "47.180.27.163", #"Athlete" = "secrets", #"Country" = "Uzbekistan", #"Gender" = "nine", #"Event" = "relative", #"Medal" = "inc"],
+					        [#"Year" = 2004, #"City" = "Bolingbrook", #"Sport" = "consideration", #"Discipline" = "229.167.227.244", #"Athlete" = "cnet", #"Country" = "Panama", #"Gender" = "massive", #"Event" = "layout", #"Medal" = "memory"],
+					        [#"Year" = 2004, #"City" = "Murray", #"Sport" = "equivalent", #"Discipline" = "78.27.103.248", #"Athlete" = "wonder", #"Country" = "Spain", #"Gender" = "auto", #"Event" = "view", #"Medal" = "permission"],
+					        [#"Year" = 2013, #"City" = "Bloomington", #"Sport" = "blade", #"Discipline" = "172.45.201.252", #"Athlete" = "blogger", #"Country" = "Tristan da Cunha", #"Gender" = "sony", #"Event" = "follow", #"Medal" = "sigma"],
+					        [#"Year" = 2021, #"City" = "Colonial Heights", #"Sport" = "combine", #"Discipline" = "32.141.197.232", #"Athlete" = "court", #"Country" = "Dominican Republic", #"Gender" = "heard", #"Event" = "entertainment", #"Medal" = "spears"],
+					        [#"Year" = 2024, #"City" = "Plano", #"Sport" = "gifts", #"Discipline" = "243.168.61.78", #"Athlete" = "demonstrated", #"Country" = "Costa Rica", #"Gender" = "johnny", #"Event" = "communicate", #"Medal" = "drive"],
+					        [#"Year" = 2012, #"City" = "Flower Mound", #"Sport" = "ex", #"Discipline" = "59.250.29.201", #"Athlete" = "wheels", #"Country" = "Bosnia & Herzegovina", #"Gender" = "weekly", #"Event" = "basis", #"Medal" = "wings"],
+					        [#"Year" = 2016, #"City" = "Charleston", #"Sport" = "sellers", #"Discipline" = "193.104.54.28", #"Athlete" = "text", #"Country" = "Macedonia", #"Gender" = "lady", #"Event" = "work", #"Medal" = "capability"],
+					        [#"Year" = 2010, #"City" = "Liberal", #"Sport" = "outdoor", #"Discipline" = "244.125.174.107", #"Athlete" = "induced", #"Country" = "São Tomé & Príncipe", #"Gender" = "roger", #"Event" = "rack", #"Medal" = "databases"],
+					        [#"Year" = 2024, #"City" = "Holly Springs", #"Sport" = "saving", #"Discipline" = "79.254.178.106", #"Athlete" = "condition", #"Country" = "El Salvador", #"Gender" = "closed", #"Event" = "links", #"Medal" = "dos"],
+					        [#"Year" = 2003, #"City" = "Folsom", #"Sport" = "holdings", #"Discipline" = "166.203.91.158", #"Athlete" = "truth", #"Country" = "Bolivia", #"Gender" = "tonight", #"Event" = "casual", #"Medal" = "cartridge"],
+					        [#"Year" = 2018, #"City" = "Oshkosh", #"Sport" = "afraid", #"Discipline" = "251.71.161.5", #"Athlete" = "physicians", #"Country" = "Nepal", #"Gender" = "singapore", #"Event" = "hunter", #"Medal" = "mining"],
+					        [#"Year" = 2015, #"City" = "Fall River", #"Sport" = "playing", #"Discipline" = "120.160.203.153", #"Athlete" = "introduction", #"Country" = "Qatar", #"Gender" = "guy", #"Event" = "imaging", #"Medal" = "upgrade"],
+					        [#"Year" = 2023, #"City" = "Benton", #"Sport" = "appeal", #"Discipline" = "228.177.22.176", #"Athlete" = "cleaner", #"Country" = "Niger", #"Gender" = "exam", #"Event" = "place", #"Medal" = "pro"],
+					        [#"Year" = 2009, #"City" = "San Juan Capistrano", #"Sport" = "patterns", #"Discipline" = "183.101.197.105", #"Athlete" = "rica", #"Country" = "Guadeloupe", #"Gender" = "angeles", #"Event" = "partner", #"Medal" = "reception"],
+					        [#"Year" = 2007, #"City" = "Allen", #"Sport" = "outer", #"Discipline" = "159.138.179.111", #"Athlete" = "forecast", #"Country" = "Bahrain", #"Gender" = "try", #"Event" = "around", #"Medal" = "melbourne"],
+					        [#"Year" = 2019, #"City" = "St. Louis", #"Sport" = "grand", #"Discipline" = "143.81.161.244", #"Athlete" = "certain", #"Country" = "Gabon", #"Gender" = "recycling", #"Event" = "placed", #"Medal" = "fit"],
+					        [#"Year" = 2003, #"City" = "Edmonds", #"Sport" = "downloads", #"Discipline" = "21.155.6.133", #"Athlete" = "quit", #"Country" = "Slovakia", #"Gender" = "looked", #"Event" = "returned", #"Medal" = "offset"],
+					        [#"Year" = 2018, #"City" = "Detroit", #"Sport" = "pixels", #"Discipline" = "251.59.58.170", #"Athlete" = "candidate", #"Country" = "Mongolia", #"Gender" = "making", #"Event" = "ultimately", #"Medal" = "contrast"],
+					        [#"Year" = 2007, #"City" = "Monroeville", #"Sport" = "counseling", #"Discipline" = "202.54.108.24", #"Athlete" = "curve", #"Country" = "Mongolia", #"Gender" = "problems", #"Event" = "photograph", #"Medal" = "nikon"],
+					        [#"Year" = 2018, #"City" = "Lufkin", #"Sport" = "cartoon", #"Discipline" = "70.3.159.151", #"Athlete" = "near", #"Country" = "Western Sahara", #"Gender" = "drum", #"Event" = "combination", #"Medal" = "buyers"],
+					        [#"Year" = 2014, #"City" = "College Station", #"Sport" = "xl", #"Discipline" = "176.218.145.254", #"Athlete" = "go", #"Country" = "Guernsey", #"Gender" = "metro", #"Event" = "assume", #"Medal" = "pentium"],
+					        [#"Year" = 2017, #"City" = "Jonesboro", #"Sport" = "answered", #"Discipline" = "67.123.202.220", #"Athlete" = "desired", #"Country" = "Lithuania", #"Gender" = "honest", #"Event" = "inkjet", #"Medal" = "memorabilia"],
+					        [#"Year" = 2010, #"City" = "Dolton", #"Sport" = "presentation", #"Discipline" = "121.12.150.97", #"Athlete" = "infection", #"Country" = "Spain", #"Gender" = "ra", #"Event" = "drinking", #"Medal" = "prices"],
+					        [#"Year" = 2016, #"City" = "Oakley", #"Sport" = "casual", #"Discipline" = "82.57.220.80", #"Athlete" = "foreign", #"Country" = "Slovakia", #"Gender" = "vacations", #"Event" = "skills", #"Medal" = "join"],
+					        [#"Year" = 2013, #"City" = "Clinton", #"Sport" = "law", #"Discipline" = "150.101.5.54", #"Athlete" = "latest", #"Country" = "Sudan", #"Gender" = "facial", #"Event" = "has", #"Medal" = "open"],
+					        [#"Year" = 2017, #"City" = "Atwater", #"Sport" = "monitoring", #"Discipline" = "51.75.139.10", #"Athlete" = "readers", #"Country" = "Germany", #"Gender" = "began", #"Event" = "strange", #"Medal" = "if"],
+					        [#"Year" = 2024, #"City" = "Kaysville", #"Sport" = "nhl", #"Discipline" = "133.95.162.144", #"Athlete" = "scene", #"Country" = "Turkmenistan", #"Gender" = "war", #"Event" = "success", #"Medal" = "coverage"],
+					        [#"Year" = 2017, #"City" = "Draper", #"Sport" = "partnership", #"Discipline" = "104.212.168.166", #"Athlete" = "indicators", #"Country" = "Vanuatu", #"Gender" = "asking", #"Event" = "layout", #"Medal" = "serious"],
+					        [#"Year" = 2009, #"City" = "San Bernardino", #"Sport" = "interested", #"Discipline" = "144.50.162.40", #"Athlete" = "carry", #"Country" = "Cambodia", #"Gender" = "filled", #"Event" = "principal", #"Medal" = "replaced"],
+					        [#"Year" = 2023, #"City" = "Castle Rock", #"Sport" = "telephone", #"Discipline" = "216.252.35.226", #"Athlete" = "desert", #"Country" = "Mauritius", #"Gender" = "imagine", #"Event" = "increased", #"Medal" = "dreams"],
+					        [#"Year" = 2009, #"City" = "Kiryas Joel", #"Sport" = "spectacular", #"Discipline" = "211.182.85.91", #"Athlete" = "furniture", #"Country" = "Luxembourg", #"Gender" = "baseball", #"Event" = "switch", #"Medal" = "authorities"],
+					        [#"Year" = 2018, #"City" = "West Fargo", #"Sport" = "kick", #"Discipline" = "88.225.104.53", #"Athlete" = "ideas", #"Country" = "Malaysia", #"Gender" = "th", #"Event" = "unit", #"Medal" = "road"],
+					        [#"Year" = 2013, #"City" = "Lake Jackson", #"Sport" = "alcohol", #"Discipline" = "134.60.239.254", #"Athlete" = "resolved", #"Country" = "Thailand", #"Gender" = "supervisor", #"Event" = "jean", #"Medal" = "grid"],
+					        [#"Year" = 2017, #"City" = "Margate", #"Sport" = "have", #"Discipline" = "130.67.139.101", #"Athlete" = "debt", #"Country" = "Cuba", #"Gender" = "twice", #"Event" = "letters", #"Medal" = "personals"],
+					        [#"Year" = 2005, #"City" = "Rapid City", #"Sport" = "three", #"Discipline" = "127.44.74.224", #"Athlete" = "dos", #"Country" = "Georgia", #"Gender" = "herald", #"Event" = "certainly", #"Medal" = "stroke"],
+					        [#"Year" = 2021, #"City" = "Sanger", #"Sport" = "pin", #"Discipline" = "220.191.76.230", #"Athlete" = "russell", #"Country" = "Pakistan", #"Gender" = "www", #"Event" = "quickly", #"Medal" = "firm"],
+					        [#"Year" = 2024, #"City" = "Belton", #"Sport" = "democratic", #"Discipline" = "164.5.15.18", #"Athlete" = "zoom", #"Country" = "St. Helena", #"Gender" = "ho", #"Event" = "believed", #"Medal" = "publish"],
+					        [#"Year" = 2019, #"City" = "Glendale Heights", #"Sport" = "printed", #"Discipline" = "67.242.242.55", #"Athlete" = "affairs", #"Country" = "Gibraltar", #"Gender" = "proposed", #"Event" = "twiki", #"Medal" = "forum"],
+					        [#"Year" = 2014, #"City" = "Wheeling", #"Sport" = "fruit", #"Discipline" = "180.17.38.123", #"Athlete" = "pi", #"Country" = "Ecuador", #"Gender" = "talking", #"Event" = "expert", #"Medal" = "gospel"],
+					        [#"Year" = 2004, #"City" = "Atlantic City", #"Sport" = "papers", #"Discipline" = "137.36.79.152", #"Athlete" = "york", #"Country" = "Antigua & Barbuda", #"Gender" = "insider", #"Event" = "talking", #"Medal" = "engineering"],
+					        [#"Year" = 2014, #"City" = "Germantown", #"Sport" = "copyright", #"Discipline" = "245.149.132.178", #"Athlete" = "nick", #"Country" = "Angola", #"Gender" = "flu", #"Event" = "signed", #"Medal" = "comic"],
+					        [#"Year" = 2001, #"City" = "South Pasadena", #"Sport" = "hurricane", #"Discipline" = "24.110.226.11", #"Athlete" = "stones", #"Country" = "Burundi", #"Gender" = "assigned", #"Event" = "north", #"Medal" = "ok"],
+					        [#"Year" = 2009, #"City" = "League City", #"Sport" = "speaking", #"Discipline" = "232.6.26.155", #"Athlete" = "retirement", #"Country" = "Cook Islands", #"Gender" = "front", #"Event" = "aims", #"Medal" = "confidence"],
+					        [#"Year" = 2006, #"City" = "McKinney", #"Sport" = "involved", #"Discipline" = "205.147.105.9", #"Athlete" = "panel", #"Country" = "Sierra Leone", #"Gender" = "ken", #"Event" = "shirts", #"Medal" = "mo"],
+					        [#"Year" = 2018, #"City" = "Watauga", #"Sport" = "dj", #"Discipline" = "226.134.135.33", #"Athlete" = "idaho", #"Country" = "United States", #"Gender" = "damn", #"Event" = "curriculum", #"Medal" = "senior"],
+					        [#"Year" = 2011, #"City" = "Auburn", #"Sport" = "primary", #"Discipline" = "205.29.29.149", #"Athlete" = "kansas", #"Country" = "Fiji", #"Gender" = "revealed", #"Event" = "must", #"Medal" = "tax"],
+					        [#"Year" = 2008, #"City" = "Campbell", #"Sport" = "clean", #"Discipline" = "254.20.142.123", #"Athlete" = "pad", #"Country" = "Switzerland", #"Gender" = "oracle", #"Event" = "exact", #"Medal" = "ebay"],
+					        [#"Year" = 2019, #"City" = "Spanish Fork", #"Sport" = "direct", #"Discipline" = "58.102.25.31", #"Athlete" = "cad", #"Country" = "Ireland", #"Gender" = "actions", #"Event" = "head", #"Medal" = "distributed"],
+					        [#"Year" = 2007, #"City" = "St. Charles", #"Sport" = "flickr", #"Discipline" = "216.245.21.78", #"Athlete" = "seasons", #"Country" = "Palau", #"Gender" = "fitness", #"Event" = "strength", #"Medal" = "cinema"],
+					        [#"Year" = 2003, #"City" = "Sanford", #"Sport" = "has", #"Discipline" = "150.232.191.104", #"Athlete" = "increasingly", #"Country" = "Netherlands", #"Gender" = "broadway", #"Event" = "del", #"Medal" = "manual"],
+					        [#"Year" = 2015, #"City" = "East Providence", #"Sport" = "proposals", #"Discipline" = "107.221.134.223", #"Athlete" = "automated", #"Country" = "Mongolia", #"Gender" = "terrorism", #"Event" = "humans", #"Medal" = "var"],
+					        [#"Year" = 2021, #"City" = "Elmhurst", #"Sport" = "featuring", #"Discipline" = "102.90.129.81", #"Athlete" = "confirmation", #"Country" = "Micronesia", #"Gender" = "tabs", #"Event" = "anything", #"Medal" = "gnome"],
+					        [#"Year" = 2004, #"City" = "Kaysville", #"Sport" = "cleaning", #"Discipline" = "58.104.156.151", #"Athlete" = "consumption", #"Country" = "Spain", #"Gender" = "sarah", #"Event" = "thompson", #"Medal" = "guardian"],
+					        [#"Year" = 2011, #"City" = "Hagerstown", #"Sport" = "multi", #"Discipline" = "93.206.84.146", #"Athlete" = "apart", #"Country" = "Northern Mariana Islands", #"Gender" = "ups", #"Event" = "final", #"Medal" = "works"],
+					        [#"Year" = 2006, #"City" = "North Miami", #"Sport" = "delay", #"Discipline" = "71.59.5.185", #"Athlete" = "due", #"Country" = "Curaçao", #"Gender" = "flights", #"Event" = "field", #"Medal" = "stages"],
+					        [#"Year" = 2011, #"City" = "Liberty", #"Sport" = "university", #"Discipline" = "162.136.188.249", #"Athlete" = "vat", #"Country" = "Turks & Caicos Islands", #"Gender" = "challenges", #"Event" = "locked", #"Medal" = "acres"],
+					        [#"Year" = 2000, #"City" = "Pawtucket", #"Sport" = "bond", #"Discipline" = "2.234.99.52", #"Athlete" = "access", #"Country" = "Kuwait", #"Gender" = "pci", #"Event" = "format", #"Medal" = "ridge"],
+					        [#"Year" = 2005, #"City" = "Cedar Falls", #"Sport" = "level", #"Discipline" = "253.100.111.181", #"Athlete" = "pubmed", #"Country" = "Peru", #"Gender" = "jet", #"Event" = "exclusive", #"Medal" = "expense"],
+					        [#"Year" = 2016, #"City" = "Oregon City", #"Sport" = "because", #"Discipline" = "208.92.236.81", #"Athlete" = "counties", #"Country" = "Ireland", #"Gender" = "speed", #"Event" = "hear", #"Medal" = "dish"],
+					        [#"Year" = 2017, #"City" = "Cerritos", #"Sport" = "rpm", #"Discipline" = "163.130.239.9", #"Athlete" = "databases", #"Country" = "Niger", #"Gender" = "dispute", #"Event" = "desktops", #"Medal" = "belief"],
+					        [#"Year" = 2015, #"City" = "Burton", #"Sport" = "memorabilia", #"Discipline" = "89.170.14.166", #"Athlete" = "churches", #"Country" = "Rwanda", #"Gender" = "presentations", #"Event" = "divorce", #"Medal" = "iraqi"],
+					        [#"Year" = 2003, #"City" = "Chicopee", #"Sport" = "telecom", #"Discipline" = "69.176.27.42", #"Athlete" = "estimate", #"Country" = "Russia", #"Gender" = "fix", #"Event" = "aware", #"Medal" = "cd"],
+					        [#"Year" = 2021, #"City" = "Little Rock", #"Sport" = "carl", #"Discipline" = "202.196.129.163", #"Athlete" = "eyes", #"Country" = "New Caledonia", #"Gender" = "republican", #"Event" = "figures", #"Medal" = "bt"],
+					        [#"Year" = 2005, #"City" = "Saratoga", #"Sport" = "took", #"Discipline" = "10.88.120.224", #"Athlete" = "at", #"Country" = "Côte d’Ivoire", #"Gender" = "concentration", #"Event" = "ticket", #"Medal" = "theoretical"],
+					        [#"Year" = 2022, #"City" = "Woburn", #"Sport" = "got", #"Discipline" = "237.141.55.204", #"Athlete" = "metropolitan", #"Country" = "Jordan", #"Gender" = "father", #"Event" = "lat", #"Medal" = "consultant"],
+					        [#"Year" = 2010, #"City" = "Redwood City", #"Sport" = "legal", #"Discipline" = "179.125.203.237", #"Athlete" = "http", #"Country" = "Romania", #"Gender" = "instant", #"Event" = "style", #"Medal" = "atom"],
+					        [#"Year" = 2006, #"City" = "Upper Arlington", #"Sport" = "shipping", #"Discipline" = "68.209.173.9", #"Athlete" = "contests", #"Country" = "Armenia", #"Gender" = "issues", #"Event" = "objects", #"Medal" = "requiring"],
+					        [#"Year" = 2023, #"City" = "Norristown", #"Sport" = "was", #"Discipline" = "121.152.122.14", #"Athlete" = "desk", #"Country" = "Jordan", #"Gender" = "resume", #"Event" = "dish", #"Medal" = "always"],
+					        [#"Year" = 2000, #"City" = "Paramount", #"Sport" = "strap", #"Discipline" = "78.200.25.46", #"Athlete" = "jesus", #"Country" = "Spain", #"Gender" = "sentence", #"Event" = "tank", #"Medal" = "sitting"],
+					        [#"Year" = 2011, #"City" = "Corinth", #"Sport" = "power", #"Discipline" = "134.163.57.194", #"Athlete" = "emotional", #"Country" = "China", #"Gender" = "idaho", #"Event" = "cartoon", #"Medal" = "prohibited"],
+					        [#"Year" = 2019, #"City" = "Muskegon", #"Sport" = "municipal", #"Discipline" = "227.228.246.155", #"Athlete" = "calendars", #"Country" = "Japan", #"Gender" = "frank", #"Event" = "greek", #"Medal" = "alpha"],
+					        [#"Year" = 2020, #"City" = "Oregon", #"Sport" = "scheduled", #"Discipline" = "238.242.82.110", #"Athlete" = "th", #"Country" = "United States", #"Gender" = "manage", #"Event" = "again", #"Medal" = "zero"],
+					        [#"Year" = 2007, #"City" = "Sterling Heights", #"Sport" = "sitemap", #"Discipline" = "169.234.12.70", #"Athlete" = "lights", #"Country" = "Mongolia", #"Gender" = "increased", #"Event" = "individual", #"Medal" = "never"],
+					        [#"Year" = 2023, #"City" = "Chicago", #"Sport" = "sin", #"Discipline" = "73.96.104.140", #"Athlete" = "ah", #"Country" = "San Marino", #"Gender" = "purple", #"Event" = "nine", #"Medal" = "bugs"],
+					        [#"Year" = 2024, #"City" = "Highland Village", #"Sport" = "additional", #"Discipline" = "150.58.40.75", #"Athlete" = "arrival", #"Country" = "Germany", #"Gender" = "prove", #"Event" = "reed", #"Medal" = "math"],
+					        [#"Year" = 2016, #"City" = "Madera", #"Sport" = "pack", #"Discipline" = "157.46.173.65", #"Athlete" = "dynamics", #"Country" = "Hong Kong SAR China", #"Gender" = "reasons", #"Event" = "purchases", #"Medal" = "indicates"],
+					        [#"Year" = 2004, #"City" = "Cicero", #"Sport" = "doctors", #"Discipline" = "159.108.91.51", #"Athlete" = "keywords", #"Country" = "Curaçao", #"Gender" = "seo", #"Event" = "country", #"Medal" = "shopping"],
+					        [#"Year" = 2001, #"City" = "West Linn", #"Sport" = "entry", #"Discipline" = "172.203.93.163", #"Athlete" = "mailing", #"Country" = "Vanuatu", #"Gender" = "ee", #"Event" = "caps", #"Medal" = "car"],
+					        [#"Year" = 2009, #"City" = "Vacaville", #"Sport" = "service", #"Discipline" = "236.176.171.114", #"Athlete" = "tours", #"Country" = "Latvia", #"Gender" = "ourselves", #"Event" = "knew", #"Medal" = "caribbean"],
+					        [#"Year" = 2018, #"City" = "Jefferson City", #"Sport" = "euro", #"Discipline" = "59.97.172.163", #"Athlete" = "original", #"Country" = "Myanmar", #"Gender" = "afraid", #"Event" = "festival", #"Medal" = "by"],
+					        [#"Year" = 2007, #"City" = "Snellville", #"Sport" = "aol", #"Discipline" = "76.72.42.198", #"Athlete" = "injury", #"Country" = "St. Kitts & Nevis", #"Gender" = "clinical", #"Event" = "been", #"Medal" = "stands"],
+					        [#"Year" = 2019, #"City" = "Wayne", #"Sport" = "fusion", #"Discipline" = "196.41.190.60", #"Athlete" = "consumer", #"Country" = "Luxembourg", #"Gender" = "glasses", #"Event" = "greece", #"Medal" = "america"],
+					        [#"Year" = 2007, #"City" = "Pinole", #"Sport" = "combination", #"Discipline" = "45.255.184.145", #"Athlete" = "dd", #"Country" = "Turkmenistan", #"Gender" = "outcomes", #"Event" = "funded", #"Medal" = "feet"],
+					        [#"Year" = 2007, #"City" = "Lemon Grove", #"Sport" = "capability", #"Discipline" = "105.24.164.157", #"Athlete" = "wi", #"Country" = "Chile", #"Gender" = "graduate", #"Event" = "subjects", #"Medal" = "events"],
+					        [#"Year" = 2016, #"City" = "Florissant", #"Sport" = "acute", #"Discipline" = "25.0.66.4", #"Athlete" = "overnight", #"Country" = "Dominica", #"Gender" = "basics", #"Event" = "rain", #"Medal" = "tags"],
+					        [#"Year" = 2017, #"City" = "El Mirage", #"Sport" = "smile", #"Discipline" = "124.220.98.111", #"Athlete" = "county", #"Country" = "Lebanon", #"Gender" = "mins", #"Event" = "http", #"Medal" = "attended"],
+					        [#"Year" = 2022, #"City" = "Titusville", #"Sport" = "writer", #"Discipline" = "146.234.114.118", #"Athlete" = "nurse", #"Country" = "Philippines", #"Gender" = "alphabetical", #"Event" = "corner", #"Medal" = "hollywood"],
+					        [#"Year" = 2007, #"City" = "Rancho Cucamonga", #"Sport" = "vegas", #"Discipline" = "252.164.2.71", #"Athlete" = "research", #"Country" = "Greece", #"Gender" = "lies", #"Event" = "appointed", #"Medal" = "notification"],
+					        [#"Year" = 2009, #"City" = "Eustis", #"Sport" = "rick", #"Discipline" = "97.91.71.204", #"Athlete" = "decline", #"Country" = "Norway", #"Gender" = "length", #"Event" = "nv", #"Medal" = "acting"],
+					        [#"Year" = 2006, #"City" = "Edmond", #"Sport" = "principal", #"Discipline" = "141.125.221.200", #"Athlete" = "thinking", #"Country" = "Switzerland", #"Gender" = "sand", #"Event" = "break", #"Medal" = "hairy"],
+					        [#"Year" = 2016, #"City" = "Stillwater", #"Sport" = "staff", #"Discipline" = "32.130.148.243", #"Athlete" = "place", #"Country" = "Norway", #"Gender" = "rfc", #"Event" = "responsibility", #"Medal" = "execution"],
+					        [#"Year" = 2005, #"City" = "Buckeye", #"Sport" = "officers", #"Discipline" = "101.29.86.230", #"Athlete" = "buffalo", #"Country" = "Liberia", #"Gender" = "her", #"Event" = "rocky", #"Medal" = "distributed"],
+					        [#"Year" = 2022, #"City" = "Sand Springs", #"Sport" = "prospective", #"Discipline" = "14.173.5.122", #"Athlete" = "selling", #"Country" = "Bahrain", #"Gender" = "outer", #"Event" = "indianapolis", #"Medal" = "pe"],
+					        [#"Year" = 2003, #"City" = "Overland Park", #"Sport" = "memorabilia", #"Discipline" = "152.17.63.211", #"Athlete" = "live", #"Country" = "Cambodia", #"Gender" = "wall", #"Event" = "things", #"Medal" = "high"],
+					        [#"Year" = 2020, #"City" = "Kirksville", #"Sport" = "regulation", #"Discipline" = "223.12.239.241", #"Athlete" = "understand", #"Country" = "Togo", #"Gender" = "basis", #"Event" = "peter", #"Medal" = "navigate"],
+					        [#"Year" = 2020, #"City" = "Gallatin", #"Sport" = "reply", #"Discipline" = "157.246.127.124", #"Athlete" = "lists", #"Country" = "Guadeloupe", #"Gender" = "ftp", #"Event" = "dealing", #"Medal" = "tin"],
+					        [#"Year" = 2003, #"City" = "Santa Fe", #"Sport" = "cabinet", #"Discipline" = "174.254.64.131", #"Athlete" = "internet", #"Country" = "Réunion", #"Gender" = "google", #"Event" = "gps", #"Medal" = "called"],
+					        [#"Year" = 2014, #"City" = "Jackson", #"Sport" = "german", #"Discipline" = "83.93.171.22", #"Athlete" = "allowing", #"Country" = "Sint Maarten", #"Gender" = "while", #"Event" = "history", #"Medal" = "franchise"],
+					        [#"Year" = 2000, #"City" = "Wyoming", #"Sport" = "grade", #"Discipline" = "9.147.13.126", #"Athlete" = "ap", #"Country" = "British Indian Ocean Territory", #"Gender" = "proud", #"Event" = "gave", #"Medal" = "jason"],
+					        [#"Year" = 2016, #"City" = "Aurora", #"Sport" = "calculate", #"Discipline" = "22.156.122.107", #"Athlete" = "visible", #"Country" = "Dominican Republic", #"Gender" = "lanka", #"Event" = "do", #"Medal" = "testing"],
+					        [#"Year" = 2016, #"City" = "Evansville", #"Sport" = "distribution", #"Discipline" = "176.120.121.233", #"Athlete" = "girls", #"Country" = "Congo - Brazzaville", #"Gender" = "seat", #"Event" = "career", #"Medal" = "boy"],
+					        [#"Year" = 2013, #"City" = "Commerce City", #"Sport" = "mineral", #"Discipline" = "176.249.131.173", #"Athlete" = "hand", #"Country" = "Uruguay", #"Gender" = "dangerous", #"Event" = "bibliography", #"Medal" = "number"],
+					        [#"Year" = 2007, #"City" = "Tarpon Springs", #"Sport" = "then", #"Discipline" = "60.205.39.100", #"Athlete" = "ok", #"Country" = "Luxembourg", #"Gender" = "efficiency", #"Event" = "tracked", #"Medal" = "adopt"],
+					        [#"Year" = 2023, #"City" = "Naperville", #"Sport" = "mark", #"Discipline" = "172.166.96.41", #"Athlete" = "passing", #"Country" = "Morocco", #"Gender" = "trading", #"Event" = "nodes", #"Medal" = "transportation"],
+					        [#"Year" = 2013, #"City" = "Peabody", #"Sport" = "dogs", #"Discipline" = "205.75.206.99", #"Athlete" = "achievement", #"Country" = "Malaysia", #"Gender" = "forget", #"Event" = "jim", #"Medal" = "beach"],
+					        [#"Year" = 2018, #"City" = "Minnetonka", #"Sport" = "meeting", #"Discipline" = "62.44.49.67", #"Athlete" = "general", #"Country" = "Thailand", #"Gender" = "stock", #"Event" = "shock", #"Medal" = "rr"],
+					        [#"Year" = 2018, #"City" = "Paragould", #"Sport" = "kb", #"Discipline" = "19.60.48.105", #"Athlete" = "roy", #"Country" = "Bangladesh", #"Gender" = "heard", #"Event" = "colorado", #"Medal" = "compiled"],
+					        [#"Year" = 2018, #"City" = "Ashland", #"Sport" = "commissioner", #"Discipline" = "229.212.69.166", #"Athlete" = "dc", #"Country" = "Cayman Islands", #"Gender" = "sweden", #"Event" = "supposed", #"Medal" = "jokes"],
+					        [#"Year" = 2005, #"City" = "Palatine", #"Sport" = "awesome", #"Discipline" = "58.64.76.14", #"Athlete" = "percentage", #"Country" = "Albania", #"Gender" = "between", #"Event" = "featured", #"Medal" = "only"],
+					        [#"Year" = 2006, #"City" = "Zanesville", #"Sport" = "arts", #"Discipline" = "172.131.185.175", #"Athlete" = "gonna", #"Country" = "St. Vincent & Grenadines", #"Gender" = "hear", #"Event" = "excess", #"Medal" = "per"],
+					        [#"Year" = 2015, #"City" = "Rockville", #"Sport" = "magazine", #"Discipline" = "59.84.231.139", #"Athlete" = "community", #"Country" = "Mauritius", #"Gender" = "units", #"Event" = "medical", #"Medal" = "starting"],
+					        [#"Year" = 2018, #"City" = "Baltimore", #"Sport" = "slip", #"Discipline" = "243.123.123.135", #"Athlete" = "suppliers", #"Country" = "El Salvador", #"Gender" = "nice", #"Event" = "bluetooth", #"Medal" = "easy"],
+					        [#"Year" = 2000, #"City" = "Garden Grove", #"Sport" = "multi", #"Discipline" = "66.204.128.192", #"Athlete" = "functions", #"Country" = "St. Barthélemy", #"Gender" = "numbers", #"Event" = "fell", #"Medal" = "creative"],
+					        [#"Year" = 2022, #"City" = "Overland Park", #"Sport" = "attributes", #"Discipline" = "79.224.94.109", #"Athlete" = "size", #"Country" = "Belarus", #"Gender" = "mozilla", #"Event" = "said", #"Medal" = "grey"],
+					        [#"Year" = 2023, #"City" = "Easton", #"Sport" = "push", #"Discipline" = "145.28.189.38", #"Athlete" = "chapters", #"Country" = "Saudi Arabia", #"Gender" = "threshold", #"Event" = "signal", #"Medal" = "overnight"],
+					        [#"Year" = 2017, #"City" = "Cudahy", #"Sport" = "success", #"Discipline" = "177.58.115.190", #"Athlete" = "displaying", #"Country" = "Japan", #"Gender" = "proof", #"Event" = "like", #"Medal" = "mm"],
+					        [#"Year" = 2012, #"City" = "Lodi", #"Sport" = "editing", #"Discipline" = "48.201.205.214", #"Athlete" = "volunteer", #"Country" = "British Indian Ocean Territory", #"Gender" = "floor", #"Event" = "announces", #"Medal" = "towards"],
+					        [#"Year" = 2002, #"City" = "Williamsport", #"Sport" = "cs", #"Discipline" = "75.222.2.205", #"Athlete" = "gift", #"Country" = "Iran", #"Gender" = "lift", #"Event" = "readers", #"Medal" = "base"],
+					        [#"Year" = 2018, #"City" = "Gadsden", #"Sport" = "reserve", #"Discipline" = "1.52.183.65", #"Athlete" = "analysis", #"Country" = "Turkey", #"Gender" = "starting", #"Event" = "bowl", #"Medal" = "investment"],
+					        [#"Year" = 2015, #"City" = "Boulder", #"Sport" = "bug", #"Discipline" = "31.251.204.119", #"Athlete" = "split", #"Country" = "South Africa", #"Gender" = "equally", #"Event" = "council", #"Medal" = "engagement"],
+					        [#"Year" = 2016, #"City" = "Southgate", #"Sport" = "capabilities", #"Discipline" = "49.112.60.49", #"Athlete" = "versus", #"Country" = "Niger", #"Gender" = "pa", #"Event" = "painting", #"Medal" = "third"],
+					        [#"Year" = 2020, #"City" = "Angleton", #"Sport" = "reviewed", #"Discipline" = "83.183.161.151", #"Athlete" = "note", #"Country" = "Guam", #"Gender" = "operated", #"Event" = "revenue", #"Medal" = "picture"],
+					        [#"Year" = 2019, #"City" = "Galesburg", #"Sport" = "subscribe", #"Discipline" = "5.82.207.1", #"Athlete" = "threads", #"Country" = "Norway", #"Gender" = "maintained", #"Event" = "removed", #"Medal" = "trial"],
+					        [#"Year" = 2014, #"City" = "Lathrop", #"Sport" = "classroom", #"Discipline" = "95.205.198.192", #"Athlete" = "entertainment", #"Country" = "Central African Republic", #"Gender" = "that", #"Event" = "transport", #"Medal" = "assessment"],
+					        [#"Year" = 2003, #"City" = "Benbrook", #"Sport" = "advanced", #"Discipline" = "208.170.152.120", #"Athlete" = "federation", #"Country" = "Brazil", #"Gender" = "cafe", #"Event" = "joining", #"Medal" = "examine"],
+					        [#"Year" = 2000, #"City" = "Natchez", #"Sport" = "column", #"Discipline" = "56.38.189.90", #"Athlete" = "provide", #"Country" = "India", #"Gender" = "dev", #"Event" = "bookmark", #"Medal" = "disease"],
+					        [#"Year" = 2001, #"City" = "Round Lake Beach", #"Sport" = "informed", #"Discipline" = "2.28.23.10", #"Athlete" = "initial", #"Country" = "Bolivia", #"Gender" = "carter", #"Event" = "charles", #"Medal" = "discrimination"],
+					        [#"Year" = 2011, #"City" = "San Pablo", #"Sport" = "calculated", #"Discipline" = "212.34.38.8", #"Athlete" = "exhibition", #"Country" = "Comoros", #"Gender" = "often", #"Event" = "gospel", #"Medal" = "this"],
+					        [#"Year" = 2022, #"City" = "Chickasha", #"Sport" = "meaning", #"Discipline" = "72.237.216.220", #"Athlete" = "hybrid", #"Country" = "Ukraine", #"Gender" = "edge", #"Event" = "if", #"Medal" = "plans"],
+					        [#"Year" = 2023, #"City" = "Linden", #"Sport" = "inventory", #"Discipline" = "104.244.217.8", #"Athlete" = "amazon", #"Country" = "Montserrat", #"Gender" = "quit", #"Event" = "present", #"Medal" = "publishing"],
+					        [#"Year" = 2024, #"City" = "Montrose", #"Sport" = "abuse", #"Discipline" = "219.137.140.122", #"Athlete" = "fields", #"Country" = "Antarctica", #"Gender" = "calendars", #"Event" = "fill", #"Medal" = "broke"],
+					        [#"Year" = 2017, #"City" = "LaGrange", #"Sport" = "generator", #"Discipline" = "237.150.88.135", #"Athlete" = "choosing", #"Country" = "Iraq", #"Gender" = "guys", #"Event" = "difficulties", #"Medal" = "sign"],
+					        [#"Year" = 2001, #"City" = "Socorro", #"Sport" = "picks", #"Discipline" = "41.205.237.69", #"Athlete" = "studio", #"Country" = "Cuba", #"Gender" = "implement", #"Event" = "attraction", #"Medal" = "atom"],
+					        [#"Year" = 2004, #"City" = "Dolton", #"Sport" = "victory", #"Discipline" = "132.176.40.72", #"Athlete" = "understanding", #"Country" = "Italy", #"Gender" = "thinking", #"Event" = "stored", #"Medal" = "pregnant"],
+					        [#"Year" = 2010, #"City" = "Sheboygan", #"Sport" = "line", #"Discipline" = "47.192.118.181", #"Athlete" = "guys", #"Country" = "Thailand", #"Gender" = "deleted", #"Event" = "visit", #"Medal" = "water"],
+					        [#"Year" = 2023, #"City" = "North Richland Hills", #"Sport" = "xml", #"Discipline" = "46.121.239.225", #"Athlete" = "hobbies", #"Country" = "Mali", #"Gender" = "returns", #"Event" = "recreation", #"Medal" = "broad"],
+					        [#"Year" = 2021, #"City" = "Morton Grove", #"Sport" = "song", #"Discipline" = "241.171.107.225", #"Athlete" = "deaths", #"Country" = "Senegal", #"Gender" = "hunter", #"Event" = "tell", #"Medal" = "proper"],
+					        [#"Year" = 2024, #"City" = "San Jose", #"Sport" = "names", #"Discipline" = "110.81.37.206", #"Athlete" = "benefits", #"Country" = "Belgium", #"Gender" = "permalink", #"Event" = "interesting", #"Medal" = "toronto"],
+					        [#"Year" = 2003, #"City" = "Opelousas", #"Sport" = "stupid", #"Discipline" = "1.184.190.96", #"Athlete" = "mechanism", #"Country" = "Austria", #"Gender" = "divided", #"Event" = "nurses", #"Medal" = "desired"],
+					        [#"Year" = 2009, #"City" = "Davie", #"Sport" = "except", #"Discipline" = "34.143.7.240", #"Athlete" = "statistics", #"Country" = "Namibia", #"Gender" = "champion", #"Event" = "makes", #"Medal" = "kept"],
+					        [#"Year" = 2001, #"City" = "Claremore", #"Sport" = "nearest", #"Discipline" = "2.192.243.45", #"Athlete" = "called", #"Country" = "Western Sahara", #"Gender" = "japan", #"Event" = "department", #"Medal" = "belt"],
+					        [#"Year" = 2021, #"City" = "South El Monte", #"Sport" = "combat", #"Discipline" = "124.87.72.73", #"Athlete" = "uniprotkb", #"Country" = "Honduras", #"Gender" = "death", #"Event" = "agreement", #"Medal" = "litigation"],
+					        [#"Year" = 2018, #"City" = "Ashtabula", #"Sport" = "careers", #"Discipline" = "110.148.223.229", #"Athlete" = "espn", #"Country" = "Martinique", #"Gender" = "spaces", #"Event" = "anarchist", #"Medal" = "tall"],
+					        [#"Year" = 2000, #"City" = "Brownwood", #"Sport" = "actually", #"Discipline" = "224.231.207.160", #"Athlete" = "birmingham", #"Country" = "French Polynesia", #"Gender" = "researchers", #"Event" = "follow", #"Medal" = "sw"],
+					        [#"Year" = 2020, #"City" = "Belvidere", #"Sport" = "marc", #"Discipline" = "64.73.100.18", #"Athlete" = "forget", #"Country" = "Egypt", #"Gender" = "continue", #"Event" = "directories", #"Medal" = "sunglasses"],
+					        [#"Year" = 2019, #"City" = "Agoura Hills", #"Sport" = "prohibited", #"Discipline" = "87.19.7.97", #"Athlete" = "corn", #"Country" = "Austria", #"Gender" = "wow", #"Event" = "follow", #"Medal" = "holiday"],
+					        [#"Year" = 2019, #"City" = "Columbia", #"Sport" = "bb", #"Discipline" = "55.227.39.41", #"Athlete" = "pleased", #"Country" = "Botswana", #"Gender" = "fat", #"Event" = "shared", #"Medal" = "ibm"],
+					        [#"Year" = 2002, #"City" = "Huntersville", #"Sport" = "fi", #"Discipline" = "61.67.46.207", #"Athlete" = "agriculture", #"Country" = "Bangladesh", #"Gender" = "drawing", #"Event" = "channels", #"Medal" = "canvas"],
+					        [#"Year" = 2001, #"City" = "Olive Branch", #"Sport" = "floor", #"Discipline" = "171.56.107.181", #"Athlete" = "jun", #"Country" = "Colombia", #"Gender" = "mentioned", #"Event" = "committee", #"Medal" = "conditions"],
+					        [#"Year" = 2013, #"City" = "Ames", #"Sport" = "jpg", #"Discipline" = "105.174.146.141", #"Athlete" = "pdas", #"Country" = "Mauritius", #"Gender" = "fellow", #"Event" = "lots", #"Medal" = "gateway"],
+					        [#"Year" = 2018, #"City" = "Ypsilanti", #"Sport" = "expect", #"Discipline" = "37.12.157.178", #"Athlete" = "movies", #"Country" = "Germany", #"Gender" = "micro", #"Event" = "clay", #"Medal" = "productivity"],
+					        [#"Year" = 2000, #"City" = "San Antonio", #"Sport" = "sin", #"Discipline" = "213.160.112.41", #"Athlete" = "counts", #"Country" = "Andorra", #"Gender" = "flashing", #"Event" = "trials", #"Medal" = "medicine"],
+					        [#"Year" = 2007, #"City" = "Apache Junction", #"Sport" = "browse", #"Discipline" = "212.243.116.82", #"Athlete" = "shows", #"Country" = "Panama", #"Gender" = "id", #"Event" = "route", #"Medal" = "bugs"],
+					        [#"Year" = 2005, #"City" = "Rockville Centre", #"Sport" = "considered", #"Discipline" = "125.125.242.91", #"Athlete" = "couple", #"Country" = "Panama", #"Gender" = "pool", #"Event" = "seasons", #"Medal" = "cr"],
+					        [#"Year" = 2022, #"City" = "Sugar Land", #"Sport" = "writes", #"Discipline" = "125.120.210.164", #"Athlete" = "blade", #"Country" = "Mauritania", #"Gender" = "cinema", #"Event" = "hunting", #"Medal" = "garden"],
+					        [#"Year" = 2004, #"City" = "Ponca City", #"Sport" = "manner", #"Discipline" = "102.254.227.178", #"Athlete" = "balance", #"Country" = "Honduras", #"Gender" = "celebrity", #"Event" = "thailand", #"Medal" = "worry"],
+					        [#"Year" = 2009, #"City" = "Central Falls", #"Sport" = "editorial", #"Discipline" = "63.100.143.240", #"Athlete" = "created", #"Country" = "Guam", #"Gender" = "advisor", #"Event" = "processing", #"Medal" = "specific"],
+					        [#"Year" = 2006, #"City" = "La Mirada", #"Sport" = "authority", #"Discipline" = "191.182.149.113", #"Athlete" = "multiple", #"Country" = "Tonga", #"Gender" = "dangerous", #"Event" = "file", #"Medal" = "indexed"],
+					        [#"Year" = 2018, #"City" = "Lehi", #"Sport" = "baseball", #"Discipline" = "116.211.57.204", #"Athlete" = "tomorrow", #"Country" = "China", #"Gender" = "outcome", #"Event" = "placement", #"Medal" = "hilton"],
+					        [#"Year" = 2008, #"City" = "Somerville", #"Sport" = "mentioned", #"Discipline" = "21.122.47.139", #"Athlete" = "byte", #"Country" = "Cambodia", #"Gender" = "seriously", #"Event" = "nobody", #"Medal" = "join"],
+					        [#"Year" = 2020, #"City" = "Melrose", #"Sport" = "bit", #"Discipline" = "38.181.83.160", #"Athlete" = "criminal", #"Country" = "French Polynesia", #"Gender" = "records", #"Event" = "workshop", #"Medal" = "route"],
+					        [#"Year" = 2010, #"City" = "St. Matthews", #"Sport" = "honor", #"Discipline" = "47.103.32.253", #"Athlete" = "eagle", #"Country" = "Armenia", #"Gender" = "twiki", #"Event" = "customers", #"Medal" = "safety"],
+					        [#"Year" = 2017, #"City" = "Orem", #"Sport" = "taking", #"Discipline" = "37.33.121.123", #"Athlete" = "probably", #"Country" = "Bulgaria", #"Gender" = "tutorials", #"Event" = "active", #"Medal" = "rss"],
+					        [#"Year" = 2021, #"City" = "Boynton Beach", #"Sport" = "pure", #"Discipline" = "24.201.199.73", #"Athlete" = "creative", #"Country" = "Ceuta & Melilla", #"Gender" = "chapter", #"Event" = "limited", #"Medal" = "manager"],
+					        [#"Year" = 2015, #"City" = "Stephenville", #"Sport" = "successfully", #"Discipline" = "187.149.50.128", #"Athlete" = "characters", #"Country" = "Palau", #"Gender" = "derived", #"Event" = "housing", #"Medal" = "designers"],
+					        [#"Year" = 2020, #"City" = "Matthews", #"Sport" = "fresh", #"Discipline" = "104.107.174.156", #"Athlete" = "term", #"Country" = "Réunion", #"Gender" = "freeware", #"Event" = "crash", #"Medal" = "result"],
+					        [#"Year" = 2005, #"City" = "Muncie", #"Sport" = "flu", #"Discipline" = "153.181.0.246", #"Athlete" = "dimensions", #"Country" = "Canada", #"Gender" = "new", #"Event" = "arrive", #"Medal" = "came"],
+					        [#"Year" = 2001, #"City" = "Baldwin Park", #"Sport" = "nations", #"Discipline" = "91.224.151.254", #"Athlete" = "example", #"Country" = "Vietnam", #"Gender" = "understand", #"Event" = "sh", #"Medal" = "married"],
+					        [#"Year" = 2009, #"City" = "Crest Hill", #"Sport" = "defense", #"Discipline" = "140.235.106.244", #"Athlete" = "operate", #"Country" = "Macau SAR China", #"Gender" = "korean", #"Event" = "include", #"Medal" = "longer"],
+					        [#"Year" = 2005, #"City" = "Rockwall", #"Sport" = "land", #"Discipline" = "37.70.218.169", #"Athlete" = "leaving", #"Country" = "Norway", #"Gender" = "instruction", #"Event" = "amendments", #"Medal" = "county"],
+					        [#"Year" = 2002, #"City" = "West Fargo", #"Sport" = "parliament", #"Discipline" = "203.103.61.38", #"Athlete" = "physics", #"Country" = "Guadeloupe", #"Gender" = "third", #"Event" = "donald", #"Medal" = "birds"],
+					        [#"Year" = 2023, #"City" = "Starkville", #"Sport" = "woods", #"Discipline" = "150.220.197.63", #"Athlete" = "nurse", #"Country" = "Israel", #"Gender" = "theater", #"Event" = "concepts", #"Medal" = "herself"],
+					        [#"Year" = 2024, #"City" = "Greer", #"Sport" = "completely", #"Discipline" = "101.102.117.214", #"Athlete" = "achieve", #"Country" = "Malta", #"Gender" = "electrical", #"Event" = "wire", #"Medal" = "forgot"],
+					        [#"Year" = 2003, #"City" = "Duluth", #"Sport" = "cartridges", #"Discipline" = "100.228.109.200", #"Athlete" = "par", #"Country" = "Sudan", #"Gender" = "employees", #"Event" = "story", #"Medal" = "conduct"],
+					        [#"Year" = 2000, #"City" = "Menasha", #"Sport" = "till", #"Discipline" = "85.138.157.192", #"Athlete" = "detailed", #"Country" = "Samoa", #"Gender" = "wet", #"Event" = "xbox", #"Medal" = "initial"],
+					        [#"Year" = 2001, #"City" = "Scottsdale", #"Sport" = "themes", #"Discipline" = "199.251.240.157", #"Athlete" = "lake", #"Country" = "Ascension Island", #"Gender" = "cal", #"Event" = "struct", #"Medal" = "drinking"],
+					        [#"Year" = 2024, #"City" = "San Mateo", #"Sport" = "death", #"Discipline" = "158.82.183.213", #"Athlete" = "news", #"Country" = "U.S. Outlying Islands", #"Gender" = "employer", #"Event" = "russell", #"Medal" = "tramadol"],
+					        [#"Year" = 2012, #"City" = "Spring Valley", #"Sport" = "paintings", #"Discipline" = "175.103.39.30", #"Athlete" = "parallel", #"Country" = "Azerbaijan", #"Gender" = "turned", #"Event" = "essential", #"Medal" = "broadway"],
+					        [#"Year" = 2007, #"City" = "West Hollywood", #"Sport" = "foot", #"Discipline" = "181.204.180.100", #"Athlete" = "pilot", #"Country" = "Montserrat", #"Gender" = "nh", #"Event" = "columns", #"Medal" = "emotional"],
+					        [#"Year" = 2004, #"City" = "Lenexa", #"Sport" = "building", #"Discipline" = "58.115.175.118", #"Athlete" = "mystery", #"Country" = "Isle of Man", #"Gender" = "from", #"Event" = "cultures", #"Medal" = "foreign"],
+					        [#"Year" = 2015, #"City" = "Bessemer", #"Sport" = "polls", #"Discipline" = "174.12.9.173", #"Athlete" = "ian", #"Country" = "Haiti", #"Gender" = "dimensions", #"Event" = "leads", #"Medal" = "valentine"],
+					        [#"Year" = 2013, #"City" = "Philadelphia", #"Sport" = "color", #"Discipline" = "49.120.231.155", #"Athlete" = "samples", #"Country" = "Canary Islands", #"Gender" = "expertise", #"Event" = "ending", #"Medal" = "acc"],
+					        [#"Year" = 2013, #"City" = "North Augusta", #"Sport" = "empty", #"Discipline" = "184.36.219.31", #"Athlete" = "implementation", #"Country" = "New Caledonia", #"Gender" = "results", #"Event" = "jennifer", #"Medal" = "may"],
+					        [#"Year" = 2003, #"City" = "Mountain Brook", #"Sport" = "dispatched", #"Discipline" = "158.185.90.25", #"Athlete" = "lucky", #"Country" = "Congo - Brazzaville", #"Gender" = "their", #"Event" = "statutory", #"Medal" = "bearing"],
+					        [#"Year" = 2013, #"City" = "Crystal", #"Sport" = "focus", #"Discipline" = "201.73.162.242", #"Athlete" = "vancouver", #"Country" = "Kyrgyzstan", #"Gender" = "clean", #"Event" = "supplements", #"Medal" = "fight"],
+					        [#"Year" = 2024, #"City" = "Tupelo", #"Sport" = "castle", #"Discipline" = "255.33.144.178", #"Athlete" = "profit", #"Country" = "Gambia", #"Gender" = "happens", #"Event" = "ban", #"Medal" = "stated"],
+					        [#"Year" = 2006, #"City" = "Kinston", #"Sport" = "delete", #"Discipline" = "109.187.87.245", #"Athlete" = "ph", #"Country" = "Bermuda", #"Gender" = "maintained", #"Event" = "thin", #"Medal" = "sensor"],
+					        [#"Year" = 2002, #"City" = "Talladega", #"Sport" = "mo", #"Discipline" = "8.88.125.185", #"Athlete" = "stands", #"Country" = "Cocos", #"Gender" = "disposal", #"Event" = "excellent", #"Medal" = "apparently"],
+					        [#"Year" = 2014, #"City" = "Edmonds", #"Sport" = "decrease", #"Discipline" = "44.2.61.253", #"Athlete" = "ns", #"Country" = "Rwanda", #"Gender" = "reviewed", #"Event" = "sunday", #"Medal" = "feet"],
+					        [#"Year" = 2009, #"City" = "Keizer", #"Sport" = "yes", #"Discipline" = "112.244.7.105", #"Athlete" = "suggests", #"Country" = "Oman", #"Gender" = "mini", #"Event" = "sit", #"Medal" = "institutional"],
+					        [#"Year" = 2019, #"City" = "Cranston", #"Sport" = "berlin", #"Discipline" = "198.78.174.218", #"Athlete" = "killer", #"Country" = "Tokelau", #"Gender" = "proud", #"Event" = "nutrition", #"Medal" = "division"],
+					        [#"Year" = 2017, #"City" = "Saratoga Springs", #"Sport" = "deputy", #"Discipline" = "85.102.39.112", #"Athlete" = "pick", #"Country" = "Sweden", #"Gender" = "evaluate", #"Event" = "knew", #"Medal" = "marketing"],
+					        [#"Year" = 2019, #"City" = "Kingman", #"Sport" = "saudi", #"Discipline" = "155.120.188.66", #"Athlete" = "younger", #"Country" = "Cambodia", #"Gender" = "stages", #"Event" = "catch", #"Medal" = "stats"],
+					        [#"Year" = 2012, #"City" = "Melbourne", #"Sport" = "edition", #"Discipline" = "196.255.36.183", #"Athlete" = "rental", #"Country" = "Iraq", #"Gender" = "expected", #"Event" = "museums", #"Medal" = "rings"],
+					        [#"Year" = 2005, #"City" = "Racine", #"Sport" = "touch", #"Discipline" = "194.95.51.237", #"Athlete" = "taiwan", #"Country" = "Vietnam", #"Gender" = "one", #"Event" = "approach", #"Medal" = "infection"],
+					        [#"Year" = 2003, #"City" = "Elizabethtown", #"Sport" = "publisher", #"Discipline" = "94.64.120.148", #"Athlete" = "discipline", #"Country" = "Austria", #"Gender" = "scripts", #"Event" = "replaced", #"Medal" = "supplied"],
+					        [#"Year" = 2014, #"City" = "Novi", #"Sport" = "strap", #"Discipline" = "4.129.232.96", #"Athlete" = "resulted", #"Country" = "Nigeria", #"Gender" = "mike", #"Event" = "dd", #"Medal" = "whenever"],
+					        [#"Year" = 2013, #"City" = "Alamogordo", #"Sport" = "integration", #"Discipline" = "131.207.177.186", #"Athlete" = "flu", #"Country" = "Slovakia", #"Gender" = "mother", #"Event" = "restoration", #"Medal" = "opening"],
+					        [#"Year" = 2013, #"City" = "Shreveport", #"Sport" = "le", #"Discipline" = "6.108.123.124", #"Athlete" = "cc", #"Country" = "Singapore", #"Gender" = "overseas", #"Event" = "portfolio", #"Medal" = "indiana"],
+					        [#"Year" = 2012, #"City" = "Wauwatosa", #"Sport" = "bio", #"Discipline" = "241.47.182.123", #"Athlete" = "title", #"Country" = "Burkina Faso", #"Gender" = "spread", #"Event" = "soft", #"Medal" = "started"],
+					        [#"Year" = 2016, #"City" = "Ponca City", #"Sport" = "last", #"Discipline" = "234.23.215.0", #"Athlete" = "oz", #"Country" = "Madagascar", #"Gender" = "mapping", #"Event" = "want", #"Medal" = "newsletter"],
+					        [#"Year" = 2000, #"City" = "Harrisburg", #"Sport" = "understood", #"Discipline" = "191.160.55.63", #"Athlete" = "ms", #"Country" = "Lebanon", #"Gender" = "hell", #"Event" = "god", #"Medal" = "votes"],
+					        [#"Year" = 2011, #"City" = "West Hollywood", #"Sport" = "proposal", #"Discipline" = "221.213.204.178", #"Athlete" = "dish", #"Country" = "Brunei", #"Gender" = "tons", #"Event" = "presentation", #"Medal" = "boston"],
+					        [#"Year" = 2018, #"City" = "Windsor", #"Sport" = "receives", #"Discipline" = "223.93.2.212", #"Athlete" = "lo", #"Country" = "Gibraltar", #"Gender" = "certain", #"Event" = "tabs", #"Medal" = "registry"],
+					        [#"Year" = 2003, #"City" = "Hollywood", #"Sport" = "acceptance", #"Discipline" = "18.239.148.255", #"Athlete" = "date", #"Country" = "Jersey", #"Gender" = "operation", #"Event" = "named", #"Medal" = "obtained"],
+					        [#"Year" = 2010, #"City" = "Ada", #"Sport" = "tube", #"Discipline" = "92.8.92.76", #"Athlete" = "devices", #"Country" = "Croatia", #"Gender" = "cats", #"Event" = "boot", #"Medal" = "poll"],
+					        [#"Year" = 2024, #"City" = "Temple City", #"Sport" = "upon", #"Discipline" = "240.203.228.115", #"Athlete" = "basis", #"Country" = "Bahrain", #"Gender" = "certificate", #"Event" = "luxury", #"Medal" = "mobility"],
+					        [#"Year" = 2013, #"City" = "Milwaukee", #"Sport" = "follows", #"Discipline" = "57.65.2.195", #"Athlete" = "mechanical", #"Country" = "France", #"Gender" = "pharmaceutical", #"Event" = "least", #"Medal" = "violence"],
+					        [#"Year" = 2011, #"City" = "Eastpointe", #"Sport" = "harvard", #"Discipline" = "240.99.98.210", #"Athlete" = "aim", #"Country" = "Nigeria", #"Gender" = "york", #"Event" = "suitable", #"Medal" = "machine"],
+					        [#"Year" = 2010, #"City" = "Starkville", #"Sport" = "hawaii", #"Discipline" = "172.1.251.196", #"Athlete" = "offers", #"Country" = "Burundi", #"Gender" = "ir", #"Event" = "directly", #"Medal" = "trouble"],
+					        [#"Year" = 2018, #"City" = "Orange", #"Sport" = "met", #"Discipline" = "10.105.147.234", #"Athlete" = "fifth", #"Country" = "South Korea", #"Gender" = "sending", #"Event" = "sm", #"Medal" = "repair"],
+					        [#"Year" = 2009, #"City" = "Asbury Park", #"Sport" = "second", #"Discipline" = "37.21.76.60", #"Athlete" = "had", #"Country" = "Philippines", #"Gender" = "compact", #"Event" = "tcp", #"Medal" = "follows"],
+					        [#"Year" = 2020, #"City" = "Tinley Park", #"Sport" = "es", #"Discipline" = "193.21.75.139", #"Athlete" = "ads", #"Country" = "Cyprus", #"Gender" = "iso", #"Event" = "not", #"Medal" = "encouraged"],
+					        [#"Year" = 2021, #"City" = "Jupiter", #"Sport" = "improvement", #"Discipline" = "75.176.203.225", #"Athlete" = "kentucky", #"Country" = "Sudan", #"Gender" = "listed", #"Event" = "protocol", #"Medal" = "his"],
+					        [#"Year" = 2013, #"City" = "West Haven", #"Sport" = "united", #"Discipline" = "33.81.103.117", #"Athlete" = "hop", #"Country" = "Northern Mariana Islands", #"Gender" = "pdt", #"Event" = "consultant", #"Medal" = "palestinian"],
+					        [#"Year" = 2018, #"City" = "Fort Myers", #"Sport" = "heading", #"Discipline" = "181.227.219.56", #"Athlete" = "twiki", #"Country" = "U.S. Virgin Islands", #"Gender" = "lights", #"Event" = "don", #"Medal" = "eminem"],
+					        [#"Year" = 2008, #"City" = "Elk Grove Village", #"Sport" = "ring", #"Discipline" = "5.65.239.46", #"Athlete" = "fri", #"Country" = "U.S. Virgin Islands", #"Gender" = "write", #"Event" = "uk", #"Medal" = "basically"],
+					        [#"Year" = 2004, #"City" = "Conway", #"Sport" = "base", #"Discipline" = "73.33.243.244", #"Athlete" = "bank", #"Country" = "Palau", #"Gender" = "chart", #"Event" = "seen", #"Medal" = "thompson"],
+					        [#"Year" = 2003, #"City" = "Lockport", #"Sport" = "prev", #"Discipline" = "124.90.45.124", #"Athlete" = "richard", #"Country" = "Canada", #"Gender" = "relevant", #"Event" = "corporations", #"Medal" = "murray"],
+					        [#"Year" = 2013, #"City" = "Sugar Hill", #"Sport" = "disorders", #"Discipline" = "236.28.54.108", #"Athlete" = "anthony", #"Country" = "Nepal", #"Gender" = "saving", #"Event" = "wants", #"Medal" = "instructor"],
+					        [#"Year" = 2015, #"City" = "Odessa", #"Sport" = "into", #"Discipline" = "168.207.196.233", #"Athlete" = "representing", #"Country" = "Gibraltar", #"Gender" = "situations", #"Event" = "clinton", #"Medal" = "restaurant"],
+					        [#"Year" = 2009, #"City" = "Hanford", #"Sport" = "alice", #"Discipline" = "180.191.76.186", #"Athlete" = "faculty", #"Country" = "Mauritania", #"Gender" = "soap", #"Event" = "dependent", #"Medal" = "network"],
+					        [#"Year" = 2012, #"City" = "Grandview", #"Sport" = "hunting", #"Discipline" = "233.209.190.51", #"Athlete" = "execution", #"Country" = "Christmas Island", #"Gender" = "fitness", #"Event" = "stamps", #"Medal" = "flowers"],
+					        [#"Year" = 2015, #"City" = "Thornton", #"Sport" = "talks", #"Discipline" = "182.201.198.59", #"Athlete" = "printable", #"Country" = "Bolivia", #"Gender" = "comedy", #"Event" = "wood", #"Medal" = "mike"],
+					        [#"Year" = 2009, #"City" = "Belvidere", #"Sport" = "donation", #"Discipline" = "235.21.236.22", #"Athlete" = "law", #"Country" = "Bulgaria", #"Gender" = "hunter", #"Event" = "amazon", #"Medal" = "ontario"],
+					        [#"Year" = 2023, #"City" = "Casa Grande", #"Sport" = "pr", #"Discipline" = "3.191.72.108", #"Athlete" = "relevant", #"Country" = "Macau SAR China", #"Gender" = "adjustment", #"Event" = "future", #"Medal" = "indicators"],
+					        [#"Year" = 2023, #"City" = "Costa Mesa", #"Sport" = "prepare", #"Discipline" = "215.200.20.43", #"Athlete" = "expand", #"Country" = "Latvia", #"Gender" = "bought", #"Event" = "september", #"Medal" = "labs"],
+					        [#"Year" = 2007, #"City" = "Wyandotte", #"Sport" = "much", #"Discipline" = "108.141.155.154", #"Athlete" = "whole", #"Country" = "Israel", #"Gender" = "chi", #"Event" = "motorola", #"Medal" = "used"],
+					        [#"Year" = 2008, #"City" = "Vincennes", #"Sport" = "confirm", #"Discipline" = "140.54.72.38", #"Athlete" = "wv", #"Country" = "Guyana", #"Gender" = "if", #"Event" = "practice", #"Medal" = "additions"],
+					        [#"Year" = 2004, #"City" = "Maple Valley", #"Sport" = "experience", #"Discipline" = "41.176.162.43", #"Athlete" = "guitar", #"Country" = "Norfolk Island", #"Gender" = "skiing", #"Event" = "unusual", #"Medal" = "equipped"],
+					        [#"Year" = 2012, #"City" = "Ashwaubenon", #"Sport" = "paper", #"Discipline" = "156.183.244.103", #"Athlete" = "voices", #"Country" = "Niger", #"Gender" = "ward", #"Event" = "handbook", #"Medal" = "sources"],
+					        [#"Year" = 2007, #"City" = "San Fernando", #"Sport" = "hosts", #"Discipline" = "54.204.38.3", #"Athlete" = "rome", #"Country" = "Mozambique", #"Gender" = "affiliated", #"Event" = "deleted", #"Medal" = "chairman"],
+					        [#"Year" = 2021, #"City" = "Springboro", #"Sport" = "cause", #"Discipline" = "100.229.215.194", #"Athlete" = "india", #"Country" = "Bulgaria", #"Gender" = "mg", #"Event" = "seriously", #"Medal" = "greg"],
+					        [#"Year" = 2022, #"City" = "Elkhart", #"Sport" = "november", #"Discipline" = "44.47.33.137", #"Athlete" = "cable", #"Country" = "Slovenia", #"Gender" = "utilities", #"Event" = "ice", #"Medal" = "llc"],
+					        [#"Year" = 2005, #"City" = "Waterbury", #"Sport" = "cent", #"Discipline" = "8.204.142.212", #"Athlete" = "element", #"Country" = "Bosnia & Herzegovina", #"Gender" = "greatly", #"Event" = "relationship", #"Medal" = "institute"],
+					        [#"Year" = 2001, #"City" = "Hoover", #"Sport" = "build", #"Discipline" = "234.41.102.214", #"Athlete" = "authors", #"Country" = "Zambia", #"Gender" = "each", #"Event" = "woods", #"Medal" = "deck"],
+					        [#"Year" = 2009, #"City" = "Johnson City", #"Sport" = "asking", #"Discipline" = "92.160.254.99", #"Athlete" = "involves", #"Country" = "Morocco", #"Gender" = "val", #"Event" = "administrators", #"Medal" = "majority"],
+					        [#"Year" = 2024, #"City" = "Aiken", #"Sport" = "integration", #"Discipline" = "134.241.143.92", #"Athlete" = "diagnostic", #"Country" = "Ecuador", #"Gender" = "reputation", #"Event" = "auctions", #"Medal" = "council"],
+					        [#"Year" = 2011, #"City" = "Miamisburg", #"Sport" = "luxury", #"Discipline" = "87.220.151.153", #"Athlete" = "den", #"Country" = "Congo - Kinshasa", #"Gender" = "ranch", #"Event" = "replacement", #"Medal" = "stocks"],
+					        [#"Year" = 2012, #"City" = "Sand Springs", #"Sport" = "fields", #"Discipline" = "192.26.110.239", #"Athlete" = "birds", #"Country" = "Bulgaria", #"Gender" = "administrator", #"Event" = "waiting", #"Medal" = "sue"],
+					        [#"Year" = 2021, #"City" = "Columbia Heights", #"Sport" = "dirty", #"Discipline" = "184.14.33.233", #"Athlete" = "instruction", #"Country" = "Cyprus", #"Gender" = "allen", #"Event" = "fred", #"Medal" = "introduce"],
+					        [#"Year" = 2012, #"City" = "Rosemount", #"Sport" = "commons", #"Discipline" = "250.102.197.73", #"Athlete" = "mesh", #"Country" = "Réunion", #"Gender" = "holes", #"Event" = "users", #"Medal" = "paid"],
+					        [#"Year" = 2002, #"City" = "Thousand Oaks", #"Sport" = "light", #"Discipline" = "174.177.220.80", #"Athlete" = "zoo", #"Country" = "Iceland", #"Gender" = "gi", #"Event" = "specify", #"Medal" = "logo"],
+					        [#"Year" = 2011, #"City" = "Cabot", #"Sport" = "forward", #"Discipline" = "71.80.230.29", #"Athlete" = "henry", #"Country" = "New Zealand", #"Gender" = "gateway", #"Event" = "bridge", #"Medal" = "princess"],
+					        [#"Year" = 2000, #"City" = "Pembroke Pines", #"Sport" = "sri", #"Discipline" = "84.155.54.241", #"Athlete" = "absolutely", #"Country" = "St. Pierre & Miquelon", #"Gender" = "feature", #"Event" = "however", #"Medal" = "shaped"],
+					        [#"Year" = 2001, #"City" = "Inver Grove Heights", #"Sport" = "friendly", #"Discipline" = "35.199.139.78", #"Athlete" = "scope", #"Country" = "Bangladesh", #"Gender" = "patch", #"Event" = "outsourcing", #"Medal" = "biz"],
+					        [#"Year" = 2010, #"City" = "Lancaster", #"Sport" = "button", #"Discipline" = "187.214.193.139", #"Athlete" = "basically", #"Country" = "Ghana", #"Gender" = "brings", #"Event" = "lost", #"Medal" = "legacy"],
+					        [#"Year" = 2018, #"City" = "Balch Springs", #"Sport" = "france", #"Discipline" = "220.98.98.29", #"Athlete" = "works", #"Country" = "Tanzania", #"Gender" = "gmt", #"Event" = "nancy", #"Medal" = "exam"],
+					        [#"Year" = 2022, #"City" = "Monroe", #"Sport" = "generate", #"Discipline" = "167.95.16.77", #"Athlete" = "david", #"Country" = "Moldova", #"Gender" = "jennifer", #"Event" = "epson", #"Medal" = "amazon"],
+					        [#"Year" = 2019, #"City" = "Valley Stream", #"Sport" = "psp", #"Discipline" = "2.37.227.17", #"Athlete" = "opposite", #"Country" = "Seychelles", #"Gender" = "nevada", #"Event" = "discuss", #"Medal" = "science"],
+					        [#"Year" = 2000, #"City" = "Wentzville", #"Sport" = "them", #"Discipline" = "166.124.64.76", #"Athlete" = "parking", #"Country" = "Bolivia", #"Gender" = "thesis", #"Event" = "gnome", #"Medal" = "at"],
+					        [#"Year" = 2015, #"City" = "Burleson", #"Sport" = "bands", #"Discipline" = "169.20.157.4", #"Athlete" = "operate", #"Country" = "Vietnam", #"Gender" = "theoretical", #"Event" = "until", #"Medal" = "query"],
+					        [#"Year" = 2000, #"City" = "Fresno", #"Sport" = "tonight", #"Discipline" = "34.56.5.249", #"Athlete" = "anime", #"Country" = "Nigeria", #"Gender" = "pride", #"Event" = "event", #"Medal" = "animated"],
+					        [#"Year" = 2013, #"City" = "Havelock", #"Sport" = "measuring", #"Discipline" = "166.255.124.39", #"Athlete" = "subsection", #"Country" = "Ascension Island", #"Gender" = "rule", #"Event" = "expertise", #"Medal" = "medication"],
+					        [#"Year" = 2000, #"City" = "Niles", #"Sport" = "cells", #"Discipline" = "123.121.183.78", #"Athlete" = "fundamental", #"Country" = "St. Kitts & Nevis", #"Gender" = "objects", #"Event" = "adventure", #"Medal" = "package"],
+					        [#"Year" = 2014, #"City" = "Willoughby", #"Sport" = "ross", #"Discipline" = "127.118.122.62", #"Athlete" = "describes", #"Country" = "Vatican City", #"Gender" = "bonds", #"Event" = "kentucky", #"Medal" = "obviously"],
+					        [#"Year" = 2014, #"City" = "Wadsworth", #"Sport" = "bedrooms", #"Discipline" = "68.209.48.25", #"Athlete" = "lan", #"Country" = "Macedonia", #"Gender" = "interior", #"Event" = "represents", #"Medal" = "company"],
+					        [#"Year" = 2007, #"City" = "Alpharetta", #"Sport" = "future", #"Discipline" = "115.221.123.81", #"Athlete" = "reaction", #"Country" = "Samoa", #"Gender" = "ryan", #"Event" = "alert", #"Medal" = "heat"],
+					        [#"Year" = 2004, #"City" = "Williamsport", #"Sport" = "broadcast", #"Discipline" = "120.29.86.40", #"Athlete" = "protocol", #"Country" = "Madagascar", #"Gender" = "john", #"Event" = "flood", #"Medal" = "richmond"],
+					        [#"Year" = 2009, #"City" = "Woodland", #"Sport" = "carriers", #"Discipline" = "52.250.64.82", #"Athlete" = "men", #"Country" = "Burundi", #"Gender" = "up", #"Event" = "broadcasting", #"Medal" = "pleasant"],
+					        [#"Year" = 2013, #"City" = "Great Falls", #"Sport" = "scale", #"Discipline" = "213.16.184.73", #"Athlete" = "contract", #"Country" = "Vietnam", #"Gender" = "kid", #"Event" = "alex", #"Medal" = "lecture"],
+					        [#"Year" = 2000, #"City" = "Niagara Falls", #"Sport" = "policy", #"Discipline" = "42.161.47.26", #"Athlete" = "marine", #"Country" = "Costa Rica", #"Gender" = "constitutes", #"Event" = "identity", #"Medal" = "commands"],
+					        [#"Year" = 2020, #"City" = "Doral", #"Sport" = "gamecube", #"Discipline" = "239.245.57.47", #"Athlete" = "crack", #"Country" = "Comoros", #"Gender" = "kiss", #"Event" = "used", #"Medal" = "early"],
+					        [#"Year" = 2016, #"City" = "Twentynine Palms", #"Sport" = "drive", #"Discipline" = "156.221.33.187", #"Athlete" = "clinical", #"Country" = "Australia", #"Gender" = "acceptable", #"Event" = "duties", #"Medal" = "armed"],
+					        [#"Year" = 2013, #"City" = "Eagle", #"Sport" = "into", #"Discipline" = "255.89.119.221", #"Athlete" = "client", #"Country" = "Cyprus", #"Gender" = "wooden", #"Event" = "ball", #"Medal" = "thu"],
+					        [#"Year" = 2003, #"City" = "Manhattan Beach", #"Sport" = "enables", #"Discipline" = "247.48.8.85", #"Athlete" = "capacity", #"Country" = "Cyprus", #"Gender" = "challenges", #"Event" = "expertise", #"Medal" = "broke"],
+					        [#"Year" = 2008, #"City" = "Fairmont", #"Sport" = "recall", #"Discipline" = "239.193.48.58", #"Athlete" = "hiking", #"Country" = "Malaysia", #"Gender" = "habitat", #"Event" = "favor", #"Medal" = "previous"],
+					        [#"Year" = 2005, #"City" = "Laurel", #"Sport" = "preferred", #"Discipline" = "201.61.119.100", #"Athlete" = "nearly", #"Country" = "Micronesia", #"Gender" = "achieve", #"Event" = "gordon", #"Medal" = "brian"],
+					        [#"Year" = 2004, #"City" = "Fairhope", #"Sport" = "interest", #"Discipline" = "111.197.81.173", #"Athlete" = "roses", #"Country" = "Mauritania", #"Gender" = "fee", #"Event" = "cpu", #"Medal" = "tons"]
+					    }),
+					    Typed = Table.TransformColumnTypes(Source, {
+					        {"Year", Int64.Type},
+					        {"City", type text},
+					        {"Sport", type text},
+					        {"Discipline", type text},
+					        {"Athlete", type text},
+					        {"Country", type text},
+					        {"Gender", type text},
+					        {"Event", type text},
+					        {"Medal", type text}
+					    })
+					in
+					    Typed
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
