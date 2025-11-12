@@ -1,0 +1,45 @@
+table 'Supplier Toggle'
+	lineageTag: 2cb22210-8848-495e-9136-e0d9e91ae24f
+
+	column Index
+		formatString: 0
+		lineageTag: abb707dc-6f4f-433c-8184-a528719a52cf
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 98f413b7-b220-49d7-85a8-eacbe70dd10a
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 0f81bf24-3767-4663-9bb6-56e70d4ff068
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Supplier Toggle' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Supplier Name", "Supplier Name" },
+				{ 1, "Supplier Type", "Supplier Type" }
+			    }
+			)
+
+	annotation PBI_Id = 9244934398604986ab7720e21fc0ddce
+
