@@ -1,0 +1,49 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Max Date",
+      "dax_expression": "VAR wd = WEEKDAY(TODAY())\nRETURN\nSWITCH(\n    wd,\n    1, TODAY() - 2,\n    2, TODAY() - 3,\n    TODAY() - 1\n)",
+      "solution_explanation": "Converted Tableau CASE on datepart('weekday', today()) to DAX using WEEKDAY(TODAY()) and SWITCH to return today()-2, today()-3 or today()-1 as appropriate."
+    },
+    {
+      "type": "calculated_column",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "MAX_DATE -1day",
+      "dax_expression": "VAR wd = WEEKDAY('migration_Extract_POC (1) (local copy)'[Max Date])\nRETURN\nSWITCH(\n    wd,\n    1, 'migration_Extract_POC (1) (local copy)'[Max Date] - 2,\n    2, 'migration_Extract_POC (1) (local copy)'[Max Date] - 3,\n    'migration_Extract_POC (1) (local copy)'[Max Date] - 1\n)",
+      "solution_explanation": "Translated the Tableau CASE that inspects datepart('weekday',[Max Date]) into DAX using WEEKDAY on the previously created 'Max Date' and SWITCH, subtracting days accordingly."
+    },
+    {
+      "type": "calculated_column",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Col DV01",
+      "dax_expression": "VAR endCash = 'migration_Extract_POC (1) (local copy)'[End Cash (in USD)]\nVAR daysToMat = 'migration_Extract_POC (1) (local copy)'[Collateral Maturity] - 'migration_Extract_POC (1) (local copy)'[RpDate]\nRETURN\n(endCash * POWER(10, 3)) * daysToMat / 365 * 0.01 * 0.01",
+      "solution_explanation": "Converted the row-level arithmetic: multiplied End Cash by 10^3 using POWER, computed days to maturity by subtracting dates, and applied the percentage factors. Implemented as a calculated column because it's row-level arithmetic without aggregation."
+    },
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Col DV01 T-1",
+      "dax_expression": "VAR useCustom = SELECTEDVALUE('Use Custom Date'[Display As])\nVAR dateX = SELECTEDVALUE('Date X (comparison date)'[Display As])\nRETURN\nIF(\n    useCustom,\n    IF('migration_Extract_POC (1) (local copy)'[MAX_DATE -1day] = 'migration_Extract_POC (1) (local copy)'[RpDate], 'migration_Extract_POC (1) (local copy)'[Col DV01], 0),\n    IF('migration_Extract_POC (1) (local copy)'[RpDate] = dateX, 'migration_Extract_POC (1) (local copy)'[Col DV01], 0)\n)",
+      "solution_explanation": "Translated the nested IFs. Parameter references were converted to SELECTEDVALUE('ParameterName'[Display As]) per rules. Implemented as a measure because the logic depends on parameter values.",
+      "type_changed_reason": "The original Tableau expression references parameters ([Parameters]...), and per rules any calculation referencing parameters must be created as a measure."
+    },
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Col DV01 T",
+      "dax_expression": "VAR useCustom = SELECTEDVALUE('Use Custom Date'[Display As])\nVAR endDate = SELECTEDVALUE('End Date'[Display As])\nRETURN\nIF(\n    useCustom,\n    IF('migration_Extract_POC (1) (local copy)'[Max Date] = 'migration_Extract_POC (1) (local copy)'[RpDate], 'migration_Extract_POC (1) (local copy)'[Col DV01], 0),\n    IF('migration_Extract_POC (1) (local copy)'[RpDate] = endDate, 'migration_Extract_POC (1) (local copy)'[Col DV01], 0)\n)",
+      "solution_explanation": "Translated the nested IF that branches on parameters. Parameter references converted to SELECTEDVALUE('ParameterName'[Display As]). Implemented as a measure because it depends on parameter values.",
+      "type_changed_reason": "The original Tableau expression references parameters ([Parameters]...), and per rules any calculation referencing parameters must be created as a measure."
+    },
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Change Col DV01",
+      "dax_expression": "'migration_Extract_POC (1) (local copy)'[Col DV01 T] - 'migration_Extract_POC (1) (local copy)'[Col DV01 T-1]",
+      "solution_explanation": "Direct translation of [Col DV01 T] - [Col DV01 T-1] with references transformed to 'Table'[Column]. Implemented as a measure because it depends on other measures that reference parameters.",
+      "type_changed_reason": "The dependent calculations reference parameters; therefore this calculation must be a measure."
+    }
+  ]
+}
