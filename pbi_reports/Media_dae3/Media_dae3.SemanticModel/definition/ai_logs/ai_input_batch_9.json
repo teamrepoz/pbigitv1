@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Platform Type ",
+      "table_name": "test+",
+      "tableau_expression": "IF [Platform] = \"Instagram\" THEN \"Meta\"\r\nELSEIF [Platform] = \"Facebook\" THEN \"Meta\"\r\nELSE \"Other\"\r\nEND",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "IF [Platform] = \"Instagram\" THEN \"Meta\"\r\nELSEIF [Platform] = \"Facebook\" THEN \"Meta\"\r\nELSE \"Other\"\r\nEND",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Platform": "string"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
