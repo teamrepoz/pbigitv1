@@ -1,0 +1,28 @@
+table 'Top Category'
+	lineageTag: 69d56939-6b37-4d6b-946d-9be33213f4bd
+
+	measure 'Top Category Value' = SELECTEDVALUE('Top Category'[Top Category], 1)
+		lineageTag: da504b23-54a0-46c0-bf33-a503543d8040
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Top Category'
+		dataType: double
+		formatString: 0
+		lineageTag: aeb2b938-1157-4dd5-891f-9f2ea700c657
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Top Category' = calculated
+		mode: import
+		source = GENERATESERIES(1, 100)
+
+	annotation PBI_Id = 00ef13f26be84a50b9acd66080c85bfc
+
