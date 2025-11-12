@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Change Dv01 (USD) (Absolute)",
+      "dax_expression": "ABS('migration_Extract_POC (1) (local copy)'[Change Dv01 (USD)])",
+      "solution_explanation": "Translated Tableau ABS([Change Dv01 (USD)]) to DAX ABS() and mapped the column reference to the table-specific format: 'migration_Extract_POC (1) (local copy)'[Change Dv01 (USD)].",
+      "type_changed_reason": "The calculation depends on parameters through its dependent calculated fields (for example [Use Custom Date] and [End Date]), and per the rules any formula referencing parameters must be implemented as a measure."
+    }
+  ]
+}
