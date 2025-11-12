@@ -1,0 +1,24 @@
+{
+  "calculations": [
+    {
+      "name": "Gross/Net",
+      "table_name": "migration_Extract_POC (1) (local copy)",
+      "tableau_expression": "abs(SUM([Initial Cash USD (excl Int/FWD)]))/ABS([Netted ])",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "abs(SUM([Initial Cash USD (excl Int/FWD)]))/ABS([Netted ])",
+        "calculated_fields": {
+          "Initial Cash USD (excl Int/FWD)": "if [Is Internal ? (group)]=\"external\" AND [Is Forward Start ?]=0 THEN [Ut. US MM] else 0 END"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Is Forward Start ?": "integer",
+          "Ut. US MM": "real"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Initial Cash USD (excl Int/FWD)": "real"
+        }
+      }
+    }
+  ]
+}
