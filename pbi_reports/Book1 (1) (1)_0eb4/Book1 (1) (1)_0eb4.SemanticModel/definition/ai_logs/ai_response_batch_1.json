@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Parameters",
+      "name": "Use Custom Date",
+      "dax_expression": "TRUE()",
+      "solution_explanation": "The Tableau expression is the constant boolean 'true'. In DAX this is represented as TRUE(). This is a row-level constant (no aggregations or parameters), so it should be a calculated column."
+    }
+  ]
+}
