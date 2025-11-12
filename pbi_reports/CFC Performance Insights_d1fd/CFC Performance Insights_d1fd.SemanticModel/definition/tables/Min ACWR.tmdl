@@ -1,0 +1,44 @@
+table 'Min ACWR'
+	lineageTag: 15350382-8c8b-4026-bebe-babc8fc7b81c
+
+	column Index
+		formatString: 0
+		lineageTag: a5ea30c1-df6f-4e5d-84f7-0524c9dbb595
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 43c4c7d8-7e58-476c-93bb-b07f7c4aaeb6
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: d79d6d01-88e6-47e3-a4c8-fc082ddb8f2c
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Min ACWR' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", DOUBLE,
+			    "Value", DOUBLE,
+			    {
+			        {0, 0.8, 0.8}
+			    }
+			)
+
+	annotation PBI_Id = c6e55cef209e49bc9f1d11d8776ea1f4
+
