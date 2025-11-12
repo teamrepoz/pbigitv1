@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Ending CF",
+      "dax_expression": "VAR summaryTable =\n    SUMMARIZE(\n        'migration_Extract_POC (1) (local copy)',\n        'migration_Extract_POC (1) (local copy)'[RpDate],\n        'migration_Extract_POC (1) (local copy)'[Subs],\n        'migration_Extract_POC (1) (local copy)'[Cash curr],\n        'migration_Extract_POC (1) (local copy)'[Maturity Date],\n        'migration_Extract_POC (1) (local copy)'[R/RR],\n        \"FixedSum\", SUM('migration_Extract_POC (1) (local copy)'[End Cash (in USD)])\n    )\nRETURN\n    SUMX(summaryTable, [FixedSum])",
+      "solution_explanation": "Converted the Tableau FIXED LOD aggregation to a DAX measure by summarizing the table at the FIXED dimensions and summing [End Cash (in USD)] per combination, then summing those fixed-level results. This replicates Sum({FIXED ...: SUM([End Cash (in USD)])}) behaviour in Tableau.",
+      "type_changed_reason": "The Tableau expression uses a FIXED LOD aggregation and aggregation functions, which requires a measure in Power BI to preserve the aggregation/context behavior."
+    }
+  ]
+}
