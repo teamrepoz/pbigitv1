@@ -1,0 +1,44 @@
+table 'Currency'
+	lineageTag: 0b5a6b69-5f97-434f-87dd-084f2e1ec3b9
+
+	column Index
+		formatString: 0
+		lineageTag: aa1d963c-2fba-448f-a131-47822be24cf6
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 8c537f4d-47f4-4e30-bcef-7178083aabbf
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 50ac1ae8-dec2-4429-a6d5-3e9d859f6a23
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Currency' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        {0, "$", "$"}
+			    }
+			)
+
+	annotation PBI_Id = fee08474f252437193691fe2f266fdb1
+
