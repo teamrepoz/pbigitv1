@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "test+",
+      "name": "Age Category ",
+      "dax_expression": "IF('test+'[Age] < 25, \"Young\", \"Adult\")",
+      "solution_explanation": "Mapped Tableau IF to DAX IF and transformed the column reference [Age] to 'test+'[Age]. Kept string literals as double-quoted values. This is a row-level transformation with no aggregates or parameters, so it is implemented as a calculated column."
+    }
+  ]
+}
