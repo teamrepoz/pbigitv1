@@ -1,0 +1,24 @@
+{
+  "calculations": [
+    {
+      "name": "MTM Stress (in CAD)",
+      "table_name": "migration_Extract_POC (1) (local copy)",
+      "tableau_expression": "((IF [Cash curr]=\"EUR\" THEN [Parameters].[Parameter 9] ELSEIF [Cash curr]=\"GBP\" THEN [Parameters].[EUR Shift (copy)_2036471465060552715] END))\r\n*(IF [Cash curr]=\"EUR\" THEN -[DV01 (In USD)] *100 *[Parameters].[Use Custom Date0]\r\nELSEIF [Cash curr]=\"GBP\" THEN -[DV01 (In USD)] *100 * [Parameters].[Use Custom Date0] END)",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "((IF [Cash curr]=\"EUR\" THEN [Parameters].[Parameter 9] ELSEIF [Cash curr]=\"GBP\" THEN [Parameters].[EUR Shift (copy)_2036471465060552715] END))\r\n*(IF [Cash curr]=\"EUR\" THEN -[DV01 (In USD)] *100 *[Parameters].[Use Custom Date0]\r\nELSEIF [Cash curr]=\"GBP\" THEN -[DV01 (In USD)] *100 * [Parameters].[Use Custom Date0] END)",
+        "calculated_fields": {},
+        "parameters": [
+          "Parameter 9",
+          "EUR Shift (copy)_2036471465060552715",
+          "Use Custom Date0",
+          "Use Custom Date0"
+        ],
+        "col_to_datatype_mapping": {
+          "Cash curr": "string"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
