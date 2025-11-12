@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Limit Description (G11)",
+      "dax_expression": "\"G11\"",
+      "solution_explanation": "This calculation is a constant string literal and does not reference any fields or parameters. It is row-level/static and should be created as a calculated column. The Tableau literal \"G11\" maps directly to the DAX string literal \"G11\"."
+    }
+  ]
+}
