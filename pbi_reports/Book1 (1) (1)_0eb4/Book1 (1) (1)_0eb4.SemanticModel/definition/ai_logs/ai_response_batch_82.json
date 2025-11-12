@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Limit (Quality) ",
+      "dax_expression": "SWITCH(\n    'migration_Extract_POC (1) (local copy)'[Rating Category],\n    \"AAA\", 2000,\n    \"AA-/AA+\", 1000,\n    \"BBB-/A+\", 1000,\n    \"BB/BB+\", 500\n)",
+      "solution_explanation": "Converted Tableau CASE WHEN to DAX SWITCH using the row-level field 'migration_Extract_POC (1) (local copy)'[Rating Category]. Each WHEN clause maps to a matching value in SWITCH. This is a row-level transformation, so it's implemented as a calculated column."
+    }
+  ]
+}
