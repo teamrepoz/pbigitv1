@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Limit (Net)",
+      "dax_expression": "35000",
+      "solution_explanation": "The Tableau calculation is a constant literal (35000) with no row-level fields or parameters. Representing it as a measure provides a single scalar value usable in calculations and visuals."
+    }
+  ]
+}
