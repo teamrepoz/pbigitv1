@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "fixed netting (T -1) ",
+      "dax_expression": "VAR v1 =\n    CALCULATE(\n        'migration_Extract_POC (1) (local copy)'[fixed netting 3 R (T-1)],\n        ALLEXCEPT(\n            'migration_Extract_POC (1) (local copy)',\n            'migration_Extract_POC (1) (local copy)'[RpDate],\n            'migration_Extract_POC (1) (local copy)'[CounterParty],\n            'migration_Extract_POC (1) (local copy)'[Cash curr],\n            'migration_Extract_POC (1) (local copy)'[Maturity Date]\n        )\n    )\nVAR v2 =\n    CALCULATE(\n        'migration_Extract_POC (1) (local copy)'[fixed netting 3 RR (T-1)],\n        ALLEXCEPT(\n            'migration_Extract_POC (1) (local copy)',\n            'migration_Extract_POC (1) (local copy)'[RpDate],\n            'migration_Extract_POC (1) (local copy)'[CounterParty],\n            'migration_Extract_POC (1) (local copy)'[Cash curr],\n            'migration_Extract_POC (1) (local copy)'[Maturity Date]\n        )\n    )\nRETURN\nIF(v1 < v2, v1, v2)",
+      "solution_explanation": "Converted the Tableau FIXED LOD to a measure using CALCULATE with ALLEXCEPT to preserve the FIXED partitioning on RpDate, CounterParty, Cash curr and Maturity Date. The Tableau MIN of two expressions is implemented with IF(v1 < v2, v1, v2) after computing each expression in that fixed context.",
+      "type_changed_reason": "The Tableau expression uses a FIXED LOD, which is an aggregation/context-aware calculation; such expressions must be implemented as measures in Power BI."
+    }
+  ]
+}
