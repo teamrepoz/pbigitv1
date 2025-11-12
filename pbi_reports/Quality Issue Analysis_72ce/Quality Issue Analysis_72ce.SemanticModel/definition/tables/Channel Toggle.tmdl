@@ -1,0 +1,45 @@
+table 'Channel Toggle'
+	lineageTag: 6d4726ff-7bd9-4597-8ebf-ac0db33401c2
+
+	column Index
+		formatString: 0
+		lineageTag: 106cf7dd-e6da-4d80-a942-76bac0429c55
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 3dc2502f-7dd1-4042-96f5-beeee5f6ecb7
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 3fe8e101-5487-4221-b7ae-a9ed34aa8cd1
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Channel Toggle' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Channel", "Channel" },
+				{ 1, "First Touch Channel", "First Touch Channel" }
+			    }
+			)
+
+	annotation PBI_Id = b07259ea34954e72a94b5ca4dcd52d3a
+
