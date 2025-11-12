@@ -1,0 +1,19 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "stock_data+",
+      "name": "Rank Stocks",
+      "dax_expression": "VAR currentVolume = CALCULATE(SUM('stock_data+'[Volume]))\nRETURN\nRANKX(\n    ALL('stock_data+'),\n    CALCULATE(SUM('stock_data+'[Volume])),\n    currentVolume,\n    DESC,\n    DENSE\n)",
+      "solution_explanation": "Converted Tableau RANK(SUM([Volume])) to a DAX RankX measure. SUM([Volume]) was mapped to SUM('stock_data+'[Volume]) and an explicit current value variable is used for the value argument; ALL('stock_data+') is used as the ranking table to emulate table-level ranking context."
+    },
+    {
+      "type": "measure",
+      "table": "stock_data+",
+      "name": "Top N Stock",
+      "dax_expression": "'stock_data+'[Rank Stocks] <= SELECTEDVALUE('Top N Stock'[Display As])",
+      "solution_explanation": "Replaced the Tableau parameter reference with SELECTEDVALUE('Top N Stock'[Display As]) and mapped the calculated field reference [Rank Stocks] to 'stock_data+'[Rank Stocks]. The expression returns a boolean indicating if the rank is within the selected top N.",
+      "type_changed_reason": "The calculation references a parameter, and all parameter-based calculations must be measures."
+    }
+  ]
+}
