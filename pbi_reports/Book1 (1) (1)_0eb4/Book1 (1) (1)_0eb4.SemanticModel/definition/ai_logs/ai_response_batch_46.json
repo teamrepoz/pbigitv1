@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Change Dv01 (USD)",
+      "dax_expression": "'migration_Extract_POC (1) (local copy)'[DV01 T (USD, Actuals)] - 'migration_Extract_POC (1) (local copy)'[Dv01 T-1 (USD)]",
+      "solution_explanation": "Converted the Tableau subtraction of two calculated fields into DAX by mapping each field reference to the table[column] format. The expression performs a simple subtraction between the two referenced fields.",
+      "type_changed_reason": "One or more dependent calculated fields reference [Parameters] (parameter-based logic), and per rules any calculation that references parameters must be created as a measure."
+    }
+  ]
+}
