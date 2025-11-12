@@ -1,0 +1,30 @@
+relationship d5a34432-d76c-44bb-9497-fc4e72a87540
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CFC GPS Data'.date
+	toColumn: LocalDateTable_2cdcd325-c1f3-4b95-a0d6-877b43a5b4d0.Date
+
+relationship 15374c4f-5420-4bc4-9900-924519f48280
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CFC GPS Data'.hr_zone_1_hms
+	toColumn: LocalDateTable_5429861a-6a6e-457d-85dd-9bbbd89aa130.Date
+
+relationship 7cb78ccf-4bb6-421a-903e-e23aa6d02ec8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CFC GPS Data'.hr_zone_2_hms
+	toColumn: LocalDateTable_8da21325-62cf-4cac-911e-a70580c74057.Date
+
+relationship d1a9be8d-5a61-4758-aebc-3679e2dba34b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CFC GPS Data'.hr_zone_3_hms
+	toColumn: LocalDateTable_80a2b889-54d7-4d95-af53-842998b65461.Date
+
+relationship 75e3e7fb-e9c5-4a57-99b8-6beca05b3f49
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CFC GPS Data'.hr_zone_4_hms
+	toColumn: LocalDateTable_655f7ebf-998f-44ae-92cc-f4affee4cbf5.Date
+
+relationship 506ab651-090e-4c1a-84e8-96940c3d25ed
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CFC GPS Data'.hr_zone_5_hms
+	toColumn: LocalDateTable_eca5ae7c-735c-4433-b7e5-ca76d5935846.Date
+
