@@ -1,0 +1,44 @@
+table 'Delivery Deadline'
+	lineageTag: 7ae5d3f9-1baf-4430-aaf6-bf8fe5e36c4b
+
+	column Index
+		formatString: 0
+		lineageTag: 52e2b74a-cdd8-47ae-8a5d-33135e9a9c0b
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 0b44a8d8-3f90-4dec-b562-c258026fd736
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 88bfb5bc-5873-4e3f-bacd-e9afc9266061
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Delivery Deadline' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", DOUBLE,
+			    "Value", DOUBLE,
+			    {
+			        {0, 20.0, 20.0}
+			    }
+			)
+
+	annotation PBI_Id = 1eab19ae69bb4011ade2308e0a9f7f6d
+
