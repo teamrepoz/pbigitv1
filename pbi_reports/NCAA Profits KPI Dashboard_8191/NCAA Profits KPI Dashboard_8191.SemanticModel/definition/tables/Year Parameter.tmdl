@@ -1,0 +1,56 @@
+table 'Year Parameter'
+	lineageTag: 39f05c2e-d378-4b68-ad03-3891867c3848
+
+	column Index
+		formatString: 0
+		lineageTag: 90bf1550-6a19-4827-8c67-be209e14a5cf
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 32da281f-8d0b-4a3b-888d-56dd95ab6200
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 380aa5b8-04e1-4cf5-8f86-1f3fb929291d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Year Parameter' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", INTEGER,
+			    "Value", INTEGER,
+			    {
+			        { 0, 2005, 2005 },
+				{ 1, 2006, 2006 },
+				{ 2, 2007, 2007 },
+				{ 3, 2008, 2008 },
+				{ 4, 2009, 2009 },
+				{ 5, 2010, 2010 },
+				{ 6, 2011, 2011 },
+				{ 7, 2012, 2012 },
+				{ 8, 2013, 2013 },
+				{ 9, 2014, 2014 },
+				{ 10, 2015, 2015 },
+				{ 11, 2016, 2016 },
+				{ 12, 2017, 2017 }
+			    }
+			)
+
+	annotation PBI_Id = 24578025a96a41baa84442931ea4d3df
+
