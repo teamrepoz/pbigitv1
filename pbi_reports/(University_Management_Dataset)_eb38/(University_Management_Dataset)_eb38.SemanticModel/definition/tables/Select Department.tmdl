@@ -1,0 +1,44 @@
+table 'Select Department'
+	lineageTag: 1b010ca7-660f-4681-a095-3b046377ce6a
+
+	column Index
+		formatString: 0
+		lineageTag: 2d46b067-0d40-4a99-b190-016c199a0961
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 6689fbd8-0c68-4a05-a71e-40e76c7c85d2
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 57bc27e8-1f07-4c8e-ba5b-91f4149bccd3
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Select Department' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Department ", "Department " }
+			    }
+			)
+
+	annotation PBI_Id = f7074c16e4c74debb2caded33d55098f
+
