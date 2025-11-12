@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "cheap ?",
+      "dax_expression": "IF('migration_Extract_POC (1) (local copy)'[Coll Spread] < - SELECTEDVALUE('Specials spread'[Display As]), \"cheap\", \"GC\")",
+      "solution_explanation": "Converted Tableau IF expression to DAX IF. Replaced [Coll Spread] with 'migration_Extract_POC (1) (local copy)'[Coll Spread]. Replaced [Parameters].[Specials spread] with SELECTEDVALUE('Specials spread'[Display As]) as required for parameters. Preserved the negation before the parameter and the string outputs (\"cheap\", \"GC\").",
+      "type_changed_reason": "The calculation references a parameter, and all parameter-based calculations must be measures."
+    }
+  ]
+}
