@@ -1,0 +1,77 @@
+table 'Product Parameter _manufacturing_'
+	lineageTag: d16bf2a4-1a24-4e3c-bca8-73ced18759c8
+
+	column Index
+		formatString: 0
+		lineageTag: 5b1bc393-bed8-4304-9bec-069ceb8be161
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 0aa95588-9116-4c78-8317-21d8023a8522
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 5c7df66b-39ee-415e-b44b-632843f8af4b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Product Parameter _manufacturing_' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Product AL", "Product AL" },
+				{ 1, "Product AR", "Product AR" },
+				{ 2, "Product CA", "Product CA" },
+				{ 3, "Product CO", "Product CO" },
+				{ 4, "Product DE", "Product DE" },
+				{ 5, "Product DI", "Product DI" },
+				{ 6, "Product FL", "Product FL" },
+				{ 7, "Product GE", "Product GE" },
+				{ 8, "Product ID", "Product ID" },
+				{ 9, "Product IL", "Product IL" },
+				{ 10, "Product IN", "Product IN" },
+				{ 11, "Product IO", "Product IO" },
+				{ 12, "Product KA", "Product KA" },
+				{ 13, "Product KE", "Product KE" },
+				{ 14, "Product LO", "Product LO" },
+				{ 15, "Product MA", "Product MA" },
+				{ 16, "Product MI", "Product MI" },
+				{ 17, "Product MO", "Product MO" },
+				{ 18, "Product NE", "Product NE" },
+				{ 19, "Product NO", "Product NO" },
+				{ 20, "Product OH", "Product OH" },
+				{ 21, "Product OK", "Product OK" },
+				{ 22, "Product OR", "Product OR" },
+				{ 23, "Product PE", "Product PE" },
+				{ 24, "Product RH", "Product RH" },
+				{ 25, "Product SO", "Product SO" },
+				{ 26, "Product TE", "Product TE" },
+				{ 27, "Product UT", "Product UT" },
+				{ 28, "Product VE", "Product VE" },
+				{ 29, "Product VI", "Product VI" },
+				{ 30, "Product WA", "Product WA" },
+				{ 31, "Product WE", "Product WE" },
+				{ 32, "Product WI", "Product WI" },
+				{ 33, "Product WY", "Product WY" }
+			    }
+			)
+
+	annotation PBI_Id = 9c5420c235604c3e83ea9c364c591d6c
+
