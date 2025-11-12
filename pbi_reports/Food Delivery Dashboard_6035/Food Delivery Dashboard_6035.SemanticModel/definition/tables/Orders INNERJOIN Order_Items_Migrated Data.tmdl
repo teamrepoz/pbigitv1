@@ -1,0 +1,65 @@
+table 'Orders INNERJOIN Order_Items_Migrated Data'
+	lineageTag: 542c1078-258f-46c5-a73a-53693aff382e
+
+	column id
+		dataType: int64
+		formatString: 0
+		lineageTag: ae5ce996-18f7-4443-b5e8-ec9b69cc3b4a
+		summarizeBy: sum
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column ordered_at
+		dataType: datetime
+		lineageTag: 1158dfd8-563e-46c8-9928-ce3d7ccb0388
+		summarizeBy: none
+		sourceColumn: ordered_at
+
+		variation Variation
+			isDefault
+			relationship: 05167f49-fc74-4967-9033-2426a86efd55
+			defaultHierarchy: LocalDateTable_d2868047-f774-4aaf-ad3f-95b3397262a2.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column delivered_at
+		dataType: datetime
+		lineageTag: e7da4386-9068-42ec-bd1e-f03eaa220055
+		summarizeBy: none
+		sourceColumn: delivered_at
+
+		variation Variation
+			isDefault
+			relationship: da4071b7-dcc1-4b96-9129-c98028b7ac5f
+			defaultHierarchy: LocalDateTable_26de6cc0-5a5b-4a19-8a21-75d2bd1f9cec.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column delivered_to
+		dataType: string
+		lineageTag: 0d4781d8-026c-4ecd-a951-b68ee904ed83
+		summarizeBy: none
+		sourceColumn: delivered_to
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_channel
+		dataType: string
+		lineageTag: 51022bc9-3e3c-4363-91b2-aac11455ff89
+		summarizeBy: none
+		sourceColumn: order_channel
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Orders INNERJOIN Order_Items_Migrated Data' = m
+		mode: import
+		source =
+				let 
+					#"Source0" = Table.NestedJoin(#"Orders INNERJOIN Order_Items", {"id"}, #"Orders INNERJOIN Order_Items_order_items.csv", {"order_id"}, "Orders INNERJOIN Order_Items_order_items.csv", JoinKind.LeftOuter),
+					#"Expand0" = Table.ExpandTableColumn(#"Source0", "Orders INNERJOIN Order_Items_order_items.csv", {"item_id", "order_id", "food_item", "amount_paid"}, {"item_id", "order_id", "food_item", "amount_paid"})
+					in #"Expand0"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
