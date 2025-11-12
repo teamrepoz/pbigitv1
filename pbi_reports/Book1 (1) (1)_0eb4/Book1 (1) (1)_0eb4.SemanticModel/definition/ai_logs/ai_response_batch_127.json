@@ -1,0 +1,27 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Max Date",
+      "dax_expression": "VAR weekday = WEEKDAY(TODAY())\nRETURN\nSWITCH(\n    TRUE(),\n    weekday = 1, TODAY() - 2,\n    weekday = 2, TODAY() - 3,\n    TODAY() - 1\n)",
+      "solution_explanation": "Converted Tableau CASE on datepart(TODAY()) to DAX using WEEKDAY(TODAY()) and SWITCH with a VAR for clarity. Date arithmetic (TODAY() - n) is preserved."
+    },
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "title date",
+      "dax_expression": "VAR useCustom = SELECTEDVALUE('Use Custom Date'[Display As])\nVAR endDateParam = SELECTEDVALUE('End Date'[Display As])\nRETURN\nIF(\n    useCustom,\n    'migration_Extract_POC (1) (local copy)'[Max Date],\n    endDateParam\n)",
+      "solution_explanation": "Translated the Tableau IF that depends on parameters to DAX. Parameter references were converted to SELECTEDVALUE('ParameterName'[Display As]). The referenced Max Date measure is used when the parameter is true; otherwise the End Date parameter value is returned.",
+      "type_changed_reason": "This calculation references Tableau [Parameters], and per rules any parameter-based calculation must be created as a measure."
+    },
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "new date",
+      "dax_expression": "RETURN\nIF(\n    'migration_Extract_POC (1) (local copy)'[Start date] > 'migration_Extract_POC (1) (local copy)'[title date],\n    'migration_Extract_POC (1) (local copy)'[Start date],\n    'migration_Extract_POC (1) (local copy)'[Maturity Date]\n)",
+      "solution_explanation": "Converted the row-level IF comparing dates to DAX IF. The referenced calculated field title date (which uses parameters) is referenced in table-column format. Because title date depends on parameters, this calculation must be a measure.",
+      "type_changed_reason": "Although the logic is row-level, it depends (via title date) on a parameter-based calculation; any calculation referencing parameters must be a measure."
+    }
+  ]
+}
