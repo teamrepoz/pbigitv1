@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "test+",
+      "name": "Dynamic Age Group ",
+      "dax_expression": "VAR AgeValue = VALUE('test+'[Age])\nVAR CutValue = SELECTEDVALUE('Age Cut Value'[Display As])\nRETURN IF(AgeValue <= CutValue, \"Young\", \"Adult\")",
+      "solution_explanation": "Converted the Tableau IF to DAX IF(). Mapped the Tableau parameter to SELECTEDVALUE('Age Cut Value'[Display As]). Because 'test+'[Age] is defined as a string, cast it to numeric with VALUE() before comparison. Returns \"Young\" or \"Adult\" accordingly and implemented as a measure due to the parameter reference.",
+      "type_changed_reason": "The calculation references a Tableau parameter ([Parameters].[Age Cut Value]); per rules, parameter-based calculations must be created as measures."
+    }
+  ]
+}
