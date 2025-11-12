@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "fixed netting (T)",
+      "dax_expression": "VAR valR = CALCULATE(\n    'migration_Extract_POC (1) (local copy)'[fixed netting 3 R (T)],\n    ALLEXCEPT(\n        'migration_Extract_POC (1) (local copy)',\n        'migration_Extract_POC (1) (local copy)'[RpDate],\n        'migration_Extract_POC (1) (local copy)'[CounterParty],\n        'migration_Extract_POC (1) (local copy)'[Cash curr],\n        'migration_Extract_POC (1) (local copy)'[Maturity Date]\n    )\n)\nVAR valRR = CALCULATE(\n    'migration_Extract_POC (1) (local copy)'[fixed netting 3 RR (T)],\n    ALLEXCEPT(\n        'migration_Extract_POC (1) (local copy)',\n        'migration_Extract_POC (1) (local copy)'[RpDate],\n        'migration_Extract_POC (1) (local copy)'[CounterParty],\n        'migration_Extract_POC (1) (local copy)'[Cash curr],\n        'migration_Extract_POC (1) (local copy)'[Maturity Date]\n    )\n)\nRETURN IF(valR < valRR, valR, valRR)",
+      "solution_explanation": "Converted Tableau FIXED LOD to DAX by computing each referenced expression under an ALLEXCEPT that preserves the FIXED dimensions, then returning the minimum of the two values using IF(). References to calculated fields were preserved using the table'[column] syntax.",
+      "type_changed_reason": "The Tableau expression uses a FIXED LOD aggregation, which is an aggregate/context-based calculation and must be implemented as a measure in Power BI."
+    }
+  ]
+}
