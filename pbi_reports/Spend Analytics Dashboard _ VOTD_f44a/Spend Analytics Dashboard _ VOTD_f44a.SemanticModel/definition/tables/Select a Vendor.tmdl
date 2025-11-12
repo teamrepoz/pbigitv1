@@ -1,0 +1,42 @@
+table 'Select a Vendor'
+	lineageTag: 3bbaf8ea-1d6b-4f69-9261-68a9bca5c610
+
+	column Index
+		formatString: 0
+		lineageTag: a83c71a2-2f29-42a6-be83-5f6fb56149b7
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 5e66a236-40a8-42e2-ad1b-7617a8f1ef22
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: ca15eb12-e44b-444c-ad17-c69a535855ca
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Select a Vendor' = calculated
+		mode: import
+		source =
+				
+			SELECTCOLUMNS (
+			    DISTINCT ( 'Sales Data Extract | Tableau Accelerators'[Customer] ),
+			    "Index", RANKX ( DISTINCT ( 'Sales Data Extract | Tableau Accelerators'[Customer] ), 'Sales Data Extract | Tableau Accelerators'[Customer], , ASC ) - 1,
+			    "Display As", 'Sales Data Extract | Tableau Accelerators'[Customer],
+			    "Value", 'Sales Data Extract | Tableau Accelerators'[Customer]
+			)
+
+	annotation PBI_Id = 54de36a216b04868803166333ca2e7ea
+
