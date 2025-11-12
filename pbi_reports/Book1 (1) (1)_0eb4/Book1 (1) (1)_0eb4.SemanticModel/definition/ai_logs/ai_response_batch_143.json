@@ -1,0 +1,25 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Max Date",
+      "dax_expression": "VAR wd = WEEKDAY(TODAY())\nRETURN\nSWITCH(\n    TRUE(),\n    wd = 1, TODAY() - 2,\n    wd = 2, TODAY() - 3,\n    TODAY() - 1\n)",
+      "solution_explanation": "Converted the Tableau CASE on datepart('weekday', today()) to DAX using WEEKDAY(TODAY()) and SWITCH(TRUE()) to return today()-2, today()-3, or today()-1 based on the weekday."
+    },
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "MAX_DATE -1day",
+      "dax_expression": "VAR wd = WEEKDAY([Max Date])\nRETURN\nSWITCH(\n    TRUE(),\n    wd = 1, [Max Date] - 2,\n    wd = 2, [Max Date] - 3,\n    [Max Date] - 1\n)",
+      "solution_explanation": "Translated the Tableau CASE that uses datepart('weekday',[Max Date]) into DAX. It uses WEEKDAY([Max Date]) and returns [Max Date] minus 2, minus 3, or minus 1 accordingly. References the previously created measure [Max Date]."
+    },
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Comparison date",
+      "dax_expression": "VAR useCustom = SELECTEDVALUE('Use Custom Date'[Display As])\nVAR paramDate = SELECTEDVALUE('Date X (comparison date)'[Display As])\nRETURN IF(useCustom, [MAX_DATE -1day], paramDate)",
+      "solution_explanation": "Converted the conditional to DAX. Parameter references are mapped to SELECTEDVALUE('ParameterName'[Display As]) per rules. The measure returns [MAX_DATE -1day] when the Use Custom Date parameter is true, otherwise the Date X (comparison date) parameter value."
+    }
+  ]
+}
