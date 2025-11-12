@@ -1,0 +1,44 @@
+table 'Lead Score Threshold'
+	lineageTag: 2d8e28e0-fe1d-4f13-ae90-49722b5ebe80
+
+	column Index
+		formatString: 0
+		lineageTag: cb784f05-7c73-4b72-990d-bc8f52100179
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: fe58d8bd-08af-4c0b-9442-ffcc389181cc
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 90f65578-f1e9-4bd4-be95-206e8b44915f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Lead Score Threshold' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", INTEGER,
+			    "Value", INTEGER,
+			    {
+			        {0, 70, 70}
+			    }
+			)
+
+	annotation PBI_Id = e6a60d29e9b9452c9c426fb76c97b51b
+
