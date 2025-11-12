@@ -1,0 +1,47 @@
+table 'Select Semester'
+	lineageTag: 9bdbea3a-8ebb-454a-94fc-574ca34eed8e
+
+	column Index
+		formatString: 0
+		lineageTag: d0a430af-b121-47ba-b52a-c3aaec6cba15
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 5c19ff58-27db-4d61-93dc-c04088984340
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 8b349f3e-9e83-44f8-a832-0eb2dfcff2e9
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Select Semester' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Spring", "Spring" },
+				{ 1, "Summer", "Summer" },
+				{ 2, "Fall", "Fall" },
+				{ 3, "Winter", "Winter" }
+			    }
+			)
+
+	annotation PBI_Id = b37dc53b096c4c1cbbcfad525831b54a
+
