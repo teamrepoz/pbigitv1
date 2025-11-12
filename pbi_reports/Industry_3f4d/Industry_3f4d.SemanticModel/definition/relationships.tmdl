@@ -1,0 +1,15 @@
+relationship 2364e6be-0c58-4d52-9b8b-1a9ea853bf6a
+	toCardinality: many
+	fromColumn: 'stock_data+'.Instrument
+	toColumn: 'stock_data+_kaggle_stock_data.csv'.Instrument
+
+relationship cb4a7b4c-3688-4bc8-b6e9-512912b6dd08
+	toCardinality: many
+	fromColumn: 'stock_data+'.Instrument
+	toColumn: 'stock_data+_kaggle_stock_sector_information.csv'.Instrument
+
+relationship d0e1e2bf-9f09-44cd-8d69-a31c2347acb2
+	toCardinality: many
+	fromColumn: 'stock_data+'.Instrument
+	toColumn: 'stock_data+_stock_sector_information.csv'.Instrument
+
