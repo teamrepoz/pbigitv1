@@ -1,0 +1,44 @@
+table 'Region Select Parameter'
+	lineageTag: a3aa6f6a-90d7-43a9-88e1-896c4e55ca78
+
+	column Index
+		formatString: 0
+		lineageTag: ee85e5aa-064c-4f1b-852c-12a9a73e01bf
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 10c9c5c8-6c36-49d6-b2a2-c272e647ebe0
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 64c332ce-a716-4955-a234-528bb6d07f79
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Region Select Parameter' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        {0, "Gas.Central", "Gas.Central"}
+			    }
+			)
+
+	annotation PBI_Id = e12a3d62d55446e59f655d2a88b5f991
+
