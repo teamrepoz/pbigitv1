@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Initial Cash USD T",
+      "dax_expression": "VAR useCustom = SELECTEDVALUE('Use Custom Date'[Display As])\nVAR endDateParam = SELECTEDVALUE('End Date'[Display As])\nRETURN\nIF(\n    useCustom = TRUE(),\n    IF(\n        'migration_Extract_POC (1) (local copy)'[Max Date] = 'migration_Extract_POC (1) (local copy)'[RpDate],\n        'migration_Extract_POC (1) (local copy)'[Ut. US MM],\n        0\n    ),\n    IF(\n        'migration_Extract_POC (1) (local copy)'[RpDate] = endDateParam,\n        'migration_Extract_POC (1) (local copy)'[Ut. US MM],\n        0\n    )\n)",
+      "solution_explanation": "Recreated the nested IF logic in DAX. Parameters are accessed with SELECTEDVALUE('ParameterName'[Display As]). All column references are converted to 'migration_Extract_POC (1) (local copy)'[ColumnName]. The measure returns 'Ut. US MM' when the specified conditions are met, otherwise 0.",
+      "type_changed_reason": "The calculation references a parameter, and all parameter-based calculations must be measures."
+    }
+  ]
+}
