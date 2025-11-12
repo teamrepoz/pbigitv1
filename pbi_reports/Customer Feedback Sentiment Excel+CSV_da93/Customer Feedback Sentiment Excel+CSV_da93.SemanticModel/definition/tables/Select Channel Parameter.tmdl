@@ -1,0 +1,48 @@
+table 'Select Channel Parameter'
+	lineageTag: ef7dc5db-3343-413f-99c6-58645d61377c
+
+	column Index
+		formatString: 0
+		lineageTag: 8fdc61ee-9e17-4a3a-8890-c715fc7a22c8
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: e03d8c77-12f0-46eb-a701-c598a1de1c0d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 639cdcb3-4f1f-4a74-9da7-1ca26f17fc04
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Select Channel Parameter' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Email", "Email" },
+				{ 1, "Social Media ", "Social Media " },
+				{ 2, "Survey", "Survey" },
+				{ 3, "Chat", "Chat" },
+				{ 4, "Call", "Call" }
+			    }
+			)
+
+	annotation PBI_Id = e6499ed4db574a6383285569b9422b1e
+
