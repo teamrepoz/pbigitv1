@@ -1,0 +1,42 @@
+table 'Current Year'
+	lineageTag: 21d80366-fa64-463d-81ea-92e0f7e3f710
+
+	column Index
+		formatString: 0
+		lineageTag: 2e219cfd-47ab-40cd-80e6-8033295120d8
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: f03b317b-1ee4-4307-a66d-6374f64e26f1
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 65f5d9bf-57a7-4a3f-a4a3-7f11f29cd354
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Current Year' = calculated
+		mode: import
+		source =
+				
+			SELECTCOLUMNS (
+			    DISTINCT ( 'Sales Data Extract | Tableau Accelerators'[LinPack_600481676138465991] ),
+			    "Index", RANKX ( DISTINCT ( 'Sales Data Extract | Tableau Accelerators'[LinPack_600481676138465991] ), 'Sales Data Extract | Tableau Accelerators'[LinPack_600481676138465991], , ASC ) - 1,
+			    "Display As", 'Sales Data Extract | Tableau Accelerators'[LinPack_600481676138465991],
+			    "Value", 'Sales Data Extract | Tableau Accelerators'[LinPack_600481676138465991]
+			)
+
+	annotation PBI_Id = 6a3cda1e0e6c45ebbf7232a14033b77f
+
