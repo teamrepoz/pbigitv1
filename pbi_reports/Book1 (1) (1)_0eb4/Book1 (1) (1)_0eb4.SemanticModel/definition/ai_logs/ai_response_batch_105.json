@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "fixed netting",
+      "dax_expression": "VAR val_R = 'migration_Extract_POC (1) (local copy)'[fixed netting 3 R]\nVAR val_RR = 'migration_Extract_POC (1) (local copy)'[fixed netting 3 RR]\nRETURN IF(val_R < val_RR, val_R, val_RR)",
+      "solution_explanation": "Converted the Tableau FIXED LOD that returns the minimum of two calculated fields into a DAX measure. The two referenced calculated fields are accessed directly using the table-qualified references; VARs capture each value and an IF expression returns the smaller of the two.",
+      "type_changed_reason": "The Tableau expression uses a FIXED LOD ({FIXED ...}) which is an aggregation/context-level calculation; per rules it must be implemented as a measure in Power BI."
+    }
+  ]
+}
