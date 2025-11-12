@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Parameters",
+      "name": "Top N",
+      "dax_expression": "10",
+      "solution_explanation": "The Tableau expression is a scalar constant (10). It does not depend on row-level fields or aggregations and is best represented as a measure for use in visuals/filters as a single value."
+    }
+  ]
+}
