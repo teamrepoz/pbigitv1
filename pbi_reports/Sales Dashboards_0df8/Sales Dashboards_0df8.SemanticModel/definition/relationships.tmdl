@@ -1,0 +1,25 @@
+relationship 8a8f0e4f-eacb-4c0c-91c5-88806fabeccc
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Sales DataSource'.'Order Date'
+	toColumn: LocalDateTable_ce9d46db-80be-40fc-9da0-773b9e3c1bd0.Date
+
+relationship d5304731-e0c5-4477-890a-bafd2fde3bde
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Sales DataSource'.'Ship Date'
+	toColumn: LocalDateTable_9316cb1b-eb99-4198-b5c5-641137431897.Date
+
+relationship 38edc9e3-a4f0-473c-8841-d86353e8da4e
+	toCardinality: many
+	fromColumn: 'Sales DataSource'.'Customer ID'
+	toColumn: 'Sales DataSource_Customers'.'Customer ID'
+
+relationship 05d39476-5212-4298-b989-155d108a2fbf
+	toCardinality: many
+	fromColumn: 'Sales DataSource'.'Postal Code'
+	toColumn: 'Sales DataSource_Location'.'Postal Code'
+
+relationship 22518f38-5c8b-47c9-80fd-159b2ccad8d1
+	toCardinality: many
+	fromColumn: 'Sales DataSource'.'Product ID'
+	toColumn: 'Sales DataSource_Products'.'Product ID'
+
