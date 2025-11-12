@@ -1,0 +1,46 @@
+table 'DZV'
+	lineageTag: 0e0df469-794a-403c-abca-91b3a9fef4bc
+
+	column Index
+		formatString: 0
+		lineageTag: 5e59117f-1d23-4d37-a339-4956cf3bfedb
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: a416f5d7-ab1d-458c-886c-e7e503266e87
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: e7f4d8c9-b856-416a-848f-285744290256
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'DZV' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", INTEGER,
+			    "Value", INTEGER,
+			    {
+			        { 0, Sales, 1 },
+				{ 1, Orders, 2 },
+				{ 2, Average Order Value, 3 }
+			    }
+			)
+
+	annotation PBI_Id = 84b1321df89848068e8690631c2c1e90
+
