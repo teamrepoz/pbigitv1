@@ -1,0 +1,25 @@
+relationship dc7612ea-1de5-4c6a-8986-2010a052460e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: online_full.InvoiceDate
+	toColumn: LocalDateTable_70dcc761-d5e5-4e40-a3ae-a4f74464fd7f.Date
+
+relationship ad6910e3-5f30-4387-aa7d-8a984f85625a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: online_full.BasketID
+	toColumn: LocalDateTable_7eb65fc8-50d7-4549-accd-a3f76d07134e.Date
+
+relationship 42051b6c-a9a6-46a3-b352-82cca7419ca5
+	joinOnDateBehavior: datePartOnly
+	fromColumn: online_full.InvoiceMonth
+	toColumn: LocalDateTable_3e1a24d3-9543-49fe-9c3e-ef39a28d24a2.Date
+
+relationship c5806a56-d693-4e4f-8b2e-f3c566841f41
+	joinOnDateBehavior: datePartOnly
+	fromColumn: online_full.CohortMonth
+	toColumn: LocalDateTable_f74f9aa9-9b00-41fb-80e1-9609487f9607.Date
+
+relationship a10b140c-91d3-4810-a14a-98bc1941b79b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: online_retention.CohortMonth
+	toColumn: LocalDateTable_12266fa5-3d4a-4547-8144-9fdeb06f62b3.Date
+
