@@ -1,0 +1,124 @@
+table 'ownership_alt+'
+	lineageTag: 2d81b58b-8e72-4cc1-8fb5-aa1e7cc58dff
+
+	column OwnershipID
+		dataType: int64
+		formatString: 0
+		lineageTag: 6185d780-23c0-434f-97dc-cb5d318c6ea9
+		summarizeBy: sum
+		sourceColumn: OwnershipID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerID
+		dataType: int64
+		formatString: 0
+		lineageTag: 5c519fbb-4bbc-4280-9f6d-ba179db589a8
+		summarizeBy: sum
+		sourceColumn: CustomerID
+
+		annotation SummarizationSetBy = Automatic
+
+	column VehicleID
+		dataType: int64
+		formatString: 0
+		lineageTag: 6c201a31-fdc0-4cf2-9c9f-62ba227f9048
+		summarizeBy: sum
+		sourceColumn: VehicleID
+
+		annotation SummarizationSetBy = Automatic
+
+	column PurchaseYear
+		dataType: int64
+		formatString: 0
+		lineageTag: ff8a939c-d54a-4bc8-90c3-85c3b73d6b98
+		summarizeBy: sum
+		sourceColumn: PurchaseYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'VehicleID 1'
+		dataType: int64
+		formatString: 0
+		lineageTag: 346fb104-f86f-4b53-8298-fb7f62b05036
+		summarizeBy: sum
+		sourceColumn: 'VehicleID 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column VehicleModel
+		dataType: string
+		lineageTag: 0ceb8a87-cd37-4c4b-8afa-2520ca6a20f6
+		summarizeBy: none
+		sourceColumn: VehicleModel
+
+		annotation SummarizationSetBy = Automatic
+
+	column FuelType
+		dataType: string
+		lineageTag: 1b19e833-cc3b-49c9-892c-580fb8f1721d
+		summarizeBy: none
+		sourceColumn: FuelType
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mileage
+		dataType: double
+		formatString: General Number
+		lineageTag: 05985f9f-9f3e-4de7-9db7-72541d01ecd5
+		summarizeBy: sum
+		sourceColumn: Mileage
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'OwnershipID 1'
+		dataType: int64
+		formatString: 0
+		lineageTag: 7fce0be3-7682-4c99-abfe-8b10ec3dab1a
+		summarizeBy: sum
+		sourceColumn: 'OwnershipID 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CustomerID 1'
+		dataType: int64
+		formatString: 0
+		lineageTag: 00c76975-f6c9-42f1-b241-922371796ab4
+		summarizeBy: sum
+		sourceColumn: 'CustomerID 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'VehicleID 2'
+		dataType: int64
+		formatString: 0
+		lineageTag: 73bac8b0-2a22-468c-9ac9-6093fcca3900
+		summarizeBy: sum
+		sourceColumn: 'VehicleID 2'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PurchaseYear 1'
+		dataType: int64
+		formatString: 0
+		lineageTag: 6505e1e7-a86c-4740-bb93-c49dcb8f6d0a
+		summarizeBy: sum
+		sourceColumn: 'PurchaseYear 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'ownership_alt+' = m
+		mode: import
+		source =
+				let 
+					#"Source0" = Table.NestedJoin(#"ownership_alt.csv_ownership_alt+", {"VehicleID"}, #"vehicles_alt.csv_ownership_alt+", {"VehicleID"}, "vehicles_alt.csv_ownership_alt+", JoinKind.Inner),
+					#"Expand0" = Table.ExpandTableColumn(#"Source0", "vehicles_alt.csv_ownership_alt+", {"VehicleID", "VehicleModel", "FuelType", "Mileage"}, {"VehicleID 1", "VehicleModel", "FuelType", "Mileage"}),
+					#"Source1" = Table.NestedJoin(#"Expand0", {"CustomerID"}, #"ownership_alt.csv1_ownership_alt+", {"CustomerID"}, "ownership_alt.csv1_ownership_alt+", JoinKind.Inner),
+					#"Expand1" = Table.ExpandTableColumn(#"Source1", "ownership_alt.csv1_ownership_alt+", {"OwnershipID", "CustomerID", "VehicleID", "PurchaseYear"}, {"OwnershipID 1", "CustomerID 1", "VehicleID 2", "PurchaseYear 1"})
+					in #"Expand1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
