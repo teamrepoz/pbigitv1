@@ -1,0 +1,48 @@
+table 'Select Team Member'
+	lineageTag: e2713279-b74b-4de2-830d-505790ebef32
+
+	column Index
+		formatString: 0
+		lineageTag: 2b280dfe-9376-410e-a4f4-b45d1fcb4108
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 711b5cc0-d797-4db1-98b1-b6a2db453368
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 8be1dd42-abb1-4a97-aeb3-2ebc9524381b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Select Team Member' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Alice", "Alice" },
+				{ 1, "Bob", "Bob" },
+				{ 2, "Charlie", "Charlie" },
+				{ 3, "David", "David" },
+				{ 4, "Eva", "Eva" }
+			    }
+			)
+
+	annotation PBI_Id = 250f47b8716c489dbcda5a92b1491dd3
+
