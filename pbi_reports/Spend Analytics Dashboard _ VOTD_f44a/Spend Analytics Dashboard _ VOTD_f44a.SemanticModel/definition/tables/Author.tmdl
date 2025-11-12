@@ -1,0 +1,44 @@
+table 'Author'
+	lineageTag: 5d0f2f7d-9e4e-4115-8ba6-e2a1c327433a
+
+	column Index
+		formatString: 0
+		lineageTag: bc9ea137-08b4-47c8-8dc7-c779e0ce6bc2
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: c0aaf446-0786-4577-8fe6-fd0fcfdf5a9e
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 504f885e-94d9-442b-8f09-86c24ebf4331
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Author' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        {0, "Pradeep Kumar G", "Pradeep Kumar G"}
+			    }
+			)
+
+	annotation PBI_Id = 61f33820eb3d416db52aa8a64b65279a
+
