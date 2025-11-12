@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Parameters",
+      "name": "Date X (comparison date)",
+      "dax_expression": "DATE(2023, 10, 25)",
+      "solution_explanation": "Converted Tableau date literal #2023-10-25# to DAX DATE(2023, 10, 25). This is a row-level constant (no aggregation or parameters), so it should be created as a calculated column."
+    }
+  ]
+}
