@@ -1,0 +1,44 @@
+table 'Top N'
+	lineageTag: 87f654b1-c730-4b6c-b9c0-1437f869ffcc
+
+	column Index
+		formatString: 0
+		lineageTag: f37e876f-8637-444b-8630-93ff5ac6ba2c
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 9f3f3bae-8e51-4cbb-8c55-001f5c973e12
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: c4d83a48-322c-48a2-a400-2b079bbc9db5
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Top N' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", INTEGER,
+			    "Value", INTEGER,
+			    {
+			        {0, 10, 10}
+			    }
+			)
+
+	annotation PBI_Id = e4199e852d4e48878de4b9306cbf24a6
+
