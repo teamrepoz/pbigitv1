@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "(University_Management_Dataset)_eb38"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "0b2971cc-17ed-4fbc-9846-e21cb0885697"
+  }
+}
