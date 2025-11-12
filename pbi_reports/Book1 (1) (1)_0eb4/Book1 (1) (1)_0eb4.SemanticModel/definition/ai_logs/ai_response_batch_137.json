@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Limit Description (Non G11)",
+      "dax_expression": "\"Non-G11\"",
+      "solution_explanation": "This is a constant string in Tableau (\"Non-G11\"). Converted to the equivalent DAX constant string. No aggregations or parameters are used, so it should be a calculated column."
+    }
+  ]
+}
