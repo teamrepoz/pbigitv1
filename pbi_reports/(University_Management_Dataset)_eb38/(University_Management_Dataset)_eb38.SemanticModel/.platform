@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "(University_Management_Dataset)_eb38"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "617ec159-bcf9-45cc-8ba2-40c957018fd2"
+  }
+}
