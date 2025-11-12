@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "Limit Description (G11)",
+      "table_name": "migration_Extract_POC (1) (local copy)",
+      "tableau_expression": "\"G11\"",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "\"G11\"",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
