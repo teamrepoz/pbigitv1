@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "Use Custom Date",
+      "table_name": "Parameters",
+      "tableau_expression": "true",
+      "datatype": "boolean",
+      "calculation_context": {
+        "Expression": "true",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
