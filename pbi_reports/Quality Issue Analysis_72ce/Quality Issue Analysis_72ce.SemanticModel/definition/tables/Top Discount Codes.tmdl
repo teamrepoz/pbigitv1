@@ -1,0 +1,28 @@
+table 'Top Discount Codes'
+	lineageTag: b033db3e-2972-467c-850d-31516dcdf68e
+
+	measure 'Top Discount Codes Value' = SELECTEDVALUE('Top Discount Codes'[Top Discount Codes], 1)
+		lineageTag: f27f876b-0a5d-4be2-a4eb-229802a39a30
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Top Discount Codes'
+		dataType: double
+		formatString: 0
+		lineageTag: c206a503-445c-4968-b206-5577ff781ca2
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Top Discount Codes' = calculated
+		mode: import
+		source = GENERATESERIES(1, 100)
+
+	annotation PBI_Id = bff8fbfe76924f0aa582a9b4118a0440
+
