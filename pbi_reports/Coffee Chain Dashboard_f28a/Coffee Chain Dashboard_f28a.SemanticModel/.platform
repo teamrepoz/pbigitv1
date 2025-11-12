@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Coffee Chain Dashboard_f28a"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "2fd68c3d-59f7-4501-81d7-36fabbc6d4c4"
+  }
+}
