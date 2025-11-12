@@ -1,0 +1,24 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["online_importance", "online_full", "online_datamart", "online_retention", "online_tsne", "online_datamart_clustered"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.142.928.0 (25.04)+de52df9f0bb74ad93a80d89c52d63fe6d07e0e1b
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table online_importance
+ref table online_full
+ref table online_datamart
+ref table online_retention
+ref table online_tsne
+ref table online_datamart_clustered
+
+ref cultureInfo en-US
