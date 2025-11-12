@@ -1,0 +1,28 @@
+table 'Highlight Parameter'
+	lineageTag: 00a5e575-cc72-4db2-ace0-7ac0f6b14e8b
+
+	measure 'Highlight Parameter Value' = SELECTEDVALUE('Highlight Parameter'[Highlight Parameter], 1.0)
+		lineageTag: 5758cb09-a413-41af-ad18-c79c7172c540
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Highlight Parameter'
+		dataType: double
+		formatString: 0
+		lineageTag: ace4d0e5-4990-4d7e-a52f-339faf7fc877
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Highlight Parameter' = calculated
+		mode: import
+		source = GENERATESERIES(1.0, 5.0, 1.0)
+
+	annotation PBI_Id = d44da432cc174f3e8186188ac208338e
+
