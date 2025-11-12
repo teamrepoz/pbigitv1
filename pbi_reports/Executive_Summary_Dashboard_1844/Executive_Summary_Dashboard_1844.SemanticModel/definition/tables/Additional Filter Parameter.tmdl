@@ -1,0 +1,49 @@
+table 'Additional Filter Parameter'
+	lineageTag: 13327efa-6eaf-4a7b-8165-39c1bd7fd427
+
+	column Index
+		formatString: 0
+		lineageTag: eec07f9b-7dc5-41a2-bcbc-aece41177202
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: f0b20d87-e4c8-418d-8613-25d25f9f0b77
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: f9ae3c7e-97fb-403c-8b22-3e554e935f58
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Additional Filter Parameter' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", INTEGER,
+			    "Value", INTEGER,
+			    {
+			        { 0, System, 1 },
+				{ 1, Asset Status, 2 },
+				{ 2, Criticality Level, 3 },
+				{ 3, Region, 4 },
+				{ 4, OEM, 5 },
+				{ 5, Supplier, 6 }
+			    }
+			)
+
+	annotation PBI_Id = 7d39f74933e34720a7afec1a23703dfc
+
