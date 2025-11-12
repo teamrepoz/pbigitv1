@@ -1,0 +1,8 @@
+{
+  "version": "4.0",
+  "datasetReference": {
+    "byPath": {
+      "path": "../Top_Performing_Sales_Reps_Live_Tracker.csv+Orders (Sample - Superstore) Ex_02e0.SemanticModel"
+    }
+  }
+}
