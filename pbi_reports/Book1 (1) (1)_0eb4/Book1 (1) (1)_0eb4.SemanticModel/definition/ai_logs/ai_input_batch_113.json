@@ -1,0 +1,31 @@
+{
+  "calculations": [
+    {
+      "name": "month (data Series)",
+      "table_name": "migration_Extract_POC (1) (local copy)",
+      "tableau_expression": "\"M\" + str(MONTH([date series]))+ STr(YEAR([date series]))",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "\"M\" + str(MONTH([date series]))+ STr(YEAR([date series]))",
+        "calculated_fields": {
+          "date series": "[title date]+INT([fixed DTM])",
+          "title date": "if [Parameters].[Use Custom Date] THEN [Max Date] ELSE  [Parameters].[End Date] END",
+          "fixed DTM": "STR({ FIXED [DTM T ]: MAX([DTM T ])})",
+          "Use Custom Date": "true",
+          "Max Date": "case datepart('weekday',today())\r\n    when 1 then today()-2\r\n    when 2 then today()-3\r\n    else today()-1\r\n    END",
+          "End Date": "#2023-11-01#"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {
+          "Use Custom Date": "boolean",
+          "End Date": "date",
+          "date series": "DateTime",
+          "title date": "DateTime",
+          "fixed DTM": "String",
+          "Max Date": "DateTime"
+        }
+      }
+    }
+  ]
+}
