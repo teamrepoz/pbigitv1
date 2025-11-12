@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Coll Spread (Abs)",
+      "dax_expression": "ABS('migration_Extract_POC (1) (local copy)'[Coll Spread])",
+      "solution_explanation": "Converted Tableau ABS([Coll Spread]) to DAX using a row-level column reference. Created as a calculated column because the expression operates at the row level without aggregation."
+    }
+  ]
+}
