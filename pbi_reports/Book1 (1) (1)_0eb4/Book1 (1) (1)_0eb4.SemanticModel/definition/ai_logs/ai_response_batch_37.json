@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Starting CF from FWD",
+      "dax_expression": "VAR Grouped =\n    SUMMARIZE(\n        'migration_Extract_POC (1) (local copy)',\n        'migration_Extract_POC (1) (local copy)'[RpDate],\n        'migration_Extract_POC (1) (local copy)'[Subs],\n        'migration_Extract_POC (1) (local copy)'[Cash curr],\n        'migration_Extract_POC (1) (local copy)'[Start date],\n        'migration_Extract_POC (1) (local copy)'[R/RR],\n        \"InnerSum\",\n            CALCULATE(\n                SUMX(\n                    'migration_Extract_POC (1) (local copy)',\n                    IF(\n                        'migration_Extract_POC (1) (local copy)'[Is Forward Start ?] = 1,\n                        'migration_Extract_POC (1) (local copy)'[Ut. US MM] * -1,\n                        0\n                    )\n                )\n            )\n    )\nRETURN\n    SUMX(Grouped, [InnerSum])",
+      "solution_explanation": "Recreated the Tableau FIXED LOD by summarizing the table at the FIXED level (RpDate, Subs, Cash curr, Start date, R/RR) using SUMMARIZE and computing the inner conditional sum with CALCULATE + SUMX. Finally, SUMX over the summarized table to produce the total, matching the outer SUM in Tableau.",
+      "type_changed_reason": "The Tableau expression uses a FIXED LOD and aggregate SUM operations (and an aggregate inside the LOD), therefore it must be implemented as a measure in Power BI."
+    }
+  ]
+}
