@@ -1,0 +1,102 @@
+table 'Courses+ (University_Management_Dataset)'
+	lineageTag: 35915550-5a56-4255-80ef-8d6ce3aa2596
+
+	column EnrollmentID
+		dataType: int64
+		formatString: 0
+		lineageTag: 8c9105c7-b0c9-4d9d-bb2b-cb3a6769c955
+		summarizeBy: sum
+		sourceColumn: EnrollmentID
+
+		annotation SummarizationSetBy = Automatic
+
+	column StudentID
+		dataType: int64
+		formatString: 0
+		lineageTag: 53372203-fc4c-4d7f-8178-c1c62331a4b0
+		summarizeBy: sum
+		sourceColumn: StudentID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CourseID
+		dataType: int64
+		formatString: 0
+		lineageTag: 1582f99e-a85b-4273-80f0-6a3f47008877
+		summarizeBy: sum
+		sourceColumn: CourseID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Grade
+		dataType: string
+		lineageTag: 3294bd42-0ddc-4947-9381-4934460ebc32
+		summarizeBy: none
+		sourceColumn: Grade
+
+		annotation SummarizationSetBy = Automatic
+
+	column Semester
+		dataType: string
+		lineageTag: 54fc5055-f875-485f-83ee-6b92423176f7
+		summarizeBy: none
+		sourceColumn: Semester
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'StudentID 1'
+		dataType: int64
+		formatString: 0
+		lineageTag: 40c1dcc2-3b92-42c7-979b-5e01c951d65c
+		summarizeBy: sum
+		sourceColumn: 'StudentID 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column StudentName
+		dataType: string
+		lineageTag: 94370555-0f79-40b8-826e-c6e101998396
+		summarizeBy: none
+		sourceColumn: StudentName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gender
+		dataType: string
+		lineageTag: 98100f35-8397-4b2e-b5a5-1e032c3f9dcb
+		summarizeBy: none
+		sourceColumn: Gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column EnrollmentYear
+		dataType: int64
+		formatString: 0
+		lineageTag: 1b536c3d-960f-47d6-a399-e29d3133b89b
+		summarizeBy: sum
+		sourceColumn: EnrollmentYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CourseID 1'
+		dataType: int64
+		formatString: 0
+		lineageTag: 615aa94a-4125-4611-aa01-9478dfb26950
+		summarizeBy: sum
+		sourceColumn: 'CourseID 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Courses+ (University_Management_Dataset)' = m
+		mode: import
+		source =
+				let 
+					#"Source0" = Table.NestedJoin(#"Courses_Courses+ (University_Management_Dataset)", {"CourseID"}, #"Enrollments_Courses+ (University_Management_Dataset)", {"CourseID"}, "Enrollments_Courses+ (University_Management_Dataset)", JoinKind.Inner),
+					#"Expand0" = Table.ExpandTableColumn(#"Source0", "Enrollments_Courses+ (University_Management_Dataset)", {"EnrollmentID", "StudentID", "CourseID", "Grade", "Semester"}, {"EnrollmentID", "StudentID", "CourseID 1", "Grade", "Semester"}),
+					#"Source1" = Table.NestedJoin(#"Expand0", {"StudentID"}, #"Students_Courses+ (University_Management_Dataset)", {"StudentID"}, "Students_Courses+ (University_Management_Dataset)", JoinKind.Inner),
+					#"Expand1" = Table.ExpandTableColumn(#"Source1", "Students_Courses+ (University_Management_Dataset)", {"StudentID", "StudentName", "Gender", "EnrollmentYear"}, {"StudentID 1", "StudentName", "Gender", "EnrollmentYear"})
+					in #"Expand1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
