@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Limit",
+      "dax_expression": "IF('migration_Extract_POC (1) (local copy)'[Limit Group] = \"R\", 55000, 55000)",
+      "solution_explanation": "Converted the Tableau IF expression to DAX IF and transformed the column reference [Limit Group] to 'migration_Extract_POC (1) (local copy)'[Limit Group]. This is a row-level transformation (compares a field and returns constants) with no aggregation or parameters, so it is implemented as a calculated column.",
+      "type_changed_reason": "The calculation performs row-level logic only (IF comparing a field to a literal and returning constant values) and does not use aggregates or parameters, therefore it should be a calculated column."
+    }
+  ]
+}
