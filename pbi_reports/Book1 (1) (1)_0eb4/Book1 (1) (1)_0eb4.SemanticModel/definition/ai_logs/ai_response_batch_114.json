@@ -1,0 +1,28 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Max Date",
+      "dax_expression": "VAR wd = WEEKDAY(TODAY())\nRETURN\nSWITCH(\n    wd,\n    1, TODAY() - 2,\n    2, TODAY() - 3,\n    TODAY() - 1\n)",
+      "solution_explanation": "Converted Tableau CASE on datepart('weekday', TODAY()) to DAX WEEKDAY + SWITCH and preserved the TODAY() - n date arithmetic.",
+      "type_changed_reason": "This calculated field is used by dependent measures and must be created as a measure to be referenced by other measures."
+    },
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "title date",
+      "dax_expression": "VAR useCustom = SELECTEDVALUE('Use Custom Date'[Display As])\nVAR endDateParam = SELECTEDVALUE('End Date'[Display As])\nRETURN\nIF(useCustom, [Max Date], endDateParam)",
+      "solution_explanation": "Replaced Tableau parameter references with SELECTEDVALUE('ParameterName'[Display As]) and mapped IF to DAX IF. Uses the [Max Date] measure when the parameter is true, otherwise returns the End Date parameter.",
+      "type_changed_reason": "The original calculation references parameters ([Parameters].[...]), and all parameter-based calculations must be measures."
+    },
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Trade Status ",
+      "dax_expression": "VAR titleDate = [title date]\nRETURN\nIF(\n    'migration_Extract_POC (1) (local copy)'[Tran. date] = titleDate,\n    \" New Trade\",\n    IF(\n        'migration_Extract_POC (1) (local copy)'[Maturity Date] <= titleDate,\n        \" Expried Trade\",\n        \"Existing Trade\"\n    )\n)",
+      "solution_explanation": "Converted Tableau IF / ELSEIF / ELSE to nested DAX IF. Transformed row-level column references to 'migration_Extract_POC (1) (local copy)'[Column] format and referenced the title date measure for comparisons.",
+      "type_changed_reason": "The calculation depends on the [title date] field which is parameter-driven; because it indirectly references parameters, it must be created as a measure."
+    }
+  ]
+}
