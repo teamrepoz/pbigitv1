@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Coll Spread (Abs)",
+      "table_name": "migration_Extract_POC (1) (local copy)",
+      "tableau_expression": "ABS([Coll Spread])",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "ABS([Coll Spread])",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Coll Spread": "real"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
