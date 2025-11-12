@@ -1,0 +1,44 @@
+table 'Linkedin Goal'
+	lineageTag: d474a957-73e4-48d9-b6d9-a421e3fdb6ff
+
+	column Index
+		formatString: 0
+		lineageTag: af13602f-7cfd-4dc3-b079-81510ee3b28f
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: dd75f5df-d599-4078-92cc-47d28cd0ad6d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 924603ac-e9d3-4e74-8a2c-9e1f04517fec
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Linkedin Goal' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", DOUBLE,
+			    "Value", DOUBLE,
+			    {
+			        {0, 5000.0, 5000.0}
+			    }
+			)
+
+	annotation PBI_Id = 1cf757b2f8e6456eaa9cd11ea0eb45e5
+
