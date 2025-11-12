@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "dictionary+",
+      "name": "Year Category",
+      "dax_expression": "IF('dictionary+'[Year] < 1950, \"Early Era\", IF('dictionary+'[Year] < 2000, \"Modern Era\", \"Recent Era\"))",
+      "solution_explanation": "Converted the Tableau IF / ELSEIF / END into nested DAX IF statements and replaced [Year] with the fully qualified column reference 'dictionary+'[Year]. This is a row-level classification based solely on a column value, so it is implemented as a calculated column."
+    }
+  ]
+}
