@@ -1,0 +1,21 @@
+{
+  "calculations": [
+    {
+      "name": "MAX_DATE -1day",
+      "table_name": "migration_Extract_POC (1) (local copy)",
+      "tableau_expression": "case datepart('weekday',[Max Date])\r\nwhen 1 then [Max Date]-2\r\nwhen 2 then [Max Date]-3\r\nelse [Max Date]-1\r\nend",
+      "datatype": "date",
+      "calculation_context": {
+        "Expression": "case datepart('weekday',[Max Date])\r\nwhen 1 then [Max Date]-2\r\nwhen 2 then [Max Date]-3\r\nelse [Max Date]-1\r\nend",
+        "calculated_fields": {
+          "Max Date": "case datepart('weekday',today())\r\n    when 1 then today()-2\r\n    when 2 then today()-3\r\n    else today()-1\r\n    END"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {
+          "Max Date": "DateTime"
+        }
+      }
+    }
+  ]
+}
