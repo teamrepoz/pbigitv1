@@ -1,0 +1,47 @@
+table 'Year'
+	lineageTag: 65581558-e0b7-4a87-8266-57ab4408a6cc
+
+	column Index
+		formatString: 0
+		lineageTag: f9dabab0-c86e-4b25-9b7b-85b7a0a59c70
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: f6c6ee04-afab-4b42-a958-da930c015f0d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: c9cfce52-87d2-47a3-8a39-d9b42404f8cb
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Year' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", INTEGER,
+			    "Value", INTEGER,
+			    {
+			        { 0, 2018, 2018 },
+				{ 1, 2019, 2019 },
+				{ 2, 2020, 2020 },
+				{ 3, 2021, 2021 }
+			    }
+			)
+
+	annotation PBI_Id = deb3086645b54f2f91225116dec7931c
+
