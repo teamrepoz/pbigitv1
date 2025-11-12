@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "Limit (Canadian Provinces) ",
+      "table_name": "migration_Extract_POC (1) (local copy)",
+      "tableau_expression": "2000",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "2000",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
