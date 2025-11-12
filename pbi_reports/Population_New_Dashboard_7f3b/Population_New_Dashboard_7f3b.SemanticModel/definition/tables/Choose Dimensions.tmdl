@@ -1,0 +1,47 @@
+table 'Choose Dimensions'
+	lineageTag: b5442906-9187-4751-b7e8-432d338eaf83
+
+	column Index
+		formatString: 0
+		lineageTag: 09540e8c-a61d-456b-a154-379c49193cc6
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 585ea027-4769-4a05-af38-df2a8d64a347
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 85b217b8-6eb4-4c4a-b147-978f24f384ba
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Choose Dimensions' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Sector", "Sector" },
+				{ 1, "District", "District" },
+				{ 2, "Sex", "Sex" },
+				{ 3, "Total", "Total" }
+			    }
+			)
+
+	annotation PBI_Id = 9dc0c9a5803b4f7e87c71d577244a4af
+
