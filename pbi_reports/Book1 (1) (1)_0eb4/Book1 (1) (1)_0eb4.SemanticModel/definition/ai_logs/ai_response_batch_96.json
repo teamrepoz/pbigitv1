@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "WACS T (bps) ",
+      "dax_expression": "VAR paramUseCustom = SELECTEDVALUE('Use Custom Date'[Display As])\nVAR paramEndDate = SELECTEDVALUE('End Date'[Display As])\nVAR Numerator = SUMX(\n    'migration_Extract_POC (1) (local copy)',\n    IF(\n        paramUseCustom,\n        IF(\n            'migration_Extract_POC (1) (local copy)'[Max Date] = 'migration_Extract_POC (1) (local copy)'[RpDate],\n            'migration_Extract_POC (1) (local copy)'[Ut. US MM] * 'migration_Extract_POC (1) (local copy)'[Coll Spread],\n            0\n        ),\n        IF(\n            'migration_Extract_POC (1) (local copy)'[RpDate] = paramEndDate,\n            'migration_Extract_POC (1) (local copy)'[Ut. US MM] * 'migration_Extract_POC (1) (local copy)'[Coll Spread],\n            0\n        )\n    )\n)\nVAR Denominator = SUMX(\n    'migration_Extract_POC (1) (local copy)',\n    IF(\n        paramUseCustom,\n        IF(\n            'migration_Extract_POC (1) (local copy)'[Max Date] = 'migration_Extract_POC (1) (local copy)'[RpDate],\n            'migration_Extract_POC (1) (local copy)'[Ut. US MM],\n            0\n        ),\n        IF(\n            'migration_Extract_POC (1) (local copy)'[RpDate] = paramEndDate,\n            'migration_Extract_POC (1) (local copy)'[Ut. US MM],\n            0\n        )\n    )\n)\nRETURN DIVIDE(Numerator, Denominator) * 100",
+      "solution_explanation": "Replaced Tableau parameter references with SELECTEDVALUE(...) per rules; converted row-level conditional logic inside SUM() to SUMX(table, ...) for DAX; transformed all column references to 'Table'[Column] format; used DIVIDE for safe division and multiplied result by 100.",
+      "type_changed_reason": "The calculation references parameters and uses aggregations (SUM), so it must be implemented as a measure."
+    }
+  ]
+}
