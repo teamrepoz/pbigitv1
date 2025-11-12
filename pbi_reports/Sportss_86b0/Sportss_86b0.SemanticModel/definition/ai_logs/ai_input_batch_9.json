@@ -1,0 +1,23 @@
+{
+  "calculations": [
+    {
+      "name": "RankTop N Countries",
+      "table_name": "dictionary+",
+      "tableau_expression": "INDEX()<=[Parameters].[Top N Country]",
+      "datatype": "boolean",
+      "calculation_context": {
+        "Expression": "INDEX()<=[Parameters].[Top N Country]",
+        "calculated_fields": {
+          "Top N Country": "10"
+        },
+        "parameters": [
+          "Top N Country"
+        ],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {
+          "Top N Country": "integer"
+        }
+      }
+    }
+  ]
+}
