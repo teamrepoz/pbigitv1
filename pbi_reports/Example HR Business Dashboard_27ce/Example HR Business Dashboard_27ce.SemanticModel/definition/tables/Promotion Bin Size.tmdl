@@ -1,0 +1,44 @@
+table 'Promotion Bin Size'
+	lineageTag: ac3d2754-935d-4f1d-9cd5-18703f919e49
+
+	column Index
+		formatString: 0
+		lineageTag: 55744d5b-0a6e-40a1-8345-ad565ac313a9
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: e1ca279a-3c95-42f2-97f4-854991326c30
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 6139bbc2-831b-43ac-a7c0-205f2a614805
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Promotion Bin Size' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", DOUBLE,
+			    "Value", DOUBLE,
+			    {
+			        {0, 2.0, 2.0}
+			    }
+			)
+
+	annotation PBI_Id = 58a9946d1423454cb54266e6c2aff7d6
+
