@@ -1,0 +1,30 @@
+relationship 09dc6af1-ccec-4113-80c9-41bf52c05f5e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Orders.ordered_at
+	toColumn: LocalDateTable_a1b37a12-4e92-4f3f-97a4-760d2f5865e6.Date
+
+relationship b7142102-6873-4959-9f30-e33213527d7a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Orders.delivered_at
+	toColumn: LocalDateTable_e742d387-c736-44be-b150-ebae62f5412c.Date
+
+relationship df2e16eb-f8da-4b90-bc07-55b8638bab7a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Orders INNERJOIN Order_Items'.ordered_at
+	toColumn: LocalDateTable_72b6fc7c-0cbd-423a-bfe1-264de4dc6084.Date
+
+relationship c6498d8e-b104-47b3-9d2d-dc5c4897b3d6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Orders INNERJOIN Order_Items'.delivered_at
+	toColumn: LocalDateTable_b4a5452b-0690-4a60-afd7-08549714f013.Date
+
+relationship 05167f49-fc74-4967-9033-2426a86efd55
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Orders INNERJOIN Order_Items_Migrated Data'.ordered_at
+	toColumn: LocalDateTable_d2868047-f774-4aaf-ad3f-95b3397262a2.Date
+
+relationship da4071b7-dcc1-4b96-9129-c98028b7ac5f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Orders INNERJOIN Order_Items_Migrated Data'.delivered_at
+	toColumn: LocalDateTable_26de6cc0-5a5b-4a19-8a21-75d2bd1f9cec.Date
+
