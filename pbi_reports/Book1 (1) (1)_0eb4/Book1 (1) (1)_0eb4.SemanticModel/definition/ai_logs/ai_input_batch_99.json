@@ -1,0 +1,20 @@
+{
+  "calculations": [
+    {
+      "name": "WACS (bps)",
+      "table_name": "migration_Extract_POC (1) (local copy)",
+      "tableau_expression": "SUM([Ut. US MM]*[Coll Spread])/SUM([Ut. US MM])*100",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "SUM([Ut. US MM]*[Coll Spread])/SUM([Ut. US MM])*100",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Coll Spread": "real",
+          "Ut. US MM": "real"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
