@@ -1,0 +1,45 @@
+table 'Metric heatmap'
+	lineageTag: 85c822f2-442c-4ba3-94a0-a9c456ddd47a
+
+	column Index
+		formatString: 0
+		lineageTag: 0adca0f0-17bf-4ee4-8cf9-6b35072c3756
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 2f9b2916-3c2d-47f7-915b-fa6c8abbda39
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 4b939903-955f-4751-b7ab-0eb062924113
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Metric heatmap' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", INTEGER,
+			    "Value", INTEGER,
+			    {
+			        { 0, Total Load, 1 },
+				{ 1, High-Intensity Load, 2 }
+			    }
+			)
+
+	annotation PBI_Id = 00876cb2bfd54dcc8996c8cd0b4a6492
+
