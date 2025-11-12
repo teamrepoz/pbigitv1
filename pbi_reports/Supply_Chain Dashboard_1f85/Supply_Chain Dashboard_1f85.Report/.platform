@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Supply_Chain Dashboard_1f85"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "a5178eac-e82c-44db-a00a-a30801f95205"
+  }
+}
