@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Sales & Refunds Dashboard_f598"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "26c9de96-f770-4d3a-93b4-e5cdddee4ee3"
+  }
+}
