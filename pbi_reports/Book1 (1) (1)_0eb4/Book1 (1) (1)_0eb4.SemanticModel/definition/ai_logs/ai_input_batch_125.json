@@ -1,0 +1,26 @@
+{
+  "calculations": [
+    {
+      "name": "End DATE - 1day",
+      "table_name": "migration_Extract_POC (1) (local copy)",
+      "tableau_expression": "case datepart('weekday',[Parameters].[End Date])\r\nwhen 1 then [Parameters].[End Date]-2\r\nwhen 2 then [Parameters].[End Date]-3\r\nelse [Parameters].[End Date]-1\r\nend",
+      "datatype": "date",
+      "calculation_context": {
+        "Expression": "case datepart('weekday',[Parameters].[End Date])\r\nwhen 1 then [Parameters].[End Date]-2\r\nwhen 2 then [Parameters].[End Date]-3\r\nelse [Parameters].[End Date]-1\r\nend",
+        "calculated_fields": {
+          "End Date": "#2023-11-01#"
+        },
+        "parameters": [
+          "End Date",
+          "End Date",
+          "End Date",
+          "End Date"
+        ],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {
+          "End Date": "date"
+        }
+      }
+    }
+  ]
+}
