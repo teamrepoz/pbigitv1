@@ -1,0 +1,10 @@
+relationship 89720067-6164-4914-bc37-a6681280c140
+	joinOnDateBehavior: datePartOnly
+	fromColumn: HR_Attrition.'Attrition Date'
+	toColumn: LocalDateTable_40a958f9-3b76-4d58-b802-52e3cf33483e.Date
+
+relationship 05f61269-9d8f-466b-a9cd-2e78babb4043
+	joinOnDateBehavior: datePartOnly
+	fromColumn: HR_Attrition_Extract.'Attrition Date'
+	toColumn: LocalDateTable_4c7830b4-7b1b-446e-8ca0-e7a9c597c7d5.Date
+
