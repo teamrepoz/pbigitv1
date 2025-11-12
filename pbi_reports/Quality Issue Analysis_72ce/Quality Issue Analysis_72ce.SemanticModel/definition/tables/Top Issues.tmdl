@@ -1,0 +1,28 @@
+table 'Top Issues'
+	lineageTag: b75b38c0-6366-4725-8880-56a3451cffab
+
+	measure 'Top Issues Value' = SELECTEDVALUE('Top Issues'[Top Issues], 1)
+		lineageTag: f1449fa2-1846-4cf6-aaad-4f4efea9d4b1
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Top Issues'
+		dataType: double
+		formatString: 0
+		lineageTag: 15fc5422-1b97-4fea-b90c-58a6b7537bc6
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Top Issues' = calculated
+		mode: import
+		source = GENERATESERIES(1, 100, 1)
+
+	annotation PBI_Id = 2c91d69bd0814c589d074af59fb00e93
+
