@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Parameters",
+      "name": "Age Cut Value",
+      "dax_expression": "30",
+      "solution_explanation": "This is a constant row-level value (no aggregations or parameters). Converted to a calculated column on 'Parameters' that returns the numeric constant 30."
+    }
+  ]
+}
