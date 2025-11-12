@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Limit Description (Collateral Quality)",
+      "dax_expression": "\"Collateral Quality\"",
+      "solution_explanation": "The Tableau calculation is a constant string literal. Converted to a DAX calculated column that returns the string literal \"Collateral Quality\"."
+    }
+  ]
+}
