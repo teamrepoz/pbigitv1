@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Change in Netting",
+      "dax_expression": "'migration_Extract_POC (1) (local copy)'[fixed netting (T)] - 'migration_Extract_POC (1) (local copy)'[fixed netting (T -1) ]",
+      "solution_explanation": "Converted the Tableau expression that subtracts two calculated fields into a Power BI DAX measure by referencing the two calculated fields on the same table using the required 'TableName'[Column] syntax. The referenced fields are aggregation/LOD-based, so the result is implemented as a measure.",
+      "type_changed_reason": "The calculation references LOD/aggregate logic (FIXED and SUM-based calculated fields), therefore it must be created as a measure."
+    }
+  ]
+}
