@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Car Insurance Dashboardd_d155"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "41a7b825-e690-45f4-8fc8-dcb222a492ee"
+  }
+}
