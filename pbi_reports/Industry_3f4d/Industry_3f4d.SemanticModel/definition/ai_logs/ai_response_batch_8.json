@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "stock_data+",
+      "name": "View By",
+      "dax_expression": "SWITCH(\n    SELECTEDVALUE('View By'[Display As]),\n    \"Industry Name\", 'stock_data+'[TRBC Industry Name],\n    \"Activity Name\", 'stock_data+'[TRBC Activity Name],\n    'stock_data+'[TRBC Economic Sector Name]\n)",
+      "solution_explanation": "Converted the Tableau CASE on the parameter to a DAX SWITCH. Replaced the Tableau parameter reference [Parameters].[View By] with SELECTEDVALUE('View By'[Display As]). All column references were transformed to the 'stock_data+'[Column] format to match Power BI syntax.",
+      "type_changed_reason": "The calculation references a parameter, and all parameter-based calculations must be measures."
+    }
+  ]
+}
