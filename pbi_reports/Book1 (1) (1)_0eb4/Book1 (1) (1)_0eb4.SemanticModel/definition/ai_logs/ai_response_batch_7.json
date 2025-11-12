@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "abs(SUM([Initial Cash USD T (excl Int/FWD)])) / TOTAL(abs(SUM([Initial Cash USD T (excl Int/FWD)])))",
+      "dax_expression": "VAR Numerator = ABS( SUM('migration_Extract_POC (1) (local copy)'[Initial Cash USD T (excl Int/FWD)]) )\nVAR Denominator = CALCULATE( ABS( SUM('migration_Extract_POC (1) (local copy)'[Initial Cash USD T (excl Int/FWD)]) ), ALL('migration_Extract_POC (1) (local copy)') )\nRETURN DIVIDE(Numerator, Denominator, 0)",
+      "solution_explanation": "Converted ABS and SUM directly to DAX ABS and SUM. Tableau TOTAL (table calculation) is translated to a full-table context using CALCULATE(..., ALL(table)) to compute the overall total. Wrapped numerator and denominator in VARs and used DIVIDE for safe division. The column reference was rewritten to 'migration_Extract_POC (1) (local copy)'[Initial Cash USD T (excl Int/FWD)]."
+    }
+  ]
+}
