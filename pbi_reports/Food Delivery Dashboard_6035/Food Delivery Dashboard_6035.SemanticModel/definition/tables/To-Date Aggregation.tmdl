@@ -1,0 +1,46 @@
+table 'To-Date Aggregation'
+	lineageTag: de418f21-4032-4a85-94f2-c94ef8b3ef63
+
+	column Index
+		formatString: 0
+		lineageTag: 3517ceb8-73df-48ce-8e91-303f312b0a1d
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 96a27b9e-6970-471e-8515-403ebe639b5a
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 209b7b6f-7826-476b-b754-f8e0a0a0a185
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'To-Date Aggregation' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "YTD", "YTD" },
+				{ 1, "QTD", "QTD" },
+				{ 2, "MTD", "MTD" }
+			    }
+			)
+
+	annotation PBI_Id = 2f7aa37a3e394fd48d4448b576d0d95e
+
