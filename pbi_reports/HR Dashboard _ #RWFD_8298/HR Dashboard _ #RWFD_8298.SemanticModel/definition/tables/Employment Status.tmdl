@@ -1,0 +1,46 @@
+table 'Employment Status'
+	lineageTag: 45f6b67f-3281-4a02-a86c-55e404305361
+
+	column Index
+		formatString: 0
+		lineageTag: 63e9d487-7e39-42be-9b92-b375e550817e
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 2a126142-e374-4c7c-b68d-1158e9804658
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: a149d439-403f-4ffd-9bb0-b074f6bd7ceb
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Employment Status' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Active", "Active" },
+				{ 1, "Terminated", "Terminated" },
+				{ 2, "All Status", "All Status" }
+			    }
+			)
+
+	annotation PBI_Id = fe4a7f01f9f14d56b46a79601021afda
+
