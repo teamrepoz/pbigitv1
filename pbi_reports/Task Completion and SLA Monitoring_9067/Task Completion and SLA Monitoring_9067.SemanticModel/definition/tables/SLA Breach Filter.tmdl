@@ -1,0 +1,45 @@
+table 'SLA Breach Filter'
+	lineageTag: 9314ba72-5e2b-411d-a29d-ae315883faf2
+
+	column Index
+		formatString: 0
+		lineageTag: 08bde691-729f-4c88-8e83-d8b6c53b4282
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 0aa23b77-b70e-4254-ae06-68bb20911092
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: bb1eda7a-4ff8-45b7-84ab-a314b54a5380
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'SLA Breach Filter' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Yes", "Yes" },
+				{ 1, "No", "No" }
+			    }
+			)
+
+	annotation PBI_Id = 4a03c88006134d6e830fcdeaedc07fa6
+
