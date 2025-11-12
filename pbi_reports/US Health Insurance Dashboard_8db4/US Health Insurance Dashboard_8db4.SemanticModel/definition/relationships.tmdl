@@ -1,0 +1,15 @@
+relationship 0c6d6689-f38e-41e5-8ee8-0f7d81234034
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'US Health Insurance Dataset'.'Policy Start Date'
+	toColumn: LocalDateTable_144a9c34-3ad5-4540-98ae-3f13013c5bcc.Date
+
+relationship 2ad6a1af-5f77-4edb-9c14-efff6b05265a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'US Health Insurance Dataset'.'Policy End Date'
+	toColumn: LocalDateTable_5999fac3-8990-41ea-83b4-a76e406fc74e.Date
+
+relationship a59643e3-8a00-424e-bd21-583c35b4e935
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'US Health Insurance Dataset'.'Claim Date'
+	toColumn: LocalDateTable_cfbbb16d-4cb3-4263-aae0-405b590a76b2.Date
+
