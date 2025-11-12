@@ -1,0 +1,28 @@
+table 'Minimum Mileage'
+	lineageTag: 2bafc0ee-606c-4c89-94d5-286122f64444
+
+	measure 'Minimum Mileage Value' = SELECTEDVALUE('Minimum Mileage'[Minimum Mileage], 10.0)
+		lineageTag: de66968c-4e9f-4ddf-a4a3-e421706f9f13
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Minimum Mileage'
+		dataType: double
+		formatString: 0
+		lineageTag: 1bca9542-83ec-4946-a4ee-9b84432014ca
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Minimum Mileage' = calculated
+		mode: import
+		source = GENERATESERIES(10.0, 30.0)
+
+	annotation PBI_Id = 4c827ca78b2848f3b800c850abaa8d6d
+
