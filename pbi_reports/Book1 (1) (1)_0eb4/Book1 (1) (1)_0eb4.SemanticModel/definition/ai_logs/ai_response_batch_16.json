@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "check",
+      "dax_expression": "'migration_Extract_POC (1) (local copy)'[fixed netting 3 R] > 0",
+      "solution_explanation": "Converted the Tableau boolean comparison [fixed netting 3 R] > 0 to DAX, transforming the field reference to the 'TableName'[ColumnName] format. The expression returns TRUE when the aggregated calculated field 'fixed netting 3 R' is greater than 0.",
+      "type_changed_reason": "The referenced field [fixed netting 3 R] is an aggregated/LOD-based calculated field (uses SUM and FIXED), so the computation is context/aggregate-based and must be implemented as a measure."
+    }
+  ]
+}
