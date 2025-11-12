@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "View By ",
+      "table_name": "Parameters",
+      "tableau_expression": "\"Country\"",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "\"Country\"",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
