@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Food Delivery Dashboard_6035"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "71254b35-86ee-4f63-a043-63109099ad6e"
+  }
+}
