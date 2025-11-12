@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Vendor Performance NYC TLC Dashboard_0c14"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "99f89916-2b24-493a-b81a-979ae982a4b7"
+  }
+}
