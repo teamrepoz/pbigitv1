@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "mod US MM (copy)",
+      "dax_expression": "SWITCH(\n    'migration_Extract_POC (1) (local copy)'[R/RR],\n    \"SFB\", 'migration_Extract_POC (1) (local copy)'[Ut. US MM] * -1,\n    \"SFL\", 'migration_Extract_POC (1) (local copy)'[Ut. US MM],\n    \"r\", 'migration_Extract_POC (1) (local copy)'[Ut. US MM],\n    \"rr\", 'migration_Extract_POC (1) (local copy)'[Ut. US MM],\n    \"PG\", 'migration_Extract_POC (1) (local copy)'[PV US MM],\n    \"PR\", 'migration_Extract_POC (1) (local copy)'[PV US MM],\n    BLANK()\n)",
+      "solution_explanation": "Converted the Tableau CASE statement to a DAX SWITCH on the row-level field 'migration_Extract_POC (1) (local copy)'[R/RR], mapping each WHEN to its corresponding result and preserving the multiplication by -1 for \"SFB\". This is implemented as a calculated column because the logic operates at the row level without aggregates or parameter references."
+    }
+  ]
+}
