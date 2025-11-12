@@ -1,0 +1,20 @@
+{
+  "calculations": [
+    {
+      "name": "mod US MM (copy)",
+      "table_name": "migration_Extract_POC (1) (local copy)",
+      "tableau_expression": "Case [R/RR]\r\n\r\nWHEN \"SFB\" THEN [Ut. US MM]*-1\r\nWHEN \"SFL\" THEN [Ut. US MM]\r\nwhen \"r\" THEN [Ut. US MM]\r\nwhen \"rr\" THEN [Ut. US MM]\r\nwhen \"PG\" THEN [PV US MM]\r\nwhen \"PR\" THEN [PV US MM]\r\n\r\nEND",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "Case [R/RR]\r\n\r\nWHEN \"SFB\" THEN [Ut. US MM]*-1\r\nWHEN \"SFL\" THEN [Ut. US MM]\r\nwhen \"r\" THEN [Ut. US MM]\r\nwhen \"rr\" THEN [Ut. US MM]\r\nwhen \"PG\" THEN [PV US MM]\r\nwhen \"PR\" THEN [PV US MM]\r\n\r\nEND",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "R/RR": "string",
+          "Ut. US MM": "real"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
