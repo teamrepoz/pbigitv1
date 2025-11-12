@@ -1,0 +1,44 @@
+table 'Date'
+	lineageTag: 0f1c2ca6-807c-4179-bca2-14b371bf3f4e
+
+	column Index
+		formatString: 0
+		lineageTag: c7399099-096b-4911-8052-c941bb2c8ace
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 40efbd1f-ecb8-45e3-b2cb-04af00571bf1
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: aa60a12d-55d9-416e-b211-2dfec25adcbb
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Date' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", DATETIME,
+			    "Value", DATETIME,
+			    {
+			        {0, "2019-06-09", "2019-06-09"}
+			    }
+			)
+
+	annotation PBI_Id = 75a4c65f2c7f46a688c1184eb62d998c
+
