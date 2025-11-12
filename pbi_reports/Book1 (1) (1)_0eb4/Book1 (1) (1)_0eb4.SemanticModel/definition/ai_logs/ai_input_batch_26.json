@@ -1,0 +1,24 @@
+{
+  "calculations": [
+    {
+      "name": "USD all",
+      "table_name": "migration_Extract_POC (1) (local copy)",
+      "tableau_expression": "[PV US MM]+[mod US MM]",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "[PV US MM]+[mod US MM]",
+        "calculated_fields": {
+          "mod US MM": "IF [R/RR]=\"SFB\" THEN [Ut. US MM]*-1\r\nELSE [Ut. US MM] END"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "R/RR": "string",
+          "Ut. US MM": "real"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "mod US MM": "real"
+        }
+      }
+    }
+  ]
+}
