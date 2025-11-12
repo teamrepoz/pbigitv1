@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Limit Description",
+      "dax_expression": "\"Gross Balance\"",
+      "solution_explanation": "This calculation is a constant string literal (\"Gross Balance\") with no aggregation or parameters, and depends only on the row context, so it should be created as a calculated column."
+    }
+  ]
+}
