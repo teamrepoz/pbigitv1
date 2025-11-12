@@ -1,0 +1,42 @@
+table 'Season'
+	lineageTag: 21efbb06-915d-4ade-8de9-c06d0a028a7b
+
+	column Index
+		formatString: 0
+		lineageTag: 2fb3c703-9b42-43dc-b212-b0119e4b5777
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 79d32743-01df-467f-a4d4-2b3b18a14752
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: e198ab4f-d19e-4690-8c3c-34aba0db0dbc
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Season' = calculated
+		mode: import
+		source =
+				
+			SELECTCOLUMNS (
+			    DISTINCT ( 'CFC GPS Data'[season] ),
+			    "Index", RANKX ( DISTINCT ( 'CFC GPS Data'[season] ), 'CFC GPS Data'[season], , ASC ) - 1,
+			    "Display As", 'CFC GPS Data'[season],
+			    "Value", 'CFC GPS Data'[season]
+			)
+
+	annotation PBI_Id = e0b7e563ebd14cc1b3a23710f5bb87a3
+
