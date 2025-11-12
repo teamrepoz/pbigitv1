@@ -1,0 +1,25 @@
+relationship c00c88cf-e9c9-4cb0-868d-062c381fff3c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Data (Quality Issue) (2)'.'Invoice Date'
+	toColumn: LocalDateTable_034e0c7c-e2b9-4d51-8f05-b2668bda9f4a.Date
+
+relationship d6b423be-363b-4be3-b4c1-fc99cefbb03f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Campaigns+ (New Data)'.'Campaign Week'
+	toColumn: LocalDateTable_2400b312-94a7-4251-b7ec-98645983902c.Date
+
+relationship faf2e686-88c2-44dc-9937-12baf57e013b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Campaigns+ (New Data)_Account Snapshot'.'Snapshot Date'
+	toColumn: LocalDateTable_796c8774-e577-4710-b755-87497e384c72.Date
+
+relationship 2aa2f748-9c9d-4d1c-9649-5f4e2c020c16
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Campaigns+ (New Data)_Account Snapshot'.'Snapshot Week'
+	toColumn: LocalDateTable_f6d1d3c0-69aa-4110-9250-3af2236b68ea.Date
+
+relationship 7fab94ba-373b-4b96-863d-fc9b2e339cf1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Campaigns+ (New Data)_Activity'.'Activity Date'
+	toColumn: LocalDateTable_87814d1a-185b-44bf-9396-55b0f5999f9e.Date
+
