@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Cash flow",
+      "dax_expression": "'migration_Extract_POC (1) (local copy)'[Starting CF from FWD] + 'migration_Extract_POC (1) (local copy)'[Ending CF]",
+      "solution_explanation": "Converted Tableau field references to DAX table/column format and preserved the addition operation. Both referenced fields are aggregated/LOD-calculated fields, so the expression is implemented as a measure.",
+      "type_changed_reason": "The calculation references aggregated/LOD calculated fields (Starting CF from FWD and Ending CF), so it must be created as a measure."
+    }
+  ]
+}
