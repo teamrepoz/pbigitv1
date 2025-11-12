@@ -1,0 +1,46 @@
+table 'Toggle Calender'
+	lineageTag: a6221879-ea39-478d-a6d5-7ef8a7d7371d
+
+	column Index
+		formatString: 0
+		lineageTag: ba98403d-8fff-4c5f-be16-55e5ac29c32c
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 0ff3b889-b00e-4f1b-bb6e-73586ae0a2b8
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 1c40386a-aa43-4e63-abce-50bf08085487
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Toggle Calender' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "All", "All" },
+				{ 1, "New", "New" },
+				{ 2, "Repeat", "Repeat" }
+			    }
+			)
+
+	annotation PBI_Id = 2cb22d50c3d34bfc988a3467d5e61dea
+
