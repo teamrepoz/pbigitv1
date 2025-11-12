@@ -1,0 +1,28 @@
+table 'Sales Threshold'
+	lineageTag: 6b3cf2e6-7781-4687-8a0a-00050a133c9f
+
+	measure 'Sales Threshold Value' = SELECTEDVALUE('Sales Threshold'[Sales Threshold], 0)
+		lineageTag: ea928298-5323-4580-ba38-7466f61c23a2
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Sales Threshold'
+		dataType: double
+		formatString: 0
+		lineageTag: b116356d-c78d-406a-84d0-03ad5a14768c
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Sales Threshold' = calculated
+		mode: import
+		source = GENERATESERIES(0, 100000, 1000)
+
+	annotation PBI_Id = 6efc27961df24d88ba24fb5e8af0f098
+
