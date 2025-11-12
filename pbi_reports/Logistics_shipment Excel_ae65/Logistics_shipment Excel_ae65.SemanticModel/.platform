@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Logistics_shipment Excel_ae65"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "e9131976-1fa2-4a67-a23f-320ff8dbce67"
+  }
+}
