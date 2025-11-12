@@ -1,0 +1,23 @@
+{
+  "calculations": [
+    {
+      "name": "Ending CF",
+      "table_name": "migration_Extract_POC (1) (local copy)",
+      "tableau_expression": "Sum({FIXED   [RpDate],[Subs],[Cash curr],[Maturity Date],[R/RR]: \r\nSUM([End Cash (in USD)])})",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "Sum({FIXED   [RpDate],[Subs],[Cash curr],[Maturity Date],[R/RR]: \r\nSUM([End Cash (in USD)])})",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "RpDate": "date",
+          "Cash curr": "string",
+          "Subs": "string",
+          "R/RR": "string",
+          "Maturity Date": "date"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
