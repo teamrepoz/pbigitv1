@@ -1,0 +1,28 @@
+table 'Profit Margin _'
+	lineageTag: b55d2f13-1d25-4d38-b039-f7920c59159c
+
+	measure 'Profit Margin _ Value' = SELECTEDVALUE('Profit Margin _'[Profit Margin _], 0.0)
+		lineageTag: 05d05906-83d8-417a-8e77-6d0d55f2364c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Profit Margin _'
+		dataType: double
+		formatString: 0
+		lineageTag: 89d83fca-fdd0-45c2-a5f6-c1d59145ebce
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Profit Margin _' = calculated
+		mode: import
+		source = GENERATESERIES(0.0, 1.0, 0.1)
+
+	annotation PBI_Id = 3bbb93deef6c42b9a889abb8c6ff5d26
+
