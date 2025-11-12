@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Change in Netted ",
+      "dax_expression": "'migration_Extract_POC (1) (local copy)'[Netted T] - 'migration_Extract_POC (1) (local copy)'[Netted T -1]",
+      "solution_explanation": "Converted the Tableau expression [Netted T]-[Netted T -1] to DAX by referencing the calculated fields as measures on the same table: 'migration_Extract_POC (1) (local copy)'[Netted T] and 'migration_Extract_POC (1) (local copy)'[Netted T -1]. The calculation is a simple subtraction of two aggregated/calculated measures.",
+      "type_changed_reason": "The referenced fields Netted T and Netted T -1 are results of aggregated/LOD expressions (SUM and FIXED), so this calculation must be created as a measure."
+    }
+  ]
+}
