@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "stock_data+",
+      "name": "Avg Price",
+      "dax_expression": "('stock_data+'[Price High] + 'stock_data+'[Price Close] + 'stock_data+'[Price Open]) / 3",
+      "solution_explanation": "This is a row-level arithmetic calculation (average of three columns). Converted Tableau row expression to a calculated column in DAX by referencing each column with 'TableName'[Column] syntax and computing the average."
+    }
+  ]
+}
