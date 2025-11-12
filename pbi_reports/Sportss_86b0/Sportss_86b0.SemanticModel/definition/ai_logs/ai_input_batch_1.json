@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "Select Year",
+      "table_name": "Parameters",
+      "tableau_expression": "1896",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "1896",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
