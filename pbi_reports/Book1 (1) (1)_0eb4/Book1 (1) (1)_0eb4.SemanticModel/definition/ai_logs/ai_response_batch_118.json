@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Remove expired ",
+      "dax_expression": "IF('migration_Extract_POC (1) (local copy)'[RpDate] = 'migration_Extract_POC (1) (local copy)'[Maturity Date], 1, 0)",
+      "solution_explanation": "Translated the Tableau IF statement to a DAX IF and qualified column references with the table name. This is a row-level comparison between RpDate and Maturity Date, so it is implemented as a calculated column."
+    }
+  ]
+}
