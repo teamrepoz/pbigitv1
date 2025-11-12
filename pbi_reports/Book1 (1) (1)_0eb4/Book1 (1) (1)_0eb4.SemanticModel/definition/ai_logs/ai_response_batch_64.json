@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "MTM (In CAD) T-1",
+      "dax_expression": "VAR useCustom = SELECTEDVALUE('Use Custom Date'[Display As])\nVAR maxDateMinus1 = 'migration_Extract_POC (1) (local copy)'[MAX_DATE -1day]\nVAR endDateMinus1 = 'migration_Extract_POC (1) (local copy)'[End DATE - 1day]\nVAR rpDate = 'migration_Extract_POC (1) (local copy)'[RpDate]\nVAR mtmInCAD = 'migration_Extract_POC (1) (local copy)'[MTM (in CAD)]\nRETURN\nIF(\n    useCustom,\n    IF(maxDateMinus1 = rpDate, mtmInCAD, 0),\n    IF(endDateMinus1 = rpDate, mtmInCAD, 0)\n)",
+      "solution_explanation": "Replaced the parameter reference with SELECTEDVALUE('Use Custom Date'[Display As]) and converted all field references to 'migration_Extract_POC (1) (local copy)'[ColumnName] format. Preserved the nested IF logic: when the parameter is true use MAX_DATE -1day comparison, otherwise use End DATE - 1day comparison, returning MTM (in CAD) or 0 accordingly.",
+      "type_changed_reason": "The calculation references a parameter ([Parameters].[Use Custom Date]); per rules, any calculation that uses parameters must be created as a measure."
+    }
+  ]
+}
