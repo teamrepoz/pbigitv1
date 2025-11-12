@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "dictionary+",
+      "name": "Good Only Count ",
+      "dax_expression": "IF('dictionary+'[Medal] = \"Gold\", 1, 0)",
+      "solution_explanation": "Translated Tableau IF [Medal] = \"Gold\" THEN 1 ELSE 0 END to DAX IF('dictionary+'[Medal] = \"Gold\", 1, 0). This is a row-level evaluation based on a single column, so it is implemented as a calculated column."
+    }
+  ]
+}
