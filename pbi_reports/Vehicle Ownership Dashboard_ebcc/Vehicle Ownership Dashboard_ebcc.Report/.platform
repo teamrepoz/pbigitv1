@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Vehicle Ownership Dashboard_ebcc"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "5de7b4ca-cbfe-4a31-aa6c-f996f1e8f0a7"
+  }
+}
