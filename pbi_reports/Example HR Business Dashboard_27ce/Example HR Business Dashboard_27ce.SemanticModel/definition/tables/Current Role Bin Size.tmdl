@@ -1,0 +1,44 @@
+table 'Current Role Bin Size'
+	lineageTag: a351b695-44bc-409c-9553-222ef6282646
+
+	column Index
+		formatString: 0
+		lineageTag: d6c35edb-2a89-4521-9fc5-f5bd0de28fd6
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 981b25fc-8fd4-4ecc-8346-1d73fe4f6ce8
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 27a193ec-6312-44c0-a082-03dc557b8fc4
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Current Role Bin Size' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", DOUBLE,
+			    "Value", DOUBLE,
+			    {
+			        {0, 2.0, 2.0}
+			    }
+			)
+
+	annotation PBI_Id = f248c0aa8d48419d89b4ff638019e2d2
+
