@@ -1,0 +1,237 @@
+table 'Orders+ (Sample - Superstore)'
+	lineageTag: 3ad90114-aabe-41fd-af46-b98e6ac169cd
+
+	column 'Row ID'
+		dataType: int64
+		formatString: 0
+		lineageTag: 3133bd9b-a435-458e-9887-5fc145648201
+		summarizeBy: sum
+		sourceColumn: 'Row ID'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order ID'
+		dataType: string
+		lineageTag: 38275ae2-52e6-497a-b240-a83add19c1f3
+		summarizeBy: none
+		sourceColumn: 'Order ID'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Date'
+		dataType: datetime
+		lineageTag: c6a7853e-1d28-425b-8415-6c5b8790f519
+		summarizeBy: none
+		sourceColumn: 'Order Date'
+
+		variation Variation
+			isDefault
+			relationship: 25886237-c443-42e5-ad0e-1842670cdc50
+			defaultHierarchy: LocalDateTable_2f0071f0-c58e-4e3a-8fd7-8c61553f1699.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ship Date'
+		dataType: datetime
+		lineageTag: 3964f298-5013-42d4-9b54-d125f31e4c54
+		summarizeBy: none
+		sourceColumn: 'Ship Date'
+
+		variation Variation
+			isDefault
+			relationship: f4c2673e-494b-4679-94f9-3fc467ab9b14
+			defaultHierarchy: LocalDateTable_255f30fd-7348-4c28-8ac1-7203dac856af.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ship Mode'
+		dataType: string
+		lineageTag: 4bc7c80c-75f8-4c25-a815-d80375b2963b
+		summarizeBy: none
+		sourceColumn: 'Ship Mode'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer ID'
+		dataType: string
+		lineageTag: 74102de0-7677-4221-b49a-5d3473dd45b3
+		summarizeBy: none
+		sourceColumn: 'Customer ID'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Name'
+		dataType: string
+		lineageTag: b1cbdc0e-de70-45bb-ba3f-488c2b6c548d
+		summarizeBy: none
+		sourceColumn: 'Customer Name'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Segment
+		dataType: string
+		lineageTag: 373e187d-e356-442a-82b6-d088c9cf23e2
+		summarizeBy: none
+		sourceColumn: Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Country/Region'
+		dataType: string
+		lineageTag: 8253d24e-92b9-44e0-b524-8bd1f81c4bb1
+		summarizeBy: none
+		sourceColumn: 'Country/Region'
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: 848fcc46-e589-42dc-bce4-d8fe06f9244e
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'State/Province'
+		dataType: string
+		lineageTag: d26b1c40-aa2e-417b-a498-04c78fff7924
+		summarizeBy: none
+		sourceColumn: 'State/Province'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Postal Code'
+		dataType: string
+		lineageTag: a1aeded5-2dc2-4f6a-916b-139f2f5e3fe3
+		summarizeBy: none
+		sourceColumn: 'Postal Code'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		lineageTag: 1036875a-f7c6-4001-ae63-43185efd45a9
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product ID'
+		dataType: string
+		lineageTag: 849909af-db58-43b2-b21f-a32f04e7fff8
+		summarizeBy: none
+		sourceColumn: 'Product ID'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		lineageTag: 8b1eaebf-8cae-4fe9-9230-de80559f416b
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sub-Category'
+		dataType: string
+		lineageTag: 0b4547a5-7f0f-4807-a201-a25053d48b11
+		summarizeBy: none
+		sourceColumn: 'Sub-Category'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Name'
+		dataType: string
+		lineageTag: 526ea02c-4e22-4b41-a9ee-68bf3ca381de
+		summarizeBy: none
+		sourceColumn: 'Product Name'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sales
+		dataType: double
+		formatString: General Number
+		lineageTag: e02d5f05-2eda-4046-95c7-d7d90c31cec9
+		summarizeBy: sum
+		sourceColumn: Sales
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Quantity
+		dataType: int64
+		formatString: 0
+		lineageTag: 1a504d75-dd95-4bfc-a76e-2fb2b05411a7
+		summarizeBy: sum
+		sourceColumn: Quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column Discount
+		dataType: double
+		formatString: General Number
+		lineageTag: 15c22083-08be-44bf-be16-7a7e45bb59be
+		summarizeBy: sum
+		sourceColumn: Discount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Profit
+		dataType: double
+		formatString: General Number
+		lineageTag: d8db4547-0fa3-4541-b5ac-22bda639d446
+		summarizeBy: sum
+		sourceColumn: Profit
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Regional Manager'
+		dataType: string
+		lineageTag: 3d8f7e76-830c-414b-85f6-d0d983e08eeb
+		summarizeBy: none
+		sourceColumn: 'Regional Manager'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Region 1'
+		dataType: string
+		lineageTag: f7eec490-b233-4dc3-9d2c-6382b1e9739b
+		summarizeBy: none
+		sourceColumn: 'Region 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order ID 1'
+		dataType: string
+		lineageTag: 0dde2b27-e95f-417a-b28a-1c4d1c3215ad
+		summarizeBy: none
+		sourceColumn: 'Order ID 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Returned
+		dataType: string
+		lineageTag: 48e8513f-6b80-412f-aafb-fd1090cde418
+		summarizeBy: none
+		sourceColumn: Returned
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Orders+ (Sample - Superstore)' = m
+		mode: import
+		source =
+				let 
+					#"Source0" = Table.NestedJoin(#"Orders_Orders+ (Sample - Superstore)", {"Region"}, #"People_Orders+ (Sample - Superstore)", {"Region"}, "People_Orders+ (Sample - Superstore)", JoinKind.Inner),
+					#"Expand0" = Table.ExpandTableColumn(#"Source0", "People_Orders+ (Sample - Superstore)", {"Regional Manager", "Region"}, {"Regional Manager", "Region 1"}),
+					#"Source1" = Table.NestedJoin(#"Expand0", {"Order ID"}, #"Returns_Orders+ (Sample - Superstore)", {"Order ID"}, "Returns_Orders+ (Sample - Superstore)", JoinKind.Inner),
+					#"Expand1" = Table.ExpandTableColumn(#"Source1", "Returns_Orders+ (Sample - Superstore)", {"Order ID", "Returned"}, {"Order ID 1", "Returned"})
+					in #"Expand1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
