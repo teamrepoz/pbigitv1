@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "FACE T-1",
+      "dax_expression": "VAR UseCustom = SELECTEDVALUE('Use Custom Date'[Display As])\nVAR DateX = SELECTEDVALUE('Date X (comparison date)'[Display As])\nRETURN\nIF(\n    UseCustom,\n    IF(\n        'migration_Extract_POC (1) (local copy)'[MAX_DATE -1day] = 'migration_Extract_POC (1) (local copy)'[RpDate],\n        'migration_Extract_POC (1) (local copy)'[Face],\n        0\n    ),\n    IF(\n        DateX = 'migration_Extract_POC (1) (local copy)'[RpDate],\n        'migration_Extract_POC (1) (local copy)'[Face],\n        0\n    )\n)",
+      "solution_explanation": "Replaced parameter references with SELECTEDVALUE(...) and converted nested Tableau IF/END logic to DAX IF(). All column and calculated-field references were transformed to 'migration_Extract_POC (1) (local copy)'[ColumnName] format to match DAX syntax.",
+      "type_changed_reason": "The calculation references parameters ([Parameters].[Use Custom Date] and [Parameters].[Date X (comparison date)]). Per rules, any parameter-based calculation must be created as a measure."
+    }
+  ]
+}
