@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Sales - Executive Summary Dashboard_95f2"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "e2a6d6de-08ad-4d9f-a4ae-87de78a545e0"
+  }
+}
