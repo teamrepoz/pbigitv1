@@ -1,0 +1,45 @@
+table 'status_priority'
+	lineageTag: ece80d43-afc1-4f31-805c-cd14f7d83a51
+
+	column Index
+		formatString: 0
+		lineageTag: 887a971f-c65f-4a02-a497-00792afccd6d
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: c877c1a5-cf80-4f8f-a604-eab2dacf3988
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: f87d4b5b-d985-4e2d-8d36-cacef54d88f2
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'status_priority' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Status", "Status" },
+				{ 1, "Priority", "Priority" }
+			    }
+			)
+
+	annotation PBI_Id = f3508d0a1211441ca6e19f21a6ccee94
+
