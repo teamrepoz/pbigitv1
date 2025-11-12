@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Age Category ",
+      "table_name": "test+",
+      "tableau_expression": "IF [Age] < 25 THEN \"Young\"\r\nELSE \"Adult\"\r\nEND",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "IF [Age] < 25 THEN \"Young\"\r\nELSE \"Adult\"\r\nEND",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Age": "string"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
