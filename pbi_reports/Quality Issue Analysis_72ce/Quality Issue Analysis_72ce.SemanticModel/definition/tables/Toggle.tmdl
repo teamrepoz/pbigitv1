@@ -1,0 +1,45 @@
+table 'Toggle'
+	lineageTag: 7f394f64-34f7-4d1b-b174-be9359243508
+
+	column Index
+		formatString: 0
+		lineageTag: ec5c3af6-5f6a-4832-a10a-e8bbbd644494
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 9b0c95e9-754c-44e5-8969-5b6f2c3d6426
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: c46a8886-d88d-407a-a105-a3a2263a0521
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Toggle' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Ecomm/Subs", "Ecomm/Subs" },
+				{ 1, "New/Repeat", "New/Repeat" }
+			    }
+			)
+
+	annotation PBI_Id = c83f5832eead43eca11647e724f1ab9a
+
