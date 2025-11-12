@@ -1,0 +1,15 @@
+relationship 68d99fd2-f9c1-462b-bc9b-6c1c512e3b2b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'lab_results.csv_lab_results+'.Date
+	toColumn: LocalDateTable_35e6274a-bd63-4524-9807-af6407818f58.Date
+
+relationship d98fccd6-38dc-4168-a9ef-882d5c0b5c27
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'medical_visits.csv_lab_results+'.Date
+	toColumn: LocalDateTable_1c050080-0952-421e-899d-5aeab797ee43.Date
+
+relationship 837161a9-f2ae-4431-a0d3-eb80edbcf5fc
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'lab_results+'.Date
+	toColumn: LocalDateTable_b55e1892-3735-4aa5-adb3-255f2e13250f.Date
+
