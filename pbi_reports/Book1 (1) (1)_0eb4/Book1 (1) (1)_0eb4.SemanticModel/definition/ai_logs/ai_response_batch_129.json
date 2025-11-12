@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "month end filter",
+      "dax_expression": "IF(\n    DATEVALUE('migration_Extract_POC (1) (local copy)'[Last day of the month]) = 'migration_Extract_POC (1) (local copy)'[RpDate]\n    || 'migration_Extract_POC (1) (local copy)'[RpDate] = 'migration_Extract_POC (1) (local copy)'[title date]\n    || 'migration_Extract_POC (1) (local copy)'[RpDate] = 'migration_Extract_POC (1) (local copy)'[Comparison date],\n    TRUE(),\n    FALSE()\n)",
+      "solution_explanation": "Converted the Tableau boolean OR expression to DAX. DATE([Last day of the month]) was translated to DATEVALUE(...) to compare the DateTime-calculated field to 'RpDate'. Logical ORs were mapped to || and the boolean result is returned via IF(TRUE/FALSE). All column references were converted to 'Table'[Column] format.",
+      "type_changed_reason": "One or more dependent calculated fields referenced Tableau [Parameters] (via title date / Comparison date), and per rules any expression that uses parameters must be implemented as a measure."
+    }
+  ]
+}
