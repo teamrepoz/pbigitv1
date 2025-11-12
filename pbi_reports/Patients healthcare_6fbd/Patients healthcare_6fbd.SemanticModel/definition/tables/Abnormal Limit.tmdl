@@ -1,0 +1,28 @@
+table 'Abnormal Limit'
+	lineageTag: c5265038-6087-4232-ab49-5bde95d0f2c7
+
+	measure 'Abnormal Limit Value' = SELECTEDVALUE('Abnormal Limit'[Abnormal Limit], 0)
+		lineageTag: eb4fc3b7-53a7-498b-94ac-816e133e24db
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Abnormal Limit'
+		dataType: double
+		formatString: 0
+		lineageTag: bc59ed88-226f-42fe-9aba-cdf68ad9abb7
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Abnormal Limit' = calculated
+		mode: import
+		source = GENERATESERIES(0, 10)
+
+	annotation PBI_Id = 89f568ac74644c0bb1b357bcad61ec0c
+
