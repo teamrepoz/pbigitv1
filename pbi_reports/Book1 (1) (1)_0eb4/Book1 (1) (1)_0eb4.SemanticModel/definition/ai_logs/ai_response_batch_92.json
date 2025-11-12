@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Netted ",
+      "dax_expression": "VAR sumConditional = SUMX(\n    'migration_Extract_POC (1) (local copy)',\n    IF(\n        'migration_Extract_POC (1) (local copy)'[R/RR] = \"R\",\n        - 'migration_Extract_POC (1) (local copy)'[Initial Cash USD (excl Int/FWD)],\n        IF(\n            'migration_Extract_POC (1) (local copy)'[R/RR] = \"RR\",\n            'migration_Extract_POC (1) (local copy)'[Initial Cash USD (excl Int/FWD)],\n            0\n        )\n    )\n)\nVAR nettingSum = SUM('migration_Extract_POC (1) (local copy)'[fixed netting])\nRETURN\nsumConditional - nettingSum",
+      "solution_explanation": "Translated the Tableau SUM(IF ... END) into a SUMX over the table to evaluate the row-level IF per row, returning -Initial Cash for R, Initial Cash for RR, else 0, then subtracted the SUM of fixed netting. Kept all column references in 'Table'[Column] format and implemented as a measure because the calculation uses aggregation functions (SUM)."
+    }
+  ]
+}
