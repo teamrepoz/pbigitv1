@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Clinical Trials_fcb4"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "65fe26ab-01fb-4d4f-a9b7-820d64995f91"
+  }
+}
