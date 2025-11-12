@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "WATM(d) T-1",
+      "dax_expression": "VAR Numerator =\n    SUMX(\n        'migration_Extract_POC (1) (local copy)',\n        'migration_Extract_POC (1) (local copy)'[Initial Cash USD X (excl Int/FWD)] * 'migration_Extract_POC (1) (local copy)'[DTM]\n    )\nVAR Denominator =\n    SUM('migration_Extract_POC (1) (local copy)'[Initial Cash USD X (excl Int/FWD)])\nRETURN\n    DIVIDE(Numerator, Denominator)",
+      "solution_explanation": "Converted Tableau SUM([Initial Cash USD X (excl Int/FWD)]*[DTM]) to DAX SUMX over the table for row-by-row multiplication, and SUM(...) for the denominator. Used DIVIDE for safe division. All column references were transformed to 'TableName'[ColumnName] format."
+    }
+  ]
+}
