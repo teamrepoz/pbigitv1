@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Is High Likes ",
+      "table_name": "test+",
+      "tableau_expression": "[Likes_Received_Per_Day] > 50",
+      "datatype": "boolean",
+      "calculation_context": {
+        "Expression": "[Likes_Received_Per_Day] > 50",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Likes_Received_Per_Day": "integer"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
