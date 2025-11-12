@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "fixed netting 3 RR (T-1)",
+      "dax_expression": "VAR groups =\n    SUMMARIZE(\n        'migration_Extract_POC (1) (local copy)',\n        'migration_Extract_POC (1) (local copy)'[RpDate],\n        'migration_Extract_POC (1) (local copy)'[Subs],\n        'migration_Extract_POC (1) (local copy)'[Counterpty],\n        'migration_Extract_POC (1) (local copy)'[Cash curr],\n        'migration_Extract_POC (1) (local copy)'[Maturity Date],\n        'migration_Extract_POC (1) (local copy)'[R/RR],\n        \"GroupSum\", CALCULATE(\n            SUM('migration_Extract_POC (1) (local copy)'[Ut. US MM]),\n            'migration_Extract_POC (1) (local copy)'[Is Forward Start ?] = 0,\n            'migration_Extract_POC (1) (local copy)'[Is Approved for Netting] = \"1\",\n            'migration_Extract_POC (1) (local copy)'[Bucket] <> \"open\",\n            'migration_Extract_POC (1) (local copy)'[R/RR] = \"RR\",\n            'migration_Extract_POC (1) (local copy)'[Title Date Filter (T-1)] = 1\n        )\n    )\nRETURN\n    SUMX(groups, ABS([GroupSum]))",
+      "solution_explanation": "Translated the FIXED LOD by grouping the table using SUMMARIZE on the fixed dimensions and computing the conditional sum per group via CALCULATE. The IF conditions became boolean filters inside CALCULATE. The outer SUM(ABS(...)) is implemented as SUMX over the summarized groups applying ABS to each group's sum. All column references use 'Table'[Column] format.",
+      "type_changed_reason": "The calculation uses a FIXED LOD expression and aggregations (SUM), so it should be implemented as a measure."
+    }
+  ]
+}
