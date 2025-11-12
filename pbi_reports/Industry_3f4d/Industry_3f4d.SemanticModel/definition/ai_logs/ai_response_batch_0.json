@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Parameters",
+      "name": "Price Type",
+      "dax_expression": "\"Open\"",
+      "solution_explanation": "This Tableau constant string literal \"Open\" is converted to a calculated column in 'Parameters' that returns the string \"Open\" for every row."
+    }
+  ]
+}
