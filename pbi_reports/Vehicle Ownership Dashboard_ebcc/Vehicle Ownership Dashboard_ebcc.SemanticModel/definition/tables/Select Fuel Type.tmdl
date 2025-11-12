@@ -1,0 +1,45 @@
+table 'Select Fuel Type'
+	lineageTag: 891a61e4-055c-4332-9dfc-98df3d57e8d8
+
+	column Index
+		formatString: 0
+		lineageTag: 10479f1e-ece8-4e5b-819f-822e7ec9e62a
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: a8993b24-a69a-44cb-bdfc-216bd70b5bc4
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: e2e144c6-1b86-49eb-bc9c-16bbc0e9f01e
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Select Fuel Type' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Petrol", "Petrol" },
+				{ 1, "Diesel", "Diesel" }
+			    }
+			)
+
+	annotation PBI_Id = 1943ca8ff3664c72b8feee43b2992e87
+
