@@ -1,0 +1,46 @@
+table 'Sort by'
+	lineageTag: 7bc3dffc-c60d-4703-812a-860c27925af7
+
+	column Index
+		formatString: 0
+		lineageTag: 82e8a966-6dfd-46e3-9786-8cd63b910911
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 7fa2eba1-69d6-4a2b-8f07-79a7f39aa60e
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 1535b7e2-2848-4add-99ea-a26c11812c65
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Sort by' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Name", "Name" },
+				{ 1, "Total Number", "Total Number" },
+				{ 2, "Percent Complete", "Percent Complete" }
+			    }
+			)
+
+	annotation PBI_Id = af68280ce6874378891a40c21c39552d
+
