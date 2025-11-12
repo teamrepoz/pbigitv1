@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "DTM T ",
+      "dax_expression": "VAR useCustom = SELECTEDVALUE('Use Custom Date'[Display As])\nVAR endDateParam = SELECTEDVALUE('End Date'[Display As])\nRETURN\nIF(\n    useCustom,\n    IF(\n        'migration_Extract_POC (1) (local copy)'[Max Date] = 'migration_Extract_POC (1) (local copy)'[RpDate],\n        'migration_Extract_POC (1) (local copy)'[DTM],\n        0\n    ),\n    IF(\n        'migration_Extract_POC (1) (local copy)'[RpDate] = endDateParam,\n        'migration_Extract_POC (1) (local copy)'[DTM],\n        0\n    )\n)",
+      "solution_explanation": "Replaced parameter references with SELECTEDVALUE('ParameterName'[Display As]) and converted row/field references to 'migration_Extract_POC (1) (local copy)'[Column]. Implemented nested IF logic with VARs and RETURN to mirror the Tableau IF/ELSE structure.",
+      "type_changed_reason": "The calculation references parameters, and all parameter-based calculations must be measures."
+    }
+  ]
+}
