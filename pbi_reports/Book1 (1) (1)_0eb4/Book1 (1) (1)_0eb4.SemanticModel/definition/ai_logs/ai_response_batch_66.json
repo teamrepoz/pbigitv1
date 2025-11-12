@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Gross Utilization % (Corp)",
+      "dax_expression": "ABS( SUM('migration_Extract_POC (1) (local copy)'[Initial Cash USD T (excl Int/FWD)]) / MAX('migration_Extract_POC (1) (local copy)'[Limit (Corp)]) )",
+      "solution_explanation": "Translated Tableau ABS(SUM([Initial Cash USD T (excl Int/FWD)])/MAX([Limit (Corp)])) to DAX. SUM and MAX are preserved as aggregations and wrapped with ABS. All column references were converted to the 'TableName'[Column] format and kept on the same table. This calculation requires a measure because it uses aggregation functions."
+    }
+  ]
+}
