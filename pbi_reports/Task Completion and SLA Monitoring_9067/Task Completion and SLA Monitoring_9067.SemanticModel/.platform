@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Task Completion and SLA Monitoring_9067"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "759c2d18-7a5b-41bf-af80-d37994fc6496"
+  }
+}
