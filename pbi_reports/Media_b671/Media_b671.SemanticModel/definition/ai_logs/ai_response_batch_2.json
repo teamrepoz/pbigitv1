@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Parameters",
+      "name": "Top N",
+      "dax_expression": "10",
+      "solution_explanation": "The Tableau expression is a constant numeric value (10). In Power BI this is implemented as a simple measure returning the scalar value so it can be used in filters and measure calculations.",
+      "type_changed_reason": "The calculation is a parameter-like constant placed in the Parameters table; per the rules, parameter/parameter-table values should be created as measures to be selectable in the model."
+    }
+  ]
+}
