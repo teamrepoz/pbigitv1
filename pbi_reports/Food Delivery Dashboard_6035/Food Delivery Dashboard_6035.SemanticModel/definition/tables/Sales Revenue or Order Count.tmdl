@@ -1,0 +1,45 @@
+table 'Sales Revenue or Order Count'
+	lineageTag: ccf93330-0539-4ef5-ae43-41beb104dfaf
+
+	column Index
+		formatString: 0
+		lineageTag: 986e439a-d659-46aa-87bf-9f97683a9e66
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 0d87005d-8f9d-4fe4-b8e4-c15e6bd03ed4
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 8bc06ee7-5211-4604-b102-c39107ba579e
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Sales Revenue or Order Count' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Sales Revenue", "SALES REVENUE" },
+				{ 1, "Order Count", "ORDER COUNT" }
+			    }
+			)
+
+	annotation PBI_Id = 9d6cf087bd4f4e259eb9b5c6ed39115f
+
