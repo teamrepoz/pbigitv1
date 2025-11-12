@@ -1,0 +1,125 @@
+table 'Sheet1+ (Multiple Connections)'
+	lineageTag: be4be080-b90e-4a1a-bd70-db48b4b7291c
+
+	column PatientID
+		dataType: int64
+		formatString: 0
+		lineageTag: 3d6921d4-ec03-4ed0-b7a2-e895cbeb6306
+		summarizeBy: sum
+		sourceColumn: PatientID
+
+		annotation SummarizationSetBy = Automatic
+
+	column AppointmentID
+		dataType: string
+		lineageTag: 9a898a0a-6d32-45ad-acf1-cebf6992f918
+		summarizeBy: none
+		sourceColumn: AppointmentID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: datetime
+		lineageTag: 0d602c7c-b5e6-4fac-b410-dc312c00362a
+		summarizeBy: none
+		sourceColumn: Date
+
+		variation Variation
+			isDefault
+			relationship: 10c0fcf0-e028-4b48-9966-51e685b777ad
+			defaultHierarchy: LocalDateTable_3a21d87d-ac5f-416d-8f91-05627b11a78c.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Doctor
+		dataType: string
+		lineageTag: 2f72d65c-130d-431a-8573-4712280914fc
+		summarizeBy: none
+		sourceColumn: Doctor
+
+		annotation SummarizationSetBy = Automatic
+
+	column Department
+		dataType: string
+		lineageTag: 89899d9c-e7d4-4616-a88f-cbdf9ad748e1
+		summarizeBy: none
+		sourceColumn: Department
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: ecc9bf9e-322f-40c8-8cf9-ef3e5cb9dbfb
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PatientID 1'
+		dataType: int64
+		formatString: 0
+		lineageTag: f0275c1e-17b7-42d3-93bf-0b52b55cdcbc
+		summarizeBy: sum
+		sourceColumn: 'PatientID 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column PrescriptionID
+		dataType: string
+		lineageTag: 52045d04-81a4-449a-befa-58be191fe051
+		summarizeBy: none
+		sourceColumn: PrescriptionID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date 1'
+		dataType: datetime
+		lineageTag: 713d6433-e645-45f6-8308-a11bdb624dd0
+		summarizeBy: none
+		sourceColumn: 'Date 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Medicine
+		dataType: string
+		lineageTag: 83f8cf2d-88b7-4f7a-b6e0-39fffa49fb11
+		summarizeBy: none
+		sourceColumn: Medicine
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dosage
+		dataType: string
+		lineageTag: d91af1af-23ec-45f8-8394-9f1813fd96f4
+		summarizeBy: none
+		sourceColumn: Dosage
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Doctor 1'
+		dataType: string
+		lineageTag: 27748f57-40a2-401f-b6c9-501c5541c9da
+		summarizeBy: none
+		sourceColumn: 'Doctor 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Notes
+		dataType: string
+		lineageTag: 1deae2bd-2693-4a10-ad0f-b54d62d87fa1
+		summarizeBy: none
+		sourceColumn: Notes
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Sheet1+ (Multiple Connections)' = m
+		mode: import
+		source =
+				let 
+					#"Source0" = Table.NestedJoin(#"Sheet1_Sheet1+ (Multiple Connections)", {"PatientID"}, #"prescriptions.csv_Sheet1+ (Multiple Connections)", {"PatientID"}, "prescriptions.csv_Sheet1+ (Multiple Connections)", JoinKind.Inner),
+					#"Expand0" = Table.ExpandTableColumn(#"Source0", "prescriptions.csv_Sheet1+ (Multiple Connections)", {"PatientID", "PrescriptionID", "Date", "Medicine", "Dosage", "Doctor", "Notes"}, {"PatientID 1", "PrescriptionID", "Date 1", "Medicine", "Dosage", "Doctor 1", "Notes"})
+					in #"Expand0"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
