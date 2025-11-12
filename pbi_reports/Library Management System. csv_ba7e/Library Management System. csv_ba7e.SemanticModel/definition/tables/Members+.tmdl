@@ -1,0 +1,119 @@
+table 'Members+'
+	lineageTag: 2af1a8db-85df-4b21-993f-5a529cfb89a1
+
+	column TransactionID
+		dataType: int64
+		formatString: 0
+		lineageTag: ae00857c-174c-4fd9-bf0e-426530c214d9
+		summarizeBy: sum
+		sourceColumn: TransactionID
+
+		annotation SummarizationSetBy = Automatic
+
+	column MemberID
+		dataType: int64
+		formatString: 0
+		lineageTag: fdd5a1de-c382-43bc-9ead-c923088128b0
+		summarizeBy: sum
+		sourceColumn: MemberID
+
+		annotation SummarizationSetBy = Automatic
+
+	column BookID
+		dataType: int64
+		formatString: 0
+		lineageTag: b0acc541-a27e-415a-afda-c972acb3af8c
+		summarizeBy: sum
+		sourceColumn: BookID
+
+		annotation SummarizationSetBy = Automatic
+
+	column BorrowDate
+		dataType: datetime
+		lineageTag: 9bca4d30-a50d-4636-ade8-0f3f31fd6936
+		summarizeBy: none
+		sourceColumn: BorrowDate
+
+		variation Variation
+			isDefault
+			relationship: f5ffa475-a2a4-441a-bf0a-7c3d2ae03b8f
+			defaultHierarchy: LocalDateTable_c7ca83ed-e4ed-45aa-a618-abd9a4eaee0f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column ReturnDate
+		dataType: datetime
+		lineageTag: 46f1434d-a625-40ff-83df-efbcfce54e50
+		summarizeBy: none
+		sourceColumn: ReturnDate
+
+		variation Variation
+			isDefault
+			relationship: 4c829a96-8dcc-4935-861b-452cbf00f117
+			defaultHierarchy: LocalDateTable_ac889537-a80b-4d7b-a0cc-4425ae4f8641.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Returned
+		dataType: string
+		lineageTag: 741165d1-1313-4f70-a154-782f91642263
+		summarizeBy: none
+		sourceColumn: Returned
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'BookID 1'
+		dataType: int64
+		formatString: 0
+		lineageTag: 5246d156-f793-495d-9db2-fa3b3c800ad0
+		summarizeBy: sum
+		sourceColumn: 'BookID 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Title
+		dataType: string
+		lineageTag: 02196d9f-9dcc-48b6-bd9e-2b09c18c3d84
+		summarizeBy: none
+		sourceColumn: Title
+
+		annotation SummarizationSetBy = Automatic
+
+	column Genre
+		dataType: string
+		lineageTag: 58b105f9-b3d3-4fd0-a50b-05e4bed81cff
+		summarizeBy: none
+		sourceColumn: Genre
+
+		annotation SummarizationSetBy = Automatic
+
+	column Author
+		dataType: string
+		lineageTag: 7588d423-1656-4ddd-8b45-f1a3c4429c2c
+		summarizeBy: none
+		sourceColumn: Author
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'MemberID 1'
+		dataType: int64
+		formatString: 0
+		lineageTag: d64b9f9c-ad72-4508-b3f2-de3ba13fab82
+		summarizeBy: sum
+		sourceColumn: 'MemberID 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Members+' = m
+		mode: import
+		source =
+				let 
+					#"Source0" = Table.NestedJoin(#"Members.csv_Members+", {"MemberID"}, #"Borrowing (1).csv_Members+", {"MemberID"}, "Borrowing (1).csv_Members+", JoinKind.Inner),
+					#"Expand0" = Table.ExpandTableColumn(#"Source0", "Borrowing (1).csv_Members+", {"TransactionID", "MemberID", "BookID", "BorrowDate", "ReturnDate", "Returned"}, {"TransactionID", "MemberID 1", "BookID", "BorrowDate", "ReturnDate", "Returned"}),
+					#"Source1" = Table.NestedJoin(#"Expand0", {"BookID"}, #"Books.csv_Members+", {"BookID"}, "Books.csv_Members+", JoinKind.Inner),
+					#"Expand1" = Table.ExpandTableColumn(#"Source1", "Books.csv_Members+", {"BookID", "Title", "Genre", "Author"}, {"BookID 1", "Title", "Genre", "Author"})
+					in #"Expand1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
