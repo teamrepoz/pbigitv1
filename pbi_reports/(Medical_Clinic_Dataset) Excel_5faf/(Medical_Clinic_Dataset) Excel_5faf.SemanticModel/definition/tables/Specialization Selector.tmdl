@@ -1,0 +1,46 @@
+table 'Specialization Selector'
+	lineageTag: 197d515f-8229-4bf1-833c-1db562ea48dd
+
+	column Index
+		formatString: 0
+		lineageTag: 41ca47aa-e321-42db-b88c-dad0cfe9cd37
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 8409d081-e10f-4bac-940f-ba571b106083
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 06adfc20-fd77-410e-95ee-a12d01ed38d1
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Specialization Selector' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Cardiology", "Cardiology" },
+				{ 1, "Neurology", "Neurology" },
+				{ 2, "General Medicine", "General Medicine" }
+			    }
+			)
+
+	annotation PBI_Id = b2c7318f9ef44be4afa92e6d0ba721df
+
