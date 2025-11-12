@@ -1,0 +1,39 @@
+{
+  "calculations": [
+    {
+      "name": "Netted ",
+      "table_name": "migration_Extract_POC (1) (local copy)",
+      "tableau_expression": "Sum(IF [R/RR]=\"R\" THEN \r\n([Initial Cash USD (excl Int/FWD)])*-1\r\nELSEIF  [R/RR]=\"RR\" THEN\r\n([Initial Cash USD (excl Int/FWD)]) END)\r\n\r\n-SUM([fixed netting])",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "Sum(IF [R/RR]=\"R\" THEN \r\n([Initial Cash USD (excl Int/FWD)])*-1\r\nELSEIF  [R/RR]=\"RR\" THEN\r\n([Initial Cash USD (excl Int/FWD)]) END)\r\n\r\n-SUM([fixed netting])",
+        "calculated_fields": {
+          "Initial Cash USD (excl Int/FWD)": "if [Is Internal ? (group)]=\"external\" AND [Is Forward Start ?]=0 THEN [Ut. US MM] else 0 END",
+          "fixed netting": "{FIXED   [RpDate],[CounterParty],[Cash curr],[Maturity Date] : MIN(\r\n[fixed netting 3 R],[fixed netting 3 RR])}",
+          "fixed netting 3 R": "Sum(ABS({FIXED   [RpDate],[Subs],[Counterpty],[Cash curr],[Maturity Date],[R/RR]: \r\n(\r\n(Sum(IF [Is Forward Start ?] = 0 AND [Is Approved for Netting] = \"1\" \r\nAND [Bucket]<>\"open\"  AND  [R/RR]=\"R\"\r\nTHEN ([Ut. US MM]) ELSE 0 END)))}))",
+          "fixed netting 3 RR": "Sum(ABS({FIXED   [RpDate],[Subs],[Counterpty],[Cash curr],[Maturity Date],[R/RR]: \r\n(\r\n(Sum(IF [Is Forward Start ?] = 0 AND [Is Approved for Netting] = \"1\" \r\nAND [Bucket]<>\"open\"  AND  [R/RR]=\"RR\"\r\nTHEN ([Ut. US MM]) ELSE 0 END)))}))"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "RpDate": "date",
+          "Cash curr": "string",
+          "Counterpty": "string",
+          "Subs": "string",
+          "R/RR": "string",
+          "Is Forward Start ?": "integer",
+          "Maturity Date": "date",
+          "Ut. US MM": "real",
+          "CounterParty": "string",
+          "Is Approved for Netting": "string",
+          "Bucket": "string"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Initial Cash USD (excl Int/FWD)": "real",
+          "fixed netting": "real",
+          "fixed netting 3 R": "real",
+          "fixed netting 3 RR": "real"
+        }
+      }
+    }
+  ]
+}
