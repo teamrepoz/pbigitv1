@@ -1,0 +1,15 @@
+relationship a5183ffa-68ca-4799-a12b-ee8b45c6ba72
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Orders_Customers+ (Online_Retail_Store)'.OrderDate
+	toColumn: LocalDateTable_4cba3cc2-718f-4d09-bdd8-56fd58d72a71.Date
+
+relationship 4042f791-b9a6-4d0a-af5b-559527fea012
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Customers+ (Online_Retail_Store)'.OrderDate
+	toColumn: LocalDateTable_9285c435-0fc1-42aa-8818-4c0d030c1069.Date
+
+relationship a86bfeba-ae68-4f19-81c1-6be59be77ccd
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Customers+ (Online_Retail_Store)'.OrderDate
+	toColumn: LocalDateTable_56729ac6-6560-49a6-ac1b-d4c30caeeb58.Date
+
