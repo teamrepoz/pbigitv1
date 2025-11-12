@@ -1,0 +1,46 @@
+table 'Select Metric'
+	lineageTag: db8111ac-021d-4749-8534-b866cbade51b
+
+	column Index
+		formatString: 0
+		lineageTag: 6511ed2a-4ea5-421f-b537-0a3514259b5d
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 8942c8a4-fe92-4c13-846d-44d7480ed68f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 5b191499-42f5-4184-a11b-e4bfbf0ae8ca
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Select Metric' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Likes", "Likes" },
+				{ 1, "Posts", "Posts" },
+				{ 2, "Messages ", "Messages " }
+			    }
+			)
+
+	annotation PBI_Id = 06e4ea3b2cc143fabe18e7ec4d6cb8ff
+
