@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Initial Cash USD T (excl Int/FWD) Abs",
+      "dax_expression": "ABS(SUM('migration_Extract_POC (1) (local copy)'[Initial Cash USD T (excl Int/FWD)]))",
+      "solution_explanation": "Converted Tableau ABS(SUM([Initial Cash USD T (excl Int/FWD)])) to DAX using ABS and SUM. Transformed the column reference to the table-qualified format 'migration_Extract_POC (1) (local copy)'[Initial Cash USD T (excl Int/FWD)]. This is a measure because it uses an aggregation (SUM)."
+    }
+  ]
+}
