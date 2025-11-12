@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Netted T",
+      "dax_expression": "VAR initialSum = SUMX(\n    'migration_Extract_POC (1) (local copy)',\n    IF(\n        'migration_Extract_POC (1) (local copy)'[R/RR] = \"R\",\n        'migration_Extract_POC (1) (local copy)'[Initial Cash USD T (excl Int/FWD)] * -1,\n        IF(\n            'migration_Extract_POC (1) (local copy)'[R/RR] = \"RR\",\n            'migration_Extract_POC (1) (local copy)'[Initial Cash USD T (excl Int/FWD)],\n            0\n        )\n    )\n)\nRETURN\ninitialSum - SUM('migration_Extract_POC (1) (local copy)'[fixed netting (T)])",
+      "solution_explanation": "Translated the Tableau SUM(IF ...) to a SUMX over the table with nested IFs to apply the row-level sign logic, then subtracted the SUM of 'fixed netting (T)'. All column references converted to 'Table'[Column] format.",
+      "type_changed_reason": "The original Tableau formula uses aggregation (SUM) and table-level calculations, so it must be created as a measure in Power BI."
+    }
+  ]
+}
