@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "test+",
+      "name": "Age Category ",
+      "dax_expression": "IF('test+'[Age] < 25, \"Young\", \"Adult\")",
+      "solution_explanation": "Converted the row-level Tableau IF ... THEN ... ELSE ... END to a DAX calculated column using IF(). All column references were transformed to the 'TableName'[ColumnName] format: [Age] -> 'test+'[Age]. This is a row-level transformation (no aggregations or parameters), so it is implemented as a calculated column."
+    }
+  ]
+}
