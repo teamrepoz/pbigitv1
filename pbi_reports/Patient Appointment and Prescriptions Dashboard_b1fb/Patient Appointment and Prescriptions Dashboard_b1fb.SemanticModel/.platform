@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Patient Appointment and Prescriptions Dashboard_b1fb"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "726da400-c821-4846-a4b5-b147d771986d"
+  }
+}
