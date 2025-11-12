@@ -1,0 +1,10 @@
+relationship 4ab63856-ee71-447e-b3e9-c4585c99f8f7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Transactions (Dummy Data_Vendors_06082015)'.Date
+	toColumn: LocalDateTable_51695493-e2ca-46e6-9a44-f924765ce52e.Date
+
+relationship e7e8e3ca-937b-43c3-a5d3-a8a040f021a9
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Transactions (Dummy Data_Vendors_06082015)_None'.Date
+	toColumn: LocalDateTable_14bf3888-e696-41e9-9e77-03d7b6672e56.Date
+
