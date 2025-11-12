@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "fixed netting 3 R",
+      "dax_expression": "VAR summaryTable =\n    ADDCOLUMNS(\n        SUMMARIZE(\n            'migration_Extract_POC (1) (local copy)',\n            'migration_Extract_POC (1) (local copy)'[RpDate],\n            'migration_Extract_POC (1) (local copy)'[Subs],\n            'migration_Extract_POC (1) (local copy)'[Counterpty],\n            'migration_Extract_POC (1) (local copy)'[Cash curr],\n            'migration_Extract_POC (1) (local copy)'[Maturity Date],\n            'migration_Extract_POC (1) (local copy)'[R/RR]\n        ),\n        \"groupSum\", CALCULATE(\n            SUM('migration_Extract_POC (1) (local copy)'[Ut. US MM]),\n            'migration_Extract_POC (1) (local copy)'[Is Forward Start ?] = 0,\n            'migration_Extract_POC (1) (local copy)'[Is Approved for Netting] = \"1\",\n            'migration_Extract_POC (1) (local copy)'[Bucket] <> \"open\",\n            'migration_Extract_POC (1) (local copy)'[R/RR] = \"R\"\n        )\n    )\nRETURN\n    SUMX(summaryTable, ABS([groupSum]))",
+      "solution_explanation": "Replaced the FIXED LOD by grouping the table at the FIXED keys using SUMMARIZE and computing the per-group sum with CALCULATE (applying the same boolean filters). Then summarized across groups with SUMX( ..., ABS(groupSum)). This preserves the semantics of the Tableau {FIXED ... : SUM(...)} wrapped by ABS and an outer SUM.",
+      "type_changed_reason": "The Tableau expression uses a FIXED LOD and aggregation (Sum), which requires an aggregate/context-aware calculation in Power BI, so it must be implemented as a measure."
+    }
+  ]
+}
