@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Parameters",
+      "name": "Age Cut Value",
+      "dax_expression": "30",
+      "solution_explanation": "The Tableau expression is a simple constant (30). This is a row-level constant value, so it is implemented as a calculated column that returns 30."
+    }
+  ]
+}
