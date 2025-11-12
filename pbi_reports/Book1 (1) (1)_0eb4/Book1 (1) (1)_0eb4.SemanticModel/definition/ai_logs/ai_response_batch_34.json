@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "mod US MM",
+      "dax_expression": "IF('migration_Extract_POC (1) (local copy)'[R/RR] = \"SFB\", 'migration_Extract_POC (1) (local copy)'[Ut. US MM] * -1, 'migration_Extract_POC (1) (local copy)'[Ut. US MM])",
+      "solution_explanation": "Row-level IF that negates the Ut. US MM value when R/RR equals \"SFB\". Converted Tableau IF to DAX IF and replaced column references with 'TableName'[ColumnName] format. This is a calculated column because it operates at the row level without aggregation."
+    }
+  ]
+}
