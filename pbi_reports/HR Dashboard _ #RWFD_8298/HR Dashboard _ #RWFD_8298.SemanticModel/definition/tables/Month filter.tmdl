@@ -1,0 +1,48 @@
+table 'Month filter'
+	lineageTag: 66c14a4e-c5e4-4370-8807-3eecc7d984f3
+
+	column Index
+		formatString: 0
+		lineageTag: 4c44519f-f3e5-4db3-9c45-df11e4a1c69b
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: a88c3a1b-a2e8-4b37-9844-b08418be26b0
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 855f20d7-9eb3-4644-8bc5-f4a7c577a0d8
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Month filter' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", INTEGER,
+			    "Value", INTEGER,
+			    {
+			        { 0, June, 6 },
+				{ 1, July, 7 },
+				{ 2, August, 8 },
+				{ 3, September, 9 },
+				{ 4, October, 10 }
+			    }
+			)
+
+	annotation PBI_Id = 767feda848f547ca8a6188ac81293e5e
+
