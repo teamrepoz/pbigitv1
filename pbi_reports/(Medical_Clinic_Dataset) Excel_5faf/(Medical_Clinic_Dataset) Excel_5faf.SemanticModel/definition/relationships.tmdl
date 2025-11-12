@@ -1,0 +1,25 @@
+relationship 3ee09a38-3700-48da-9d8f-7d25fd700261
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Appointments_Appointments+ (Medical_Clinic_Dataset)'.AppointmentDate
+	toColumn: LocalDateTable_53189a8d-4909-465c-9612-594e863f335e.Date
+
+relationship d14f5375-ff82-47fd-97b5-e786805345b3
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Patients_Appointments+ (Medical_Clinic_Dataset)'.DOB
+	toColumn: LocalDateTable_92f30e7d-cfcf-44e1-8af4-d69a1e3ed2f0.Date
+
+relationship 732d3f66-ccf0-474c-a0a2-17d1d0fefb02
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Appointments+ (Medical_Clinic_Dataset)'.AppointmentDate
+	toColumn: LocalDateTable_55d2e8c2-009d-445a-a7ea-3d41d63faee7.Date
+
+relationship f2493223-6fac-446b-893f-60644f6b7d68
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Appointments+ (Medical_Clinic_Dataset)'.AppointmentDate
+	toColumn: LocalDateTable_5e305aef-b18a-43cc-94ef-9e2bbe9293a3.Date
+
+relationship 80fb4e8f-8bfc-4e06-b9d1-5f2c5fdd2714
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Appointments+ (Medical_Clinic_Dataset)'.DOB
+	toColumn: LocalDateTable_16466640-9e1c-4d64-853e-8582e57b61e4.Date
+
