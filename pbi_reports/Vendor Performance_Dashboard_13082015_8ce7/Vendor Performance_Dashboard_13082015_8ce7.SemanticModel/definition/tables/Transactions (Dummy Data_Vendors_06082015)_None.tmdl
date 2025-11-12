@@ -1,0 +1,63 @@
+table 'Transactions (Dummy Data_Vendors_06082015)_None'
+	lineageTag: c16c74b1-a33f-4830-8875-68cd5694af70
+
+	column ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 6fbfa505-eb42-4591-84aa-6b2269bf3309
+		summarizeBy: sum
+		sourceColumn: ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: datetime
+		lineageTag: 036bec3c-f4a8-4f84-8889-4e16e660c595
+		summarizeBy: none
+		sourceColumn: Date
+
+		variation Variation
+			isDefault
+			relationship: e7e8e3ca-937b-43c3-a5d3-a8a040f021a9
+			defaultHierarchy: LocalDateTable_14bf3888-e696-41e9-9e77-03d7b6672e56.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Amount ($)'
+		dataType: int64
+		formatString: 0
+		lineageTag: 75edc6c4-360e-485c-95a9-a494f1b63aeb
+		summarizeBy: sum
+		sourceColumn: 'Amount ($)'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product
+		dataType: string
+		lineageTag: c4433462-98a4-400c-9b55-030792f86daa
+		summarizeBy: none
+		sourceColumn: Product
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		lineageTag: 6f8e7adf-dbeb-4e3d-8833-dc4ffcdddecf
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Transactions (Dummy Data_Vendors_06082015)_None' = m
+		mode: import
+		source =
+				let
+					    // Fallback for logical table: 
+					    // Member tables: "Transactions (Dummy Data_Vendors_06082015)", "Transactions (Dummy Data_Vendors_06082015)_Vendors$"
+					    Source = #table({"Table"}, { "Transactions (Dummy Data_Vendors_06082015)", "Transactions (Dummy Data_Vendors_06082015)_Vendors$" })
+					in
+					    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
