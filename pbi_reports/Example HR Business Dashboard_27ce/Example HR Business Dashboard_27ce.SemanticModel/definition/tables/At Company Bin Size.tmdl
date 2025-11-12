@@ -1,0 +1,44 @@
+table 'At Company Bin Size'
+	lineageTag: 97ad1bc2-d2df-470d-9e5a-eaebad6d4b72
+
+	column Index
+		formatString: 0
+		lineageTag: cbe30616-e6d2-4c9c-9d5e-e83bd661ac2b
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 2c4569c5-528d-46b9-b3c0-255791e509a3
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: d9fe5df9-ec35-4373-b2d2-28b8aa642aa0
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'At Company Bin Size' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", DOUBLE,
+			    "Value", DOUBLE,
+			    {
+			        {0, 5.0, 5.0}
+			    }
+			)
+
+	annotation PBI_Id = f804fc20957f4362865347f457eff902
+
