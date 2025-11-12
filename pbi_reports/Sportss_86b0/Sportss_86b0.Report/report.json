@@ -1,0 +1,71 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.63\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "name": "Section_Dashboard 1",
+      "ordinal": 0,
+      "displayName": "Dashboard 1",
+      "visualContainers": [
+        {
+          "x": 8,
+          "y": 78,
+          "z": 0,
+          "width": 772,
+          "height": 327,
+          "config": "{\"name\": \"89b04f17b\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 8, \"y\": 78, \"z\": 1000, \"width\": 772, \"height\": 327, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"lineChart\", \"projections\": {\"Category\": [{\"queryRef\": \"dictionary+.Total Medal Count\", \"active\": true}], \"Y\": [{\"queryRef\": \"dictionary+.Year (winter.csv)\"}], \"Series\": []}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"d\", \"Entity\": \"dictionary+\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Property\": \"Total Medal Count\", \"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}}, \"Name\": \"dictionary+.Total Medal Count\", \"NativeReferenceName\": \"Total Medal Count\"}, {\"Measure\": {\"Property\": \"Year (winter.csv)\", \"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}}, \"Name\": \"dictionary+.Year (winter.csv)\", \"NativeReferenceName\": \"Year (winter.csv)\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}, \"Property\": \"Year (winter.csv)\"}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"titleBold\": {\"expr\": {\"Literal\": {\"Value\": \"\"}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"18D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Year Trend Line Chart'\"}}}}}]}}}"
+        },
+        {
+          "x": 3,
+          "y": 416,
+          "z": 0,
+          "width": 423,
+          "height": 378,
+          "config": "{\"name\": \"cfc50231\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 3, \"y\": 416, \"z\": 1000, \"width\": 423, \"height\": 378, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"pieChart\", \"projections\": {\"Category\": [{\"queryRef\": \"dictionary+.Gender\", \"active\": true}], \"Y\": [{\"queryRef\": \"dictionary+.Total Medal Count\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"d\", \"Entity\": \"dictionary+\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Property\": \"Gender\", \"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}}, \"Name\": \"dictionary+.Gender\", \"NativeReferenceName\": \"Gender\"}, {\"Measure\": {\"Property\": \"Total Medal Count\", \"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}}, \"Name\": \"dictionary+.Total Medal Count\", \"NativeReferenceName\": \"Total Medal Count\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}, \"Property\": \"Total Medal Count\"}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#ffffff'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": 18}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Gender Wise Total Medal Count'\"}}}}}]}}}"
+        },
+        {
+          "x": 432,
+          "y": 412,
+          "z": 0,
+          "width": 651,
+          "height": 387,
+          "config": "{\"name\": \"0f915c1826fd1\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 432, \"y\": 412, \"z\": 1000, \"width\": 651, \"height\": 387, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"columnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"dictionary+.Total Medal Count\", \"active\": true}], \"Y\": [{\"queryRef\": \"dictionary+.Discipline (winter.csv)\"}], \"Series\": []}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"d\", \"Entity\": \"dictionary+\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Property\": \"Discipline (winter.csv)\", \"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}}, \"Name\": \"dictionary+.Discipline (winter.csv)\", \"NativeReferenceName\": \"Discipline (winter.csv)\"}, {\"Measure\": {\"Property\": \"Total Medal Count\", \"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}}, \"Name\": \"dictionary+.Total Medal Count\", \"NativeReferenceName\": \"Total Medal Count\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}, \"Property\": \"Discipline (winter.csv)\"}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"titleBold\": {\"expr\": {\"Literal\": {\"Value\": \"\"}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#ffffff'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"18D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Discipline wise total medal'\"}}}}}]}}}"
+        },
+        {
+          "x": 788,
+          "y": 78,
+          "z": 0,
+          "width": 772,
+          "height": 327,
+          "config": "{\"name\": \"81d66ac7e3\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 788, \"y\": 78, \"z\": 1000, \"width\": 772, \"height\": 327, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"columnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"dictionary+.Total Medal Count\", \"active\": true}], \"Y\": [{\"queryRef\": \"dictionary+.Year\"}], \"Series\": []}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"d\", \"Entity\": \"dictionary+\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Property\": \"Total Medal Count\", \"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}}, \"Name\": \"dictionary+.Total Medal Count\", \"NativeReferenceName\": \"Total Medal Count\"}, {\"Column\": {\"Property\": \"Year\", \"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}}, \"Name\": \"dictionary+.Year\", \"NativeReferenceName\": \"Year\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}, \"Property\": \"Year\"}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"titleBold\": {\"expr\": {\"Literal\": {\"Value\": \"\"}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"18D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Cumalative Medal Trend (running total)'\"}}}}}]}}}"
+        },
+        {
+          "x": 1083,
+          "y": 412,
+          "z": 0,
+          "width": 514,
+          "height": 382,
+          "config": "{\"name\": \"45d6bb11829c84aa\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1083, \"y\": 412, \"z\": 1000, \"width\": 514, \"height\": 382, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"pieChart\", \"projections\": {\"Category\": [{\"queryRef\": \"dictionary+.Country\", \"active\": true}], \"Y\": [{\"queryRef\": \"dictionary+.Total Medal Count\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"d\", \"Entity\": \"dictionary+\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Property\": \"Country\", \"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}}, \"Name\": \"dictionary+.Country\", \"NativeReferenceName\": \"Country\"}, {\"Measure\": {\"Property\": \"Total Medal Count\", \"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}}, \"Name\": \"dictionary+.Total Medal Count\", \"NativeReferenceName\": \"Total Medal Count\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}, \"Property\": \"Total Medal Count\"}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#ffffff'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"18D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Medal % Contribution Pie by Country'\"}}}}}]}}}"
+        }
+      ],
+      "width": 1600.0,
+      "height": 800.0
+    }
+  ]
+}
