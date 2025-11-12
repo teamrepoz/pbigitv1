@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "CFC Performance Insights_d1fd"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "1fff2b90-81bc-42e3-a7df-9aea43b5f8ef"
+  }
+}
