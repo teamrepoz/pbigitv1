@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Last day of the month",
+      "table_name": "migration_Extract_POC (1) (local copy)",
+      "tableau_expression": "CASE DATEPART(\"weekday\",DATEADD('second',-1,DATEADD('month',1,DATETRUNC('month',[RpDate]))))\r\n\r\n    WHEN 1 THEN DATEADD('second',-1,DATEADD('month',1,DATETRUNC('month',[RpDate])))-2\r\n\r\n    WHEN 7 THEN DATEADD('second',-1,DATEADD('month',1,DATETRUNC('month',[RpDate])))-1\r\n\r\n    ELSE DATEADD('second',-1,DATEADD('month',1,DATETRUNC('month',[RpDate])))\r\n\r\nEND",
+      "datatype": "datetime",
+      "calculation_context": {
+        "Expression": "CASE DATEPART(\"weekday\",DATEADD('second',-1,DATEADD('month',1,DATETRUNC('month',[RpDate]))))\r\n\r\n    WHEN 1 THEN DATEADD('second',-1,DATEADD('month',1,DATETRUNC('month',[RpDate])))-2\r\n\r\n    WHEN 7 THEN DATEADD('second',-1,DATEADD('month',1,DATETRUNC('month',[RpDate])))-1\r\n\r\n    ELSE DATEADD('second',-1,DATEADD('month',1,DATETRUNC('month',[RpDate])))\r\n\r\nEND",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "RpDate": "date"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
