@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "[Initial Cash USD T (excl Int/FWD) Abs] / TOTAL([Initial Cash USD T (excl Int/FWD) Abs])",
+      "dax_expression": "VAR Numerator = ABS(SUM('migration_Extract_POC (1) (local copy)'[Initial Cash USD T (excl Int/FWD)]))\nVAR Denominator = CALCULATE(ABS(SUM('migration_Extract_POC (1) (local copy)'[Initial Cash USD T (excl Int/FWD)])), ALL('migration_Extract_POC (1) (local copy)'))\nRETURN DIVIDE(Numerator, Denominator, 0)",
+      "solution_explanation": "Reproduced the Tableau expression by computing the row/partition sum as ABS(SUM(...)) and using CALCULATE(..., ALL(table)) as the DAX equivalent of Tableau's TOTAL(...) to get the table-level total; finally used DIVIDE for safe division.",
+      "type_changed_reason": "The Tableau expression uses TOTAL (a table calculation) and ABS(SUM(...)), which are aggregate/context-based operations, so this must be created as a measure."
+    }
+  ]
+}
