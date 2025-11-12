@@ -1,0 +1,20 @@
+{
+  "calculations": [
+    {
+      "name": "Col DV01",
+      "table_name": "migration_Extract_POC (1) (local copy)",
+      "tableau_expression": "([End Cash (in USD)]*10^3)*(Date([Collateral Maturity])-DATE([RpDate]))/365*0.01*0.01",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "([End Cash (in USD)]*10^3)*(Date([Collateral Maturity])-DATE([RpDate]))/365*0.01*0.01",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "RpDate": "date",
+          "Collateral Maturity": "date"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
