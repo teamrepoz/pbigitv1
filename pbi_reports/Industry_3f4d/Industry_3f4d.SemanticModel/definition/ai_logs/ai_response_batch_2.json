@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Parameters",
+      "name": "View By",
+      "dax_expression": "\"Industry Name\"",
+      "solution_explanation": "Converted Tableau string literal to DAX string literal. The expression is a constant (row-level) value, so it is implemented as a calculated column on 'Parameters'."
+    }
+  ]
+}
