@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Year Category",
+      "table_name": "dictionary+",
+      "tableau_expression": "IF [Year] < 1950 THEN \"Early Era\"\r\nELSEIF [Year] < 2000 THEN \"Modern Era\"\r\nELSE \"Recent Era\"\r\nEND",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "IF [Year] < 1950 THEN \"Early Era\"\r\nELSEIF [Year] < 2000 THEN \"Modern Era\"\r\nELSE \"Recent Era\"\r\nEND",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Year": "integer"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
