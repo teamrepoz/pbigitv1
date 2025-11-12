@@ -1,0 +1,25 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "WATM(d) T-1",
+      "dax_expression": "VAR Numerator = SUMX('migration_Extract_POC (1) (local copy)', 'migration_Extract_POC (1) (local copy)'[Initial Cash USD X (excl Int/FWD)] * 'migration_Extract_POC (1) (local copy)'[DTM])\nVAR Denominator = SUM('migration_Extract_POC (1) (local copy)'[Initial Cash USD X (excl Int/FWD)])\nRETURN DIVIDE(Numerator, Denominator)",
+      "solution_explanation": "Translated Tableau SUM([Initial Cash USD X (excl Int/FWD)]*[DTM])/SUM([Initial Cash USD X (excl Int/FWD)]) to DAX using SUMX for the row-by-row product and DIVIDE for safe division."
+    },
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "WATM(d) T",
+      "dax_expression": "VAR Numerator = SUMX('migration_Extract_POC (1) (local copy)', 'migration_Extract_POC (1) (local copy)'[Initial Cash USD T (excl Int/FWD)] * 'migration_Extract_POC (1) (local copy)'[DTM])\nVAR Denominator = SUM('migration_Extract_POC (1) (local copy)'[Initial Cash USD T (excl Int/FWD)])\nRETURN DIVIDE(Numerator, Denominator)",
+      "solution_explanation": "Translated Tableau SUM([Initial Cash USD T (excl Int/FWD)]*[DTM])/SUM([Initial Cash USD T (excl Int/FWD)]) to DAX using SUMX for the row-by-row product and DIVIDE for safe division."
+    },
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Change in WATM",
+      "dax_expression": "VAR WATMT = [WATM(d) T]\nVAR WATMPrev = [WATM(d) T-1]\nRETURN WATMT - WATMPrev",
+      "solution_explanation": "Direct subtraction of the two measures WATM(d) T and WATM(d) T-1 to mirror the Tableau expression [WATM(d) T]-[WATM(d) T-1]."
+    }
+  ]
+}
