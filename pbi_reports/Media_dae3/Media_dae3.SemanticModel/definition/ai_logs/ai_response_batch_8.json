@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "test+",
+      "name": "Is High Likes ",
+      "dax_expression": "'test+'[Likes_Received_Per_Day] > 50",
+      "solution_explanation": "Converted the row-level boolean expression to a calculated column and replaced [Likes_Received_Per_Day] with 'test+'[Likes_Received_Per_Day] to follow Power BI column reference syntax.",
+      "type_changed_reason": "This calculation evaluates a per-row comparison without any aggregations or parameters, so it should be created as a calculated column (dimension)."
+    }
+  ]
+}
