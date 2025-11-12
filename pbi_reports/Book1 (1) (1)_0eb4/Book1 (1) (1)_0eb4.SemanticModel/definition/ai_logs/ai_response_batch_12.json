@@ -1,0 +1,18 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Initial Cash USD T (excl Int/FWD) Abs",
+      "dax_expression": "ABS( SUM('migration_Extract_POC (1) (local copy)'[Initial Cash USD T (excl Int/FWD)]) )",
+      "solution_explanation": "Implements the Tableau calculated field abs(SUM([Initial Cash USD T (excl Int/FWD)])) as a DAX measure using ABS and SUM."
+    },
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "BATCH",
+      "dax_expression": "DIVIDE(\n    [Initial Cash USD T (excl Int/FWD) Abs],\n    CALCULATE(\n        [Initial Cash USD T (excl Int/FWD) Abs],\n        ALL('migration_Extract_POC (1) (local copy)')\n    )\n)",
+      "solution_explanation": "Converts Tableau TOTAL(...) table calculation to a DAX measure by dividing the measure by its full-table total using CALCULATE with ALL to remove filters, matching the TOTAL behavior."
+    }
+  ]
+}
