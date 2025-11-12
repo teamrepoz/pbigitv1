@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "Limit (SSA)",
+      "table_name": "migration_Extract_POC (1) (local copy)",
+      "tableau_expression": "7000",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "7000",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
