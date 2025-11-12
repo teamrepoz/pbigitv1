@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Initial Cash USD T (excl Int/FWD)",
+      "dax_expression": "VAR useCustom = SELECTEDVALUE('Use Custom Date'[Display As])\nVAR paramEndDate = SELECTEDVALUE('End Date'[Display As])\nRETURN\nIF(\n    useCustom,\n    IF(\n        'migration_Extract_POC (1) (local copy)'[Max Date] = 'migration_Extract_POC (1) (local copy)'[RpDate]\n        && 'migration_Extract_POC (1) (local copy)'[Is Internal ? (group)] = \"external\"\n        && 'migration_Extract_POC (1) (local copy)'[Is Forward Start ?] = 0,\n        'migration_Extract_POC (1) (local copy)'[Ut. US MM],\n        0\n    ),\n    IF(\n        'migration_Extract_POC (1) (local copy)'[RpDate] = paramEndDate\n        && 'migration_Extract_POC (1) (local copy)'[Is Internal ? (group)] = \"external\"\n        && 'migration_Extract_POC (1) (local copy)'[Is Forward Start ?] = 0,\n        'migration_Extract_POC (1) (local copy)'[Ut. US MM],\n        0\n    )\n)",
+      "solution_explanation": "Converted the Tableau IF/ELSEIF logic into DAX using VARs for parameter values (SELECTEDVALUE for each Tableau parameter). All column references were transformed to the 'migration_Extract_POC (1) (local copy)'[Column] format. String literal \"external\" preserved. The two conditional branches mirror the original nested IFs and return [Ut. US MM] or 0 accordingly.",
+      "type_changed_reason": "The calculation references parameters ([Parameters].[Use Custom Date] and [Parameters].[End Date]); per rules, any formula that uses parameters must be created as a measure."
+    }
+  ]
+}
