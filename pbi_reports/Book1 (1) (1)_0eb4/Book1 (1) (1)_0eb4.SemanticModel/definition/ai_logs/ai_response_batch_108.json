@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "fixed netting 3 R (T)",
+      "dax_expression": "VAR _summary =\n    SUMMARIZE(\n        'migration_Extract_POC (1) (local copy)',\n        'migration_Extract_POC (1) (local copy)'[RpDate],\n        'migration_Extract_POC (1) (local copy)'[Subs],\n        'migration_Extract_POC (1) (local copy)'[Counterpty],\n        'migration_Extract_POC (1) (local copy)'[Cash curr],\n        'migration_Extract_POC (1) (local copy)'[Maturity Date],\n        'migration_Extract_POC (1) (local copy)'[R/RR],\n        \"FixedSum\",\n            CALCULATE(\n                SUM('migration_Extract_POC (1) (local copy)'[Ut. US MM]),\n                'migration_Extract_POC (1) (local copy)'[Is Forward Start ?] = 0,\n                'migration_Extract_POC (1) (local copy)'[Is Approved for Netting] = \"1\",\n                'migration_Extract_POC (1) (local copy)'[Bucket] <> \"open\",\n                'migration_Extract_POC (1) (local copy)'[R/RR] = \"R\",\n                'migration_Extract_POC (1) (local copy)'[Title Date Filter] = 1,\n                ALLEXCEPT(\n                    'migration_Extract_POC (1) (local copy)',\n                    'migration_Extract_POC (1) (local copy)'[RpDate],\n                    'migration_Extract_POC (1) (local copy)'[Subs],\n                    'migration_Extract_POC (1) (local copy)'[Counterpty],\n                    'migration_Extract_POC (1) (local copy)'[Cash curr],\n                    'migration_Extract_POC (1) (local copy)'[Maturity Date],\n                    'migration_Extract_POC (1) (local copy)'[R/RR]\n                )\n            )\n    )\nRETURN\n    SUMX(_summary, ABS([FixedSum]))",
+      "solution_explanation": "Reproduces the Tableau FIXED LOD that computes the per-(RpDate, Subs, Counterpty, Cash curr, Maturity Date, R/RR) sum of Ut. US MM with the specified row-level filters, then sums the absolute values of those fixed sums. SUMMARIZE with ALLEXCEPT creates the fixed partitioning and CALCULATE applies the IF conditions as filters. Finally SUMX wraps the ABS and aggregate.",
+      "type_changed_reason": "The Tableau expression uses a FIXED LOD ({FIXED ...}) and aggregation (Sum), which requires a measure in Power BI."
+    }
+  ]
+}
