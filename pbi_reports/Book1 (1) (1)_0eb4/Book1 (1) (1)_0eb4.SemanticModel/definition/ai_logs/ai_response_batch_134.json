@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Limit Category (ALl)",
+      "dax_expression": "'migration_Extract_POC (1) (local copy)'[Subs (group)]",
+      "solution_explanation": "This is a direct row-level reference to the [Subs (group)] column. It should be implemented as a calculated column that returns the value of that column for each row."
+    }
+  ]
+}
