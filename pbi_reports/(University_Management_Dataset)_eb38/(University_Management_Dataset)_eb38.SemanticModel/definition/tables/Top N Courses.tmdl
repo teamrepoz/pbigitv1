@@ -1,0 +1,28 @@
+table 'Top N Courses'
+	lineageTag: 74f0c315-c0c4-4fcf-91fa-89be3008093d
+
+	measure 'Top N Courses Value' = SELECTEDVALUE('Top N Courses'[Top N Courses], 1)
+		lineageTag: 17c4141c-ca03-4777-81be-aa56d95dc9a8
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Top N Courses'
+		dataType: double
+		formatString: 0
+		lineageTag: 34fe18eb-e499-4724-a82f-cafc14658af5
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Top N Courses' = calculated
+		mode: import
+		source = GENERATESERIES(1, 20)
+
+	annotation PBI_Id = dedec54515574767bd9000c98ee3c862
+
