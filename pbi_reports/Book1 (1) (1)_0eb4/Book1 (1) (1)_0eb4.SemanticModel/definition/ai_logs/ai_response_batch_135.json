@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Limit Description (SSA)",
+      "dax_expression": "\"SSA\"",
+      "solution_explanation": "The Tableau expression is a literal string \"SSA\". Converted to a DAX constant \"SSA\". This is row-level (constant per row), so it is implemented as a calculated column."
+    }
+  ]
+}
