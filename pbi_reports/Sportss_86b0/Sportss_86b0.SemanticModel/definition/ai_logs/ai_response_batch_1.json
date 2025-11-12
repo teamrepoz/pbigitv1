@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Parameters",
+      "name": "Select Year",
+      "dax_expression": "1896",
+      "solution_explanation": "Converted the Tableau parameter 'Select Year' which is defined as the literal 1896 into a DAX measure returning the same constant. In Power BI, parameters/parameter-based calculations are represented as measures and referenced using SELECTEDVALUE when used in other expressions.",
+      "type_changed_reason": "This represents a Tableau parameter (a static value). Per the rules, any calculation involving or representing a parameter must be created as a measure."
+    }
+  ]
+}
