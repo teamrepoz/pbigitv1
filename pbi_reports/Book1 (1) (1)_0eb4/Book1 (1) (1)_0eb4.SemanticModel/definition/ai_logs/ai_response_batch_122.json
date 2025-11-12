@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Max Date",
+      "dax_expression": "VAR weekDay = WEEKDAY(TODAY(), 1)\nRETURN\nSWITCH(\n    weekDay,\n    1, TODAY() - 2,\n    2, TODAY() - 3,\n    TODAY() - 1\n)",
+      "solution_explanation": "Replaced Tableau CASE using datepart('weekday', TODAY()) with DAX WEEKDAY(TODAY(), 1) and mapped CASE to SWITCH. Subtracted days from TODAY() as in the original. Created as a calculated column because this is a row-level date calculation without aggregations or parameters."
+    }
+  ]
+}
