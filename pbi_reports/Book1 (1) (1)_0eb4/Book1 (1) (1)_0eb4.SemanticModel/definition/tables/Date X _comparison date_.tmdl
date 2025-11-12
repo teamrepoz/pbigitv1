@@ -1,0 +1,44 @@
+table 'Date X _comparison date_'
+	lineageTag: e0395620-4c91-4d01-b687-398aae7f1a62
+
+	column Index
+		formatString: 0
+		lineageTag: 435eb126-c3b3-465a-9d32-d8badbf19dec
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: be5adf03-a401-487e-8671-721b29da652f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: b15e2854-8ae8-4bf1-83e7-8bf9163f804a
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Date X _comparison date_' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", DATETIME,
+			    "Value", DATETIME,
+			    {
+			        {0, "2023-10-25", "2023-10-25"}
+			    }
+			)
+
+	annotation PBI_Id = 3e9cc1a5dae4423c82864377bb655b93
+
