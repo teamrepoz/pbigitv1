@@ -1,0 +1,28 @@
+table 'Select Year'
+	lineageTag: 4630fac6-cb9b-4c5b-a26e-033809afd57f
+
+	measure 'Select Year Value' = SELECTEDVALUE('Select Year'[Select Year], 1896)
+		lineageTag: 979ea158-1992-4ab7-956e-9f9434b723c5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Select Year'
+		dataType: double
+		formatString: 0
+		lineageTag: 3904de03-fdb9-422b-bbd8-11348982e018
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Select Year' = calculated
+		mode: import
+		source = GENERATESERIES(1896, 2024)
+
+	annotation PBI_Id = 8f0b5ecce2e7433d80f0bba35dc9f694
+
