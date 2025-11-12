@@ -1,0 +1,44 @@
+table 'Days offset'
+	lineageTag: b6adf672-d613-4b0d-a3bd-30c62d5a594d
+
+	column Index
+		formatString: 0
+		lineageTag: 834c7b2a-e7eb-4a85-83c8-bfd1309a5257
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: b0fa1e5e-b39a-4de1-b2c9-a319c34b5d32
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 799b8452-b75c-4655-a002-fcf27ed422e8
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Days offset' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", INTEGER,
+			    "Value", INTEGER,
+			    {
+			        {0, 700, 700}
+			    }
+			)
+
+	annotation PBI_Id = 71fa175c42df4665965138388269e7e6
+
