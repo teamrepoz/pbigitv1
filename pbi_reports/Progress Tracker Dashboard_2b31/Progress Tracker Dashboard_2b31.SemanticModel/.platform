@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Progress Tracker Dashboard_2b31"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "c16c3302-9b93-4adf-be6b-9e85e79e86db"
+  }
+}
