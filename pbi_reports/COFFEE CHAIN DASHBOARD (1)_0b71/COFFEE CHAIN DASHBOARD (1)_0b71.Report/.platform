@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "COFFEE CHAIN DASHBOARD (1)_0b71"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "2c276bf8-7e55-4d8f-8577-469b88cf2dc9"
+  }
+}
