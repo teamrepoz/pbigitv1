@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "test+",
+      "name": "Platform Type ",
+      "dax_expression": "IF('test+'[Platform] = \"Instagram\" || 'test+'[Platform] = \"Facebook\", \"Meta\", \"Other\")",
+      "solution_explanation": "Converted Tableau IF/ELSEIF to a DAX IF with logical OR. Row-level field [Platform] was converted to 'test+'[Platform]. Returns \"Meta\" when Platform is Instagram or Facebook, otherwise \"Other\"."
+    }
+  ]
+}
