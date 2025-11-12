@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Netted T -1",
+      "dax_expression": "VAR ConditionalSum = SUMX(\n    'migration_Extract_POC (1) (local copy)',\n    IF(\n        'migration_Extract_POC (1) (local copy)'[R/RR] = \"R\",\n        'migration_Extract_POC (1) (local copy)'[Initial Cash USD X (excl Int/FWD)] * -1,\n        IF(\n            'migration_Extract_POC (1) (local copy)'[R/RR] = \"RR\",\n            'migration_Extract_POC (1) (local copy)'[Initial Cash USD X (excl Int/FWD)],\n            BLANK()\n        )\n    )\n)\nRETURN\nConditionalSum - SUM('migration_Extract_POC (1) (local copy)'[fixed netting (T -1) ])",
+      "solution_explanation": "Rewritten the Tableau Sum(IF ...) as a DAX measure using SUMX over the table with nested IF conditions: negate the Initial Cash value when R, keep it when RR, then subtract the SUM of fixed netting. All column references use the 'table'[column] format.",
+      "type_changed_reason": "This calculation uses aggregation functions (SUM), so it should be created as a measure."
+    }
+  ]
+}
