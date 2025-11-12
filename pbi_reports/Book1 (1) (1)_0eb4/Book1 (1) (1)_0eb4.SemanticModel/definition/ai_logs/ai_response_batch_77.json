@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Initial Cash USD (excl Int/FWD)",
+      "dax_expression": "IF('migration_Extract_POC (1) (local copy)'[Is Internal ? (group)] = \"external\" && 'migration_Extract_POC (1) (local copy)'[Is Forward Start ?] = 0, 'migration_Extract_POC (1) (local copy)'[Ut. US MM], 0)",
+      "solution_explanation": "Converted the Tableau IF expression to a DAX IF expression and qualified all column references with the table name. This is row-level logic with no aggregation, so it is implemented as a calculated column."
+    }
+  ]
+}
