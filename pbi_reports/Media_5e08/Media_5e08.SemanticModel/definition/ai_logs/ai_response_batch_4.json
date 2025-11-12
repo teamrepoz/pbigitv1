@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "test+",
+      "name": "Selected Metric Value ",
+      "dax_expression": "SWITCH(\n    SELECTEDVALUE('Select Metric'[Display As]),\n    \"Likes\", SUM('test+'[Likes_Received_Per_Day]),\n    \"Posts\", SUM('test+'[Posts_Per_Day]),\n    \"Messages\", SUM('test+'[Messages_Sent_Per_Day]),\n    BLANK()\n)",
+      "solution_explanation": "Replaced CASE on parameter with SWITCH. Parameter [Parameters].[Select Metric] -> SELECTEDVALUE('Select Metric'[Display As]). Aggregations SUM(...) preserved and column references converted to 'test+'[ColumnName]. Returned BLANK() when no match."
+    }
+  ]
+}
