@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Change MTM (in CAD)",
+      "dax_expression": "'migration_Extract_POC (1) (local copy)'[MTM (in CAD) T] - 'migration_Extract_POC (1) (local copy)'[MTM (In CAD) T-1]",
+      "solution_explanation": "Converted the Tableau subtraction of two calculated fields to a DAX measure by mapping each field reference to 'migration_Extract_POC (1) (local copy)'[ColumnName] and using direct subtraction.",
+      "type_changed_reason": "The referenced calculated fields depend on Tableau parameters; per rules any calculation that uses parameters (directly or via dependencies) must be a measure."
+    }
+  ]
+}
