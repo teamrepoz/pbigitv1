@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "dictionary+",
+      "name": "RankTop N Countries",
+      "dax_expression": "VAR TopN = SELECTEDVALUE('Top N Country'[Display As])\nVAR currentRank =\n    RANKX(\n        ALLSELECTED('dictionary+'),\n        0,\n        ,\n        ASC,\n        DENSE\n    )\nRETURN\nIF(currentRank <= TopN, TRUE(), FALSE())",
+      "solution_explanation": "Tableau's INDEX() is a table calculation and has no direct single-function equivalent in DAX. The parameter [Parameters].[Top N Country] is converted to SELECTEDVALUE('Top N Country'[Display As]). To emulate INDEX() you must rank rows according to the visual sort; RANKX(ALLSELECTED('dictionary+'), <SortExpression>) is a common pattern. Because the actual sort expression used in the Tableau visual is not provided, this measure uses a placeholder expression (0) inside RANKX — you must replace that 0 with the expression/measure used to order the rows (for example: SUM('dictionary+'[Sales]) or another appropriate aggregation). The measure returns TRUE when the row's rank is <= the selected Top N parameter."
+    }
+  ]
+}
