@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Netted Utilization %",
+      "dax_expression": "ABS('migration_Extract_POC (1) (local copy)'[Netted T] / MAX('migration_Extract_POC (1) (local copy)'[Limit (Net)]))",
+      "solution_explanation": "Converted Tableau ABS([Netted T]/MAX([Limit (Net)])) to DAX. Mapped ABS to ABS, MAX to MAX, and transformed column references to 'TableName'[ColumnName] format. This is a measure because the expression contains aggregation (MAX and Netted T is an aggregated calculation)."
+    }
+  ]
+}
