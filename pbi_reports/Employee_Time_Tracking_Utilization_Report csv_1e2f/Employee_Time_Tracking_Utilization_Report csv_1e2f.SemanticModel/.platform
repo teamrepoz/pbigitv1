@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Employee_Time_Tracking_Utilization_Report csv_1e2f"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "5b9b08b3-508d-41cc-b432-a8042f3d7ce1"
+  }
+}
