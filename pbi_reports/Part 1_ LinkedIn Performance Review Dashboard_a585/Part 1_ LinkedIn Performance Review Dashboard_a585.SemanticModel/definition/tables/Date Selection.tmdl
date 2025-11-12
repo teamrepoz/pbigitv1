@@ -1,0 +1,46 @@
+table 'Date Selection'
+	lineageTag: 7ec86270-a1c9-49e1-8df7-a7fb1040f991
+
+	column Index
+		formatString: 0
+		lineageTag: ca68793c-8639-4cce-b858-a9fedd6a73e0
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 162deec1-9ec2-4287-9e52-37ddaeb90eb0
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: a88b6073-90d6-4c9f-8e3d-a08ed8e87486
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Date Selection' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Last Week", "Week" },
+				{ 1, "MTD", "MTD" },
+				{ 2, "YTD", "YTD" }
+			    }
+			)
+
+	annotation PBI_Id = 1ee548a60d664243b22fc0fefa3eb924
+
