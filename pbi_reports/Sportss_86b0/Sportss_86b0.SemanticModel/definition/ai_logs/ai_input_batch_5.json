@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Total Medal Count",
+      "table_name": "dictionary+",
+      "tableau_expression": "COUNT([Medal])",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "COUNT([Medal])",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Medal": "string"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
