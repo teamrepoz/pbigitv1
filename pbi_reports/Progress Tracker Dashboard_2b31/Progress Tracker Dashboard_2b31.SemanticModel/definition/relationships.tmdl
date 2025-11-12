@@ -1,0 +1,10 @@
+relationship 6285db36-caba-4364-b6a2-b870afa9b552
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Portfolio Project Analysis Over (Porfolio Project Analysis)'.'Due Date'
+	toColumn: LocalDateTable_134f2683-e52c-4d2f-8d5e-b7604b103f37.Date
+
+relationship a4f77cad-6e30-4462-938c-982c985ffd65
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Portfolio Project Analysis Over (Porfolio Project Analysis)'.Date
+	toColumn: LocalDateTable_f5fb735a-5c3e-482e-8ff4-4f37cd943989.Date
+
