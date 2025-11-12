@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Parameters",
+      "name": "Top N Stock",
+      "dax_expression": "3",
+      "solution_explanation": "The Tableau expression is a constant (3) with no aggregates or parameter references. This is row-level/static and is implemented as a calculated column returning the constant value 3."
+    }
+  ]
+}
