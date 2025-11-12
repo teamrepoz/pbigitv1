@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "title date",
+      "dax_expression": "IF(\n    SELECTEDVALUE('Use Custom Date'[Display As]) = TRUE(),\n    'migration_Extract_POC (1) (local copy)'[Max Date],\n    SELECTEDVALUE('End Date'[Display As])\n)",
+      "solution_explanation": "Replaced parameter references with SELECTEDVALUE('ParameterName'[Display As]) per rules. Mapped the Tableau IF to DAX IF and referenced the calculated field [Max Date] on the same table as 'migration_Extract_POC (1) (local copy)'[Max Date].",
+      "type_changed_reason": "The calculation references a parameter, and all parameter-based calculations must be measures."
+    }
+  ]
+}
