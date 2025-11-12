@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "test+",
+      "name": "Is High Likes ",
+      "dax_expression": "'test+'[Likes_Received_Per_Day] > 50",
+      "solution_explanation": "Converted the row-level boolean comparison to a calculated column. Replaced [Likes_Received_Per_Day] with 'test+'[Likes_Received_Per_Day]. No aggregation or parameters present, so it is a calculated column."
+    }
+  ]
+}
