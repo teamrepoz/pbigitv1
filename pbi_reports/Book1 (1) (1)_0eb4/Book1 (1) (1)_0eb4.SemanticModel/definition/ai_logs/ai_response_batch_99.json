@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "WACS (bps)",
+      "dax_expression": "VAR numerator = SUMX(\n    'migration_Extract_POC (1) (local copy)',\n    'migration_Extract_POC (1) (local copy)'[Ut. US MM] * 'migration_Extract_POC (1) (local copy)'[Coll Spread]\n)\nVAR denominator = SUM('migration_Extract_POC (1) (local copy)'[Ut. US MM])\nRETURN\nnumerator / denominator * 100",
+      "solution_explanation": "Translated Tableau SUM([Ut. US MM]*[Coll Spread]) to DAX SUMX over the same table for row-wise multiplication, kept SUM([Ut. US MM]) as SUM, and multiplied the result by 100. All column references use 'TableName'[ColumnName] format.",
+      "type_changed_reason": "This calculation uses aggregation (SUM), so it should be created as a measure."
+    }
+  ]
+}
