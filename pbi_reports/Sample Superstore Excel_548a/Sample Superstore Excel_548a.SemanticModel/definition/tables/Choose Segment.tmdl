@@ -1,0 +1,46 @@
+table 'Choose Segment'
+	lineageTag: 43392890-505e-4968-b218-ed7f6c65aefb
+
+	column Index
+		formatString: 0
+		lineageTag: c2644fac-0e40-4dc9-abb5-75dca1ce481f
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 9673910f-a554-449a-8adf-772ec79122e6
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 2c98c066-8726-4045-984e-3b3b8f4761ef
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Choose Segment' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Consumer", "Consumer" },
+				{ 1, "Corporate", "Corporate" },
+				{ 2, "Home Office", "Home Office" }
+			    }
+			)
+
+	annotation PBI_Id = 9ee386ca70054f55b492ed00ca4c201e
+
