@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "stock_data+",
+      "name": "Daily Price Change ",
+      "dax_expression": "'stock_data+'[Price Close] - 'stock_data+'[Price Open]",
+      "solution_explanation": "Row-level subtraction converted to a calculated column. Replaced Tableau column references with table-scoped DAX references: 'stock_data+'[Price Close] - 'stock_data+'[Price Open]. No aggregates or parameters present, so it is a calculated column."
+    }
+  ]
+}
