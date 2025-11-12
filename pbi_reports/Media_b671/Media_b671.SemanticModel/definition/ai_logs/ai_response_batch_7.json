@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "test+",
+      "name": "Text combine calculation",
+      "dax_expression": "'test+'[Gender] & \" - \" & FORMAT('test+'[Age], \"\")",
+      "solution_explanation": "This is a row-level string concatenation using only fields from the same row, so it is implemented as a calculated column. Tableau's + string concatenation is converted to DAX & and STR([Age]) is represented with FORMAT([Age], \"\") to ensure Age is treated as text."
+    }
+  ]
+}
