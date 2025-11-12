@@ -1,0 +1,15 @@
+relationship 0e3bda68-01f2-4036-9243-31741db8149f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: taxi_final.lpep_pickup_datetime
+	toColumn: LocalDateTable_d751d070-3af4-419f-bf13-af16b013c533.Date
+
+relationship ecbb7caf-7eea-49f0-8529-88122a096347
+	joinOnDateBehavior: datePartOnly
+	fromColumn: taxi_final.pickup_time
+	toColumn: LocalDateTable_8961d14d-7609-44f1-877d-1cefe2f364d4.Date
+
+relationship ad67be2b-90d3-4811-be8a-d57469f1d634
+	joinOnDateBehavior: datePartOnly
+	fromColumn: taxi_final.lpep_dropoff_datetime
+	toColumn: LocalDateTable_dee688a0-d363-42c8-a034-96fd085dc1e8.Date
+
