@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "test+",
+      "name": "Platform Type ",
+      "dax_expression": "SWITCH(\n    TRUE(),\n    'test+'[Platform] = \"Instagram\", \"Meta\",\n    'test+'[Platform] = \"Facebook\", \"Meta\",\n    \"Other\"\n)",
+      "solution_explanation": "Converted Tableau IF / ELSEIF into DAX SWITCH(TRUE()) for clarity. Replaced [Platform] with 'test+'[Platform] to follow table/column referencing rules and preserved string literals exactly as in the Tableau expression."
+    }
+  ]
+}
