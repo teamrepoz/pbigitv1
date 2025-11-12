@@ -1,0 +1,20 @@
+{
+  "calculations": [
+    {
+      "name": "WARR (bps)",
+      "table_name": "migration_Extract_POC (1) (local copy)",
+      "tableau_expression": "SUM([Ut. US MM]*[Repo Rate])/SUM([Ut. US MM])",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "SUM([Ut. US MM]*[Repo Rate])/SUM([Ut. US MM])",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Repo Rate": "real",
+          "Ut. US MM": "real"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
