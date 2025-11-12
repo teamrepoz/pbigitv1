@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Limit (Non G11)",
+      "dax_expression": "10000",
+      "solution_explanation": "The Tableau formula is a constant numeric literal (10000). It contains no aggregations, parameters, or references to other fields, so it is implemented as a calculated column returning the constant value."
+    }
+  ]
+}
