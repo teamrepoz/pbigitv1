@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Carry mod",
+      "dax_expression": "VAR UseCustomDate = SELECTEDVALUE('Use Custom Date'[Display As])\nVAR EndDateParam = SELECTEDVALUE('End Date'[Display As])\nRETURN\nIF(\n    UseCustomDate,\n    IF(\n        'migration_Extract_POC (1) (local copy)'[Max Date] = 'migration_Extract_POC (1) (local copy)'[RpDate],\n        SWITCH(\n            TRUE(),\n            'migration_Extract_POC (1) (local copy)'[R/Rr (group)] = \"Repo\", ABS('migration_Extract_POC (1) (local copy)'[Carry (in CAD)]) * -1,\n            'migration_Extract_POC (1) (local copy)'[R/Rr (group)] = \"Reverse Repo\", ABS('migration_Extract_POC (1) (local copy)'[Carry (in CAD)]),\n            0\n        ),\n        0\n    ),\n    IF(\n        'migration_Extract_POC (1) (local copy)'[RpDate] = EndDateParam,\n        SWITCH(\n            TRUE(),\n            'migration_Extract_POC (1) (local copy)'[R/Rr (group)] = \"Repo\", ABS('migration_Extract_POC (1) (local copy)'[Carry (in CAD)]) * -1,\n            'migration_Extract_POC (1) (local copy)'[R/Rr (group)] = \"Reverse Repo\", ABS('migration_Extract_POC (1) (local copy)'[Carry (in CAD)]),\n            0\n        ),\n        0\n    )\n)",
+      "solution_explanation": "Converted Tableau IF/ELSEIF logic to DAX IF and SWITCH. Mapped parameter references to SELECTEDVALUE('ParameterName'[Display As]). Preserved ABS() and multiplied by -1 for \"Repo\". All column and calculated field references were converted to the table-qualified form 'migration_Extract_POC (1) (local copy)'[ColumnName].",
+      "type_changed_reason": "The calculation references a parameter, and all parameter-based calculations must be measures."
+    }
+  ]
+}
