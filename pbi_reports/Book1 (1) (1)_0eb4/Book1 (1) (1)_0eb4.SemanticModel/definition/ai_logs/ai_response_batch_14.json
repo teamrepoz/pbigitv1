@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "BATCH",
+      "dax_expression": "VAR numerator = 'migration_Extract_POC (1) (local copy)'[Initial Cash USD T (excl Int/FWD) Abs]\nVAR total = CALCULATE(\n    'migration_Extract_POC (1) (local copy)'[Initial Cash USD T (excl Int/FWD) Abs],\n    ALL('migration_Extract_POC (1) (local copy)')\n)\nRETURN DIVIDE(numerator, total)",
+      "solution_explanation": "Converted the Tableau expression [Initial Cash USD T (excl Int/FWD) Abs] / TOTAL([Initial Cash USD T (excl Int/FWD) Abs]) to DAX. The numerator references the calculated field on the same table. The TOTAL(...) table calculation is represented by CALCULATE(..., ALL(table)) to get the overall total; DIVIDE is used to handle division safely.",
+      "type_changed_reason": "The Tableau formula uses the table calculation TOTAL(...) (an aggregation across the table) and references an aggregated calculated field, therefore it must be implemented as a measure."
+    }
+  ]
+}
