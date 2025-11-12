@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Recruitment Pipelines & Interview Tracker_3f78"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "7cd41e91-80d4-4eea-a5a3-acb46a3ff7c9"
+  }
+}
