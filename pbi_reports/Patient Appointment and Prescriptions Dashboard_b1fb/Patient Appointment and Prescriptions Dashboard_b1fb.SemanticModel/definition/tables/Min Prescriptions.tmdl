@@ -1,0 +1,28 @@
+table 'Min Prescriptions'
+	lineageTag: 7f11fafd-c303-44b9-bab0-163504b885ff
+
+	measure 'Min Prescriptions Value' = SELECTEDVALUE('Min Prescriptions'[Min Prescriptions], 1)
+		lineageTag: af0b329c-eb11-423b-92ef-fb964fa5ca8c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Min Prescriptions'
+		dataType: double
+		formatString: 0
+		lineageTag: 9e455eff-bd54-4ffb-99b8-955d7c29e155
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Min Prescriptions' = calculated
+		mode: import
+		source = GENERATESERIES(1, 5)
+
+	annotation PBI_Id = 9de51373ee864a7da0444776078d8b6f
+
