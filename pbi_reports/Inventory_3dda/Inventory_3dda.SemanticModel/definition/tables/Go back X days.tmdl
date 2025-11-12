@@ -1,0 +1,44 @@
+table 'Go back X days'
+	lineageTag: 8cba6ea2-2a44-4db7-ad0a-d141321743d1
+
+	column Index
+		formatString: 0
+		lineageTag: 4622f442-17d7-44c8-9511-1b96794fd5e2
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: d8c277d1-5175-4c72-8f79-ec30fb286642
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: e0249728-8d61-4d41-8f62-489147253ea9
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Go back X days' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", INTEGER,
+			    "Value", INTEGER,
+			    {
+			        {0, 120, 120}
+			    }
+			)
+
+	annotation PBI_Id = 00afec614364410491c2d0441a03a35d
+
