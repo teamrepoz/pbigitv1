@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Parameters",
+      "name": "Select Metric",
+      "dax_expression": "\"Likes\"",
+      "solution_explanation": "This Tableau expression is a constant string literal; converted to a DAX calculated column returning the string \"Likes\"."
+    }
+  ]
+}
