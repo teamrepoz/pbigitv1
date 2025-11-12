@@ -1,0 +1,45 @@
+table 'Product More'
+	lineageTag: 0a466e3b-f9fe-4c27-99b4-9dd355cbb8bf
+
+	column Index
+		formatString: 0
+		lineageTag: 05a71e7f-487a-4f85-a61b-18a4d7785fe7
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 3231572a-d7e0-4a24-81bd-94ab84d22cbd
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: aaa1456e-75f9-40bb-94c9-8a698f9dd818
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Product More' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", DOUBLE,
+			    "Value", DOUBLE,
+			    {
+			        { 0, 1.0, 1.0 },
+				{ 1, 2.0, 2.0 }
+			    }
+			)
+
+	annotation PBI_Id = 953925238fcd4a479c9ea4e501520567
+
