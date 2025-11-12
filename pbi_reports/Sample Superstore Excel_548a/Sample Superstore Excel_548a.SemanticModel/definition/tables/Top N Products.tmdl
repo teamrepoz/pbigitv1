@@ -1,0 +1,28 @@
+table 'Top N Products'
+	lineageTag: 80dc3895-91a4-4084-bb29-7a5931f9ca1d
+
+	measure 'Top N Products Value' = SELECTEDVALUE('Top N Products'[Top N Products], 1)
+		lineageTag: 1b6f7c1f-6209-4bb2-8493-1fb5e84dd8b3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Top N Products'
+		dataType: double
+		formatString: 0
+		lineageTag: 0127c9e4-74b8-4f7f-9f7d-61e4b6513eac
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Top N Products' = calculated
+		mode: import
+		source = GENERATESERIES(1, 100)
+
+	annotation PBI_Id = 442092b354da445a884110474cfefcb7
+
