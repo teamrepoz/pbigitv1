@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Title Date Filter (T-1)",
+      "dax_expression": "VAR useCustom = SELECTEDVALUE('Use Custom Date'[Display As])\nVAR isMatchCustom = IF('migration_Extract_POC (1) (local copy)'[MAX_DATE -1day] = 'migration_Extract_POC (1) (local copy)'[RpDate], 1, 0)\nVAR isMatchDefault = IF('migration_Extract_POC (1) (local copy)'[RpDate] = 'migration_Extract_POC (1) (local copy)'[End DATE - 1day], 1, 0)\nRETURN IF(useCustom = TRUE, isMatchCustom, isMatchDefault)",
+      "solution_explanation": "Converted the nested IF logic from Tableau to DAX. Parameter [Parameters].[Use Custom Date] was converted to SELECTEDVALUE('Use Custom Date'[Display As]). All column references were transformed to the table-qualified form 'migration_Extract_POC (1) (local copy)'[ColumnName]. The expression returns 1 or 0 matching the original logic.",
+      "type_changed_reason": "The calculation references a parameter ([Parameters].[Use Custom Date]); per rules, parameter-based calculations must be measures."
+    }
+  ]
+}
