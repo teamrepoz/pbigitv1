@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Sec MV USD T",
+      "dax_expression": "VAR vUseCustom = SELECTEDVALUE('Use Custom Date'[Display As])\nVAR vEndDate = SELECTEDVALUE('End Date'[Display As])\nRETURN\nIF(\n    vUseCustom = TRUE(),\n    IF(\n        'migration_Extract_POC (1) (local copy)'[Max Date] = 'migration_Extract_POC (1) (local copy)'[RpDate],\n        ABS('migration_Extract_POC (1) (local copy)'[Sec value USD]) / POWER(10, 6),\n        0\n    ),\n    IF(\n        'migration_Extract_POC (1) (local copy)'[RpDate] = vEndDate,\n        ABS('migration_Extract_POC (1) (local copy)'[Sec value USD]) / POWER(10, 6),\n        0\n    )\n)",
+      "solution_explanation": "Converted the nested IF logic to DAX using VARs for parameter values. Parameter references were replaced with SELECTEDVALUE('ParameterName'[Display As]) per rules. All column references were transformed to 'migration_Extract_POC (1) (local copy)'[ColumnName]. ABS division by 10^6 was implemented as ABS(...) / POWER(10, 6).",
+      "type_changed_reason": "The calculation references a parameter, and all parameter-based calculations must be measures."
+    }
+  ]
+}
