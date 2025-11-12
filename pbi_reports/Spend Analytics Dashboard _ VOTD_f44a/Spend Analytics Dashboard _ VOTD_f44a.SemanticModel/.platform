@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Spend Analytics Dashboard _ VOTD_f44a"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "002de9f5-28eb-48fe-9a18-b66a9fb22506"
+  }
+}
