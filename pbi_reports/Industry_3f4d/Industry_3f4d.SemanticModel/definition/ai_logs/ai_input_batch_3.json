@@ -1,0 +1,20 @@
+{
+  "calculations": [
+    {
+      "name": "Daily Price Change ",
+      "table_name": "stock_data+",
+      "tableau_expression": "[Price Close]-[Price Open]",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "[Price Close]-[Price Open]",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Price Close": "real",
+          "Price Open": "real"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
