@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "WORLD CUP RESULT DASHBOARD (1)_5590"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "776fd286-3ee1-4005-bfb4-560bfd9a00e1"
+  }
+}
