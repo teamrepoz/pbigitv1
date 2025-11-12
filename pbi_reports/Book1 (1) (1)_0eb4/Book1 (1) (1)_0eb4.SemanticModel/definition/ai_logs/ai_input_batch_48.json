@@ -1,0 +1,36 @@
+{
+  "calculations": [
+    {
+      "name": "Change Dv01",
+      "table_name": "migration_Extract_POC (1) (local copy)",
+      "tableau_expression": "[DV01 T] - [Dv01 T-1]",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "[DV01 T] - [Dv01 T-1]",
+        "calculated_fields": {
+          "Dv01 T-1": "if [Parameters].[Use Custom Date] then \r\n    (if [MAX_DATE -1day]= [RpDate] then [DV01] else 0 END)\r\nelse if [Parameters].[Date X (comparison date)] = [RpDate] then [DV01] else 0 END END",
+          "DV01 T": "if [Parameters].[Use Custom Date] then \r\n    (if [Max Date]= [RpDate] then [DV01] else 0 END)\r\nelse if [RpDate]= [Parameters].[End Date] then [DV01] else 0 END END",
+          "MAX_DATE -1day": "case datepart('weekday',[Max Date])\r\nwhen 1 then [Max Date]-2\r\nwhen 2 then [Max Date]-3\r\nelse [Max Date]-1\r\nend",
+          "End Date": "#2023-11-01#",
+          "Use Custom Date": "true",
+          "Max Date": "case datepart('weekday',today())\r\n    when 1 then today()-2\r\n    when 2 then today()-3\r\n    else today()-1\r\n    END",
+          "Date X (comparison date)": "#2023-10-25#"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "RpDate": "date",
+          "DV01": "real"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Dv01 T-1": "real",
+          "DV01 T": "real",
+          "End Date": "date",
+          "Use Custom Date": "boolean",
+          "Date X (comparison date)": "date",
+          "MAX_DATE -1day": "DateTime",
+          "Max Date": "DateTime"
+        }
+      }
+    }
+  ]
+}
