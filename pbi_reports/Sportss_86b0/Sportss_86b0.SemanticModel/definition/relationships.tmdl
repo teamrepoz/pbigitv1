@@ -1,0 +1,10 @@
+relationship 40962dff-6be3-49ba-a69c-16aad7a75461
+	toCardinality: many
+	fromColumn: 'dictionary+'.Country
+	toColumn: 'dictionary+_dictionary.csv'.Country
+
+relationship 81dcfde2-abdc-47b5-8fb4-6afe298fac75
+	toCardinality: many
+	fromColumn: 'dictionary+'.Athlete
+	toColumn: 'dictionary+_winter.csv'.Athlete
+
