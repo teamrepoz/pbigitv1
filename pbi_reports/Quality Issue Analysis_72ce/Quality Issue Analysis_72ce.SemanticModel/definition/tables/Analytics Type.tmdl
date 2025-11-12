@@ -1,0 +1,45 @@
+table 'Analytics Type'
+	lineageTag: 39c114ec-8139-445f-90c0-962e391223b4
+
+	column Index
+		formatString: 0
+		lineageTag: 3171d0b7-7920-420d-aa2a-a4dd30f045e0
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: f7e5efe7-0302-480a-9b58-9cdfefe618f7
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 640e1b2d-fea3-4770-8905-a28996b8ad7a
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Analytics Type' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Over All", "Over All" },
+				{ 1, "Valentine", "Valentine" }
+			    }
+			)
+
+	annotation PBI_Id = 66ec699be2e5436ab337f658d8a9ea68
+
