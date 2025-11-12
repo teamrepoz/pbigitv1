@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "Price Type",
+      "table_name": "Parameters",
+      "tableau_expression": "\"Open\"",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "\"Open\"",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
