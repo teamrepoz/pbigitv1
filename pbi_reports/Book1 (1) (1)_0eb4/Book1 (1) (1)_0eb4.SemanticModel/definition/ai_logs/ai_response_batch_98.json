@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "WARR T (bps)",
+      "dax_expression": "VAR UseCustomDate = SELECTEDVALUE('Use Custom Date'[Display As])\nVAR EndDate = SELECTEDVALUE('End Date'[Display As])\nRETURN\nDIVIDE(\n    SUMX(\n        'migration_Extract_POC (1) (local copy)',\n        IF(\n            UseCustomDate,\n            IF(\n                'migration_Extract_POC (1) (local copy)'[Max Date] = 'migration_Extract_POC (1) (local copy)'[RpDate],\n                'migration_Extract_POC (1) (local copy)'[Ut. US MM] * 'migration_Extract_POC (1) (local copy)'[Repo Rate],\n                0\n            ),\n            IF(\n                'migration_Extract_POC (1) (local copy)'[RpDate] = EndDate,\n                'migration_Extract_POC (1) (local copy)'[Ut. US MM] * 'migration_Extract_POC (1) (local copy)'[Repo Rate],\n                0\n            )\n        )\n    ),\n    SUMX(\n        'migration_Extract_POC (1) (local copy)',\n        IF(\n            UseCustomDate,\n            IF(\n                'migration_Extract_POC (1) (local copy)'[Max Date] = 'migration_Extract_POC (1) (local copy)'[RpDate],\n                'migration_Extract_POC (1) (local copy)'[Ut. US MM],\n                0\n            ),\n            IF(\n                'migration_Extract_POC (1) (local copy)'[RpDate] = EndDate,\n                'migration_Extract_POC (1) (local copy)'[Ut. US MM],\n                0\n            )\n        )\n    )\n)",
+      "solution_explanation": "Translated nested Tableau IF logic to DAX IF, mapped parameter references to SELECTEDVALUE('ParameterName'[Display As]), and implemented the SUM of conditional row expressions using SUMX over the source table. Used DIVIDE to perform the ratio safely. All column references converted to 'migration_Extract_POC (1) (local copy)'[Column] format."
+    }
+  ]
+}
