@@ -1,0 +1,47 @@
+table 'Quarter Parameter'
+	lineageTag: 82a5fb7d-b8a5-48c5-9a11-e86ed156f9d5
+
+	column Index
+		formatString: 0
+		lineageTag: 352cd496-8d7b-41e8-9c9a-0c917516daed
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 978878cb-68fb-4b18-80f1-a83312d4066c
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 83ca5982-cc80-4d7b-ab36-6ada573d9ebc
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Quarter Parameter' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", INTEGER,
+			    "Value", INTEGER,
+			    {
+			        { 0, Jan - Mar, 1 },
+				{ 1, Apr - Jun, 2 },
+				{ 2, Jul - Sep, 3 },
+				{ 3, Oct - Dec, 4 }
+			    }
+			)
+
+	annotation PBI_Id = 46fee9ea0dfa45f7a59a01ee86f292fd
+
