@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "test+",
+      "name": "Top N Filter ",
+      "dax_expression": "VAR topN = SELECTEDVALUE('Top N'[Display As])\nVAR rankValue = RANKX(\n    ALL('test+'),\n    CALCULATE(SUM('test+'[Likes_Received_Per_Day])),\n    ,\n    DESC,\n    DENSE\n)\nRETURN\nrankValue <= topN",
+      "solution_explanation": "Recreated the Tableau table calculation RANK(SUM([Likes_Received_Per_Day])) <= [Parameters].[Top N] in DAX. Used RANKX over ALL('test+') with CALCULATE(SUM('test+'[Likes_Received_Per_Day])) to compute the rank and SELECTEDVALUE('Top N'[Display As]) for the Tableau parameter. The measure returns TRUE when the rank is within the selected Top N.",
+      "type_changed_reason": "The calculation uses an aggregation and a table calculation (RANK) and references a Tableau parameter; per the rules it must be implemented as a measure."
+    }
+  ]
+}
