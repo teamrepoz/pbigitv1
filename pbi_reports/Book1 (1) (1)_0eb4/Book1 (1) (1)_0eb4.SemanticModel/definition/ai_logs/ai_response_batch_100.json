@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "WATM(d) X",
+      "dax_expression": "VAR Numerator = SUMX('migration_Extract_POC (1) (local copy)', 'migration_Extract_POC (1) (local copy)'[Initial Cash USD X] * 'migration_Extract_POC (1) (local copy)'[DTM])\nVAR Denominator = SUM('migration_Extract_POC (1) (local copy)'[Initial Cash USD X])\nRETURN DIVIDE(Numerator, Denominator)",
+      "solution_explanation": "Translated the Tableau SUM of a product into SUMX for the numerator and SUM for the denominator. All column references were converted to 'TableName'[ColumnName] format and wrapped in VARs with a final RETURN using DIVIDE to handle division safely.",
+      "type_changed_reason": "The calculation uses aggregations (SUM), so it should be created as a measure."
+    }
+  ]
+}
