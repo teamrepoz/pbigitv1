@@ -1,0 +1,36 @@
+{
+  "calculations": [
+    {
+      "name": "MTM Stress T-1  (In CAD)",
+      "table_name": "migration_Extract_POC (1) (local copy)",
+      "tableau_expression": "if [Parameters].[Use Custom Date] then \r\n    (if [MAX_DATE -1day]= [RpDate] then [MTM Stress (in CAD)] else 0 END)\r\nelse if [RpDate]= [Comparison date] then [MTM Stress (in CAD)] else 0 END END",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "if [Parameters].[Use Custom Date] then \r\n    (if [MAX_DATE -1day]= [RpDate] then [MTM Stress (in CAD)] else 0 END)\r\nelse if [RpDate]= [Comparison date] then [MTM Stress (in CAD)] else 0 END END",
+        "calculated_fields": {
+          "MAX_DATE -1day": "case datepart('weekday',[Max Date])\r\nwhen 1 then [Max Date]-2\r\nwhen 2 then [Max Date]-3\r\nelse [Max Date]-1\r\nend",
+          "Comparison date": "if [Parameters].[Use Custom Date] THEN [MAX_DATE -1day] ELSE  [Parameters].[Date X (comparison date)] END",
+          "MTM Stress (in CAD)": "((IF [Cash curr]=\"EUR\" THEN [Parameters].[Parameter 9] ELSEIF [Cash curr]=\"GBP\" THEN [Parameters].[EUR Shift (copy)_2036471465060552715] END))\r\n*(IF [Cash curr]=\"EUR\" THEN -[DV01 (In USD)] *100 *[Parameters].[Use Custom Date0]\r\nELSEIF [Cash curr]=\"GBP\" THEN -[DV01 (In USD)] *100 * [Parameters].[Use Custom Date0] END)",
+          "Use Custom Date": "true",
+          "Max Date": "case datepart('weekday',today())\r\n    when 1 then today()-2\r\n    when 2 then today()-3\r\n    else today()-1\r\n    END",
+          "Date X (comparison date)": "#2023-10-25#"
+        },
+        "parameters": [
+          "Use Custom Date"
+        ],
+        "col_to_datatype_mapping": {
+          "RpDate": "date",
+          "Cash curr": "string"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "MTM Stress (in CAD)": "real",
+          "Use Custom Date": "boolean",
+          "Date X (comparison date)": "date",
+          "MAX_DATE -1day": "DateTime",
+          "Comparison date": "DateTime",
+          "Max Date": "DateTime"
+        }
+      }
+    }
+  ]
+}
