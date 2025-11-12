@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Lead Generation Nurturing csv_67aa"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "6f1f72de-df02-4d0b-8b12-5bff7607e48c"
+  }
+}
