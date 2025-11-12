@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "Specials spread",
+      "table_name": "Parameters",
+      "tableau_expression": "0.12",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "0.12",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
