@@ -1,0 +1,59 @@
+table 'Quarter Parameter'
+	lineageTag: af705460-345e-494b-9c20-ffb96292f75f
+
+	column Index
+		formatString: 0
+		lineageTag: 77e52ee9-a65e-4d89-97ef-adc657a1cc1d
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 92006bbe-6838-4d12-bfe6-d2371e70fc16
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: ce8c0526-93e9-475f-bcdd-94f605206882
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Quarter Parameter' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", DATETIME,
+			    "Value", DATETIME,
+			    {
+			        { 0, "2021-01-01", "2021-01-01" },
+				{ 1, "2021-04-01", "2021-04-01" },
+				{ 2, "2021-07-01", "2021-07-01" },
+				{ 3, "2021-10-01", "2021-10-01" },
+				{ 4, "2022-01-01", "2022-01-01" },
+				{ 5, "2022-04-01", "2022-04-01" },
+				{ 6, "2022-07-01", "2022-07-01" },
+				{ 7, "2022-10-01", "2022-10-01" },
+				{ 8, "2023-01-01", "2023-01-01" },
+				{ 9, "2023-04-01", "2023-04-01" },
+				{ 10, "2023-07-01", "2023-07-01" },
+				{ 11, "2023-10-01", "2023-10-01" },
+				{ 12, "2024-01-01", "2024-01-01" },
+				{ 13, "2024-04-01", "2024-04-01" },
+				{ 14, "2024-07-01", "2024-07-01" },
+				{ 15, "2024-10-01", "2024-10-01" }
+			    }
+			)
+
+	annotation PBI_Id = 59d732c0e0cc4e328307573a93e3b2a5
+
