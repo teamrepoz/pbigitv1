@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "End DATE - 1day",
+      "dax_expression": "VAR EndDate = SELECTEDVALUE('End Date'[Display As])\nVAR weekday = WEEKDAY(EndDate)\nRETURN\nSWITCH(\n    TRUE(),\n    weekday = 1, EndDate - 2,\n    weekday = 2, EndDate - 3,\n    EndDate - 1\n)",
+      "solution_explanation": "Replaced Tableau DATEPART('weekday', [Parameters].[End Date]) with DAX WEEKDAY(EndDate) and converted the CASE statement to SWITCH(TRUE(), ...). The parameter [End Date] is mapped to SELECTEDVALUE('End Date'[Display As]). Date adjustments are performed by subtracting days from the selected parameter date.",
+      "type_changed_reason": "The calculation references a parameter, and all parameter-based calculations must be measures."
+    }
+  ]
+}
