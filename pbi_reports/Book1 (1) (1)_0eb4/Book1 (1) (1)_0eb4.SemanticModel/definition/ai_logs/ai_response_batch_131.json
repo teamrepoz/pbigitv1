@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Limit Group",
+      "dax_expression": "'migration_Extract_POC (1) (local copy)'[R/Rr (group)]",
+      "solution_explanation": "Direct row-level reference converted to table column reference. The Tableau field [R/Rr (group)] was mapped to 'migration_Extract_POC (1) (local copy)'[R/Rr (group)]. This is a calculated column because it performs a row-level value passthrough without aggregation."
+    }
+  ]
+}
