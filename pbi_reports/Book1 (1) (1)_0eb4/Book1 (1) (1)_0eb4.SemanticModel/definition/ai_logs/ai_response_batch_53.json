@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Change Initial Cash USD",
+      "dax_expression": "'migration_Extract_POC (1) (local copy)'[Initial Cash USD T] - 'migration_Extract_POC (1) (local copy)'[Initial Cash USD T -1]",
+      "solution_explanation": "Converted the Tableau row-level subtraction into a DAX calculated column by referencing the two calculated fields using the 'TableName'[ColumnName] format. This preserves the original per-row logic: Initial Cash USD T minus Initial Cash USD T -1."
+    }
+  ]
+}
