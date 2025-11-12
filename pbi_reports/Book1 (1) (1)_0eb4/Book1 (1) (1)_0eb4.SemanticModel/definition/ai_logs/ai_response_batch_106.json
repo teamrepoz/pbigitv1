@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "fixed netting 3 R (T-1)",
+      "dax_expression": "VAR Groups =\n    SUMMARIZE(\n        'migration_Extract_POC (1) (local copy)',\n        'migration_Extract_POC (1) (local copy)'[RpDate],\n        'migration_Extract_POC (1) (local copy)'[Subs],\n        'migration_Extract_POC (1) (local copy)'[Counterpty],\n        'migration_Extract_POC (1) (local copy)'[Cash curr],\n        'migration_Extract_POC (1) (local copy)'[Maturity Date],\n        'migration_Extract_POC (1) (local copy)'[R/RR],\n        \"grpSum\",\n            CALCULATE(\n                SUMX(\n                    FILTER(\n                        'migration_Extract_POC (1) (local copy)',\n                        'migration_Extract_POC (1) (local copy)'[Is Forward Start ?] = 0 &&\n                        'migration_Extract_POC (1) (local copy)'[Is Approved for Netting] = \"1\" &&\n                        'migration_Extract_POC (1) (local copy)'[Bucket] <> \"open\" &&\n                        'migration_Extract_POC (1) (local copy)'[R/RR] = \"R\" &&\n                        'migration_Extract_POC (1) (local copy)'[Title Date Filter (T-1)] = 1\n                    ),\n                    'migration_Extract_POC (1) (local copy)'[Ut. US MM]\n                )\n            )\n    )\nRETURN\nSUMX(Groups, ABS([grpSum]))",
+      "solution_explanation": "Emulates the Tableau FIXED LOD by summarizing the table by the FIXED dimensions, calculating the group-level conditional sum of [Ut. US MM], taking ABS per group, and then summing those absolutes. All column references use 'Table'[Column] format and string literals are double-quoted."
+    }
+  ]
+}
