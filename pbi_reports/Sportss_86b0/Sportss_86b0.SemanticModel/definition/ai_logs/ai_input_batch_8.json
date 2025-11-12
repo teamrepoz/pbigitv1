@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Athlete Repeate Qualified Flag",
+      "table_name": "dictionary+",
+      "tableau_expression": "IF COUNTD([Year])>1 THEN \"Repeat Athlete\" ELSE \"One Time Athlete\" END",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "IF COUNTD([Year])>1 THEN \"Repeat Athlete\" ELSE \"One Time Athlete\" END",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Year": "integer"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
