@@ -1,0 +1,21 @@
+{
+  "calculations": [
+    {
+      "name": "Daily Activity Total ",
+      "table_name": "test+",
+      "tableau_expression": "[Likes_Received_Per_Day] + [Posts_Per_Day] + [Messages_Sent_Per_Day]",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "[Likes_Received_Per_Day] + [Posts_Per_Day] + [Messages_Sent_Per_Day]",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Posts_Per_Day": "integer",
+          "Likes_Received_Per_Day": "integer",
+          "Messages_Sent_Per_Day": "integer"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
