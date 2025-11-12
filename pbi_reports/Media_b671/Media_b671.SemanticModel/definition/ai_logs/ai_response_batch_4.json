@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "test+",
+      "name": "Selected Metric Value ",
+      "dax_expression": "SWITCH(\n    SELECTEDVALUE('Select Metric'[Display As]),\n    \"Likes\", SUM('test+'[Likes_Received_Per_Day]),\n    \"Posts\", SUM('test+'[Posts_Per_Day]),\n    \"Messages\", SUM('test+'[Messages_Sent_Per_Day])\n)",
+      "solution_explanation": "Converted the CASE statement to SWITCH using the parameter SELECTEDVALUE('Select Metric'[Display As]) and mapped each SUM(...) to SUM('test+'[ColumnName]) per the column/table mapping rules. The expression returns BLANK when no match is found.",
+      "type_changed_reason": "The calculation references a parameter and uses aggregations (SUM), so it must be created as a measure."
+    }
+  ]
+}
