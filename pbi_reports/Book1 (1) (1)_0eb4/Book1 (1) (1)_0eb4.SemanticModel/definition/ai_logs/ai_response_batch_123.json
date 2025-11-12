@@ -1,0 +1,18 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Max Date",
+      "dax_expression": "VAR wd = WEEKDAY(TODAY())\nRETURN\nSWITCH(\n    wd,\n    1, TODAY() - 2,\n    2, TODAY() - 3,\n    TODAY() - 1\n)",
+      "solution_explanation": "Converted the CASE on DATEPART('weekday', TODAY()) to WEEKDAY(TODAY()) and mapped CASE/WHEN to SWITCH; day arithmetic (today()-n) preserved as TODAY() - n."
+    },
+    {
+      "type": "calculated_column",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "MAX_DATE -1day",
+      "dax_expression": "VAR wd = WEEKDAY('migration_Extract_POC (1) (local copy)'[Max Date])\nRETURN\nSWITCH(\n    wd,\n    1, 'migration_Extract_POC (1) (local copy)'[Max Date] - 2,\n    2, 'migration_Extract_POC (1) (local copy)'[Max Date] - 3,\n    'migration_Extract_POC (1) (local copy)'[Max Date] - 1\n)",
+      "solution_explanation": "Converted CASE on DATEPART('weekday',[Max Date]) to WEEKDAY('Table'[Max Date]) and used SWITCH to mirror WHEN clauses; preserved date subtraction by days using [Max Date] - n. This is a row-level/date transformation, so created as a calculated column."
+    }
+  ]
+}
