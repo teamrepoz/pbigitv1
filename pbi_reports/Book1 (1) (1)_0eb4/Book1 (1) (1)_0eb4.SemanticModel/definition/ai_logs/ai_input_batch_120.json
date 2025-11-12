@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "fixed DTM",
+      "table_name": "migration_Extract_POC (1) (local copy)",
+      "tableau_expression": "STR({ FIXED [DTM T ]: MAX([DTM T ])})",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "STR({ FIXED [DTM T ]: MAX([DTM T ])})",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
