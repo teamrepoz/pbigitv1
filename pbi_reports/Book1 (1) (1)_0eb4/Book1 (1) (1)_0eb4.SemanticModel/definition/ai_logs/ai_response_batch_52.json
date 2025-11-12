@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Change Initial Cash USD (T-X)",
+      "dax_expression": "'migration_Extract_POC (1) (local copy)'[Initial Cash USD T (excl Int/FWD)] - 'migration_Extract_POC (1) (local copy)'[Initial Cash USD X]",
+      "solution_explanation": "Translated the row-level subtraction to DAX by referencing the two calculated fields on the same table. The expression directly subtracts 'Initial Cash USD X' from 'Initial Cash USD T (excl Int/FWD)'.",
+      "type_changed_reason": "Although the top-level formula is a simple row-level subtraction, the dependent calculated fields reference Tableau parameters. Per the rules, any calculation that references parameters must be created as a measure."
+    }
+  ]
+}
