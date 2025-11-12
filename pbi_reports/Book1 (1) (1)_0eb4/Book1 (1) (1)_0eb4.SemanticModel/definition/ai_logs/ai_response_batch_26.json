@@ -1,0 +1,18 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "mod US MM",
+      "dax_expression": "IF('migration_Extract_POC (1) (local copy)'[R/RR] = \"SFB\", 'migration_Extract_POC (1) (local copy)'[Ut. US MM] * -1, 'migration_Extract_POC (1) (local copy)'[Ut. US MM])",
+      "solution_explanation": "Converted the row-level IF from Tableau to a DAX calculated column using IF(). Preserved exact column and table names and string literal formatting."
+    },
+    {
+      "type": "calculated_column",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "USD all",
+      "dax_expression": "'migration_Extract_POC (1) (local copy)'[PV US MM] + 'migration_Extract_POC (1) (local copy)'[mod US MM]",
+      "solution_explanation": "Converted the row-level addition to a DAX calculated column by summing the PV US MM column and the previously created mod US MM calculated column. Column references formatted as 'TableName'[Column]."
+    }
+  ]
+}
