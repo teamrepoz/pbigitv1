@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Limit Description (Corp)",
+      "dax_expression": "\"Corporates\"",
+      "solution_explanation": "Converted the Tableau string literal \"Corporates\" to a DAX string literal \"Corporates\". This is a row-level constant (no aggregates or parameters), so it is implemented as a calculated column."
+    }
+  ]
+}
