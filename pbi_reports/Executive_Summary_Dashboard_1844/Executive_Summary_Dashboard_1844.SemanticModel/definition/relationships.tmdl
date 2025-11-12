@@ -1,0 +1,35 @@
+relationship e11bb8c0-b5d4-4820-ac96-f572a6c9c429
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'asset inventory (asset inventory)'.Assessment_Date
+	toColumn: LocalDateTable_6bcd958d-10f1-427e-a5e1-16b3539ec2f6.Date
+
+relationship 0e51b934-c42b-4542-90ab-e62ed8d95e9c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'asset inventory (asset inventory)'.Last_Assessment_Date
+	toColumn: LocalDateTable_061dd851-4dcc-429a-bfc7-552ab8ca3061.Date
+
+relationship 2c2f4875-7f95-48b3-a094-35c74cebfb46
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'asset inventory (asset inventory)'.Warranty_Expiry_Date
+	toColumn: LocalDateTable_790b4a32-028f-4642-939e-18d71802f63d.Date
+
+relationship abfd8397-5d7d-4b61-83ca-09593c6a691c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'asset inventory (asset inventory)'.Expiry_Date
+	toColumn: LocalDateTable_d540572e-4035-4a31-b29c-bda13a2574e0.Date
+
+relationship 723aaea4-decc-4f9b-bc50-02967084f8ac
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'asset inventory (asset inventory)'.Acquisition_Date
+	toColumn: LocalDateTable_ecf9c498-4c28-434f-b1c9-5bd5296048ac.Date
+
+relationship 4ffdf8d1-d5c1-4be2-9894-159ff1ebc547
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'asset inventory (asset inventory)'.Last_Serviced_Date
+	toColumn: LocalDateTable_82014ca5-ac8c-4445-b1d6-b5a7564bc489.Date
+
+relationship 5f734fba-fb0e-464c-a315-94ff321217e5
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'asset inventory (asset inventory)'.Bios_Date
+	toColumn: LocalDateTable_46d7a5b2-aa3d-46cb-991e-ca1079f993b5.Date
+
