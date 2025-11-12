@@ -1,0 +1,35 @@
+relationship 240af36c-8776-4b3e-a6ba-b29c7434ddcb
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Linkedin | Following and Post Data'.Date
+	toColumn: LocalDateTable_cd636351-1294-4066-8057-34679aaeab75.Date
+
+relationship b24e0621-fca0-4a83-ab60-ec003ea28fb7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Linkedin | Following and Post Data_All_Followers'.Date
+	toColumn: LocalDateTable_68822513-4b27-43f1-b780-c08e39899c5b.Date
+
+relationship ecd6a55f-f6db-4f68-9f37-95059898c455
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Linkedin | Following and Post Data_Post_Info'.post_created_at
+	toColumn: LocalDateTable_0d86b861-dc46-4317-b682-f44f791b6252.Date
+
+relationship 9aedb9d6-8307-4be2-a357-c4ef0fd0f33b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Linkedin | Following and Post Data_Post_Info'.post_updated_at
+	toColumn: LocalDateTable_6e00b174-e5dc-44bc-88ed-8a5b692e7e7e.Date
+
+relationship a9f74686-e801-4296-8a4b-e79a20b7b46f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Linkedin | Following and Post Data_Post_Info'.post_published_at
+	toColumn: LocalDateTable_d0f901d4-70bb-4b5a-bfe6-8530b29b7fc6.Date
+
+relationship 97953671-4b01-41de-ad53-205f3c7fb84f
+	toCardinality: many
+	fromColumn: 'Linkedin | Following and Post Data'.Date
+	toColumn: 'Linkedin | Following and Post Data_All_Followers'.Date
+
+relationship e78835fe-4ee9-428e-a849-07655a753077
+	toCardinality: many
+	fromColumn: 'Linkedin | Following and Post Data'.Date
+	toColumn: 'Linkedin | Following and Post Data_Post_Info'.'DATE([post_published_at])'
+
