@@ -1,0 +1,56 @@
+table 'Facility _group_ Parameter'
+	lineageTag: 02f142f3-9e7b-40d4-b223-5689e5b854cc
+
+	column Index
+		formatString: 0
+		lineageTag: 8ef3a56e-0776-4a41-abf9-404aab32a805
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 0dbeec2f-12f4-4a39-abb5-3ebf2b6cdaf1
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 8c5f347d-a41a-4d8d-8519-8c701ef2ee01
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Facility _group_ Parameter' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "All", "All" },
+				{ 1, "Facility A", "Facility A" },
+				{ 2, "Facility C", "Facility C" },
+				{ 3, "Facility D", "Facility D" },
+				{ 4, "Facility F", "Facility F" },
+				{ 5, "Facility G", "Facility G" },
+				{ 6, "Facility I", "Facility I" },
+				{ 7, "Facility L", "Facility L" },
+				{ 8, "Facility M", "Facility M" },
+				{ 9, "Facility N", "Facility N" },
+				{ 10, "Facility O", "Facility O" },
+				{ 11, "Facility U", "Facility U" },
+				{ 12, "Facility W", "Facility W" }
+			    }
+			)
+
+	annotation PBI_Id = 83eef98e32e5447c8d12e875e2a2a304
+
