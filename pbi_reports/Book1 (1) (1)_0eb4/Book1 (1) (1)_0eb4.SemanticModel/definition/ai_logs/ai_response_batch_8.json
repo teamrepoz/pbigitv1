@@ -1,0 +1,19 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Initial Cash USD T (excl Int/FWD) Abs",
+      "dax_expression": "ABS( SUM( 'migration_Extract_POC (1) (local copy)'[Initial Cash USD T (excl Int/FWD)] ) )",
+      "solution_explanation": "Converted the Tableau calculated field abs(SUM([Initial Cash USD T (excl Int/FWD)])) into a DAX measure using ABS and SUM."
+    },
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "BATCH",
+      "dax_expression": "VAR numerator = 'migration_Extract_POC (1) (local copy)'[Initial Cash USD T (excl Int/FWD) Abs]\nVAR denom = CALCULATE( 'migration_Extract_POC (1) (local copy)'[Initial Cash USD T (excl Int/FWD) Abs], ALL('migration_Extract_POC (1) (local copy)') )\nRETURN DIVIDE(numerator, denom)",
+      "solution_explanation": "Translated the Tableau expression dividing a value by TOTAL(value). TOTAL (a table calculation) is implemented in DAX by calculating the expression with ALL(...) to remove filters, so the expression is created as a measure.",
+      "type_changed_reason": "The calculation uses the Tableau table calculation TOTAL, which is a table/window-level aggregation; such logic must be implemented as a measure in Power BI."
+    }
+  ]
+}
