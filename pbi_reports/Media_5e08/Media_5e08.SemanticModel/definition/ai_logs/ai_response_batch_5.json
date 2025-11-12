@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "test+",
+      "name": "Top N Filter ",
+      "dax_expression": "VAR TopN = SELECTEDVALUE('Top N'[Display As])\nVAR RankValue = RANKX(\n    ALL('test+'),\n    CALCULATE(SUM('test+'[Likes_Received_Per_Day])),\n    BLANK(),\n    0\n)\nRETURN\nRankValue <= TopN",
+      "solution_explanation": "Translated Tableau RANK(SUM([Likes_Received_Per_Day])) <= [Parameters].[Top N] into DAX. Replaced the parameter with SELECTEDVALUE('Top N'[Display As]) per parameter rules. Replaced Tableau RANK over an aggregate with RANKX over ALL('test+') and CALCULATE(SUM('test+'[Likes_Received_Per_Day])) to compute the rank; used BLANK() for the optional value and 0 for descending order. The measure returns TRUE/FALSE when the rank is less than or equal to the selected Top N."
+    }
+  ]
+}
