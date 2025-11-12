@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "test+",
+      "name": "Age Category ",
+      "dax_expression": "IF(VALUE('test+'[Age]) < 25, \"Young\", \"Adult\")",
+      "solution_explanation": "Row-level IF mapped to DAX IF. The original [Age] is a string, so VALUE('test+'[Age]) casts it to numeric for the comparison. This is created as a calculated column because it performs a per-row evaluation without aggregation."
+    }
+  ]
+}
