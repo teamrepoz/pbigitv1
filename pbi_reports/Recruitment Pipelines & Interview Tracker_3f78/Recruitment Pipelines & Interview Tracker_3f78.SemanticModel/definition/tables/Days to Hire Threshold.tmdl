@@ -1,0 +1,44 @@
+table 'Days to Hire Threshold'
+	lineageTag: 24340b8b-8fc4-4679-a148-42503acf255e
+
+	column Index
+		formatString: 0
+		lineageTag: bf1aee1d-8858-49ff-a0c2-b9daa5ede83b
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: de2f0a88-a24c-4b62-a530-ccfd6b682a7e
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: b4a7560f-d85f-4b73-83b4-8499c508cfff
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Days to Hire Threshold' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", INTEGER,
+			    "Value", INTEGER,
+			    {
+			        {0, 1, 1}
+			    }
+			)
+
+	annotation PBI_Id = f61a55a7727f4e2ea3b483f54512b217
+
