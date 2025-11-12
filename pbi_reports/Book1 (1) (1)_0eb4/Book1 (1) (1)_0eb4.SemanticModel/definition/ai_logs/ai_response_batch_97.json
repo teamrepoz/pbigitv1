@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "WARR (bps)",
+      "dax_expression": "SUMX('migration_Extract_POC (1) (local copy)', 'migration_Extract_POC (1) (local copy)'[Ut. US MM] * 'migration_Extract_POC (1) (local copy)'[Repo Rate]) / SUM('migration_Extract_POC (1) (local copy)'[Ut. US MM])",
+      "solution_explanation": "SUM([Ut. US MM]*[Repo Rate]) is implemented as SUMX over the table to compute the row-by-row product, divided by SUM of Ut. US MM. All column references converted to 'TableName'[Column] format.",
+      "type_changed_reason": "The calculation contains aggregations (SUM), so it should be created as a measure."
+    }
+  ]
+}
