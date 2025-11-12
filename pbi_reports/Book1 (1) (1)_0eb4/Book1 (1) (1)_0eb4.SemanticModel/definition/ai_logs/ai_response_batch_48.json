@@ -1,0 +1,42 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Max Date",
+      "dax_expression": "VAR wd = WEEKDAY(TODAY())\nRETURN\nSWITCH(\n    TRUE(),\n    wd = 1, TODAY() - 2,\n    wd = 2, TODAY() - 3,\n    TRUE(), TODAY() - 1\n)",
+      "solution_explanation": "Converted Tableau case/datepart(TODAY()) logic to DAX using WEEKDAY(TODAY()) and SWITCH to return TODAY() offset by days for weekend adjustments."
+    },
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "MAX_DATE -1day",
+      "dax_expression": "VAR wd = WEEKDAY([Max Date])\nRETURN\nSWITCH(\n    TRUE(),\n    wd = 1, [Max Date] - 2,\n    wd = 2, [Max Date] - 3,\n    TRUE(), [Max Date] - 1\n)",
+      "solution_explanation": "Translated the Tableau CASE on datepart('weekday',[Max Date]) to DAX using WEEKDAY on the [Max Date] measure and SWITCH to subtract the appropriate number of days."
+    },
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "DV01 T",
+      "dax_expression": "VAR useCustom = SELECTEDVALUE('Use Custom Date'[Display As])\nVAR rpDate = 'migration_Extract_POC (1) (local copy)'[RpDate]\nVAR dv01 = 'migration_Extract_POC (1) (local copy)'[DV01]\nRETURN\nIF(\n    useCustom,\n    IF([Max Date] = rpDate, dv01, 0),\n    IF(rpDate = SELECTEDVALUE('End Date'[Display As]), dv01, 0)\n)",
+      "solution_explanation": "Converted Tableau nested IFs to DAX using IF. Parameter references were replaced with SELECTEDVALUE('ParameterName'[Display As]) per rules. Row fields RpDate and DV01 were translated to 'migration_Extract_POC (1) (local copy)'[RpDate] and 'migration_Extract_POC (1) (local copy)'[DV01].",
+      "type_changed_reason": "This calculation references Tableau parameters (Use Custom Date and End Date) and therefore must be a measure."
+    },
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Dv01 T-1",
+      "dax_expression": "VAR useCustom = SELECTEDVALUE('Use Custom Date'[Display As])\nVAR rpDate = 'migration_Extract_POC (1) (local copy)'[RpDate]\nVAR dv01 = 'migration_Extract_POC (1) (local copy)'[DV01]\nRETURN\nIF(\n    useCustom,\n    IF([MAX_DATE -1day] = rpDate, dv01, 0),\n    IF(SELECTEDVALUE('Date X (comparison date)'[Display As]) = rpDate, dv01, 0)\n)",
+      "solution_explanation": "Translated the Tableau nested IF that switches between comparing RpDate to MAX_DATE -1day or to a parameter Date X. Parameter usages were replaced with SELECTEDVALUE('ParameterName'[Display As]) and row columns were converted to 'migration_Extract_POC (1) (local copy)'[Column].",
+      "type_changed_reason": "This calculation references Tableau parameters (Use Custom Date and Date X (comparison date)) and therefore must be a measure."
+    },
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Change Dv01",
+      "dax_expression": "[DV01 T] - [Dv01 T-1]",
+      "solution_explanation": "Direct subtraction of the two dependent measures [DV01 T] and [Dv01 T-1]; translated from Tableau arithmetic to DAX measure arithmetic.",
+      "type_changed_reason": "Although the expression is a simple subtraction, the dependent calculated fields reference parameters, so this calculation must be a measure."
+    }
+  ]
+}
