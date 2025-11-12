@@ -1,0 +1,26 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Max Date",
+      "dax_expression": "VAR WeekDayNum = WEEKDAY(TODAY())\nRETURN\nSWITCH(\n    TRUE(),\n    WeekDayNum = 1, TODAY() - 2,\n    WeekDayNum = 2, TODAY() - 3,\n    TODAY() - 1\n)",
+      "solution_explanation": "Recreated the Tableau weekday-based logic using DAX WEEKDAY and SWITCH to return TODAY() offset by days depending on the weekday."
+    },
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "MAX_DATE -1day",
+      "dax_expression": "VAR maxDate = 'migration_Extract_POC (1) (local copy)'[Max Date]\nVAR wd = WEEKDAY(maxDate)\nRETURN\nSWITCH(\n    TRUE(),\n    wd = 1, maxDate - 2,\n    wd = 2, maxDate - 3,\n    maxDate - 1\n)",
+      "solution_explanation": "Translated the CASE on datepart('weekday',[Max Date]) to DAX by taking the computed Max Date measure and applying WEEKDAY with SWITCH to return the appropriate day offset."
+    },
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Initial Cash USD X",
+      "dax_expression": "VAR UseCustom = SELECTEDVALUE('Use Custom Date'[Display As])\nVAR DateX = SELECTEDVALUE('Date X (comparison date)'[Display As])\nRETURN\nIF(\n    UseCustom,\n    IF(\n        'migration_Extract_POC (1) (local copy)'[MAX_DATE -1day] = 'migration_Extract_POC (1) (local copy)'[RpDate],\n        'migration_Extract_POC (1) (local copy)'[Ut. US MM],\n        0\n    ),\n    IF(\n        'migration_Extract_POC (1) (local copy)'[RpDate] = DateX,\n        'migration_Extract_POC (1) (local copy)'[Ut. US MM],\n        0\n    )\n)",
+      "solution_explanation": "Converted the parameter-driven IF/ELSEIF logic to DAX. Parameters are mapped to SELECTEDVALUE(...) per rules. The measure compares either the MAX_DATE -1day measure or the RpDate column to decide whether to return Ut. US MM or 0.",
+      "type_changed_reason": "The formula references parameters ([Parameters]), and any parameter-based calculation must be implemented as a measure in Power BI."
+    }
+  ]
+}
