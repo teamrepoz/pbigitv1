@@ -1,0 +1,46 @@
+table 'Location'
+	lineageTag: f98d7750-62a8-4b06-b080-6d61ebdcf8ad
+
+	column Index
+		formatString: 0
+		lineageTag: 01f2c510-782a-4a67-9cbb-d6a67ecb742d
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: f42dd277-3f08-47ec-aa9a-e70be68faad1
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 6f2915a8-a5aa-42b5-af92-5a1008fef768
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Location' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Headquarters", "Headquarters" },
+				{ 1, "Remote", "Remote" },
+				{ 2, "All Locations", "All Locations" }
+			    }
+			)
+
+	annotation PBI_Id = 48626065a22245bebd26f40d9f4ace6a
+
