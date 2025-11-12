@@ -1,0 +1,20 @@
+relationship f6678fdd-3f8d-4c86-81dd-b6f696612118
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Sheet1_Sheet1+ (Multiple Connections)'.Date
+	toColumn: LocalDateTable_6306dba6-384c-48db-bf75-a26fbac13533.Date
+
+relationship 09fc532f-fa00-4ebc-a2e9-87fdd2226ed2
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'prescriptions.csv_Sheet1+ (Multiple Connections)'.Date
+	toColumn: LocalDateTable_e1820403-b4e1-46ac-a6b5-f4d7cf4d37ee.Date
+
+relationship e8d7d063-e973-4096-b1ae-bc34f8812948
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Sheet1+ (Multiple Connections)'.Date
+	toColumn: LocalDateTable_787beb19-16c9-411f-a813-13d2ca99e959.Date
+
+relationship 10c0fcf0-e028-4b48-9966-51e685b777ad
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Sheet1+ (Multiple Connections)'.Date
+	toColumn: LocalDateTable_3a21d87d-ac5f-416d-8f91-05627b11a78c.Date
+
