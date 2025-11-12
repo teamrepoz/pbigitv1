@@ -1,0 +1,5 @@
+relationship 06e7ce80-3eb0-41c2-91d8-1d37fdf1d986
+	toCardinality: many
+	fromColumn: 'test+'.User_ID
+	toColumn: 'test+_train.csv'.User_ID
+
