@@ -1,0 +1,48 @@
+table 'Detail'
+	lineageTag: d8108cf6-4181-4d82-9f56-293a0ada0414
+
+	column Index
+		formatString: 0
+		lineageTag: 5b91b79d-65a9-4e01-9fb0-7c2cc65588e0
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 5bf235a6-76a1-44c3-817e-45453f3768b5
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 89a49240-2b3a-42b1-9385-4c8f9a0bb492
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Detail' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Positions", "Positions" },
+				{ 1, "Quantity", "Quantity" },
+				{ 2, "Value", "Value" },
+				{ 3, "Missing Stock Cost", "Missing Stock Cost" },
+				{ 4, "Surplus Cost", "Surplus Cost" }
+			    }
+			)
+
+	annotation PBI_Id = 9e5ffd7460094acfa2a7d9631331bc4a
+
