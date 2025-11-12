@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Limit Description (Canadian prov) ",
+      "dax_expression": "\"Canadian Provinces\"",
+      "solution_explanation": "The Tableau expression is a constant string literal. It contains no aggregations, parameters, or row-level field references, so it should be created as a calculated column. The Tableau string literal maps directly to the DAX string literal."
+    }
+  ]
+}
