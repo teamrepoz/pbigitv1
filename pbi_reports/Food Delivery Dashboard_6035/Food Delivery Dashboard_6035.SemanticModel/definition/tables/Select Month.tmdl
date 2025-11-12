@@ -1,0 +1,46 @@
+table 'Select Month'
+	lineageTag: 53425a35-572e-453b-8c96-ae6a2a065993
+
+	column Index
+		formatString: 0
+		lineageTag: 4a46d064-5031-4bbe-93d2-21c6b3d6c0c6
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: d2dd9b8e-4f90-466a-bdc2-1f363aca45c1
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: e37e2317-3550-40f1-9dd8-cc7cd0b81594
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Select Month' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", INTEGER,
+			    "Value", INTEGER,
+			    {
+			        { 0, September, 9 },
+				{ 1, October, 10 },
+				{ 2, November, 11 }
+			    }
+			)
+
+	annotation PBI_Id = 961395554b9b4747958fcd13e96613f2
+
