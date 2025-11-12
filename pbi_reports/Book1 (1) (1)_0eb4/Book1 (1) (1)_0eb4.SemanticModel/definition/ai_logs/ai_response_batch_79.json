@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Sec MV USD T -1",
+      "dax_expression": "VAR UseCustom = SELECTEDVALUE('Use Custom Date'[Display As])\nVAR SecValue = ABS('migration_Extract_POC (1) (local copy)'[Sec value USD]) / POWER(10, 6)\nVAR RpDate = 'migration_Extract_POC (1) (local copy)'[RpDate]\nVAR MaxDate = SWITCH(WEEKDAY(TODAY()), 1, TODAY() - 2, 2, TODAY() - 3, TODAY() - 1)\nVAR MAX_DATE_minus1day = SWITCH(WEEKDAY(MaxDate), 1, MaxDate - 2, 2, MaxDate - 3, MaxDate - 1)\nVAR ComparisonDate = IF(UseCustom, MAX_DATE_minus1day, SELECTEDVALUE('Date X (comparison date)'[Display As]))\nRETURN\nIF(\n    UseCustom,\n    IF(MAX_DATE_minus1day = RpDate, SecValue, 0),\n    IF(ComparisonDate = RpDate, SecValue, 0)\n)",
+      "solution_explanation": "Converted the nested IF logic from Tableau into DAX using VARs for clarity. Parameter references were replaced per rules: [Parameters].[Use Custom Date] -> SELECTEDVALUE('Use Custom Date'[Display As]) and [Parameters].[Date X (comparison date)] -> SELECTEDVALUE('Date X (comparison date)'[Display As]). The calculated fields MAX_DATE -1day and Max Date were inlined using SWITCH and WEEKDAY to reproduce the weekday-based date adjustments. All column references were transformed to the 'TableName'[Column] format.",
+      "type_changed_reason": "The calculation references a parameter, and all parameter-based calculations must be measures."
+    }
+  ]
+}
