@@ -1,0 +1,49 @@
+table 'Demographic Parameter'
+	lineageTag: c34e8d1a-b810-4f3a-8386-5fdf7459b08b
+
+	column Index
+		formatString: 0
+		lineageTag: 674599fd-f86b-41c6-98d6-74939321d2c5
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 1070ed36-84ee-45a9-8ae2-add5e90538a6
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 73aecea2-62c8-4b48-8333-edec7ae1a765
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Demographic Parameter' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Companies", "Companies" },
+				{ 1, "Company size", "Company size" },
+				{ 2, "Industries", "Industries" },
+				{ 3, "Job titles", "Job titles" },
+				{ 4, "Locations", "Locations" },
+				{ 5, "Seniority", "Seniority" }
+			    }
+			)
+
+	annotation PBI_Id = 48b98c69f0084495bbb5a8b22125754f
+
