@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "Select Metric",
+      "table_name": "Parameters",
+      "tableau_expression": "\"Likes\"",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "\"Likes\"",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
