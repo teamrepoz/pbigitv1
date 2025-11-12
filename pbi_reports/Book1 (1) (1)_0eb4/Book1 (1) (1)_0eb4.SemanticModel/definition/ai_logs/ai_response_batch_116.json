@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Title Date Filter",
+      "dax_expression": "VAR useCustom = SELECTEDVALUE('Use Custom Date'[Display As])\nVAR endDateParam = SELECTEDVALUE('End Date'[Display As])\nVAR maxDate =\n    VAR wd = WEEKDAY(TODAY())\n    RETURN\n        SWITCH(\n            wd,\n            1, TODAY() - 2,\n            2, TODAY() - 3,\n            TODAY() - 1\n        )\nRETURN\nIF(\n    useCustom,\n    IF(maxDate = 'migration_Extract_POC (1) (local copy)'[RpDate], 1, 0),\n    IF('migration_Extract_POC (1) (local copy)'[RpDate] = endDateParam, 1, 0)\n)",
+      "solution_explanation": "Recreated the Tableau IF logic as a DAX measure. Parameter references were replaced with SELECTEDVALUE('ParameterName'[Display As]) per rules (Use Custom Date and End Date). The dependent calculated field [Max Date] was implemented inline using WEEKDAY(TODAY()) and SWITCH to match the original weekday-based date logic. All column references use the 'table'[column] format for 'migration_Extract_POC (1) (local copy)'[RpDate]. The measure returns 1 or 0 to match the Tableau output.",
+      "type_changed_reason": "The calculation references Tableau parameters, and all parameter-based calculations must be measures."
+    }
+  ]
+}
