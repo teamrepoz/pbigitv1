@@ -1,0 +1,46 @@
+table 'Colour by'
+	lineageTag: e30004dd-6116-45ca-b94f-3b0c085ec77c
+
+	column Index
+		formatString: 0
+		lineageTag: 912db845-eec8-4641-9600-adb508e41b21
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 04bb8939-2d9a-4622-abe5-4c370bee6d3e
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: c7516b88-47dc-4555-9b6c-8736816a314e
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Colour by' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Status", "Status" },
+				{ 1, "Risk level", "Risk level" },
+				{ 2, "Event type", "Event type" }
+			    }
+			)
+
+	annotation PBI_Id = 4699a1e5ad7c45fbb41a9f0cef6c9103
+
