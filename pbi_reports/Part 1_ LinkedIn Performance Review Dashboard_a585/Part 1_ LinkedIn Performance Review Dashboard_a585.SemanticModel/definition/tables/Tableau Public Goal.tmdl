@@ -1,0 +1,44 @@
+table 'Tableau Public Goal'
+	lineageTag: 00848b1d-9fde-41d5-8dd4-1d32eda77719
+
+	column Index
+		formatString: 0
+		lineageTag: be9e3aa9-eabc-4e84-a2d4-ddf06da8df9e
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 38c312d9-e145-4d3f-8c2a-8bf869f0faf2
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: dcce9a56-388b-4f16-9616-6797732982dd
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Tableau Public Goal' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", DOUBLE,
+			    "Value", DOUBLE,
+			    {
+			        {0, 200.0, 200.0}
+			    }
+			)
+
+	annotation PBI_Id = e1d606e0b201469ea0d84c599d8f4a87
+
