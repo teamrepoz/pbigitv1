@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Limit (Corp)",
+      "dax_expression": "4000",
+      "solution_explanation": "The Tableau expression is a constant literal (4000) with no aggregations or parameters. This is row-level/static logic and should be implemented as a calculated column that returns 4000 for each row."
+    }
+  ]
+}
