@@ -1,0 +1,28 @@
+table 'Minimum Hours Threshold'
+	lineageTag: 92677a06-e013-4f35-a2fa-533100ea45c3
+
+	measure 'Minimum Hours Threshold Value' = SELECTEDVALUE('Minimum Hours Threshold'[Minimum Hours Threshold], 0)
+		lineageTag: 92814112-6dab-4d37-8b55-45c2cfc0a940
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Minimum Hours Threshold'
+		dataType: double
+		formatString: 0
+		lineageTag: fe461a44-a706-4736-b0a3-0e49eb2da224
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Minimum Hours Threshold' = calculated
+		mode: import
+		source = GENERATESERIES(0, 12, 1)
+
+	annotation PBI_Id = fb2b9fdd67674b4a96bbdd5385009c3c
+
