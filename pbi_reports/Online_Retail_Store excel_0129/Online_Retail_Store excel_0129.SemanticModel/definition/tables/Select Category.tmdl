@@ -1,0 +1,48 @@
+table 'Select Category'
+	lineageTag: 44246d24-ae46-45b3-ad77-1c6f540543a0
+
+	column Index
+		formatString: 0
+		lineageTag: f0ed3f01-2a91-4213-a9f7-c9a422e34401
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 7a3cf896-739f-4ab4-89e0-2b68fb015821
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: c4b66778-9a05-4caa-9ba6-d46d46dfd378
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Select Category' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Books", "Books" },
+				{ 1, "Clothing", "Clothing" },
+				{ 2, "Electronics", "Electronics" },
+				{ 3, "Furnitures", "Furnitures" },
+				{ 4, "Groceries", "Groceries" }
+			    }
+			)
+
+	annotation PBI_Id = a1a662370fed490b888b12daeb4dfde7
+
