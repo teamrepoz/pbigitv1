@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Rate Move T",
+      "dax_expression": "VAR UseCustom = SELECTEDVALUE('Use Custom Date'[Display As])\nVAR EndDateParam = SELECTEDVALUE('End Date'[Display As])\nRETURN\nIF(\n    UseCustom,\n    IF(\n        'migration_Extract_POC (1) (local copy)'[Max Date] = 'migration_Extract_POC (1) (local copy)'[RpDate],\n        'migration_Extract_POC (1) (local copy)'[Rate Move],\n        0\n    ),\n    IF(\n        'migration_Extract_POC (1) (local copy)'[RpDate] = EndDateParam,\n        'migration_Extract_POC (1) (local copy)'[Rate Move],\n        0\n    )\n)",
+      "solution_explanation": "Replaced Tableau parameter references with SELECTEDVALUE(...) per parameter rules and converted nested IF logic to DAX IF. All column and calculated field references use the table-qualified format 'migration_Extract_POC (1) (local copy)'[Column].",
+      "type_changed_reason": "The calculation references parameters ([Parameters].[Use Custom Date] and [Parameters].[End Date]); per rules parameter-based calculations must be measures."
+    }
+  ]
+}
