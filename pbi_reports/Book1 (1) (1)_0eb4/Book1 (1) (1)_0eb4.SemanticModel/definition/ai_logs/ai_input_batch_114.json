@@ -1,0 +1,30 @@
+{
+  "calculations": [
+    {
+      "name": "Trade Status ",
+      "table_name": "migration_Extract_POC (1) (local copy)",
+      "tableau_expression": "if [Tran. date]=[title date] THEN \" New Trade\"\r\nELSEIF [Maturity Date]<=[title date] THEN \" Expried Trade\" \r\nELSE \"Existing Trade\"\r\nEND",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "if [Tran. date]=[title date] THEN \" New Trade\"\r\nELSEIF [Maturity Date]<=[title date] THEN \" Expried Trade\" \r\nELSE \"Existing Trade\"\r\nEND",
+        "calculated_fields": {
+          "title date": "if [Parameters].[Use Custom Date] THEN [Max Date] ELSE  [Parameters].[End Date] END",
+          "Use Custom Date": "true",
+          "Max Date": "case datepart('weekday',today())\r\n    when 1 then today()-2\r\n    when 2 then today()-3\r\n    else today()-1\r\n    END",
+          "End Date": "#2023-11-01#"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Tran. date": "date",
+          "Maturity Date": "date"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Use Custom Date": "boolean",
+          "End Date": "date",
+          "title date": "DateTime",
+          "Max Date": "DateTime"
+        }
+      }
+    }
+  ]
+}
