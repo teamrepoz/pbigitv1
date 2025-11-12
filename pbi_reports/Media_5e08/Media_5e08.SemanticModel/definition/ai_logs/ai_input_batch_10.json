@@ -1,0 +1,25 @@
+{
+  "calculations": [
+    {
+      "name": "Dynamic Age Group ",
+      "table_name": "test+",
+      "tableau_expression": "IF [Age] <= [Parameters].[Age Cut Value] THEN \"Young\"\r\nELSE \"Adult\"\r\nEND",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "IF [Age] <= [Parameters].[Age Cut Value] THEN \"Young\"\r\nELSE \"Adult\"\r\nEND",
+        "calculated_fields": {
+          "Age Cut Value": "30"
+        },
+        "parameters": [
+          "Age Cut Value"
+        ],
+        "col_to_datatype_mapping": {
+          "Age": "string"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Age Cut Value": "integer"
+        }
+      }
+    }
+  ]
+}
