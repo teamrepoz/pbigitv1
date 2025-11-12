@@ -1,0 +1,110 @@
+table 'Customers+ (Online_Retail_Store)'
+	lineageTag: 565b32db-43d5-4117-bd31-b7e985c1b11c
+
+	column OrderID
+		dataType: int64
+		formatString: 0
+		lineageTag: 62c9f1d7-5695-49b8-9c83-efb59ac9435f
+		summarizeBy: sum
+		sourceColumn: OrderID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerID
+		dataType: int64
+		formatString: 0
+		lineageTag: f3989281-cc8c-4cae-8545-6580d9ebc36c
+		summarizeBy: sum
+		sourceColumn: CustomerID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductID
+		dataType: int64
+		formatString: 0
+		lineageTag: d1236dae-be89-44c7-ab28-dca62fb86314
+		summarizeBy: sum
+		sourceColumn: ProductID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quantity
+		dataType: int64
+		formatString: 0
+		lineageTag: ea613edb-283f-4e11-b5de-a1c2df0c12cd
+		summarizeBy: sum
+		sourceColumn: Quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrderDate
+		dataType: datetime
+		lineageTag: e5a5d73c-eb4d-4827-8835-b3bd0a9b2c68
+		summarizeBy: none
+		sourceColumn: OrderDate
+
+		variation Variation
+			isDefault
+			relationship: f978174b-5adc-42a0-849c-bc1bf11f75e8
+			defaultHierarchy: LocalDateTable_8ace553b-32a6-4cba-ae23-2a8dd4d0322f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ProductID 1'
+		dataType: int64
+		formatString: 0
+		lineageTag: 05e53151-2f7c-452e-a8a3-f219e9d80077
+		summarizeBy: sum
+		sourceColumn: 'ProductID 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductName
+		dataType: string
+		lineageTag: 21290ccd-a6de-4427-a4c3-ab0764fb0b32
+		summarizeBy: none
+		sourceColumn: ProductName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		lineageTag: 4c233a84-06fe-4609-a622-6fd629d3ad5c
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column Price
+		dataType: double
+		formatString: General Number
+		lineageTag: 9bf3b001-b8db-4967-a2f8-fde0c2f453b8
+		summarizeBy: sum
+		sourceColumn: Price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'CustomerID 1'
+		dataType: int64
+		formatString: 0
+		lineageTag: c4aca7f7-702d-4944-8310-37934d5b4097
+		summarizeBy: sum
+		sourceColumn: 'CustomerID 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Customers+ (Online_Retail_Store)' = m
+		mode: import
+		source =
+				let 
+					#"Source0" = Table.NestedJoin(#"Customers_Customers+ (Online_Retail_Store)", {"CustomerID"}, #"Orders_Customers+ (Online_Retail_Store)", {"CustomerID"}, "Orders_Customers+ (Online_Retail_Store)", JoinKind.Inner),
+					#"Expand0" = Table.ExpandTableColumn(#"Source0", "Orders_Customers+ (Online_Retail_Store)", {"OrderID", "CustomerID", "ProductID", "Quantity", "OrderDate"}, {"OrderID", "CustomerID 1", "ProductID", "Quantity", "OrderDate"}),
+					#"Source1" = Table.NestedJoin(#"Expand0", {"ProductID"}, #"Products_Customers+ (Online_Retail_Store)", {"ProductID"}, "Products_Customers+ (Online_Retail_Store)", JoinKind.Inner),
+					#"Expand1" = Table.ExpandTableColumn(#"Source1", "Products_Customers+ (Online_Retail_Store)", {"ProductID", "ProductName", "Category", "Price"}, {"ProductID 1", "ProductName", "Category", "Price"})
+					in #"Expand1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
