@@ -1,0 +1,48 @@
+table 'Y Axis Score'
+	lineageTag: 72f255cf-2db8-4b9d-9037-961c989db089
+
+	column Index
+		formatString: 0
+		lineageTag: c91496ce-52c7-4d15-b5cf-1fac782f47e6
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 1be4f03d-1e95-4e69-a171-85cc0ff90593
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: ecb9d1f5-047f-4f29-a9ac-8d005d321207
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Y Axis Score' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Job Satisfaction", "Job Satisfaction" },
+				{ 1, "Job Involvement", "Job Involvement" },
+				{ 2, "Environment Satisfaction", "Environment Satisfaction" },
+				{ 3, "Work Life Balance", "Work Life Balance" },
+				{ 4, "Relationship Satisfaction", "Relationship Satisfaction" }
+			    }
+			)
+
+	annotation PBI_Id = a0478024a0f944ea836f007172f83be2
+
