@@ -1,0 +1,51 @@
+{
+  "calculations": [
+    {
+      "name": "Netted Utilization %",
+      "table_name": "migration_Extract_POC (1) (local copy)",
+      "tableau_expression": "Abs([Netted T]/MAX([Limit (Net)]))",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "Abs([Netted T]/MAX([Limit (Net)]))",
+        "calculated_fields": {
+          "Netted T": "Sum(IF [R/RR]=\"R\" THEN \r\n([Initial Cash USD T (excl Int/FWD)])*-1\r\nELSEIF  [R/RR]=\"RR\" THEN\r\n([Initial Cash USD T (excl Int/FWD)]) END)\r\n\r\n-SUM([fixed netting (T)])",
+          "Limit (Net)": "35000",
+          "Initial Cash USD T (excl Int/FWD)": "if [Parameters].[Use Custom Date] then \r\n    (if [Max Date]= [RpDate] AND [Is Internal ? (group)]=\"external\" AND [Is Forward Start ?]=0 THEN [Ut. US MM] else 0 END)\r\nelse if [RpDate]= [Parameters].[End Date] AND [Is Internal ? (group)]=\"external\" AND [Is Forward Start ?]=0 then [Ut. US MM] else 0 END END",
+          "fixed netting (T)": "{FIXED   [RpDate],[CounterParty],[Cash curr],[Maturity Date] : MIN(\r\n[fixed netting 3 R (T)],[fixed netting 3 RR (T)])}",
+          "End Date": "#2023-11-01#",
+          "fixed netting 3 R (T)": "Sum(ABS({FIXED   [RpDate],[Subs],[Counterpty],[Cash curr],[Maturity Date],[R/RR]: \r\n(\r\n(Sum(IF [Is Forward Start ?] = 0 AND [Is Approved for Netting] = \"1\" \r\nAND [Bucket]<>\"open\"  AND  [R/RR]=\"R\" AND [Title Date Filter]=1\r\n\r\nTHEN ([Ut. US MM]) ELSE 0 END)))}))",
+          "Use Custom Date": "true",
+          "Max Date": "case datepart('weekday',today())\r\n    when 1 then today()-2\r\n    when 2 then today()-3\r\n    else today()-1\r\n    END",
+          "fixed netting 3 RR (T)": "Sum(ABS({FIXED   [RpDate],[Subs],[Counterpty],[Cash curr],[Maturity Date],[R/RR]: \r\n(\r\n(Sum(IF [Is Forward Start ?] = 0 AND [Is Approved for Netting] = \"1\" \r\nAND [Bucket]<>\"open\"  AND  [R/RR]=\"RR\" AND [Title Date Filter]=1\r\nTHEN ([Ut. US MM]) ELSE 0 END)))}))",
+          "Title Date Filter": "if [Parameters].[Use Custom Date] then \r\n    (if [Max Date]= [RpDate] then 1 else 0 END)\r\nelse if [RpDate]= [Parameters].[End Date] then 1 else 0 END END"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "RpDate": "date",
+          "Cash curr": "string",
+          "Counterpty": "string",
+          "Subs": "string",
+          "R/RR": "string",
+          "Is Forward Start ?": "integer",
+          "Maturity Date": "date",
+          "Ut. US MM": "real",
+          "CounterParty": "string",
+          "Is Approved for Netting": "string",
+          "Bucket": "string"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Netted T": "real",
+          "Limit (Net)": "integer",
+          "Initial Cash USD T (excl Int/FWD)": "real",
+          "fixed netting (T)": "real",
+          "End Date": "date",
+          "fixed netting 3 R (T)": "real",
+          "Use Custom Date": "boolean",
+          "fixed netting 3 RR (T)": "real",
+          "Max Date": "DateTime",
+          "Title Date Filter": "Int64"
+        }
+      }
+    }
+  ]
+}
