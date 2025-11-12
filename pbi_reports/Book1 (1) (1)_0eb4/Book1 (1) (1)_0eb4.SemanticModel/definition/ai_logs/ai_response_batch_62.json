@@ -1,0 +1,33 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Col DV01",
+      "dax_expression": "VAR days = DATEDIFF('migration_Extract_POC (1) (local copy)'[RpDate], 'migration_Extract_POC (1) (local copy)'[Collateral Maturity], DAY)\nRETURN ('migration_Extract_POC (1) (local copy)'[End Cash (in USD)] * POWER(10, 3)) * days / 365 * 0.01 * 0.01",
+      "solution_explanation": "Converted the row-level Tableau expression to a calculated column using DATEDIFF for day difference and POWER(10,3) for 10^3. Column references were transformed to 'table'[column] format."
+    },
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Max Date",
+      "dax_expression": "VAR wd = WEEKDAY(TODAY())\nRETURN SWITCH(wd, 1, TODAY() - 2, 2, TODAY() - 3, TODAY() - 1)",
+      "solution_explanation": "Translated the Tableau CASE on weekday(TODAY()) to a DAX SWITCH on WEEKDAY(TODAY()) to return the adjusted Max Date. Kept it as a measure because it depends on TODAY() (dynamic scalar)."
+    },
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "MAX_DATE -1day",
+      "dax_expression": "VAR md = [Max Date]\nVAR wd = WEEKDAY(md)\nRETURN SWITCH(wd, 1, md - 2, 2, md - 3, md - 1)",
+      "solution_explanation": "Converted the Tableau CASE that adjusts [Max Date] by weekday to a DAX measure using SWITCH and WEEKDAY on the [Max Date] measure."
+    },
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Col DV01 T-1",
+      "dax_expression": "VAR useCustom = SELECTEDVALUE('Use Custom Date'[Display As])\nVAR dateX = SELECTEDVALUE('Date X (comparison date)'[Display As])\nRETURN\nIF(\n    useCustom,\n    IF(\n        [MAX_DATE -1day] = 'migration_Extract_POC (1) (local copy)'[RpDate],\n        'migration_Extract_POC (1) (local copy)'[Col DV01],\n        0\n    ),\n    IF(\n        dateX = 'migration_Extract_POC (1) (local copy)'[RpDate],\n        'migration_Extract_POC (1) (local copy)'[Col DV01],\n        0\n    )\n)",
+      "solution_explanation": "Translated the nested IF logic to DAX. Parameter references were converted to SELECTEDVALUE('ParameterName'[Display As]) as required, and all column references use the 'table'[column] format.",
+      "type_changed_reason": "The calculation references parameters, and all parameter-based calculations must be measures."
+    }
+  ]
+}
