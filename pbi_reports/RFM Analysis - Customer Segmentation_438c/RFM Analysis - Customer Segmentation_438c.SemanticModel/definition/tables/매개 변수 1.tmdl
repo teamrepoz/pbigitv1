@@ -1,0 +1,44 @@
+table '매개 변수 1'
+	lineageTag: ea91b724-fa2c-4c42-8270-7aaaf6f836ce
+
+	column Index
+		formatString: 0
+		lineageTag: 4ef333f3-febe-4075-8432-bf311a5c870c
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: c42d820e-2179-4216-801f-33f2e10739b7
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: a4a2a20d-25ba-4cf6-8562-bcba3413ed0c
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition '매개 변수 1' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", DOUBLE,
+			    "Value", DOUBLE,
+			    {
+			        {0, 1.0, 1.0}
+			    }
+			)
+
+	annotation PBI_Id = 98b730cbfb7e4d7a90b1c53daffd3bb3
+
