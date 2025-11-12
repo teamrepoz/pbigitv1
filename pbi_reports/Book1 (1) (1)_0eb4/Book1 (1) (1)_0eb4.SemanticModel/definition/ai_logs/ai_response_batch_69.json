@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Gross Utilization % (Non G11)",
+      "dax_expression": "ABS( SUM('migration_Extract_POC (1) (local copy)'[Initial Cash USD T (excl Int/FWD)]) / MAX('migration_Extract_POC (1) (local copy)'[Limit (Non G11)]) )",
+      "solution_explanation": "Converted Tableau ABS(SUM([Initial Cash USD T (excl Int/FWD)])/MAX([Limit (Non G11)])) to DAX. Mapped SUM and MAX directly and transformed column references to 'migration_Extract_POC (1) (local copy)'[ColumnName] format. Kept ABS for absolute value.",
+      "type_changed_reason": "The calculation contains aggregations (SUM and MAX), therefore it must be created as a measure."
+    }
+  ]
+}
