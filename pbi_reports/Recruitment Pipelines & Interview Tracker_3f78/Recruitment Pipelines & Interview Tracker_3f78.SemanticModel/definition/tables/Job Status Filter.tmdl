@@ -1,0 +1,45 @@
+table 'Job Status Filter'
+	lineageTag: cff0cb32-b5de-4f14-81bd-8503239358b4
+
+	column Index
+		formatString: 0
+		lineageTag: 12de58e8-3e04-456c-9951-1ba3b7fdc59d
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 7fd24a9b-8607-4f5b-b627-250abde78c23
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 800be587-0cc9-420b-a5d2-d0f521bd04b1
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Job Status Filter' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Open", "Open" },
+				{ 1, "Closed", "Closed" }
+			    }
+			)
+
+	annotation PBI_Id = 8b76018b332f4058813bb1fae030ccbb
+
