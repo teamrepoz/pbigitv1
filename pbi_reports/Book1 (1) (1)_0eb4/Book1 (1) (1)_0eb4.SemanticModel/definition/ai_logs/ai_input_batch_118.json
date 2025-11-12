@@ -1,0 +1,20 @@
+{
+  "calculations": [
+    {
+      "name": "Remove expired ",
+      "table_name": "migration_Extract_POC (1) (local copy)",
+      "tableau_expression": "IF [RpDate]= [Maturity Date] THEN 1 ELSE 0 END",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "IF [RpDate]= [Maturity Date] THEN 1 ELSE 0 END",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "RpDate": "date",
+          "Maturity Date": "date"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
