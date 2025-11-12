@@ -1,0 +1,38 @@
+{
+  "calculations": [
+    {
+      "name": "Change Sec MV USD",
+      "table_name": "migration_Extract_POC (1) (local copy)",
+      "tableau_expression": "[Sec MV USD T] - [Sec MV USD T -1]",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "[Sec MV USD T] - [Sec MV USD T -1]",
+        "calculated_fields": {
+          "Sec MV USD T -1": "if [Parameters].[Use Custom Date] then \r\n    (if [MAX_DATE -1day]= [RpDate] then ABS([Sec value USD])/10^6 else 0 END)\r\nelse if [Comparison date] = [RpDate] then ABS([Sec value USD])/10^6 else 0 END END",
+          "Sec MV USD T": "if [Parameters].[Use Custom Date] then \r\n    (if [Max Date]= [RpDate] THEN ABS([Sec value USD])/10^6 else 0 END)\r\nelse if [RpDate]= [Parameters].[End Date] then ABS([Sec value USD])/10^6 else 0 END END",
+          "MAX_DATE -1day": "case datepart('weekday',[Max Date])\r\nwhen 1 then [Max Date]-2\r\nwhen 2 then [Max Date]-3\r\nelse [Max Date]-1\r\nend",
+          "End Date": "#2023-11-01#",
+          "Comparison date": "if [Parameters].[Use Custom Date] THEN [MAX_DATE -1day] ELSE  [Parameters].[Date X (comparison date)] END",
+          "Use Custom Date": "true",
+          "Max Date": "case datepart('weekday',today())\r\n    when 1 then today()-2\r\n    when 2 then today()-3\r\n    else today()-1\r\n    END",
+          "Date X (comparison date)": "#2023-10-25#"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "RpDate": "date",
+          "Sec value USD": "real"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Sec MV USD T -1": "real",
+          "Sec MV USD T": "real",
+          "End Date": "date",
+          "Use Custom Date": "boolean",
+          "Date X (comparison date)": "date",
+          "MAX_DATE -1day": "DateTime",
+          "Comparison date": "DateTime",
+          "Max Date": "DateTime"
+        }
+      }
+    }
+  ]
+}
