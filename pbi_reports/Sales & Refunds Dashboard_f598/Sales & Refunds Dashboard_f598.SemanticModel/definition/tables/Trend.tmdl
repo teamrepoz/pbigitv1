@@ -1,0 +1,48 @@
+table 'Trend'
+	lineageTag: a9b979f6-3e03-4a98-b0bb-dae47c882dfd
+
+	column Index
+		formatString: 0
+		lineageTag: 4a3484fb-5584-4f9d-b9bb-43fb9142c65c
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 0e1e3287-afd2-4818-b7dd-326ecc108f8c
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: e3259d9a-b4f3-4ac7-8ac9-84b63800850a
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Trend' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Custom", "Custom" },
+				{ 1, "12 months", "12 months" },
+				{ 2, "30 days", "30 days" },
+				{ 3, "7 days", "7 days" },
+				{ 4, "24 hours", "24 hours" }
+			    }
+			)
+
+	annotation PBI_Id = 67cb13b262c94a13819087d9127bcd98
+
