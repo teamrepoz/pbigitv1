@@ -1,0 +1,47 @@
+table 'Select Indicator'
+	lineageTag: 5e05ec98-5e30-4508-b6b7-17de88db225d
+
+	column Index
+		formatString: 0
+		lineageTag: 69749804-6a1a-4467-b009-8e0d8f8a8124
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 50f8d9f8-52a4-4331-a65e-ee2ed46fa849
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 6ca72e47-2121-43b5-89a7-5bf7e094b087
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Select Indicator' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Active Vendors \#", "Active Vendors \#" },
+				{ 1, "New Vendor \#", "New Vendor \#" },
+				{ 2, "Spend per Vendor", "Spend per Vendor" },
+				{ 3, "Total Spend", "Total Spend" }
+			    }
+			)
+
+	annotation PBI_Id = b81a1c3be2d84cc5badd6d7fbf2a1ba0
+
