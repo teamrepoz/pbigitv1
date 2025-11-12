@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "month (data Series)",
+      "dax_expression": "\"M\" & FORMAT(MONTH('migration_Extract_POC (1) (local copy)'[date series]), \"0\") & FORMAT(YEAR('migration_Extract_POC (1) (local copy)'[date series]), \"0\")",
+      "solution_explanation": "Converted Tableau string concatenation to DAX using &. Wrapped MONTH() and YEAR() results with FORMAT(..., \"0\") to convert numbers to strings. Replaced [date series] with 'migration_Extract_POC (1) (local copy)'[date series] per table reference rules."
+    }
+  ]
+}
