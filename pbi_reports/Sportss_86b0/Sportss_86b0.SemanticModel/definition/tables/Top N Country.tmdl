@@ -1,0 +1,28 @@
+table 'Top N Country'
+	lineageTag: 923eb085-488f-4ca5-9270-97a55f1eb55c
+
+	measure 'Top N Country Value' = SELECTEDVALUE('Top N Country'[Top N Country], 1)
+		lineageTag: 539de7b6-c259-4db5-9f9f-f0458a7ba38a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Top N Country'
+		dataType: double
+		formatString: 0
+		lineageTag: 209d5c68-65ba-43e5-a933-3153fa8ee71a
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Top N Country' = calculated
+		mode: import
+		source = GENERATESERIES(1, 50)
+
+	annotation PBI_Id = 9f91254e8fbf4316818c481280ce6e92
+
