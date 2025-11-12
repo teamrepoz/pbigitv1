@@ -1,0 +1,20 @@
+{
+  "calculations": [
+    {
+      "name": "Initial Cash USD (excl Int/FWD)",
+      "table_name": "migration_Extract_POC (1) (local copy)",
+      "tableau_expression": "if [Is Internal ? (group)]=\"external\" AND [Is Forward Start ?]=0 THEN [Ut. US MM] else 0 END",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "if [Is Internal ? (group)]=\"external\" AND [Is Forward Start ?]=0 THEN [Ut. US MM] else 0 END",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Is Forward Start ?": "integer",
+          "Ut. US MM": "real"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
