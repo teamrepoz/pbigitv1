@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "Date X (comparison date)",
+      "table_name": "Parameters",
+      "tableau_expression": "#2023-10-25#",
+      "datatype": "date",
+      "calculation_context": {
+        "Expression": "#2023-10-25#",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
