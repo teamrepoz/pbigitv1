@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "test+",
+      "name": "Is High Likes ",
+      "dax_expression": "'test+'[Likes_Received_Per_Day] > 50",
+      "solution_explanation": "Row-level boolean comparison converted to a calculated column. The Tableau expression [Likes_Received_Per_Day] > 50 becomes DAX 'test+'[Likes_Received_Per_Day] > 50. This is a per-row evaluation (no aggregations or parameters), so it is implemented as a calculated column."
+    }
+  ]
+}
