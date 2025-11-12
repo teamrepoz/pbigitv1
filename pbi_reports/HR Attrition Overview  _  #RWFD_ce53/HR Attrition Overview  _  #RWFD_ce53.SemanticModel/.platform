@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "HR Attrition Overview  _  #RWFD_ce53"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "d190d2cb-747f-4dd9-8699-965a239ba5e4"
+  }
+}
