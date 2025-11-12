@@ -1,0 +1,15 @@
+relationship 9c610444-496b-4bcf-a8e6-102b1edf82e2
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Human Resources'.birthdate
+	toColumn: LocalDateTable_92b1f0ae-d42a-48f6-88ef-8ede24e27011.Date
+
+relationship 0441e731-6e8c-42de-ac0d-6512420cb82f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Human Resources'.hire_date
+	toColumn: LocalDateTable_fea4d130-813a-4460-a7d2-7e18f3f2a861.Date
+
+relationship 71f63fb2-8045-458e-8b99-c89889c6dd53
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Human Resources'.termdate
+	toColumn: LocalDateTable_6face579-8c7c-4c0a-a6b6-4e6db3a865bb.Date
+
