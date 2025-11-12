@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "Limit Group",
+      "table_name": "migration_Extract_POC (1) (local copy)",
+      "tableau_expression": "[R/Rr (group)]",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "[R/Rr (group)]",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
