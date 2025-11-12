@@ -1,0 +1,30 @@
+relationship 27b81fb7-9aa4-4531-9619-30fa06467c79
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'COVID-19 Cases (2)+'.Date
+	toColumn: LocalDateTable_85521e56-ca1d-4de1-8137-7547b5b813bc.Date
+
+relationship 5c632e89-66bb-472f-beed-e65907a3fe00
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'COVID-19 Cases (2)+'.Prep_Flow_Runtime
+	toColumn: LocalDateTable_342ac497-0cac-4cab-b489-1450f3e4c302.Date
+
+relationship 4e811fa2-3d5e-4205-a83e-b148eddab880
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'COVID-19 Cases (2)+_employee data.csv'.birthdate
+	toColumn: LocalDateTable_bcc5cc3a-d2e2-4a2f-bb3a-2253a0f6c6fe.Date
+
+relationship 3518836d-6f7d-4416-b1ba-99e66cf2b385
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'COVID-19 Cases (2)+_Migrated Data'.Date
+	toColumn: LocalDateTable_0bcdc7f4-26e5-4a19-8e76-9af0eb64e934.Date
+
+relationship a2bef88c-1afa-45a3-8818-23f2851ddc77
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'COVID-19 Cases (2)+_Migrated Data'.Prep_Flow_Runtime
+	toColumn: LocalDateTable_3cc6758b-5967-4f57-ad7c-5db22b5a416c.Date
+
+relationship 8c67811a-eb86-406a-aaa4-ac1727da1c9e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'COVID-19 Cases (2)+_Migrated Data'.birthdate
+	toColumn: LocalDateTable_f2ce33e4-52fc-4985-964f-c00066ce8632.Date
+
