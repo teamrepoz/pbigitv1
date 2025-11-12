@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Parameters",
+      "name": "View By ",
+      "dax_expression": "\"Country\"",
+      "solution_explanation": "The Tableau expression is a constant string literal. Converted to a DAX calculated column that returns the same constant string for every row in the Parameters table."
+    }
+  ]
+}
