@@ -1,0 +1,25 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "WATM(d) X",
+      "dax_expression": "VAR MaxDate = SWITCH(WEEKDAY(TODAY()), 1, TODAY() - 2, 2, TODAY() - 3, TODAY() - 1)\nVAR MaxDateMinus1 = SWITCH(WEEKDAY(MaxDate), 1, MaxDate - 2, 2, MaxDate - 3, MaxDate - 1)\nVAR UseCustomDate = SELECTEDVALUE('Use Custom Date'[Display As])\nVAR DateXParam = SELECTEDVALUE('Date X (comparison date)'[Display As])\nVAR Numerator =\n    SUMX(\n        'migration_Extract_POC (1) (local copy)',\n        (\n            IF(\n                UseCustomDate,\n                IF(MaxDateMinus1 = 'migration_Extract_POC (1) (local copy)'[RpDate], 'migration_Extract_POC (1) (local copy)'[Ut. US MM], 0),\n                IF('migration_Extract_POC (1) (local copy)'[RpDate] = DateXParam, 'migration_Extract_POC (1) (local copy)'[Ut. US MM], 0)\n            )\n        ) * 'migration_Extract_POC (1) (local copy)'[DTM]\n    )\nVAR Denominator =\n    SUMX(\n        'migration_Extract_POC (1) (local copy)',\n        IF(\n            UseCustomDate,\n            IF(MaxDateMinus1 = 'migration_Extract_POC (1) (local copy)'[RpDate], 'migration_Extract_POC (1) (local copy)'[Ut. US MM], 0),\n            IF('migration_Extract_POC (1) (local copy)'[RpDate] = DateXParam, 'migration_Extract_POC (1) (local copy)'[Ut. US MM], 0)\n        )\n    )\nRETURN DIVIDE(Numerator, Denominator)",
+      "solution_explanation": "Translated the tableau aggregate SUM(...)/SUM(...) into a measure using SUMX to evaluate the row-level 'Initial Cash USD X' logic inline. Parameters are converted to SELECTEDVALUE as required. Date calculations for Max Date and MAX_DATE -1day implemented with VARs."
+    },
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "WATM(d) T",
+      "dax_expression": "VAR MaxDate = SWITCH(WEEKDAY(TODAY()), 1, TODAY() - 2, 2, TODAY() - 3, TODAY() - 1)\nVAR UseCustomDate = SELECTEDVALUE('Use Custom Date'[Display As])\nVAR EndDateParam = SELECTEDVALUE('End Date'[Display As])\nVAR RowInitialCashT =\n    IF(\n        UseCustomDate,\n        IF(\n            MaxDate = 'migration_Extract_POC (1) (local copy)'[RpDate]\n            && 'migration_Extract_POC (1) (local copy)'[Is Internal ? (group)] = \"external\"\n            && 'migration_Extract_POC (1) (local copy)'[Is Forward Start ?] = 0,\n            'migration_Extract_POC (1) (local copy)'[Ut. US MM],\n            0\n        ),\n        IF(\n            'migration_Extract_POC (1) (local copy)'[RpDate] = EndDateParam\n            && 'migration_Extract_POC (1) (local copy)'[Is Internal ? (group)] = \"external\"\n            && 'migration_Extract_POC (1) (local copy)'[Is Forward Start ?] = 0,\n            'migration_Extract_POC (1) (local copy)'[Ut. US MM],\n            0\n        )\n    )\nVAR Numerator = SUMX('migration_Extract_POC (1) (local copy)', RowInitialCashT * 'migration_Extract_POC (1) (local copy)'[DTM])\nVAR Denominator = SUMX('migration_Extract_POC (1) (local copy)', RowInitialCashT)\nRETURN DIVIDE(Numerator, Denominator)",
+      "solution_explanation": "Converted the tableau ratio using row-level 'Initial Cash USD T (excl Int/FWD)' logic into a measure. The row-level conditional is evaluated inside SUMX; parameters mapped to SELECTEDVALUE. Date MaxDate is computed as in the original calc."
+    },
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Change in WATM (T-X)",
+      "dax_expression": "RETURN 'migration_Extract_POC (1) (local copy)'[WATM(d) T] - 'migration_Extract_POC (1) (local copy)'[WATM(d) X]",
+      "solution_explanation": "Direct subtraction of the two measures WATM(d) T and WATM(d) X to reproduce the Tableau [WATM(d) T]-[WATM(d) X] calculation as a measure."
+    }
+  ]
+}
