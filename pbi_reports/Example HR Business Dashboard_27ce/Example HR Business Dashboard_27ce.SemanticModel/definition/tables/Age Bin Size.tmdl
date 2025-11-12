@@ -1,0 +1,44 @@
+table 'Age Bin Size'
+	lineageTag: 79750dba-9b69-46a2-abb1-c38db99ae565
+
+	column Index
+		formatString: 0
+		lineageTag: 39bc4bec-1b51-4725-a26b-d736978fa352
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 6171af3f-e81d-4bd4-b031-d97674b1d043
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: ba331693-5126-4101-854a-bf09ad478ccb
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Age Bin Size' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", DOUBLE,
+			    "Value", DOUBLE,
+			    {
+			        {0, 5.0, 5.0}
+			    }
+			)
+
+	annotation PBI_Id = ebecf15e512a49c381693275431f2d6b
+
