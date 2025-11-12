@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Change Face",
+      "dax_expression": "'migration_Extract_POC (1) (local copy)'[FACE T] - 'migration_Extract_POC (1) (local copy)'[FACE T-1]",
+      "solution_explanation": "Converted Tableau subtraction of two calculated fields to DAX by mapping each field reference to 'migration_Extract_POC (1) (local copy)'[FieldName] and preserving the arithmetic operation.",
+      "type_changed_reason": "The referenced calculated fields ([FACE T], [FACE T-1]) depend on parameters in their definitions; parameter-based calculations must be measures, so this calculation must be a measure."
+    }
+  ]
+}
