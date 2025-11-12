@@ -1,0 +1,45 @@
+table 'Display Period'
+	lineageTag: f8bd6cc3-6039-47ec-a8de-a636669479c1
+
+	column Index
+		formatString: 0
+		lineageTag: 75d1ee81-6345-41d2-9871-265bc7fc3368
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 489269bf-eb5f-42d4-adc2-43dc9cca7c73
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 6806644a-6685-4366-87ce-aa785e90fd20
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Display Period' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Monthly", "Monthly" },
+				{ 1, "Quarterly", "Quarterly" }
+			    }
+			)
+
+	annotation PBI_Id = 0cde720b686647e1b4a939db3cf98fcd
+
