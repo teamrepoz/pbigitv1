@@ -1,0 +1,28 @@
+table 'MIN GPA'
+	lineageTag: 440708a9-a125-4715-984f-b59ee1c0be83
+
+	measure 'MIN GPA Value' = SELECTEDVALUE('MIN GPA'[MIN GPA], 0.0)
+		lineageTag: e517b22c-25c7-4165-a67c-0d026281e857
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'MIN GPA'
+		dataType: double
+		formatString: 0
+		lineageTag: 28e2878c-492e-4473-bf20-b6b028d9b369
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'MIN GPA' = calculated
+		mode: import
+		source = GENERATESERIES(0.0, 4.0, 0.1)
+
+	annotation PBI_Id = 210883ce744b49f08f99e42be9dbfcfc
+
