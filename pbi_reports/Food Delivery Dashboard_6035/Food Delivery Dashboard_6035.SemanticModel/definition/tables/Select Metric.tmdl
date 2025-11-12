@@ -1,0 +1,47 @@
+table 'Select Metric'
+	lineageTag: 4d722996-3846-4a71-b6a2-393f5a076f46
+
+	column Index
+		formatString: 0
+		lineageTag: 8f31ede9-9f04-40a0-9e57-f7b118fc1d5a
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: efd4fb6a-cc8a-44d2-893d-737cb18544ab
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: ae4eb873-44cd-41ae-8f1e-ef74e492fc68
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Select Metric' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Sales Revenue", "SALES REVENUE" },
+				{ 1, "Order Count", "ORDER COUNT" },
+				{ 2, "Avg Order $", "AVG ORDER $" },
+				{ 3, "ARPU", "ARPU" }
+			    }
+			)
+
+	annotation PBI_Id = 6e90e4ebac7f4704962b9c745ca2ca71
+
