@@ -1,0 +1,28 @@
+table 'PageNum_Param'
+	lineageTag: 409bd465-f9b2-4d62-89da-2cea97b7576a
+
+	measure 'PageNum_Param Value' = SELECTEDVALUE('PageNum_Param'[PageNum_Param], 1)
+		lineageTag: 9c5bacc7-89bc-4ef5-805c-2e249722c396
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'PageNum_Param'
+		dataType: double
+		formatString: 0
+		lineageTag: 9f52097c-dd4c-4872-8b7c-15845f07edd6
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'PageNum_Param' = calculated
+		mode: import
+		source = GENERATESERIES(1, 5)
+
+	annotation PBI_Id = fde4951586694c09a74176deceb1b8bb
+
