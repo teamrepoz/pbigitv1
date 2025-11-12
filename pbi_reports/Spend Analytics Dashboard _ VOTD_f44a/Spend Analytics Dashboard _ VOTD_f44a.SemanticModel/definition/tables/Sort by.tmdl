@@ -1,0 +1,45 @@
+table 'Sort by'
+	lineageTag: adde51ca-fec0-49a9-9b78-81060ae9d3eb
+
+	column Index
+		formatString: 0
+		lineageTag: e67bd148-9994-413a-a079-e56fb6bb7813
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 57151040-b1c1-4610-a2ef-044f39d329c6
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 1dbafce8-7aee-46eb-8b6d-797100442e27
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Sort by' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Alphabetical order", "1" },
+				{ 1, "Total spend", "2" }
+			    }
+			)
+
+	annotation PBI_Id = 4f3f2a89b78242b4b1d69210105ae65e
+
