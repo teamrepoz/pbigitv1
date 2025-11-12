@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Col DV01",
+      "dax_expression": "VAR EndCash = 'migration_Extract_POC (1) (local copy)'[End Cash (in USD)] * POWER(10, 3)\nVAR DaysBetween = 'migration_Extract_POC (1) (local copy)'[Collateral Maturity] - 'migration_Extract_POC (1) (local copy)'[RpDate]\nRETURN\nEndCash * DaysBetween / 365 * 0.01 * 0.01",
+      "solution_explanation": "Translated the row-level Tableau expression into a DAX calculated column. Used POWER(10,3) for 10^3 and direct date subtraction to get days between 'Collateral Maturity' and 'RpDate'. No aggregates or parameters present, so this remains a calculated column."
+    }
+  ]
+}
