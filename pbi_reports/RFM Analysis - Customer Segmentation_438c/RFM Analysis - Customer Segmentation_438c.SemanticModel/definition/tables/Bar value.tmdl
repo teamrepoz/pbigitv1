@@ -1,0 +1,47 @@
+table 'Bar value'
+	lineageTag: 71618aca-4101-4e03-b801-aab2c01cb14c
+
+	column Index
+		formatString: 0
+		lineageTag: 02e52918-141c-454a-9aa2-ae064d46aab9
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 53d9bc14-9e0e-4efc-bfdb-56fe25a7559f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 9c9a7235-d295-4942-a387-039f51dc5e54
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Bar value' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Product revenue", "Sales" },
+				{ 1, "Order quantity", "Order quantity" },
+				{ 2, "Inventory cost", "Inventory cost" },
+				{ 3, "Days of sale", "Days of sale" }
+			    }
+			)
+
+	annotation PBI_Id = b0e4a6eb23a74518b68553ab2fa2b609
+
