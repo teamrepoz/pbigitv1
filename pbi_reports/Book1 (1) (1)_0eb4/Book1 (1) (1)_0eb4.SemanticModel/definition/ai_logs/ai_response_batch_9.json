@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "BATCH",
+      "dax_expression": "VAR Num = SUM('migration_Extract_POC (1) (local copy)'[Initial Cash USD T (excl Int/FWD) Abs])\nVAR Den = CALCULATE(\n    SUM('migration_Extract_POC (1) (local copy)'[Initial Cash USD T (excl Int/FWD) Abs]),\n    ALL('migration_Extract_POC (1) (local copy)')\n)\nRETURN DIVIDE(Num, Den)",
+      "solution_explanation": "Replaced the Tableau TOTAL() table calculation with a DAX total using CALCULATE(..., ALL(table)). Transformed column references to the 'TableName'[Column] format. Used SUM(...) around the referenced field to provide the aggregated numerator and CALCULATE(..., ALL(...)) for the denominator, and DIVIDE(...) for safe division.",
+      "type_changed_reason": "The Tableau expression uses TOTAL(), a table calculation (aggregation across the partition). Per the conversion rules, expressions containing table calculations must be implemented as measures."
+    }
+  ]
+}
