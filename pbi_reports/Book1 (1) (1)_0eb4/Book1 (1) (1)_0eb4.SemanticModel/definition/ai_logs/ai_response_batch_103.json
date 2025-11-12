@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "fixed netting 1",
+      "dax_expression": "CALCULATE(\n    SUM('migration_Extract_POC (1) (local copy)'[fixed netting]),\n    ALLEXCEPT(\n        'migration_Extract_POC (1) (local copy)',\n        'migration_Extract_POC (1) (local copy)'[RpDate],\n        'migration_Extract_POC (1) (local copy)'[CounterParty],\n        'migration_Extract_POC (1) (local copy)'[Cash curr]\n    )\n)",
+      "solution_explanation": "Recreated the Tableau FIXED LOD by calculating the sum of [fixed netting] while removing all table-level filters except the FIXED dimensions (RpDate, CounterParty, Cash curr) using CALCULATE with ALLEXCEPT.",
+      "type_changed_reason": "The Tableau expression is a FIXED LOD (aggregate/context-based) calculation, which must be implemented as a measure in Power BI."
+    }
+  ]
+}
