@@ -1,0 +1,47 @@
+table 'For Big Trend'
+	lineageTag: 781c87c4-d1b8-41c3-ad1d-4e9f02fa910f
+
+	column Index
+		formatString: 0
+		lineageTag: c457a816-b52d-42c0-825d-43b2e36132e5
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 6767efe3-677a-4a82-8ef3-61234fb2cb5d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: d0935830-e812-4335-bc40-0152fbb883c3
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'For Big Trend' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "12 months", "12 months" },
+				{ 1, "30 days", "30 days" },
+				{ 2, "7 days", "7 days" },
+				{ 3, "24 hours", "24 hours" }
+			    }
+			)
+
+	annotation PBI_Id = 2fefe593ad4442db9f30a1cddebad2c7
+
