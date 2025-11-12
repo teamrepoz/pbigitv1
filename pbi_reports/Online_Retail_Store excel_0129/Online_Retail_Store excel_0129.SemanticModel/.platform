@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Online_Retail_Store excel_0129"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "e2421824-9284-403e-bcff-45f7bceb7f88"
+  }
+}
