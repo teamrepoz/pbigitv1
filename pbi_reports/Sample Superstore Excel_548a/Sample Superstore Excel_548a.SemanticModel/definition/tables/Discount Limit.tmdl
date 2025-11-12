@@ -1,0 +1,28 @@
+table 'Discount Limit'
+	lineageTag: b4d7d258-5472-4960-a994-0809c3e176a8
+
+	measure 'Discount Limit Value' = SELECTEDVALUE('Discount Limit'[Discount Limit], 0.05)
+		lineageTag: b0155dda-2a06-48dc-8376-5c495a24dfd8
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Discount Limit'
+		dataType: double
+		formatString: 0
+		lineageTag: fb87ce7b-e67e-4939-b3b6-3fed75debb65
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Discount Limit' = calculated
+		mode: import
+		source = GENERATESERIES(0.05, 1.0)
+
+	annotation PBI_Id = 5a36252ab9584902ac559c3789d1c6ef
+
