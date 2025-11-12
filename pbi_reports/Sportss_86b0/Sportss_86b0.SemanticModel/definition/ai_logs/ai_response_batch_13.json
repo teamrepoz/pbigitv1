@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "dictionary+",
+      "name": "View by",
+      "dax_expression": "SWITCH(\n    SELECTEDVALUE('View By '[Display As]),\n    \"Country\", 'dictionary+'[Country],\n    \"Sport\", 'dictionary+'[Sport],\n    \"Athlete\", 'dictionary+'[Athlete],\n    BLANK()\n)",
+      "solution_explanation": "Replaced the Tableau CASE on a parameter with DAX SWITCH using SELECTEDVALUE for the parameter. Transformed column references to 'dictionary+'[Column] format and returned BLANK() as the default.",
+      "type_changed_reason": "The calculation references a parameter, and all parameter-based calculations must be measures."
+    }
+  ]
+}
