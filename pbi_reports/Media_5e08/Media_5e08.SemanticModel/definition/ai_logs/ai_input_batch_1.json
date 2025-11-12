@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "Age Cut Value",
+      "table_name": "Parameters",
+      "tableau_expression": "30",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "30",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
