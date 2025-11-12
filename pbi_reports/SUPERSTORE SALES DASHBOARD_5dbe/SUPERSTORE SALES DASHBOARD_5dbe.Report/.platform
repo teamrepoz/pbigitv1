@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "SUPERSTORE SALES DASHBOARD_5dbe"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "2504aec4-59a3-436c-b965-3b9fcc98f8ad"
+  }
+}
