@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "WATM(d) T",
+      "dax_expression": "VAR Numerator = SUMX(\n    'migration_Extract_POC (1) (local copy)',\n    'migration_Extract_POC (1) (local copy)'[Initial Cash USD T (excl Int/FWD)] * 'migration_Extract_POC (1) (local copy)'[DTM]\n)\nVAR Denominator = SUM('migration_Extract_POC (1) (local copy)'[Initial Cash USD T (excl Int/FWD)])\nRETURN\nNumerator / Denominator",
+      "solution_explanation": "SUM([Initial Cash USD T (excl Int/FWD)]*[DTM]) in Tableau is a row-level product summed across rows, which maps to SUMX(table, table[Initial Cash USD T (excl Int/FWD)] * table[DTM]) in DAX. Column references were converted to 'migration_Extract_POC (1) (local copy)'[ColumnName] format. The denominator remains SUM of the same field. The expression is a measure because it uses aggregation (SUM/SUMX)."
+    }
+  ]
+}
