@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Delivery Time Analysis Dashboard_b0ae"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "28fef302-4bf4-4379-81af-276081db38eb"
+  }
+}
