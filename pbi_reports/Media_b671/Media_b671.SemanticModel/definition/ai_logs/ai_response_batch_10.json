@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "test+",
+      "name": "Dynamic Age Group ",
+      "dax_expression": "IF('test+'[Age] <= SELECTEDVALUE('Age Cut Value'[Display As]), \"Young\", \"Adult\")",
+      "solution_explanation": "Converted the Tableau IF...THEN...ELSE to DAX IF and replaced the parameter reference with SELECTEDVALUE('Age Cut Value'[Display As]). Also transformed the column reference [Age] to 'test+'[Age] to match Power BI syntax.",
+      "type_changed_reason": "The calculation references a parameter, and all parameter-based calculations must be measures."
+    }
+  ]
+}
