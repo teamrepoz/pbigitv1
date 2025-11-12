@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "dictionary+",
+      "name": "Gender Count ",
+      "dax_expression": "IF('dictionary+'[Gender] = \"Men \", 1, 0)",
+      "solution_explanation": "Row-level IF converted to DAX IF; column reference [Gender] mapped to 'dictionary+'[Gender]; string literal preserved as \"Men \". Determined as a calculated column because the logic operates per row and contains no aggregations or parameters."
+    }
+  ]
+}
