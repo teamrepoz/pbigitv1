@@ -1,0 +1,46 @@
+table 'View By'
+	lineageTag: 8433815e-331a-444b-8297-4062adc946b1
+
+	column Index
+		formatString: 0
+		lineageTag: 60630ff3-4eab-4da1-a4ec-39f5067579a1
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: d73b5047-ca3f-4307-9a9d-b9f2d210777d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 7a63e148-29d4-452c-928a-7f014bfa2a8e
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'View By' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Country", "Country" },
+				{ 1, "Sport", "Sport" },
+				{ 2, "Athlete", "Athlete" }
+			    }
+			)
+
+	annotation PBI_Id = 90098fb24eaf432d8e94e9f90c7c2f5a
+
