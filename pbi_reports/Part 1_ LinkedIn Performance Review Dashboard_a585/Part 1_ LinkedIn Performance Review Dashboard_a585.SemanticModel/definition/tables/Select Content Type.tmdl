@@ -1,0 +1,45 @@
+table 'Select Content Type'
+	lineageTag: a7cda160-ec91-46b2-a6e9-94cb2cb5099a
+
+	column Index
+		formatString: 0
+		lineageTag: ded0a4b0-70f9-4f67-9edc-cce64e5d927f
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 2c8c5bf7-128d-4962-a1a5-ea8e1fcb6017
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 042f500a-cf7b-43b0-b2e1-22435433e08b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Select Content Type' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Post Topic", "Tags" },
+				{ 1, "Post Type", "Content Type" }
+			    }
+			)
+
+	annotation PBI_Id = 0cd876f086bb4c1aa36c590719fae0d7
+
