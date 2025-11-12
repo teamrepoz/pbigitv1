@@ -1,0 +1,44 @@
+table 'Max Vehicle Age'
+	lineageTag: d90097e1-2921-4117-a4b6-540b5dd7199f
+
+	column Index
+		formatString: 0
+		lineageTag: 3d5ecb0f-da44-4fb4-86f9-94f9b75929ee
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: b68787b2-1792-4024-8c74-1e9af0eaf829
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 421cb8e7-6aa7-4009-90a8-76d9fe4cea1a
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Max Vehicle Age' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", INTEGER,
+			    "Value", INTEGER,
+			    {
+			        {0, 1, 1}
+			    }
+			)
+
+	annotation PBI_Id = a553739fe25842769b621c0ec7d52dd0
+
