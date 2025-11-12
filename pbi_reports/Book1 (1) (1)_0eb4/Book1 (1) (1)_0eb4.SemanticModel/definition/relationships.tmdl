@@ -1,0 +1,40 @@
+relationship d3266fb6-8a19-4b3a-8b6f-78eb02f37c92
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'migration_Extract_POC (1) (local copy)'.RpDate
+	toColumn: LocalDateTable_71f41e1d-5945-47b4-ad10-2526e5c2ff2b.Date
+
+relationship 61c47615-c68d-4ecf-95dd-b8c8b53aac9f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'migration_Extract_POC (1) (local copy)'.'Tran. date'
+	toColumn: LocalDateTable_8da9cdbe-a744-405f-90d1-76ffd461c178.Date
+
+relationship d401ed50-afe8-4709-af76-fbb3f4a7b050
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'migration_Extract_POC (1) (local copy)'.'Start date'
+	toColumn: LocalDateTable_f11da631-d7df-42aa-b0c9-dbe1cc4f3315.Date
+
+relationship 90601321-dbf3-4b9a-9f00-8d1265069881
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'migration_Extract_POC (1) (local copy)'.'End date'
+	toColumn: LocalDateTable_3600fcc4-0c34-4c5c-91ee-63689c15df79.Date
+
+relationship 88dedc9a-e616-4b30-a3f2-89e82b470f25
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'migration_Extract_POC (1) (local copy)'.'Int/fee from'
+	toColumn: LocalDateTable_25e65f31-46ab-492c-9a34-1edb79332141.Date
+
+relationship b93d23a0-813c-4268-b830-1ef3e62ed329
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'migration_Extract_POC (1) (local copy)'.'Int/fee to'
+	toColumn: LocalDateTable_36b5b4a0-71f5-464c-b66c-2e58b03d3683.Date
+
+relationship 1fd5b5ea-7559-4d69-a5ad-99d05c78c816
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'migration_Extract_POC (1) (local copy)'.'Maturity Date'
+	toColumn: LocalDateTable_ec04f539-e4e2-411d-95d3-b3e4a2245f36.Date
+
+relationship 512f202a-8672-4823-aaa0-abf8abc58dfb
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'migration_Extract_POC (1) (local copy)'.'Collateral Maturity'
+	toColumn: LocalDateTable_1aa4f582-a445-49d8-ad99-b7de105997ad.Date
+
