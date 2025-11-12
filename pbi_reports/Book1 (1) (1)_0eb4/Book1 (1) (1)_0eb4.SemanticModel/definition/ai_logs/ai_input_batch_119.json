@@ -1,0 +1,27 @@
+{
+  "calculations": [
+    {
+      "name": "Fixed Specials",
+      "table_name": "migration_Extract_POC (1) (local copy)",
+      "tableau_expression": "{ FIXED [RpDate],[isin]: MAX(IF [Is specials ?]= \"Specials\" THEN 1 ELSE 0 END) }",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "{ FIXED [RpDate],[isin]: MAX(IF [Is specials ?]= \"Specials\" THEN 1 ELSE 0 END) }",
+        "calculated_fields": {
+          "Is specials ?": "IF [Coll Spread] > [Parameters].[Specials spread] THEN \"Specials\" ELSE \"GC\" END",
+          "Specials spread": "0.12"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "RpDate": "date",
+          "isin": "string",
+          "Coll Spread": "real"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Specials spread": "real",
+          "Is specials ?": "String"
+        }
+      }
+    }
+  ]
+}
