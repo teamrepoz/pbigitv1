@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Female Count ",
+      "table_name": "dictionary+",
+      "tableau_expression": "IF [Gender]=\"Women\" THEN 1 ELSE 0 END",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "IF [Gender]=\"Women\" THEN 1 ELSE 0 END",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Gender": "string"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
