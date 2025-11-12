@@ -1,0 +1,40 @@
+relationship c3339731-6a76-4240-8c4e-4366627b03ea
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Members.csv_Members+'.JoinDate
+	toColumn: LocalDateTable_04d30e5b-2bf8-4b17-a061-362cbc53ff61.Date
+
+relationship 5ff0ff50-2607-4a22-a32b-3fd8b59b20f1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Borrowing (1).csv_Members+'.BorrowDate
+	toColumn: LocalDateTable_8538cf2f-cd49-4f0b-b552-5d16a0485409.Date
+
+relationship 3ee45a8b-6da8-4096-9a8f-b7769d1d52de
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Borrowing (1).csv_Members+'.ReturnDate
+	toColumn: LocalDateTable_5071e575-d2c9-4623-b418-51e7cefd7e92.Date
+
+relationship 29530fcb-61c6-40bb-b977-2d5bbe087c31
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Members+'.JoinDate
+	toColumn: LocalDateTable_aea95d4f-8e2e-4c0f-802a-0ac87aa166b4.Date
+
+relationship c49a6081-f3a9-41f5-99b9-58c229bf2783
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Members+'.BorrowDate
+	toColumn: LocalDateTable_c4e061e1-1e1d-4c82-95d7-e7ef516c3351.Date
+
+relationship 87dd30a0-6994-45a5-a9d8-0eb64bc32f0e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Members+'.ReturnDate
+	toColumn: LocalDateTable_426cdb9c-cf36-4b2f-aa54-ab38bd440bc7.Date
+
+relationship f5ffa475-a2a4-441a-bf0a-7c3d2ae03b8f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Members+'.BorrowDate
+	toColumn: LocalDateTable_c7ca83ed-e4ed-45aa-a618-abd9a4eaee0f.Date
+
+relationship 4c829a96-8dcc-4935-861b-452cbf00f117
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Members+'.ReturnDate
+	toColumn: LocalDateTable_ac889537-a80b-4d7b-a0cc-4425ae4f8641.Date
+
