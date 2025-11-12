@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Parameters",
+      "name": "Top N",
+      "dax_expression": "10",
+      "solution_explanation": "This is a constant literal with no aggregation or parameter references, so create it as a calculated column on the 'Parameters' table."
+    }
+  ]
+}
