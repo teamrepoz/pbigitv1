@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Change Sec MV USD",
+      "dax_expression": "'migration_Extract_POC (1) (local copy)'[Sec MV USD T] - 'migration_Extract_POC (1) (local copy)'[Sec MV USD T -1]",
+      "solution_explanation": "Converted the Tableau expression by subtracting the two referenced fields and formatting each reference using 'TableName'[ColumnName] as required.",
+      "type_changed_reason": "The referenced calculated fields depend on Tableau parameters; per the rules, any parameter-dependent calculation must be created as a measure."
+    }
+  ]
+}
