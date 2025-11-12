@@ -1,0 +1,46 @@
+table 'Sort'
+	lineageTag: 63a4cf12-9ff3-4bf9-9e89-b866d27eca69
+
+	column Index
+		formatString: 0
+		lineageTag: 922d99fa-595c-4047-a9d1-57d456c80c0e
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: d29ad523-fd0f-497b-ab6d-619d0f2dea8e
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: cc58b6ae-2788-48d4-88f2-83a86e1fec41
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Sort' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Orders", "Orders" },
+				{ 1, "Spent", "Spent" },
+				{ 2, "Refund", "Refund" }
+			    }
+			)
+
+	annotation PBI_Id = d776e85c802340db8cd36357a83bbc80
+
