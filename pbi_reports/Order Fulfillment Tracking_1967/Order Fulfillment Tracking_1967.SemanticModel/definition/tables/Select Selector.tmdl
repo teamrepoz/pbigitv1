@@ -1,0 +1,47 @@
+table 'Select Selector'
+	lineageTag: 2f0b25df-a9eb-420c-b41a-89967b928aa9
+
+	column Index
+		formatString: 0
+		lineageTag: 3ce8149e-cac3-4618-b109-98a44450d104
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 9e78303e-6940-44cc-8f65-5ab5fb84033d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 9838142f-edce-4394-a6d3-6fcc199011b1
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Select Selector' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Delivered", "Delivered" },
+				{ 1, "Cancelled", "Cancelled" },
+				{ 2, "Pending", "Pending" },
+				{ 3, "Shipping", "Shipping" }
+			    }
+			)
+
+	annotation PBI_Id = 2d07243d0c5f4434a830b4a3b41a6e96
+
