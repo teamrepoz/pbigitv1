@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "test+",
+      "name": "Daily Activity Total ",
+      "dax_expression": "'test+'[Likes_Received_Per_Day] + 'test+'[Posts_Per_Day] + 'test+'[Messages_Sent_Per_Day]",
+      "solution_explanation": "Row-level arithmetic adding three columns translated to DAX by replacing Tableau bracket references with 'TableName'[Column] format. No aggregates or parameters are used, so this is a calculated column."
+    }
+  ]
+}
