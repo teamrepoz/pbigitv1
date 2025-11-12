@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Change Initial Cash USD (excl Int/FWD)",
+      "dax_expression": "'migration_Extract_POC (1) (local copy)'[Initial Cash USD T (excl Int/FWD)] - 'migration_Extract_POC (1) (local copy)'[Initial Cash USD X (excl Int/FWD)]",
+      "solution_explanation": "Translated the Tableau subtraction to DAX by converting each column reference to the table-qualified format 'migration_Extract_POC (1) (local copy)'[Column]. The expression performs a direct subtraction between the two calculated fields.",
+      "type_changed_reason": "One or more dependent calculated fields reference [Parameters], and any calculation that depends on parameters must be created as a measure."
+    }
+  ]
+}
