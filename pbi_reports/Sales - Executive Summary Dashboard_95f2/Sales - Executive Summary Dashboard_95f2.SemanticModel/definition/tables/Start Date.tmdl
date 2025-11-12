@@ -1,0 +1,44 @@
+table 'Start Date'
+	lineageTag: 41d86612-e19a-4885-b11b-7ee10740126e
+
+	column Index
+		formatString: 0
+		lineageTag: 327ecb01-62ff-4bb2-b79f-7a9531f6a38b
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 532cf216-8e0f-487a-9fa4-ccacefdddd6d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: bb702e65-2f01-45aa-be01-6a57dbb97d3c
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Start Date' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", DATETIME,
+			    "Value", DATETIME,
+			    {
+			        {0, "2016-01-01", "2016-01-01"}
+			    }
+			)
+
+	annotation PBI_Id = 6e857ac49fae4daea59a0322cf0e54a1
+
