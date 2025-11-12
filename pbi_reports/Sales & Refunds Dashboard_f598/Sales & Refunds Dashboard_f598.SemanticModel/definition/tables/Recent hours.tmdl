@@ -1,0 +1,46 @@
+table 'Recent hours'
+	lineageTag: 7b5b228d-4b3f-498b-964f-d347c95f6e15
+
+	column Index
+		formatString: 0
+		lineageTag: 2d6e6d9f-432d-4fc1-b654-0c14223940f4
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 528b32f9-62a0-4eab-b2fa-f0a61a0f04f6
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: ab22bde2-c4cf-4d49-8d72-6820d263f3b3
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Recent hours' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", INTEGER,
+			    "Value", INTEGER,
+			    {
+			        { 0, 4h, 4 },
+				{ 1, 12h, 12 },
+				{ 2, 24h, 24 }
+			    }
+			)
+
+	annotation PBI_Id = 06cb8f76c84c4c11b9ae5e025f41c59a
+
