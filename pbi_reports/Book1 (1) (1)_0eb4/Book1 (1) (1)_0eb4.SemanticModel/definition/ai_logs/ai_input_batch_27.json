@@ -1,0 +1,29 @@
+{
+  "calculations": [
+    {
+      "name": "MTM per day",
+      "table_name": "migration_Extract_POC (1) (local copy)",
+      "tableau_expression": "[MTM (in CAD) T]/[DTM T ]",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "[MTM (in CAD) T]/[DTM T ]",
+        "calculated_fields": {
+          "MTM (in CAD) T": "if [Parameters].[Use Custom Date] then \r\n    (if [Max Date]= [RpDate] then [MTM (in CAD)] else 0 END)\r\nelse if [RpDate]= [Parameters].[End Date] then [MTM (in CAD)] else 0 END END",
+          "End Date": "#2023-11-01#",
+          "Use Custom Date": "true",
+          "Max Date": "case datepart('weekday',today())\r\n    when 1 then today()-2\r\n    when 2 then today()-3\r\n    else today()-1\r\n    END"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "RpDate": "date"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "MTM (in CAD) T": "real",
+          "End Date": "date",
+          "Use Custom Date": "boolean",
+          "Max Date": "DateTime"
+        }
+      }
+    }
+  ]
+}
