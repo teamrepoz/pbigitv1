@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Limit (Quality) ",
+      "table_name": "migration_Extract_POC (1) (local copy)",
+      "tableau_expression": "CASE [Rating Category]\r\nWHEN \"AAA\" THEN 2000\r\nWHEN  \"AA-/AA+\" THEN 1000 \r\nWHEN  \"BBB-/A+\" THEN 1000 \r\nWHEN  \"BB/BB+\" THEN 500 \r\nEND",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "CASE [Rating Category]\r\nWHEN \"AAA\" THEN 2000\r\nWHEN  \"AA-/AA+\" THEN 1000 \r\nWHEN  \"BBB-/A+\" THEN 1000 \r\nWHEN  \"BB/BB+\" THEN 500 \r\nEND",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Rating Category": "string"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
