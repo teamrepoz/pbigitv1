@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Limit (Canadian Provinces) ",
+      "dax_expression": "2000",
+      "solution_explanation": "The Tableau calculation is a constant numeric literal (2000). This maps directly to the DAX numeric literal 2000. It does not reference any aggregates or parameters and is row-level/static, so it is implemented as a calculated column."
+    }
+  ]
+}
