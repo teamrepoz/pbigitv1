@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "test+",
+      "name": "Top N Filter ",
+      "dax_expression": "VAR _Param = SELECTEDVALUE('Top N'[Display As])\nVAR _Rank = RANKX(\n    ALLSELECTED('test+'),\n    CALCULATE(SUM('test+'[Likes_Received_Per_Day])),\n    ,\n    DESC,\n    DENSE\n)\nRETURN\n_Rank <= _Param",
+      "solution_explanation": "Replaced Tableau RANK(SUM(...)) with DAX RANKX over ALLSELECTED('test+') and SUM('test+'[Likes_Received_Per_Day]). Replaced Tableau parameter [Parameters].[Top N] with SELECTEDVALUE('Top N'[Display As]). Column references converted to 'test+'[Likes_Received_Per_Day]. Returns a boolean comparing the computed rank against the selected parameter.",
+      "type_changed_reason": "The formula uses aggregation (SUM) and a table calculation (RANK) and references a parameter; such logic requires a measure in Power BI."
+    }
+  ]
+}
