@@ -1,0 +1,46 @@
+table 'Performance Scope'
+	lineageTag: 36397a98-a5c7-43f2-8502-6637963dc35a
+
+	column Index
+		formatString: 0
+		lineageTag: 3a8cd58a-2edc-49d7-ac0f-d31aa8015efc
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: d8b98583-ac78-4bca-91b2-18cfc401b8e6
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 984d038b-3c6b-4d5c-82fc-daa025ca40c4
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Performance Scope' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Current Month vs Last Month", "CM_vs_PM" },
+				{ 1, "Current Month vs Same Month, Last Year", "CM_vs_PY" },
+				{ 2, "YTD: Current Year vs Last Year", "CYTD_vs_PYTD" }
+			    }
+			)
+
+	annotation PBI_Id = d2dc226f969642ad931ae4d7b5287d6f
+
