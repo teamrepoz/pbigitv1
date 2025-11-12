@@ -1,0 +1,55 @@
+table 'Month Parameter'
+	lineageTag: b27e4b71-7a0d-4fdc-9e86-2a65eb77d957
+
+	column Index
+		formatString: 0
+		lineageTag: 38c82c7b-5ebe-43ab-a0b6-7ba3c2fb5d2b
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 1e818b35-7c34-4852-ac87-18bd0520286a
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: d091325b-e75b-4de5-be5a-ba79556324d2
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Month Parameter' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", INTEGER,
+			    "Value", INTEGER,
+			    {
+			        { 0, Jan, 1 },
+				{ 1, Feb, 2 },
+				{ 2, Mar, 3 },
+				{ 3, Apr, 4 },
+				{ 4, May, 5 },
+				{ 5, Jun, 6 },
+				{ 6, Jul, 7 },
+				{ 7, Aug, 8 },
+				{ 8, Sep, 9 },
+				{ 9, Oct, 10 },
+				{ 10, Nov, 11 },
+				{ 11, Dec, 12 }
+			    }
+			)
+
+	annotation PBI_Id = e41ada2f2ff44070a9b764065f104d43
+
