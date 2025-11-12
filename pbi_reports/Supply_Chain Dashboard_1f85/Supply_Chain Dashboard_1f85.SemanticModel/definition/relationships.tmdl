@@ -1,0 +1,10 @@
+relationship 10e74216-3655-4d30-991c-9a3bf60f1446
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Supply_Chain.'order date (DateOrders)'
+	toColumn: LocalDateTable_84518588-b202-41ce-95d4-3ef705c57205.Date
+
+relationship 51035a43-47dc-4fd7-8901-6322c6f5a2ba
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Supply_Chain.'shipping date (DateOrders)'
+	toColumn: LocalDateTable_46a01bce-2f63-46fe-8185-fca72c5baff7.Date
+
