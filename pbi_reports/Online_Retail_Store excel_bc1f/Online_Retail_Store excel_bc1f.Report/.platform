@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Online_Retail_Store excel_bc1f"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "7f4aac6d-a01e-462c-a4c7-95efdc99a035"
+  }
+}
