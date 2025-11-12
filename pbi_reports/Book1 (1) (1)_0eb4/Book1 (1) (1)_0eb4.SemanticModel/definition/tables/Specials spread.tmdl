@@ -1,0 +1,44 @@
+table 'Specials spread'
+	lineageTag: 39056656-5c93-433c-9078-7d06101984ae
+
+	column Index
+		formatString: 0
+		lineageTag: d55079b4-630b-4b30-9159-5ad487aa101b
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: f7f7a0bd-721f-460c-9058-936bec368b37
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 122779e4-565e-4070-9521-1fe6078fa125
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Specials spread' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", DOUBLE,
+			    "Value", DOUBLE,
+			    {
+			        {0, 0.12, 0.12}
+			    }
+			)
+
+	annotation PBI_Id = 13c041761734478da884ed922e9f2e50
+
