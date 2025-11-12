@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "test+",
+      "name": "Daily Activity Total ",
+      "dax_expression": "'test+'[Likes_Received_Per_Day] + 'test+'[Posts_Per_Day] + 'test+'[Messages_Sent_Per_Day]",
+      "solution_explanation": "Converted the row-level Tableau expression to a DAX calculated column. All column references were transformed to the 'table'[column] format. No aggregates or parameters are used, so this remains a calculated column."
+    }
+  ]
+}
