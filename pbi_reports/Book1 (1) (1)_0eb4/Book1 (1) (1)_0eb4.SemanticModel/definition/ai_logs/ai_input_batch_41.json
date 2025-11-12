@@ -1,0 +1,21 @@
+{
+  "calculations": [
+    {
+      "name": "Limit",
+      "table_name": "migration_Extract_POC (1) (local copy)",
+      "tableau_expression": "IF [Limit Group] = \"R\" THEN\r\n55000 ELSE 55000 END",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "IF [Limit Group] = \"R\" THEN\r\n55000 ELSE 55000 END",
+        "calculated_fields": {
+          "Limit Group": "[R/Rr (group)]"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {
+          "Limit Group": "String"
+        }
+      }
+    }
+  ]
+}
