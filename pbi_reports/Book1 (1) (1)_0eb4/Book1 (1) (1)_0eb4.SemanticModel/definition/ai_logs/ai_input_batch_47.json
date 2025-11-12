@@ -1,0 +1,35 @@
+{
+  "calculations": [
+    {
+      "name": "Change MTM (in CAD)",
+      "table_name": "migration_Extract_POC (1) (local copy)",
+      "tableau_expression": "[MTM (in CAD) T]-[MTM (In CAD) T-1]",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "[MTM (in CAD) T]-[MTM (In CAD) T-1]",
+        "calculated_fields": {
+          "MTM (In CAD) T-1": "if [Parameters].[Use Custom Date] then \r\n    (if [MAX_DATE -1day]= [RpDate] then [MTM (in CAD)] else 0 END)\r\nelse if [End DATE - 1day] = [RpDate] then [MTM (in CAD)] else 0 END END",
+          "MTM (in CAD) T": "if [Parameters].[Use Custom Date] then \r\n    (if [Max Date]= [RpDate] then [MTM (in CAD)] else 0 END)\r\nelse if [RpDate]= [Parameters].[End Date] then [MTM (in CAD)] else 0 END END",
+          "MAX_DATE -1day": "case datepart('weekday',[Max Date])\r\nwhen 1 then [Max Date]-2\r\nwhen 2 then [Max Date]-3\r\nelse [Max Date]-1\r\nend",
+          "End DATE - 1day": "case datepart('weekday',[Parameters].[End Date])\r\nwhen 1 then [Parameters].[End Date]-2\r\nwhen 2 then [Parameters].[End Date]-3\r\nelse [Parameters].[End Date]-1\r\nend",
+          "End Date": "#2023-11-01#",
+          "Use Custom Date": "true",
+          "Max Date": "case datepart('weekday',today())\r\n    when 1 then today()-2\r\n    when 2 then today()-3\r\n    else today()-1\r\n    END"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "RpDate": "date"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "MTM (In CAD) T-1": "real",
+          "MTM (in CAD) T": "real",
+          "End Date": "date",
+          "Use Custom Date": "boolean",
+          "MAX_DATE -1day": "DateTime",
+          "End DATE - 1day": "DateTime",
+          "Max Date": "DateTime"
+        }
+      }
+    }
+  ]
+}
