@@ -1,0 +1,47 @@
+table 'Analysis Type'
+	lineageTag: efed631b-9a30-4c65-9e4c-62d92b4d1401
+
+	column Index
+		formatString: 0
+		lineageTag: 25cb9681-7c1c-4ebe-a72a-23f155a034a7
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: cd2eb57b-cf7e-48a3-8e73-58f67ed4b722
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 265d730a-15fa-483a-a936-f2a549d230d7
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Analysis Type' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Shipping Method", "Shipping Method" },
+				{ 1, "Supplier Type", "Supplier Type" },
+				{ 2, "Supplier Name", "Supplier Name" },
+				{ 3, "Channel", "Channel" }
+			    }
+			)
+
+	annotation PBI_Id = 71c3b68833aa4edbae1c7dd57fc5a884
+
