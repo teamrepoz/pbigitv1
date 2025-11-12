@@ -1,0 +1,40 @@
+{
+  "calculations": [
+    {
+      "name": "proj bal2",
+      "table_name": "migration_Extract_POC (1) (local copy)",
+      "tableau_expression": "IF [Maturity Date]>[date series] AND [Start date]<=[date series] AND  [Source]<>\"EUROCLEAR\" AND [R/Rr (non repos)]=\"Repo\" AND INT([Is Internal ?])<>1 THEN ([Initial Cash USD T]) ELSE 0 END",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "IF [Maturity Date]>[date series] AND [Start date]<=[date series] AND  [Source]<>\"EUROCLEAR\" AND [R/Rr (non repos)]=\"Repo\" AND INT([Is Internal ?])<>1 THEN ([Initial Cash USD T]) ELSE 0 END",
+        "calculated_fields": {
+          "date series": "[title date]+INT([fixed DTM])",
+          "Initial Cash USD T": "if [Parameters].[Use Custom Date] then \r\n    (if [Max Date]= [RpDate] THEN [Ut. US MM] else 0 END)\r\nelse if [RpDate]= [Parameters].[End Date] then [Ut. US MM] else 0 END END",
+          "End Date": "#2023-11-01#",
+          "title date": "if [Parameters].[Use Custom Date] THEN [Max Date] ELSE  [Parameters].[End Date] END",
+          "Use Custom Date": "true",
+          "Max Date": "case datepart('weekday',today())\r\n    when 1 then today()-2\r\n    when 2 then today()-3\r\n    else today()-1\r\n    END",
+          "fixed DTM": "STR({ FIXED [DTM T ]: MAX([DTM T ])})"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "RpDate": "date",
+          "Start date": "date",
+          "Source": "string",
+          "Maturity Date": "date",
+          "Ut. US MM": "real",
+          "Is Internal ?": "string"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Initial Cash USD T": "real",
+          "End Date": "date",
+          "Use Custom Date": "boolean",
+          "date series": "DateTime",
+          "title date": "DateTime",
+          "Max Date": "DateTime",
+          "fixed DTM": "String"
+        }
+      }
+    }
+  ]
+}
