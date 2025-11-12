@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "case",
+      "dax_expression": "VAR threshold = INT( SELECTEDVALUE('migration_Extract_POC (1) (local copy)'[fixed DTM]) )\nRETURN\nCALCULATE(\n    SUMX(\n        'migration_Extract_POC (1) (local copy)',\n        IF(\n            INT('migration_Extract_POC (1) (local copy)'[DTM T ]) >= threshold &&\n            'migration_Extract_POC (1) (local copy)'[Source] <> \"EUROCLEAR\" &&\n            'migration_Extract_POC (1) (local copy)'[R/Rr (non repos)] <> \"non\",\n            'migration_Extract_POC (1) (local copy)'[MTM per day],\n            0\n        )\n    ),\n    ALLEXCEPT('migration_Extract_POC (1) (local copy)', 'migration_Extract_POC (1) (local copy)'[RpDate])\n)",
+      "solution_explanation": "Replaced the repeated CASE WHEN \"N\" THEN { FIXED [RpDate]: SUM(...) } pattern with a single measure. INT(SELECTEDVALUE([fixed DTM])) is used as the threshold (N). SUMX over the table with the IF condition reproduces the conditional summation of [MTM per day]. CALCULATE with ALLEXCEPT(...[RpDate]) emulates the FIXED [RpDate] LOD by keeping only RpDate in the filter context. All column references are fully qualified to 'migration_Extract_POC (1) (local copy)'."
+    }
+  ]
+}
