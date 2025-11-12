@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Team/Individual Split",
+      "table_name": "dictionary+",
+      "tableau_expression": "IF [Event] = \"Team\" THEN \"Team Event\" ELSE \"Individual Event\" END",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "IF [Event] = \"Team\" THEN \"Team Event\" ELSE \"Individual Event\" END",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Event": "string"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
