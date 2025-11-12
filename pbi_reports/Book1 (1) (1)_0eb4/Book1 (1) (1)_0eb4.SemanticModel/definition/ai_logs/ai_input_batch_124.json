@@ -1,0 +1,34 @@
+{
+  "calculations": [
+    {
+      "name": "term Bucket",
+      "table_name": "migration_Extract_POC (1) (local copy)",
+      "tableau_expression": "Case DATEPART('weekday',[title date])\r\n\r\nWHEN 6 then\r\n\r\nif DATEADD('weekday',3,[title date]) =[Parameters].[Holidays] THEN \r\n\r\nif DATE([Maturity Date]) <= DATE([title date]) then \"expired\"  \r\nELSEIF [Maturity Date] <= DATEADD('weekday',4,[title date]) then \"O/n\" \r\nELSEIF [Maturity Date] <= DATEADD('week',1,[title date]) then \"1W\"\r\nELSEIF [Maturity Date] <= DATEADD('week',2,[title date]) then \"2W\"\r\nELSEIF [Maturity Date] <= DATEADD('month',1,[title date]) then \"1M\"\r\nELSEIF [Maturity Date] <= DATEADD('day',96,[title date]) then \"3M\"\r\nELSEIF [Maturity Date] <= DATEADD('day',189,[title date]) then \"6M\"\r\nELSEIF [Maturity Date] <= DATEADD('day',371,[title date]) then \"1 Year\"\r\nELSEIF [Maturity Date] >= DATEADD('day',371,[title date]) then \"> 1 Year\"\r\nEND\r\n\r\nElse \r\n\r\nif   DATE([Maturity Date]) <= DATE([title date]) then \"expired\"  \r\nELSEIF [Maturity Date] <= DATEADD('weekday',3,[title date]) then \"O/n\"\r\nELSEIF [Maturity Date] <= DATEADD('week',1,[title date]) then \"1W\"\r\nELSEIF [Maturity Date] <= DATEADD('week',2,[title date]) then \"2W\"\r\nELSEIF [Maturity Date] <= DATEADD('month',1,[title date]) then \"1M\"\r\nELSEIF [Maturity Date] <= DATEADD('day',96,[title date]) then \"3M\"\r\nELSEIF [Maturity Date] <= DATEADD('day',189,[title date]) then \"6M\"\r\nELSEIF [Maturity Date] <= DATEADD('day',371,[title date]) then \"1 Year\"\r\nELSEIF [Maturity Date] >= DATEADD('day',371,[title date]) then \"> 1 Year\"\r\n\r\nEND\r\n\r\nEND\r\n\r\nELSE \r\n\r\nif DATEADD('weekday',3,[title date]) =[Parameters].[Holidays] THEN \r\n\r\nif  [Maturity Date] <= DATEADD('weekday',2,[title date]) then \"O/n\"\r\nELSEIF [Maturity Date] <= DATEADD('week',1,[title date]) then \"1W\"\r\nELSEIF [Maturity Date] <= DATEADD('week',2,[title date]) then \"2W\"\r\nELSEIF [Maturity Date] <= DATEADD('month',1,[title date]) then \"1M\"\r\nELSEIF [Maturity Date] <= DATEADD('day',96,[title date]) then \"3M\"\r\nELSEIF [Maturity Date] <= DATEADD('day',189,[title date]) then \"6M\"\r\nELSEIF [Maturity Date] <= DATEADD('day',371,[title date]) then \"1 Year\"\r\nELSEIF [Maturity Date] >= DATEADD('day',371,[title date]) then \"> 1 Year\"\r\n\r\nEND\r\n\r\nELSE\r\n\r\nif  [Maturity Date] <= DATEADD('weekday',1,[title date]) then \"O/n\"\r\nELSEIF [Maturity Date] <= DATEADD('week',1,[title date]) then \"1W\"\r\nELSEIF [Maturity Date] <= DATEADD('week',2,[title date]) then \"2W\"\r\nELSEIF [Maturity Date] <= DATEADD('month',1,[title date]) then \"1M\"\r\nELSEIF [Maturity Date] <= DATEADD('day',96,[title date]) then \"3M\"\r\nELSEIF [Maturity Date] <= DATEADD('day',189,[title date]) then \"6M\"\r\nELSEIF [Maturity Date] <= DATEADD('day',371,[title date]) then \"1 Year\"\r\nELSEIF [Maturity Date] >= DATEADD('day',371,[title date]) then \"> 1 Year\"\r\n\r\nEND\r\n\r\n\r\n\r\nEND\r\n\r\nEND",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "Case DATEPART('weekday',[title date])\r\n\r\nWHEN 6 then\r\n\r\nif DATEADD('weekday',3,[title date]) =[Parameters].[Holidays] THEN \r\n\r\nif DATE([Maturity Date]) <= DATE([title date]) then \"expired\"  \r\nELSEIF [Maturity Date] <= DATEADD('weekday',4,[title date]) then \"O/n\" \r\nELSEIF [Maturity Date] <= DATEADD('week',1,[title date]) then \"1W\"\r\nELSEIF [Maturity Date] <= DATEADD('week',2,[title date]) then \"2W\"\r\nELSEIF [Maturity Date] <= DATEADD('month',1,[title date]) then \"1M\"\r\nELSEIF [Maturity Date] <= DATEADD('day',96,[title date]) then \"3M\"\r\nELSEIF [Maturity Date] <= DATEADD('day',189,[title date]) then \"6M\"\r\nELSEIF [Maturity Date] <= DATEADD('day',371,[title date]) then \"1 Year\"\r\nELSEIF [Maturity Date] >= DATEADD('day',371,[title date]) then \"> 1 Year\"\r\nEND\r\n\r\nElse \r\n\r\nif   DATE([Maturity Date]) <= DATE([title date]) then \"expired\"  \r\nELSEIF [Maturity Date] <= DATEADD('weekday',3,[title date]) then \"O/n\"\r\nELSEIF [Maturity Date] <= DATEADD('week',1,[title date]) then \"1W\"\r\nELSEIF [Maturity Date] <= DATEADD('week',2,[title date]) then \"2W\"\r\nELSEIF [Maturity Date] <= DATEADD('month',1,[title date]) then \"1M\"\r\nELSEIF [Maturity Date] <= DATEADD('day',96,[title date]) then \"3M\"\r\nELSEIF [Maturity Date] <= DATEADD('day',189,[title date]) then \"6M\"\r\nELSEIF [Maturity Date] <= DATEADD('day',371,[title date]) then \"1 Year\"\r\nELSEIF [Maturity Date] >= DATEADD('day',371,[title date]) then \"> 1 Year\"\r\n\r\nEND\r\n\r\nEND\r\n\r\nELSE \r\n\r\nif DATEADD('weekday',3,[title date]) =[Parameters].[Holidays] THEN \r\n\r\nif  [Maturity Date] <= DATEADD('weekday',2,[title date]) then \"O/n\"\r\nELSEIF [Maturity Date] <= DATEADD('week',1,[title date]) then \"1W\"\r\nELSEIF [Maturity Date] <= DATEADD('week',2,[title date]) then \"2W\"\r\nELSEIF [Maturity Date] <= DATEADD('month',1,[title date]) then \"1M\"\r\nELSEIF [Maturity Date] <= DATEADD('day',96,[title date]) then \"3M\"\r\nELSEIF [Maturity Date] <= DATEADD('day',189,[title date]) then \"6M\"\r\nELSEIF [Maturity Date] <= DATEADD('day',371,[title date]) then \"1 Year\"\r\nELSEIF [Maturity Date] >= DATEADD('day',371,[title date]) then \"> 1 Year\"\r\n\r\nEND\r\n\r\nELSE\r\n\r\nif  [Maturity Date] <= DATEADD('weekday',1,[title date]) then \"O/n\"\r\nELSEIF [Maturity Date] <= DATEADD('week',1,[title date]) then \"1W\"\r\nELSEIF [Maturity Date] <= DATEADD('week',2,[title date]) then \"2W\"\r\nELSEIF [Maturity Date] <= DATEADD('month',1,[title date]) then \"1M\"\r\nELSEIF [Maturity Date] <= DATEADD('day',96,[title date]) then \"3M\"\r\nELSEIF [Maturity Date] <= DATEADD('day',189,[title date]) then \"6M\"\r\nELSEIF [Maturity Date] <= DATEADD('day',371,[title date]) then \"1 Year\"\r\nELSEIF [Maturity Date] >= DATEADD('day',371,[title date]) then \"> 1 Year\"\r\n\r\nEND\r\n\r\n\r\n\r\nEND\r\n\r\nEND",
+        "calculated_fields": {
+          "title date": "if [Parameters].[Use Custom Date] THEN [Max Date] ELSE  [Parameters].[End Date] END",
+          "Holidays": "#2023-05-01#",
+          "Use Custom Date": "true",
+          "Max Date": "case datepart('weekday',today())\r\n    when 1 then today()-2\r\n    when 2 then today()-3\r\n    else today()-1\r\n    END",
+          "End Date": "#2023-11-01#"
+        },
+        "parameters": [
+          "Holidays",
+          "Holidays"
+        ],
+        "col_to_datatype_mapping": {
+          "Maturity Date": "date"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Holidays": "date",
+          "Use Custom Date": "boolean",
+          "End Date": "date",
+          "title date": "DateTime",
+          "Max Date": "DateTime"
+        }
+      }
+    }
+  ]
+}
