@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Rank Stocks",
+      "table_name": "stock_data+",
+      "tableau_expression": "RANK(SUM([Volume]))",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "RANK(SUM([Volume]))",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Volume": "integer"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
