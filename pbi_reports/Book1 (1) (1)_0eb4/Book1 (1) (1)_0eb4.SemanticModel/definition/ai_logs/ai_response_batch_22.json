@@ -1,0 +1,57 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Max Date",
+      "dax_expression": "VAR result = SWITCH(\n    WEEKDAY(TODAY()),\n    1, TODAY() - 2,\n    2, TODAY() - 3,\n    TODAY() - 1\n)\nRETURN result",
+      "solution_explanation": "Converted Tableau CASE with datepart(today()) to DAX SWITCH using WEEKDAY(TODAY()). Returns today's adjusted date."
+    },
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "MAX_DATE -1day",
+      "dax_expression": "VAR md = 'migration_Extract_POC (1) (local copy)'[Max Date]\nRETURN SWITCH(\n    WEEKDAY(md),\n    1, md - 2,\n    2, md - 3,\n    md - 1\n)",
+      "solution_explanation": "Translated Tableau CASE on datepart('weekday',[Max Date]) to DAX SWITCH on WEEKDAY(md) and subtract days accordingly. References the Max Date measure."
+    },
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "End DATE - 1day",
+      "dax_expression": "VAR endParam = SELECTEDVALUE('End Date'[Display As])\nRETURN SWITCH(\n    WEEKDAY(endParam),\n    1, endParam - 2,\n    2, endParam - 3,\n    endParam - 1\n)",
+      "solution_explanation": "Converted Tableau CASE using datepart on the parameter [Parameters].[End Date] to DAX SWITCH using SELECTEDVALUE('End Date'[Display As]) and WEEKDAY. Adjusts the parameter date by weekday rules.",
+      "type_changed_reason": "This calculation references a parameter ([Parameters].[End Date]), and parameter-based calculations must be created as measures."
+    },
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "DV01 T (USD, Actuals)",
+      "dax_expression": "VAR useCustom = SELECTEDVALUE('Use Custom Date'[Display As])\nVAR rpDate = 'migration_Extract_POC (1) (local copy)'[RpDate]\nVAR dv01 = 'migration_Extract_POC (1) (local copy)'[DV01 (In USD)]\nVAR endParam = SELECTEDVALUE('End Date'[Display As])\nVAR maxDate = 'migration_Extract_POC (1) (local copy)'[Max Date]\nRETURN\nIF(\n    useCustom,\n    IF(maxDate = rpDate, dv01, 0),\n    IF(rpDate = endParam, dv01, 0)\n)",
+      "solution_explanation": "Translated nested Tableau IFs to DAX using SELECTEDVALUE for parameters and row fields. Evaluates whether to return DV01 (In USD) based on custom date logic or parameter End Date.",
+      "type_changed_reason": "This calculation references a parameter ([Parameters].[Use Custom Date] and/or [Parameters].[End Date]), so it must be a measure."
+    },
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Dv01 T-1 (USD)",
+      "dax_expression": "VAR useCustom = SELECTEDVALUE('Use Custom Date'[Display As])\nVAR rpDate = 'migration_Extract_POC (1) (local copy)'[RpDate]\nVAR dv01 = 'migration_Extract_POC (1) (local copy)'[DV01 (In USD)]\nVAR maxDateMinus1 = 'migration_Extract_POC (1) (local copy)'[MAX_DATE -1day]\nVAR endDateMinus1 = 'migration_Extract_POC (1) (local copy)'[End DATE - 1day]\nRETURN\nIF(\n    useCustom,\n    IF(maxDateMinus1 = rpDate, dv01, 0),\n    IF(endDateMinus1 = rpDate, dv01, 0)\n)",
+      "solution_explanation": "Converted Tableau nested IFs to DAX, using SELECTEDVALUE for the Use Custom Date parameter and the previously defined MAX_DATE -1day and End DATE - 1day measures to determine which DV01 value to return.",
+      "type_changed_reason": "This calculation references a parameter ([Parameters].[Use Custom Date] and/or [Parameters].[End Date]), so it must be a measure."
+    },
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Change Dv01 (USD)",
+      "dax_expression": "'migration_Extract_POC (1) (local copy)'[DV01 T (USD, Actuals)] - 'migration_Extract_POC (1) (local copy)'[Dv01 T-1 (USD)]",
+      "solution_explanation": "Converted Tableau subtraction of two calculated fields into DAX subtraction between the corresponding measures."
+    },
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Abs Change in DV01",
+      "dax_expression": "ABS('migration_Extract_POC (1) (local copy)'[Change Dv01 (USD)])",
+      "solution_explanation": "Converted Tableau ABS([Change Dv01 (USD)]) to DAX ABS on the Change Dv01 measure.",
+      "type_changed_reason": "The underlying calculation references parameters (via dependent fields), so this must be a measure."
+    }
+  ]
+}
