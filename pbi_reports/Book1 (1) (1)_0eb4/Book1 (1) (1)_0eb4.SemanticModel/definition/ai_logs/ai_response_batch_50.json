@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Change Initial Cash USD (abs)",
+      "dax_expression": "ABS('migration_Extract_POC (1) (local copy)'[Initial Cash USD T]) - ABS('migration_Extract_POC (1) (local copy)'[Initial Cash USD T -1])",
+      "solution_explanation": "Converted Tableau ABS(...) subtraction to DAX, and transformed column references to 'TableName'[ColumnName] format.",
+      "type_changed_reason": "The calculation depends on calculated fields that reference Tableau parameters (e.g., Use Custom Date / End Date). Per rules, any calculation that references parameters must be created as a measure."
+    }
+  ]
+}
