@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Mastering Containers - Sales Performance Dashboard_28fe"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "ffdc3010-4045-48f5-8e24-167f0ce5e243"
+  }
+}
