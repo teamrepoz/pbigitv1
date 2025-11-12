@@ -1,0 +1,18 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Max Date",
+      "dax_expression": "SWITCH(WEEKDAY(TODAY()),\n    1, TODAY() - 2,\n    2, TODAY() - 3,\n    TODAY() - 1\n)",
+      "solution_explanation": "Converted Tableau DATEPART/TODAY CASE logic to a DAX SWITCH using WEEKDAY(TODAY()) to produce the same Max Date value."
+    },
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "fixed netting 3 RR (T)",
+      "dax_expression": "VAR useCustom = SELECTEDVALUE('Use Custom Date'[Display As])\nVAR endDateParam = SELECTEDVALUE('End Date'[Display As])\nVAR summarized =\n    SUMMARIZE(\n        'migration_Extract_POC (1) (local copy)',\n        'migration_Extract_POC (1) (local copy)'[RpDate],\n        'migration_Extract_POC (1) (local copy)'[Subs],\n        'migration_Extract_POC (1) (local copy)'[Counterpty],\n        'migration_Extract_POC (1) (local copy)'[Cash curr],\n        'migration_Extract_POC (1) (local copy)'[Maturity Date],\n        'migration_Extract_POC (1) (local copy)'[R/RR],\n        \"FixedSum\", CALCULATE(\n            SUMX(\n                'migration_Extract_POC (1) (local copy)',\n                IF(\n                    'migration_Extract_POC (1) (local copy)'[Is Forward Start ?] = 0 &&\n                    'migration_Extract_POC (1) (local copy)'[Is Approved for Netting] = \"1\" &&\n                    'migration_Extract_POC (1) (local copy)'[Bucket] <> \"open\" &&\n                    'migration_Extract_POC (1) (local copy)'[R/RR] = \"RR\" &&\n                    IF(\n                        useCustom,\n                        IF([Max Date] = 'migration_Extract_POC (1) (local copy)'[RpDate], TRUE(), FALSE()),\n                        'migration_Extract_POC (1) (local copy)'[RpDate] = endDateParam\n                    ),\n                    'migration_Extract_POC (1) (local copy)'[Ut. US MM],\n                    0\n                )\n            )\n        )\n    )\nRETURN\nSUMX(summarized, ABS([FixedSum]))",
+      "solution_explanation": "Emulated the Tableau FIXED LOD by using SUMMARIZE to group by the FIXED dimensions, then CALCULATE a conditional SUMX inside each group (matching the IF conditions). The outer SUMX sums the ABS of each group's aggregated value. Parameter references are handled via SELECTEDVALUE('ParameterName'[Display As]) as required. [Max Date] is implemented as a separate measure (defined above) and referenced here."
+    }
+  ]
+}
