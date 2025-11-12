@@ -1,0 +1,46 @@
+table 'Choose Dimensions1'
+	lineageTag: a8b6dd96-631b-43bc-b3ff-db5e78816f5b
+
+	column Index
+		formatString: 0
+		lineageTag: 071bbfd6-3375-4180-b882-12b240498102
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: e9326e38-7ee7-4a4e-b451-8bd76af9627d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 720b0a70-ee01-4d7b-829b-89c9803eaeae
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Choose Dimensions1' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Sex", "Sex" },
+				{ 1, "Age Group", "Age Group" },
+				{ 2, "Total", "Total" }
+			    }
+			)
+
+	annotation PBI_Id = aea79d23dbab4b3aba66bbef2bab3a2d
+
