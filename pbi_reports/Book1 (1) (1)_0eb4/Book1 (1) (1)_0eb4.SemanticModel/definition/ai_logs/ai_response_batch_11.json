@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "[Initial Cash USD T (excl Int/FWD) Abs] / TOTAL([Initial Cash USD T (excl Int/FWD) Abs])",
+      "dax_expression": "VAR Numerator = SUM('migration_Extract_POC (1) (local copy)'[Initial Cash USD T (excl Int/FWD) Abs])\nVAR TotalAll = CALCULATE(Numerator, ALL('migration_Extract_POC (1) (local copy)'))\nRETURN DIVIDE(Numerator, TotalAll)",
+      "solution_explanation": "Replaced Tableau TOTAL(...) table calculation with CALCULATE(..., ALL(table)) to compute the overall total. SUM(...) is used to aggregate the referenced field and DIVIDE is used for safe division. All column references converted to 'TableName'[Column] format.",
+      "type_changed_reason": "The Tableau formula uses the TOTAL() table calculation (an aggregation across the partition), which requires a measure in Power BI."
+    }
+  ]
+}
