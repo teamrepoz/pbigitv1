@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "dictionary+",
+      "name": "Total Medal Count",
+      "dax_expression": "COUNT('dictionary+'[Medal])",
+      "solution_explanation": "Converted Tableau COUNT([Medal]) to DAX COUNT('dictionary+'[Medal]). This is an aggregation, so it is implemented as a measure."
+    }
+  ]
+}
