@@ -1,0 +1,40 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Max Date",
+      "dax_expression": "VAR wd = WEEKDAY(TODAY())\nRETURN\nSWITCH(wd,\n    1, TODAY() - 2,\n    2, TODAY() - 3,\n    TODAY() - 1\n)",
+      "solution_explanation": "Converted Tableau case on weekday(today()) to DAX using WEEKDAY(TODAY()) and SWITCH to return TODAY() minus appropriate days."
+    },
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "MAX_DATE -1day",
+      "dax_expression": "RETURN\nSWITCH(\n    WEEKDAY([Max Date]),\n    1, [Max Date] - 2,\n    2, [Max Date] - 3,\n    [Max Date] - 1\n)",
+      "solution_explanation": "Translated the Tableau CASE on weekday([Max Date]) to DAX using WEEKDAY([Max Date]) and SWITCH to subtract days from the [Max Date] measure."
+    },
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "End Date",
+      "dax_expression": "DATE(2023, 11, 1)",
+      "solution_explanation": "Converted the Tableau literal date #2023-11-01# to the DAX DATE(2023, 11, 1) representation."
+    },
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "End DATE - 1day",
+      "dax_expression": "RETURN\nSWITCH(\n    WEEKDAY([End Date]),\n    1, [End Date] - 2,\n    2, [End Date] - 3,\n    [End Date] - 1\n)",
+      "solution_explanation": "Translated the Tableau CASE that used the weekday of [Parameters].[End Date] to DAX by using WEEKDAY([End Date]) and SWITCH to subtract the correct number of days."
+    },
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Dv01 T-1 (USD)",
+      "dax_expression": "VAR useCustom = SELECTEDVALUE('Use Custom Date'[Display As])\nRETURN\nIF(\n    useCustom,\n    IF(\n        [MAX_DATE -1day] = 'migration_Extract_POC (1) (local copy)'[RpDate],\n        'migration_Extract_POC (1) (local copy)'[DV01 (In USD)],\n        0\n    ),\n    IF(\n        [End DATE - 1day] = 'migration_Extract_POC (1) (local copy)'[RpDate],\n        'migration_Extract_POC (1) (local copy)'[DV01 (In USD)],\n        0\n    )\n)",
+      "solution_explanation": "Rewrote the Tableau IF logic as a DAX measure. Replaced the parameter reference with SELECTEDVALUE('Use Custom Date'[Display As]). Used the previously defined measures [MAX_DATE -1day] and [End DATE - 1day] and compared them to the row-level 'migration_Extract_POC (1) (local copy)'[RpDate], returning the DV01 value or 0 accordingly.",
+      "type_changed_reason": "The calculation references a parameter, and all parameter-based calculations must be measures."
+    }
+  ]
+}
