@@ -1,0 +1,47 @@
+table 'cc_year Parameter'
+	lineageTag: 764b0b50-9445-4865-a467-20c8d9409662
+
+	column Index
+		formatString: 0
+		lineageTag: 018448ad-b380-4538-bb9c-d5b4f0eb1d40
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 79b5a690-db4b-430b-87ea-ff66d47f4748
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 823a7bd4-e6f5-44bf-9d54-6c7cb78f579b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'cc_year Parameter' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", INTEGER,
+			    "Value", INTEGER,
+			    {
+			        { 0, 2010, 2018 },
+				{ 1, 2019, 2019 },
+				{ 2, 2020, 2020 },
+				{ 3, 2021, 2021 }
+			    }
+			)
+
+	annotation PBI_Id = e4c5cb364e1f4248a0adeb70fac833bd
+
