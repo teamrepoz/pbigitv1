@@ -1,0 +1,25 @@
+{
+  "calculations": [
+    {
+      "name": "Is specials ?",
+      "table_name": "migration_Extract_POC (1) (local copy)",
+      "tableau_expression": "IF [Coll Spread] > [Parameters].[Specials spread] THEN \"Specials\" ELSE \"GC\" END",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "IF [Coll Spread] > [Parameters].[Specials spread] THEN \"Specials\" ELSE \"GC\" END",
+        "calculated_fields": {
+          "Specials spread": "0.12"
+        },
+        "parameters": [
+          "Specials spread"
+        ],
+        "col_to_datatype_mapping": {
+          "Coll Spread": "real"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Specials spread": "real"
+        }
+      }
+    }
+  ]
+}
