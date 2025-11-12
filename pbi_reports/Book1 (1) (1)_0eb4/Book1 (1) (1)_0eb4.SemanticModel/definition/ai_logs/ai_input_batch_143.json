@@ -1,0 +1,30 @@
+{
+  "calculations": [
+    {
+      "name": "Comparison date",
+      "table_name": "migration_Extract_POC (1) (local copy)",
+      "tableau_expression": "if [Parameters].[Use Custom Date] THEN [MAX_DATE -1day] ELSE  [Parameters].[Date X (comparison date)] END",
+      "datatype": "date",
+      "calculation_context": {
+        "Expression": "if [Parameters].[Use Custom Date] THEN [MAX_DATE -1day] ELSE  [Parameters].[Date X (comparison date)] END",
+        "calculated_fields": {
+          "MAX_DATE -1day": "case datepart('weekday',[Max Date])\r\nwhen 1 then [Max Date]-2\r\nwhen 2 then [Max Date]-3\r\nelse [Max Date]-1\r\nend",
+          "Use Custom Date": "true",
+          "Date X (comparison date)": "#2023-10-25#",
+          "Max Date": "case datepart('weekday',today())\r\n    when 1 then today()-2\r\n    when 2 then today()-3\r\n    else today()-1\r\n    END"
+        },
+        "parameters": [
+          "Use Custom Date",
+          "Date X (comparison date)"
+        ],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {
+          "Use Custom Date": "boolean",
+          "Date X (comparison date)": "date",
+          "MAX_DATE -1day": "DateTime",
+          "Max Date": "DateTime"
+        }
+      }
+    }
+  ]
+}
