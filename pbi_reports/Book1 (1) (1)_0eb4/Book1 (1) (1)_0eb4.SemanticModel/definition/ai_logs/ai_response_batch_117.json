@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "\"Netted\"",
+      "dax_expression": "\"Netted\"",
+      "solution_explanation": "The Tableau expression is a constant string literal (\"Netted\"). Converted to a DAX calculated column that returns the string \"Netted\" since it is a row-level (non-aggregated) value."
+    }
+  ]
+}
