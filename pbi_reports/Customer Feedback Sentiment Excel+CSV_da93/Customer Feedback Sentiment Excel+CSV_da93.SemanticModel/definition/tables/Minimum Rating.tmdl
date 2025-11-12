@@ -1,0 +1,28 @@
+table 'Minimum Rating'
+	lineageTag: 0e373e08-b31a-4c8f-af43-04b5249a5cea
+
+	measure 'Minimum Rating Value' = SELECTEDVALUE('Minimum Rating'[Minimum Rating], 1)
+		lineageTag: 1515f077-950e-4752-833f-126e629bf497
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Minimum Rating'
+		dataType: double
+		formatString: 0
+		lineageTag: 019b1a8b-be00-414a-bbd4-9fb3e44ec5a1
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Minimum Rating' = calculated
+		mode: import
+		source = GENERATESERIES(1, 5)
+
+	annotation PBI_Id = f670289505194315818c36090b1495ec
+
