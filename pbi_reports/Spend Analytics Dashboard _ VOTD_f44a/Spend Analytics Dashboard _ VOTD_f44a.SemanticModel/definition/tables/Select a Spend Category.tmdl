@@ -1,0 +1,61 @@
+table 'Select a Spend Category'
+	lineageTag: 6bac3abf-dd79-4cbe-834a-b152e46dd8c2
+
+	column Index
+		formatString: 0
+		lineageTag: 8339d721-7e1f-4995-b038-abd8b846fc68
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: e8953351-1a85-49c3-9c36-1eb9b626cda4
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: c35cb267-b739-4759-afb6-d04d4341341e
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Select a Spend Category' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Administration", "Snacks" },
+				{ 1, "Buy- Products", "Deli" },
+				{ 2, "Cars", "Beverages" },
+				{ 3, "Consulting", "Alcoholic Beverages" },
+				{ 4, "Distribution", "Seafood" },
+				{ 5, "Electricity", "Baked Goods" },
+				{ 6, "Gas", "Baking Goods" },
+				{ 7, "Infrastructure", "Breakfast Foods" },
+				{ 8, "Licenses", "Canned Foods" },
+				{ 9, "Logistics", "Canned Products" },
+				{ 10, "Marketing", "Snack Foods" },
+				{ 11, "Outsourcing", "Starchy Foods" },
+				{ 12, "People Expenses", "Frozen Foods" },
+				{ 13, "Raw Material", "Dairy" },
+				{ 14, "Salaries", "Meat" },
+				{ 15, "Travel", "Eggs" },
+				{ 16, "Wages", "Produce" },
+				{ 17, "ALL", "ALL" }
+			    }
+			)
+
+	annotation PBI_Id = 76f58ee1a97b43339ebee6a894d4cd65
+
