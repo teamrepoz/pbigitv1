@@ -1,0 +1,44 @@
+table 'Post Target'
+	lineageTag: 80c8696b-4311-49e0-bd5d-53f159f62fa6
+
+	column Index
+		formatString: 0
+		lineageTag: 3ed7290c-a52f-4fa0-9508-1c756dfee261
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: ffb5333b-f75e-470b-98cc-27280d6434b6
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 1f87df3d-d01e-42b8-a7a2-4987a82553d2
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Post Target' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", DOUBLE,
+			    "Value", DOUBLE,
+			    {
+			        {0, 3.0, 3.0}
+			    }
+			)
+
+	annotation PBI_Id = be2b3d41b5fc44ef8bfa4cd24acfdfc7
+
