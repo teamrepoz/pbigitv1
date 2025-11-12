@@ -1,0 +1,30 @@
+{
+  "calculations": [
+    {
+      "name": "Carry mod",
+      "table_name": "migration_Extract_POC (1) (local copy)",
+      "tableau_expression": "if [Parameters].[Use Custom Date] then \r\n    (if [Max Date]= [RpDate] then \r\nIF [R/Rr (group)]=\"Repo\" THEN ABS([Carry (in CAD)])*-1 \r\nELSEIF [R/Rr (group)]=\"Reverse Repo\" THEN ABS([Carry (in CAD)]) END\r\n\r\n else 0 END)\r\nelse if [RpDate]= [Parameters].[End Date] then \r\n\r\nIF [R/Rr (group)]=\"Repo\" THEN ABS([Carry (in CAD)])*-1 \r\nELSEIF [R/Rr (group)]=\"Reverse Repo\" THEN ABS([Carry (in CAD)]) END\r\n else 0 END END",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "if [Parameters].[Use Custom Date] then \r\n    (if [Max Date]= [RpDate] then \r\nIF [R/Rr (group)]=\"Repo\" THEN ABS([Carry (in CAD)])*-1 \r\nELSEIF [R/Rr (group)]=\"Reverse Repo\" THEN ABS([Carry (in CAD)]) END\r\n\r\n else 0 END)\r\nelse if [RpDate]= [Parameters].[End Date] then \r\n\r\nIF [R/Rr (group)]=\"Repo\" THEN ABS([Carry (in CAD)])*-1 \r\nELSEIF [R/Rr (group)]=\"Reverse Repo\" THEN ABS([Carry (in CAD)]) END\r\n else 0 END END",
+        "calculated_fields": {
+          "Max Date": "case datepart('weekday',today())\r\n    when 1 then today()-2\r\n    when 2 then today()-3\r\n    else today()-1\r\n    END",
+          "End Date": "#2023-11-01#",
+          "Use Custom Date": "true"
+        },
+        "parameters": [
+          "Use Custom Date",
+          "End Date"
+        ],
+        "col_to_datatype_mapping": {
+          "RpDate": "date"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "End Date": "date",
+          "Use Custom Date": "boolean",
+          "Max Date": "DateTime"
+        }
+      }
+    }
+  ]
+}
