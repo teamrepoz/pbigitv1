@@ -1,0 +1,20 @@
+{
+  "calculations": [
+    {
+      "name": "Text combine calculation",
+      "table_name": "test+",
+      "tableau_expression": "[Gender] + \" - \" + STR([Age])",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "[Gender] + \" - \" + STR([Age])",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Age": "string",
+          "Gender": "string"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
