@@ -1,0 +1,28 @@
+table 'Increase parameter'
+	lineageTag: f0390418-11fb-4427-9477-24ef4b38a8bc
+
+	measure 'Increase parameter Value' = SELECTEDVALUE('Increase parameter'[Increase parameter], 0.1)
+		lineageTag: fa50329d-5b93-4edf-b99c-0a611cd65400
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Increase parameter'
+		dataType: double
+		formatString: 0
+		lineageTag: 8a80c644-e985-4ab3-b58d-f4ff25515704
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Increase parameter' = calculated
+		mode: import
+		source = GENERATESERIES(0.1, 1.5, 0.1)
+
+	annotation PBI_Id = 146c0f11390c496c9b0cb4b87ef29784
+
