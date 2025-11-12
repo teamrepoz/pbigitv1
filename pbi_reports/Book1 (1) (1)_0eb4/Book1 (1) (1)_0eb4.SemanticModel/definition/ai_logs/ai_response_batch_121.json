@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "date series",
+      "dax_expression": "'migration_Extract_POC (1) (local copy)'[title date] + INT(VALUE('migration_Extract_POC (1) (local copy)'[fixed DTM]))",
+      "solution_explanation": "Converted Tableau addition of a date and INT(string) to DAX by referencing the fields with 'Table'[Column] format and converting the string-calculated field to a numeric using VALUE(), then applying INT() to match Tableau's INT behavior.",
+      "type_changed_reason": "The referenced calculated field 'fixed DTM' is produced by a FIXED LOD ({ FIXED ... }) and 'title date' depends on parameters; because the expression depends on aggregation/LOD and parameters, it must be implemented as a measure."
+    }
+  ]
+}
