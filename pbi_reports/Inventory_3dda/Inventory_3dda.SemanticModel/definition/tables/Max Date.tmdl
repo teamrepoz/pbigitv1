@@ -1,0 +1,44 @@
+table 'Max Date'
+	lineageTag: 0340e778-77b7-411c-8c63-0da5093f8032
+
+	column Index
+		formatString: 0
+		lineageTag: 831e7cf9-fc3e-4e81-8a9e-616b711d3a6c
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 0477749b-bbc2-4b34-adae-c9b434d6782f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: ee58dbad-4bb4-4e34-ac51-f005c6c09ad4
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Max Date' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", DATETIME,
+			    "Value", DATETIME,
+			    {
+			        {0, "#2021-12-26 00:00:00#", "#2021-12-26 00:00:00#"}
+			    }
+			)
+
+	annotation PBI_Id = c4db3b158e0e4c6598447d79135031e2
+
