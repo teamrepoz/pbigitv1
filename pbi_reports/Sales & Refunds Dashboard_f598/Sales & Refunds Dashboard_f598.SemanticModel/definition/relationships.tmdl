@@ -1,0 +1,25 @@
+relationship f5457a90-5d84-45da-bbc3-58bd3e98c890
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Amplify.InvoiceDate
+	toColumn: LocalDateTable_f39a6478-4931-4b22-8ddd-0c25d5f71e20.Date
+
+relationship 35f00f0d-8947-4e27-ab88-d5c93b6127de
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Amplify_customer_master_enriched.csv'.LastPurchaseDate
+	toColumn: LocalDateTable_31a06ef6-5002-4e30-972f-610f66ef1a27.Date
+
+relationship 59c6e45e-ed19-4810-967c-375d49db105c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Amplify_generated_refunds.csv'.'Refund Date'
+	toColumn: LocalDateTable_5a82cba9-b79c-4a59-8552-09bd75d89cfd.Date
+
+relationship 7a4206bf-6942-459e-862d-f0aff8bf72df
+	toCardinality: many
+	fromColumn: Amplify.CustomerID
+	toColumn: 'Amplify_customer_master_enriched.csv'.CustomerID
+
+relationship db7aca42-c188-4b87-85f9-17a21c510303
+	toCardinality: many
+	fromColumn: Amplify.CustomerID
+	toColumn: 'Amplify_generated_refunds.csv'.CustomerID
+
