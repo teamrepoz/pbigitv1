@@ -1,0 +1,184 @@
+table 'Candidates Tracker+ (Copy of Recruitment_Tracker_Complete(1))'
+	lineageTag: 24932dd6-bb65-4c8a-a405-8149ff6a1858
+
+	column 'Candidate ID'
+		dataType: string
+		lineageTag: b71d0a38-604d-45f3-ae17-05d387f92772
+		summarizeBy: none
+		sourceColumn: 'Candidate ID'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		lineageTag: 112a953a-1532-4f07-acab-55ddf6f2798f
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Job ID'
+		dataType: string
+		lineageTag: af2bf127-ccf5-46c4-91e3-a8e60f3845e4
+		summarizeBy: none
+		sourceColumn: 'Job ID'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Source
+		dataType: string
+		lineageTag: b73f90bc-7be2-4bea-baa4-b6b1b26fe887
+		summarizeBy: none
+		sourceColumn: Source
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Resume Received'
+		dataType: datetime
+		lineageTag: 08c0034a-436f-4e3d-abeb-36b9b97e7df3
+		summarizeBy: none
+		sourceColumn: 'Resume Received'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Screening Status'
+		dataType: string
+		lineageTag: 0f6b5d63-d479-4d0e-9d39-83af338c7d3d
+		summarizeBy: none
+		sourceColumn: 'Screening Status'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Interview Round'
+		dataType: string
+		lineageTag: 47e32358-e8b4-4145-829e-18efa4d25eca
+		summarizeBy: none
+		sourceColumn: 'Interview Round'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Interviewer
+		dataType: string
+		lineageTag: f2b15ef6-a3bc-409e-a33a-43bfb1b9fb17
+		summarizeBy: none
+		sourceColumn: Interviewer
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Interview Date'
+		dataType: datetime
+		lineageTag: 0e446d5d-f23f-4ab7-9647-79d0844714f5
+		summarizeBy: none
+		sourceColumn: 'Interview Date'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Result
+		dataType: string
+		lineageTag: 89da2739-4b15-411c-81a8-a82f6214c528
+		summarizeBy: none
+		sourceColumn: Result
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Offer Status'
+		dataType: string
+		lineageTag: ae6c5770-542d-48d3-8b73-62ffe5a1b6b0
+		summarizeBy: none
+		sourceColumn: 'Offer Status'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Job ID 1'
+		dataType: string
+		lineageTag: bc0592b0-011a-4bd7-9cff-6f86f43117db
+		summarizeBy: none
+		sourceColumn: 'Job ID 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Job Title'
+		dataType: string
+		lineageTag: 972182d2-f05c-48b4-b359-542f5fb006f9
+		summarizeBy: none
+		sourceColumn: 'Job Title'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Department
+		dataType: string
+		lineageTag: bf09e39f-1d56-4dd0-8238-b82b63ce290e
+		summarizeBy: none
+		sourceColumn: Department
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Hiring Manager'
+		dataType: string
+		lineageTag: 48f7a92d-a76e-4e2c-99c9-9ef02db393b4
+		summarizeBy: none
+		sourceColumn: 'Hiring Manager'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Opening Date'
+		dataType: datetime
+		lineageTag: d4f17fbd-9c79-4951-b0e4-b236516e7880
+		summarizeBy: none
+		sourceColumn: 'Opening Date'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: 7ae92aa2-a8ea-464f-a20a-f3d65ed57141
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Screening Status 1'
+		dataType: string
+		lineageTag: 749beb61-417f-47ce-a5a2-7b205f878166
+		summarizeBy: none
+		sourceColumn: 'Screening Status 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Interview Round 1'
+		dataType: string
+		lineageTag: 04c80d99-d953-4c9c-8c5a-8c45555d29e1
+		summarizeBy: none
+		sourceColumn: 'Interview Round 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Result 1'
+		dataType: string
+		lineageTag: 95cb1d89-ebdd-44ca-9894-f35cd30b5942
+		summarizeBy: none
+		sourceColumn: 'Result 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Offer Status 1'
+		dataType: string
+		lineageTag: cbe7b260-113f-42f5-af3c-043ca1ac45d2
+		summarizeBy: none
+		sourceColumn: 'Offer Status 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Candidates Tracker+ (Copy of Recruitment_Tracker_Complete(1))' = m
+		mode: import
+		source =
+				let 
+					#"Source0" = Table.NestedJoin(#"Candidates Tracker_Candidates Tracker+ (Copy of Recruitment_Tracker_Complete(1))", {"Job ID"}, #"Job Openings_Candidates Tracker+ (Copy of Recruitment_Tracker_Complete(1))", {"Job ID"}, "Job Openings_Candidates Tracker+ (Copy of Recruitment_Tracker_Complete(1))", JoinKind.Inner),
+					#"Expand0" = Table.ExpandTableColumn(#"Source0", "Job Openings_Candidates Tracker+ (Copy of Recruitment_Tracker_Complete(1))", {"Job ID", "Job Title", "Department", "Hiring Manager", "Opening Date", "Status"}, {"Job ID 1", "Job Title", "Department", "Hiring Manager", "Opening Date", "Status"}),
+					#"Source1" = Table.NestedJoin(#"Expand0", {"Interview Round"}, #"Status Codes_Candidates Tracker+ (Copy of Recruitment_Tracker_Complete(1))", {"Interview Round"}, "Status Codes_Candidates Tracker+ (Copy of Recruitment_Tracker_Complete(1))", JoinKind.Inner),
+					#"Expand1" = Table.ExpandTableColumn(#"Source1", "Status Codes_Candidates Tracker+ (Copy of Recruitment_Tracker_Complete(1))", {"Screening Status", "Interview Round", "Result", "Offer Status"}, {"Screening Status 1", "Interview Round 1", "Result 1", "Offer Status 1"})
+					in #"Expand1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
