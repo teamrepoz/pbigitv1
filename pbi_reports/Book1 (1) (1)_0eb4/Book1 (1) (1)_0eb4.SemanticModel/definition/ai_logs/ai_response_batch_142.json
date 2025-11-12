@@ -1,0 +1,20 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "title date",
+      "dax_expression": "VAR useCustom = SELECTEDVALUE('Use Custom Date'[Display As])\nVAR maxDate = SWITCH(WEEKDAY(TODAY(), 1), 1, TODAY() - 2, 2, TODAY() - 3, TODAY() - 1)\nVAR endDate = SELECTEDVALUE('End Date'[Display As])\nRETURN IF(useCustom, maxDate, endDate)",
+      "solution_explanation": "Converted the Tableau calculated field 'title date' into a measure. Replaced parameter references with SELECTEDVALUE per rules and implemented the Max Date logic using SWITCH + WEEKDAY/TODAY to match the Tableau case logic.",
+      "type_changed_reason": "The original calculation references parameters (e.g. [Parameters].[Use Custom Date] and [Parameters].[End Date]); per rules all parameter-based calculations must be measures."
+    },
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Collateral Term Bucket",
+      "dax_expression": "VAR titleDate = [title date]\nVAR holidays = SELECTEDVALUE('Holidays'[Display As])\nVAR shifted = titleDate + 3\nVAR cm = 'migration_Extract_POC (1) (local copy)'[Collateral Maturity]\nVAR _0_3m = EDATE(titleDate, 3)\nVAR _3_6m = EDATE(titleDate, 6)\nVAR _6_1y = EDATE(titleDate, 12)\nVAR _1_3y = EDATE(titleDate, 36)\nVAR _3_5y = EDATE(titleDate, 60)\nVAR _5_10y = EDATE(titleDate, 120)\nVAR _10_30y = EDATE(titleDate, 360)\nVAR _30y = EDATE(titleDate, 360)\nRETURN\nIF(\n    cm <= _0_3m, \"0-3M\",\n    IF(\n        cm <= _3_6m, \"3M-6M\",\n        IF(\n            cm <= _6_1y, \"6M -1Y\",\n            IF(\n                cm <= _1_3y, \"1Y -3Y\",\n                IF(\n                    cm <= _3_5y, \"3Y -5Y\",\n                    IF(\n                        cm <= _5_10y, \"5Y -10Y\",\n                        IF(\n                            cm <= _10_30y, \"10Y -30Y\",\n                            IF(cm >= _30y, \"> 30 Year\", BLANK())\n                        )\n                    )\n                )\n            )\n        )\n    )\n)",
+      "solution_explanation": "Translated the Tableau nested CASE/IF logic into a DAX measure. Parameter [Parameters].[Holidays] was converted to SELECTEDVALUE('Holidays'[Display As]). DATEADD for months/years was mapped to EDATE(titleDate, months) (years expressed as months*12). The collateral maturity comparisons use the EDATE-based thresholds to produce the same bucket labels.",
+      "type_changed_reason": "The calculation references a parameter ([Parameters].[Holidays] via SELECTEDVALUE), so it must be created as a measure."
+    }
+  ]
+}
