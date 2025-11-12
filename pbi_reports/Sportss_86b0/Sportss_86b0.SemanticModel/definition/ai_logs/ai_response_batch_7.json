@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "dictionary+",
+      "name": "Decade Grp",
+      "dax_expression": "INT('dictionary+'[Year] / 10) * 10",
+      "solution_explanation": "Row-level integer decade calculation: divides Year by 10, truncates to integer with INT, then multiplies by 10. Converted [Year] to 'dictionary+'[Year] and preserved INT and arithmetic as a calculated column."
+    }
+  ]
+}
