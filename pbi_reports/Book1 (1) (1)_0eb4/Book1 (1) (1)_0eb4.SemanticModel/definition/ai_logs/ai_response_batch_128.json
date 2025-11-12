@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Last day of the month",
+      "dax_expression": "VAR startMonth = DATE(YEAR('migration_Extract_POC (1) (local copy)'[RpDate]), MONTH('migration_Extract_POC (1) (local copy)'[RpDate]), 1)\nVAR nextMonthStart = EDATE(startMonth, 1)\nVAR lastMoment = nextMonthStart - TIME(0, 0, 1)\nVAR wk = WEEKDAY(lastMoment)\nRETURN\nSWITCH(\n    wk,\n    1, lastMoment - 2,\n    7, lastMoment - 1,\n    lastMoment\n)",
+      "solution_explanation": "Recreated the Tableau CASE logic using DAX: compute start of month, move to next month, subtract one second, inspect WEEKDAY and adjust by subtracting days for weekend cases. This is a row-level date transformation, so implemented as a calculated column."
+    }
+  ]
+}
