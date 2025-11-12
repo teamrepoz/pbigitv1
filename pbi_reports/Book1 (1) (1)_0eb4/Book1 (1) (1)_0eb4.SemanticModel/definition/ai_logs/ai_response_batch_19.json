@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "proj bal2",
+      "dax_expression": "IF(\n    'migration_Extract_POC (1) (local copy)'[Maturity Date] > 'migration_Extract_POC (1) (local copy)'[date series]\n    && 'migration_Extract_POC (1) (local copy)'[Start date] <= 'migration_Extract_POC (1) (local copy)'[date series]\n    && 'migration_Extract_POC (1) (local copy)'[Source] <> \"EUROCLEAR\"\n    && 'migration_Extract_POC (1) (local copy)'[R/Rr (non repos)] = \"Repo\"\n    && INT('migration_Extract_POC (1) (local copy)'[Is Internal ?]) <> 1,\n    'migration_Extract_POC (1) (local copy)'[Initial Cash USD T],\n    0\n)",
+      "solution_explanation": "Converted the Tableau IF to a DAX IF, transformed all field references to 'migration_Extract_POC (1) (local copy)'[Column], used && for logical AND, kept string literals in double quotes, and retained INT() and the return values (Initial Cash USD T or 0).",
+      "type_changed_reason": "The calculation references calculated fields (e.g., [date series] which depends on [fixed DTM]) that include a LOD ({ FIXED ... }) in their definition, indicating aggregate/context-based logic; therefore it must be implemented as a measure."
+    }
+  ]
+}
