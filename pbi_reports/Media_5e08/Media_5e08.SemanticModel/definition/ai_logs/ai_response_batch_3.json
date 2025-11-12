@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "test+",
+      "name": "Daily Activity Total ",
+      "dax_expression": "'test+'[Likes_Received_Per_Day] + 'test+'[Posts_Per_Day] + 'test+'[Messages_Sent_Per_Day]",
+      "solution_explanation": "Row-level addition of three columns converted to a calculated column with table-qualified references."
+    }
+  ]
+}
