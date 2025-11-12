@@ -1,0 +1,28 @@
+table 'Max Days Borrowed'
+	lineageTag: 503b3371-dcd6-4099-92f6-2047d24d85a2
+
+	measure 'Max Days Borrowed Value' = SELECTEDVALUE('Max Days Borrowed'[Max Days Borrowed], 1)
+		lineageTag: 8fb024cc-9db1-4c7d-bef4-a0e527700ede
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Max Days Borrowed'
+		dataType: double
+		formatString: 0
+		lineageTag: 2267e46a-17c6-47c8-9d20-21aa43994010
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Max Days Borrowed' = calculated
+		mode: import
+		source = GENERATESERIES(1, 60)
+
+	annotation PBI_Id = 9ef34f51b3444028b6ff7d15516d5d4e
+
