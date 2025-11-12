@@ -1,0 +1,46 @@
+table 'Select Shipment Mode'
+	lineageTag: 0629e670-6b7a-4b7c-83a7-00e69a4ec28f
+
+	column Index
+		formatString: 0
+		lineageTag: 9a3572e1-74d7-40d8-8524-8e9195de2333
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 848315b5-7fe4-4c4d-824a-dcb4336633b9
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 04ca876d-d24a-4cc9-a567-c1868c5048e2
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Select Shipment Mode' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Air", "Air" },
+				{ 1, "Ground", "Ground" },
+				{ 2, "Sea", "Sea" }
+			    }
+			)
+
+	annotation PBI_Id = f53945a17fa54e9da8f342a912609ec5
+
