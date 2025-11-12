@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "MTM Stress T-1  (In CAD)",
+      "dax_expression": "VAR useCustom = SELECTEDVALUE('Use Custom Date'[Display As])\nRETURN\nIF(\n    useCustom,\n    IF(\n        'migration_Extract_POC (1) (local copy)'[MAX_DATE -1day] = 'migration_Extract_POC (1) (local copy)'[RpDate],\n        'migration_Extract_POC (1) (local copy)'[MTM Stress (in CAD)],\n        0\n    ),\n    IF(\n        'migration_Extract_POC (1) (local copy)'[RpDate] = 'migration_Extract_POC (1) (local copy)'[Comparison date],\n        'migration_Extract_POC (1) (local copy)'[MTM Stress (in CAD)],\n        0\n    )\n)",
+      "solution_explanation": "Converted the nested Tableau IF into DAX using VAR for the parameter SELECTEDVALUE and IF for conditional logic. All field references were transformed to the 'migration_Extract_POC (1) (local copy)'[Column] format and the parameter [Parameters].[Use Custom Date] was mapped to SELECTEDVALUE('Use Custom Date'[Display As]).",
+      "type_changed_reason": "The calculation references a Tableau parameter ([Parameters].[Use Custom Date]); parameter-based calculations must be created as measures."
+    }
+  ]
+}
