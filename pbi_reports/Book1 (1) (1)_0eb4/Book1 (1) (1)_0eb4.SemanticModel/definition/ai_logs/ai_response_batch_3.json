@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Parameters",
+      "name": "Holidays",
+      "dax_expression": "DATE(2023, 5, 1)",
+      "solution_explanation": "Converted Tableau date literal #2023-05-01# to DAX DATE(2023, 5, 1). This is a row-level constant, so it is created as a calculated column on the Parameters table."
+    }
+  ]
+}
