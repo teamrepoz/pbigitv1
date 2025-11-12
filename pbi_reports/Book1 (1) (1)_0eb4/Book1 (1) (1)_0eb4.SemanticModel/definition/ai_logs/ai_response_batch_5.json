@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "[Initial Cash USD T (excl Int/FWD) Abs] / TOTAL([Initial Cash USD T (excl Int/FWD) Abs])",
+      "dax_expression": "VAR currentValue = ABS( SUM( 'migration_Extract_POC (1) (local copy)'[Initial Cash USD T (excl Int/FWD)] ) )\nVAR totalValue = CALCULATE(\n    ABS( SUM( 'migration_Extract_POC (1) (local copy)'[Initial Cash USD T (excl Int/FWD)] ) ),\n    ALL( 'migration_Extract_POC (1) (local copy)' )\n)\nRETURN\nDIVIDE( currentValue, totalValue )",
+      "solution_explanation": "Converted the Tableau expression to DAX by expanding the referenced calculated field 'Initial Cash USD T (excl Int/FWD) Abs' into ABS(SUM(...)) and replacing the Tableau TOTAL(...) table calculation with CALCULATE(..., ALL(table)) to compute the grand total over the table. All column references were transformed to the 'TableName'[Column] format.",
+      "type_changed_reason": "The Tableau formula uses a table calculation (TOTAL) and aggregates (SUM), which require evaluation over the filter/context — therefore it must be implemented as a measure."
+    }
+  ]
+}
