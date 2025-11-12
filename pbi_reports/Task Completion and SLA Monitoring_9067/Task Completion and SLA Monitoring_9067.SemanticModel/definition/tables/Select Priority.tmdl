@@ -1,0 +1,46 @@
+table 'Select Priority'
+	lineageTag: 0cb8901c-e03b-4297-b099-abfdcb91c7cc
+
+	column Index
+		formatString: 0
+		lineageTag: 903c63f9-eb7e-4b74-8dd1-1a9385b848c1
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 610dab1f-ace1-49bf-9495-f11304505bde
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 8bc31182-7a4b-4edd-8536-39e47182ad8b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Select Priority' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "High", "High" },
+				{ 1, "Medium", "Medium" },
+				{ 2, "Low", "Low" }
+			    }
+			)
+
+	annotation PBI_Id = f769637ae5ba4b08a177516d7a420cef
+
