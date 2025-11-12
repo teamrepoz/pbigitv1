@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "dictionary+",
+      "name": "Select Year",
+      "dax_expression": "'dictionary+'[Year] <= SELECTEDVALUE('Select Year'[Display As])",
+      "solution_explanation": "Replaced the Tableau parameter reference [Parameters].[Select Year] with SELECTEDVALUE('Select Year'[Display As]) and converted the column reference [Year] to 'dictionary+'[Year]. The expression evaluates the comparison as a measure because it depends on a parameter.",
+      "type_changed_reason": "The calculation references a Tableau parameter ([Parameters].[Select Year]); per rules, any parameter-based calculation must be created as a measure."
+    }
+  ]
+}
