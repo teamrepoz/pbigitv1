@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "MTM per day",
+      "dax_expression": "'migration_Extract_POC (1) (local copy)'[MTM (in CAD) T] / 'migration_Extract_POC (1) (local copy)'[DTM T ]",
+      "solution_explanation": "Converted Tableau field references to DAX table-column format and preserved the original division logic. Both operands were kept as column/measure references using the provided table name.",
+      "type_changed_reason": "The calculation depends on [MTM (in CAD) T], which references Tableau parameters; any calculation that uses parameters must be implemented as a measure."
+    }
+  ]
+}
