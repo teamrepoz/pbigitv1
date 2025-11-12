@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Parameters",
+      "name": "Select Metric",
+      "dax_expression": "\"Likes\"",
+      "solution_explanation": "The Tableau expression is a simple string literal (\"Likes\"). In DAX the same constant is represented as a string literal. There are no column references, aggregations, or parameters, so this should be implemented as a calculated column on the Parameters table."
+    }
+  ]
+}
