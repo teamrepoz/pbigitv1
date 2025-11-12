@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "migration_Extract_POC (1) (local copy)",
+      "name": "Limit Category",
+      "dax_expression": "'migration_Extract_POC (1) (local copy)'[Subs]",
+      "solution_explanation": "Direct row-level mapping: the Tableau field [Subs] becomes a calculated column referencing the column on the same row. Replaced [Subs] with 'migration_Extract_POC (1) (local copy)'[Subs] following table[column] format."
+    }
+  ]
+}
