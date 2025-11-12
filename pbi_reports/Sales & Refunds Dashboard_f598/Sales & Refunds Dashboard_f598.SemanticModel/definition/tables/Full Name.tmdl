@@ -1,0 +1,44 @@
+table 'Full Name'
+	lineageTag: cfbd4c34-a9b1-4b73-ad9c-dfa40df694b2
+
+	column Index
+		formatString: 0
+		lineageTag: 9e9a70be-1128-4750-b47d-eac2cdea4fbb
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 6565b039-a05f-4a46-91f3-6ed44b19382e
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: c161fe0b-b530-433a-a74c-04a1c3367fd8
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Full Name' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        {0, "Guest", "Guest"}
+			    }
+			)
+
+	annotation PBI_Id = 9b7bb2c8d96b466c933164053c5745d8
+
