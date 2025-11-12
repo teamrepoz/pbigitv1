@@ -1,0 +1,112 @@
+table 'Sheet1+ (Multiple Connections)'
+	lineageTag: 0de87f5c-aa10-4680-bb37-5175132f30ec
+
+	column 'Customer ID'
+		dataType: string
+		lineageTag: a15bc24f-43fd-45e8-a0de-f84f8b3c9697
+		summarizeBy: none
+		sourceColumn: 'Customer ID'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Name'
+		dataType: string
+		lineageTag: 92ddd291-6cd1-43e0-b835-4c765cefd842
+		summarizeBy: none
+		sourceColumn: 'Customer Name'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Location
+		dataType: string
+		lineageTag: 775a4f3e-e3e9-41f3-adae-11af84367ccd
+		summarizeBy: none
+		sourceColumn: Location
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email
+		dataType: string
+		lineageTag: 47ebb234-f126-499b-8512-b133d25f6537
+		summarizeBy: none
+		sourceColumn: Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Signup Date'
+		dataType: string
+		lineageTag: f1a8bd1c-b647-49dd-8d20-5d1bf34da381
+		summarizeBy: none
+		sourceColumn: 'Signup Date'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Feedback ID'
+		dataType: int64
+		formatString: 0
+		lineageTag: 80e07484-d685-425b-b539-0b2f66796eb7
+		summarizeBy: sum
+		sourceColumn: 'Feedback ID'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer ID 1'
+		dataType: string
+		lineageTag: b84de0c8-c6ac-4f2b-82e8-47d272231993
+		summarizeBy: none
+		sourceColumn: 'Customer ID 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Feedback Date'
+		dataType: datetime
+		lineageTag: 25034231-dd6f-43f1-ab14-46005fdc7218
+		summarizeBy: none
+		sourceColumn: 'Feedback Date'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Channel
+		dataType: string
+		lineageTag: 69b28e82-4167-4fb4-8b7a-885b66ee63ef
+		summarizeBy: none
+		sourceColumn: Channel
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Feedback Text'
+		dataType: string
+		lineageTag: 1cd9c6e2-4bb8-4bcf-aa33-bbef4bad868a
+		summarizeBy: none
+		sourceColumn: 'Feedback Text'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sentiment
+		dataType: string
+		lineageTag: c54d51cf-9135-4cd2-b6cc-755616ee2fe5
+		summarizeBy: none
+		sourceColumn: Sentiment
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rating
+		dataType: int64
+		formatString: 0
+		lineageTag: ba7e947c-01ab-448f-8546-2fb5ffc4a1f8
+		summarizeBy: sum
+		sourceColumn: Rating
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Sheet1+ (Multiple Connections)' = m
+		mode: import
+		source =
+				let 
+					#"Source0" = Table.NestedJoin(#"Sheet1_Sheet1+ (Multiple Connections)", {"Customer ID"}, #"Customer Feedback Sentiment.csv_Sheet1+ (Multiple Connections)", {"Customer ID"}, "Customer Feedback Sentiment.csv_Sheet1+ (Multiple Connections)", JoinKind.Inner),
+					#"Expand0" = Table.ExpandTableColumn(#"Source0", "Customer Feedback Sentiment.csv_Sheet1+ (Multiple Connections)", {"Feedback ID", "Customer ID", "Feedback Date", "Channel", "Feedback Text", "Sentiment", "Rating"}, {"Feedback ID", "Customer ID 1", "Feedback Date", "Channel", "Feedback Text", "Sentiment", "Rating"})
+					in #"Expand0"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
