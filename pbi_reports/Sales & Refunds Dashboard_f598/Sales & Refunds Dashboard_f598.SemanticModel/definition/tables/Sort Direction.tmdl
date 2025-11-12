@@ -1,0 +1,45 @@
+table 'Sort Direction'
+	lineageTag: b780feb5-041d-4a60-8378-bc7e59f6a016
+
+	column Index
+		formatString: 0
+		lineageTag: 2b677f0e-a06d-4208-8e11-1cc9a28bbd8a
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 2480488d-18d1-4a27-8e1c-86e04952cba2
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 9f5835cc-2ca6-4e78-a3c3-ec4a481aee53
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Sort Direction' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", DOUBLE,
+			    "Value", DOUBLE,
+			    {
+			        { 0, Asc, 1.0 },
+				{ 1, Desc, 2.0 }
+			    }
+			)
+
+	annotation PBI_Id = 6616f932f7664e8fbf5c24a457ec7a09
+
