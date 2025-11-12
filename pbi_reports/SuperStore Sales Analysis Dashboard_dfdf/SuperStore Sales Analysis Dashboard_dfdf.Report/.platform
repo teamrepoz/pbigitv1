@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "SuperStore Sales Analysis Dashboard_dfdf"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "63f7d325-8c47-4210-959b-60505e98624e"
+  }
+}
