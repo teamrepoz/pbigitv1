@@ -1,0 +1,55 @@
+table 'Current Month'
+	lineageTag: af1e68c1-cb1c-4411-acc0-bd487a4e72cf
+
+	column Index
+		formatString: 0
+		lineageTag: da478152-83ab-4b72-a1c1-8ff087d54937
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 7ee50368-21f0-4058-aa6d-82d57084ce0d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: c46893bc-d958-40d7-8d48-77effe92a06a
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Current Month' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", INTEGER,
+			    "Value", INTEGER,
+			    {
+			        { 0, Jan, 1 },
+				{ 1, Feb, 2 },
+				{ 2, Mar, 3 },
+				{ 3, Apr, 4 },
+				{ 4, May, 5 },
+				{ 5, Jun, 6 },
+				{ 6, Jul, 7 },
+				{ 7, Aug, 8 },
+				{ 8, Sep, 9 },
+				{ 9, Oct, 10 },
+				{ 10, Nov, 11 },
+				{ 11, Dec, 12 }
+			    }
+			)
+
+	annotation PBI_Id = 7fc725d25e5f4a9e972d3cb3c438a7d7
+
