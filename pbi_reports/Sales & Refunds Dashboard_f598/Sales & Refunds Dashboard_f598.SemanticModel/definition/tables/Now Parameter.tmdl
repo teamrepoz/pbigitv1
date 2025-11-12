@@ -1,0 +1,44 @@
+table 'Now Parameter'
+	lineageTag: a6a75700-e215-41b2-828e-0414ed740f00
+
+	column Index
+		formatString: 0
+		lineageTag: d441739e-08f5-4a3f-b698-f7bfde880e90
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 71440b14-04c1-4692-a152-25a8b502a73b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: c6e20f5f-5bd6-4fb7-8af2-24e2a7de7032
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Now Parameter' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", DATETIME,
+			    "Value", DATETIME,
+			    {
+			        { 0, "#2025-04-21 08:18:54.755#", "#2025-04-21 08:18:54.755#" }
+			    }
+			)
+
+	annotation PBI_Id = 123858f09d5f4492995641743bf7449d
+
