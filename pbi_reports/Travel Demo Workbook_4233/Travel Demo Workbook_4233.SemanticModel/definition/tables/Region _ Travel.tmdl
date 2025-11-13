@@ -1,0 +1,45 @@
+table 'Region _ Travel'
+	lineageTag: ad0b0888-4909-4d67-b662-a4d693ceed1a
+
+	column Index
+		formatString: 0
+		lineageTag: 71e407a0-4058-4007-a5cf-0bd5f12ed4f1
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 40bcc22a-ff67-4dd5-8bb5-b795f13bbe8b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: bc9e9c7c-ab96-4f85-9de8-27d8bda93cd2
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Region _ Travel' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", INTEGER,
+			    "Value", INTEGER,
+			    {
+			        { 0, Region, 0 },
+				{ 1, Travel Type, 1 }
+			    }
+			)
+
+	annotation PBI_Id = d7dcbdef061b4d53bcfe00f47a65e5f1
+
