@@ -1,0 +1,44 @@
+table 'Custom Start Date'
+	lineageTag: 59b1ffd4-f80a-4eb0-8ef1-1e572fd215b4
+
+	column Index
+		formatString: 0
+		lineageTag: 10d3361e-830b-4934-a5a0-f41ae6ff1b9a
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: eb1284bd-5c31-473b-a720-6166b317bc7b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 29a04bfe-7d75-4b6e-abb9-eef097c4ccb1
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Custom Start Date' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", DATETIME,
+			    "Value", DATETIME,
+			    {
+			        {0, "2024-04-14", "2024-04-14"}
+			    }
+			)
+
+	annotation PBI_Id = 12c10ce401514be48bf9134ca5e9d35d
+
