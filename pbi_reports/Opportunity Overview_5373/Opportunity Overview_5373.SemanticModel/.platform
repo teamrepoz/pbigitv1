@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Opportunity Overview_5373"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "cf2e6b31-f252-4d0a-a478-4c6962ac8552"
+  }
+}
