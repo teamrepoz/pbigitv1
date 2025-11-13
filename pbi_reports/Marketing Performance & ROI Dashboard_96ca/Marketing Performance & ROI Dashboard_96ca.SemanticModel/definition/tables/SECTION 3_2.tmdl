@@ -1,0 +1,45 @@
+table 'SECTION 3_2'
+	lineageTag: 1acc2359-1cb0-4d1e-a3c5-11fa466163b3
+
+	column Index
+		formatString: 0
+		lineageTag: e3baa26b-fe17-4561-9972-0ca72e39d383
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 9fe2af5c-fe74-4163-8698-5ca26063aaf1
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 9d9e9b82-c0e3-43fc-9893-a006ca606e66
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'SECTION 3_2' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Marketing ROI", "ROI" },
+				{ 1, "Total Spend by Visitors", "Tourism Spend" }
+			    }
+			)
+
+	annotation PBI_Id = 9c0378aba1de43808574740c71a7bda9
+
