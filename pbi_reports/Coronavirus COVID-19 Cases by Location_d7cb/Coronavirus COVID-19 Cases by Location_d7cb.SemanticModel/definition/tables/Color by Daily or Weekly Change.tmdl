@@ -1,0 +1,45 @@
+table 'Color by Daily or Weekly Change'
+	lineageTag: 85d93d2e-b97d-4973-8725-61614e675095
+
+	column Index
+		formatString: 0
+		lineageTag: 4cc9faee-7086-444f-a25c-624921948ed2
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 3eb15140-245f-4543-96e3-7e5bd1a32196
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: ad4b7c43-0bf4-41d5-a0db-b89aa86efc49
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Color by Daily or Weekly Change' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Daily Change", "Daily Change" },
+				{ 1, "Weekly Change", "Weekly Change" }
+			    }
+			)
+
+	annotation PBI_Id = f359d0a8f25545d89458dbbf552fe4c3
+
