@@ -1,0 +1,44 @@
+table 'TopN Customer States'
+	lineageTag: 55a29a17-63ca-4eba-b01f-1931533f5ee1
+
+	column Index
+		formatString: 0
+		lineageTag: cf08751c-49fe-41a7-8cc8-66b9ac72c9ea
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 515b1ddf-9267-4c44-a52b-40e2422a27a5
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 40e67f2f-1494-45cf-8174-6a369e3402aa
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'TopN Customer States' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", INTEGER,
+			    "Value", INTEGER,
+			    {
+			        {0, 5, 5}
+			    }
+			)
+
+	annotation PBI_Id = 8c2276cfcfff4b71951cefd92776fc77
+
