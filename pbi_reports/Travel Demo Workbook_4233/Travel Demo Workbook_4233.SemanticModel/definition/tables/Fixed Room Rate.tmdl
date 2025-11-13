@@ -1,0 +1,44 @@
+table 'Fixed Room Rate'
+	lineageTag: bf62cfc1-6579-429d-95d3-bb52f5c8a238
+
+	column Index
+		formatString: 0
+		lineageTag: 63af9534-a3cd-4b3c-92ea-c581da4614b6
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 93bd3a0a-9d4a-4b2f-be06-941dba054202
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 00e026df-6494-4abe-9729-e5e53b83481f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Fixed Room Rate' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", INTEGER,
+			    "Value", INTEGER,
+			    {
+			        {0, 300, 300}
+			    }
+			)
+
+	annotation PBI_Id = 4a6573c727e64f0fb6d8a6c21af6800f
+
