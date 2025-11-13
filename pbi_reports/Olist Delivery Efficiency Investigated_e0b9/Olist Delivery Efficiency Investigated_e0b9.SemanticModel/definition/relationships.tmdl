@@ -1,0 +1,25 @@
+relationship c1e1af4a-9103-423e-ab88-db1db044404e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Olist Delivery'.order_purchase_timestamp
+	toColumn: LocalDateTable_b50191be-e549-4a90-868c-d5fb7a08ed16.Date
+
+relationship 6b4b1380-a0db-4ca0-91bf-7b15dc51c0f8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Olist Delivery'.order_approved_at
+	toColumn: LocalDateTable_f47a9f84-9b75-43ed-9a22-997c79f32430.Date
+
+relationship 3df51eb8-c745-4e57-a6b6-ac613faf15ce
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Olist Delivery'.order_delivered_carrier_date
+	toColumn: LocalDateTable_1e19d7d1-a295-47be-b8c1-7d99a504da57.Date
+
+relationship efe18939-cb90-464d-b66d-41a611de3102
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Olist Delivery'.order_delivered_customer_date
+	toColumn: LocalDateTable_5b65f883-c2dd-45eb-9562-8f2933fbd17f.Date
+
+relationship d0b96052-69c4-4c1c-851b-580938592281
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Olist Delivery'.order_estimated_delivery_date
+	toColumn: LocalDateTable_0eb196d0-8afb-4dfb-a6cc-a5e52da88d39.Date
+
