@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Order Fulfillment Tracking_e46e"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "27c4168c-3ea7-429d-81cb-e083234e9db5"
+  }
+}
