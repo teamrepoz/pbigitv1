@@ -1,0 +1,5 @@
+relationship 3ba0be2c-fbc2-490d-983b-145b0483e248
+	joinOnDateBehavior: datePartOnly
+	fromColumn: loan.issue_d
+	toColumn: LocalDateTable_ed09ce9e-ebbc-4d3f-b481-18bdd46d71ba.Date
+
