@@ -1,0 +1,45 @@
+table 'Select Business'
+	lineageTag: 1f34d5bb-1d85-465c-88ba-5666d6f21776
+
+	column Index
+		formatString: 0
+		lineageTag: 4e30da28-7cc6-4b49-bc64-4d17b9ecd408
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 07707c58-7c6e-4cf5-867b-8cfb1b3441dc
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 7e154388-919c-4556-a54a-03b02e881be3
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Select Business' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Investment Bank", "Investment Bank" },
+				{ 1, "Retail Bank", "Retail Bank" }
+			    }
+			)
+
+	annotation PBI_Id = fc29f1ef8f294c639ea669a64aed0c9d
+
