@@ -1,0 +1,25 @@
+relationship 8d893361-36dd-461e-9edc-58aa08600007
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Data (Travel_Data_Demo)'.'Travel Start Date Time'
+	toColumn: LocalDateTable_bf2783c6-fc61-4757-aec2-5a5bbfd3bed7.Date
+
+relationship 1613e8e6-2bee-4caa-b81f-1a52e634f072
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Data (Travel_Data_Demo)'.'Travel End Date Time'
+	toColumn: LocalDateTable_a7b5070d-4bac-470e-8004-64023c3cbd98.Date
+
+relationship d074e1f8-fd3e-4f8f-952e-d3eacdd2af33
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Data (Travel_Data_Demo)'.'xTravel Start Date Time'
+	toColumn: LocalDateTable_b31f0f25-b696-47df-92c3-6c06c03c9fa9.Date
+
+relationship 78a8e748-6c84-4ada-bb0c-56d6422e09bc
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Data (Travel_Data_Demo)'.'xTravel End Date Time'
+	toColumn: LocalDateTable_886faf2f-59ef-4bf0-8dda-8e2ad9c30168.Date
+
+relationship 41c333f4-e966-4e43-bbc8-18a6d801825d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Data (Travel_Data_Demo)'.'xTransaction Date Time'
+	toColumn: LocalDateTable_2c0d7a3e-f6a6-4b2d-ae59-07ec992b4cf4.Date
+
