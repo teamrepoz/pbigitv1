@@ -1,0 +1,45 @@
+table 'Show_Hide Resolved Page'
+	lineageTag: 1feac4cb-c005-4700-a583-b5bb9f6d860c
+
+	column Index
+		formatString: 0
+		lineageTag: e31b6f71-1e2b-420b-ad2a-801c4d1f59d5
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 56a400b4-7e7e-4830-9f77-c6743ed1d0c3
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 0f83c074-0639-49bd-b317-bb8a9af00a37
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Show_Hide Resolved Page' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Show Resolved", "Show Resolved" },
+				{ 1, "Hide Resolved", "Hide Resolved" }
+			    }
+			)
+
+	annotation PBI_Id = bd6c771695454ee6a5e86ff72901ba6a
+
