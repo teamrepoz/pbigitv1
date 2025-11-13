@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Marketing Performance & ROI Dashboard_96ca"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "b002d925-3756-4bae-adb4-810feee3883c"
+  }
+}
