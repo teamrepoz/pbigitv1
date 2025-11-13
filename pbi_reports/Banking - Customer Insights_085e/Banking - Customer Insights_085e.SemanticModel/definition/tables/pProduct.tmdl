@@ -1,0 +1,50 @@
+table 'pProduct'
+	lineageTag: 1accaedd-aa1e-4068-b6a0-af1c5af0f657
+
+	column Index
+		formatString: 0
+		lineageTag: e79f8e8e-3668-4508-8e9e-012b13128779
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 05691a51-c89a-4efb-9f35-1a3c8e14c52f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: f462af2a-c886-415a-a9e5-9c2f24a79959
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'pProduct' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "(All)", "All" },
+				{ 1, "Brokered Account", "Brokered Account" },
+				{ 2, "Checking Account", "Checking Account" },
+				{ 3, "Credit Card", "Credit Card" },
+				{ 4, "Mortgage", "Mortgage" },
+				{ 5, "Retirement Account", "Retirement Account" },
+				{ 6, "Savings Account", "Savings Account" }
+			    }
+			)
+
+	annotation PBI_Id = b93eb15432154f6ebb48f1f928389fb5
+
