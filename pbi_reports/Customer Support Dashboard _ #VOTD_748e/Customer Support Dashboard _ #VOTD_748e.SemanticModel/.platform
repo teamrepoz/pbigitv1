@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Customer Support Dashboard _ #VOTD_748e"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "9b5f1649-beac-4b10-be4e-277491519454"
+  }
+}
