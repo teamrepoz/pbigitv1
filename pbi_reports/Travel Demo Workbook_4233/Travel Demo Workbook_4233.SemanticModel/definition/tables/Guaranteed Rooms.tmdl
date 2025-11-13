@@ -1,0 +1,44 @@
+table 'Guaranteed Rooms'
+	lineageTag: 6df07f58-1b25-4bd1-8d68-f41674084139
+
+	column Index
+		formatString: 0
+		lineageTag: 32af7c8b-d970-4876-b154-c6fa226d7ba0
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 96b46716-7c91-4a0a-910a-5cafee83d322
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 85ec28d7-61aa-4294-ba13-3699199077c0
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Guaranteed Rooms' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", INTEGER,
+			    "Value", INTEGER,
+			    {
+			        {0, 3, 3}
+			    }
+			)
+
+	annotation PBI_Id = 7dab783ebaa44af59ba20a1b9f2a623a
+
