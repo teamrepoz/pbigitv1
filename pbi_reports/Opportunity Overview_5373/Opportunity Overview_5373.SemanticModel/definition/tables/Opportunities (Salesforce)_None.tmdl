@@ -1,0 +1,16 @@
+table 'Opportunities (Salesforce)_None'
+	lineageTag: 55409621-0742-4f4d-be36-8f3e1f90da04
+
+	partition 'Opportunities (Salesforce)_None' = m
+		mode: import
+		source =
+				let
+					    // Fallback for logical table: 
+					    // Member tables: "Owned By", "Manager"
+					    Source = #table({"Table"}, { "Owned By", "Manager" })
+					in
+					    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
