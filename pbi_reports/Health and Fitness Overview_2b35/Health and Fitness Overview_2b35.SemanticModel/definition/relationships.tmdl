@@ -1,0 +1,85 @@
+relationship a75c32f0-c6aa-4d87-a3a1-6074a1998812
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Nutrition Summary+ (Multiple Connections)'.Date
+	toColumn: LocalDateTable_d67e19bb-5975-4c61-8049-8bce1b2f8483.Date
+
+relationship 9163ca3f-1572-4ab8-9d9c-534e965032f7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Nutrition Summary+ (Multiple Connections)_Hormone Data'.Date
+	toColumn: LocalDateTable_3beb5138-0f51-4135-989e-1413cd72b444.Date
+
+relationship 14df6cc3-db45-464f-9917-9e8b87d63f4e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Nutrition Summary+ (Multiple Connections)_Injury'.Date
+	toColumn: LocalDateTable_07baa903-2d14-4a70-be09-e5d4fb2ce9aa.Date
+
+relationship dc91a8b6-d9e8-4ffd-8c01-0fdd295f16f8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Nutrition Summary+ (Multiple Connections)_Measurement (Kg)'.Date
+	toColumn: LocalDateTable_f74fcad1-8680-4059-9bb2-f86dc3098dd6.Date
+
+relationship 6693044e-86ea-4584-92ba-09fed4808220
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Nutrition Summary+ (Multiple Connections)_Measurements (Cm)'.Date
+	toColumn: LocalDateTable_3c030122-0430-4dbf-9fea-5a0aac8ad21e.Date
+
+relationship 329d6ad2-2be4-438f-9608-e4c0b28493da
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Nutrition Summary+ (Multiple Connections)_Nutrition Summary1'.Date
+	toColumn: LocalDateTable_4d5beae1-3701-49f8-8af3-083774c0f687.Date
+
+relationship 39064b72-ed21-495e-bb92-7740706659d8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Nutrition Summary+ (Multiple Connections)_Prepped-Exercise Data'.Date
+	toColumn: LocalDateTable_dc392f43-8107-4425-9585-d726c1ec83e1.Date
+
+relationship 745dc86d-8a01-4e15-a929-a2d93ca1161d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Nutrition Summary+ (Multiple Connections)_Prepped-Sleep Analysis'.Date
+	toColumn: LocalDateTable_2d281656-79d6-4d64-a86c-7e2589346129.Date
+
+relationship 51bfcc23-95aa-45ca-9ab5-fc210c71d6c3
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Nutrition Summary+ (Multiple Connections)_Prepped-Sleep Analysis'.Start
+	toColumn: LocalDateTable_50cc3094-fc05-4e25-ba62-da3b75c42a20.Date
+
+relationship 5cf8ccba-918b-44ee-91bb-4fac79f27114
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Nutrition Summary+ (Multiple Connections)_Prepped-Sleep Analysis'.End
+	toColumn: LocalDateTable_0af95609-802a-4066-bf28-14cf2ad93cc9.Date
+
+relationship 973e2b26-4b01-47f1-b838-d133c8d733c5
+	toCardinality: many
+	fromColumn: 'Nutrition Summary+ (Multiple Connections)'.Date
+	toColumn: 'Nutrition Summary+ (Multiple Connections)_Hormone Data'.Date
+
+relationship 395060ee-1985-4060-9bda-e74b473620ff
+	toCardinality: many
+	fromColumn: 'Nutrition Summary+ (Multiple Connections)'.Date
+	toColumn: 'Nutrition Summary+ (Multiple Connections)_Injury'.Date
+
+relationship 52e95f2a-9bbe-4bec-81b3-b37389677b51
+	toCardinality: many
+	fromColumn: 'Nutrition Summary+ (Multiple Connections)'.Date
+	toColumn: 'Nutrition Summary+ (Multiple Connections)_Measurement (Kg)'.Date
+
+relationship cf2ede41-e400-4e00-9d84-4deed3485d89
+	toCardinality: many
+	fromColumn: 'Nutrition Summary+ (Multiple Connections)'.Date
+	toColumn: 'Nutrition Summary+ (Multiple Connections)_Measurements (Cm)'.Date
+
+relationship 388a4f48-4d42-4934-b315-486c7d9da1d9
+	toCardinality: many
+	fromColumn: 'Nutrition Summary+ (Multiple Connections)'.Date
+	toColumn: 'Nutrition Summary+ (Multiple Connections)_Nutrition Summary1'.Date
+
+relationship 828b956d-8f7b-4a9f-99f0-b2bdd39e9f62
+	toCardinality: many
+	fromColumn: 'Nutrition Summary+ (Multiple Connections)'.Date
+	toColumn: 'Nutrition Summary+ (Multiple Connections)_Prepped-Exercise Data'.Date
+
+relationship b189faa0-f822-43ee-8286-d2fc1c111115
+	toCardinality: many
+	fromColumn: 'Nutrition Summary+ (Multiple Connections)'.Date
+	toColumn: 'Nutrition Summary+ (Multiple Connections)_Prepped-Sleep Analysis'.Date
+
