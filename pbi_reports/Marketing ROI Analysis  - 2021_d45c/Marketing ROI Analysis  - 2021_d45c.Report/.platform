@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Marketing ROI Analysis  - 2021_d45c"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "66eb22d8-54a8-4e0d-85bf-0ad74acadc7f"
+  }
+}
