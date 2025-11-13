@@ -1,0 +1,47 @@
+table 'Select Year'
+	lineageTag: b2a9fa38-9786-439a-84e9-ed32d6280d24
+
+	column Index
+		formatString: 0
+		lineageTag: b337d1c3-6c89-4b7f-91d1-e301f6a68601
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 3d33885f-dad0-4ed3-8101-553e6d025785
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 0416d656-1df0-4445-b049-81f1146f0a9a
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Select Year' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", INTEGER,
+			    "Value", INTEGER,
+			    {
+			        { 0, 2021, 2021 },
+				{ 1, 2022, 2022 },
+				{ 2, 2023, 2023 },
+				{ 3, 2024, 2024 }
+			    }
+			)
+
+	annotation PBI_Id = d9d31c6acd844eab88a8d50339a11155
+
