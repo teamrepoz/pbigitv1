@@ -1,0 +1,5 @@
+relationship 7bcf9c7a-800f-444f-bb19-61e373e11f56
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Viu_Data_Tableau.aps_install_date
+	toColumn: LocalDateTable_4c9edab8-f312-4622-afe4-d200e5e4416c.Date
+
