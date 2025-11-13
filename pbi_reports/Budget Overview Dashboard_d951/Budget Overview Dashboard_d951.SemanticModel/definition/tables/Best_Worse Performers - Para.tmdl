@@ -1,0 +1,45 @@
+table 'Best_Worse Performers - Para'
+	lineageTag: 701a80bf-cbe3-4244-b8f2-41ffe7c5c1b0
+
+	column Index
+		formatString: 0
+		lineageTag: 8140aab8-c957-4863-937f-72573cf3422b
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 23fcb95a-e90b-4604-a0a6-22d9ae13c2d4
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 8e851140-662e-4130-b537-07863c92db03
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Best_Worse Performers - Para' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Worst Performers", "1" },
+				{ 1, "Best Performers", "2" }
+			    }
+			)
+
+	annotation PBI_Id = 57c734c6471b4316b6ca8096c8ca96c0
+
