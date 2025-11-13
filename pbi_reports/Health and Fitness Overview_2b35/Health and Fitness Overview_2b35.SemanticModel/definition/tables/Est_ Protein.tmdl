@@ -1,0 +1,44 @@
+table 'Est_ Protein'
+	lineageTag: 3ec3c472-468e-462e-a943-ecfaed2a0bc2
+
+	column Index
+		formatString: 0
+		lineageTag: 52a372e0-c2a4-4a9e-bc86-ed9b9f13ff00
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: a2ac5c78-66de-4e55-8dc5-cd07f5858815
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 76af2dab-09cf-4381-a6c9-9e8d1ff32f9a
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Est_ Protein' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", DOUBLE,
+			    "Value", DOUBLE,
+			    {
+			        {0, 150.0, 150.0}
+			    }
+			)
+
+	annotation PBI_Id = 2c7ddff40c504cd484b75ee212aee916
+
