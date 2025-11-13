@@ -1,0 +1,30 @@
+relationship e9396fa1-77f3-405f-85e3-d7f726be8f10
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Orders (Sales Data)'.'Order Date'
+	toColumn: LocalDateTable_a53a9b10-4870-419e-8728-d2c46eadc4f4.Date
+
+relationship a7875597-a474-4771-9def-e6d59e952d47
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Orders (Sales Data)'.'Ship Date'
+	toColumn: LocalDateTable_54f971d3-093b-43bf-947b-c9207508a1e5.Date
+
+relationship d71c800d-ad3a-414d-9d9e-a9bcb7f54cc4
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Orders (Sales Data)_None'.'Order Date'
+	toColumn: LocalDateTable_d20e458b-4eec-4173-bf4c-1c9766646529.Date
+
+relationship e2f62ffa-9e02-4047-8e23-cffd610fea2e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Orders (Sales Data)_None'.'Ship Date'
+	toColumn: LocalDateTable_b0efea8e-7e5c-41ff-a681-d8d3df1fea82.Date
+
+relationship b02553c8-54bc-48fd-8ec1-a7a37a092f6e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Orders (Sales Data)_None'.'Order Date'
+	toColumn: LocalDateTable_281f45c8-0737-41a2-b7ab-f1dab7dfbd51.Date
+
+relationship d4dbefe5-3a84-499c-90f4-6572e7c9d800
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Orders (Sales Data)_None'.'Ship Date'
+	toColumn: LocalDateTable_01e9b6c2-17a9-4fc3-97ae-f3aea3e9d846.Date
+
