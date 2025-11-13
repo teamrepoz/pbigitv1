@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Digital Summary Dashboard_efaf"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "6131e00c-d6bc-4465-a076-78f8a7ec3492"
+  }
+}
