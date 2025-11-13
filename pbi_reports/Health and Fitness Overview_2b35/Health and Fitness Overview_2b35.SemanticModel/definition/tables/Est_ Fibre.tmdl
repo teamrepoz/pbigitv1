@@ -1,0 +1,44 @@
+table 'Est_ Fibre'
+	lineageTag: 86c7331e-25e8-4c21-9de8-7b3f531fcf28
+
+	column Index
+		formatString: 0
+		lineageTag: ab8e94ea-c7d0-4ea3-9dc0-e29459faf541
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: aa1b71f7-6b7e-4e2a-aee4-e7c3fe9093a7
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 4fe3b8e2-7b28-41c0-b179-be851d69267c
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Est_ Fibre' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", DOUBLE,
+			    "Value", DOUBLE,
+			    {
+			        {0, 30.0, 30.0}
+			    }
+			)
+
+	annotation PBI_Id = 60307ee866714154b2a2be285051c218
+
