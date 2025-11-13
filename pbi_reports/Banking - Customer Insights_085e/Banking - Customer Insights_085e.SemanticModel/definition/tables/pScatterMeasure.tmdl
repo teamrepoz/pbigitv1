@@ -1,0 +1,45 @@
+table 'pScatterMeasure'
+	lineageTag: 6afab75e-fe95-438c-a445-50e99bcddd1e
+
+	column Index
+		formatString: 0
+		lineageTag: 5f154079-e77e-4b74-9539-35e93fdde21d
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 42968923-55d4-4cfc-aa19-34f0ccf3848d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: a24cee22-2932-4b52-93aa-1470df632b85
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'pScatterMeasure' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Share of Wallet", "sow" },
+				{ 1, "Assets With Bank", "amount" }
+			    }
+			)
+
+	annotation PBI_Id = c6b9936f14764e6b974def24b4f11cc9
+
