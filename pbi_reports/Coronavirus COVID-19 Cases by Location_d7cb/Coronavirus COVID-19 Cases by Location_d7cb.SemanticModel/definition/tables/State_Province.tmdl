@@ -1,0 +1,172 @@
+table 'State_Province'
+	lineageTag: bdfabeb1-4507-4bca-8a4d-65f37b39ec1f
+
+	column Index
+		formatString: 0
+		lineageTag: 7d5a2f80-a28b-4b38-90cd-9db1298aef3b
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: dd22e0a5-dfa5-4da8-a900-aa5ebd1b7135
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 2dbce80f-627c-4fac-9d6e-e37d733bd33f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'State_Province' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "All", "All" },
+				{ 1, "Alabama", "Alabama" },
+				{ 2, "Alaska", "Alaska" },
+				{ 3, "Alberta", "Alberta" },
+				{ 4, "Anhui", "Anhui" },
+				{ 5, "Arizona", "Arizona" },
+				{ 6, "Arkansas", "Arkansas" },
+				{ 7, "Aruba", "Aruba" },
+				{ 8, "Australian Capital Territory", "Australian Capital Territory" },
+				{ 9, "Beijing", "Beijing" },
+				{ 10, "Bermuda", "Bermuda" },
+				{ 11, "British Columbia", "British Columbia" },
+				{ 12, "California", "California" },
+				{ 13, "Cayman Islands", "Cayman Islands" },
+				{ 14, "Channel Islands", "Channel Islands" },
+				{ 15, "Chongqing", "Chongqing" },
+				{ 16, "Colorado", "Colorado" },
+				{ 17, "Connecticut", "Connecticut" },
+				{ 18, "Curacao", "Curacao" },
+				{ 19, "Delaware", "Delaware" },
+				{ 20, "Diamond Princess", "Diamond Princess" },
+				{ 21, "District of Columbia", "District of Columbia" },
+				{ 22, "Faroe Islands", "Faroe Islands" },
+				{ 23, "Florida", "Florida" },
+				{ 24, "French Guiana", "French Guiana" },
+				{ 25, "French Polynesia", "French Polynesia" },
+				{ 26, "Fujian", "Fujian" },
+				{ 27, "Gansu", "Gansu" },
+				{ 28, "Georgia", "Georgia" },
+				{ 29, "Gibraltar", "Gibraltar" },
+				{ 30, "Grand Princess", "Grand Princess" },
+				{ 31, "Greenland", "Greenland" },
+				{ 32, "Guadeloupe", "Guadeloupe" },
+				{ 33, "Guam", "Guam" },
+				{ 34, "Guangdong", "Guangdong" },
+				{ 35, "Guangxi", "Guangxi" },
+				{ 36, "Guizhou", "Guizhou" },
+				{ 37, "Hainan", "Hainan" },
+				{ 38, "Hawaii", "Hawaii" },
+				{ 39, "Hebei", "Hebei" },
+				{ 40, "Heilongjiang", "Heilongjiang" },
+				{ 41, "Henan", "Henan" },
+				{ 42, "Hong Kong", "Hong Kong" },
+				{ 43, "Hubei", "Hubei" },
+				{ 44, "Hunan", "Hunan" },
+				{ 45, "Idaho", "Idaho" },
+				{ 46, "Illinois", "Illinois" },
+				{ 47, "Indiana", "Indiana" },
+				{ 48, "Inner Mongolia", "Inner Mongolia" },
+				{ 49, "Iowa", "Iowa" },
+				{ 50, "Isle of Man", "Isle of Man" },
+				{ 51, "Jiangsu", "Jiangsu" },
+				{ 52, "Jiangxi", "Jiangxi" },
+				{ 53, "Jilin", "Jilin" },
+				{ 54, "Kansas", "Kansas" },
+				{ 55, "Kentucky", "Kentucky" },
+				{ 56, "Liaoning", "Liaoning" },
+				{ 57, "Louisiana", "Louisiana" },
+				{ 58, "Macau", "Macau" },
+				{ 59, "Maine", "Maine" },
+				{ 60, "Manitoba", "Manitoba" },
+				{ 61, "Martinique", "Martinique" },
+				{ 62, "Maryland", "Maryland" },
+				{ 63, "Massachusetts", "Massachusetts" },
+				{ 64, "Mayotte", "Mayotte" },
+				{ 65, "Michigan", "Michigan" },
+				{ 66, "Minnesota", "Minnesota" },
+				{ 67, "Mississippi", "Mississippi" },
+				{ 68, "Missouri", "Missouri" },
+				{ 69, "Montana", "Montana" },
+				{ 70, "Montserrat", "Montserrat" },
+				{ 71, "N/A", "N/A" },
+				{ 72, "Nebraska", "Nebraska" },
+				{ 73, "Nevada", "Nevada" },
+				{ 74, "New Brunswick", "New Brunswick" },
+				{ 75, "New Caledonia", "New Caledonia" },
+				{ 76, "New Hampshire", "New Hampshire" },
+				{ 77, "New Jersey", "New Jersey" },
+				{ 78, "New Mexico", "New Mexico" },
+				{ 79, "New South Wales", "New South Wales" },
+				{ 80, "New York", "New York" },
+				{ 81, "Newfoundland and Labrador", "Newfoundland and Labrador" },
+				{ 82, "Ningxia", "Ningxia" },
+				{ 83, "North Carolina", "North Carolina" },
+				{ 84, "North Dakota", "North Dakota" },
+				{ 85, "Northern Territory", "Northern Territory" },
+				{ 86, "Nova Scotia", "Nova Scotia" },
+				{ 87, "Ohio", "Ohio" },
+				{ 88, "Oklahoma", "Oklahoma" },
+				{ 89, "Ontario", "Ontario" },
+				{ 90, "Oregon", "Oregon" },
+				{ 91, "Pennsylvania", "Pennsylvania" },
+				{ 92, "Prince Edward Island", "Prince Edward Island" },
+				{ 93, "Puerto Rico", "Puerto Rico" },
+				{ 94, "Qinghai", "Qinghai" },
+				{ 95, "Quebec", "Quebec" },
+				{ 96, "Queensland", "Queensland" },
+				{ 97, "Reunion", "Reunion" },
+				{ 98, "Rhode Island", "Rhode Island" },
+				{ 99, "Saint Barthelemy", "Saint Barthelemy" },
+				{ 100, "Saskatchewan", "Saskatchewan" },
+				{ 101, "Shaanxi", "Shaanxi" },
+				{ 102, "Shandong", "Shandong" },
+				{ 103, "Shanghai", "Shanghai" },
+				{ 104, "Shanxi", "Shanxi" },
+				{ 105, "Sichuan", "Sichuan" },
+				{ 106, "Sint Maarten", "Sint Maarten" },
+				{ 107, "South Australia", "South Australia" },
+				{ 108, "South Carolina", "South Carolina" },
+				{ 109, "South Dakota", "South Dakota" },
+				{ 110, "St Martin", "St Martin" },
+				{ 111, "Tasmania", "Tasmania" },
+				{ 112, "Tennessee", "Tennessee" },
+				{ 113, "Texas", "Texas" },
+				{ 114, "Tianjin", "Tianjin" },
+				{ 115, "Tibet", "Tibet" },
+				{ 116, "Utah", "Utah" },
+				{ 117, "Vermont", "Vermont" },
+				{ 118, "Victoria", "Victoria" },
+				{ 119, "Virgin Islands", "Virgin Islands" },
+				{ 120, "Virginia", "Virginia" },
+				{ 121, "Washington", "Washington" },
+				{ 122, "West Virginia", "West Virginia" },
+				{ 123, "Western Australia", "Western Australia" },
+				{ 124, "Wisconsin", "Wisconsin" },
+				{ 125, "Wyoming", "Wyoming" },
+				{ 126, "Xinjiang", "Xinjiang" },
+				{ 127, "Yunnan", "Yunnan" },
+				{ 128, "Zhejiang", "Zhejiang" }
+			    }
+			)
+
+	annotation PBI_Id = c7d0876d08d04d86a0782b553ad748ef
+
