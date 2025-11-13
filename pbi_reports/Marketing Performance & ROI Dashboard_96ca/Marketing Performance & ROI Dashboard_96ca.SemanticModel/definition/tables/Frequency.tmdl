@@ -1,0 +1,48 @@
+table 'Frequency'
+	lineageTag: 84782208-59cd-4c0e-b9f1-2041fecbfeba
+
+	column Index
+		formatString: 0
+		lineageTag: f9655ae6-cf85-426a-86ce-064d0bfd724b
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: cadec8be-ce02-4db9-a136-5db2f1611135
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 747ef610-c615-4420-b47d-e2213422fea7
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Frequency' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Daily", "Date" },
+				{ 1, "Weekly", "Weekly" },
+				{ 2, "Monthly", "Month" },
+				{ 3, "Quarterly", "Quarter" },
+				{ 4, "Yearly", "Year" }
+			    }
+			)
+
+	annotation PBI_Id = 64649d454a0f43c994b0d7d5500fc210
+
