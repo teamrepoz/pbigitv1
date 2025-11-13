@@ -1,0 +1,45 @@
+table 'Map Type'
+	lineageTag: fb1e4bbb-b4d8-418e-8a51-bef6e6debb82
+
+	column Index
+		formatString: 0
+		lineageTag: b872f58d-d238-4289-a681-6a31aedaebd5
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 93f784f9-761e-47f0-a1d8-1581aa02522c
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: e50b3984-e6df-43ef-b6c8-da4f5956a550
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Map Type' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Tile", "Tile" },
+				{ 1, "Map", "Map" }
+			    }
+			)
+
+	annotation PBI_Id = 877fd9b033384cf3927abf573393ae6c
+
