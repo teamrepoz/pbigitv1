@@ -1,0 +1,44 @@
+table 'Top N Channels'
+	lineageTag: d9cab023-2594-4dbe-8954-8b869f78bdc7
+
+	column Index
+		formatString: 0
+		lineageTag: 4ba42e06-95d1-4d5b-936e-9b1b681351f2
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: c426613f-6688-4cb5-ac8d-20b399f168ce
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: d466b496-b59e-4d12-98a0-35c58e506aeb
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Top N Channels' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", DOUBLE,
+			    "Value", DOUBLE,
+			    {
+			        {0, 5.0, 5.0}
+			    }
+			)
+
+	annotation PBI_Id = 0d2f3f9f698e42fe8bc63defe064770f
+
