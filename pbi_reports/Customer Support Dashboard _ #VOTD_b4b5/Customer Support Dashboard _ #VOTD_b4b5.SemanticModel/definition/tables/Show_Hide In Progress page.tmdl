@@ -1,0 +1,45 @@
+table 'Show_Hide In Progress page'
+	lineageTag: 28d3c6c6-77c8-47bf-aa43-c613e7654889
+
+	column Index
+		formatString: 0
+		lineageTag: f6a5d2af-c20a-408f-ba4c-ddc97fec5978
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 0a9b8fba-240e-44f3-9498-2ea4cccee302
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 42a87f4b-fe56-48d2-86d4-d35fde5bf500
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Show_Hide In Progress page' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Show In Progress", "Show In Progress" },
+				{ 1, "Hide In Progress", "Hide In Progress" }
+			    }
+			)
+
+	annotation PBI_Id = c37b1649b21643e394e8cc7663552e78
+
