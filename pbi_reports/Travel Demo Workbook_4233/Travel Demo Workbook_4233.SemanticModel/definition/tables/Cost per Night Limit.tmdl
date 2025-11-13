@@ -1,0 +1,44 @@
+table 'Cost per Night Limit'
+	lineageTag: 96bdf1f3-c85f-49ef-a9a7-d21b7da3a551
+
+	column Index
+		formatString: 0
+		lineageTag: 71395897-42a0-4c0f-9137-a0b2c8187610
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 8b99535f-a286-49d3-890b-9f33e15940aa
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: a2fd2934-6162-4a19-a385-bca941e9f6c8
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Cost per Night Limit' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", INTEGER,
+			    "Value", INTEGER,
+			    {
+			        {0, 2000, 2000}
+			    }
+			)
+
+	annotation PBI_Id = ce5bc0cc5c274d74a8de03165503701c
+
