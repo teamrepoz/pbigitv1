@@ -1,0 +1,44 @@
+table 'SLA Days threshold'
+	lineageTag: 25fa70b8-09fc-4be3-a7e9-23fb0a297c76
+
+	column Index
+		formatString: 0
+		lineageTag: 2958b825-0aa1-4dde-b3c2-d20e6bccb862
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 1ef7ae53-306e-4c80-a92b-b5a84cc97f73
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: f2fbb6d3-8a4d-4753-8d83-679ca05fa7c1
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'SLA Days threshold' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", INTEGER,
+			    "Value", INTEGER,
+			    {
+			        {0, 4, 4}
+			    }
+			)
+
+	annotation PBI_Id = 56c811fb3d8d4e60948572b2bb4389f9
+
