@@ -1,0 +1,44 @@
+table 'TopN Seller States'
+	lineageTag: a91118fd-84ad-4951-8258-3ca46f831f40
+
+	column Index
+		formatString: 0
+		lineageTag: 10d697d6-dd61-47b6-81e8-815a874af29b
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 40501ac3-ff96-4011-95e6-74726038fbf4
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 29e637d9-87a3-4605-aefd-bafc18d14afa
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'TopN Seller States' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", INTEGER,
+			    "Value", INTEGER,
+			    {
+			        {0, 5, 5}
+			    }
+			)
+
+	annotation PBI_Id = 41b1fcd3adf844c1be5cf3b59af99159
+
