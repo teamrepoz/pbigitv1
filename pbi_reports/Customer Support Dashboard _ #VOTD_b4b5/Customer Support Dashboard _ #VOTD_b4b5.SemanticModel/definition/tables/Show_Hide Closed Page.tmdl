@@ -1,0 +1,45 @@
+table 'Show_Hide Closed Page'
+	lineageTag: cf526509-39ee-47c6-aa0e-12f9c3c5bdbb
+
+	column Index
+		formatString: 0
+		lineageTag: 3186f6ae-4702-40ed-aacd-446f26f31326
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 1d70bc41-abdd-49c9-b81f-fcb4cf651964
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 8740b344-5502-4f8a-8b90-a3637a48b8c8
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Show_Hide Closed Page' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Show Closed", "Show Closed" },
+				{ 1, "Hide Closed", "Hide Closed" }
+			    }
+			)
+
+	annotation PBI_Id = 858d215925a54895a957d072e88bb828
+
