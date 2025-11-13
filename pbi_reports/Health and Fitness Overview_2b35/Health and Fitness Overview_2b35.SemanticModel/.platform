@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Health and Fitness Overview_2b35"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "2084f625-34a4-45cd-b492-69bae3581f8e"
+  }
+}
