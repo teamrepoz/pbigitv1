@@ -1,0 +1,26 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["Nutrition Summary+ (Multiple Connections)", "Nutrition Summary+ (Multiple Connections)_Hormone Data", "Nutrition Summary+ (Multiple Connections)_Injury", "Nutrition Summary+ (Multiple Connections)_Measurement (Kg)", "Nutrition Summary+ (Multiple Connections)_Measurements (Cm)", "Nutrition Summary+ (Multiple Connections)_Nutrition Summary1", "Nutrition Summary+ (Multiple Connections)_Prepped-Exercise Data", "Nutrition Summary+ (Multiple Connections)_Prepped-Sleep Analysis"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.142.928.0 (25.04)+de52df9f0bb74ad93a80d89c52d63fe6d07e0e1b
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 'Nutrition Summary+ (Multiple Connections)'
+ref table 'Nutrition Summary+ (Multiple Connections)_Hormone Data'
+ref table 'Nutrition Summary+ (Multiple Connections)_Injury'
+ref table 'Nutrition Summary+ (Multiple Connections)_Measurement (Kg)'
+ref table 'Nutrition Summary+ (Multiple Connections)_Measurements (Cm)'
+ref table 'Nutrition Summary+ (Multiple Connections)_Nutrition Summary1'
+ref table 'Nutrition Summary+ (Multiple Connections)_Prepped-Exercise Data'
+ref table 'Nutrition Summary+ (Multiple Connections)_Prepped-Sleep Analysis'
+
+ref cultureInfo en-US
