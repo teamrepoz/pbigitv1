@@ -1,0 +1,45 @@
+table 'SECTION 2_2'
+	lineageTag: c0086d33-c067-42bf-a3de-82ade6a486bc
+
+	column Index
+		formatString: 0
+		lineageTag: 1bd4dc4c-b410-4221-bae4-137d24fbc52e
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 6c1c2597-9195-423c-a605-73376da323b5
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 094c7bb0-a67f-49c1-957e-a95c83515249
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'SECTION 2_2' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Brand Awareness Rate", "Awareness" },
+				{ 1, "Customer Consideration Rate", "Consideration" }
+			    }
+			)
+
+	annotation PBI_Id = 2040033e391c481a97ed47a503cee058
+
