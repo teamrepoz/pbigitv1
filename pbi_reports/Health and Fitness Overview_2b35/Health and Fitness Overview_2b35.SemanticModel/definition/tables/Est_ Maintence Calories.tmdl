@@ -1,0 +1,44 @@
+table 'Est_ Maintence Calories'
+	lineageTag: a2ab3ee2-7350-4a78-8641-b470825c5391
+
+	column Index
+		formatString: 0
+		lineageTag: 12e4d5ce-9ba1-46fc-93ea-2860c2a6f581
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 71e6526b-5dbd-4832-8742-82069f6cfe3b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: ae83c0e2-fba9-40dd-b5ad-84a17cf86a6e
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Est_ Maintence Calories' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", DOUBLE,
+			    "Value", DOUBLE,
+			    {
+			        {0, 1800.0, 1800.0}
+			    }
+			)
+
+	annotation PBI_Id = b76e365608b44424939794c0333e0eab
+
