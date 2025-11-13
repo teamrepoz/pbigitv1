@@ -1,0 +1,21 @@
+table 'End Date _Overview_ 1'
+	lineageTag: daf43b0c-2e3d-4109-9c3e-f7d5db8257ed
+
+	column Value
+		lineageTag: e8c8374d-e8e9-411f-b6b5-f70ad677c2d8
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'End Date _Overview_ 1' = calculated
+		mode: import
+		source = 
+			VAR MinVal = MIN(data (Overall Marketing Performance)[Date])
+			VAR MaxVal = MAX(data (Overall Marketing Performance)[Date])
+			RETURN
+			GENERATESERIES(MinVal, MaxVal, None)
+
+	annotation PBI_Id = f1f406ed96dd4548844639b9aa6caf67
+
