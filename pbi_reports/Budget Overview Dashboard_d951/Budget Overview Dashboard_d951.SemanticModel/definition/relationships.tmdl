@@ -1,0 +1,5 @@
+relationship a8b339d3-ea33-4981-8a8b-a4b74c7dc72e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Finacial budget dataset'.Date
+	toColumn: LocalDateTable_41d87860-0db5-4459-95a1-e9429742367d.Date
+
