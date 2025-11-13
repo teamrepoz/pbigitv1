@@ -1,0 +1,44 @@
+table 'Sleep Goal'
+	lineageTag: d6d5b59c-ef1e-493b-bbfa-bee34338036b
+
+	column Index
+		formatString: 0
+		lineageTag: 2d35d4b0-29c0-4c13-979d-6373b07c9778
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: e7ce72a3-253d-4f3e-9af1-00fbb1b266c3
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: f7d318d7-044f-4914-8542-725f80e343a5
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Sleep Goal' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", DOUBLE,
+			    "Value", DOUBLE,
+			    {
+			        {0, 8.0, 8.0}
+			    }
+			)
+
+	annotation PBI_Id = c499237621f74a049cd164cf67cd1066
+
