@@ -1,0 +1,10 @@
+relationship 947dee86-d804-4afe-bad5-16109d97bd66
+	toCardinality: many
+	fromColumn: '2024-Flight Data Extract_IAD_Origin'.Origin
+	toColumn: '2024-Flight Data Extract_IAD_Origin_path origin'.'Airport Code'
+
+relationship 073c3108-f193-45f9-9843-66ad45247699
+	toCardinality: many
+	fromColumn: '2024-Flight Data Extract_IAD_Origin'.Dest
+	toColumn: '2024-Flight Data Extract_IAD_Origin_dest path'.'Airport Code'
+
