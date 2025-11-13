@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "SALES DASHBOARD OVERVIEW_dfc6"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "f1059e3d-c8a7-4912-9c64-59d19b286708"
+  }
+}
