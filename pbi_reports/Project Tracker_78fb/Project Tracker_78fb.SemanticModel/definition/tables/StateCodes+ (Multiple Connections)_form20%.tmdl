@@ -1,0 +1,14 @@
+table 'StateCodes+ (Multiple Connections)_form20%'
+	lineageTag: 49515569-8a96-4ee6-8e6c-c2181e413525
+
+	partition 'StateCodes+ (Multiple Connections)_form20%' = m
+		mode: import
+		source =
+				let 
+					#"Source0" = Table.NestedJoin(#"Custom SQL Query3", {"key"}, #"Custom SQL Query4", {"key"}, "Custom SQL Query4", JoinKind.RightOuter),
+					#"Expand0" = Table.ExpandTableColumn(#"Source0", "Custom SQL Query4", {}, {})
+					in #"Expand0"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
