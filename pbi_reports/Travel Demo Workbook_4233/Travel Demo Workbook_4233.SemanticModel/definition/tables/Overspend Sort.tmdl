@@ -1,0 +1,50 @@
+table 'Overspend Sort'
+	lineageTag: b0f612ce-7f97-4b9a-96d4-05c1195e0c69
+
+	column Index
+		formatString: 0
+		lineageTag: 73e9a73b-c5e4-4fff-9f6c-e8bd8136ed3d
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: c8b75cf3-e677-4c63-9411-bfc520916ba3
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: f9a02280-177c-46eb-98c9-7155ec4de03a
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Overspend Sort' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", INTEGER,
+			    "Value", INTEGER,
+			    {
+			        { 0, Total Expense, 0 },
+				{ 1, Total Overspend, 1 },
+				{ 2, % Spend Over, 2 },
+				{ 3, % Tickets @ Negotiated Fare, 3 },
+				{ 4, % Tickets @ Published Fare, 4 },
+				{ 5, % Tickets @ Discount Published Fare, 5 },
+				{ 6, % Tickets with Unknown Fare, 6 }
+			    }
+			)
+
+	annotation PBI_Id = 137117e28cde42ef96d6255372a9e224
+
