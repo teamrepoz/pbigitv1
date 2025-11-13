@@ -1,0 +1,45 @@
+table 'SECTION 3_3'
+	lineageTag: aa6ba7ae-ed11-4f03-8cc8-7f0e7f57c9a9
+
+	column Index
+		formatString: 0
+		lineageTag: cd1e899b-e85e-4013-94d2-d7f8bba06743
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: ffccd322-f912-472d-9444-0e1d637593fb
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 82e511d6-3440-4152-bc3d-53bb6b01a9ee
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'SECTION 3_3' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Visits", "Visits" },
+				{ 1, "Spend", "Spend" }
+			    }
+			)
+
+	annotation PBI_Id = 5084e554c51f4d9cb0991b1d76246d1e
+
