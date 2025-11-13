@@ -1,0 +1,15 @@
+relationship 5cb3e510-53a1-41af-9421-4096fe9cd53e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: order_fulfillment_tracking.'Order Date'
+	toColumn: LocalDateTable_1e8b1a8e-41dc-45c0-913a-3c44bf7b45c0.Date
+
+relationship e058b95b-84a5-4507-b735-75968c18ed4f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: order_fulfillment_tracking.'Ship Date'
+	toColumn: LocalDateTable_f53aee38-4394-40ad-9e31-4b849c0517cd.Date
+
+relationship 320c8888-56d3-4724-9580-41138eeedf7b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: order_fulfillment_tracking.'Delivery Date'
+	toColumn: LocalDateTable_4657b662-bf9e-4bc9-a2eb-3817b5e01fb0.Date
+
