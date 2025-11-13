@@ -1,0 +1,10 @@
+relationship 11efe7ff-bd45-4cbb-b4cd-66f0b4b35aad
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Sheet1 (Tableau Work Progress Tracker - Copy)'.'Project Start Date'
+	toColumn: LocalDateTable_f02cb14b-7b96-4c31-91e1-274aaad14220.Date
+
+relationship 7ac46c7b-ba12-43d3-b178-5c2c23ca54eb
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Sheet1 (Tableau Work Progress Tracker - Copy)'.'Project Expected End Date'
+	toColumn: LocalDateTable_cfd31435-7d32-4bb0-8333-73625dd43698.Date
+
