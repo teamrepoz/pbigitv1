@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Banking - Customer Insights_085e"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "ce392d29-ed96-412a-9d21-1d73ffe8f2d6"
+  }
+}
