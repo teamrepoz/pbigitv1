@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Airport Operational Efficiency Analysis for Airport Managers_62d5"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "a8763c0c-7923-46ad-9bfa-cd94de75716a"
+  }
+}
