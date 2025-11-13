@@ -1,0 +1,44 @@
+table 'Est_ Fats'
+	lineageTag: e32a5c66-677f-41d0-93db-62157b81d677
+
+	column Index
+		formatString: 0
+		lineageTag: 91326c67-e2df-4aa4-acd2-1e36a26b1a5a
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 3fbec759-ecd9-4d51-b951-64205cf118a0
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 519c4448-5630-474a-8e8f-48f42d99a04a
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Est_ Fats' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", DOUBLE,
+			    "Value", DOUBLE,
+			    {
+			        {0, 50.0, 50.0}
+			    }
+			)
+
+	annotation PBI_Id = 3e7fddfc36444582a63e2e8287b58597
+
