@@ -1,0 +1,44 @@
+table 'Est_ Carbs'
+	lineageTag: 5617396e-792e-4ae3-9293-46207a0fb1e4
+
+	column Index
+		formatString: 0
+		lineageTag: 1487e47f-ac03-479c-8ff3-16fd6631396b
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 70163307-474a-40e8-b3e5-76710934fdc1
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: bdee87df-27f7-4f71-89b0-9a92f70c08a3
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Est_ Carbs' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", DOUBLE,
+			    "Value", DOUBLE,
+			    {
+			        {0, 120.0, 120.0}
+			    }
+			)
+
+	annotation PBI_Id = 0c080de0c975434e831f9e3982000f3b
+
