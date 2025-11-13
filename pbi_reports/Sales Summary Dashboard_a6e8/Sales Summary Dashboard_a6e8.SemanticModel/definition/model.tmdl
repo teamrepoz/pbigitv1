@@ -1,0 +1,27 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["Demo database", "Demo database_Product Subcategory", "Demo database_Sales", "Demo database_Product category", "Demo database_Channel", "Demo database_Date", "Demo database_Store", "Demo database_Geography", "Sheet1 (pivot)"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.142.928.0 (25.04)+de52df9f0bb74ad93a80d89c52d63fe6d07e0e1b
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 'Demo database'
+ref table 'Demo database_Product Subcategory'
+ref table 'Demo database_Sales'
+ref table 'Demo database_Product category'
+ref table 'Demo database_Channel'
+ref table 'Demo database_Date'
+ref table 'Demo database_Store'
+ref table 'Demo database_Geography'
+ref table 'Sheet1 (pivot)'
+
+ref cultureInfo en-US
