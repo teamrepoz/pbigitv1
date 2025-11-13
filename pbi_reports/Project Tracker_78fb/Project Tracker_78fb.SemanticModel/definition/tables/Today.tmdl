@@ -1,0 +1,44 @@
+table 'Today'
+	lineageTag: 8e051d39-9b27-449f-9231-b2184e52c07a
+
+	column Index
+		formatString: 0
+		lineageTag: fe8fe72f-8e95-47bc-aad8-c412d23a6b6b
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 1e108acd-54ae-476b-b1c1-e917d92c7bef
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 4662588f-4940-4f05-a099-e94e160f5f36
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Today' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", DATETIME,
+			    "Value", DATETIME,
+			    {
+			        {0, "#2025-09-26 00:00:00#", "#2025-09-26 00:00:00#"}
+			    }
+			)
+
+	annotation PBI_Id = 7af80b1dd1bb4a29913056bf195169d0
+
