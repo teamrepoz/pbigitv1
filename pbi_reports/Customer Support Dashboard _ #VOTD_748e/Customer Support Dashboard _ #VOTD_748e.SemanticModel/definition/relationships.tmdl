@@ -1,0 +1,30 @@
+relationship 7ba5d7df-cbf7-48f0-9305-5e0fbf0ce7f2
+	joinOnDateBehavior: datePartOnly
+	fromColumn: customer_support_data.'Date of Purchase'
+	toColumn: LocalDateTable_a99c6c1c-6cba-4d86-8c1e-8afced8ac686.Date
+
+relationship 8d6194d2-3030-418d-b30d-e20159631a52
+	joinOnDateBehavior: datePartOnly
+	fromColumn: customer_support_data.'First Response Date/Time'
+	toColumn: LocalDateTable_1381185d-b911-43ab-b721-c57a107e93de.Date
+
+relationship ebc91eb5-4b61-4659-94e5-41428672f117
+	joinOnDateBehavior: datePartOnly
+	fromColumn: customer_support_data.'Date/Time to Resolution'
+	toColumn: LocalDateTable_d6765879-6d90-4030-b939-3374fa334f33.Date
+
+relationship 6a474ec1-33e8-4305-b93c-9cf120b0b3e3
+	joinOnDateBehavior: datePartOnly
+	fromColumn: customer_support_data_None.'Date of Purchase'
+	toColumn: LocalDateTable_740d702d-1dbe-492e-be2c-d18398336d2e.Date
+
+relationship dcb9f8d5-9c63-41aa-b184-34d8de2c334d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: customer_support_data_None.'First Response Date/Time'
+	toColumn: LocalDateTable_66b911fb-94bf-4904-8ded-ec279bbdf255.Date
+
+relationship 79d2964c-ea43-454f-a10e-b24671a2d43b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: customer_support_data_None.'Date/Time to Resolution'
+	toColumn: LocalDateTable_409c1621-81eb-4d93-9d29-42ed4b9bbc3b.Date
+
