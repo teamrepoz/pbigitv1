@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Travel Demo Workbook_4233"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "61571d93-563d-46dd-8014-40f89eec54f9"
+  }
+}
