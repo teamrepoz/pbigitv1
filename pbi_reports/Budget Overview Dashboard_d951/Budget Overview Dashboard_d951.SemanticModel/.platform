@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Budget Overview Dashboard_d951"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "5ade296a-4b95-4daa-91a2-b2d87420ed92"
+  }
+}
