@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Loans Summary Dashboard_1b14"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "b8f2c63b-d8db-4c9a-8b03-ec8480f4f975"
+  }
+}
