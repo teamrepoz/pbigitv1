@@ -1,0 +1,44 @@
+table 'pSoW Var'
+	lineageTag: 790fff01-0b6d-4313-a160-8937040e0a95
+
+	column Index
+		formatString: 0
+		lineageTag: 6ae11be3-703b-41f5-8db3-e46a68f11b61
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: d3f0284e-fce4-4fec-8379-213d0029a863
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: c75a6895-112c-4f9f-b38c-2fb68adcd1e6
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'pSoW Var' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", DOUBLE,
+			    "Value", DOUBLE,
+			    {
+			        {0, 30.0, 30.0}
+			    }
+			)
+
+	annotation PBI_Id = 3707229e403d46d2bf98e846480ea388
+
