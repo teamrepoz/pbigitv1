@@ -1,0 +1,21 @@
+table 'start'
+	lineageTag: 5a83f192-1efb-46a0-97c2-86ad7f81ace1
+
+	column Value
+		lineageTag: 33d50d48-ddc9-4ad1-a10c-671dfa7c9b89
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'start' = calculated
+		mode: import
+		source = 
+			VAR MinVal = MIN(StateCodes+ (Multiple Connections)[START DATE])
+			VAR MaxVal = MAX(StateCodes+ (Multiple Connections)[START DATE])
+			RETURN
+			GENERATESERIES(MinVal, MaxVal, None)
+
+	annotation PBI_Id = 1732626f86d347df82a8717fdb300215
+
