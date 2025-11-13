@@ -1,0 +1,45 @@
+table 'Show_Hide Open Page'
+	lineageTag: a4963d4a-60a2-41a0-a378-a851b511494b
+
+	column Index
+		formatString: 0
+		lineageTag: b960add4-3110-47bb-aac1-e86e22c79b1d
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 14417d00-9ed5-4500-ae17-2e49c2487e80
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: ff5beb13-fbc2-4489-992c-7e916327beed
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Show_Hide Open Page' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Show Open", "Show Open" },
+				{ 1, "Hide Open", "Hide Open" }
+			    }
+			)
+
+	annotation PBI_Id = 1bbe14a5682a4978894b5d52d771a927
+
