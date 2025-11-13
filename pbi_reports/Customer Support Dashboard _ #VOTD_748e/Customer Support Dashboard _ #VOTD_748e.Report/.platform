@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Customer Support Dashboard _ #VOTD_748e"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "7cb142d1-944d-49e8-a2d9-889867acbb92"
+  }
+}
