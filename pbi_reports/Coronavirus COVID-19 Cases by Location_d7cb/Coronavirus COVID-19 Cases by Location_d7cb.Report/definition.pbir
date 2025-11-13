@@ -1,0 +1,8 @@
+{
+  "version": "4.0",
+  "datasetReference": {
+    "byPath": {
+      "path": "../Coronavirus COVID-19 Cases by Location_d7cb.SemanticModel"
+    }
+  }
+}
