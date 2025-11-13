@@ -1,0 +1,44 @@
+table 'Custom End Date'
+	lineageTag: a17c1790-f782-4d82-af56-fd25c9296c43
+
+	column Index
+		formatString: 0
+		lineageTag: 47484584-b7b3-4a5b-b06f-db657b2c6ec3
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 21f38c52-309d-4085-95ff-7008b8f0ca79
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 63616f03-1155-447c-907d-9586ac19d881
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Custom End Date' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", DATETIME,
+			    "Value", DATETIME,
+			    {
+			        {0, "2025-04-14", "2025-04-14"}
+			    }
+			)
+
+	annotation PBI_Id = eb4239f6bda841ef9ca395a1cc014583
+
