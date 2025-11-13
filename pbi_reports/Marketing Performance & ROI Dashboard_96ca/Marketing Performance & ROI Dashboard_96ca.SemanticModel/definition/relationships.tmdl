@@ -1,0 +1,5 @@
+relationship df84e272-956c-4cc1-ad94-2b0cdbb73353
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'data (Overall Marketing Performance)'.Date
+	toColumn: LocalDateTable_b3edf31c-78ac-40b0-8753-56bb53803007.Date
+
