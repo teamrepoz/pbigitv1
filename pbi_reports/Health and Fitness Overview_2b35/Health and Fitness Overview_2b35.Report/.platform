@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Health and Fitness Overview_2b35"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "67ecf72f-c799-49fb-844d-03854526d12f"
+  }
+}
