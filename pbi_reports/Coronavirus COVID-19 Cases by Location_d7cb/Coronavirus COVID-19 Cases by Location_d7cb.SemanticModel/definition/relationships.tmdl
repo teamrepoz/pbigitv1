@@ -1,0 +1,5 @@
+relationship 5690100b-c3c2-4c12-bc85-ead0c06ebb41
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'COVID Github Data Extract'.'Latest Date'
+	toColumn: LocalDateTable_f30b5243-329e-47d3-af2c-0c85c245c25f.Date
+
