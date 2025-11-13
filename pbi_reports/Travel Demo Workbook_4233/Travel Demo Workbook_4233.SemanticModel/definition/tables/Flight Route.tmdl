@@ -1,0 +1,48 @@
+table 'Flight Route'
+	lineageTag: 86b78469-f656-4d08-8cf4-e360d22d0eda
+
+	column Index
+		formatString: 0
+		lineageTag: 7f1e012f-4ff8-41ba-84fc-b4fcc9ec0d23
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: b1a72040-5a80-4ea4-81f3-db2e7d064b6c
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: b3c75ee4-5de2-430e-8151-78e429ea857e
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Flight Route' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", INTEGER,
+			    "Value", INTEGER,
+			    {
+			        { 0, All, 0 },
+				{ 1, US Internal, 1 },
+				{ 2, US Outbound, 2 },
+				{ 3, US Inbound, 3 },
+				{ 4, Non-US, 4 }
+			    }
+			)
+
+	annotation PBI_Id = a5535c2dc00a4c728f4e80a20f172fd1
+
