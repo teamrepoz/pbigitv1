@@ -1,0 +1,46 @@
+table 'Select Measure'
+	lineageTag: 75cf95e4-9b9c-43af-9708-e6e3db5cc463
+
+	column Index
+		formatString: 0
+		lineageTag: 7040620e-2c36-4213-96d7-e670ec1b00a4
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: ca285b57-79a2-4062-894e-f0ca7c19853b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 06b8425b-e567-4e74-8ecf-716b98e254ad
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Select Measure' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Total CY Sales", "Total CY Sales" },
+				{ 1, "TOTAL CY PROFIT", "TOTAL CY PROFIT" },
+				{ 2, "TOTAL CY QUANTITY", "TOTAL CY QUANTITY" }
+			    }
+			)
+
+	annotation PBI_Id = 14ed32b360fc4df3b82292b076a09d9a
+
