@@ -1,0 +1,21 @@
+table 'start uni'
+	lineageTag: 62f47986-6065-4308-962f-657a1b3e3482
+
+	column Value
+		lineageTag: d47539c0-473b-40db-a930-44b0bfcc0664
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'start uni' = calculated
+		mode: import
+		source = 
+			VAR MinVal = MIN(.VA-Quantitative-Analytics (#VA-Quantitative-Analytics)[Calculation_24206872725118996])
+			VAR MaxVal = MAX(.VA-Quantitative-Analytics (#VA-Quantitative-Analytics)[Calculation_24206872725118996])
+			RETURN
+			GENERATESERIES(MinVal, MaxVal, None)
+
+	annotation PBI_Id = 596d2397616f4032a683bfd158b620e2
+
