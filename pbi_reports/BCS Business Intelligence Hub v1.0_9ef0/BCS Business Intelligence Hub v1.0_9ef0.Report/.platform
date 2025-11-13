@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "BCS Business Intelligence Hub v1.0_9ef0"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "8ce3209c-d374-4830-8cb7-7e58eaf984d5"
+  }
+}
