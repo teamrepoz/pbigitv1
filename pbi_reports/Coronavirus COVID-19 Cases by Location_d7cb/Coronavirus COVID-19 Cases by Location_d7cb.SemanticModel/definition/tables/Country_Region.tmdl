@@ -1,0 +1,212 @@
+table 'Country_Region'
+	lineageTag: 4c399df5-d3ce-4d49-8721-787e6fb2aea8
+
+	column Index
+		formatString: 0
+		lineageTag: 2589ea37-4d64-4f62-bf91-ed5bd809d81b
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 81baf4e1-771a-4baa-91f1-0b18c9c2f1b2
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: fc736b7e-651d-4939-adf4-72ed37766379
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Country_Region' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "All", "All" },
+				{ 1, "Afghanistan", "Afghanistan" },
+				{ 2, "Albania", "Albania" },
+				{ 3, "Algeria", "Algeria" },
+				{ 4, "Andorra", "Andorra" },
+				{ 5, "Angola", "Angola" },
+				{ 6, "Antigua and Barbuda", "Antigua and Barbuda" },
+				{ 7, "Argentina", "Argentina" },
+				{ 8, "Armenia", "Armenia" },
+				{ 9, "Australia", "Australia" },
+				{ 10, "Austria", "Austria" },
+				{ 11, "Azerbaijan", "Azerbaijan" },
+				{ 12, "Bahamas", "Bahamas" },
+				{ 13, "Bahrain", "Bahrain" },
+				{ 14, "Bangladesh", "Bangladesh" },
+				{ 15, "Barbados", "Barbados" },
+				{ 16, "Belarus", "Belarus" },
+				{ 17, "Belgium", "Belgium" },
+				{ 18, "Belize", "Belize" },
+				{ 19, "Benin", "Benin" },
+				{ 20, "Bhutan", "Bhutan" },
+				{ 21, "Bolivia", "Bolivia" },
+				{ 22, "Bosnia and Herzegovina", "Bosnia and Herzegovina" },
+				{ 23, "Brazil", "Brazil" },
+				{ 24, "Brunei", "Brunei" },
+				{ 25, "Bulgaria", "Bulgaria" },
+				{ 26, "Burkina Faso", "Burkina Faso" },
+				{ 27, "Cabo Verde", "Cabo Verde" },
+				{ 28, "Cambodia", "Cambodia" },
+				{ 29, "Cameroon", "Cameroon" },
+				{ 30, "Canada", "Canada" },
+				{ 31, "Central African Republic", "Central African Republic" },
+				{ 32, "Chad", "Chad" },
+				{ 33, "Chile", "Chile" },
+				{ 34, "China", "China" },
+				{ 35, "Colombia", "Colombia" },
+				{ 36, "Congo (Brazzaville)", "Congo (Brazzaville)" },
+				{ 37, "Congo (Kinshasa)", "Congo (Kinshasa)" },
+				{ 38, "Costa Rica", "Costa Rica" },
+				{ 39, "Cote d'Ivoire", "Cote d'Ivoire" },
+				{ 40, "Croatia", "Croatia" },
+				{ 41, "Cruise Ships", "Cruise Ships" },
+				{ 42, "Cuba", "Cuba" },
+				{ 43, "Cyprus", "Cyprus" },
+				{ 44, "Czechia", "Czechia" },
+				{ 45, "Denmark", "Denmark" },
+				{ 46, "Djibouti", "Djibouti" },
+				{ 47, "Dominica", "Dominica" },
+				{ 48, "Dominican Republic", "Dominican Republic" },
+				{ 49, "Ecuador", "Ecuador" },
+				{ 50, "Egypt", "Egypt" },
+				{ 51, "El Salvador", "El Salvador" },
+				{ 52, "Equatorial Guinea", "Equatorial Guinea" },
+				{ 53, "Eritrea", "Eritrea" },
+				{ 54, "Estonia", "Estonia" },
+				{ 55, "Eswatini", "Eswatini" },
+				{ 56, "Ethiopia", "Ethiopia" },
+				{ 57, "Fiji", "Fiji" },
+				{ 58, "Finland", "Finland" },
+				{ 59, "France", "France" },
+				{ 60, "Gabon", "Gabon" },
+				{ 61, "Gambia", "Gambia" },
+				{ 62, "Georgia", "Georgia" },
+				{ 63, "Germany", "Germany" },
+				{ 64, "Ghana", "Ghana" },
+				{ 65, "Greece", "Greece" },
+				{ 66, "Grenada", "Grenada" },
+				{ 67, "Guatemala", "Guatemala" },
+				{ 68, "Guinea", "Guinea" },
+				{ 69, "Guyana", "Guyana" },
+				{ 70, "Haiti", "Haiti" },
+				{ 71, "Holy See", "Holy See" },
+				{ 72, "Honduras", "Honduras" },
+				{ 73, "Hungary", "Hungary" },
+				{ 74, "Iceland", "Iceland" },
+				{ 75, "India", "India" },
+				{ 76, "Indonesia", "Indonesia" },
+				{ 77, "Iran", "Iran" },
+				{ 78, "Iraq", "Iraq" },
+				{ 79, "Ireland", "Ireland" },
+				{ 80, "Israel", "Israel" },
+				{ 81, "Italy", "Italy" },
+				{ 82, "Jamaica", "Jamaica" },
+				{ 83, "Japan", "Japan" },
+				{ 84, "Jordan", "Jordan" },
+				{ 85, "Kazakhstan", "Kazakhstan" },
+				{ 86, "Kenya", "Kenya" },
+				{ 87, "Korea, South", "Korea, South" },
+				{ 88, "Kuwait", "Kuwait" },
+				{ 89, "Kyrgyzstan", "Kyrgyzstan" },
+				{ 90, "Latvia", "Latvia" },
+				{ 91, "Lebanon", "Lebanon" },
+				{ 92, "Liberia", "Liberia" },
+				{ 93, "Liechtenstein", "Liechtenstein" },
+				{ 94, "Lithuania", "Lithuania" },
+				{ 95, "Luxembourg", "Luxembourg" },
+				{ 96, "Madagascar", "Madagascar" },
+				{ 97, "Malaysia", "Malaysia" },
+				{ 98, "Maldives", "Maldives" },
+				{ 99, "Malta", "Malta" },
+				{ 100, "Mauritania", "Mauritania" },
+				{ 101, "Mauritius", "Mauritius" },
+				{ 102, "Mexico", "Mexico" },
+				{ 103, "Moldova", "Moldova" },
+				{ 104, "Monaco", "Monaco" },
+				{ 105, "Mongolia", "Mongolia" },
+				{ 106, "Montenegro", "Montenegro" },
+				{ 107, "Morocco", "Morocco" },
+				{ 108, "Mozambique", "Mozambique" },
+				{ 109, "Namibia", "Namibia" },
+				{ 110, "Nepal", "Nepal" },
+				{ 111, "Netherlands", "Netherlands" },
+				{ 112, "New Zealand", "New Zealand" },
+				{ 113, "Nicaragua", "Nicaragua" },
+				{ 114, "Niger", "Niger" },
+				{ 115, "Nigeria", "Nigeria" },
+				{ 116, "North Macedonia", "North Macedonia" },
+				{ 117, "Norway", "Norway" },
+				{ 118, "Oman", "Oman" },
+				{ 119, "Pakistan", "Pakistan" },
+				{ 120, "Panama", "Panama" },
+				{ 121, "Papua New Guinea", "Papua New Guinea" },
+				{ 122, "Paraguay", "Paraguay" },
+				{ 123, "Peru", "Peru" },
+				{ 124, "Philippines", "Philippines" },
+				{ 125, "Poland", "Poland" },
+				{ 126, "Portugal", "Portugal" },
+				{ 127, "Qatar", "Qatar" },
+				{ 128, "Romania", "Romania" },
+				{ 129, "Russia", "Russia" },
+				{ 130, "Rwanda", "Rwanda" },
+				{ 131, "Saint Lucia", "Saint Lucia" },
+				{ 132, "Saint Vincent and the Grenadines", "Saint Vincent and the Grenadines" },
+				{ 133, "San Marino", "San Marino" },
+				{ 134, "Saudi Arabia", "Saudi Arabia" },
+				{ 135, "Senegal", "Senegal" },
+				{ 136, "Serbia", "Serbia" },
+				{ 137, "Seychelles", "Seychelles" },
+				{ 138, "Singapore", "Singapore" },
+				{ 139, "Slovakia", "Slovakia" },
+				{ 140, "Slovenia", "Slovenia" },
+				{ 141, "Somalia", "Somalia" },
+				{ 142, "South Africa", "South Africa" },
+				{ 143, "Spain", "Spain" },
+				{ 144, "Sri Lanka", "Sri Lanka" },
+				{ 145, "Sudan", "Sudan" },
+				{ 146, "Suriname", "Suriname" },
+				{ 147, "Sweden", "Sweden" },
+				{ 148, "Switzerland", "Switzerland" },
+				{ 149, "Syria", "Syria" },
+				{ 150, "Taiwan*", "Taiwan*" },
+				{ 151, "Tanzania", "Tanzania" },
+				{ 152, "Thailand", "Thailand" },
+				{ 153, "Timor-Leste", "Timor-Leste" },
+				{ 154, "Togo", "Togo" },
+				{ 155, "Trinidad and Tobago", "Trinidad and Tobago" },
+				{ 156, "Tunisia", "Tunisia" },
+				{ 157, "Turkey", "Turkey" },
+				{ 158, "Uganda", "Uganda" },
+				{ 159, "Ukraine", "Ukraine" },
+				{ 160, "United Arab Emirates", "United Arab Emirates" },
+				{ 161, "United Kingdom", "United Kingdom" },
+				{ 162, "Uruguay", "Uruguay" },
+				{ 163, "US", "US" },
+				{ 164, "Uzbekistan", "Uzbekistan" },
+				{ 165, "Venezuela", "Venezuela" },
+				{ 166, "Vietnam", "Vietnam" },
+				{ 167, "Zambia", "Zambia" },
+				{ 168, "Zimbabwe", "Zimbabwe" }
+			    }
+			)
+
+	annotation PBI_Id = 3cf204d9639d4fc68a05038b49f8d705
+
