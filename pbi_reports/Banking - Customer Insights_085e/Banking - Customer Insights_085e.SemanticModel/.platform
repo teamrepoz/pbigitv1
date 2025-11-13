@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Banking - Customer Insights_085e"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "ac643fa0-9408-4e7e-a274-cb05d067d8fa"
+  }
+}
