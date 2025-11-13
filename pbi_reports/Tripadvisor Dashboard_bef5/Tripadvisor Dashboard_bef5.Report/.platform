@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Tripadvisor Dashboard_bef5"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "e92450d0-8e6c-4a07-b472-def458b63531"
+  }
+}
