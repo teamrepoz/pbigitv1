@@ -1,0 +1,44 @@
+table 'Step Goal'
+	lineageTag: f7044814-d7b6-48e1-a5bc-a96a102e6aa0
+
+	column Index
+		formatString: 0
+		lineageTag: 9c6077da-65e1-4c74-a659-ec830f0c75c0
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 5d9fd909-5462-45da-8875-e2bcd92cd4d0
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 4decd710-102c-478e-b296-6a3d3da1175f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Step Goal' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", DOUBLE,
+			    "Value", DOUBLE,
+			    {
+			        {0, 10000.0, 10000.0}
+			    }
+			)
+
+	annotation PBI_Id = 2587bd4e741f4976b833801cffb6261b
+
