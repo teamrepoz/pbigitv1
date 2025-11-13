@@ -1,0 +1,23 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["Data (FCR Dashboard - Data Set v0.2)", "Full data set (ABC Finance Data Set)", "Programme Plan+ (Programme Health Visualisation - Data)", "Programme Plan+ (Programme Health Visualisation - Data)_Issue Log", "Programme Plan+ (Programme Health Visualisation - Data)_Risk Log"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.142.928.0 (25.04)+de52df9f0bb74ad93a80d89c52d63fe6d07e0e1b
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 'Data (FCR Dashboard - Data Set v0.2)'
+ref table 'Full data set (ABC Finance Data Set)'
+ref table 'Programme Plan+ (Programme Health Visualisation - Data)'
+ref table 'Programme Plan+ (Programme Health Visualisation - Data)_Issue Log'
+ref table 'Programme Plan+ (Programme Health Visualisation - Data)_Risk Log'
+
+ref cultureInfo en-US
