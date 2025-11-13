@@ -1,0 +1,45 @@
+table 'Geographical Comparison'
+	lineageTag: eae99754-3e5b-4239-9702-ae5f8d46c22f
+
+	column Index
+		formatString: 0
+		lineageTag: 089791c8-d434-44b0-98c1-c0a12fd3262f
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 74a05c8d-8ec4-4c1b-a983-18c61e2dd1e3
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: d6960334-4364-4e9d-ae8e-1f98637b490e
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Geographical Comparison' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Aggregation", "Aggregation" },
+				{ 1, "Country Wise", "Country Wise" }
+			    }
+			)
+
+	annotation PBI_Id = 37581a1a41b74309942c5024e19a2d9c
+
