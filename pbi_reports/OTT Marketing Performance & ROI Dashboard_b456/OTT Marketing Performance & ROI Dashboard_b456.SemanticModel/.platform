@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "OTT Marketing Performance & ROI Dashboard_b456"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "52c79be2-eef1-4400-9c7f-d2ef322e9a7d"
+  }
+}
