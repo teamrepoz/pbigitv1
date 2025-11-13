@@ -1,0 +1,45 @@
+table '1_1 overview'
+	lineageTag: 6d7f35c7-fee9-440a-859f-f4ff8ba25a3e
+
+	column Index
+		formatString: 0
+		lineageTag: cccd0410-0d05-4c97-b252-6342fc7d2c3d
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 1c29f784-156f-4988-b668-7a0b5c19095e
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: e78a2e08-78cf-4407-9b11-82e53847d0fc
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition '1_1 overview' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Department", "Department" },
+				{ 1, "Objective", "Objective" }
+			    }
+			)
+
+	annotation PBI_Id = e2354b8b0134422f8fc39f9a3dccd79d
+
