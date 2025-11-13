@@ -1,0 +1,205 @@
+table 'Orders+ (Sample - Superstore)_None'
+	lineageTag: e6ceede9-18d6-4943-a7ce-b45268807a4d
+
+	column 'Row ID'
+		dataType: int64
+		formatString: 0
+		lineageTag: 9238d93f-414d-4575-b206-277a82f22b70
+		summarizeBy: sum
+		sourceColumn: 'Row ID'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order ID'
+		dataType: string
+		lineageTag: 788e0efc-37cf-49dc-870c-40ced6fabe95
+		summarizeBy: none
+		sourceColumn: 'Order ID'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Date'
+		dataType: datetime
+		lineageTag: f714fa62-d9df-42ef-92fc-c8764706d209
+		summarizeBy: none
+		sourceColumn: 'Order Date'
+
+		variation Variation
+			isDefault
+			relationship: a2a886aa-e220-4d40-8f6a-d8a6ae102725
+			defaultHierarchy: LocalDateTable_20ed1a6f-4a9a-49ae-bdd1-ff895eb35202.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ship Date'
+		dataType: datetime
+		lineageTag: afb131e0-c399-4e5d-bf1b-e0fb1b2bf7d4
+		summarizeBy: none
+		sourceColumn: 'Ship Date'
+
+		variation Variation
+			isDefault
+			relationship: c906efe5-5eec-4af3-beb0-130b7e94cfa9
+			defaultHierarchy: LocalDateTable_2a6e76f2-5e76-459d-bf3e-b4c9f50eed12.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ship Mode'
+		dataType: string
+		lineageTag: 29d463c6-bc59-49c9-8277-1b36690a3f80
+		summarizeBy: none
+		sourceColumn: 'Ship Mode'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer ID'
+		dataType: string
+		lineageTag: d872afd0-af8c-4dae-b95c-23bec1e4dd47
+		summarizeBy: none
+		sourceColumn: 'Customer ID'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Name'
+		dataType: string
+		lineageTag: 31666208-c5c8-459c-a7f7-be5208d42fc3
+		summarizeBy: none
+		sourceColumn: 'Customer Name'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Segment
+		dataType: string
+		lineageTag: 2425cda0-04a6-42d1-9736-be6eb18901cc
+		summarizeBy: none
+		sourceColumn: Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Country/Region'
+		dataType: string
+		lineageTag: dc8be985-df99-4c9b-a45f-b064f94852f9
+		summarizeBy: none
+		sourceColumn: 'Country/Region'
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: 5660bc02-10ee-4fc9-ba44-edf4a41add4b
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'State/Province'
+		dataType: string
+		lineageTag: 0585d5d2-718c-437a-85aa-3876fffa0ed5
+		summarizeBy: none
+		sourceColumn: 'State/Province'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Postal Code'
+		dataType: string
+		lineageTag: 71729e89-9417-41c1-986d-1bd605da3f57
+		summarizeBy: none
+		sourceColumn: 'Postal Code'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		lineageTag: 37d1018f-4995-4075-a1af-22af6abfe0b6
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product ID'
+		dataType: string
+		lineageTag: 20494fb6-c0be-4b8f-832c-83ab179d4b26
+		summarizeBy: none
+		sourceColumn: 'Product ID'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		lineageTag: 01873e8c-f901-4068-9185-cfb8400b5112
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sub-Category'
+		dataType: string
+		lineageTag: 612f4f18-0728-4aef-a6ad-4a9ee5133323
+		summarizeBy: none
+		sourceColumn: 'Sub-Category'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Name'
+		dataType: string
+		lineageTag: bb7ad5dd-d9d2-4ef7-b1e4-84a5dfb00547
+		summarizeBy: none
+		sourceColumn: 'Product Name'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sales
+		dataType: double
+		formatString: General Number
+		lineageTag: 82ec498e-d07a-44ed-abc7-b0ad0d75021e
+		summarizeBy: sum
+		sourceColumn: Sales
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Quantity
+		dataType: int64
+		formatString: 0
+		lineageTag: f344a96a-f374-41bd-b49b-9ba0f91e2337
+		summarizeBy: sum
+		sourceColumn: Quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column Discount
+		dataType: double
+		formatString: General Number
+		lineageTag: 675c5e28-b7ec-4b5d-8d19-998f7ee0fd73
+		summarizeBy: sum
+		sourceColumn: Discount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Profit
+		dataType: double
+		formatString: General Number
+		lineageTag: de66b57c-9ed9-4a4a-9cff-fea1b7328fbf
+		summarizeBy: sum
+		sourceColumn: Profit
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Orders+ (Sample - Superstore)_None' = m
+		mode: import
+		source =
+				let
+					    // Fallback for logical table: 
+					    // Member tables: "Orders+ (Sample - Superstore)", "Orders+ (Sample - Superstore)_Returns"
+					    Source = #table({"Table"}, { "Orders+ (Sample - Superstore)", "Orders+ (Sample - Superstore)_Returns" })
+					in
+					    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
