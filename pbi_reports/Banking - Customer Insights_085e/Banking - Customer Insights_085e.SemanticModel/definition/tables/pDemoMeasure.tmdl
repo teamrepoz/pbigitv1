@@ -1,0 +1,48 @@
+table 'pDemoMeasure'
+	lineageTag: 940aa5ea-1f23-4651-8dfc-13cd9b014ef7
+
+	column Index
+		formatString: 0
+		lineageTag: 7e448b96-a576-4a7f-85d8-03f059d48ffa
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 41aa13e7-29b2-4f24-9663-6b0916953cfe
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 1f735069-a4d7-425a-805c-23d06fed2939
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'pDemoMeasure' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Demographic Distribution", "demo" },
+				{ 1, "Total Asset Value", "total" },
+				{ 2, "Average Asset Value", "average" },
+				{ 3, "Share of Wallet", "sow" },
+				{ 4, "Average Income", "income" }
+			    }
+			)
+
+	annotation PBI_Id = 292de362d38f41ad95a8460bf9455905
+
