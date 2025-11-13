@@ -1,0 +1,40 @@
+relationship 5f5337da-6a66-4d9f-a5f7-1715d8caba55
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Data (FCR Dashboard - Data Set v0.2)'.Date
+	toColumn: LocalDateTable_9f780fae-3363-4014-a5f4-7974d2f777ba.Date
+
+relationship 74768694-2d34-4f9c-9c6e-78b61092963d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Data (FCR Dashboard - Data Set v0.2)'.Time
+	toColumn: LocalDateTable_8807f5f7-2167-40c2-b446-42a263e134b5.Date
+
+relationship 8d7475d9-39f6-4320-8751-76eb46a931e4
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Programme Plan+ (Programme Health Visualisation - Data)'.'Start Date'
+	toColumn: LocalDateTable_2d9d5e9f-64eb-4ea8-9741-262b999f8a98.Date
+
+relationship c62bc9d2-b9a1-47cc-b867-61646792f3cf
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Programme Plan+ (Programme Health Visualisation - Data)'.'Finish Date'
+	toColumn: LocalDateTable_9b4bc82b-3858-496f-b385-b910a574ad11.Date
+
+relationship 4168f9f8-5fb6-4875-85c9-e198c17a36c6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Programme Plan+ (Programme Health Visualisation - Data)_Issue Log'.'Date Submitted'
+	toColumn: LocalDateTable_c6c7d77c-fa4a-4200-a253-7310ad140de0.Date
+
+relationship 9fc07b12-f26e-4f44-965e-62c7697ae3fc
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Programme Plan+ (Programme Health Visualisation - Data)_Risk Log'.'Date Submitted'
+	toColumn: LocalDateTable_4814e55e-7835-4f52-955a-c085d9fe4f7f.Date
+
+relationship 1b88d765-4ad8-443d-b99c-2a03c0d618da
+	toCardinality: many
+	fromColumn: 'Programme Plan+ (Programme Health Visualisation - Data)'.'Unique ID'
+	toColumn: 'Programme Plan+ (Programme Health Visualisation - Data)_Issue Log'.'Unique ID'
+
+relationship 99f277f7-5f1f-4a31-9f05-23ce90c34ea0
+	toCardinality: many
+	fromColumn: 'Programme Plan+ (Programme Health Visualisation - Data)'.'Unique ID'
+	toColumn: 'Programme Plan+ (Programme Health Visualisation - Data)_Risk Log'.'Unique ID'
+
