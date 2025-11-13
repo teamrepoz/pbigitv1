@@ -1,0 +1,49 @@
+table 'Graph filter 4_overview_'
+	lineageTag: 4e7ad8e9-261b-402d-a442-6b55ebea5f29
+
+	column Index
+		formatString: 0
+		lineageTag: 5a412aec-177a-4f22-9660-862b5487707d
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 140b6624-9658-4399-98ae-d6471a69b895
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 080fbaf8-b550-479f-a69d-5a756f0d0be2
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Graph filter 4_overview_' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Campaign", "Campaign" },
+				{ 1, "Channel", "Channel" },
+				{ 2, "Market", "Source Market" },
+				{ 3, "Publisher", "Publisher" },
+				{ 4, "Objective", "Objective" },
+				{ 5, "Department", "Department" }
+			    }
+			)
+
+	annotation PBI_Id = e8ada01c4f3b4c66b0aad94e066f4fa6
+
