@@ -1,0 +1,48 @@
+table 'View By'
+	lineageTag: f30ae150-000d-4831-81c9-4fabad1d14ba
+
+	column Index
+		formatString: 0
+		lineageTag: 7d171a0b-f893-42df-bd9a-7e01fbc587dc
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 766eee72-05de-4561-bbe3-58b8f07b11d6
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 0adb5376-9f6c-4f9b-b886-a3265f9ed351
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'View By' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Title", "Title" },
+				{ 1, "Purpose", "Purpose" },
+				{ 2, "Employment Length", "Employment Length" },
+				{ 3, "Home Ownership", "Home Ownership" },
+				{ 4, "State", "State" }
+			    }
+			)
+
+	annotation PBI_Id = 31739bbcc87b4f0888a0ba7c4bdab77a
+
