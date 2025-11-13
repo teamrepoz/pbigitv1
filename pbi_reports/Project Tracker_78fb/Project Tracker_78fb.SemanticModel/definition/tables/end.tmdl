@@ -1,0 +1,21 @@
+table 'end'
+	lineageTag: f5af2e2b-0bc0-46a2-b440-1aa8e96f8f9c
+
+	column Value
+		lineageTag: d4dd39fd-40a2-4586-b10c-27e82587c64c
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'end' = calculated
+		mode: import
+		source = 
+			VAR MinVal = MIN(StateCodes+ (Multiple Connections)[DUE DATE])
+			VAR MaxVal = MAX(StateCodes+ (Multiple Connections)[DUE DATE])
+			RETURN
+			GENERATESERIES(MinVal, MaxVal, None)
+
+	annotation PBI_Id = a46d88a49e5f47ea8a6c2d2bafd74335
+
