@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Order Fulfillment Tracking_b4b3"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "882166a8-528a-4637-ac42-57968e83fb33"
+  }
+}
