@@ -1,0 +1,115 @@
+relationship 0c43196a-ce9e-43bc-8a36-d1ad44b0c436
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Demo database'.AvailableForSaleDate
+	toColumn: LocalDateTable_416e144d-a1d5-4b7f-9520-38b1bf1b6ba2.Date
+
+relationship 5e7f47e0-835f-4106-b8ef-a8ca212ffbfa
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Demo database'.LoadDate
+	toColumn: LocalDateTable_d1c29aa6-7c72-43a8-9c71-f067b64d6df6.Date
+
+relationship ce2f4009-1cbf-4cb6-a366-1b4aa0c38456
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Demo database'.UpdateDate
+	toColumn: LocalDateTable_ca35dc60-0a87-474a-9a9a-e1a3797892c3.Date
+
+relationship f7fa7051-0d56-489b-bcc4-76ef3f60091d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Demo database_Product Subcategory'.LoadDate
+	toColumn: LocalDateTable_f228ce93-63e0-4dd1-8ced-d72aff796568.Date
+
+relationship 8e25215f-fa4b-4225-98f4-ff25110db32b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Demo database_Product Subcategory'.UpdateDate
+	toColumn: LocalDateTable_79ed2d3c-ef09-4f3e-87b8-b3ae6500f200.Date
+
+relationship b0897490-5aac-4c24-9314-883baf6b29ec
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Demo database_Sales'.DateKey
+	toColumn: LocalDateTable_e545803a-bd5d-4592-9dfa-570dd02020d6.Date
+
+relationship 2f700e28-ce9a-426c-949a-39b58f08302c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Demo database_Sales'.LoadDate
+	toColumn: LocalDateTable_acd4e344-6e76-4667-b688-9aa35cadd12d.Date
+
+relationship e2565b93-e7fa-4127-8cf6-8565cf695ff4
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Demo database_Sales'.UpdateDate
+	toColumn: LocalDateTable_58dc4884-b0a7-4ece-be00-adfcbebc8799.Date
+
+relationship f3a4ea8e-dce8-487e-8562-f1b2fae69ae7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Demo database_Product category'.LoadDate
+	toColumn: LocalDateTable_0ffa435d-b318-4c73-a630-ddce023ceceb.Date
+
+relationship 7a08b210-82c2-4f58-957d-1e84a3b09df3
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Demo database_Product category'.UpdateDate
+	toColumn: LocalDateTable_9d5bdfe2-e0b2-415f-abb8-578650361f6c.Date
+
+relationship 12105d97-54b2-4c37-a3c6-e52cf0d9608f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Demo database_Channel'.LoadDate
+	toColumn: LocalDateTable_58320408-e9b7-4e56-916c-7dce1f51468c.Date
+
+relationship 1d932bac-6dd3-4f61-872a-b60d8464c169
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Demo database_Channel'.UpdateDate
+	toColumn: LocalDateTable_125d0ab3-67b7-45a4-9a4f-8a8060c506cf.Date
+
+relationship 4f08ab5d-68af-4c4a-9a45-bfffd61a7b8c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Demo database_Date'.Datekey
+	toColumn: LocalDateTable_9b0d9b4d-9072-403e-9cc4-5b362c2e1d1c.Date
+
+relationship 8fe66f80-c056-4b8c-ae7c-3c0084af6a97
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Demo database_Date'.FullDateLabel
+	toColumn: LocalDateTable_fd9d9d7b-7b30-4ef3-bd23-759e19b99ea8.Date
+
+relationship 86f520b3-1bbf-4a7e-83bd-711cd21934f7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Demo database_Date'.DateDescription
+	toColumn: LocalDateTable_358ee342-cdeb-4705-9ffd-f4b8ad6b1b5d.Date
+
+relationship 1b2a24bf-26ac-476c-b531-f7669693b576
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Demo database_Store'.OpenDate
+	toColumn: LocalDateTable_5f0a1d94-ca4f-4165-a367-7f7b7e00cc2f.Date
+
+relationship 8ddb5340-146a-43c8-8339-e5889e49e9f7
+	toCardinality: many
+	fromColumn: 'Demo database'.channelKey
+	toColumn: 'Demo database_Channel'.ChannelKey
+
+relationship 0e5fed92-a35c-4bb5-8086-1b8d75b25a40
+	toCardinality: many
+	fromColumn: 'Demo database'.DateKey
+	toColumn: 'Demo database_Date'.Datekey
+
+relationship fdaf1151-b4bb-4193-8055-7757e098415f
+	toCardinality: many
+	fromColumn: 'Demo database_Store'.GeographyKey
+	toColumn: 'Demo database_Geography'.GeographyKey
+
+relationship 9d07e022-8265-4ff6-b40a-9434e502b35b
+	toCardinality: many
+	fromColumn: 'Demo database'.ProductSubcategoryKey
+	toColumn: 'Demo database_Product Subcategory'.ProductSubcategoryKey
+
+relationship 0da75d62-48e6-4671-86ff-02ad70f07483
+	toCardinality: many
+	fromColumn: 'Demo database_Product Subcategory'.ProductCategoryKey
+	toColumn: 'Demo database_Product category'.ProductCategoryKey
+
+relationship 9fdc8180-f323-44b1-9076-d062475b2715
+	toCardinality: many
+	fromColumn: 'Demo database'.ProductKey
+	toColumn: 'Demo database'.ProductKey
+
+relationship 2af09940-69bd-4ac0-9e7e-3edbb6c48881
+	toCardinality: many
+	fromColumn: 'Demo database'.StoreKey
+	toColumn: 'Demo database_Store'.StoreKey
+
