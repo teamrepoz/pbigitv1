@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Opportunity Overview_5373"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "097931ef-8f70-4805-ba31-51e69cc30c73"
+  }
+}
