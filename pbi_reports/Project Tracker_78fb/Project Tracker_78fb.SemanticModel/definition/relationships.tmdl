@@ -1,0 +1,75 @@
+relationship 59c9ab22-2fa4-4f55-86a7-975517b8bcd8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'StateCodes+ (Multiple Connections)'.Deadline
+	toColumn: LocalDateTable_45707af4-17c9-4739-afe9-ffa214d24dbc.Date
+
+relationship 2effae46-953b-49e6-848a-8d29fc04fb2a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'StateCodes+ (Multiple Connections)'.'Assigned Date'
+	toColumn: LocalDateTable_c70de7e7-c74c-419c-8871-e08ca0a945be.Date
+
+relationship 9042b65b-e163-4d79-9b98-b93be31fcc43
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'StateCodes+ (Multiple Connections)'.'Actual Date of Completion'
+	toColumn: LocalDateTable_765731e5-07c4-4c17-8c84-7f351357df46.Date
+
+relationship c10ed537-4927-47bf-960b-c1583c036b0b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'StateCodes+ (Multiple Connections)_Timelines'.'START DATE'
+	toColumn: LocalDateTable_160fdb5d-3916-46b4-8e36-e994463d840d.Date
+
+relationship 2b788c77-26eb-4510-92ca-15d8a713e0e2
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'StateCodes+ (Multiple Connections)_Timelines'.'DUE DATE'
+	toColumn: LocalDateTable_1ec6588a-b461-4944-9459-da3baadc8069.Date
+
+relationship 407d279d-2e9f-4f71-9946-2b9e51dcaa8f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'StateCodes+ (Multiple Connections)_Timelines'.'Actual Completion Date'
+	toColumn: LocalDateTable_ceec206a-5268-4b77-877c-bfa4dcce31dd.Date
+
+relationship 4a684dbd-047d-4c20-a885-863ddf066ff0
+	joinOnDateBehavior: datePartOnly
+	fromColumn: '.VA-Quantitative-Analytics (#VA-Quantitative-Analytics)'.Deadline
+	toColumn: LocalDateTable_bdc8fca4-e424-4ee8-a567-0e934e4c58a6.Date
+
+relationship 97f41611-fa67-4832-8630-2987cf807d2d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: '.VA-Quantitative-Analytics (#VA-Quantitative-Analytics)'.'Assigned Date'
+	toColumn: LocalDateTable_1216703c-d9e4-4d76-a395-b51f89417ad0.Date
+
+relationship 01092a7f-4b59-4a8e-adad-c4616f4a42e0
+	joinOnDateBehavior: datePartOnly
+	fromColumn: '.VA-Quantitative-Analytics (#VA-Quantitative-Analytics)'.'Actual Date of Completion'
+	toColumn: LocalDateTable_30f733f3-f1e6-45ee-af05-3354a5a6b753.Date
+
+relationship ebe063bf-95ab-49ac-a03a-c4c427946ae5
+	toCardinality: many
+	fromColumn: 'StateCodes+ (Multiple Connections)'.state_abb
+	toColumn: 'StateCodes+ (Multiple Connections)'.State
+
+relationship 921bc8ac-7386-4c9b-8f02-89f50f13710e
+	toCardinality: many
+	fromColumn: 'StateCodes+ (Multiple Connections)'.state_name
+	toColumn: 'StateCodes+ (Multiple Connections)_Timelines2'.'TASK TITLE'
+
+relationship fa6493db-ed91-464f-9333-03b8750d2ea6
+	toCardinality: many
+	fromColumn: 'StateCodes+ (Multiple Connections)'.state_name
+	toColumn: 'StateCodes+ (Multiple Connections)_Actual'.state_name
+
+relationship 6956edb3-d7b9-4250-a717-3c285daa9f9a
+	toCardinality: many
+	fromColumn: 'StateCodes+ (Multiple Connections)_Actual'.state_name
+	toColumn: 'StateCodes+ (Multiple Connections)_Caste Count'.state_name
+
+relationship b295cc28-2aa6-468b-99bd-d4d103e4b0c7
+	toCardinality: many
+	fromColumn: 'StateCodes+ (Multiple Connections)_Actual'.key
+	toColumn: 'StateCodes+ (Multiple Connections)_form20%'.key
+
+relationship 1c56d6dd-6a77-4edc-a772-41088e9c9ec0
+	toCardinality: many
+	fromColumn: 'StateCodes+ (Multiple Connections)_Actual'.st
+	toColumn: 'StateCodes+ (Multiple Connections)_Retro%'.state_abb
+
