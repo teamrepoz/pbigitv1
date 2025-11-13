@@ -1,0 +1,5 @@
+relationship 5f2d4256-703d-490d-8f49-7f376e8e48a3
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Sheet1 (digital_summary)'.date
+	toColumn: LocalDateTable_738087c3-d836-466a-912d-5309d720d490.Date
+
