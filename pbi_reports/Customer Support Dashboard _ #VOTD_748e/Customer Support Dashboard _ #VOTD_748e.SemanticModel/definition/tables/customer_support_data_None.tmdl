@@ -1,0 +1,178 @@
+table customer_support_data_None
+	lineageTag: bbc3ae1d-9f08-4b34-a43c-e4240f2d2980
+
+	column 'Ticket ID'
+		dataType: int64
+		formatString: 0
+		lineageTag: 0ac8ca48-9c67-4916-a2d9-fe5db2f6de92
+		summarizeBy: sum
+		sourceColumn: 'Ticket ID'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Name'
+		dataType: string
+		lineageTag: 2f156544-a333-459f-b9da-07ab236d4ce1
+		summarizeBy: none
+		sourceColumn: 'Customer Name'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Email'
+		dataType: string
+		lineageTag: e539d564-7ebb-46b0-93fc-689bb928627c
+		summarizeBy: none
+		sourceColumn: 'Customer Email'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Age'
+		dataType: int64
+		formatString: 0
+		lineageTag: cce00cda-068c-45c0-a596-d2f0436ea2c1
+		summarizeBy: sum
+		sourceColumn: 'Customer Age'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Gender'
+		dataType: string
+		lineageTag: 426b0491-12e5-42f5-a6f3-1d4d73616a53
+		summarizeBy: none
+		sourceColumn: 'Customer Gender'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Location'
+		dataType: string
+		lineageTag: 9a8a1fdd-9d58-4d6d-873d-cef01d57ef57
+		summarizeBy: none
+		sourceColumn: 'Customer Location'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Purchased'
+		dataType: string
+		lineageTag: 6b04fc11-848c-4e14-9d38-31bdd76205a8
+		summarizeBy: none
+		sourceColumn: 'Product Purchased'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date of Purchase'
+		dataType: datetime
+		lineageTag: 0656f6a5-dd44-436e-aff0-1abc3f72d40f
+		summarizeBy: none
+		sourceColumn: 'Date of Purchase'
+
+		variation Variation
+			isDefault
+			relationship: 6a474ec1-33e8-4305-b93c-9cf120b0b3e3
+			defaultHierarchy: LocalDateTable_740d702d-1dbe-492e-be2c-d18398336d2e.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ticket Type'
+		dataType: string
+		lineageTag: dc6b78c2-8291-41d1-ba4a-7d72a9104bb3
+		summarizeBy: none
+		sourceColumn: 'Ticket Type'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ticket Status'
+		dataType: string
+		lineageTag: 22f2352d-3ef8-4002-a44f-5cc07e156862
+		summarizeBy: none
+		sourceColumn: 'Ticket Status'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ticket Priority'
+		dataType: string
+		lineageTag: 99c9a034-b515-402e-8571-91c941fecbd0
+		summarizeBy: none
+		sourceColumn: 'Ticket Priority'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ticket Channel'
+		dataType: string
+		lineageTag: c9416ae9-37b2-4af1-9ee7-6cda7a46efe1
+		summarizeBy: none
+		sourceColumn: 'Ticket Channel'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Satisfaction Rating'
+		dataType: int64
+		formatString: 0
+		lineageTag: e58dc245-1542-4c79-825c-2cda36cdda38
+		summarizeBy: sum
+		sourceColumn: 'Customer Satisfaction Rating'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ticket Subject'
+		dataType: string
+		lineageTag: 19f0b112-41cc-4412-a455-d457c39cdabe
+		summarizeBy: none
+		sourceColumn: 'Ticket Subject'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ticket Description'
+		dataType: string
+		lineageTag: fc7c6114-eae2-4281-b373-186b4c911d06
+		summarizeBy: none
+		sourceColumn: 'Ticket Description'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Resolution
+		dataType: string
+		lineageTag: 0996e552-15fb-42ec-96c9-d0a679627301
+		summarizeBy: none
+		sourceColumn: Resolution
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'First Response Date/Time'
+		dataType: datetime
+		lineageTag: 5cd4a37f-517d-4b75-8213-e582a7b5bd1d
+		summarizeBy: none
+		sourceColumn: 'First Response Date/Time'
+
+		variation Variation
+			isDefault
+			relationship: dcb9f8d5-9c63-41aa-b184-34d8de2c334d
+			defaultHierarchy: LocalDateTable_66b911fb-94bf-4904-8ded-ec279bbdf255.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date/Time to Resolution'
+		dataType: datetime
+		lineageTag: adfbca10-db14-4677-b70b-67b4c65338d9
+		summarizeBy: none
+		sourceColumn: 'Date/Time to Resolution'
+
+		variation Variation
+			isDefault
+			relationship: 79d2964c-ea43-454f-a10e-b24671a2d43b
+			defaultHierarchy: LocalDateTable_409c1621-81eb-4d93-9d29-42ed4b9bbc3b.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition customer_support_data_None = m
+		mode: import
+		source =
+				let
+					    // Fallback for logical table: 
+					    // Member tables: "customer_support_data", "customer_support_data_State"
+					    Source = #table({"Table"}, { "customer_support_data", "customer_support_data_State" })
+					in
+					    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
