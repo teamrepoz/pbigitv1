@@ -1,0 +1,20 @@
+relationship 895e03d6-7f41-489d-b240-eb66eb9f469d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: STOCK_MOVEMENT_PRODUCTS.MOVEMENT_DATE
+	toColumn: LocalDateTable_b6cb5882-d943-4bd4-b413-f6d16eeeda6a.Date
+
+relationship 0a95ab31-8b68-4bd1-a8cd-19e13b0edd42
+	joinOnDateBehavior: datePartOnly
+	fromColumn: SHIPMENT_PRODUCTS.SHIPMENT_DATE
+	toColumn: LocalDateTable_ca6c3852-ad74-4c77-aeb8-0d41a53f8742.Date
+
+relationship cae15fdc-86bf-428e-93fe-ce0a9cf7b141
+	joinOnDateBehavior: datePartOnly
+	fromColumn: PRODUCTS.MOVEMENT_DATE
+	toColumn: LocalDateTable_5677aab2-48c3-49ad-8d1f-6ba7f0c580de.Date
+
+relationship 1a24c679-bd28-4ab3-8161-6594c1146e4d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: PRODUCTS.SHIPMENT_DATE
+	toColumn: LocalDateTable_a9063af8-abdd-4715-841f-8644e874f061.Date
+
