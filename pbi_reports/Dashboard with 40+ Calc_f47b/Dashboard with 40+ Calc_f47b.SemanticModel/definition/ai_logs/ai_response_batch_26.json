@@ -1,0 +1,18 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Profit Margin %",
+      "dax_expression": "'Orders+ (Sample - Superstore)'[Profit Ratio ] * 100",
+      "solution_explanation": "Converted Tableau calculated field [Profit Margin %] defined as [Profit Ratio ]*100 to a DAX calculated column. Replaced the column reference with 'Orders+ (Sample - Superstore)'[Profit Ratio ] and applied multiplication by 100."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Profit vs Target (Uses Profit Margin %)",
+      "dax_expression": "'Orders+ (Sample - Superstore)'[Profit Margin %] - 15",
+      "solution_explanation": "Converted Tableau expression [Profit Margin %]-15 to a DAX calculated column. Referenced the calculated field as 'Orders+ (Sample - Superstore)'[Profit Margin %] and subtracted 15."
+    }
+  ]
+}
