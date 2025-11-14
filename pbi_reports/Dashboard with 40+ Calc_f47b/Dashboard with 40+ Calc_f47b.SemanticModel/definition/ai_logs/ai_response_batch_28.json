@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Category Has Profit",
+      "dax_expression": "IF('Orders+ (Sample - Superstore)'[Profit] > 0, \"Profit\", \"Loss\")",
+      "solution_explanation": "Converted Tableau IF ... THEN ... END to DAX IF for row-level evaluation. Returns \"Profit\" when 'Orders+ (Sample - Superstore)'[Profit] > 0, otherwise \"Loss\"."
+    }
+  ]
+}
