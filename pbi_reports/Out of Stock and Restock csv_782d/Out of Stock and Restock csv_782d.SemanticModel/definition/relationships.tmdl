@@ -1,0 +1,10 @@
+relationship e7fc9a68-af3e-44b6-88ec-440bfe10c027
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Out of Stock and Restock'.'Restock Date'
+	toColumn: LocalDateTable_ed788fd9-aa67-410f-950b-3b323babd8cd.Date
+
+relationship 2bc29080-5dae-4268-b9e3-e9cb7750bdfc
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Out of Stock and Restock'.'Last Order Date'
+	toColumn: LocalDateTable_206da3bc-afa5-4c77-ad86-5b305fb75bbb.Date
+
