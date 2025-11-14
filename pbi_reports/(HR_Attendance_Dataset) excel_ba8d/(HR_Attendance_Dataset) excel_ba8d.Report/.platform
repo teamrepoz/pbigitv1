@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "(HR_Attendance_Dataset) excel_ba8d"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "419d4f19-ed08-46d8-821f-d83cfeba92dc"
+  }
+}
