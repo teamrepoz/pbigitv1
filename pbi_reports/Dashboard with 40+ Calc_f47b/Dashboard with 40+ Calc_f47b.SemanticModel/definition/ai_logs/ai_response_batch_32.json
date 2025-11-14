@@ -1,0 +1,18 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Profit Margin %",
+      "dax_expression": "'Orders+ (Sample - Superstore)'[Profit Ratio ] * 100",
+      "solution_explanation": "Created a row-level calculated column for Profit Margin % by converting the Tableau expression [Profit Ratio ]*100 to DAX multiplying the row's 'Orders+ (Sample - Superstore)'[Profit Ratio ] by 100."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Profitablity Tier",
+      "dax_expression": "IF(\n    'Orders+ (Sample - Superstore)'[Profit Margin %] > 20,\n    \"High Margin\",\n    IF(\n        'Orders+ (Sample - Superstore)'[Profit Margin %] > 10,\n        \"Medium Margin\",\n        \"Low Margin\"\n    )\n)",
+      "solution_explanation": "Translated the Tableau IF / ELSEIF logic into nested DAX IF statements, evaluating the row-level 'Orders+ (Sample - Superstore)'[Profit Margin %] to return \"High Margin\", \"Medium Margin\", or \"Low Margin\"."
+    }
+  ]
+}
