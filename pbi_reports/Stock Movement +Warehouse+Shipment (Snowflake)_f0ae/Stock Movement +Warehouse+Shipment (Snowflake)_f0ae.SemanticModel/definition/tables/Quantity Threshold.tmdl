@@ -1,0 +1,28 @@
+table 'Quantity Threshold'
+	lineageTag: bfb484c2-5041-4bf2-ad55-fe29d82f036e
+
+	measure 'Quantity Threshold Value' = SELECTEDVALUE('Quantity Threshold'[Quantity Threshold], 100)
+		lineageTag: f968c618-8794-4afa-be9a-a6eee0ff582c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Quantity Threshold'
+		dataType: double
+		formatString: 0
+		lineageTag: 32f1834b-3625-4864-97cd-70945284a009
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Quantity Threshold' = calculated
+		mode: import
+		source = GENERATESERIES(100, 10000, 100)
+
+	annotation PBI_Id = 70934dd680014542aec0ad4954e6cca9
+
