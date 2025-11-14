@@ -1,0 +1,55 @@
+{
+  "calculations": [
+    {
+      "name": "Overall Health",
+      "table_name": "Orders+ (Sample - Superstore)",
+      "tableau_expression": "IF [Overall Rating] > 5 AND [Stability Tier] = \"Stable\"\r\nTHEN \"Excellent\"\r\nELSEIF [Overall Rating] > 3 THEN \"Good\"\r\nELSE \"Poor\"\r\nEND",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "IF [Overall Rating] > 5 AND [Stability Tier] = \"Stable\"\r\nTHEN \"Excellent\"\r\nELSEIF [Overall Rating] > 3 THEN \"Good\"\r\nELSE \"Poor\"\r\nEND",
+        "calculated_fields": {
+          "Stability Tier": "IF [Revenue Stability]>200 THEN \"Stable\" ELSEIF  [Revenue Stability] >50 THEN \"Moderate\" ELSE \"Unstable\" END",
+          "Overall Rating": "IF [Priority Segment] = \"Top Priority\" THEN \r\n    [Order Health Score] + 1\r\nELSE\r\n    [Order Health Score]\r\nEND",
+          "Revenue Stability": "[Net Revenue ]+[Profit Ratio ]",
+          "Order Health Score": "IF  [Failure Risk]=\"High Risk\" THEN [Final Score]-2 ELSE [Final Score] END",
+          "Priority Segment": "IF [Profit Health] = \"Excellent\" AND [Profitablity Tier] = \"High Margin\"\r\nTHEN \"Top Priority\"\r\nELSE \"Normal\"\r\nEND",
+          "Final Score": "IF  [Discount Tier]=\"Low Discont\" THEN [Performance Code]+ 1 ELSE [Performance Code] END",
+          "Failure Risk": "IF [Loss Flag]=1 AND  [Discount Tier]=\"High Discount \" THEN \"High Risk\" ELSE \"Low Risk\" END",
+          "Profitablity Tier": "IF  [Profit Margin %]>20 THEN \"High Margin\" ELSEIF [Profit Margin %]>10 THEN \"Medium Margin\" ELSE \"Low Margin\" END",
+          "Profit Health": "IF [Profit Ratio ] > 0.2 THEN\r\n    IF [Revenue Tier] = \"High\" THEN \"Excellent\"\r\n    ELSE \"Good\" END\r\nELSE\r\n    IF [Revenue Tier] = \"Low\" THEN \"Poor\"\r\n    ELSE \"Average\"\r\nEND END",
+          "Revenue Tier": "IF [Net Revenue ]>1000 THEN \"High Margin\" ELSEIF [Profit Margin %]>10 THEN \"Medium Margin\" ELSE \"Low Margin\" END",
+          "Profit Margin %": "[Profit Ratio ]*100",
+          "Discount Tier": "IF [Discount Health]>0.25 THEN \"High Discount\" ELSEIF  [Discount Health]>0.10 THEN \"Medium Discount\" ELSE \"Low Discont\" END",
+          "Loss Flag": "IF [Profit]<0 THEN 1 ELSE 0 END",
+          "Performance Code": "IF [Is High Performing ]=\"Yes\" THEN [Quality Score ]+2 ELSE [Quality Score ]-1 END",
+          "Discount Health": "[Discount Amount]/[Sales]",
+          "Discount Amount": "[Sales]*[Discount]"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Sales": "real",
+          "Discount": "real",
+          "Profit": "real"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Overall Rating": "integer",
+          "Revenue Stability": "real",
+          "Order Health Score": "integer",
+          "Final Score": "integer",
+          "Profit Margin %": "real",
+          "Loss Flag": "integer",
+          "Performance Code": "integer",
+          "Discount Health": "real",
+          "Discount Amount": "real",
+          "Stability Tier": "String",
+          "Priority Segment": "String",
+          "Failure Risk": "String",
+          "Profitablity Tier": "String",
+          "Profit Health": "String",
+          "Revenue Tier": "String",
+          "Discount Tier": "String"
+        }
+      }
+    }
+  ]
+}
