@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "EVENTS (SNOWFLAKE.EVENTS)+ (TELEMETRY)snowflake_bd87"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "16b1966a-923f-4d57-a168-2acf3d0b9106"
+  }
+}
