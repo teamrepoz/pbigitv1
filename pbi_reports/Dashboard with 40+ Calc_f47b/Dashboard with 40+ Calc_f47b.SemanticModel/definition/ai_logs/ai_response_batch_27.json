@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Final KPI Score",
+      "dax_expression": "'Orders+ (Sample - Superstore)'[Executive Score] + IF('Orders+ (Sample - Superstore)'[Success Flag] = \"Success\", 1, 0)",
+      "solution_explanation": "Converted Tableau IF to DAX IF and transformed column references to 'Orders+ (Sample - Superstore)'[Column]. This is a row-level calculation (no aggregations or parameters), so it is implemented as a calculated column."
+    }
+  ]
+}
