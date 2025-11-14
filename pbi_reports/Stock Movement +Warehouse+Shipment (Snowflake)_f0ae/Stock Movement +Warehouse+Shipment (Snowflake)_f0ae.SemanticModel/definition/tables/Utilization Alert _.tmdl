@@ -1,0 +1,28 @@
+table 'Utilization Alert _'
+	lineageTag: a9420fc3-d820-489f-940a-2a1d90a4ec6f
+
+	measure 'Utilization Alert _ Value' = SELECTEDVALUE('Utilization Alert _'[Utilization Alert _], 0.1)
+		lineageTag: c2e53690-e266-4a26-b007-2a5d62f8d178
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Utilization Alert _'
+		dataType: double
+		formatString: 0
+		lineageTag: 8e98fddb-5615-4961-90a8-e67a1762b921
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Utilization Alert _' = calculated
+		mode: import
+		source = GENERATESERIES(0.1, 1.0, 0.05)
+
+	annotation PBI_Id = 2195867be393447c882eb611ae2d3f92
+
