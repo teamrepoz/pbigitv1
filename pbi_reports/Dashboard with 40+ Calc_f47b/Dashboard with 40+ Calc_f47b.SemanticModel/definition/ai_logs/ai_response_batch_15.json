@@ -1,0 +1,25 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Profit Margin %",
+      "dax_expression": "'Orders+ (Sample - Superstore)'[Profit Ratio ] * 100",
+      "solution_explanation": "Converted the row-level Tableau expression [Profit Ratio ]*100 to a DAX calculated column by multiplying the 'Orders+ (Sample - Superstore)'[Profit Ratio ] by 100. This is a row-level transformation, so it's implemented as a calculated column."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Revenue Tier",
+      "dax_expression": "IF(\n  'Orders+ (Sample - Superstore)'[Net Revenue ] > 1000,\n  \"High Margin\",\n  IF(\n    'Orders+ (Sample - Superstore)'[Profit Margin %] > 10,\n    \"Medium Margin\",\n    \"Low Margin\"\n  )\n)",
+      "solution_explanation": "Translated the Tableau IF/ELSEIF logic into nested DAX IF statements. References to row-level fields were converted to 'Orders+ (Sample - Superstore)'[Column]. This is row-level logic, so implemented as a calculated column."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Quality Score ",
+      "dax_expression": "IF(\n  'Orders+ (Sample - Superstore)'[Profit Margin %] > 15 &&\n  'Orders+ (Sample - Superstore)'[Heavy Loss Check ] = \"Normal\",\n  IF('Orders+ (Sample - Superstore)'[Revenue Tier] = \"High\", 5, 4),\n  2\n)",
+      "solution_explanation": "Converted Tableau IIF and nested IIF to DAX IF with logical AND (&&). All column references were transformed to the 'Orders+ (Sample - Superstore)'[Column] format. This uses only row-level fields and comparisons, so it is a calculated column."
+    }
+  ]
+}
