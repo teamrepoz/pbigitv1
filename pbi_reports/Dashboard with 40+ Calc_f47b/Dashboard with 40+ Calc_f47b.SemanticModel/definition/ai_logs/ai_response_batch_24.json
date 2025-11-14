@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Weighted Score",
+      "dax_expression": "('Orders+ (Sample - Superstore)'[Profit Index] * 0.7) + ('Orders+ (Sample - Superstore)'[Priority Flag] * 3)",
+      "solution_explanation": "Mapped Tableau field references to DAX table column syntax and preserved the row-level arithmetic. Both [Profit Index] and [Priority Flag] are row-level calculated fields (no aggregations or parameters), so the expression is implemented as a calculated column."
+    }
+  ]
+}
