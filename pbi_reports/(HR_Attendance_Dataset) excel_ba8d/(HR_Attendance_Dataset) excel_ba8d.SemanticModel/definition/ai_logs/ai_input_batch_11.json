@@ -1,0 +1,25 @@
+{
+  "calculations": [
+    {
+      "name": "Status Selector",
+      "table_name": "Attendance+ (HR_Attendance_Dataset)",
+      "tableau_expression": "[Status]=[Parameters].[Status Selector]",
+      "datatype": "boolean",
+      "calculation_context": {
+        "Expression": "[Status]=[Parameters].[Status Selector]",
+        "calculated_fields": {
+          "Status Selector": "\"Present\""
+        },
+        "parameters": [
+          "Status Selector"
+        ],
+        "col_to_datatype_mapping": {
+          "Status": "string"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Status Selector": "string"
+        }
+      }
+    }
+  ]
+}
