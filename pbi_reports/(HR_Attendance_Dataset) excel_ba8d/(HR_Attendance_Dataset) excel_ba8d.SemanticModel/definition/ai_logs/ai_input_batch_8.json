@@ -1,0 +1,25 @@
+{
+  "calculations": [
+    {
+      "name": "Top N",
+      "table_name": "Attendance+ (HR_Attendance_Dataset)",
+      "tableau_expression": "RANK(SUM(IF [Status] = \"Present\" THEN 1 ELSE 0 END)) <= [Parameters].[Top N]",
+      "datatype": "boolean",
+      "calculation_context": {
+        "Expression": "RANK(SUM(IF [Status] = \"Present\" THEN 1 ELSE 0 END)) <= [Parameters].[Top N]",
+        "calculated_fields": {
+          "Top N": "RANK(SUM(IF [Status] = \"Present\" THEN 1 ELSE 0 END)) <= [Parameters].[Top N]"
+        },
+        "parameters": [
+          "Top N"
+        ],
+        "col_to_datatype_mapping": {
+          "Status": "string"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Top N": "boolean"
+        }
+      }
+    }
+  ]
+}
