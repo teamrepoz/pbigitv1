@@ -1,0 +1,32 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Cost Price (Estimate)",
+      "dax_expression": "'Orders+ (Sample - Superstore)'[Sales] - 'Orders+ (Sample - Superstore)'[Profit]",
+      "solution_explanation": "Converted Tableau row-level expression [Sales]-[Profit] to a DAX calculated column using table-qualified column references. This is row-level arithmetic so it's a calculated column."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Shipping Cost Estimate",
+      "dax_expression": "'Orders+ (Sample - Superstore)'[Quantity] * 5",
+      "solution_explanation": "Converted Tableau row-level expression [Quantity]*5 to a DAX calculated column using table-qualified column references. This is row-level arithmetic so it's a calculated column."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "True Cost",
+      "dax_expression": "'Orders+ (Sample - Superstore)'[Cost Price (Estimate)] * 'Orders+ (Sample - Superstore)'[Shipping Cost Estimate]",
+      "solution_explanation": "Translated the Tableau calculated field [Cost Price (Estimate)]*[Shipping Cost Estimate] to DAX, referencing the dependent calculated columns in the same table. This is row-level multiplication so it's a calculated column."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Actual Margin ",
+      "dax_expression": "'Orders+ (Sample - Superstore)'[Net Revenue ] - 'Orders+ (Sample - Superstore)'[True Cost] / 'Orders+ (Sample - Superstore)'[Net Revenue ]",
+      "solution_explanation": "Converted Tableau expression [Net Revenue ]-[True Cost]/[Net Revenue ] to DAX with table-qualified column references. Operator precedence is preserved (division before subtraction). This uses only row-level fields and calculated columns, so it should be a calculated column."
+    }
+  ]
+}
