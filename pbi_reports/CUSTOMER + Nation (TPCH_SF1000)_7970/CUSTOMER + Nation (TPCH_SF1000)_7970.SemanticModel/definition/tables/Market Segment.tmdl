@@ -1,0 +1,44 @@
+table 'Market Segment'
+	lineageTag: 93fe927f-7176-4775-80ea-2a230468fbf7
+
+	column Index
+		formatString: 0
+		lineageTag: e2cb20a6-3a03-4441-b6c5-9c8bbff8f7dd
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 0e655e5b-d009-437e-8354-7a1c6a14c070
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: dddd32c4-a3aa-4d89-8d6b-36b74b541a5a
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Market Segment' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        {0, "C Mktsegment", "C Mktsegment"}
+			    }
+			)
+
+	annotation PBI_Id = adc6c10ef99448e6b57678bf76d75313
+
