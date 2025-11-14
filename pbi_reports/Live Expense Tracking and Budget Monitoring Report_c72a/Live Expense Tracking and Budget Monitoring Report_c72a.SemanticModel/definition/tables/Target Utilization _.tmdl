@@ -1,0 +1,28 @@
+table 'Target Utilization _'
+	lineageTag: eaa72bf9-2f80-4cae-94cd-8dcfc73b83df
+
+	measure 'Target Utilization _ Value' = SELECTEDVALUE('Target Utilization _'[Target Utilization _], 0.1)
+		lineageTag: 3fe58325-5ec4-4ef0-9c25-7af78751748b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Target Utilization _'
+		dataType: double
+		formatString: 0
+		lineageTag: 52791145-8bd3-4410-a127-c98ec3f1ec4a
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Target Utilization _' = calculated
+		mode: import
+		source = GENERATESERIES(0.1, 1.0, 0.05)
+
+	annotation PBI_Id = 754c2b3cb93b47e68d97720dd5249017
+
