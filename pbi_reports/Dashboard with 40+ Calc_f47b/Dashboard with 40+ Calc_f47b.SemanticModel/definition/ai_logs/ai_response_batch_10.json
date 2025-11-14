@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Profit Ratio ",
+      "dax_expression": "'Orders+ (Sample - Superstore)'[Profit] / 'Orders+ (Sample - Superstore)'[Sales]",
+      "solution_explanation": "Converted the row-level Tableau expression [Profit]/[Sales] to a calculated column using DAX and replaced column references with the 'Table'[Column] format."
+    }
+  ]
+}
