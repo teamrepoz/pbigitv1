@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Attendance+ (HR_Attendance_Dataset)",
+      "name": "Status Selector",
+      "dax_expression": "'Attendance+ (HR_Attendance_Dataset)'[Status] = SELECTEDVALUE('Status Selector'[Display As])",
+      "solution_explanation": "Replaced [Status] with 'Attendance+ (HR_Attendance_Dataset)'[Status] and translated [Parameters].[Status Selector] to SELECTEDVALUE('Status Selector'[Display As]). The expression returns TRUE when the row Status equals the selected parameter value.",
+      "type_changed_reason": "The calculation references a parameter, and all parameter-based calculations must be measures."
+    }
+  ]
+}
