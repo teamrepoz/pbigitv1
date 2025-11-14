@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Profit Index",
+      "dax_expression": "'Orders+ (Sample - Superstore)'[Profit Margin %] + 'Orders+ (Sample - Superstore)'[Order Health Score]",
+      "solution_explanation": "Direct translation of the Tableau expression [Profit Margin %] + [Order Health Score] into a DAX calculated column. Both referenced items are row-level calculated fields on the same table, and there are no aggregations or parameters, so this remains a calculated column."
+    }
+  ]
+}
