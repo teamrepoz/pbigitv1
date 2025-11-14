@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Live Expense Tracking and Budget Monitoring Report_c72a"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "8c89de75-196d-4278-b99d-1adce11327b6"
+  }
+}
