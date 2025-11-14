@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Attendance+ (HR_Attendance_Dataset)",
+      "name": "Total Absent",
+      "dax_expression": "IF('Attendance+ (HR_Attendance_Dataset)'[Status] = \"Absent\", 1, 0)",
+      "solution_explanation": "Mapped Tableau IF [Status] = \"Absent\" THEN 1 ELSE 0 END to DAX IF(condition, true, false). This is row-level logic (uses only a field on the same row), so it is implemented as a calculated column."
+    }
+  ]
+}
