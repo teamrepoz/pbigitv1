@@ -1,0 +1,28 @@
+table 'Minimum Profit'
+	lineageTag: a75df30b-4c57-45bd-af3e-3b39c3a6b681
+
+	measure 'Minimum Profit Value' = SELECTEDVALUE('Minimum Profit'[Minimum Profit], 0.0)
+		lineageTag: 94a3a7d5-f7e0-4fb5-93a8-2ee8e5e8f84d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Minimum Profit'
+		dataType: double
+		formatString: 0
+		lineageTag: 225aca8a-7bc9-46df-a473-bddedaeea61f
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Minimum Profit' = calculated
+		mode: import
+		source = GENERATESERIES(0.0, 5000.0, 100.0)
+
+	annotation PBI_Id = d3e38f30f5464435ba8d0b2365918642
+
