@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "PRODUCT (SHIPMENTS.PRODUCT)+Excel_7bb7"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "b1437a0b-6640-4e41-aa04-2ca3a61ee32f"
+  }
+}
