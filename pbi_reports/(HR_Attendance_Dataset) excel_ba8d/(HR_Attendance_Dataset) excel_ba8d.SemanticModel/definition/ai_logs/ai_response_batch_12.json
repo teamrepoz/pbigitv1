@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Attendance+ (HR_Attendance_Dataset)",
+      "name": "Select Department",
+      "dax_expression": "'Attendance+ (HR_Attendance_Dataset)'[DepartmentName] = SELECTEDVALUE('Select Departmrnt'[Display As])",
+      "solution_explanation": "Replaced row-level column reference [DepartmentName] with 'Attendance+ (HR_Attendance_Dataset)'[DepartmentName] and converted the Tableau parameter reference [Parameters].[Select Departmrnt] to SELECTEDVALUE('Select Departmrnt'[Display As]). The equality comparison remains the same, producing a boolean measure.",
+      "type_changed_reason": "The calculation references a parameter, and all parameter-based calculations must be measures."
+    }
+  ]
+}
