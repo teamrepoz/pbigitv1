@@ -1,0 +1,110 @@
+table 'lab_results+'
+	lineageTag: 4d51f656-a75d-4d88-ac44-8839955f41f7
+
+	column PatientID
+		dataType: int64
+		formatString: 0
+		lineageTag: a0d02dfd-b865-4b79-8fd9-868a58a9ef43
+		summarizeBy: sum
+		sourceColumn: PatientID
+
+		annotation SummarizationSetBy = Automatic
+
+	column LabTestID
+		dataType: string
+		lineageTag: 3b2bce9d-78df-4c50-b295-486b44e9fc6c
+		summarizeBy: none
+		sourceColumn: LabTestID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: datetime
+		lineageTag: 26a667d2-5aa8-4f71-8c2b-ccc89ff6a7d1
+		summarizeBy: none
+		sourceColumn: Date
+
+		variation Variation
+			isDefault
+			relationship: 879cef15-8575-4436-be57-81bdd2caf516
+			defaultHierarchy: LocalDateTable_6c2c2436-4419-44b5-938e-ad7536f3bbca.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column TestType
+		dataType: string
+		lineageTag: be8ce31f-b93d-44c3-8559-1d68b01fa8c2
+		summarizeBy: none
+		sourceColumn: TestType
+
+		annotation SummarizationSetBy = Automatic
+
+	column Result
+		dataType: string
+		lineageTag: a1c6a4a8-b81f-461a-958f-d4c43aae1508
+		summarizeBy: none
+		sourceColumn: Result
+
+		annotation SummarizationSetBy = Automatic
+
+	column Doctor
+		dataType: string
+		lineageTag: 0686f01a-783f-4ae2-b568-bddb3e350ec9
+		summarizeBy: none
+		sourceColumn: Doctor
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PatientID 1'
+		dataType: int64
+		formatString: 0
+		lineageTag: d74482bb-7da1-49de-8711-19e6466bb36a
+		summarizeBy: sum
+		sourceColumn: 'PatientID 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		lineageTag: 2b923c5d-da7b-42ed-b43c-f4acfac086b0
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Age
+		dataType: int64
+		formatString: 0
+		lineageTag: 2c43c838-ddb5-4643-aa12-46f1937e33bb
+		summarizeBy: sum
+		sourceColumn: Age
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gender
+		dataType: string
+		lineageTag: df5314ea-e6ba-4022-86d5-ba01c09e9c86
+		summarizeBy: none
+		sourceColumn: Gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column Address
+		dataType: string
+		lineageTag: 4ab1c9c9-2c05-46d2-a05e-96d1345226f4
+		summarizeBy: none
+		sourceColumn: Address
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'lab_results+' = m
+		mode: import
+		source =
+				let 
+					#"Source0" = Table.NestedJoin(#"lab_results.csv_lab_results+", {"PatientID"}, #"patients.csv_lab_results+", {"PatientID"}, "patients.csv_lab_results+", JoinKind.Inner),
+					#"Expand0" = Table.ExpandTableColumn(#"Source0", "patients.csv_lab_results+", {"PatientID", "Name", "Age", "Gender", "Address"}, {"PatientID 1", "Name", "Age", "Gender", "Address"})
+					in #"Expand0"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
