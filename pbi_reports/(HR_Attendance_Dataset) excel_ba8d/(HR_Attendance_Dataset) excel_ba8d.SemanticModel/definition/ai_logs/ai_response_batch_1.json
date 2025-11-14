@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Parameters",
+      "name": "Top N",
+      "dax_expression": "1",
+      "solution_explanation": "Converted the Tableau constant 1 to the equivalent DAX constant 1. The expression contains no aggregations or parameter references and applies at the row level, so it is implemented as a calculated column."
+    }
+  ]
+}
