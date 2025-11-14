@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Is High Performing ",
+      "dax_expression": "IF(\n    'Orders+ (Sample - Superstore)'[Revenue Tier] = \"High\" &&\n    'Orders+ (Sample - Superstore)'[Profitablity Tier] = \"High Margin\",\n    \"Yes\",\n    \"No\"\n)",
+      "solution_explanation": "Converted Tableau IF with AND to DAX IF using &&. All column references were transformed to 'TableName'[ColumnName] format: [Revenue Tier] -> 'Orders+ (Sample - Superstore)'[Revenue Tier], [Profitablity Tier] -> 'Orders+ (Sample - Superstore)'[Profitablity Tier]. This is created as a calculated column because it performs row-level logical evaluation between fields without aggregations or parameters."
+    }
+  ]
+}
