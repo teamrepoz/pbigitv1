@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Attendance+ (HR_Attendance_Dataset)",
+      "name": "Top N",
+      "dax_expression": "VAR TopNParam = SELECTEDVALUE('Top N'[Display As])\nVAR PresentCountPerContext = CALCULATE(\n    SUMX(\n        'Attendance+ (HR_Attendance_Dataset)',\n        IF('Attendance+ (HR_Attendance_Dataset)'[Status] = \"Present\", 1, 0)\n    )\n)\nVAR RankValue = RANKX(\n    ALL('Attendance+ (HR_Attendance_Dataset)'),\n    CALCULATE(\n        SUMX(\n            'Attendance+ (HR_Attendance_Dataset)',\n            IF('Attendance+ (HR_Attendance_Dataset)'[Status] = \"Present\", 1, 0)\n        )\n    ),\n    ,\n    DESC,\n    DENSE\n)\nRETURN IF(RankValue <= TopNParam, TRUE(), FALSE())",
+      "solution_explanation": "Replaced the parameter reference with SELECTEDVALUE('Top N'[Display As]). Translated the row-level IF into an IF inside SUMX to count \"Present\" rows, wrapped in CALCULATE for context, and used RANKX over ALL(...) to emulate Tableau's RANK(SUM(...)). The final boolean compares the computed rank to the selected Top N parameter.",
+      "type_changed_reason": "The calculation references a parameter and uses aggregation/table-ranking (SUM and RANK), so it must be implemented as a measure."
+    }
+  ]
+}
