@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Loss Flag",
+      "dax_expression": "IF('Orders+ (Sample - Superstore)'[Profit] < 0, 1, 0)",
+      "solution_explanation": "Converted Tableau IF [Profit]<0 THEN 1 ELSE 0 END to DAX IF. Mapped [Profit] to 'Orders+ (Sample - Superstore)'[Profit]. This is row-level logic (no aggregation or parameters), so it is implemented as a calculated column."
+    }
+  ]
+}
