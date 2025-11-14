@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Attendance+ (HR_Attendance_Dataset)",
+      "name": "Total Days Present",
+      "dax_expression": "IF('Attendance+ (HR_Attendance_Dataset)'[Status] = \"Present\", 1, 0)",
+      "solution_explanation": "Converted Tableau IF [Status] = \"Present\" THEN 1 ELSE 0 END to DAX using IF. Transformed column reference to 'Attendance+ (HR_Attendance_Dataset)'[Status]. This is a row-level boolean-to-integer transformation, so implemented as a calculated column."
+    }
+  ]
+}
