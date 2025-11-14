@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "(Medical_Clinic_Dataset) Excel_ec69"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "62f239a5-7b32-41f2-b281-f45953948eed"
+  }
+}
