@@ -1,0 +1,28 @@
+table 'Minimum Duration'
+	lineageTag: 5a1d5b2f-e0c0-47e0-92e2-03a2e8d304fb
+
+	measure 'Minimum Duration Value' = SELECTEDVALUE('Minimum Duration'[Minimum Duration], 0)
+		lineageTag: a947cbb9-147a-4764-9361-a3d57c16655a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Minimum Duration'
+		dataType: double
+		formatString: 0
+		lineageTag: a1e68ab2-b7c3-4148-bf70-13d272292278
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Minimum Duration' = calculated
+		mode: import
+		source = GENERATESERIES(0, 60)
+
+	annotation PBI_Id = 4573ca6d4d9048ab897be58b09a26d3f
+
