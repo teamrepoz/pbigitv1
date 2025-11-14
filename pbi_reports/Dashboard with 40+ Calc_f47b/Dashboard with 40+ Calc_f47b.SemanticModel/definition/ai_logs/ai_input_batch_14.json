@@ -1,0 +1,29 @@
+{
+  "calculations": [
+    {
+      "name": "Actual Margin ",
+      "table_name": "Orders+ (Sample - Superstore)",
+      "tableau_expression": "[Net Revenue ]-[True Cost]/[Net Revenue ]",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "[Net Revenue ]-[True Cost]/[Net Revenue ]",
+        "calculated_fields": {
+          "True Cost": "[Cost Price (Estimate)]*[Shipping Cost Estimate]",
+          "Cost Price (Estimate)": "[Sales]-[Profit]",
+          "Shipping Cost Estimate": "[Quantity]*5"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Sales": "real",
+          "Quantity": "integer",
+          "Profit": "real"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "True Cost": "real",
+          "Cost Price (Estimate)": "real",
+          "Shipping Cost Estimate": "integer"
+        }
+      }
+    }
+  ]
+}
