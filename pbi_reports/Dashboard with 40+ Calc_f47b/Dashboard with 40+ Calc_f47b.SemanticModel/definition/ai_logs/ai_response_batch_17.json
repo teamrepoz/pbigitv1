@@ -1,0 +1,18 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Discount Amount",
+      "dax_expression": "'Orders+ (Sample - Superstore)'[Sales] * 'Orders+ (Sample - Superstore)'[Discount]",
+      "solution_explanation": "Converted the Tableau calculated field [Discount Amount] = [Sales]*[Discount] to a row-level DAX calculated column using the same-table column references. This is a calculated column because it performs a per-row arithmetic operation without aggregation."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Discount Health",
+      "dax_expression": "'Orders+ (Sample - Superstore)'[Discount Amount] / 'Orders+ (Sample - Superstore)'[Sales]",
+      "solution_explanation": "Converted the Tableau expression [Discount Amount]/[Sales] to a DAX calculated column. All column references were mapped to 'Orders+ (Sample - Superstore)'[Column]. This is a calculated column because it performs row-level division using existing row-level fields without aggregation."
+    }
+  ]
+}
