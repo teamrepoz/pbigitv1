@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Executive Score",
+      "dax_expression": "IF('Orders+ (Sample - Superstore)'[Final Performnace Label] = \"Excellent\", 'Orders+ (Sample - Superstore)'[Weighted Score] + 2, 'Orders+ (Sample - Superstore)'[Weighted Score])",
+      "solution_explanation": "Direct row-level translation: Tableau IF mapped to DAX IF and all column references converted to 'Table'[Column] format. No aggregations or parameters are used, so this is a calculated column."
+    }
+  ]
+}
