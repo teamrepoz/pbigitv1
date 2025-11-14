@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Profit Round",
+      "dax_expression": "ROUND('Orders+ (Sample - Superstore)'[Profit], 0)",
+      "solution_explanation": "Converted Tableau ROUND([Profit]) (which defaults to 0 decimal places) to DAX ROUND('Orders+ (Sample - Superstore)'[Profit], 0). This is a row-level numeric transformation so it is implemented as a calculated column."
+    }
+  ]
+}
