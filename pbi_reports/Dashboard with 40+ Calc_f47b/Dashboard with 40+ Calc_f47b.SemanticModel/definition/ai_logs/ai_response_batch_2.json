@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Cost Price (Estimate)",
+      "dax_expression": "'Orders+ (Sample - Superstore)'[Sales] - 'Orders+ (Sample - Superstore)'[Profit]",
+      "solution_explanation": "Converted row-level subtraction to a calculated column by mapping Tableau column references to DAX table column syntax: [Sales] -> 'Orders+ (Sample - Superstore)'[Sales], [Profit] -> 'Orders+ (Sample - Superstore)'[Profit]. The expression has only row-level fields and no aggregations or parameters, so it is a calculated column."
+    }
+  ]
+}
