@@ -1,0 +1,116 @@
+table PRODUCTS
+	lineageTag: 71c324fb-556c-4b48-9bd5-1de2b6adf828
+
+	column WAREHOUSE_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 64512c53-0b61-4a20-bce5-327f15dec2bd
+		summarizeBy: sum
+		sourceColumn: WAREHOUSE_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column WAREHOUSE_LOCATION
+		dataType: string
+		lineageTag: 07cc5d22-9fba-4eca-afe4-c30358e50140
+		summarizeBy: none
+		sourceColumn: WAREHOUSE_LOCATION
+
+		annotation SummarizationSetBy = Automatic
+
+	column CAPACITY
+		dataType: int64
+		formatString: 0
+		lineageTag: 9d7eb5e9-0a9b-4ac7-b3f9-3b527a7a5050
+		summarizeBy: sum
+		sourceColumn: CAPACITY
+
+		annotation SummarizationSetBy = Automatic
+
+	column MANAGER_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: dc3db6ca-216f-4791-a1b8-344870c3361d
+		summarizeBy: sum
+		sourceColumn: MANAGER_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column SHIPMENT_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: a36de13a-7ce3-4d77-ad34-103e6809ebf2
+		summarizeBy: sum
+		sourceColumn: SHIPMENT_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORDER_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 7c1fbd22-c754-4c36-a57a-97148e37dd76
+		summarizeBy: sum
+		sourceColumn: ORDER_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WAREHOUSE_ID 1'
+		dataType: int64
+		formatString: 0
+		lineageTag: f424e855-ee95-4bf5-bf13-0e4154f4ebf8
+		summarizeBy: sum
+		sourceColumn: 'WAREHOUSE_ID 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column SHIPMENT_DATE
+		dataType: datetime
+		lineageTag: 5f5b0e84-f08e-49e3-b03b-94936ff18295
+		summarizeBy: none
+		sourceColumn: SHIPMENT_DATE
+
+		variation Variation
+			isDefault
+			relationship: 1a24c679-bd28-4ab3-8161-6594c1146e4d
+			defaultHierarchy: LocalDateTable_a9063af8-abdd-4715-841f-8644e874f061.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column CARRIER
+		dataType: string
+		lineageTag: 93125dbc-2a71-4a00-8d00-cdc5e415582e
+		summarizeBy: none
+		sourceColumn: CARRIER
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRACKING_NUMBER
+		dataType: string
+		lineageTag: 69d27a35-f6a8-445e-8caf-06f24b917081
+		summarizeBy: none
+		sourceColumn: TRACKING_NUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+	column INVENTORY_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 867d6735-cfe5-48d8-b2d7-e3ab6161ce52
+		summarizeBy: sum
+		sourceColumn: INVENTORY_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition PRODUCTS = m
+		mode: import
+		source =
+				let 
+					#"Source0" = Table.NestedJoin(#"STOCK_MOVEMENT_PRODUCTS", {"INVENTORY_ID"}, #"WAREHOUSE_PRODUCTS", {"MANAGER_ID"}, "WAREHOUSE_PRODUCTS", JoinKind.Inner),
+					#"Expand0" = Table.ExpandTableColumn(#"Source0", "WAREHOUSE_PRODUCTS", {"WAREHOUSE_ID", "WAREHOUSE_LOCATION", "CAPACITY", "MANAGER_ID"}, {"WAREHOUSE_ID", "WAREHOUSE_LOCATION", "CAPACITY", "MANAGER_ID"}),
+					#"Source1" = Table.NestedJoin(#"Expand0", {"WAREHOUSE_ID"}, #"SHIPMENT_PRODUCTS", {"WAREHOUSE_ID"}, "SHIPMENT_PRODUCTS", JoinKind.Inner),
+					#"Expand1" = Table.ExpandTableColumn(#"Source1", "SHIPMENT_PRODUCTS", {"SHIPMENT_ID", "ORDER_ID", "WAREHOUSE_ID", "SHIPMENT_DATE", "CARRIER", "TRACKING_NUMBER"}, {"SHIPMENT_ID", "ORDER_ID", "WAREHOUSE_ID 1", "SHIPMENT_DATE", "CARRIER", "TRACKING_NUMBER"})
+					in #"Expand1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
