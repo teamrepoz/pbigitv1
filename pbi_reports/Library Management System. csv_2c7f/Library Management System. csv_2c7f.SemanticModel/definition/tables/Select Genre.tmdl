@@ -1,0 +1,44 @@
+table 'Select Genre'
+	lineageTag: ab2bd034-f5d5-4616-a972-b806fd18fa74
+
+	column Index
+		formatString: 0
+		lineageTag: 3c79e5fc-9c24-42af-9693-027aa510d7af
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 2135188c-e32d-4f2d-b09f-b47d426e21ea
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 05cf1893-a703-49d0-962f-aa878d56296a
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Select Genre' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Genre", "Genre" }
+			    }
+			)
+
+	annotation PBI_Id = da93de927b974ee78b55c809005c80e9
+
