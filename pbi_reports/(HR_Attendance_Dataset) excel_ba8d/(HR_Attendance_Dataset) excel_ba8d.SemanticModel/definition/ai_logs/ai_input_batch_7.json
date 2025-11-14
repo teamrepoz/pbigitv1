@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Employment Duration",
+      "table_name": "Attendance+ (HR_Attendance_Dataset)",
+      "tableau_expression": "DATEDIFF('year',[JoinDate],TODAY())",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "DATEDIFF('year',[JoinDate],TODAY())",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "JoinDate": "date"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
