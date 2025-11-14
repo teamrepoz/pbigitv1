@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Loss Flag",
+      "table_name": "Orders+ (Sample - Superstore)",
+      "tableau_expression": "IF [Profit]<0 THEN 1 ELSE 0 END",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "IF [Profit]<0 THEN 1 ELSE 0 END",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Profit": "real"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
