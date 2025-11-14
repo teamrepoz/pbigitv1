@@ -1,0 +1,140 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Discount Amount",
+      "dax_expression": "'Orders+ (Sample - Superstore)'[Sales] * 'Orders+ (Sample - Superstore)'[Discount]",
+      "solution_explanation": "Converted Tableau expression [Sales]*[Discount] to DAX using row-level column references in 'Table'[Column] format.",
+      "type_changed_reason": "This is a row-level arithmetic calculation using only columns from the same row, so it should be a calculated column."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Loss Flag",
+      "dax_expression": "IF('Orders+ (Sample - Superstore)'[Profit] < 0, 1, 0)",
+      "solution_explanation": "Converted Tableau IF [Profit]<0 THEN 1 ELSE 0 END to DAX IF expression using 'Table'[Column] references.",
+      "type_changed_reason": "This is a row-level boolean-to-integer mapping using only row fields, so it should be a calculated column."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Discount Health",
+      "dax_expression": "DIVIDE('Orders+ (Sample - Superstore)'[Discount Amount], 'Orders+ (Sample - Superstore)'[Sales])",
+      "solution_explanation": "Converted Tableau [Discount Amount]/[Sales] to DAX using DIVIDE for safe division and 'Table'[Column] references.",
+      "type_changed_reason": "This is a row-level ratio calculation using only row fields, so it should be a calculated column."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Discount Tier",
+      "dax_expression": "IF(\n    'Orders+ (Sample - Superstore)'[Discount Health] > 0.25,\n    \"High Discount\",\n    IF(\n        'Orders+ (Sample - Superstore)'[Discount Health] > 0.10,\n        \"Medium Discount\",\n        \"Low Discont\"\n    )\n)",
+      "solution_explanation": "Translated nested Tableau IF/ELSEIF into nested DAX IF statements, preserving the original thresholds and string literals.",
+      "type_changed_reason": "This is a row-level categorical classification based on other row-level fields, so it should be a calculated column."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Profit Margin %",
+      "dax_expression": "'Orders+ (Sample - Superstore)'[Profit Ratio ] * 100",
+      "solution_explanation": "Converted multiplication by 100 to DAX using 'Table'[Column] reference for Profit Ratio.",
+      "type_changed_reason": "This is a row-level arithmetic transformation, so it should be a calculated column."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Profitablity Tier",
+      "dax_expression": "IF(\n    'Orders+ (Sample - Superstore)'[Profit Margin %] > 20,\n    \"High Margin\",\n    IF(\n        'Orders+ (Sample - Superstore)'[Profit Margin %] > 10,\n        \"Medium Margin\",\n        \"Low Margin\"\n    )\n)",
+      "solution_explanation": "Converted Tableau nested IF to DAX nested IF using the calculated Profit Margin % column.",
+      "type_changed_reason": "This is a row-level categorical classification, so it should be a calculated column."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Revenue Tier",
+      "dax_expression": "IF(\n    'Orders+ (Sample - Superstore)'[Net Revenue ] > 1000,\n    \"High Margin\",\n    IF(\n        'Orders+ (Sample - Superstore)'[Profit Margin %] > 10,\n        \"Medium Margin\",\n        \"Low Margin\"\n    )\n)",
+      "solution_explanation": "Translated Tableau IF/ELSEIF to nested DAX IF, using Net Revenue and Profit Margin % as in the original logic.",
+      "type_changed_reason": "This is a row-level classification based on row fields, so it should be a calculated column."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Profit Health",
+      "dax_expression": "IF(\n    'Orders+ (Sample - Superstore)'[Profit Ratio ] > 0.2,\n    IF('Orders+ (Sample - Superstore)'[Revenue Tier] = \"High\", \"Excellent\", \"Good\"),\n    IF('Orders+ (Sample - Superstore)'[Revenue Tier] = \"Low\", \"Poor\", \"Average\")\n)",
+      "solution_explanation": "Mapped nested Tableau IF/ELSE structure to nested DAX IFs, preserving the original string comparisons and outputs.",
+      "type_changed_reason": "This is a row-level categorical determination using row fields, so it should be a calculated column."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Priority Segment",
+      "dax_expression": "IF(\n    'Orders+ (Sample - Superstore)'[Profit Health] = \"Excellent\" &&\n    'Orders+ (Sample - Superstore)'[Profitablity Tier] = \"High Margin\",\n    \"Top Priority\",\n    \"Normal\"\n)",
+      "solution_explanation": "Converted Tableau logical AND condition to DAX using && and returned the two possible string results.",
+      "type_changed_reason": "This is a row-level classification using only row-level fields, so it should be a calculated column."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Performance Code",
+      "dax_expression": "IF(\n    'Orders+ (Sample - Superstore)'[Is High Performing ] = \"Yes\",\n    'Orders+ (Sample - Superstore)'[Quality Score ] + 2,\n    'Orders+ (Sample - Superstore)'[Quality Score ] - 1\n)",
+      "solution_explanation": "Translated Tableau IF to DAX IF, keeping the row-level arithmetic on Quality Score.",
+      "type_changed_reason": "This is a row-level calculation based on row fields, so it should be a calculated column."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Final Score",
+      "dax_expression": "IF(\n    'Orders+ (Sample - Superstore)'[Discount Tier] = \"Low Discont\",\n    'Orders+ (Sample - Superstore)'[Performance Code] + 1,\n    'Orders+ (Sample - Superstore)'[Performance Code]\n)",
+      "solution_explanation": "Converted Tableau IF to DAX IF using Discount Tier and Performance Code calculated columns.",
+      "type_changed_reason": "This is a row-level scoring adjustment and should be a calculated column."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Failure Risk",
+      "dax_expression": "IF(\n    'Orders+ (Sample - Superstore)'[Loss Flag] = 1 &&\n    'Orders+ (Sample - Superstore)'[Discount Tier] = \"High Discount \",\n    \"High Risk\",\n    \"Low Risk\"\n)",
+      "solution_explanation": "Mapped Tableau IF with AND condition to DAX IF using && and preserved exact string literal (including trailing space) per input.",
+      "type_changed_reason": "This is a row-level categorical determination using only row fields, so it should be a calculated column."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Order Health Score",
+      "dax_expression": "IF(\n    'Orders+ (Sample - Superstore)'[Failure Risk] = \"High Risk\",\n    'Orders+ (Sample - Superstore)'[Final Score] - 2,\n    'Orders+ (Sample - Superstore)'[Final Score]\n)",
+      "solution_explanation": "Converted Tableau IF to DAX IF to adjust Final Score based on Failure Risk, using calculated columns.",
+      "type_changed_reason": "This is a row-level score computation and should be a calculated column."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Overall Rating",
+      "dax_expression": "IF(\n    'Orders+ (Sample - Superstore)'[Priority Segment] = \"Top Priority\",\n    'Orders+ (Sample - Superstore)'[Order Health Score] + 1,\n    'Orders+ (Sample - Superstore)'[Order Health Score]\n)",
+      "solution_explanation": "Translated Tableau IF to DAX IF, incrementing Order Health Score for Top Priority as in the original.",
+      "type_changed_reason": "This is a row-level rating derived from other row-level fields, so it should be a calculated column."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Revenue Stability",
+      "dax_expression": "'Orders+ (Sample - Superstore)'[Net Revenue ] + 'Orders+ (Sample - Superstore)'[Profit Ratio ]",
+      "solution_explanation": "Converted Tableau addition of Net Revenue and Profit Ratio to DAX using 'Table'[Column] references.",
+      "type_changed_reason": "This is a row-level aggregation of two fields from the same row, so it should be a calculated column."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Stability Tier",
+      "dax_expression": "IF(\n    'Orders+ (Sample - Superstore)'[Revenue Stability] > 200,\n    \"Stable\",\n    IF(\n        'Orders+ (Sample - Superstore)'[Revenue Stability] > 50,\n        \"Moderate\",\n        \"Unstable\"\n    )\n)",
+      "solution_explanation": "Converted Tableau IF/ELSEIF/ELSE to nested DAX IF statements using the Revenue Stability calculated column.",
+      "type_changed_reason": "This is a row-level categorical classification based on a row-level field, so it should be a calculated column."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Overall Health",
+      "dax_expression": "IF(\n    'Orders+ (Sample - Superstore)'[Overall Rating] > 5 && 'Orders+ (Sample - Superstore)'[Stability Tier] = \"Stable\",\n    \"Excellent\",\n    IF(\n        'Orders+ (Sample - Superstore)'[Overall Rating] > 3,\n        \"Good\",\n        \"Poor\"\n    )\n)",
+      "solution_explanation": "Translated the Tableau IF/ELSEIF/ELSE to nested DAX IFs and converted logical AND to &&, using calculated columns Overall Rating and Stability Tier.",
+      "type_changed_reason": "This is a row-level classification combining other row-level calculated fields, so it should be a calculated column."
+    }
+  ]
+}
