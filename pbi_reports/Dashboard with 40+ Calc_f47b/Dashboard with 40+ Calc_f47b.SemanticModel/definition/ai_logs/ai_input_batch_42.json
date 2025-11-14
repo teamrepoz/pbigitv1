@@ -1,0 +1,23 @@
+{
+  "calculations": [
+    {
+      "name": "Target Status",
+      "table_name": "Orders+ (Sample - Superstore)",
+      "tableau_expression": "IF [Profit vs Target (Uses Profit Margin %)]>0 THEN \"Above Target \" ELSE \"Below Target\" END",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "IF [Profit vs Target (Uses Profit Margin %)]>0 THEN \"Above Target \" ELSE \"Below Target\" END",
+        "calculated_fields": {
+          "Profit vs Target (Uses Profit Margin %)": "[Profit Margin %]-15",
+          "Profit Margin %": "[Profit Ratio ]*100"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {
+          "Profit vs Target (Uses Profit Margin %)": "real",
+          "Profit Margin %": "real"
+        }
+      }
+    }
+  ]
+}
