@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Parameters",
+      "name": "Status Selector",
+      "dax_expression": "\"Present\"",
+      "solution_explanation": "The Tableau calculation is a constant string literal. This is a row-level value with no aggregations or parameters, so convert it to a calculated column that returns the string \"Present\"."
+    }
+  ]
+}
