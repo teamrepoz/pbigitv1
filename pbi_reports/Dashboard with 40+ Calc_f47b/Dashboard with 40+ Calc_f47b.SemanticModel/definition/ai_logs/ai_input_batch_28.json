@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Category Has Profit",
+      "table_name": "Orders+ (Sample - Superstore)",
+      "tableau_expression": "IF [Profit]>0 THEN \"Profit\" ELSE \"Loss\" END",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "IF [Profit]>0 THEN \"Profit\" ELSE \"Loss\" END",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Profit": "real"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
