@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Quantity * Profit",
+      "dax_expression": "'Orders+ (Sample - Superstore)'[Quantity] * 'Orders+ (Sample - Superstore)'[Profit]",
+      "solution_explanation": "Converted row-level arithmetic: multiply the row's Quantity by the row's Profit using table-qualified column references. This is a calculated column because it operates at the row level without aggregation."
+    }
+  ]
+}
