@@ -1,0 +1,143 @@
+table 'Attendance+ (HR_Attendance_Dataset)'
+	lineageTag: 69c2173d-3d9b-4206-a09b-d0df981d9d93
+
+	measure Attendance% = VAR Numerator = SUMX( 'Attendance+ (HR_Attendance_Dataset)', IF( 'Attendance+ (HR_Attendance_Dataset)'[Status] = "Present", 1, 0 ) ) VAR Denominator = COUNT('Attendance+ (HR_Attendance_Dataset)'[AttendanceID]) RETURN DIVIDE(Numerator, Denominator)
+		formatString: 0
+		lineageTag: 6a8134b7-85ee-4e57-ace2-241aa0da0a61
+
+	measure 'Top N' = VAR TopNParam = SELECTEDVALUE('Top N'[Display As]) VAR PresentCountPerContext = CALCULATE( SUMX( 'Attendance+ (HR_Attendance_Dataset)', IF('Attendance+ (HR_Attendance_Dataset)'[Status] = "Present", 1, 0) ) ) VAR RankValue = RANKX( ALL('Attendance+ (HR_Attendance_Dataset)'), CALCULATE( SUMX( 'Attendance+ (HR_Attendance_Dataset)', IF('Attendance+ (HR_Attendance_Dataset)'[Status] = "Present", 1, 0) ) ), , DESC, DENSE ) RETURN IF(RankValue <= TopNParam, TRUE(), FALSE())
+		lineageTag: 9af57702-0d32-4d46-b6c3-8c05f4eb9356
+
+	measure 'Status Selector' = 'Attendance+ (HR_Attendance_Dataset)'[Status] = SELECTEDVALUE('Status Selector'[Display As])
+		lineageTag: 214e6228-ea04-48fd-8ee4-166cfe530712
+
+	measure 'Select Department' = 'Attendance+ (HR_Attendance_Dataset)'[DepartmentName] = SELECTEDVALUE('Select Departmrnt'[Display As])
+		lineageTag: bad66657-449b-4609-8dad-917c357e1beb
+
+	column EmployeeID
+		dataType: int64
+		formatString: 0
+		lineageTag: 8030d183-58e4-4702-bd8b-74949513e59c
+		summarizeBy: sum
+		sourceColumn: EmployeeID
+
+		annotation SummarizationSetBy = Automatic
+
+	column EmployeeName
+		dataType: string
+		lineageTag: 10f71c89-4070-4b7e-9570-38c8f17cd201
+		summarizeBy: none
+		sourceColumn: EmployeeName
+
+		annotation SummarizationSetBy = Automatic
+
+	column DepartmentID
+		dataType: int64
+		formatString: 0
+		lineageTag: 2be27663-5b1a-4891-a9b0-02796b330091
+		summarizeBy: sum
+		sourceColumn: DepartmentID
+
+		annotation SummarizationSetBy = Automatic
+
+	column JoinDate
+		dataType: datetime
+		lineageTag: f45be486-b2eb-48fc-8887-8ff10b7b5c3f
+		summarizeBy: none
+		sourceColumn: JoinDate
+
+		variation Variation
+			isDefault
+			relationship: 36007a19-cfab-4e4d-a949-fccbd582affc
+			defaultHierarchy: LocalDateTable_b68084fa-df9e-4f29-b964-1aa397a95bea.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DepartmentID 1'
+		dataType: int64
+		formatString: 0
+		lineageTag: 4eb0485e-439c-4281-810b-9755180e8de3
+		summarizeBy: sum
+		sourceColumn: 'DepartmentID 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column DepartmentName
+		dataType: string
+		lineageTag: f5d1351b-9ff4-4a0e-8b4b-ce8ed8af48f1
+		summarizeBy: none
+		sourceColumn: DepartmentName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Location
+		dataType: string
+		lineageTag: 7e1f4b69-2e18-441c-afb5-3c41bf9f44b4
+		summarizeBy: none
+		sourceColumn: Location
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'EmployeeID 1'
+		dataType: int64
+		formatString: 0
+		lineageTag: a63e214c-2c4e-4cc5-b240-de6ed89ad2ee
+		summarizeBy: sum
+		sourceColumn: 'EmployeeID 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Status Category' = IF( 'Attendance+ (HR_Attendance_Dataset)'[Status] = "Present", "On Time", IF( 'Attendance+ (HR_Attendance_Dataset)'[Status] = "Work From Home", "Remote", "Needs Attention" ) )
+		lineageTag: b0137351-042e-442e-929d-fd867206c495
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Days Present' = IF('Attendance+ (HR_Attendance_Dataset)'[Status] = "Present", 1, 0)
+		formatString: 0
+		lineageTag: ce6e2990-c6ce-477a-af4a-2ac5659e417d
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Leaves' = IF('Attendance+ (HR_Attendance_Dataset)'[Status] = "Leave", 1, 0)
+		formatString: 0
+		lineageTag: 3c9efd89-45af-4b7d-9178-16fefb895001
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Work From Home Count' = IF('Attendance+ (HR_Attendance_Dataset)'[Status] = "Work From Home", 1, 0)
+		formatString: 0
+		lineageTag: f18f9f3d-91b0-4e15-9ae6-8adfafd46ba6
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Employment Duration' = DATEDIFF('Attendance+ (HR_Attendance_Dataset)'[JoinDate], TODAY(), YEAR)
+		formatString: 0
+		lineageTag: aacc71d6-55b2-46fd-80b4-8357b1983967
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Absent' = IF('Attendance+ (HR_Attendance_Dataset)'[Status] = "Absent", 1, 0)
+		formatString: 0
+		lineageTag: 0dd7fb9f-f8e9-4775-9a20-7e04f82a750b
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Attendance+ (HR_Attendance_Dataset)' = m
+		mode: import
+		source =
+				let 
+					#"Source0" = Table.NestedJoin(#"Attendance_Attendance+ (HR_Attendance_Dataset)", {"EmployeeID"}, #"Employees_Attendance+ (HR_Attendance_Dataset)", {"EmployeeID"}, "Employees_Attendance+ (HR_Attendance_Dataset)", JoinKind.Inner),
+					#"Expand0" = Table.ExpandTableColumn(#"Source0", "Employees_Attendance+ (HR_Attendance_Dataset)", {"EmployeeID", "EmployeeName", "DepartmentID", "JoinDate"}, {"EmployeeID 1", "EmployeeName", "DepartmentID", "JoinDate"}),
+					#"Source1" = Table.NestedJoin(#"Expand0", {"DepartmentID"}, #"Departments_Attendance+ (HR_Attendance_Dataset)", {"DepartmentID"}, "Departments_Attendance+ (HR_Attendance_Dataset)", JoinKind.Inner),
+					#"Expand1" = Table.ExpandTableColumn(#"Source1", "Departments_Attendance+ (HR_Attendance_Dataset)", {"DepartmentID", "DepartmentName", "Location"}, {"DepartmentID 1", "DepartmentName", "Location"})
+					in #"Expand1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
