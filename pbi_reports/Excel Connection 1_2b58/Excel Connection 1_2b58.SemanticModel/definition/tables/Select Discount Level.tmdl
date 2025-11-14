@@ -1,0 +1,47 @@
+table 'Select Discount Level'
+	lineageTag: f5fcc997-dbd9-4df9-8eea-e97c954233ba
+
+	column Index
+		formatString: 0
+		lineageTag: b9fd8947-3387-4441-9283-7848ea5db15a
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 939ec878-3941-4e55-82c5-9a9435bba8c8
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: fbd70537-64dc-4907-81a3-ad4ffd680710
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Select Discount Level' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", DOUBLE,
+			    "Value", DOUBLE,
+			    {
+			        { 0, 5.0, 5.0 },
+				{ 1, 10.0, 10.0 },
+				{ 2, 15.0, 15.0 },
+				{ 3, 20.0, 20.0 }
+			    }
+			)
+
+	annotation PBI_Id = d835c8f610ab4dc2978387a6f940a538
+
