@@ -1,0 +1,28 @@
+table 'Min Age'
+	lineageTag: 5d0f3c92-fe2b-4680-b3db-5c89060bd6d2
+
+	measure 'Min Age Value' = SELECTEDVALUE('Min Age'[Min Age], 0)
+		lineageTag: 94224ed7-af8f-4ab3-98b2-bfead0743148
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Min Age'
+		dataType: double
+		formatString: 0
+		lineageTag: a462cb0a-025d-43cf-83bb-8bd2f72888bc
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Min Age' = calculated
+		mode: import
+		source = GENERATESERIES(0, 100)
+
+	annotation PBI_Id = 28089d1fe88247da87b36a196d990281
+
