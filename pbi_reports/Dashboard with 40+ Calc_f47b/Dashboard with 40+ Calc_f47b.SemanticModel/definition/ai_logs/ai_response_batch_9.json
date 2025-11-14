@@ -1,0 +1,25 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Shipping Cost Estimate",
+      "dax_expression": "'Orders+ (Sample - Superstore)'[Quantity] * 5",
+      "solution_explanation": "Converted row-level multiplication ([Quantity]*5) to a DAX calculated column using the table-qualified column reference."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Sales After Discont",
+      "dax_expression": "'Orders+ (Sample - Superstore)'[Sales] - 'Orders+ (Sample - Superstore)'[Sales] * 'Orders+ (Sample - Superstore)'[Discount]",
+      "solution_explanation": "Converted row-level discount calculation ([Sales]-[Sales]*[Discount]) to a DAX calculated column using table-qualified column references."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Net Revenue ",
+      "dax_expression": "'Orders+ (Sample - Superstore)'[Sales After Discont] - 'Orders+ (Sample - Superstore)'[Shipping Cost Estimate]",
+      "solution_explanation": "Converted the row-level subtraction of two calculated fields to a DAX calculated column and qualified all column references with the table name."
+    }
+  ]
+}
