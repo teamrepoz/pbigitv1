@@ -1,0 +1,20 @@
+{
+  "calculations": [
+    {
+      "name": "Attendance%",
+      "table_name": "Attendance+ (HR_Attendance_Dataset)",
+      "tableau_expression": "SUM(IF [Status]=\"Present\" THEN 1 ELSE 0 END) /COUNT([AttendanceID])",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "SUM(IF [Status]=\"Present\" THEN 1 ELSE 0 END) /COUNT([AttendanceID])",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "AttendanceID": "integer",
+          "Status": "string"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
