@@ -1,0 +1,27 @@
+{
+  "calculations": [
+    {
+      "name": "Priority Segment",
+      "table_name": "Orders+ (Sample - Superstore)",
+      "tableau_expression": "IF [Profit Health] = \"Excellent\" AND [Profitablity Tier] = \"High Margin\"\r\nTHEN \"Top Priority\"\r\nELSE \"Normal\"\r\nEND",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "IF [Profit Health] = \"Excellent\" AND [Profitablity Tier] = \"High Margin\"\r\nTHEN \"Top Priority\"\r\nELSE \"Normal\"\r\nEND",
+        "calculated_fields": {
+          "Profitablity Tier": "IF  [Profit Margin %]>20 THEN \"High Margin\" ELSEIF [Profit Margin %]>10 THEN \"Medium Margin\" ELSE \"Low Margin\" END",
+          "Profit Health": "IF [Profit Ratio ] > 0.2 THEN\r\n    IF [Revenue Tier] = \"High\" THEN \"Excellent\"\r\n    ELSE \"Good\" END\r\nELSE\r\n    IF [Revenue Tier] = \"Low\" THEN \"Poor\"\r\n    ELSE \"Average\"\r\nEND END",
+          "Profit Margin %": "[Profit Ratio ]*100",
+          "Revenue Tier": "IF [Net Revenue ]>1000 THEN \"High Margin\" ELSEIF [Profit Margin %]>10 THEN \"Medium Margin\" ELSE \"Low Margin\" END"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {
+          "Profit Margin %": "real",
+          "Profitablity Tier": "String",
+          "Profit Health": "String",
+          "Revenue Tier": "String"
+        }
+      }
+    }
+  ]
+}
