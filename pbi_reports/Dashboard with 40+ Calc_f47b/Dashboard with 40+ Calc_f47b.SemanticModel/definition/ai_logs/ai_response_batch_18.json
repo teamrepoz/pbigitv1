@@ -1,0 +1,39 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Discount Amount",
+      "dax_expression": "'Orders+ (Sample - Superstore)'[Sales] * 'Orders+ (Sample - Superstore)'[Discount]",
+      "solution_explanation": "Converted Tableau row-level expression [Sales]*[Discount] to a DAX calculated column using 'Orders+ (Sample - Superstore)'[Sales] * 'Orders+ (Sample - Superstore)'[Discount]. This is row-level logic, so created as a calculated column."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Discount Health",
+      "dax_expression": "'Orders+ (Sample - Superstore)'[Discount Amount] / 'Orders+ (Sample - Superstore)'[Sales]",
+      "solution_explanation": "Converted Tableau row-level expression [Discount Amount]/[Sales] to a DAX calculated column referencing the computed 'Discount Amount'. This is row-level logic, so created as a calculated column."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Performance Code",
+      "dax_expression": "IF('Orders+ (Sample - Superstore)'[Is High Performing ] = \"Yes\", 'Orders+ (Sample - Superstore)'[Quality Score ] + 2, 'Orders+ (Sample - Superstore)'[Quality Score ] - 1)",
+      "solution_explanation": "Converted Tableau IF ... THEN ... ELSE ... END to DAX IF(...) for the row-level Performance Code logic and replaced column references with 'Orders+ (Sample - Superstore)'[Column]. Created as a calculated column since it is row-level."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Discount Tier",
+      "dax_expression": "IF('Orders+ (Sample - Superstore)'[Discount Health] > 0.25, \"High Discount\", IF('Orders+ (Sample - Superstore)'[Discount Health] > 0.10, \"Medium Discount\", \"Low Discont\"))",
+      "solution_explanation": "Translated the Tableau nested IF/ELSEIF logic to nested DAX IF(...) expressions and replaced column references with 'Orders+ (Sample - Superstore)'[Discount Health]. This is row-level classification, so created as a calculated column."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Final Score",
+      "dax_expression": "IF('Orders+ (Sample - Superstore)'[Discount Tier] = \"Low Discont\", 'Orders+ (Sample - Superstore)'[Performance Code] + 1, 'Orders+ (Sample - Superstore)'[Performance Code])",
+      "solution_explanation": "Converted the Tableau IF ... THEN ... ELSE ... END to a DAX IF(...) expression and adjusted column references to 'Orders+ (Sample - Superstore)'[Column]. This uses only row-level calculated fields, so it is implemented as a calculated column."
+    }
+  ]
+}
