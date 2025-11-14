@@ -1,0 +1,45 @@
+table 'Select Movement Type'
+	lineageTag: 71eca7fb-8d41-4c2c-8673-c8258c999856
+
+	column Index
+		formatString: 0
+		lineageTag: 96fd799f-8429-413c-86cb-2be9cc3874fd
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 06320e94-2d8a-448c-ae95-f6aff986ca92
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 5e3c2148-4326-4e9f-a98f-ae9b27cc0c9d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Select Movement Type' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, " Inbound", " Inbound" },
+				{ 1, "Outbound", "Outbound" }
+			    }
+			)
+
+	annotation PBI_Id = db751aba526d4ad7beaddbaf7f9967c5
+
