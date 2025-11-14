@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Priority Flag",
+      "dax_expression": "IF(\n    'Orders+ (Sample - Superstore)'[Overall Health] = \"Excellent \" &&\n    'Orders+ (Sample - Superstore)'[Priority Segment] = \"Top Priority \",\n    1,\n    0\n)",
+      "solution_explanation": "Converted the row-level Tableau IF condition to a DAX calculated column. Replaced Tableau logical AND with && and transformed column references to 'Orders+ (Sample - Superstore)'[ColumnName] format. The expression returns 1 when both conditions match the exact string literals (including trailing spaces), otherwise 0."
+    }
+  ]
+}
