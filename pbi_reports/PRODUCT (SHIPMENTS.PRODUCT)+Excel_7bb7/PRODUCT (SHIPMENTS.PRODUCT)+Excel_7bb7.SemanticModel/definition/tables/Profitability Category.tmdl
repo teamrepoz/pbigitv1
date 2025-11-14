@@ -1,0 +1,46 @@
+table 'Profitability Category'
+	lineageTag: 05a3f741-5f17-4155-b91b-f3c1d720fc26
+
+	column Index
+		formatString: 0
+		lineageTag: f57280c5-72fa-4722-a5ee-751929c68484
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 77608026-c070-41b9-b31e-0dcf6a627a30
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 3361a857-0ceb-483f-93be-26640fa7d1c3
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Profitability Category' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "High", "High" },
+				{ 1, "Medium", "Medium" },
+				{ 2, "Low", "Low" }
+			    }
+			)
+
+	annotation PBI_Id = dc9cf0c83596447687e49e5c77eab7e8
+
