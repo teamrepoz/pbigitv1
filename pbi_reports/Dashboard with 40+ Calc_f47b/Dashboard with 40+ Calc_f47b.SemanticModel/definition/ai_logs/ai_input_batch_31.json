@@ -1,0 +1,25 @@
+{
+  "calculations": [
+    {
+      "name": "Is High Performing ",
+      "table_name": "Orders+ (Sample - Superstore)",
+      "tableau_expression": "IF [Revenue Tier]=\"High\" AND  [Profitablity Tier]= \"High Margin\" THEN \"Yes\" ELSE \"No\"  END",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "IF [Revenue Tier]=\"High\" AND  [Profitablity Tier]= \"High Margin\" THEN \"Yes\" ELSE \"No\"  END",
+        "calculated_fields": {
+          "Revenue Tier": "IF [Net Revenue ]>1000 THEN \"High Margin\" ELSEIF [Profit Margin %]>10 THEN \"Medium Margin\" ELSE \"Low Margin\" END",
+          "Profitablity Tier": "IF  [Profit Margin %]>20 THEN \"High Margin\" ELSEIF [Profit Margin %]>10 THEN \"Medium Margin\" ELSE \"Low Margin\" END",
+          "Profit Margin %": "[Profit Ratio ]*100"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {
+          "Profit Margin %": "real",
+          "Revenue Tier": "String",
+          "Profitablity Tier": "String"
+        }
+      }
+    }
+  ]
+}
