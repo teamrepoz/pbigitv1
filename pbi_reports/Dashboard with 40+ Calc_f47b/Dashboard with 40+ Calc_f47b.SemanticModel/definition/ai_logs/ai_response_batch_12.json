@@ -1,0 +1,25 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Discount Amount",
+      "dax_expression": "'Orders+ (Sample - Superstore)'[Sales] * 'Orders+ (Sample - Superstore)'[Discount]",
+      "solution_explanation": "Converted the row-level Tableau calculation [Sales]*[Discount] to a calculated column in DAX using table-scoped column references."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Cost Price (Estimate)",
+      "dax_expression": "'Orders+ (Sample - Superstore)'[Sales] - 'Orders+ (Sample - Superstore)'[Profit]",
+      "solution_explanation": "Converted the row-level Tableau calculation [Sales]-[Profit] to a calculated column in DAX using table-scoped column references."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Cost After Discount ",
+      "dax_expression": "'Orders+ (Sample - Superstore)'[Cost Price (Estimate)] - 'Orders+ (Sample - Superstore)'[Discount Amount]",
+      "solution_explanation": "Converted the row-level Tableau calculation [Cost Price (Estimate)]-[Discount Amount] to a calculated column in DAX using table-scoped column references. Both referenced fields are provided as calculated columns."
+    }
+  ]
+}
