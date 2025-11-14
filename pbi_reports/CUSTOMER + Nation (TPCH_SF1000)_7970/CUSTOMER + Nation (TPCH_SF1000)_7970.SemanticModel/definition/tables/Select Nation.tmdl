@@ -1,0 +1,44 @@
+table 'Select Nation'
+	lineageTag: 95013b9f-5a60-4062-9c9d-4a36cd8ab419
+
+	column Index
+		formatString: 0
+		lineageTag: 51389dc2-b631-4a5d-9b33-f751d0ac6fff
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: bc9c2237-60e1-443a-bf0c-39ef8bb295a0
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 9ae3098b-0d64-4377-bd02-e4abbd78ff28
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Select Nation' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        {0, "N Name", "N Name"}
+			    }
+			)
+
+	annotation PBI_Id = 812fd6e12d5b4c35966c31d03eeb2e99
+
