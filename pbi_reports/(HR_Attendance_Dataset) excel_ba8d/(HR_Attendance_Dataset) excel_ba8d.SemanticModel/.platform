@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "(HR_Attendance_Dataset) excel_ba8d"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "28d61978-bb15-4a21-a0e8-921718384700"
+  }
+}
