@@ -1,0 +1,20 @@
+{
+  "calculations": [
+    {
+      "name": "Cost Price (Estimate)",
+      "table_name": "Orders+ (Sample - Superstore)",
+      "tableau_expression": "[Sales]-[Profit]",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "[Sales]-[Profit]",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Sales": "real",
+          "Profit": "real"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
