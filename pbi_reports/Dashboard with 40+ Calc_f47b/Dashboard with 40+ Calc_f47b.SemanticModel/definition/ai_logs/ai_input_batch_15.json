@@ -1,0 +1,23 @@
+{
+  "calculations": [
+    {
+      "name": "Quality Score ",
+      "table_name": "Orders+ (Sample - Superstore)",
+      "tableau_expression": "IIF([Profit Margin %]>15 AND [Heavy Loss Check ]= \"Normal\", IIF([Revenue Tier]=\"High\",5,4),2)",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "IIF([Profit Margin %]>15 AND [Heavy Loss Check ]= \"Normal\", IIF([Revenue Tier]=\"High\",5,4),2)",
+        "calculated_fields": {
+          "Profit Margin %": "[Profit Ratio ]*100",
+          "Revenue Tier": "IF [Net Revenue ]>1000 THEN \"High Margin\" ELSEIF [Profit Margin %]>10 THEN \"Medium Margin\" ELSE \"Low Margin\" END"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {
+          "Profit Margin %": "real",
+          "Revenue Tier": "String"
+        }
+      }
+    }
+  ]
+}
