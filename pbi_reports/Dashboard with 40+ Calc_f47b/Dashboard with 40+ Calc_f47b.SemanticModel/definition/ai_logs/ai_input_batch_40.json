@@ -1,0 +1,33 @@
+{
+  "calculations": [
+    {
+      "name": "Alert Flag",
+      "table_name": "Orders+ (Sample - Superstore)",
+      "tableau_expression": "IF [Rank Category ] = \"Tier 3\" AND [Failure Risk] = \"High Risk\"\r\nTHEN \"Alert\"\r\nELSE \"Normal\"\r\nEND",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "IF [Rank Category ] = \"Tier 3\" AND [Failure Risk] = \"High Risk\"\r\nTHEN \"Alert\"\r\nELSE \"Normal\"\r\nEND",
+        "calculated_fields": {
+          "Failure Risk": "IF [Loss Flag]=1 AND  [Discount Tier]=\"High Discount \" THEN \"High Risk\" ELSE \"Low Risk\" END",
+          "Discount Tier": "IF [Discount Health]>0.25 THEN \"High Discount\" ELSEIF  [Discount Health]>0.10 THEN \"Medium Discount\" ELSE \"Low Discont\" END",
+          "Loss Flag": "IF [Profit]<0 THEN 1 ELSE 0 END",
+          "Discount Health": "[Discount Amount]/[Sales]",
+          "Discount Amount": "[Sales]*[Discount]"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Sales": "real",
+          "Discount": "real",
+          "Profit": "real"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Loss Flag": "integer",
+          "Discount Health": "real",
+          "Discount Amount": "real",
+          "Failure Risk": "String",
+          "Discount Tier": "String"
+        }
+      }
+    }
+  ]
+}
