@@ -1,0 +1,27 @@
+{
+  "calculations": [
+    {
+      "name": "True Cost",
+      "table_name": "Orders+ (Sample - Superstore)",
+      "tableau_expression": "[Cost Price (Estimate)]*[Shipping Cost Estimate]",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "[Cost Price (Estimate)]*[Shipping Cost Estimate]",
+        "calculated_fields": {
+          "Cost Price (Estimate)": "[Sales]-[Profit]",
+          "Shipping Cost Estimate": "[Quantity]*5"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Sales": "real",
+          "Quantity": "integer",
+          "Profit": "real"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Cost Price (Estimate)": "real",
+          "Shipping Cost Estimate": "integer"
+        }
+      }
+    }
+  ]
+}
