@@ -1,0 +1,20 @@
+{
+  "calculations": [
+    {
+      "name": "Sales After Discont",
+      "table_name": "Orders+ (Sample - Superstore)",
+      "tableau_expression": "[Sales]-[Sales]*[Discount]",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "[Sales]-[Sales]*[Discount]",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Sales": "real",
+          "Discount": "real"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
