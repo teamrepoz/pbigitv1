@@ -1,0 +1,18 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Revenue Stability",
+      "dax_expression": "'Orders+ (Sample - Superstore)'[Net Revenue ] + 'Orders+ (Sample - Superstore)'[Profit Ratio ]",
+      "solution_explanation": "Converted the dependent calculated field by translating the row-level arithmetic from Tableau to DAX. Both referenced columns are row-level, so this is implemented as a calculated column."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Stability Tier",
+      "dax_expression": "VAR rev = 'Orders+ (Sample - Superstore)'[Revenue Stability]\nRETURN IF(\n    rev > 200, \"Stable\",\n    IF(rev > 50, \"Moderate\", \"Unstable\")\n)",
+      "solution_explanation": "Translated the Tableau IF / ELSEIF logic to nested DAX IF statements. The calculation references the row-level calculated field 'Revenue Stability', so this remains a calculated column and returns one of the string literals \"Stable\", \"Moderate\", or \"Unstable\"."
+    }
+  ]
+}
