@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "Revenue Stability",
+      "table_name": "Orders+ (Sample - Superstore)",
+      "tableau_expression": "[Net Revenue ]+[Profit Ratio ]",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "[Net Revenue ]+[Profit Ratio ]",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
