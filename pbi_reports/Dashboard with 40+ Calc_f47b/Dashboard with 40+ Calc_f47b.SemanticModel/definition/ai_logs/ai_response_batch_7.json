@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Sales After Discont",
+      "dax_expression": "'Orders+ (Sample - Superstore)'[Sales] - 'Orders+ (Sample - Superstore)'[Sales] * 'Orders+ (Sample - Superstore)'[Discount]",
+      "solution_explanation": "This is a row-level arithmetic calculation (per-row Sales and Discount). Converted each column reference to 'Orders+ (Sample - Superstore)'[ColumnName] and expressed the formula as a calculated column."
+    }
+  ]
+}
