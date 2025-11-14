@@ -1,0 +1,44 @@
+table 'Bin Size'
+	lineageTag: 98a5eac6-b0c5-4f44-90ba-f92cc29da263
+
+	column Index
+		formatString: 0
+		lineageTag: 2ad81bb5-da97-4523-945f-6373c90d3baa
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 7c4283f0-7181-46bc-9911-c4196085a40b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: e68f736b-fad2-46c5-bfa2-9533f44a2222
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Bin Size' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", INTEGER,
+			    "Value", INTEGER,
+			    {
+			        {0, 50, 50}
+			    }
+			)
+
+	annotation PBI_Id = b8c180e80e514c088e5a127a2d7ef109
+
