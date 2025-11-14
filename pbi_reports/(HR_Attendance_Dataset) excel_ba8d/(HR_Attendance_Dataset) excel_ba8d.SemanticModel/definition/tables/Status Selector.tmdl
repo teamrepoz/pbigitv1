@@ -1,0 +1,47 @@
+table 'Status Selector'
+	lineageTag: 1d7e8a01-5225-4745-b2ea-c9d68725905b
+
+	column Index
+		formatString: 0
+		lineageTag: d52592a8-0c37-4ecd-a01b-f0f0b65a6160
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: fe4e3e3f-853e-4e9d-8522-e8b70a3d8560
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 4e7c23f4-7810-4c8e-a68d-d9b0473e7d2d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Status Selector' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Present", "Present" },
+				{ 1, "Absent", "Absent" },
+				{ 2, "Leave", "Leave" },
+				{ 3, "Work From Home", "Work From Home" }
+			    }
+			)
+
+	annotation PBI_Id = 56df49738e684eb1a2920a680e80e085
+
