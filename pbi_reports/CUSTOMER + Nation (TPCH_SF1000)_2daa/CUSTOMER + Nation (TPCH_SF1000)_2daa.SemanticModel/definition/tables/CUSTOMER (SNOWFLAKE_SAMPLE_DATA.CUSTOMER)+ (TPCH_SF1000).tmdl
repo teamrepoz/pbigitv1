@@ -1,0 +1,117 @@
+table 'CUSTOMER (SNOWFLAKE_SAMPLE_DATA.CUSTOMER)+ (TPCH_SF1000)'
+	lineageTag: c6ccbc21-6c4f-4e8c-a600-353fb5e30617
+
+	column C_CUSTKEY
+		dataType: int64
+		formatString: 0
+		lineageTag: 2e312480-9fe6-4ca1-b713-844a19aad24a
+		summarizeBy: sum
+		sourceColumn: C_CUSTKEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column C_NAME
+		dataType: string
+		lineageTag: 5de5e0de-144c-4785-a991-9543b09a185b
+		summarizeBy: none
+		sourceColumn: C_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column C_ADDRESS
+		dataType: string
+		lineageTag: b724b161-ead6-4633-92cd-d2fcb09642af
+		summarizeBy: none
+		sourceColumn: C_ADDRESS
+
+		annotation SummarizationSetBy = Automatic
+
+	column C_NATIONKEY
+		dataType: int64
+		formatString: 0
+		lineageTag: 2b7c8882-ab51-4eba-a263-e0a531f58174
+		summarizeBy: sum
+		sourceColumn: C_NATIONKEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column C_PHONE
+		dataType: string
+		lineageTag: ac4d5b26-6162-4991-b5ba-7c63887ed5bd
+		summarizeBy: none
+		sourceColumn: C_PHONE
+
+		annotation SummarizationSetBy = Automatic
+
+	column C_ACCTBAL
+		dataType: double
+		formatString: General Number
+		lineageTag: 861fa24f-cc2d-448a-9c39-e58bdcf72d1c
+		summarizeBy: sum
+		sourceColumn: C_ACCTBAL
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column C_MKTSEGMENT
+		dataType: string
+		lineageTag: 788aeb97-738e-4a64-b4ed-e5e4127f29e4
+		summarizeBy: none
+		sourceColumn: C_MKTSEGMENT
+
+		annotation SummarizationSetBy = Automatic
+
+	column C_COMMENT
+		dataType: string
+		lineageTag: 149e5682-9f5e-4995-8e73-4e57caf4f8fe
+		summarizeBy: none
+		sourceColumn: C_COMMENT
+
+		annotation SummarizationSetBy = Automatic
+
+	column N_NATIONKEY
+		dataType: int64
+		formatString: 0
+		lineageTag: 1e9c4c88-d79c-47a2-8ac7-fdfb3bfe526d
+		summarizeBy: sum
+		sourceColumn: N_NATIONKEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column N_NAME
+		dataType: string
+		lineageTag: 49b90d4d-dd32-40be-b583-73aeef6689da
+		summarizeBy: none
+		sourceColumn: N_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column N_REGIONKEY
+		dataType: int64
+		formatString: 0
+		lineageTag: 13aca8d6-23c7-42be-ab45-146c86021f6c
+		summarizeBy: sum
+		sourceColumn: N_REGIONKEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column N_COMMENT
+		dataType: string
+		lineageTag: d6bec650-e89d-4fd4-9fb5-8459a2f9d724
+		summarizeBy: none
+		sourceColumn: N_COMMENT
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'CUSTOMER (SNOWFLAKE_SAMPLE_DATA.CUSTOMER)+ (TPCH_SF1000)' = m
+		mode: import
+		source =
+				let 
+					#"Source0" = Table.NestedJoin(#"CUSTOMER_CUSTOMER (SNOWFLAKE_SAMPLE_DATA.CUSTOMER)+ (TPCH_SF1000)", {"C_NATIONKEY"}, #"NATION_CUSTOMER (SNOWFLAKE_SAMPLE_DATA.CUSTOMER)+ (TPCH_SF1000)", {"N_NATIONKEY"}, "NATION_CUSTOMER (SNOWFLAKE_SAMPLE_DATA.CUSTOMER)+ (TPCH_SF1000)", JoinKind.Inner),
+					#"Expand0" = Table.ExpandTableColumn(#"Source0", "NATION_CUSTOMER (SNOWFLAKE_SAMPLE_DATA.CUSTOMER)+ (TPCH_SF1000)", {"N_NATIONKEY", "N_NAME", "N_REGIONKEY", "N_COMMENT"}, {"N_NATIONKEY", "N_NAME", "N_REGIONKEY", "N_COMMENT"})
+					in #"Expand0"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
