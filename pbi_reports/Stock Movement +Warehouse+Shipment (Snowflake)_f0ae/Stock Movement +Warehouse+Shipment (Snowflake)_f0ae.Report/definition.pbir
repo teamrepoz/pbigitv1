@@ -1,0 +1,8 @@
+{
+  "version": "4.0",
+  "datasetReference": {
+    "byPath": {
+      "path": "../Stock Movement +Warehouse+Shipment (Snowflake)_f0ae.SemanticModel"
+    }
+  }
+}
