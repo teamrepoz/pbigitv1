@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Attendance+ (HR_Attendance_Dataset)",
+      "name": "Attendance%",
+      "dax_expression": "VAR Numerator =\n    SUMX(\n        'Attendance+ (HR_Attendance_Dataset)',\n        IF(\n            'Attendance+ (HR_Attendance_Dataset)'[Status] = \"Present\",\n            1,\n            0\n        )\n    )\nVAR Denominator =\n    COUNT('Attendance+ (HR_Attendance_Dataset)'[AttendanceID])\nRETURN\nDIVIDE(Numerator, Denominator)",
+      "solution_explanation": "Converted Tableau SUM(IF [Status] = \"Present\" THEN 1 ELSE 0 END) to a SUMX over the table to perform the row-level IF, mapped COUNT([AttendanceID]) to COUNT('Attendance+ (HR_Attendance_Dataset)'[AttendanceID]), and used DIVIDE for safe division. All column references use the 'TableName'[Column] format."
+    }
+  ]
+}
