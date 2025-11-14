@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Shipping Cost Estimate",
+      "dax_expression": "'Orders+ (Sample - Superstore)'[Quantity] * 5",
+      "solution_explanation": "Row-level multiplication without aggregation converted to a calculated column. Transformed [Quantity] to 'Orders+ (Sample - Superstore)'[Quantity] and multiplied by 5."
+    }
+  ]
+}
