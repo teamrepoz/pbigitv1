@@ -1,0 +1,28 @@
+table 'Select Profit Threshold'
+	lineageTag: a4ba234c-c0b4-4086-a868-95ba4c7fc2b6
+
+	measure 'Select Profit Threshold Value' = SELECTEDVALUE('Select Profit Threshold'[Select Profit Threshold], 0.0)
+		lineageTag: 6f4ea616-5cda-4f16-83b0-25d92a1bf591
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Select Profit Threshold'
+		dataType: double
+		formatString: 0
+		lineageTag: 5cff8b03-3bc1-4143-9eb6-9e37029d4dbe
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Select Profit Threshold' = calculated
+		mode: import
+		source = GENERATESERIES(0.0, 500000.0, 10000.0)
+
+	annotation PBI_Id = bcfb64cdfb0d4731bb9f23224eb2ad85
+
