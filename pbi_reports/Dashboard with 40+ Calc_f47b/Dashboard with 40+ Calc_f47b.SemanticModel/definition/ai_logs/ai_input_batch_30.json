@@ -1,0 +1,23 @@
+{
+  "calculations": [
+    {
+      "name": "Heavy Loss Check ",
+      "table_name": "Orders+ (Sample - Superstore)",
+      "tableau_expression": "IF [Loss Flag]=1 AND  [Profit]<-100 THEN \"Heavy Loss\" ELSE \"Normal\" END",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "IF [Loss Flag]=1 AND  [Profit]<-100 THEN \"Heavy Loss\" ELSE \"Normal\" END",
+        "calculated_fields": {
+          "Loss Flag": "IF [Profit]<0 THEN 1 ELSE 0 END"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Profit": "real"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Loss Flag": "integer"
+        }
+      }
+    }
+  ]
+}
