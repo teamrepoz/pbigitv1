@@ -1,0 +1,18 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Profit Margin %",
+      "dax_expression": "'Orders+ (Sample - Superstore)'[Profit Ratio ] * 100",
+      "solution_explanation": "Converted the dependent Tableau calculated field [Profit Margin %] which is [Profit Ratio ]*100 into a row-level DAX calculated column by multiplying the row-level field 'Orders+ (Sample - Superstore)'[Profit Ratio ] by 100."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Revenue Tier",
+      "dax_expression": "IF(\n    'Orders+ (Sample - Superstore)'[Net Revenue ] > 1000,\n    \"High Margin\",\n    IF(\n        'Orders+ (Sample - Superstore)'[Profit Margin %] > 10,\n        \"Medium Margin\",\n        \"Low Margin\"\n    )\n)",
+      "solution_explanation": "Translated the Tableau IF / ELSEIF / ELSE logic into nested DAX IF statements using row-level columns: 'Orders+ (Sample - Superstore)'[Net Revenue ] and the calculated column 'Orders+ (Sample - Superstore)'[Profit Margin %]. This is a row-level classification, so it is a calculated column."
+    }
+  ]
+}
