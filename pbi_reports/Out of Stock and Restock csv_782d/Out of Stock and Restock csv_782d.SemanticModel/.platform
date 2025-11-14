@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Out of Stock and Restock csv_782d"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "24681441-6c73-4347-9917-205c4be22edd"
+  }
+}
