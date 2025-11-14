@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Overall Rating",
+      "dax_expression": "IF('Orders+ (Sample - Superstore)'[Priority Segment] = \"Top Priority\", 'Orders+ (Sample - Superstore)'[Order Health Score] + 1, 'Orders+ (Sample - Superstore)'[Order Health Score])",
+      "solution_explanation": "Converted Tableau IF to DAX IF and mapped field references to 'Orders+ (Sample - Superstore)'[Column]. This is row-level logic (no aggregates or parameters), so it is implemented as a calculated column."
+    }
+  ]
+}
