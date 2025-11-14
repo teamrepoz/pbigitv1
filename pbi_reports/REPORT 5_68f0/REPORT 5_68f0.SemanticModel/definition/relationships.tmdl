@@ -1,0 +1,40 @@
+relationship 5bd6478c-7bab-4881-a793-a73c35eb3443
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CUSTOMER (SNOWFLAKE_SAMPLE_DATA.CUSTOMER)+ (TPCH_SF1)_LINEITEM'.L_SHIPDATE
+	toColumn: LocalDateTable_89ccd4d1-5f00-4fe0-9261-cca1ce8857a2.Date
+
+relationship c9352f13-d357-4eeb-9f15-92c25b01fc56
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CUSTOMER (SNOWFLAKE_SAMPLE_DATA.CUSTOMER)+ (TPCH_SF1)_LINEITEM'.L_COMMITDATE
+	toColumn: LocalDateTable_76ad242c-4e0c-4300-a963-164b69801670.Date
+
+relationship ff8f2b3c-de2a-421b-b721-4d39b081ea7b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CUSTOMER (SNOWFLAKE_SAMPLE_DATA.CUSTOMER)+ (TPCH_SF1)_LINEITEM'.L_RECEIPTDATE
+	toColumn: LocalDateTable_01951fe8-0f7a-4500-b2df-88c4bcbbdc95.Date
+
+relationship fae334dc-b5c7-4e9c-8aad-c4eebedb5aae
+	toCardinality: many
+	fromColumn: 'CUSTOMER (SNOWFLAKE_SAMPLE_DATA.CUSTOMER)+ (TPCH_SF1)'.C_CUSTKEY
+	toColumn: 'CUSTOMER (SNOWFLAKE_SAMPLE_DATA.CUSTOMER)+ (TPCH_SF1)_LINEITEM'.L_SUPPKEY
+
+relationship c20a07ef-1064-4137-b48c-4a5c10e3fcd7
+	toCardinality: many
+	fromColumn: 'CUSTOMER (SNOWFLAKE_SAMPLE_DATA.CUSTOMER)+ (TPCH_SF1)'.C_CUSTKEY
+	toColumn: 'CUSTOMER (SNOWFLAKE_SAMPLE_DATA.CUSTOMER)+ (TPCH_SF1)_NATION'.N_REGIONKEY
+
+relationship 2ed62641-3135-4da3-881a-eb90a6146f5d
+	toCardinality: many
+	fromColumn: 'shopping_trends+'.'Customer ID'
+	toColumn: 'shopping_trends+_shopping_trends_updated.csv'.'Customer ID'
+
+relationship e7af8278-c986-419b-b676-473a8b5a9324
+	toCardinality: many
+	fromColumn: 'PART (SNOWFLAKE_SAMPLE_DATA.PART)+ (TPCH_SF1)'.P_PARTKEY
+	toColumn: 'PART (SNOWFLAKE_SAMPLE_DATA.PART)+ (TPCH_SF1)_PARTSUPP'.PS_PARTKEY
+
+relationship 05576f9e-0e2c-4bbe-9ab6-e528a188e553
+	toCardinality: many
+	fromColumn: 'Customer-Churn-Records.csv+ (Multiple Connections)'.Surname
+	toColumn: 'Customer-Churn-Records.csv+ (Multiple Connections)_CUSTOMER'.C_NAME
+
