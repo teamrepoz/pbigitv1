@@ -1,0 +1,8 @@
+{
+  "version": "4.0",
+  "datasetReference": {
+    "byPath": {
+      "path": "../(HR_Attendance_Dataset) excel_ba8d.SemanticModel"
+    }
+  }
+}
