@@ -1,0 +1,24 @@
+{
+  "calculations": [
+    {
+      "name": "Discount Health",
+      "table_name": "Orders+ (Sample - Superstore)",
+      "tableau_expression": "[Discount Amount]/[Sales]",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "[Discount Amount]/[Sales]",
+        "calculated_fields": {
+          "Discount Amount": "[Sales]*[Discount]"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Sales": "real",
+          "Discount": "real"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Discount Amount": "real"
+        }
+      }
+    }
+  ]
+}
