@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Sample Superstoree Dashboard_d75e"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "c746f25f-de12-4d88-8aad-011af1e96429"
+  }
+}
