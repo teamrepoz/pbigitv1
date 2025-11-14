@@ -1,0 +1,8 @@
+{
+  "version": "4.0",
+  "datasetReference": {
+    "byPath": {
+      "path": "../PRODUCT (SHIPMENTS.PRODUCT)+Excel_7bb7.SemanticModel"
+    }
+  }
+}
