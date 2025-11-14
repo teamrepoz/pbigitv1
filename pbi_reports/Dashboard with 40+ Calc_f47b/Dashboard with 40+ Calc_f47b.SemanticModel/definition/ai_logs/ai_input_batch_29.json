@@ -1,0 +1,21 @@
+{
+  "calculations": [
+    {
+      "name": "Revenue Tier",
+      "table_name": "Orders+ (Sample - Superstore)",
+      "tableau_expression": "IF [Net Revenue ]>1000 THEN \"High Margin\" ELSEIF [Profit Margin %]>10 THEN \"Medium Margin\" ELSE \"Low Margin\" END",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "IF [Net Revenue ]>1000 THEN \"High Margin\" ELSEIF [Profit Margin %]>10 THEN \"Medium Margin\" ELSE \"Low Margin\" END",
+        "calculated_fields": {
+          "Profit Margin %": "[Profit Ratio ]*100"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {
+          "Profit Margin %": "real"
+        }
+      }
+    }
+  ]
+}
