@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "Performance Code",
+      "table_name": "Orders+ (Sample - Superstore)",
+      "tableau_expression": "IF [Is High Performing ]=\"Yes\" THEN [Quality Score ]+2 ELSE [Quality Score ]-1 END",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "IF [Is High Performing ]=\"Yes\" THEN [Quality Score ]+2 ELSE [Quality Score ]-1 END",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
