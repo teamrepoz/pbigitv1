@@ -1,0 +1,44 @@
+table 'Select Doctor'
+	lineageTag: 0b44ff55-ccc9-4414-b33f-8623e1e57fe4
+
+	column Index
+		formatString: 0
+		lineageTag: ce6a4e7d-ad2d-4608-95cc-62535bd7ac60
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: f5b3fd34-2c1b-4d7a-a128-e44b61d2175d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: dbb15c32-314a-4a90-bd6a-b5929c399ff0
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Select Doctor' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Doctor Name", "Doctor Name" }
+			    }
+			)
+
+	annotation PBI_Id = 8e6a5614968a4c3ba296528e34f69734
+
