@@ -1,0 +1,20 @@
+{
+  "calculations": [
+    {
+      "name": "Profit Per Unit",
+      "table_name": "Orders+ (Sample - Superstore)",
+      "tableau_expression": "[Profit]/[Quantity]",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "[Profit]/[Quantity]",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Quantity": "integer",
+          "Profit": "real"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
