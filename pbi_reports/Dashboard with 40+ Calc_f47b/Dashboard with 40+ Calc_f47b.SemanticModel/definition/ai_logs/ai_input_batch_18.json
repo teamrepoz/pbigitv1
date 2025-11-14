@@ -1,0 +1,30 @@
+{
+  "calculations": [
+    {
+      "name": "Final Score",
+      "table_name": "Orders+ (Sample - Superstore)",
+      "tableau_expression": "IF  [Discount Tier]=\"Low Discont\" THEN [Performance Code]+ 1 ELSE [Performance Code] END",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "IF  [Discount Tier]=\"Low Discont\" THEN [Performance Code]+ 1 ELSE [Performance Code] END",
+        "calculated_fields": {
+          "Discount Tier": "IF [Discount Health]>0.25 THEN \"High Discount\" ELSEIF  [Discount Health]>0.10 THEN \"Medium Discount\" ELSE \"Low Discont\" END",
+          "Performance Code": "IF [Is High Performing ]=\"Yes\" THEN [Quality Score ]+2 ELSE [Quality Score ]-1 END",
+          "Discount Health": "[Discount Amount]/[Sales]",
+          "Discount Amount": "[Sales]*[Discount]"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Sales": "real",
+          "Discount": "real"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Performance Code": "integer",
+          "Discount Health": "real",
+          "Discount Amount": "real",
+          "Discount Tier": "String"
+        }
+      }
+    }
+  ]
+}
