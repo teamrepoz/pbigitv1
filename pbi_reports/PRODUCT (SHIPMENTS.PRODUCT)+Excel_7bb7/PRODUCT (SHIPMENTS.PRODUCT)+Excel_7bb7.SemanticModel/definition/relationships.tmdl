@@ -1,0 +1,20 @@
+relationship c0955a12-497c-4efa-9a7c-244fe5677e6f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'PRODUCT_PRODUCT (SHIPMENTS.PRODUCT)+ (SHP)'.CREATED_DATE
+	toColumn: LocalDateTable_cc4e8fa5-7819-4c8b-84a8-fbb82611db28.Date
+
+relationship 8526de83-eab9-460e-89b6-4f2018f8cb9c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Fact Table_PRODUCT (SHIPMENTS.PRODUCT)+ (SHP)'.Date
+	toColumn: LocalDateTable_c23f60b9-4a23-45cc-baa2-34849cbd1856.Date
+
+relationship 0c093424-5a93-4060-9423-3b14e32ab548
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'PRODUCT (SHIPMENTS.PRODUCT)+ (SHP)'.CREATED_DATE
+	toColumn: LocalDateTable_31a0c144-9438-4113-b5b9-c224ff01ccd0.Date
+
+relationship 7cfd3a17-05c5-412c-a0d5-2fa2bd673434
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'PRODUCT (SHIPMENTS.PRODUCT)+ (SHP)'.Date
+	toColumn: LocalDateTable_ef134684-8265-430b-8681-9e56a72326aa.Date
+
