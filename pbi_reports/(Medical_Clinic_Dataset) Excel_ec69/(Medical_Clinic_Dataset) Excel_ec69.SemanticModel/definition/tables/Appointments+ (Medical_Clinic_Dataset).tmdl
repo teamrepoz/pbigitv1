@@ -1,0 +1,136 @@
+table 'Appointments+ (Medical_Clinic_Dataset)'
+	lineageTag: 9ab0c9b7-8a97-44b0-8e4d-12cfd9ce6259
+
+	column AppointmentID
+		dataType: int64
+		formatString: 0
+		lineageTag: 66477d52-baf3-466f-9da2-2e9f2ffd6bcb
+		summarizeBy: sum
+		sourceColumn: AppointmentID
+
+		annotation SummarizationSetBy = Automatic
+
+	column PatientID
+		dataType: int64
+		formatString: 0
+		lineageTag: 9eb4a574-2cc1-4dfc-8839-6f3cfcd4e556
+		summarizeBy: sum
+		sourceColumn: PatientID
+
+		annotation SummarizationSetBy = Automatic
+
+	column DoctorID
+		dataType: int64
+		formatString: 0
+		lineageTag: d3de402b-062c-465f-8c81-c178a4b1b9a9
+		summarizeBy: sum
+		sourceColumn: DoctorID
+
+		annotation SummarizationSetBy = Automatic
+
+	column AppointmentDate
+		dataType: datetime
+		lineageTag: 32293398-41b4-4f50-a7e1-0b2f0c279c4f
+		summarizeBy: none
+		sourceColumn: AppointmentDate
+
+		variation Variation
+			isDefault
+			relationship: 9fe48c47-a6f3-4f47-8f73-30da884ffae4
+			defaultHierarchy: LocalDateTable_35e6a486-e5d1-4ced-9618-b1202e2ade2b.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Diagnosis
+		dataType: string
+		lineageTag: 069b7a25-6667-4b70-b348-52188e690393
+		summarizeBy: none
+		sourceColumn: Diagnosis
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fee
+		dataType: int64
+		formatString: 0
+		lineageTag: 512ff0d4-bc4e-44ed-97a4-27415c05852f
+		summarizeBy: sum
+		sourceColumn: Fee
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DoctorID 1'
+		dataType: int64
+		formatString: 0
+		lineageTag: 6e6d2661-0b0c-4b8c-bf3b-1eb9af9c833a
+		summarizeBy: sum
+		sourceColumn: 'DoctorID 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column DoctorName
+		dataType: string
+		lineageTag: bb0d32d5-1aaf-4d29-b938-0cd79fcf97f5
+		summarizeBy: none
+		sourceColumn: DoctorName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Specialization
+		dataType: string
+		lineageTag: 3d63df3f-3e93-45da-9241-6b0b8a8f17ae
+		summarizeBy: none
+		sourceColumn: Specialization
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PatientID 1'
+		dataType: int64
+		formatString: 0
+		lineageTag: 9f6d8c0d-5e11-4057-8950-00880a6bcca5
+		summarizeBy: sum
+		sourceColumn: 'PatientID 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column PatientName
+		dataType: string
+		lineageTag: f91d2b2b-1a4b-40d2-ad32-116574d2142c
+		summarizeBy: none
+		sourceColumn: PatientName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gender
+		dataType: string
+		lineageTag: 760aeecd-60cd-4138-9e15-d9dba709fffd
+		summarizeBy: none
+		sourceColumn: Gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column DOB
+		dataType: datetime
+		lineageTag: d0f098fc-7326-4a0e-b8d4-ae507ad3b5f3
+		summarizeBy: none
+		sourceColumn: DOB
+
+		variation Variation
+			isDefault
+			relationship: 48cc6f92-73c9-4323-8511-aee3de32a6cf
+			defaultHierarchy: LocalDateTable_2a43ed80-9fd5-4b1f-b1a2-0b578323f2fd.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Appointments+ (Medical_Clinic_Dataset)' = m
+		mode: import
+		source =
+				let 
+					#"Source0" = Table.NestedJoin(#"Appointments_Appointments+ (Medical_Clinic_Dataset)", {"DoctorID"}, #"Doctors_Appointments+ (Medical_Clinic_Dataset)", {"DoctorID"}, "Doctors_Appointments+ (Medical_Clinic_Dataset)", JoinKind.Inner),
+					#"Expand0" = Table.ExpandTableColumn(#"Source0", "Doctors_Appointments+ (Medical_Clinic_Dataset)", {"DoctorID", "DoctorName", "Specialization"}, {"DoctorID 1", "DoctorName", "Specialization"}),
+					#"Source1" = Table.NestedJoin(#"Expand0", {"PatientID"}, #"Patients_Appointments+ (Medical_Clinic_Dataset)", {"PatientID"}, "Patients_Appointments+ (Medical_Clinic_Dataset)", JoinKind.Inner),
+					#"Expand1" = Table.ExpandTableColumn(#"Source1", "Patients_Appointments+ (Medical_Clinic_Dataset)", {"PatientID", "PatientName", "Gender", "DOB"}, {"PatientID 1", "PatientName", "Gender", "DOB"})
+					in #"Expand1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
