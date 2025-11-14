@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Attendance+ (HR_Attendance_Dataset)",
+      "name": "Status Category",
+      "dax_expression": "IF(\n    'Attendance+ (HR_Attendance_Dataset)'[Status] = \"Present\", \"On Time\",\n    IF(\n        'Attendance+ (HR_Attendance_Dataset)'[Status] = \"Work From Home\", \"Remote\",\n        \"Needs Attention\"\n    )\n)",
+      "solution_explanation": "This is a row-level classification that only references the [Status] column. Tableau IF/ELSEIF is implemented as nested IF in DAX, and all column references were converted to the 'TableName'[Column] format. No aggregation or parameters are present, so it is modeled as a calculated column."
+    }
+  ]
+}
