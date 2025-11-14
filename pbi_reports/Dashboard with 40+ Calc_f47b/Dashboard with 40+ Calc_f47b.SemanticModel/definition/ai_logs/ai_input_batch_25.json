@@ -1,0 +1,67 @@
+{
+  "calculations": [
+    {
+      "name": "Executive Score",
+      "table_name": "Orders+ (Sample - Superstore)",
+      "tableau_expression": "IF [Final Performnace Label] = \"Excellent\" THEN [Weighted Score] + 2\r\nELSE [Weighted Score]\r\nEND",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "IF [Final Performnace Label] = \"Excellent\" THEN [Weighted Score] + 2\r\nELSE [Weighted Score]\r\nEND",
+        "calculated_fields": {
+          "Final Performnace Label": "IF [Alert Flag] = \"Alert\" THEN \"Critical\"\r\nELSE [Overall Health]\r\nEND",
+          "Weighted Score": "([Profit Index]*0.7)+([Priority Flag]*3)",
+          "Profit Index": "[Profit Margin %]\r\n+[Order Health Score]",
+          "Overall Health": "IF [Overall Rating] > 5 AND [Stability Tier] = \"Stable\"\r\nTHEN \"Excellent\"\r\nELSEIF [Overall Rating] > 3 THEN \"Good\"\r\nELSE \"Poor\"\r\nEND",
+          "Priority Flag": "IF  [Overall Health]=\"Excellent \" AND  [Priority Segment]=\"Top Priority \" THEN 1 ELSE 0 END",
+          "Alert Flag": "IF [Rank Category ] = \"Tier 3\" AND [Failure Risk] = \"High Risk\"\r\nTHEN \"Alert\"\r\nELSE \"Normal\"\r\nEND",
+          "Priority Segment": "IF [Profit Health] = \"Excellent\" AND [Profitablity Tier] = \"High Margin\"\r\nTHEN \"Top Priority\"\r\nELSE \"Normal\"\r\nEND",
+          "Order Health Score": "IF  [Failure Risk]=\"High Risk\" THEN [Final Score]-2 ELSE [Final Score] END",
+          "Failure Risk": "IF [Loss Flag]=1 AND  [Discount Tier]=\"High Discount \" THEN \"High Risk\" ELSE \"Low Risk\" END",
+          "Overall Rating": "IF [Priority Segment] = \"Top Priority\" THEN \r\n    [Order Health Score] + 1\r\nELSE\r\n    [Order Health Score]\r\nEND",
+          "Profit Margin %": "[Profit Ratio ]*100",
+          "Stability Tier": "IF [Revenue Stability]>200 THEN \"Stable\" ELSEIF  [Revenue Stability] >50 THEN \"Moderate\" ELSE \"Unstable\" END",
+          "Final Score": "IF  [Discount Tier]=\"Low Discont\" THEN [Performance Code]+ 1 ELSE [Performance Code] END",
+          "Profitablity Tier": "IF  [Profit Margin %]>20 THEN \"High Margin\" ELSEIF [Profit Margin %]>10 THEN \"Medium Margin\" ELSE \"Low Margin\" END",
+          "Discount Tier": "IF [Discount Health]>0.25 THEN \"High Discount\" ELSEIF  [Discount Health]>0.10 THEN \"Medium Discount\" ELSE \"Low Discont\" END",
+          "Loss Flag": "IF [Profit]<0 THEN 1 ELSE 0 END",
+          "Profit Health": "IF [Profit Ratio ] > 0.2 THEN\r\n    IF [Revenue Tier] = \"High\" THEN \"Excellent\"\r\n    ELSE \"Good\" END\r\nELSE\r\n    IF [Revenue Tier] = \"Low\" THEN \"Poor\"\r\n    ELSE \"Average\"\r\nEND END",
+          "Revenue Stability": "[Net Revenue ]+[Profit Ratio ]",
+          "Revenue Tier": "IF [Net Revenue ]>1000 THEN \"High Margin\" ELSEIF [Profit Margin %]>10 THEN \"Medium Margin\" ELSE \"Low Margin\" END",
+          "Discount Health": "[Discount Amount]/[Sales]",
+          "Performance Code": "IF [Is High Performing ]=\"Yes\" THEN [Quality Score ]+2 ELSE [Quality Score ]-1 END",
+          "Discount Amount": "[Sales]*[Discount]"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Sales": "real",
+          "Discount": "real",
+          "Profit": "real"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Weighted Score": "real",
+          "Profit Index": "real",
+          "Priority Flag": "integer",
+          "Order Health Score": "integer",
+          "Overall Rating": "integer",
+          "Profit Margin %": "real",
+          "Final Score": "integer",
+          "Loss Flag": "integer",
+          "Revenue Stability": "real",
+          "Discount Health": "real",
+          "Performance Code": "integer",
+          "Discount Amount": "real",
+          "Final Performnace Label": "String",
+          "Overall Health": "String",
+          "Alert Flag": "String",
+          "Priority Segment": "String",
+          "Failure Risk": "String",
+          "Stability Tier": "String",
+          "Profitablity Tier": "String",
+          "Discount Tier": "String",
+          "Profit Health": "String",
+          "Revenue Tier": "String"
+        }
+      }
+    }
+  ]
+}
