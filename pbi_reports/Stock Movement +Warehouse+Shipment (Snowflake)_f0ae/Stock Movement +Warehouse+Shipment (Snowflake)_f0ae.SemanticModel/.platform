@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Stock Movement +Warehouse+Shipment (Snowflake)_f0ae"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "842398be-1163-4c41-86a5-4c49211bcabb"
+  }
+}
