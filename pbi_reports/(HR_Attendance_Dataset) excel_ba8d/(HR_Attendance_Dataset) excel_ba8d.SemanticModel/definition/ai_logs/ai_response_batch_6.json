@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Attendance+ (HR_Attendance_Dataset)",
+      "name": "Work From Home Count",
+      "dax_expression": "IF('Attendance+ (HR_Attendance_Dataset)'[Status] = \"Work From Home\", 1, 0)",
+      "solution_explanation": "Converted Tableau IF to DAX IF and qualified the column with the table name. This is row-level logic (depends only on [Status]) so it's a calculated column."
+    }
+  ]
+}
