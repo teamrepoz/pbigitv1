@@ -1,0 +1,212 @@
+table 'Fact Table+ (Coffee Chain Data)'
+	lineageTag: 51d43203-18f2-4914-8798-f0a210955482
+
+	column Profit
+		dataType: int64
+		formatString: 0
+		lineageTag: afc466a0-b037-417f-9bca-d94ba009723a
+		summarizeBy: sum
+		sourceColumn: Profit
+
+		annotation SummarizationSetBy = Automatic
+
+	column Margin
+		dataType: int64
+		formatString: 0
+		lineageTag: fd8697e6-7f7c-49b8-b0e8-b126723a16c9
+		summarizeBy: sum
+		sourceColumn: Margin
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sales
+		dataType: int64
+		formatString: 0
+		lineageTag: 1e9a8131-5c1a-41f5-be66-8a0516827be0
+		summarizeBy: sum
+		sourceColumn: Sales
+
+		annotation SummarizationSetBy = Automatic
+
+	column COGS
+		dataType: int64
+		formatString: 0
+		lineageTag: 4b399bce-b9e3-4389-8876-f1c3914cb2c8
+		summarizeBy: sum
+		sourceColumn: COGS
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Expenses'
+		dataType: int64
+		formatString: 0
+		lineageTag: 6167397f-a6f7-4263-89d2-d393e7ea6f4d
+		summarizeBy: sum
+		sourceColumn: 'Total Expenses'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Marketing
+		dataType: int64
+		formatString: 0
+		lineageTag: cc5a31a3-f5c5-492c-82f4-1a9f12673ae3
+		summarizeBy: sum
+		sourceColumn: Marketing
+
+		annotation SummarizationSetBy = Automatic
+
+	column Inventory
+		dataType: int64
+		formatString: 0
+		lineageTag: f1e12c0b-8bea-4518-96c1-a8eba299932f
+		summarizeBy: sum
+		sourceColumn: Inventory
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Budget Profit'
+		dataType: int64
+		formatString: 0
+		lineageTag: 13b51dab-2355-4af4-a543-3ff84853cbab
+		summarizeBy: sum
+		sourceColumn: 'Budget Profit'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Budget COGS'
+		dataType: int64
+		formatString: 0
+		lineageTag: 20c8d30b-4776-4259-8e83-485b6bdd4c05
+		summarizeBy: sum
+		sourceColumn: 'Budget COGS'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Budget Margin'
+		dataType: int64
+		formatString: 0
+		lineageTag: 7c3eb2ee-257d-46af-bfa8-087b41264868
+		summarizeBy: sum
+		sourceColumn: 'Budget Margin'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Budget Sales'
+		dataType: int64
+		formatString: 0
+		lineageTag: d6692a94-54a1-4881-a361-53e640ee76d6
+		summarizeBy: sum
+		sourceColumn: 'Budget Sales'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Area Code'
+		dataType: int64
+		formatString: 0
+		lineageTag: 301f8e3a-3510-4dde-bf02-29015f8d4624
+		summarizeBy: sum
+		sourceColumn: 'Area Code'
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductId
+		dataType: int64
+		formatString: 0
+		lineageTag: 1263c3e9-52a8-4f6f-bbcd-6da7bfe70321
+		summarizeBy: sum
+		sourceColumn: ProductId
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: datetime
+		lineageTag: 4cadad29-dc75-4790-8a0d-2251d58b97d5
+		summarizeBy: none
+		sourceColumn: Date
+
+		variation Variation
+			isDefault
+			relationship: b9b55546-d0f4-4a64-9922-c048ef185a1e
+			defaultHierarchy: LocalDateTable_6fb5a0f0-16b7-422a-b28a-b2a384cfa2ac.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Area Code 1'
+		dataType: int64
+		formatString: 0
+		lineageTag: 4f2636c7-7794-4d0a-85c8-392076ac66cd
+		summarizeBy: sum
+		sourceColumn: 'Area Code 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column State
+		dataType: string
+		lineageTag: 4995ed5b-a65e-4681-9006-2c97ae9f6dc7
+		summarizeBy: none
+		sourceColumn: State
+
+		annotation SummarizationSetBy = Automatic
+
+	column Market
+		dataType: string
+		lineageTag: 5647acb6-435f-440e-abf1-b0ba5c218e8b
+		summarizeBy: none
+		sourceColumn: Market
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Market Size'
+		dataType: string
+		lineageTag: dd08c530-ca7c-46cc-a998-2d976b8bba32
+		summarizeBy: none
+		sourceColumn: 'Market Size'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Type'
+		dataType: string
+		lineageTag: 8358c62d-d76a-4b3d-868a-899312730123
+		summarizeBy: none
+		sourceColumn: 'Product Type'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product
+		dataType: string
+		lineageTag: fc84469b-627d-41f5-bb1f-c5eea3da3964
+		summarizeBy: none
+		sourceColumn: Product
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ProductId 1'
+		dataType: int64
+		formatString: 0
+		lineageTag: 08b90895-c02b-4f9b-96e7-ccec5a9ae7f4
+		summarizeBy: sum
+		sourceColumn: 'ProductId 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type
+		dataType: string
+		lineageTag: 6ac09d16-9df7-4536-9c84-4807ea631639
+		summarizeBy: none
+		sourceColumn: Type
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Fact Table+ (Coffee Chain Data)' = m
+		mode: import
+		source =
+				let 
+					#"Source0" = Table.NestedJoin(#"Fact Table_Fact Table+ (Coffee Chain Data)", {"Area Code"}, #"Location_Fact Table+ (Coffee Chain Data)", {"Area Code"}, "Location_Fact Table+ (Coffee Chain Data)", JoinKind.Inner),
+					#"Expand0" = Table.ExpandTableColumn(#"Source0", "Location_Fact Table+ (Coffee Chain Data)", {"Area Code", "State", "Market", "Market Size"}, {"Area Code 1", "State", "Market", "Market Size"}),
+					#"Source1" = Table.NestedJoin(#"Expand0", {"ProductId"}, #"Product_Fact Table+ (Coffee Chain Data)", {"ProductId"}, "Product_Fact Table+ (Coffee Chain Data)", JoinKind.Inner),
+					#"Expand1" = Table.ExpandTableColumn(#"Source1", "Product_Fact Table+ (Coffee Chain Data)", {"Product Type", "Product", "ProductId", "Type"}, {"Product Type", "Product", "ProductId 1", "Type"})
+					in #"Expand1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
