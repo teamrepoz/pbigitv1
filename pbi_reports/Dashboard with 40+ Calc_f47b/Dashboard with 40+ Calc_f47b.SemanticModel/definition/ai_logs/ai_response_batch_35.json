@@ -1,0 +1,39 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Discount Amount",
+      "dax_expression": "'Orders+ (Sample - Superstore)'[Sales] * 'Orders+ (Sample - Superstore)'[Discount]",
+      "solution_explanation": "Converted Tableau row-level expression [Sales]*[Discount] to a DAX calculated column using table-qualified column references."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Discount Health",
+      "dax_expression": "'Orders+ (Sample - Superstore)'[Discount Amount] / 'Orders+ (Sample - Superstore)'[Sales]",
+      "solution_explanation": "Converted Tableau row-level expression [Discount Amount]/[Sales] to a DAX calculated column using the dependent calculated column 'Discount Amount' and table-qualified references."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Loss Flag",
+      "dax_expression": "IF('Orders+ (Sample - Superstore)'[Profit] < 0, 1, 0)",
+      "solution_explanation": "Converted Tableau IF([Profit]<0,1,0) to DAX IF for a row-level calculated column with table-qualified column reference."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Discount Tier",
+      "dax_expression": "IF('Orders+ (Sample - Superstore)'[Discount Health] > 0.25, \"High Discount\", IF('Orders+ (Sample - Superstore)'[Discount Health] > 0.10, \"Medium Discount\", \"Low Discont\"))",
+      "solution_explanation": "Converted Tableau nested IF/ELSEIF to nested DAX IF statements for a row-level calculated column, using the 'Discount Health' calculated column and table-qualified references."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Failure Risk",
+      "dax_expression": "IF(\n    'Orders+ (Sample - Superstore)'[Loss Flag] = 1 &&\n    'Orders+ (Sample - Superstore)'[Discount Tier] = \"High Discount \",\n    \"High Risk\",\n    \"Low Risk\"\n)",
+      "solution_explanation": "Converted Tableau IF with logical AND to DAX IF using &&, comparing the row-level calculated columns 'Loss Flag' and 'Discount Tier' with table-qualified references. This is a row-level classification so implemented as a calculated column."
+    }
+  ]
+}
