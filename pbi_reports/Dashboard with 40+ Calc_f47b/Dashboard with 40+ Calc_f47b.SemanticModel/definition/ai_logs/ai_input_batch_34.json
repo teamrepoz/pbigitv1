@@ -1,0 +1,26 @@
+{
+  "calculations": [
+    {
+      "name": "Discount Tier",
+      "table_name": "Orders+ (Sample - Superstore)",
+      "tableau_expression": "IF [Discount Health]>0.25 THEN \"High Discount\" ELSEIF  [Discount Health]>0.10 THEN \"Medium Discount\" ELSE \"Low Discont\" END",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "IF [Discount Health]>0.25 THEN \"High Discount\" ELSEIF  [Discount Health]>0.10 THEN \"Medium Discount\" ELSE \"Low Discont\" END",
+        "calculated_fields": {
+          "Discount Health": "[Discount Amount]/[Sales]",
+          "Discount Amount": "[Sales]*[Discount]"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Sales": "real",
+          "Discount": "real"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Discount Health": "real",
+          "Discount Amount": "real"
+        }
+      }
+    }
+  ]
+}
