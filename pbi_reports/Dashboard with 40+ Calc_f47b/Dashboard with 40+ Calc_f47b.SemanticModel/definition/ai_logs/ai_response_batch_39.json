@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Rank Category ",
+      "dax_expression": "IF(\n    'Orders+ (Sample - Superstore)'[Weighted Score] > 15,\n    \"Tier 1\",\n    IF(\n        'Orders+ (Sample - Superstore)'[Weighted Score] > 8,\n        \"Tier 2\",\n        \"Tier 3\"\n    )\n)",
+      "solution_explanation": "Converted Tableau IF/ELSEIF/ELSE to nested DAX IF statements and mapped the [Weighted Score] reference to 'Orders+ (Sample - Superstore)'[Weighted Score]. This is a row-level classification based on a calculated field, so it is implemented as a calculated column."
+    }
+  ]
+}
