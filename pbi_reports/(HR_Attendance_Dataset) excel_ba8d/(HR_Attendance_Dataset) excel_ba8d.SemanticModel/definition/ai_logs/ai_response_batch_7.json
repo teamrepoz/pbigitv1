@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Attendance+ (HR_Attendance_Dataset)",
+      "name": "Employment Duration",
+      "dax_expression": "DATEDIFF('Attendance+ (HR_Attendance_Dataset)'[JoinDate], TODAY(), YEAR)",
+      "solution_explanation": "Mapped Tableau DATEDIFF('year',[JoinDate],TODAY()) to DAX DATEDIFF(start, end, YEAR) and replaced [JoinDate] with 'Attendance+ (HR_Attendance_Dataset)'[JoinDate]. This is a row-level date calculation, so it is implemented as a calculated column."
+    }
+  ]
+}
