@@ -1,0 +1,28 @@
+table 'Min Stock Level'
+	lineageTag: 45f766ac-409b-42f1-876e-01e7ec6b65a7
+
+	measure 'Min Stock Level Value' = SELECTEDVALUE('Min Stock Level'[Min Stock Level], 1)
+		lineageTag: 244e9bed-0143-4947-9989-fc1d94a47eaa
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Min Stock Level'
+		dataType: double
+		formatString: 0
+		lineageTag: b18a4cf4-c969-468d-afa6-e4d35399b556
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Min Stock Level' = calculated
+		mode: import
+		source = GENERATESERIES(1, 100)
+
+	annotation PBI_Id = 0712dd0a550142b8ac6f896adea5d102
+
