@@ -1,0 +1,60 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Discount Amount",
+      "dax_expression": "'Orders+ (Sample - Superstore)'[Sales] * 'Orders+ (Sample - Superstore)'[Discount]",
+      "solution_explanation": "Converted row-level multiplication [Sales]*[Discount] to a calculated column using 'Orders+ (Sample - Superstore)'[Sales] * 'Orders+ (Sample - Superstore)'[Discount]."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Discount Health",
+      "dax_expression": "'Orders+ (Sample - Superstore)'[Discount Amount] / 'Orders+ (Sample - Superstore)'[Sales]",
+      "solution_explanation": "Converted row-level division [Discount Amount]/[Sales] to a calculated column using table-qualified column references."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Loss Flag",
+      "dax_expression": "IF('Orders+ (Sample - Superstore)'[Profit] < 0, 1, 0)",
+      "solution_explanation": "Converted row-level conditional [Profit]<0 THEN 1 ELSE 0 to a calculated column using IF(condition, true, false)."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Performance Code",
+      "dax_expression": "IF('Orders+ (Sample - Superstore)'[Is High Performing ] = \"Yes\", 'Orders+ (Sample - Superstore)'[Quality Score ] + 2, 'Orders+ (Sample - Superstore)'[Quality Score ] - 1)",
+      "solution_explanation": "Converted row-level conditional that adjusts [Quality Score ] based on [Is High Performing ] to a calculated column using IF and table-qualified references."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Discount Tier",
+      "dax_expression": "IF('Orders+ (Sample - Superstore)'[Discount Health] > 0.25, \"High Discount\", IF('Orders+ (Sample - Superstore)'[Discount Health] > 0.10, \"Medium Discount\", \"Low Discont\"))",
+      "solution_explanation": "Translated nested IF/ELSEIF logic for discount tiers into nested IFs in DAX, using the row-level [Discount Health] column."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Final Score",
+      "dax_expression": "IF('Orders+ (Sample - Superstore)'[Discount Tier] = \"Low Discont\", 'Orders+ (Sample - Superstore)'[Performance Code] + 1, 'Orders+ (Sample - Superstore)'[Performance Code])",
+      "solution_explanation": "Converted row-level conditional adjusting [Performance Code] based on [Discount Tier] into a calculated column using IF."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Failure Risk",
+      "dax_expression": "IF('Orders+ (Sample - Superstore)'[Loss Flag] = 1 && 'Orders+ (Sample - Superstore)'[Discount Tier] = \"High Discount \", \"High Risk\", \"Low Risk\")",
+      "solution_explanation": "Translated the row-level conditional combining [Loss Flag] and [Discount Tier] into a DAX IF with && for AND; preserved literal strings exactly as in the Tableau expression."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Order Health Score",
+      "dax_expression": "IF('Orders+ (Sample - Superstore)'[Failure Risk] = \"High Risk\", 'Orders+ (Sample - Superstore)'[Final Score] - 2, 'Orders+ (Sample - Superstore)'[Final Score])",
+      "solution_explanation": "Converted the top-level row-level conditional that adjusts [Final Score] based on [Failure Risk] into a calculated column using IF and table-qualified references."
+    }
+  ]
+}
