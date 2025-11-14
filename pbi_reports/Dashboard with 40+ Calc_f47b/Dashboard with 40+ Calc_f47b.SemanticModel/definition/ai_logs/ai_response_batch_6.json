@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Profit Per Unit",
+      "dax_expression": "'Orders+ (Sample - Superstore)'[Profit] / 'Orders+ (Sample - Superstore)'[Quantity]",
+      "solution_explanation": "This is a row-level calculation dividing Profit by Quantity using only columns from the same row and contains no aggregations or parameters, so it should be a calculated column."
+    }
+  ]
+}
