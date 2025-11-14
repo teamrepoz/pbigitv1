@@ -1,0 +1,22 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["lab_results.csv_lab_results+", "patients.csv_lab_results+", "medical_visits.csv_lab_results+", "lab_results.csv"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.142.928.0 (25.04)+de52df9f0bb74ad93a80d89c52d63fe6d07e0e1b
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 'lab_results.csv_lab_results+'
+ref table 'patients.csv_lab_results+'
+ref table 'medical_visits.csv_lab_results+'
+ref table 'lab_results.csv'
+
+ref cultureInfo en-US
