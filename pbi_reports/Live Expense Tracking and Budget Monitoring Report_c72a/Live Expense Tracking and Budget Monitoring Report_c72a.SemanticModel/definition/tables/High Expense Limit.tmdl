@@ -1,0 +1,28 @@
+table 'High Expense Limit'
+	lineageTag: e6893844-a76e-45f5-8737-4d5a0f8c7fc3
+
+	measure 'High Expense Limit Value' = SELECTEDVALUE('High Expense Limit'[High Expense Limit], 100)
+		lineageTag: bdb22e2f-25e4-4a13-95ab-e2577d4b4111
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'High Expense Limit'
+		dataType: double
+		formatString: 0
+		lineageTag: 4ebcb2fc-b04c-4ac8-8e07-89151529c3db
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'High Expense Limit' = calculated
+		mode: import
+		source = GENERATESERIES(100, 10000, 100)
+
+	annotation PBI_Id = a125a88c30934371a1d26400667537ba
+
