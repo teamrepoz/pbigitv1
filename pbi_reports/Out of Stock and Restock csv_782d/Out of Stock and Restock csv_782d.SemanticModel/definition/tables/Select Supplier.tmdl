@@ -1,0 +1,44 @@
+table 'Select Supplier'
+	lineageTag: 8d5531ed-ad8c-473e-afaa-4eb7b62fe365
+
+	column Index
+		formatString: 0
+		lineageTag: 3d6354d2-c9ce-4217-b20b-076db0034020
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 5e398256-a2b4-4959-81c0-6b347a257355
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: bedd9ac5-6ad8-476e-a6a4-0ded9cea276f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Select Supplier' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Supplier", "Supplier" }
+			    }
+			)
+
+	annotation PBI_Id = dfe689078a194d36b52e9234c31e97d9
+
