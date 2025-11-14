@@ -1,0 +1,49 @@
+table 'Category Selector'
+	lineageTag: 4f8edf7e-8b20-4ae5-b08e-c275c0e590b5
+
+	column Index
+		formatString: 0
+		lineageTag: bd57b9a9-f297-4a17-8f5d-43c29ab68b78
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: fb36c1c5-92d5-4b45-a2c4-ff1708e3e6a6
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 3484237c-aa0e-4c86-b50a-ab1497fda9b9
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Category Selector' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Office Supplies", "Office Supplies" },
+				{ 1, "Travel", "Travel" },
+				{ 2, "Training", "Training" },
+				{ 3, "Marketing", "Marketing" },
+				{ 4, "Software", "Software" },
+				{ 5, " Utilities", " Utilities" }
+			    }
+			)
+
+	annotation PBI_Id = 9e77def658284a8995799e1f90b62776
+
