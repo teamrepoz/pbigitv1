@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Logistics_shipment Excel_328a"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "8a91dbeb-b527-4da3-bdff-96d51706a293"
+  }
+}
