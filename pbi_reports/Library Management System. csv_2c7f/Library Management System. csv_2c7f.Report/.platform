@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Library Management System. csv_2c7f"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "5de536df-7dcd-4cd3-ba93-2b36ebed9934"
+  }
+}
