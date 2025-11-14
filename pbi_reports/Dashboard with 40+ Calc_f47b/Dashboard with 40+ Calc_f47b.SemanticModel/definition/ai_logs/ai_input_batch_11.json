@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "Profit Margin %",
+      "table_name": "Orders+ (Sample - Superstore)",
+      "tableau_expression": "[Profit Ratio ]*100",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "[Profit Ratio ]*100",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
