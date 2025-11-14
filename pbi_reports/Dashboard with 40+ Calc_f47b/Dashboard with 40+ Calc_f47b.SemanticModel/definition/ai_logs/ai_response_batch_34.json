@@ -1,0 +1,25 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Discount Amount",
+      "dax_expression": "'Orders+ (Sample - Superstore)'[Sales] * 'Orders+ (Sample - Superstore)'[Discount]",
+      "solution_explanation": "Row-level multiplication of Sales and Discount; translated to a calculated column using table[column] references."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Discount Health",
+      "dax_expression": "('Orders+ (Sample - Superstore)'[Discount Amount] / 'Orders+ (Sample - Superstore)'[Sales])",
+      "solution_explanation": "Row-level division of Discount Amount by Sales (both row-level fields); implemented as a calculated column."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Discount Tier",
+      "dax_expression": "IF(\n    'Orders+ (Sample - Superstore)'[Discount Health] > 0.25,\n    \"High Discount\",\n    IF(\n        'Orders+ (Sample - Superstore)'[Discount Health] > 0.10,\n        \"Medium Discount\",\n        \"Low Discont\"\n    )\n)",
+      "solution_explanation": "Row-level conditional logic mapping Discount Health to tier labels; converted to nested IF statements as a calculated column."
+    }
+  ]
+}
