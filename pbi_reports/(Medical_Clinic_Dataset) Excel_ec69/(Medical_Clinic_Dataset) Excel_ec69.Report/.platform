@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "(Medical_Clinic_Dataset) Excel_ec69"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "9cf82071-4f70-4d09-a6ab-9cef25b02137"
+  }
+}
