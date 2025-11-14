@@ -1,0 +1,200 @@
+table 'PRODUCT (SHIPMENTS.PRODUCT)+ (SHP)'
+	lineageTag: 636d42a6-a0d8-4519-acdd-25bc71edfed3
+
+	column PRODUCT_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 2f3385d7-b60f-481f-9a8d-7b38a14dcae4
+		summarizeBy: sum
+		sourceColumn: PRODUCT_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRODUCT_NAME
+		dataType: string
+		lineageTag: d0b64b78-47ec-42f9-9fbf-891a975722c7
+		summarizeBy: none
+		sourceColumn: PRODUCT_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRODUCT_DESCRIPTION
+		dataType: string
+		lineageTag: 273afcaa-b587-4d66-b962-f0bb5a404af7
+		summarizeBy: none
+		sourceColumn: PRODUCT_DESCRIPTION
+
+		annotation SummarizationSetBy = Automatic
+
+	column CATEGORY_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 630985c3-ba7e-4601-b7d0-5900258602a4
+		summarizeBy: sum
+		sourceColumn: CATEGORY_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRICE
+		dataType: int64
+		formatString: 0
+		lineageTag: cad4133f-9da6-4acb-8c1c-45177cd21c6c
+		summarizeBy: sum
+		sourceColumn: PRICE
+
+		annotation SummarizationSetBy = Automatic
+
+	column CREATED_DATE
+		dataType: datetime
+		lineageTag: fd3e8918-dbd4-4e3c-b51e-117cd3012630
+		summarizeBy: none
+		sourceColumn: CREATED_DATE
+
+		variation Variation
+			isDefault
+			relationship: 0c093424-5a93-4060-9423-3b14e32ab548
+			defaultHierarchy: LocalDateTable_31a0c144-9438-4113-b5b9-c224ff01ccd0.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Profit
+		dataType: int64
+		formatString: 0
+		lineageTag: 594119e2-e68b-4cde-a3a2-b9c8d2bdfc3b
+		summarizeBy: sum
+		sourceColumn: Profit
+
+		annotation SummarizationSetBy = Automatic
+
+	column Margin
+		dataType: int64
+		formatString: 0
+		lineageTag: 2b782279-c1af-4ee7-be70-d1bf1b003d5d
+		summarizeBy: sum
+		sourceColumn: Margin
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sales
+		dataType: int64
+		formatString: 0
+		lineageTag: e6905abe-ede4-4fd0-9cea-02900da9f2d2
+		summarizeBy: sum
+		sourceColumn: Sales
+
+		annotation SummarizationSetBy = Automatic
+
+	column COGS
+		dataType: int64
+		formatString: 0
+		lineageTag: a8df5c93-721c-4670-a957-1cc3c010e2ed
+		summarizeBy: sum
+		sourceColumn: COGS
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Expenses'
+		dataType: int64
+		formatString: 0
+		lineageTag: e990eaca-a2f7-4e3c-b923-8b8d1f91a304
+		summarizeBy: sum
+		sourceColumn: 'Total Expenses'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Marketing
+		dataType: int64
+		formatString: 0
+		lineageTag: 7ccb2fae-0047-4e9c-8bd3-7b30a238e5d9
+		summarizeBy: sum
+		sourceColumn: Marketing
+
+		annotation SummarizationSetBy = Automatic
+
+	column Inventory
+		dataType: int64
+		formatString: 0
+		lineageTag: 3f4031e0-2d0f-4a05-80da-4e1e8582fa15
+		summarizeBy: sum
+		sourceColumn: Inventory
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Budget Profit'
+		dataType: int64
+		formatString: 0
+		lineageTag: 012a158e-2400-4225-b615-1b5d7376a533
+		summarizeBy: sum
+		sourceColumn: 'Budget Profit'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Budget COGS'
+		dataType: int64
+		formatString: 0
+		lineageTag: eadd12a3-5b1e-4835-a492-0edb3b8869f3
+		summarizeBy: sum
+		sourceColumn: 'Budget COGS'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Budget Margin'
+		dataType: int64
+		formatString: 0
+		lineageTag: 45b7cef8-114e-47ce-a2e6-12df32818f73
+		summarizeBy: sum
+		sourceColumn: 'Budget Margin'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Budget Sales'
+		dataType: int64
+		formatString: 0
+		lineageTag: c3108f27-8442-478c-a1d8-e109959aa027
+		summarizeBy: sum
+		sourceColumn: 'Budget Sales'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Area Code'
+		dataType: int64
+		formatString: 0
+		lineageTag: b0750456-42d8-4473-8de7-ebd656e6a247
+		summarizeBy: sum
+		sourceColumn: 'Area Code'
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductId
+		dataType: int64
+		formatString: 0
+		lineageTag: caf14641-b919-424e-8a9d-b29546cde4a5
+		summarizeBy: sum
+		sourceColumn: ProductId
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: datetime
+		lineageTag: 732c2f3c-6d08-4109-8764-99545b04fbf3
+		summarizeBy: none
+		sourceColumn: Date
+
+		variation Variation
+			isDefault
+			relationship: 7cfd3a17-05c5-412c-a0d5-2fa2bd673434
+			defaultHierarchy: LocalDateTable_ef134684-8265-430b-8681-9e56a72326aa.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'PRODUCT (SHIPMENTS.PRODUCT)+ (SHP)' = m
+		mode: import
+		source =
+				let 
+					#"Source0" = Table.NestedJoin(#"PRODUCT_PRODUCT (SHIPMENTS.PRODUCT)+ (SHP)", {"PRODUCT_ID"}, #"Fact Table_PRODUCT (SHIPMENTS.PRODUCT)+ (SHP)", {"ProductId"}, "Fact Table_PRODUCT (SHIPMENTS.PRODUCT)+ (SHP)", JoinKind.Inner),
+					#"Expand0" = Table.ExpandTableColumn(#"Source0", "Fact Table_PRODUCT (SHIPMENTS.PRODUCT)+ (SHP)", {"Profit", "Margin", "Sales", "COGS", "Total Expenses", "Marketing", "Inventory", "Budget Profit", "Budget COGS", "Budget Margin", "Budget Sales", "Area Code", "ProductId", "Date"}, {"Profit", "Margin", "Sales", "COGS", "Total Expenses", "Marketing", "Inventory", "Budget Profit", "Budget COGS", "Budget Margin", "Budget Sales", "Area Code", "ProductId", "Date"})
+					in #"Expand0"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
