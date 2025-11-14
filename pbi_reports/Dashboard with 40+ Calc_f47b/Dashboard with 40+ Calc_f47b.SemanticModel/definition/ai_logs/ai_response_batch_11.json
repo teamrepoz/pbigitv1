@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Profit Margin %",
+      "dax_expression": "'Orders+ (Sample - Superstore)'[Profit Ratio ] * 100",
+      "solution_explanation": "Replaced the Tableau column reference [Profit Ratio ] with the DAX column reference 'Orders+ (Sample - Superstore)'[Profit Ratio ] and multiplied by 100. This is a row-level calculation (per-row multiplication), so it is implemented as a calculated column."
+    }
+  ]
+}
