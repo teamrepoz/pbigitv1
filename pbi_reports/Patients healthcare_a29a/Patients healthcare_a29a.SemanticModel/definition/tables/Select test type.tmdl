@@ -1,0 +1,48 @@
+table 'Select test type'
+	lineageTag: 4d2f2e29-bc52-48f4-bcc0-1883a453d556
+
+	column Index
+		formatString: 0
+		lineageTag: b98d9fb8-eb2c-4d89-916d-470eb2f896ad
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 73560f65-51e5-41aa-b1ce-14fa2067f9c3
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: ecd45dfc-9b42-418f-a1a4-5a7ba240359b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Select test type' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Blood", "Blood" },
+				{ 1, "CT Scan", "CT Scan" },
+				{ 2, "MRI", "MRI" },
+				{ 3, "Urine Test", "Urine Test" },
+				{ 4, "X-Ray", "X-Ray" }
+			    }
+			)
+
+	annotation PBI_Id = 71a2164a646f47b38d2233d1fadd7a3e
+
