@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Revenue Stability",
+      "dax_expression": "'Orders+ (Sample - Superstore)'[Net Revenue ] + 'Orders+ (Sample - Superstore)'[Profit Ratio ]",
+      "solution_explanation": "Mapped the Tableau row-level expression to DAX by converting each column reference to the table-qualified form. This is implemented as a calculated column because the formula performs a row-by-row addition of two fields with no aggregation or parameters."
+    }
+  ]
+}
