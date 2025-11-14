@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Parameters",
+      "name": "Select Departmrnt",
+      "dax_expression": "\"Department Name\"",
+      "solution_explanation": "Converted the Tableau string literal \"Department Name\" to a DAX string literal. This is a row-level constant (no aggregations or parameters), so it is implemented as a calculated column."
+    }
+  ]
+}
