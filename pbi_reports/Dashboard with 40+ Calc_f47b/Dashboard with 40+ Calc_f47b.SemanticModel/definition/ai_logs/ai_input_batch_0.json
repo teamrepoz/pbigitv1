@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Sales Round ",
+      "table_name": "Orders+ (Sample - Superstore)",
+      "tableau_expression": "ROUND([Sales])",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "ROUND([Sales])",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Sales": "real"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
