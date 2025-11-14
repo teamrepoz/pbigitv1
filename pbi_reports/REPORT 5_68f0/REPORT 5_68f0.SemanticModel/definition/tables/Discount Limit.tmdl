@@ -1,0 +1,44 @@
+table 'Discount Limit'
+	lineageTag: dffe5e03-b861-4d67-8e17-65d33590b1e4
+
+	column Index
+		formatString: 0
+		lineageTag: 7b00115a-0e62-41ef-8b88-853974102d7a
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 71214f5b-034b-4a79-a765-413b06c6039c
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 99c3a13e-424f-44bc-b3dd-e9a595894c28
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Discount Limit' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", DOUBLE,
+			    "Value", DOUBLE,
+			    {
+			        {0, 0.1, 0.1}
+			    }
+			)
+
+	annotation PBI_Id = 6ab2faf21e0743f0a95eed3ab5e0f850
+
