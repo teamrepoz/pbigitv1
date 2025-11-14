@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Profit Round",
+      "table_name": "Orders+ (Sample - Superstore)",
+      "tableau_expression": "ROUND([Profit])",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "ROUND([Profit])",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Profit": "real"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
