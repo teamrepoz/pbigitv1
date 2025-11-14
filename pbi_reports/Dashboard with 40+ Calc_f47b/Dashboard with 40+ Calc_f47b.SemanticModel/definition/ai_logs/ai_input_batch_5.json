@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Shipping Cost Estimate",
+      "table_name": "Orders+ (Sample - Superstore)",
+      "tableau_expression": "[Quantity]*5",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "[Quantity]*5",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Quantity": "integer"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
