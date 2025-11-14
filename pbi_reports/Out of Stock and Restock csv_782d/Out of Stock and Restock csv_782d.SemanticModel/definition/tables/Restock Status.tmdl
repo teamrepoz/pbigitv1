@@ -1,0 +1,47 @@
+table 'Restock Status'
+	lineageTag: 571145ca-6a9b-4072-8762-40ce08fc5c76
+
+	column Index
+		formatString: 0
+		lineageTag: 798391f2-28e6-4d84-9146-9bcad7f226b2
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: d26b2cc6-4487-4ab7-8ed0-99d9fbda0357
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 8875f2c4-fb83-4bfa-8ec1-f8b76905fb25
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Restock Status' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Out of Stock", "Out of Stock" },
+				{ 1, "Restocked Soon", "Restocked Soon" },
+				{ 2, "In Stock", "In Stock" },
+				{ 3, "Discontinued", "Discontinued" }
+			    }
+			)
+
+	annotation PBI_Id = 0f369b44c1a94ac7bed9dcee6e67ba3a
+
