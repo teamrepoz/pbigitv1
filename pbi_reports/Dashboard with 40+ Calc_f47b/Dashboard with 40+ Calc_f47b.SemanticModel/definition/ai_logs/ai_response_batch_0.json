@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Sales Round ",
+      "dax_expression": "ROUND('Orders+ (Sample - Superstore)'[Sales])",
+      "solution_explanation": "Converted Tableau ROUND([Sales]) to DAX using the table-qualified column reference. This is a row-level numeric transformation, so it is implemented as a calculated column."
+    }
+  ]
+}
