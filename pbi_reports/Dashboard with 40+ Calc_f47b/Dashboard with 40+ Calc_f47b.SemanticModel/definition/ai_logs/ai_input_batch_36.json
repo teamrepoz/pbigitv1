@@ -1,0 +1,21 @@
+{
+  "calculations": [
+    {
+      "name": "Stability Tier",
+      "table_name": "Orders+ (Sample - Superstore)",
+      "tableau_expression": "IF [Revenue Stability]>200 THEN \"Stable\" ELSEIF  [Revenue Stability] >50 THEN \"Moderate\" ELSE \"Unstable\" END",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "IF [Revenue Stability]>200 THEN \"Stable\" ELSEIF  [Revenue Stability] >50 THEN \"Moderate\" ELSE \"Unstable\" END",
+        "calculated_fields": {
+          "Revenue Stability": "[Net Revenue ]+[Profit Ratio ]"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {
+          "Revenue Stability": "real"
+        }
+      }
+    }
+  ]
+}
