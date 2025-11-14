@@ -1,0 +1,25 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Profit Margin %",
+      "dax_expression": "'Orders+ (Sample - Superstore)'[Profit Ratio ] * 100",
+      "solution_explanation": "Converted row-level multiplication from Tableau ([Profit Ratio ]*100) to DAX, preserving row context and using table-qualified column reference."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Profit vs Target (Uses Profit Margin %)",
+      "dax_expression": "'Orders+ (Sample - Superstore)'[Profit Margin %] - 15",
+      "solution_explanation": "Converted row-level subtraction from Tableau ([Profit Margin %]-15) to DAX, referencing the previously defined calculated column with table-qualified syntax."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Target Status",
+      "dax_expression": "IF('Orders+ (Sample - Superstore)'[Profit vs Target (Uses Profit Margin %)] > 0, \"Above Target \", \"Below Target\")",
+      "solution_explanation": "Converted Tableau IF expression to DAX IF, using the calculated field 'Profit vs Target (Uses Profit Margin %)' with table-qualified reference and preserving the original string outputs."
+    }
+  ]
+}
