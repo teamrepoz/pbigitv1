@@ -1,0 +1,25 @@
+{
+  "calculations": [
+    {
+      "name": "Select Department",
+      "table_name": "Attendance+ (HR_Attendance_Dataset)",
+      "tableau_expression": "[DepartmentName]=[Parameters].[Select Departmrnt]",
+      "datatype": "boolean",
+      "calculation_context": {
+        "Expression": "[DepartmentName]=[Parameters].[Select Departmrnt]",
+        "calculated_fields": {
+          "Select Departmrnt": "\"Department Name\""
+        },
+        "parameters": [
+          "Select Departmrnt"
+        ],
+        "col_to_datatype_mapping": {
+          "DepartmentName": "string"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Select Departmrnt": "string"
+        }
+      }
+    }
+  ]
+}
