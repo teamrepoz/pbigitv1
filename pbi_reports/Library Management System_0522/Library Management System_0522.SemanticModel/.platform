@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Library Management System_0522"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "f3f01b11-1412-4198-a602-7fbca9fb6ab4"
+  }
+}
