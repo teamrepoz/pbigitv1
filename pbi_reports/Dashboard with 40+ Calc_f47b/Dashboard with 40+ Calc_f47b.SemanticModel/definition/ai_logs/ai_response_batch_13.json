@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "True Cost",
+      "dax_expression": "'Orders+ (Sample - Superstore)'[Cost Price (Estimate)] * 'Orders+ (Sample - Superstore)'[Shipping Cost Estimate]",
+      "solution_explanation": "Row-level calculation (multiplication of two per-row calculated fields). Converted to a calculated column and transformed field references to the 'Orders+ (Sample - Superstore)'[ColumnName] format."
+    }
+  ]
+}
