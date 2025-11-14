@@ -1,0 +1,5 @@
+relationship 03c75dde-f466-41b6-95fb-498180e3fe09
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Live_Expense_Tracking_and_Budge (Live_Expense_Tracking_and_Budget_Report)'.Date
+	toColumn: LocalDateTable_9d6c7f64-3dba-4c33-8e41-6de241bf8d66.Date
+
