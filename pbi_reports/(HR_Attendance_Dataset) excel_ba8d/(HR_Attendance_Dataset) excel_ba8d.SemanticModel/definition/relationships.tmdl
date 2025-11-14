@@ -1,0 +1,25 @@
+relationship 65b1ca1d-196f-400f-a4cb-d8f54fe765e4
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Attendance_Attendance+ (HR_Attendance_Dataset)'.Date
+	toColumn: LocalDateTable_9f07fe11-ad45-41bb-88db-82b9486ede0a.Date
+
+relationship 727b195b-47cc-49c7-82ff-8689b7f3bb24
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Employees_Attendance+ (HR_Attendance_Dataset)'.JoinDate
+	toColumn: LocalDateTable_fbcb973b-2772-4c42-ab08-6de7f7e6c7a9.Date
+
+relationship 9322771f-e5f7-41b2-b031-93acd641dab5
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Attendance+ (HR_Attendance_Dataset)'.Date
+	toColumn: LocalDateTable_1f8e13a3-e4d3-4cc8-9fd9-52e4343f8efa.Date
+
+relationship f4a50c4e-d4f2-4b44-9b31-fa90a01a38a2
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Attendance+ (HR_Attendance_Dataset)'.JoinDate
+	toColumn: LocalDateTable_68cc7551-f3e1-45bb-80ab-b488c515763e.Date
+
+relationship 36007a19-cfab-4e4d-a949-fccbd582affc
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Attendance+ (HR_Attendance_Dataset)'.JoinDate
+	toColumn: LocalDateTable_b68084fa-df9e-4f29-b964-1aa397a95bea.Date
+
