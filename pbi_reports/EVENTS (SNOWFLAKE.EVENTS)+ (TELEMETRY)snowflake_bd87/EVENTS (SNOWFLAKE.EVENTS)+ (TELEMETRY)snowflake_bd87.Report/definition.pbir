@@ -1,0 +1,8 @@
+{
+  "version": "4.0",
+  "datasetReference": {
+    "byPath": {
+      "path": "../EVENTS (SNOWFLAKE.EVENTS)+ (TELEMETRY)snowflake_bd87.SemanticModel"
+    }
+  }
+}
