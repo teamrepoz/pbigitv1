@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Performance Code",
+      "dax_expression": "IF('Orders+ (Sample - Superstore)'[Is High Performing ] = \"Yes\", 'Orders+ (Sample - Superstore)'[Quality Score ] + 2, 'Orders+ (Sample - Superstore)'[Quality Score ] - 1)",
+      "solution_explanation": "Converted Tableau IF to DAX IF and mapped column references to 'Orders+ (Sample - Superstore)'[Column]. This is a row-level transformation (no aggregations or parameters), so it is implemented as a calculated column."
+    }
+  ]
+}
