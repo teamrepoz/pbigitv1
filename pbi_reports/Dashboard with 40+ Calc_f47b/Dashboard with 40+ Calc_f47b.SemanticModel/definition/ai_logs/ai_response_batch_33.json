@@ -1,0 +1,25 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Profit Margin %",
+      "dax_expression": "'Orders+ (Sample - Superstore)'[Profit Ratio ] * 100",
+      "solution_explanation": "Converted Tableau [Profit Ratio ] * 100 to a DAX calculated column using row-level multiplication: 'Orders+ (Sample - Superstore)'[Profit Ratio ] * 100."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Revenue Tier",
+      "dax_expression": "IF(\n    'Orders+ (Sample - Superstore)'[Net Revenue ] > 1000,\n    \"High Margin\",\n    IF(\n        'Orders+ (Sample - Superstore)'[Profit Margin %] > 10,\n        \"Medium Margin\",\n        \"Low Margin\"\n    )\n)",
+      "solution_explanation": "Translated the nested IF/ELSEIF logic to DAX nested IFs. Uses the previously created calculated column 'Profit Margin %' for the second condition and keeps string literals as in the Tableau formula."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Profit Health",
+      "dax_expression": "IF(\n    'Orders+ (Sample - Superstore)'[Profit Ratio ] > 0.2,\n    IF('Orders+ (Sample - Superstore)'[Revenue Tier] = \"High\", \"Excellent\", \"Good\"),\n    IF('Orders+ (Sample - Superstore)'[Revenue Tier] = \"Low\", \"Poor\", \"Average\")\n)",
+      "solution_explanation": "Converted the nested Tableau IFs to nested DAX IF statements. References row-level fields 'Profit Ratio ' and 'Revenue Tier' on the same table, so implemented as a calculated column."
+    }
+  ]
+}
