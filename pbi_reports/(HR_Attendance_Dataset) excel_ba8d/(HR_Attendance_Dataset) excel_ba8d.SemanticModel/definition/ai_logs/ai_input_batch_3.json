@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Total Days Present",
+      "table_name": "Attendance+ (HR_Attendance_Dataset)",
+      "tableau_expression": "IF [Status]=\"Present\" THEN 1 ELSE 0 END",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "IF [Status]=\"Present\" THEN 1 ELSE 0 END",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Status": "string"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
