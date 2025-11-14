@@ -1,0 +1,27 @@
+{
+  "calculations": [
+    {
+      "name": "Cost After Discount ",
+      "table_name": "Orders+ (Sample - Superstore)",
+      "tableau_expression": "[Cost Price (Estimate)]-[Discount Amount]",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "[Cost Price (Estimate)]-[Discount Amount]",
+        "calculated_fields": {
+          "Cost Price (Estimate)": "[Sales]-[Profit]",
+          "Discount Amount": "[Sales]*[Discount]"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Sales": "real",
+          "Discount": "real",
+          "Profit": "real"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Cost Price (Estimate)": "real",
+          "Discount Amount": "real"
+        }
+      }
+    }
+  ]
+}
