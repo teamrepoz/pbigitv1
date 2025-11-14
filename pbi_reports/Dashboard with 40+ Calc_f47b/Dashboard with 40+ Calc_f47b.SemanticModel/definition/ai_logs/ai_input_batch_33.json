@@ -1,0 +1,23 @@
+{
+  "calculations": [
+    {
+      "name": "Profit Health",
+      "table_name": "Orders+ (Sample - Superstore)",
+      "tableau_expression": "IF [Profit Ratio ] > 0.2 THEN\r\n    IF [Revenue Tier] = \"High\" THEN \"Excellent\"\r\n    ELSE \"Good\" END\r\nELSE\r\n    IF [Revenue Tier] = \"Low\" THEN \"Poor\"\r\n    ELSE \"Average\"\r\nEND END",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "IF [Profit Ratio ] > 0.2 THEN\r\n    IF [Revenue Tier] = \"High\" THEN \"Excellent\"\r\n    ELSE \"Good\" END\r\nELSE\r\n    IF [Revenue Tier] = \"Low\" THEN \"Poor\"\r\n    ELSE \"Average\"\r\nEND END",
+        "calculated_fields": {
+          "Revenue Tier": "IF [Net Revenue ]>1000 THEN \"High Margin\" ELSEIF [Profit Margin %]>10 THEN \"Medium Margin\" ELSE \"Low Margin\" END",
+          "Profit Margin %": "[Profit Ratio ]*100"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {
+          "Profit Margin %": "real",
+          "Revenue Tier": "String"
+        }
+      }
+    }
+  ]
+}
