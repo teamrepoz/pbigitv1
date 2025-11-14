@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Discount Amount",
+      "dax_expression": "'Orders+ (Sample - Superstore)'[Sales] * 'Orders+ (Sample - Superstore)'[Discount]",
+      "solution_explanation": "Converted the row-level Tableau expression [Sales]*[Discount] into a calculated column. Column references were transformed to 'Orders+ (Sample - Superstore)'[Sales] and 'Orders+ (Sample - Superstore)'[Discount]. This is row-level arithmetic, so it is implemented as a calculated column."
+    }
+  ]
+}
