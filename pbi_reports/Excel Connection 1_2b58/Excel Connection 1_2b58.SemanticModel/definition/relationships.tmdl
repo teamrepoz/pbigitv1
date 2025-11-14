@@ -1,0 +1,15 @@
+relationship 50d9359e-4561-4d0a-9e47-1a1057b9317d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Fact Table_Fact Table+ (Coffee Chain Data)'.Date
+	toColumn: LocalDateTable_dd761600-58b5-41fc-bc23-cdfb640746cd.Date
+
+relationship 365445e7-1dc9-4f5a-b09c-5ea34e2804ef
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Fact Table+ (Coffee Chain Data)'.Date
+	toColumn: LocalDateTable_cc6c90f0-1417-4ae7-a8d6-e555bcc37945.Date
+
+relationship b9b55546-d0f4-4a64-9922-c048ef185a1e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Fact Table+ (Coffee Chain Data)'.Date
+	toColumn: LocalDateTable_6fb5a0f0-16b7-422a-b28a-b2a384cfa2ac.Date
+
