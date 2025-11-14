@@ -1,0 +1,237 @@
+table 'EVENTS (SNOWFLAKE.EVENTS)+ (TELEMETRY)'
+	lineageTag: ec8e1998-ca92-4330-9cd2-5dc699baea30
+
+	column TIMESTAMP
+		dataType: datetime
+		lineageTag: f27c653c-d19a-466a-b7da-30c5ffdbcb65
+		summarizeBy: none
+		sourceColumn: TIMESTAMP
+
+		variation Variation
+			isDefault
+			relationship: 8dc78e7e-9bb8-4e95-995b-ad9ceba50708
+			defaultHierarchy: LocalDateTable_cbea2a92-5c0c-4b9a-98f3-3adebd85f987.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column START_TIMESTAMP
+		dataType: datetime
+		lineageTag: cba5880b-f613-4651-bd2e-561e08232fa6
+		summarizeBy: none
+		sourceColumn: START_TIMESTAMP
+
+		variation Variation
+			isDefault
+			relationship: 268d29e5-6af8-4b1e-a71d-b3c15343043e
+			defaultHierarchy: LocalDateTable_883a6ac7-28a1-4a8a-867a-ac2c5292308c.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column OBSERVED_TIMESTAMP
+		dataType: datetime
+		lineageTag: c386a4e4-49d2-4308-80e7-7e9d9f583d33
+		summarizeBy: none
+		sourceColumn: OBSERVED_TIMESTAMP
+
+		variation Variation
+			isDefault
+			relationship: 1d5a273c-3384-4c80-bc8c-d8ea01bd1d2f
+			defaultHierarchy: LocalDateTable_1ac4c54e-124f-4a8a-bc40-6866868253c9.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRACE
+		dataType: string
+		lineageTag: 8d8fd8c0-52d4-4ada-a95d-bbd231890350
+		summarizeBy: none
+		sourceColumn: TRACE
+
+		annotation SummarizationSetBy = Automatic
+
+	column RESOURCE
+		dataType: string
+		lineageTag: 3325725a-e8f5-4c73-8a47-5a5de1c31ccc
+		summarizeBy: none
+		sourceColumn: RESOURCE
+
+		annotation SummarizationSetBy = Automatic
+
+	column RESOURCE_ATTRIBUTES
+		dataType: string
+		lineageTag: 0f124626-409a-4e22-9b39-45401f01846a
+		summarizeBy: none
+		sourceColumn: RESOURCE_ATTRIBUTES
+
+		annotation SummarizationSetBy = Automatic
+
+	column SCOPE
+		dataType: string
+		lineageTag: c88ebc05-7c03-4a9a-8127-3c3f3b32ed15
+		summarizeBy: none
+		sourceColumn: SCOPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column SCOPE_ATTRIBUTES
+		dataType: string
+		lineageTag: d2b98099-bda8-4365-ac46-3444ef7f0ece
+		summarizeBy: none
+		sourceColumn: SCOPE_ATTRIBUTES
+
+		annotation SummarizationSetBy = Automatic
+
+	column RECORD_TYPE
+		dataType: string
+		lineageTag: 75c1936d-cda2-424d-9a3a-593413282b03
+		summarizeBy: none
+		sourceColumn: RECORD_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column RECORD
+		dataType: string
+		lineageTag: 41b40048-c8b2-4b65-830c-233530e97925
+		summarizeBy: none
+		sourceColumn: RECORD
+
+		annotation SummarizationSetBy = Automatic
+
+	column RECORD_ATTRIBUTES
+		dataType: string
+		lineageTag: d482f035-72b7-4a74-9bcd-a9f028d5db73
+		summarizeBy: none
+		sourceColumn: RECORD_ATTRIBUTES
+
+		annotation SummarizationSetBy = Automatic
+
+	column VALUE
+		dataType: string
+		lineageTag: 67fdd48f-8fe5-4bdf-aef5-a5ec6fe9cf35
+		summarizeBy: none
+		sourceColumn: VALUE
+
+		annotation SummarizationSetBy = Automatic
+
+	column EXEMPLARS
+		dataType: string
+		lineageTag: e07591c1-32c0-432d-accc-9ca987d75f64
+		summarizeBy: none
+		sourceColumn: EXEMPLARS
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'TIMESTAMP 1'
+		dataType: datetime
+		lineageTag: efd8e184-2c92-46c8-b5c4-89d0f356b7e1
+		summarizeBy: none
+		sourceColumn: 'TIMESTAMP 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'START_TIMESTAMP 1'
+		dataType: datetime
+		lineageTag: 69cd692d-8284-4c0a-befc-ccd3c1703491
+		summarizeBy: none
+		sourceColumn: 'START_TIMESTAMP 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'OBSERVED_TIMESTAMP 1'
+		dataType: datetime
+		lineageTag: 38907f69-5768-45b3-abbe-aa72031f2da0
+		summarizeBy: none
+		sourceColumn: 'OBSERVED_TIMESTAMP 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'TRACE 1'
+		dataType: string
+		lineageTag: a6c5bad4-e050-4373-aca4-c011b15765f7
+		summarizeBy: none
+		sourceColumn: 'TRACE 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RESOURCE 1'
+		dataType: string
+		lineageTag: 0e4196ea-b23a-43f2-bbd7-3f01cd6286db
+		summarizeBy: none
+		sourceColumn: 'RESOURCE 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RESOURCE_ATTRIBUTES 1'
+		dataType: string
+		lineageTag: 15427c3b-7227-4d4a-b5c6-fe78ad7d709c
+		summarizeBy: none
+		sourceColumn: 'RESOURCE_ATTRIBUTES 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SCOPE 1'
+		dataType: string
+		lineageTag: 7d71f244-e97c-4ec0-ae02-cec527b929ce
+		summarizeBy: none
+		sourceColumn: 'SCOPE 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SCOPE_ATTRIBUTES 1'
+		dataType: string
+		lineageTag: 7dc8d5ba-01d8-45b4-8b41-e2624c281012
+		summarizeBy: none
+		sourceColumn: 'SCOPE_ATTRIBUTES 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RECORD_TYPE 1'
+		dataType: string
+		lineageTag: 76baae06-17ee-4806-9d96-a2b607991cf6
+		summarizeBy: none
+		sourceColumn: 'RECORD_TYPE 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RECORD 1'
+		dataType: string
+		lineageTag: 1952a1e4-26e1-4664-a3f6-17782fe40f4a
+		summarizeBy: none
+		sourceColumn: 'RECORD 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RECORD_ATTRIBUTES 1'
+		dataType: string
+		lineageTag: b46e7fec-524e-417f-a8ec-80e8dd7fc814
+		summarizeBy: none
+		sourceColumn: 'RECORD_ATTRIBUTES 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'VALUE 1'
+		dataType: string
+		lineageTag: 5dc95ff2-d7b1-4e89-b85a-4293862c0de7
+		summarizeBy: none
+		sourceColumn: 'VALUE 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'EXEMPLARS 1'
+		dataType: string
+		lineageTag: f36ad99e-bea1-42e5-9f18-c56360f44e03
+		summarizeBy: none
+		sourceColumn: 'EXEMPLARS 1'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'EVENTS (SNOWFLAKE.EVENTS)+ (TELEMETRY)' = m
+		mode: import
+		source =
+				let 
+					#"Source0" = Table.NestedJoin(#"EVENTS_EVENTS (SNOWFLAKE.EVENTS)+ (TELEMETRY)", {"EXEMPLARS"}, #"EVENTS_VIEW_EVENTS (SNOWFLAKE.EVENTS)+ (TELEMETRY)", {"EXEMPLARS"}, "EVENTS_VIEW_EVENTS (SNOWFLAKE.EVENTS)+ (TELEMETRY)", JoinKind.Inner),
+					#"Expand0" = Table.ExpandTableColumn(#"Source0", "EVENTS_VIEW_EVENTS (SNOWFLAKE.EVENTS)+ (TELEMETRY)", {"TIMESTAMP", "START_TIMESTAMP", "OBSERVED_TIMESTAMP", "TRACE", "RESOURCE", "RESOURCE_ATTRIBUTES", "SCOPE", "SCOPE_ATTRIBUTES", "RECORD_TYPE", "RECORD", "RECORD_ATTRIBUTES", "VALUE", "EXEMPLARS"}, {"TIMESTAMP 1", "START_TIMESTAMP 1", "OBSERVED_TIMESTAMP 1", "TRACE 1", "RESOURCE 1", "RESOURCE_ATTRIBUTES 1", "SCOPE 1", "SCOPE_ATTRIBUTES 1", "RECORD_TYPE 1", "RECORD 1", "RECORD_ATTRIBUTES 1", "VALUE 1", "EXEMPLARS 1"})
+					in #"Expand0"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
