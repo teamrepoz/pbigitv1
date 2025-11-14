@@ -1,0 +1,18 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Loss Flag",
+      "dax_expression": "IF('Orders+ (Sample - Superstore)'[Profit] < 0, 1, 0)",
+      "solution_explanation": "Converted Tableau IF [Profit]<0 THEN 1 ELSE 0 END to DAX IF. This is a row-level transformation using the Profit column, so it is implemented as a calculated column. Column reference updated to 'Orders+ (Sample - Superstore)'[Profit]."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Heavy Loss Check ",
+      "dax_expression": "IF('Orders+ (Sample - Superstore)'[Loss Flag] = 1 && 'Orders+ (Sample - Superstore)'[Profit] < -100, \"Heavy Loss\", \"Normal\")",
+      "solution_explanation": "Converted Tableau IF [Loss Flag]=1 AND [Profit]<-100 THEN \"Heavy Loss\" ELSE \"Normal\" END to DAX IF with logical AND (&&). This is row-level logic (no aggregation) so implemented as a calculated column. References converted to 'Orders+ (Sample - Superstore)'[Loss Flag] and 'Orders+ (Sample - Superstore)'[Profit]."
+    }
+  ]
+}
