@@ -1,0 +1,27 @@
+{
+  "calculations": [
+    {
+      "name": "Net Revenue ",
+      "table_name": "Orders+ (Sample - Superstore)",
+      "tableau_expression": "[Sales After Discont]-[Shipping Cost Estimate]",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "[Sales After Discont]-[Shipping Cost Estimate]",
+        "calculated_fields": {
+          "Shipping Cost Estimate": "[Quantity]*5",
+          "Sales After Discont": "[Sales]-[Sales]*[Discount]"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Sales": "real",
+          "Quantity": "integer",
+          "Discount": "real"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Shipping Cost Estimate": "integer",
+          "Sales After Discont": "real"
+        }
+      }
+    }
+  ]
+}
