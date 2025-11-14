@@ -1,0 +1,47 @@
+table 'Metric Selector'
+	lineageTag: e44a04ad-1cc1-473d-a840-c6208f979183
+
+	column Index
+		formatString: 0
+		lineageTag: 6b8d33df-4358-496e-8070-295e027ee5c1
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: f5fd2a55-beae-434b-8911-6b332400b04a
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 5a726146-9044-4cb7-9b96-43d54de157e1
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Metric Selector' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Sales", "Sales" },
+				{ 1, "Profit", "Profit" },
+				{ 2, "Budget Sales ", "Budget Sales " },
+				{ 3, "Budget Profit", "Budget Profit" }
+			    }
+			)
+
+	annotation PBI_Id = 727328f2bcbf4fe09d38d1c23739affc
+
