@@ -1,0 +1,28 @@
+table 'Min balance'
+	lineageTag: b5812de1-dc0e-4d8b-a856-c15031681271
+
+	measure 'Min balance Value' = SELECTEDVALUE('Min balance'[Min balance], 1.0)
+		lineageTag: a685afbf-9055-4675-af14-f0f6a137d68b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Min balance'
+		dataType: double
+		formatString: 0
+		lineageTag: e677fa78-1d39-4f21-9997-76f50df32557
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Min balance' = calculated
+		mode: import
+		source = GENERATESERIES(1.0, 10000.0)
+
+	annotation PBI_Id = a7c4da82c920462d96f913a44495a74f
+
