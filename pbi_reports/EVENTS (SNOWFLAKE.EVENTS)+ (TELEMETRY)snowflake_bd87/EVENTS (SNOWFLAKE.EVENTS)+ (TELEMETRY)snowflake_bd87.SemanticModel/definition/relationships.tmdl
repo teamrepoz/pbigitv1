@@ -1,0 +1,60 @@
+relationship 68a1b43a-11ca-4c8b-b7e7-e1a41e721db6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'EVENTS_EVENTS (SNOWFLAKE.EVENTS)+ (TELEMETRY)'.TIMESTAMP
+	toColumn: LocalDateTable_8821aa1e-5b34-49ee-ae48-c6da3299a52b.Date
+
+relationship a1f10a5d-c095-4786-bf9c-c80a1fcaa3d4
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'EVENTS_EVENTS (SNOWFLAKE.EVENTS)+ (TELEMETRY)'.START_TIMESTAMP
+	toColumn: LocalDateTable_979eb3d5-a37d-4a9d-9fc2-1f2197bbe735.Date
+
+relationship 8254c5e7-491c-428f-9dc4-95cf3f018d66
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'EVENTS_EVENTS (SNOWFLAKE.EVENTS)+ (TELEMETRY)'.OBSERVED_TIMESTAMP
+	toColumn: LocalDateTable_5bea4c30-88fc-4f11-b651-af7ac1cca419.Date
+
+relationship cc6ded7e-b5db-42b6-9452-29e8172a6cc1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'EVENTS_VIEW_EVENTS (SNOWFLAKE.EVENTS)+ (TELEMETRY)'.TIMESTAMP
+	toColumn: LocalDateTable_a30434a0-9253-4414-b4e3-20dbd287dde1.Date
+
+relationship 62fa07b0-0186-4403-9447-b9392a9b6f40
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'EVENTS_VIEW_EVENTS (SNOWFLAKE.EVENTS)+ (TELEMETRY)'.START_TIMESTAMP
+	toColumn: LocalDateTable_816bdb5f-3f69-4f2f-8e42-704965b77678.Date
+
+relationship 3ea87913-fee3-494a-b481-b4f5f4246f99
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'EVENTS_VIEW_EVENTS (SNOWFLAKE.EVENTS)+ (TELEMETRY)'.OBSERVED_TIMESTAMP
+	toColumn: LocalDateTable_73ad2f9f-ecd7-42c8-ab6b-390a04c668b6.Date
+
+relationship 542e9234-cc26-4576-a0e0-2f156ec7d96f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'EVENTS (SNOWFLAKE.EVENTS)+ (TELEMETRY)'.TIMESTAMP
+	toColumn: LocalDateTable_d7670347-ee71-4c15-9d4b-c5f334517cd8.Date
+
+relationship 2aed48ca-501d-4969-90c0-0058f3bb6991
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'EVENTS (SNOWFLAKE.EVENTS)+ (TELEMETRY)'.START_TIMESTAMP
+	toColumn: LocalDateTable_1b6b29f7-feed-425b-9dc9-ccbf67a778ea.Date
+
+relationship 59e0e206-e157-4dc7-85bd-fea1b1f0c473
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'EVENTS (SNOWFLAKE.EVENTS)+ (TELEMETRY)'.OBSERVED_TIMESTAMP
+	toColumn: LocalDateTable_029a70fc-e245-44f4-ab82-bde987292401.Date
+
+relationship 8dc78e7e-9bb8-4e95-995b-ad9ceba50708
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'EVENTS (SNOWFLAKE.EVENTS)+ (TELEMETRY)'.TIMESTAMP
+	toColumn: LocalDateTable_cbea2a92-5c0c-4b9a-98f3-3adebd85f987.Date
+
+relationship 268d29e5-6af8-4b1e-a71d-b3c15343043e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'EVENTS (SNOWFLAKE.EVENTS)+ (TELEMETRY)'.START_TIMESTAMP
+	toColumn: LocalDateTable_883a6ac7-28a1-4a8a-867a-ac2c5292308c.Date
+
+relationship 1d5a273c-3384-4c80-bc8c-d8ea01bd1d2f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'EVENTS (SNOWFLAKE.EVENTS)+ (TELEMETRY)'.OBSERVED_TIMESTAMP
+	toColumn: LocalDateTable_1ac4c54e-124f-4a8a-bc40-6866868253c9.Date
+
