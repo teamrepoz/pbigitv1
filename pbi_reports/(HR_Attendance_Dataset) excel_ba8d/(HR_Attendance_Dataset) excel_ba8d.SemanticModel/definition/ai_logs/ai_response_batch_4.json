@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Attendance+ (HR_Attendance_Dataset)",
+      "name": "Total Leaves",
+      "dax_expression": "IF('Attendance+ (HR_Attendance_Dataset)'[Status] = \"Leave\", 1, 0)",
+      "solution_explanation": "Converted Tableau row-level IF into a DAX calculated column using table-qualified column reference. Row-level logic (no aggregates or parameters) => calculated column."
+    }
+  ]
+}
