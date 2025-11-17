@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "Max date Last Year",
+      "dax_expression": "VAR MaxDate = CALCULATE(MAX('Orders (Sample - Superstore)'[Order Date]), ALL('Orders (Sample - Superstore)'))\nRETURN DATE(YEAR(MaxDate) - 1, MONTH(MaxDate), DAY(MaxDate))",
+      "solution_explanation": "In Tableau [Max Date] is defined as an aggregated LOD ({MAX([Order Date])}). The DAX measure first computes the overall max order date using CALCULATE + ALL to emulate the LOD, stores it in a VAR, and then returns the date one year earlier using DATE(YEAR-1, MONTH, DAY).",
+      "type_changed_reason": "The calculation depends on an aggregated value (Max Date defined as {MAX([Order Date])}), therefore it must be created as a measure."
+    }
+  ]
+}
