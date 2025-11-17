@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "complaints",
+      "name": "Target",
+      "dax_expression": "1.0",
+      "solution_explanation": "Tableau expression MIN(1.0) is an aggregation over a constant; the equivalent DAX is the constant 1.0. This should be implemented as a measure because it uses an aggregate function in Tableau."
+    }
+  ]
+}
