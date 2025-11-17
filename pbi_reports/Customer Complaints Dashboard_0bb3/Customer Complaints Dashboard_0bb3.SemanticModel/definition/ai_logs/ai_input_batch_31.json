@@ -1,0 +1,28 @@
+{
+  "calculations": [
+    {
+      "name": "Selected Product Filter",
+      "table_name": "complaints",
+      "tableau_expression": "[Parameters].[Selected Product] = [Product Grouping] OR [Parameters].[Selected Product] = 'ALL'",
+      "datatype": "boolean",
+      "calculation_context": {
+        "Expression": "[Parameters].[Selected Product] = [Product Grouping] OR [Parameters].[Selected Product] = 'ALL'",
+        "calculated_fields": {
+          "Product Grouping": "CASE [Product]\r\nWHEN 'Bank account or service' THEN 'BANK SERVICES'\r\nWHEN 'Checking or savings account' THEN 'CHECKING / SAVINGS'\r\nWHEN 'Credit card' THEN 'CREDIT CARD'\r\nWHEN 'Mortgage' THEN 'MORTGAGE'\r\nELSE 'OTHER' END",
+          "Selected Product": "\"OTHER\""
+        },
+        "parameters": [
+          "Selected Product",
+          "Selected Product"
+        ],
+        "col_to_datatype_mapping": {
+          "Product": "string"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Selected Product": "string",
+          "Product Grouping": "String"
+        }
+      }
+    }
+  ]
+}
