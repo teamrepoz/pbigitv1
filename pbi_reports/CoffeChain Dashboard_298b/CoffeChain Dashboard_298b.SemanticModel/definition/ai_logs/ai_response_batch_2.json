@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "CoffeeChain Query (Sample - Cof (CoffeeChain DATASET)",
+      "name": "Profit per year",
+      "dax_expression": "CALCULATE(\n    SUM('CoffeeChain Query (Sample - Cof (CoffeeChain DATASET)'[Profit]),\n    ALLEXCEPT(\n        'CoffeeChain Query (Sample - Cof (CoffeeChain DATASET)',\n        'CoffeeChain Query (Sample - Cof (CoffeeChain DATASET)'[Year]\n    )\n)",
+      "solution_explanation": "Converted the FIXED LOD aggregation {FIXED [Year] : SUM([Profit])} to a DAX measure that calculates SUM of Profit while preserving filters only on the Year calculated column. The Tableau calculated field Year (YEAR([Date])) is referenced as 'CoffeeChain Query (Sample - Cof (CoffeeChain DATASET)'[Year].",
+      "type_changed_reason": "The Tableau expression uses a FIXED LOD aggregation which is context/aggregate-based; such calculations should be implemented as measures in Power BI."
+    }
+  ]
+}
