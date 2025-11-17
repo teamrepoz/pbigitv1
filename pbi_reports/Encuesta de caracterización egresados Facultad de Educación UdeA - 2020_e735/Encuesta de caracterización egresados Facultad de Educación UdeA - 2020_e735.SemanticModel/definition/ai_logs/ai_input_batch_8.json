@@ -1,0 +1,23 @@
+{
+  "calculations": [
+    {
+      "name": "Top and Bottom ",
+      "table_name": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "tableau_expression": "RANK(COUNT([Seleccione el área correspondiente a su formación de pregrado dentro de la Facultad de Educación:]),'desc') <=[Parameters].[Elegir valor ]\r\n\r\nOR \r\n\r\nRANK(COUNT([Seleccione el área correspondiente a su formación de pregrado dentro de la Facultad de Educación:]),'asc') <=[Parameters].[Elegir valor ]",
+      "datatype": "boolean",
+      "calculation_context": {
+        "Expression": "RANK(COUNT([Seleccione el área correspondiente a su formación de pregrado dentro de la Facultad de Educación:]),'desc') <=[Parameters].[Elegir valor ]\r\n\r\nOR \r\n\r\nRANK(COUNT([Seleccione el área correspondiente a su formación de pregrado dentro de la Facultad de Educación:]),'asc') <=[Parameters].[Elegir valor ]",
+        "calculated_fields": {},
+        "parameters": [
+          "Elegir valor",
+          "Elegir valor",
+          "Elegir valor "
+        ],
+        "col_to_datatype_mapping": {
+          "Seleccione el área correspondiente a su formación de pregrado dentro de la Facultad de Educación:": "string"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
