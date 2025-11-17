@@ -1,0 +1,44 @@
+table 'End Date'
+	lineageTag: 9104a1e6-6d0e-453e-be1c-719849a3b13c
+
+	column Index
+		formatString: 0
+		lineageTag: a9325dce-e247-4b4c-bdd9-ae9b1914548e
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 5f9d6cad-539b-4b44-a14b-3825a5a0441e
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: d21d3e68-1193-46b5-a8ac-2acce9c2ea16
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'End Date' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", DATETIME,
+			    "Value", DATETIME,
+			    {
+			        {0, "2016-05-31", "2016-05-31"}
+			    }
+			)
+
+	annotation PBI_Id = 5b1189e167dd4c6aafe4be691401b480
+
