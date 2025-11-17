@@ -1,0 +1,55 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.63\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "name": "Section_Dashboard 1",
+      "ordinal": 0,
+      "displayName": "Dashboard 1",
+      "visualContainers": [
+        {
+          "x": 512,
+          "y": 101,
+          "z": 0,
+          "width": 476,
+          "height": 343,
+          "config": "{\"name\": \"89b04f17b6a005b5113d\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 512, \"y\": 101, \"z\": 0, \"width\": 476, \"height\": 343, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"projections\": {\"Values\": [{\"queryRef\": \"CoffeeChain Query (Sample - Cof (CoffeeChain DATASET).Latitude (generated)\"}, {\"queryRef\": \"CoffeeChain Query (Sample - Cof (CoffeeChain DATASET).Longitude (generated)\"}, {\"queryRef\": \"CoffeeChain Query (Sample - Cof (CoffeeChain DATASET).State\"}, {\"queryRef\": \"CoffeeChain Query (Sample - Cof (CoffeeChain DATASET).Total expenses to sales  Ratio\"}, {\"queryRef\": \"Sum(CoffeeChain Query (Sample - Cof (CoffeeChain DATASET).Profit)\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"C\", \"Entity\": \"CoffeeChain Query (Sample - Cof (CoffeeChain DATASET)\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"C\"}}, \"Property\": \"Latitude (generated)\"}, \"Name\": \"CoffeeChain Query (Sample - Cof (CoffeeChain DATASET).Latitude (generated)\", \"NativeReferenceName\": \"Latitude (generated)\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"C\"}}, \"Property\": \"Longitude (generated)\"}, \"Name\": \"CoffeeChain Query (Sample - Cof (CoffeeChain DATASET).Longitude (generated)\", \"NativeReferenceName\": \"Longitude (generated)\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"C\"}}, \"Property\": \"State\"}, \"Name\": \"CoffeeChain Query (Sample - Cof (CoffeeChain DATASET).State\", \"NativeReferenceName\": \"State\"}, {\"Measure\": {\"Property\": \"Total expenses to sales  Ratio\", \"Expression\": {\"SourceRef\": {\"Source\": \"C\"}}}, \"Name\": \"CoffeeChain Query (Sample - Cof (CoffeeChain DATASET).Total expenses to sales  Ratio\", \"NativeReferenceName\": \"Total expenses to sales  Ratio\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"C\"}}, \"Property\": \"Profit\"}}, \"Function\": 0}, \"Name\": \"Sum(CoffeeChain Query (Sample - Cof (CoffeeChain DATASET).Profit)\", \"NativeReferenceName\": \"Sum of Profit\"}], \"OrderBy\": []}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#f5f5f5'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": 9}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Benton Sans Book'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'\\u00c6 Identify the total expenses to sales ratio of the state with the lowest profit. '\"}}}}}]}}}"
+        },
+        {
+          "x": 11,
+          "y": 114,
+          "z": 0,
+          "width": 491,
+          "height": 674,
+          "config": "{\"name\": \"0f915c18\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 11, \"y\": 114, \"z\": 1000, \"width\": 491, \"height\": 674, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"barChart\", \"projections\": {\"Category\": [{\"queryRef\": \"CoffeeChain Query (Sample - Cof (CoffeeChain DATASET).Product & State (Combined)\", \"active\": true}], \"Y\": [{\"queryRef\": \"Sum(CoffeeChain Query (Sample - Cof (CoffeeChain DATASET).Sales)\"}], \"Series\": []}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"C\", \"Entity\": \"CoffeeChain Query (Sample - Cof (CoffeeChain DATASET)\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Property\": \"Product & State (Combined)\", \"Expression\": {\"SourceRef\": {\"Source\": \"C\"}}}, \"Name\": \"CoffeeChain Query (Sample - Cof (CoffeeChain DATASET).Product & State (Combined)\", \"NativeReferenceName\": \"Product & State (Combined)\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Sales\", \"Expression\": {\"SourceRef\": {\"Source\": \"C\"}}}}, \"Function\": 0}, \"Name\": \"Sum(CoffeeChain Query (Sample - Cof (CoffeeChain DATASET).Sales)\", \"NativeReferenceName\": \"Sum of Sales\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Sales\", \"Expression\": {\"SourceRef\": {\"Source\": \"C\"}}}}, \"Function\": 0}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"15D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Sheet 3'\"}}}}}]}}}"
+        },
+        {
+          "x": 509,
+          "y": 454,
+          "z": 0,
+          "width": 479,
+          "height": 327,
+          "config": "{\"name\": \"1ca4c549cb\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 509, \"y\": 454, \"z\": 1000, \"width\": 479, \"height\": 327, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"columnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"CoffeeChain Query (Sample - Cof (CoffeeChain DATASET).Sales\", \"active\": true}], \"Y\": [{\"queryRef\": \"CoffeeChain Query (Sample - Cof (CoffeeChain DATASET).Product\"}], \"Series\": [{\"queryRef\": \"CoffeeChain Query (Sample - Cof (CoffeeChain DATASET).Market\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"C\", \"Entity\": \"CoffeeChain Query (Sample - Cof (CoffeeChain DATASET)\", \"Type\": 0}], \"Select\": [{\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Sales\", \"Expression\": {\"SourceRef\": {\"Source\": \"C\"}}}}, \"Function\": 0}, \"Name\": \"Sum(CoffeeChain Query (Sample - Cof (CoffeeChain DATASET).Sales)\", \"NativeReferenceName\": \"Sum of Sales\"}, {\"Column\": {\"Property\": \"Product\", \"Expression\": {\"SourceRef\": {\"Source\": \"C\"}}}, \"Name\": \"CoffeeChain Query (Sample - Cof (CoffeeChain DATASET).Product\", \"NativeReferenceName\": \"Product\"}, {\"Column\": {\"Property\": \"Market\", \"Expression\": {\"SourceRef\": {\"Source\": \"C\"}}}, \"Name\": \"CoffeeChain Query (Sample - Cof (CoffeeChain DATASET).Market\", \"NativeReferenceName\": \"Market\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"C\"}}, \"Property\": \"Product\"}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"titleBold\": {\"expr\": {\"Literal\": {\"Value\": \"\"}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#ffffff'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": 9}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Benton Sans Book'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Sales of products, with respect to market'\"}}}}}]}}}"
+        }
+      ],
+      "width": 1000.0,
+      "height": 800.0
+    }
+  ]
+}
