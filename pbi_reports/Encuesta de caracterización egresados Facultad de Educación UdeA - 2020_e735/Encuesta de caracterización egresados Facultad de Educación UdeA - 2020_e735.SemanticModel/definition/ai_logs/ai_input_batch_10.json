@@ -1,0 +1,24 @@
+{
+  "calculations": [
+    {
+      "name": "Años cuando se graduo",
+      "table_name": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "tableau_expression": "[Año de egreso]- [Año nacimiento]",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "[Año de egreso]- [Año nacimiento]",
+        "calculated_fields": {
+          "Año nacimiento": "YEAR([Fecha_de_Nacimiento])"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Año de egreso": "integer",
+          "Fecha_de_Nacimiento": "date"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Año nacimiento": "Int64"
+        }
+      }
+    }
+  ]
+}
