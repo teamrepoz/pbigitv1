@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Historico Egresados Facultad de Educaci\u00f3n UdeA_8b43"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "6b601718-809d-494a-ac02-63d451632357"
+  }
+}
