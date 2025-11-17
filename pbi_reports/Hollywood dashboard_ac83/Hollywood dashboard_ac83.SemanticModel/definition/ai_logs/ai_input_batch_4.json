@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": " AVERAGE AUDIENCE SCORES",
+      "table_name": "HollywoodsMostProfitableStories",
+      "tableau_expression": "\" AVG AUDIENCE SCORES\"",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "\" AVG AUDIENCE SCORES\"",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
