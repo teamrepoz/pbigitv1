@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders (Sample - Superstore)",
+      "name": "BATCH",
+      "dax_expression": "1",
+      "solution_explanation": "The Tableau calculation is a literal constant (1). In DAX the equivalent is the constant 1. This contains no aggregations or parameters and returns the same value for each row, so it should be implemented as a calculated column."
+    }
+  ]
+}
