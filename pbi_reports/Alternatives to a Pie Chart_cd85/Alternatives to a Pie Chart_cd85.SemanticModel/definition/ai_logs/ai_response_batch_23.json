@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Sheet1 (waffle template)",
+      "name": "Index",
+      "dax_expression": "VAR IndexValue =\n    RANKX(\n        ALLSELECTED('Sheet1 (waffle template)'),\n        1,\n        ,\n        ASC,\n        DENSE\n    )\nRETURN\n    (IndexValue - 1) * 2",
+      "solution_explanation": "INDEX() is a Tableau table calculation (row position within the partition). In DAX there is no direct INDEX() equivalent; the common approach is to use RANKX over the desired partition/order. This measure uses RANKX(ALLSELECTED(...), 1, , ASC, DENSE) as a placeholder to generate a positional rank and then applies the arithmetic (Index - 1) * 2. To make this behave exactly like the original Tableau INDEX(), replace the expression argument (currently 1) with the appropriate ordering expression or column that defines row order within the partition.",
+      "type_changed_reason": "The Tableau expression uses the INDEX() table calculation which depends on the visual/table context, so it must be implemented as a measure in Power BI."
+    }
+  ]
+}
