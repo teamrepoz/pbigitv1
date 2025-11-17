@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "name": "Posgrado concluido ",
+      "dax_expression": "CALCULATE(\n    DISTINCTCOUNT('TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Número de cédula:]),\n    'TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Posgrado concluido] = \"Sí\"\n)",
+      "solution_explanation": "Recreated the Tableau FIXED LOD that counts distinct 1s when [Posgrado concluido] = \"Sí\" by counting distinct 'Número de cédula:' filtered to rows where 'Posgrado concluido' = \"Sí\". This yields the equivalent distinct-per-ID behavior as the {FIXED [Número de cédula:] : COUNTD(IF ...)} expression."
+    }
+  ]
+}
