@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "Bin Size",
+      "table_name": "Parameters",
+      "tableau_expression": "2.0",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "2.0",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
