@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Profit (bin)",
+      "table_name": "Sample - Superstore",
+      "tableau_expression": "[Profit]",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "[Profit]",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Profit": "real"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
