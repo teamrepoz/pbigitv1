@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Section 2 (Section 02 - African-Mobile-Data)",
+      "name": "Sales (Partition)",
+      "dax_expression": "'Section 2 (Section 02 - African-Mobile-Data)'[Sales]",
+      "solution_explanation": "This is a row-level reference to [Sales]; converted to a calculated column using the table-qualified column reference 'Section 2 (Section 02 - African-Mobile-Data)'[Sales]. No aggregation or parameters are present, so it should be a calculated column."
+    }
+  ]
+}
