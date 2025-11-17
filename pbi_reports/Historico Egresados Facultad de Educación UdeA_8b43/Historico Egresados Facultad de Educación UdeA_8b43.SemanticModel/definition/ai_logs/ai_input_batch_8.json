@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "Cálculo1",
+      "table_name": "historicoEducacionCLEAN (historicoEducacionCLEAN)",
+      "tableau_expression": "IF [Edad graduando ] >19 THEN 20 ELSE [Edad graduando ] END",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "IF [Edad graduando ] >19 THEN 20 ELSE [Edad graduando ] END",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
