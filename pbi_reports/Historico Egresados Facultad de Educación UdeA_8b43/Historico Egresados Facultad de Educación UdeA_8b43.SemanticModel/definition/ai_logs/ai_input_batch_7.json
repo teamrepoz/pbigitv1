@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Number of record",
+      "table_name": "historicoEducacionCLEAN (historicoEducacionCLEAN)",
+      "tableau_expression": "COUNT([Identificacion])",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "COUNT([Identificacion])",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Identificacion": "integer"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
