@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "name": "NO menci{on de honor en posgrado",
+      "dax_expression": "VAR q = 'TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[¿Recibió alguna mención o reconocimiento durante su formación de pregrado o posgrado?]\nRETURN\nIF(\n    q = \"No\",\n    BLANK(),\n    IF(q = \"Sí\", \".\", BLANK())\n)",
+      "solution_explanation": "Translated the Tableau IF/ELSEIF to DAX. If the question equals \"No\" returns BLANK() (equivalent to NULL), if it equals \"Sí\" returns \".\", otherwise returns BLANK()."
+    }
+  ]
+}
