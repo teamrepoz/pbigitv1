@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Profit by Category, Profit by State, Profit by Manufracture_c2ef"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "e32a3d13-8a8e-4ccf-b0b9-0dab2d3bda15"
+  }
+}
