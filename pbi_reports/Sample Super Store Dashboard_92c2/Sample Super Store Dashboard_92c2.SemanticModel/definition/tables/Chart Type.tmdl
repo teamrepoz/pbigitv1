@@ -1,0 +1,45 @@
+table 'Chart Type'
+	lineageTag: f1026b56-279f-4b1d-873e-0ff47488d026
+
+	column Index
+		formatString: 0
+		lineageTag: 7c4a4a63-fb31-441a-9976-cca13222fdd9
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: f8537384-fba0-442f-9df8-28f8746c0bca
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 85f4ec5a-7c31-4bb6-9c12-3d275dfe6466
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Chart Type' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Donut", "Donut" },
+				{ 1, "Pie", "Pie" }
+			    }
+			)
+
+	annotation PBI_Id = 60dfc1cd9df240d2aa5ef8bc29055fb8
+
