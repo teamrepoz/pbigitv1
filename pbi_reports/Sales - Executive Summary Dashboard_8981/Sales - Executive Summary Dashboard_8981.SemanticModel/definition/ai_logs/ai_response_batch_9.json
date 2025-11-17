@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Profit",
+      "dax_expression": "'Orders+ (Sample - Superstore)'[Sales] * 0.575",
+      "solution_explanation": "Row-level multiplication converted to a calculated column. Replaced [Sales] with 'Orders+ (Sample - Superstore)'[Sales] and retained the multiplier .575 as 0.575 in DAX."
+    }
+  ]
+}
