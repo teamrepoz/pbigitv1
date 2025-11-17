@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "CoffeeChain Query (Sample - Cof (CoffeeChain DATASET)",
+      "name": "Total expenses to sales  Ratio",
+      "dax_expression": "(SUM('CoffeeChain Query (Sample - Cof (CoffeeChain DATASET)'[Total Expenses]) / SUM('CoffeeChain Query (Sample - Cof (CoffeeChain DATASET)'[Sales])) ) * 100",
+      "solution_explanation": "Converted Tableau aggregations to DAX by qualifying columns with the table name. SUM([Total Expenses]) -> SUM('CoffeeChain Query (Sample - Cof (CoffeeChain DATASET)'[Total Expenses]) and SUM([Sales]) -> SUM('CoffeeChain Query (Sample - Cof (CoffeeChain DATASET)'[Sales]). Preserved the original arithmetic and multiplication by 100. Created as a measure because the formula contains aggregations.",
+      "type_changed_reason": "This calculation uses aggregation (SUM), so it should be created as a measure."
+    }
+  ]
+}
