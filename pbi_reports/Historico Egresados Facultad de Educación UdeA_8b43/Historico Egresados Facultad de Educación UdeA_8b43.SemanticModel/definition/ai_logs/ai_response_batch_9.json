@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "historicoEducacionCLEAN (historicoEducacionCLEAN)",
+      "name": "Año título (copia)",
+      "dax_expression": "VAR yearText = FORMAT('historicoEducacionCLEAN (historicoEducacionCLEAN)'[Año título], \"0\")\nVAR yearNumber = IF(TRIM(yearText) = \"\", BLANK(), VALUE(yearText))\nRETURN\nIF(NOT(ISBLANK(yearNumber)), DATE(yearNumber, 1, 1), BLANK())",
+      "solution_explanation": "Converted the row-level Tableau parsing logic to a calculated column. DATEPARSE(\"yyyy\", STR([Año título])) is mapped by extracting the numeric year from the field and building a date with DATE(year, 1, 1). ISNULL checks are represented with ISBLANK; STR is represented with FORMAT(..., \"0\"). The original alternate DATEPARSE(\"HH\", ...) branch was not material because the source field is an integer year; this expression returns Jan 1 of the parsed year when present, otherwise BLANK()."
+    }
+  ]
+}
