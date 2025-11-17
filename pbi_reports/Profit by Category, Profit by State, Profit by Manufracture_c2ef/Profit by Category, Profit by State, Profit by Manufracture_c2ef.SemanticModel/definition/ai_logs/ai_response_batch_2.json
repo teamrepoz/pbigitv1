@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Sample - Superstore",
+      "name": "Profit Ratio",
+      "dax_expression": "SUM('Sample - Superstore'[Profit]) / SUM('Sample - Superstore'[Sales])",
+      "solution_explanation": "Mapped Tableau aggregates to DAX by converting SUM([Profit])/SUM([Sales]) into SUM('Sample - Superstore'[Profit]) / SUM('Sample - Superstore'[Sales]). Because the expression uses aggregations (SUM), it is implemented as a measure."
+    }
+  ]
+}
