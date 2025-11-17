@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "HollywoodsMostProfitableStories",
+      "name": "AVERAGE ROTTEN TOMATOES",
+      "dax_expression": "\"AVG ROTTEN TOMATOES\"",
+      "solution_explanation": "The Tableau expression is a string literal and contains no aggregations, parameters, or row-level field references. Converted the Tableau string literal to a DAX string literal. Because this is a constant per row (row-level logic), it should be created as a calculated column."
+    }
+  ]
+}
