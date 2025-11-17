@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "VestinySmall_Dashboard_b39f"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "8d718b3d-a59a-44c0-8388-87aeb91b3cd1"
+  }
+}
