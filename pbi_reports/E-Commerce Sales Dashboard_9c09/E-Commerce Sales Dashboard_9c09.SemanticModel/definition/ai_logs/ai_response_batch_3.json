@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Sales DataSource",
+      "name": "Total Discount",
+      "dax_expression": "ABS(SUM('Sales DataSource'[COUPON_DISC]) + SUM('Sales DataSource'[COUPON_MATCH_DISC]) + SUM('Sales DataSource'[RETAIL_DISC]))",
+      "solution_explanation": "Converted Tableau ABS(SUM([COUPON_DISC]) + SUM([COUPON_MATCH_DISC]) + SUM([RETAIL_DISC])) to DAX. Replaced Tableau column references with 'Sales DataSource'[Column] format and mapped ABS and SUM to their DAX equivalents.",
+      "type_changed_reason": "This calculation uses aggregation (SUM), so it should be created as a measure."
+    }
+  ]
+}
