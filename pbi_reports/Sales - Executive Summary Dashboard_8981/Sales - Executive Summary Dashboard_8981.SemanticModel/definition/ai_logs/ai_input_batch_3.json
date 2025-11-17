@@ -1,0 +1,25 @@
+{
+  "calculations": [
+    {
+      "name": "Gross Profit %",
+      "table_name": "Orders+ (Sample - Superstore)",
+      "tableau_expression": "SUM([Gross Profit Total])/ABS(SUM([Profit]))",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "SUM([Gross Profit Total])/ABS(SUM([Profit]))",
+        "calculated_fields": {
+          "Gross Profit Total": "[Profit] * 2.5",
+          "Profit": "[Sales] * .575"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Sales": "real"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Profit": "real",
+          "Gross Profit Total": "real"
+        }
+      }
+    }
+  ]
+}
