@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "Index",
+      "table_name": "Data (Complaint Line)",
+      "tableau_expression": "((INDEX()-1)*0.12)-6",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "((INDEX()-1)*0.12)-6",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
