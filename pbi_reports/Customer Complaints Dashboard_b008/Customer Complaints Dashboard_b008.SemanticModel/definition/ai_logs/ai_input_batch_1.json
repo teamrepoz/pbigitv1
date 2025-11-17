@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "Map Type",
+      "table_name": "Parameters",
+      "tableau_expression": "\"Tile\"",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "\"Tile\"",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
