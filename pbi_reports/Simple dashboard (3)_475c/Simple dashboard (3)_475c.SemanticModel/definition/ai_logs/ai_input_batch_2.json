@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": null,
+      "table_name": "Orders (Sample - Superstore)",
+      "tableau_expression": "1",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "1",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
