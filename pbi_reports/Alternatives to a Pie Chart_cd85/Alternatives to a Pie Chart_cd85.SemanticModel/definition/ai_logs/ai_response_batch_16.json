@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "rossmann_sales_prediction_aggregated",
+      "name": "BATCH",
+      "dax_expression": "1",
+      "solution_explanation": "The expression is a constant (1) with no aggregations or parameters, so it is a row-level calculation and should be created as a calculated column."
+    }
+  ]
+}
