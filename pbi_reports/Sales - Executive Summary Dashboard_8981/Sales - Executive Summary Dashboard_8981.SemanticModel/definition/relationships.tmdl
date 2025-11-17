@@ -1,0 +1,20 @@
+relationship ad4ca0ae-970e-4b15-84ce-da259da61c41
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Orders+ (Sample - Superstore)'.'Order Date'
+	toColumn: LocalDateTable_3412433b-ae5c-44dd-a794-66378ecdf95f.Date
+
+relationship 19e74b2f-ae46-4579-8d48-52ea1f9d6298
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Orders+ (Sample - Superstore)'.'Ship Date'
+	toColumn: LocalDateTable_20e382f0-ccfe-4ca1-adc7-9c5abab2d4e8.Date
+
+relationship 4aa19a77-0667-41ff-b1ed-b537989b0dc2
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Orders+ (Sample - Superstore)_Migrated Data'.'Order Date'
+	toColumn: LocalDateTable_a58a3ec8-2308-4116-b17f-cb989e28156a.Date
+
+relationship 631b7f89-25f4-4a09-b7f7-a478b3f6087b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Orders+ (Sample - Superstore)_Migrated Data'.'Ship Date'
+	toColumn: LocalDateTable_89e7ed0c-cf8e-466b-95bf-e6658ec0c69e.Date
+
