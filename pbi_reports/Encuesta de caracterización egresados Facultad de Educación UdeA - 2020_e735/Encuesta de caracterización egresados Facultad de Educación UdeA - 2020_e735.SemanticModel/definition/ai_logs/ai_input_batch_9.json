@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Grado de satisfaccion 2",
+      "table_name": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "tableau_expression": "[Grado de satisfacción]",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "[Grado de satisfacción]",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Grado de satisfacción": "integer"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
