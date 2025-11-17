@@ -1,0 +1,48 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.63\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "name": "Section_Profit Dashboard",
+      "ordinal": 0,
+      "displayName": "Profit Dashboard",
+      "visualContainers": [
+        {
+          "x": 683,
+          "y": 418,
+          "z": 0,
+          "width": 675,
+          "height": 342,
+          "config": "{\"name\": \"41ab0a86\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 683, \"y\": 418, \"z\": 1000, \"width\": 675, \"height\": 342, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"lineClusteredColumnComboChart\", \"projections\": {\"Category\": [{\"queryRef\": \"Sample - Superstore.Profit\", \"active\": true}, {\"queryRef\": \"Sample - Superstore.Quantity\", \"active\": true}], \"Y\": [{\"queryRef\": \"Sample - Superstore.Product Name (group)\"}], \"Series\": [{\"queryRef\": \"Sample - Superstore.Profit\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"S\", \"Entity\": \"Sample - Superstore\", \"Type\": 0}], \"Select\": [{\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Profit\", \"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}}}, \"Function\": 0}, \"Name\": \"Sum(Sample - Superstore.Profit)\", \"NativeReferenceName\": \"Sum of Profit\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Quantity\", \"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}}}, \"Function\": 0}, \"Name\": \"Sum(Sample - Superstore.Quantity)\", \"NativeReferenceName\": \"Sum of Quantity\"}, {\"Column\": {\"Property\": \"Product Name (group)\", \"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}}, \"Name\": \"Sample - Superstore.Product Name (group)\", \"NativeReferenceName\": \"Product Name (group)\"}], \"OrderBy\": []}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": 15}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Profit by Manufracture'\"}}}}}]}}}"
+        },
+        {},
+        {
+          "x": 683,
+          "y": 76,
+          "z": 0,
+          "width": 675,
+          "height": 342,
+          "config": "{\"name\": \"f92dc9c9756\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 683, \"y\": 76, \"z\": 0, \"width\": 675, \"height\": 342, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"filledMap\", \"projections\": {\"Values\": [{\"queryRef\": \"Sample - Superstore.Latitude (generated)\"}, {\"queryRef\": \"Sample - Superstore.Longitude (generated)\"}, {\"queryRef\": \"Sample - Superstore.Geometry (generated)\"}, {\"queryRef\": \"Sample - Superstore.State/Province\"}, {\"queryRef\": \"Sum(Sample - Superstore.Profit)\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"S\", \"Entity\": \"Sample - Superstore\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}, \"Property\": \"Latitude (generated)\"}, \"Name\": \"Sample - Superstore.Latitude (generated)\", \"NativeReferenceName\": \"Latitude (generated)\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}, \"Property\": \"Longitude (generated)\"}, \"Name\": \"Sample - Superstore.Longitude (generated)\", \"NativeReferenceName\": \"Longitude (generated)\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}, \"Property\": \"Geometry (generated)\"}, \"Name\": \"Sample - Superstore.Geometry (generated)\", \"NativeReferenceName\": \"Geometry (generated)\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}, \"Property\": \"State/Province\"}, \"Name\": \"Sample - Superstore.State/Province\", \"NativeReferenceName\": \"State/Province\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}, \"Property\": \"Profit\"}}, \"Function\": 0}, \"Name\": \"Sum(Sample - Superstore.Profit)\", \"NativeReferenceName\": \"Sum of Profit\"}], \"OrderBy\": []}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"15D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Profit by state'\"}}}}}]}}}"
+        }
+      ],
+      "width": 1366.0,
+      "height": 768.0
+    }
+  ]
+}
