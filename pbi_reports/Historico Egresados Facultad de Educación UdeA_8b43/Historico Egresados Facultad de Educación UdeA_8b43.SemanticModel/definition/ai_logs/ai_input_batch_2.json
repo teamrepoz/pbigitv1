@@ -1,0 +1,20 @@
+{
+  "calculations": [
+    {
+      "name": "Count ciudad de residencia ",
+      "table_name": "historicoEducacionCLEAN (historicoEducacionCLEAN)",
+      "tableau_expression": "{ FIXED [Identificacion] : COUNTD([Ciudad residencia])}",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "{ FIXED [Identificacion] : COUNTD([Ciudad residencia])}",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Identificacion": "integer",
+          "Ciudad residencia": "string"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
