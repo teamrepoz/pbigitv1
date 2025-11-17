@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Parameters",
+      "name": "Top X",
+      "dax_expression": "100",
+      "solution_explanation": "The expression is a constant scalar with no aggregations or parameter references; it is row-level in nature and should be created as a calculated column."
+    }
+  ]
+}
