@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Simple dashboard (3)_1dea"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "993158b8-ff43-4fd9-9db9-8f007cad71cc"
+  }
+}
