@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Sheet1 (radial_bar_chart_data)",
+      "name": "wc_start",
+      "dax_expression": "CALCULATE(MAX('Sheet1 (radial_bar_chart_data)'[Order]), ALLSELECTED('Sheet1 (radial_bar_chart_data)'))",
+      "solution_explanation": "Tableau's WINDOW_MAX(MAX([Order])) is a table calculation that computes the maximum of the aggregated MAX([Order]) over the current window/partition. In DAX, this is represented by calculating the overall MAX of the Order column within the current selection context using CALCULATE with ALLSELECTED to emulate the windowing behavior.",
+      "type_changed_reason": "The Tableau expression uses a table calculation (WINDOW_MAX) and an aggregation (MAX), which require context-aware evaluation in DAX, so it must be implemented as a measure."
+    }
+  ]
+}
