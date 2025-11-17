@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "Max Month",
+      "dax_expression": "VAR MaxDate = MAX('Orders (Sample - Superstore)'[Order Date])\nVAR StartOfMaxMonth = DATE(YEAR(MaxDate), MONTH(MaxDate), 1)\nRETURN\nIF(\n    'Orders (Sample - Superstore)'[Order Date] <= MaxDate &&\n    'Orders (Sample - Superstore)'[Order Date] >= StartOfMaxMonth,\n    TRUE(),\n    FALSE()\n)",
+      "solution_explanation": "Converted Tableau LOD {MAX([Order Date])} to MAX('Orders (Sample - Superstore)'[Order Date]) and replaced DATE(DATETRUNC('month',[Max Date])) with DATE(YEAR(MaxDate), MONTH(MaxDate), 1). Column references were transformed to 'Orders (Sample - Superstore)'[Order Date]. The calculation is a measure because it depends on an aggregation (Max Date)."
+    }
+  ]
+}
