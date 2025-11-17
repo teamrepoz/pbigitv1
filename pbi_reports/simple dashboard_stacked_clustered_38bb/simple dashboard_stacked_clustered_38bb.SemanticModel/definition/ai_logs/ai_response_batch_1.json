@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders (Global Superstore 2016)",
+      "name": "BATCH",
+      "dax_expression": "1",
+      "solution_explanation": "The Tableau expression is a constant literal (1). This requires no aggregation or row-level references, so it is implemented as a calculated column with the constant value 1."
+    }
+  ]
+}
