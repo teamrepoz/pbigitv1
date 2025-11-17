@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "Parámetro 3",
+      "table_name": "Parameters",
+      "tableau_expression": "\"De 1 a 2\"",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "\"De 1 a 2\"",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
