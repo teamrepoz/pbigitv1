@@ -1,0 +1,79 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.63\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "name": "Section_Dashboard 1",
+      "ordinal": 0,
+      "displayName": "Dashboard 1",
+      "visualContainers": [
+        {
+          "x": 8,
+          "y": 596,
+          "z": 0,
+          "width": 492,
+          "height": 196,
+          "config": "{\"name\": \"38da1321d8983578927a\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 8, \"y\": 596, \"z\": 0, \"width\": 492, \"height\": 196, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"projections\": {\"Values\": []}, \"prototypeQuery\": {\"Version\": 2, \"From\": [], \"Select\": [], \"OrderBy\": []}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [], \"valueAxis\": []}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"15D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'AllCalc OneRow-OneCol-OneEncd'\"}}}}}]}}}"
+        },
+        {
+          "x": 500,
+          "y": 596,
+          "z": 0,
+          "width": 492,
+          "height": 196,
+          "config": "{\"name\": \"ed103ee917c23bb724a8\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 500, \"y\": 596, \"z\": 0, \"width\": 492, \"height\": 196, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"projections\": {\"Values\": []}, \"prototypeQuery\": {\"Version\": 2, \"From\": [], \"Select\": [], \"OrderBy\": []}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [], \"valueAxis\": []}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"15D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'MeasValues:AllCalc OneRow-ThreeCol-OneEncd'\"}}}}}]}}}"
+        },
+        {
+          "x": 500,
+          "y": 400,
+          "z": 0,
+          "width": 492,
+          "height": 196,
+          "config": "{\"name\": \"5587392acf091c5db592\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 500, \"y\": 400, \"z\": 0, \"width\": 492, \"height\": 196, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"projections\": {\"Values\": []}, \"prototypeQuery\": {\"Version\": 2, \"From\": [], \"Select\": [], \"OrderBy\": []}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [], \"valueAxis\": []}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"15D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'MeasValues:Ony DF TwoRow-OneCol-FourEncd'\"}}}}}]}}}"
+        },
+        {
+          "x": 8,
+          "y": 8,
+          "z": 0,
+          "width": 492,
+          "height": 392,
+          "config": "{\"name\": \"cb481313dfe344a7b04b\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 8, \"y\": 8, \"z\": 0, \"width\": 492, \"height\": 392, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"projections\": {\"Values\": []}, \"prototypeQuery\": {\"Version\": 2, \"From\": [], \"Select\": [], \"OrderBy\": []}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [], \"valueAxis\": []}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"15D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Only DF OneRow-OneCol-OneEncd'\"}}}}}]}}}"
+        },
+        {
+          "x": 500,
+          "y": 8,
+          "z": 0,
+          "width": 492,
+          "height": 392,
+          "config": "{\"name\": \"a29b016e617f788d6439\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 500, \"y\": 8, \"z\": 0, \"width\": 492, \"height\": 392, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"projections\": {\"Values\": []}, \"prototypeQuery\": {\"Version\": 2, \"From\": [], \"Select\": [], \"OrderBy\": []}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [], \"valueAxis\": []}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"15D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Ony DF TwoRow-OneCol-FourEncd'\"}}}}}]}}}"
+        },
+        {
+          "x": 8,
+          "y": 400,
+          "z": 0,
+          "width": 492,
+          "height": 196,
+          "config": "{\"name\": \"773e6aa9db0707f6043c\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 8, \"y\": 400, \"z\": 0, \"width\": 492, \"height\": 196, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"projections\": {\"Values\": []}, \"prototypeQuery\": {\"Version\": 2, \"From\": [], \"Select\": [], \"OrderBy\": []}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [], \"valueAxis\": []}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"15D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Ony DF TwoRow-OneCol-OneEncd'\"}}}}}]}}}"
+        }
+      ],
+      "width": 1000.0,
+      "height": 800.0
+    }
+  ]
+}
