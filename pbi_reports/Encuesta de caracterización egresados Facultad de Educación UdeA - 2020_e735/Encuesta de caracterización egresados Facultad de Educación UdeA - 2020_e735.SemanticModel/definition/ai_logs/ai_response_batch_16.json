@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "name": "Población Masculina",
+      "dax_expression": "IF(CONTAINSSTRING('TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Identidad de género:], \"Masculino\"), 'TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Número de cédula:], BLANK())",
+      "solution_explanation": "Replaced Tableau CONTAINS(...) with DAX CONTAINSSTRING(...). Transformed column references to 'TableName'[Column]. The expression returns the row's 'Número de cédula:' when 'Identidad de género:' contains \"Masculino\", otherwise BLANK(). Created as a calculated column because this is row-level logic without aggregations or parameters."
+    }
+  ]
+}
