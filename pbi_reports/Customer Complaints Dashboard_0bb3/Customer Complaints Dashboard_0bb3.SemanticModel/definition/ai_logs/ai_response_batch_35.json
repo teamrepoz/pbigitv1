@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "complaints",
+      "name": "All (Selected)",
+      "dax_expression": "IF(SELECTEDVALUE('Selected Product'[Display As]) = \"ALL\", \"ALL COMPLAINTS\", BLANK())",
+      "solution_explanation": "Replaced the parameter reference with SELECTEDVALUE('Selected Product'[Display As]) and converted the Tableau IF to DAX IF. String literals were converted to double quotes. No ELSE branch in Tableau becomes BLANK() in DAX.",
+      "type_changed_reason": "The calculation references a parameter, and all parameter-based calculations must be measures."
+    }
+  ]
+}
