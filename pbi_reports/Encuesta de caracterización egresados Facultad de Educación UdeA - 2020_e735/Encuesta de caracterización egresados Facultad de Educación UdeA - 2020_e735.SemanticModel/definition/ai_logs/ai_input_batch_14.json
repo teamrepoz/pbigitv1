@@ -1,0 +1,20 @@
+{
+  "calculations": [
+    {
+      "name": "Conteo Género",
+      "table_name": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "tableau_expression": "IF (ATTR([Identidad de género:])) = \"Femenino\" THEN (-1) * COUNTD([Número de cédula:]) \r\nELSE COUNTD([Número de cédula:]) END",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "IF (ATTR([Identidad de género:])) = \"Femenino\" THEN (-1) * COUNTD([Número de cédula:]) \r\nELSE COUNTD([Número de cédula:]) END",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Número de cédula:": "integer",
+          "Identidad de género:": "string"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
