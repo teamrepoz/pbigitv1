@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "\"Número de cédula:\",\"Marca temporal\",\"Dirección de correo electrónico\",\"Nombres y apellidos:\",\"Identidad de género:\",\"Dirección - División 8",
+      "table_name": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "tableau_expression": "TRIM( SPLIT( [\"Número de cédula:\",\"Marca temporal\",\"Dirección de correo electrónico\",\"Nombres y apellidos:\",\"Identidad de género:\",\"Dirección], \",\", 8 ) )",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "TRIM( SPLIT( [\"Número de cédula:\",\"Marca temporal\",\"Dirección de correo electrónico\",\"Nombres y apellidos:\",\"Identidad de género:\",\"Dirección], \",\", 8 ) )",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
