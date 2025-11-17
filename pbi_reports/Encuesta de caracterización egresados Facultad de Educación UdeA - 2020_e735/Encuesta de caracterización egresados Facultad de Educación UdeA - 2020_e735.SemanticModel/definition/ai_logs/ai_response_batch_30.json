@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "name": "\"Número de cédula:\",\"Marca temporal\",\"Dirección de correo electrónico\",\"Nombres y apellidos:\",\"Identidad de género:\",\"Dirección - División 4",
+      "dax_expression": "VAR txt = 'TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[\"Número de cédula:\",\"Marca temporal\",\"Dirección de correo electrónico\",\"Nombres y apellidos:\",\"Identidad de género:\",\"Dirección]\nVAR replaced = SUBSTITUTE(txt, \",\", \"|\")\nVAR token = PATHITEM(replaced, 4)\nRETURN\n    TRIM(token)",
+      "solution_explanation": "Replaced Tableau TRIM(SPLIT(..., \",\", 4)) with a row-level DAX calculated column: replace commas with a pipe using SUBSTITUTE, extract the 4th token with PATHITEM, then TRIM the result. This is a row-level transformation so created as a calculated column."
+    }
+  ]
+}
