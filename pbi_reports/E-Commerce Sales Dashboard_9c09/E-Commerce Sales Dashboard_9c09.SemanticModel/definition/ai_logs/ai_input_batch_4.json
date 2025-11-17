@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Total Stores",
+      "table_name": "Sales DataSource",
+      "tableau_expression": "COUNTD([STORE_ID])",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "COUNTD([STORE_ID])",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "STORE_ID": "integer"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
