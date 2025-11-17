@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "name": "\"Número de cédula:\",\"Marca temporal\",\"Dirección de correo electrónico\",\"Nombres y apellidos:\",\"Identidad de género:\",\"Dirección - División 2",
+      "dax_expression": "VAR textValue = 'TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[\"Número de cédula:\",\"Marca temporal\",\"Dirección de correo electrónico\",\"Nombres y apellidos:\",\"Identidad de género:\",\"Dirección]\nVAR firstComma = SEARCH(\",\", textValue, 1, 0)\nVAR secondComma = SEARCH(\",\", textValue, firstComma + 1, 0)\nVAR result = TRIM(MID(textValue, firstComma + 1, secondComma - firstComma - 1))\nRETURN result",
+      "solution_explanation": "Replaced Tableau TRIM(SPLIT(..., \",\", 2)) with row-level DAX using SEARCH to find comma positions and MID to extract the second segment, then TRIM the result. Kept the original column reference format mapped to 'Table'[Column].",
+      "type_changed_reason": "The calculation performs row-level string manipulation (splitting/trimming a single field) without any aggregation or parameters, so it should be a calculated column."
+    }
+  ]
+}
