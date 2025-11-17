@@ -1,0 +1,10 @@
+relationship e929381f-3144-4688-95f5-ef00d587d74a
+	toCardinality: many
+	fromColumn: 'Sales DataSource'.household_key
+	toColumn: 'Sales DataSource_hh_demographic'.household_key
+
+relationship 7cb82336-15d3-403f-9726-19b6b6d9c984
+	toCardinality: many
+	fromColumn: 'Sales DataSource'.PRODUCT_ID
+	toColumn: 'Sales DataSource_product'.PRODUCT_ID
+
