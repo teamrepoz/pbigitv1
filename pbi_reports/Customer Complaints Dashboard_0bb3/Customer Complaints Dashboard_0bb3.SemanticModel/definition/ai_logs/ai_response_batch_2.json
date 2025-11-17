@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Parameters",
+      "name": "Top X",
+      "dax_expression": "100",
+      "solution_explanation": "The Tableau expression is a constant numeric literal (100) with no aggregations, parameters, or row-level field references. This is a row-level/constant value and should be implemented as a calculated column containing the literal 100."
+    }
+  ]
+}
