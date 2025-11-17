@@ -1,0 +1,20 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "Max Date",
+      "dax_expression": "MAX('Orders (Sample - Superstore)'[Order Date])",
+      "solution_explanation": "Converted the Tableau LOD {MAX([Order Date])} into a DAX measure using MAX on the Order Date column.",
+      "type_changed_reason": "This calculation uses aggregation (MAX), so it should be created as a measure."
+    },
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "First Date Pre Month",
+      "dax_expression": "VAR MaxDate = 'Orders (Sample - Superstore)'[Max Date]\nVAR PrevDate = EDATE(MaxDate, -1)\nRETURN DATE(YEAR(PrevDate), MONTH(PrevDate), 1)",
+      "solution_explanation": "Translated DATE(DATETRUNC('month', DATEADD('month', -1, [Max Date]))) by shifting Max Date back one month with EDATE and then returning the first day of that month using DATE(YEAR(...), MONTH(...), 1). References the Max Date measure.",
+      "type_changed_reason": "The calculation references an aggregated field [Max Date], so it must be a measure."
+    }
+  ]
+}
