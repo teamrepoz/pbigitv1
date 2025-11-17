@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "Index",
+      "table_name": "Sheet1 (waffle template)",
+      "tableau_expression": "(INDEX()-1)*2",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "(INDEX()-1)*2",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
