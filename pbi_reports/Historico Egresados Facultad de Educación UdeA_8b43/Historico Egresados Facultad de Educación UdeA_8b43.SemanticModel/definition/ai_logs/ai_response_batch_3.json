@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "historicoEducacionCLEAN (historicoEducacionCLEAN)",
+      "name": "index",
+      "dax_expression": "BLANK()",
+      "solution_explanation": "Tableau INDEX() is a table calculation that depends on the visual partitioning and sort order and has no direct row-by-row DAX equivalent. In Power BI this is typically implemented as a measure using RANKX over an ordering expression or a unique row identifier, for example: RANKX(ALLSELECTED('historicoEducacionCLEAN (historicoEducacionCLEAN)'), [OrderExpression], , ASC, DENSE). Because the original Tableau calculation provides no partition or ordering column, a direct conversion cannot be produced here; the measure returns BLANK() until an ordering/unique key is specified.",
+      "type_changed_reason": "INDEX() is a table calculation (visual/table-aware) in Tableau; such calculations must be created as measures in Power BI."
+    }
+  ]
+}
