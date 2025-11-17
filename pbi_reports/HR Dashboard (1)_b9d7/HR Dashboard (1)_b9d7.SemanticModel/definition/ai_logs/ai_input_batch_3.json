@@ -1,0 +1,24 @@
+{
+  "calculations": [
+    {
+      "name": "Active Employees",
+      "table_name": "HR data (HR Data)",
+      "tableau_expression": "SUM([Employee Count]) - SUM([Attrition Count])",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "SUM([Employee Count]) - SUM([Attrition Count])",
+        "calculated_fields": {
+          "Attrition Count": "IF [Attrition] = \"Yes\" THEN 1 else 0 END"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Attrition": "string",
+          "Employee Count": "integer"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Attrition Count": "integer"
+        }
+      }
+    }
+  ]
+}
