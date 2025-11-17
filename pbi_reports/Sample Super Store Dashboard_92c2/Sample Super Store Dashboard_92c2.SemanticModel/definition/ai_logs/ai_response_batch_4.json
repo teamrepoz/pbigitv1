@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "Sum Type",
+      "dax_expression": "VAR cumulative = SELECTEDVALUE('Cummulative Total'[Display As])\nRETURN\nIF(\n    cumulative = \"Total\",\n    SUM('Orders (Sample - Superstore)'[Sales]),\n    CALCULATE(\n        SUM('Orders (Sample - Superstore)'[Sales]),\n        FILTER(ALLSELECTED('Orders (Sample - Superstore)'), TRUE())\n    )\n)",
+      "solution_explanation": "Mapped the parameter reference to SELECTEDVALUE('Cummulative Total'[Display As]) and converted SUM([Sales]) to SUM('Orders (Sample - Superstore)'[Sales]). The RUNNING_SUM(SUM([Sales])) branch is represented using CALCULATE + FILTER(ALLSELECTED(...)) to reflect a cumulative/window-style aggregation; a proper running total requires a sort/order field in the visual (not provided), so the ALLSELECTED placeholder preserves the selection context but will need an ordering column to produce a true running total.",
+      "type_changed_reason": "The calculation references a parameter ([Parameters].[Cummulative Total]), and all parameter-based calculations must be created as measures."
+    }
+  ]
+}
