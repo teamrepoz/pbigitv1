@@ -1,0 +1,5 @@
+relationship 79dd017c-5f6d-46ff-88cc-7e2ea6d3a01a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'historicoEducacionCLEAN (historicoEducacionCLEAN)'.Fecha_de_Nacimiento
+	toColumn: LocalDateTable_85614d14-d15e-4445-92dd-8c8ffb2b2561.Date
+
