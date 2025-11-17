@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "Pre Month Value - Up",
+      "dax_expression": "IF('Orders (Sample - Superstore)'[Pre Month Value - YoY] > 0, \"↑\", \"\")",
+      "solution_explanation": "Converted Tableau IF ... THEN ... ELSE ... END to DAX IF(condition, true, false). Transformed the referenced calculated field to the table-qualified reference 'Orders (Sample - Superstore)'[Pre Month Value - YoY]. String literals use double quotes as required."
+    }
+  ]
+}
