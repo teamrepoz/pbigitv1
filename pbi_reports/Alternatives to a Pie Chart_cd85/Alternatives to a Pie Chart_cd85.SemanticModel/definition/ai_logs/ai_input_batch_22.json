@@ -1,0 +1,31 @@
+{
+  "calculations": [
+    {
+      "name": "StoreType Color",
+      "table_name": "Sheet1 (waffle template)",
+      "tableau_expression": "IF AVG([Percentage]) <= [rossmann_sales_prediction].[a portion] THEN \"a\"\r\nELSEIF AVG([Percentage]) <= [rossmann_sales_prediction].[a portion]+[rossmann_sales_prediction].[b portion] THEN \"b\"\r\nELSEIF AVG([Percentage]) <= [rossmann_sales_prediction].[a portion]+[rossmann_sales_prediction].[b portion]+[rossmann_sales_prediction].[c portion] THEN \"c\"\r\nELSE \"d\" END",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "IF AVG([Percentage]) <= [rossmann_sales_prediction].[a portion] THEN \"a\"\r\nELSEIF AVG([Percentage]) <= [rossmann_sales_prediction].[a portion]+[rossmann_sales_prediction].[b portion] THEN \"b\"\r\nELSEIF AVG([Percentage]) <= [rossmann_sales_prediction].[a portion]+[rossmann_sales_prediction].[b portion]+[rossmann_sales_prediction].[c portion] THEN \"c\"\r\nELSE \"d\" END",
+        "calculated_fields": {
+          "b portion": "SUM(IF [StoreType] = \"b\" THEN [Sales] END)/SUM([Sales])",
+          "Percentage": "[Ratio]/0.543",
+          "a portion": "SUM(IF [StoreType] = \"a\" THEN [Sales] END)/SUM([Sales])",
+          "c portion": "SUM(IF [StoreType] = \"c\" THEN [Sales] END)/SUM([Sales])"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "StoreType": "string",
+          "Ratio": "real",
+          "Sales": "integer"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Percentage": "real",
+          "b portion": "real",
+          "a portion": "real",
+          "c portion": "real"
+        }
+      }
+    }
+  ]
+}
