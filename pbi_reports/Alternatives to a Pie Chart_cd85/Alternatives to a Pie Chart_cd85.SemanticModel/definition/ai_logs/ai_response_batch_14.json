@@ -1,0 +1,25 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "rossmann_sales_prediction_aggregated",
+      "name": "Radial Normalised Length",
+      "dax_expression": "VAR pathOrder = IF(SELECTEDVALUE('rossmann_sales_prediction_aggregated'[Table Name]) = \"rossmann_sales_prediction_aggregated.csv\", 0, 1)\nVAR totalRadial = SUM('rossmann_sales_prediction_aggregated'[Total Sales])\nVAR maxTotalRadial = MAXX(ALLSELECTED('rossmann_sales_prediction_aggregated'), CALCULATE(SUM('rossmann_sales_prediction_aggregated'[Total Sales])))\nVAR radialInner = 0.40000000000000002\nVAR radialOuter = 1.0\nVAR normalizedPortion = DIVIDE(totalRadial, maxTotalRadial) * (radialOuter - radialInner)\nRETURN IF(pathOrder = 0, 0, radialInner + normalizedPortion)",
+      "solution_explanation": "Converted Tableau ATTR/IF and window/max logic into DAX using SELECTEDVALUE for ATTR([Path Order]), SUM for [Radial Field] (Total Sales), and MAXX(ALLSELECTED(...), CALCULATE(SUM(...))) to approximate WINDOW_MAX(SUM(...)). Radial inner/outer constants inlined."
+    },
+    {
+      "type": "measure",
+      "table": "rossmann_sales_prediction_aggregated",
+      "name": "Radial Angle",
+      "dax_expression": "VAR idx = RANKX(ALLSELECTED('rossmann_sales_prediction_aggregated'), CALCULATE(SUM('rossmann_sales_prediction_aggregated'[Total Sales])),, ASC, DENSE)\nVAR countWindow = COUNTROWS(ALLSELECTED('rossmann_sales_prediction_aggregated'))\nRETURN (idx - 1) * (1 / countWindow) * 2 * PI()",
+      "solution_explanation": "Translated INDEX() to a positional rank using RANKX over ALLSELECTED and WINDOW_COUNT(COUNT(...)) to COUNTROWS(ALLSELECTED(...)). SUM('...'[Total Sales]) used as the evaluated expression for ranking to emulate row index within the current partition."
+    },
+    {
+      "type": "measure",
+      "table": "rossmann_sales_prediction_aggregated",
+      "name": "Radial X",
+      "dax_expression": "'rossmann_sales_prediction_aggregated'[Radial Normalised Length] * COS('rossmann_sales_prediction_aggregated'[Radial Angle])",
+      "solution_explanation": "Direct multiplication of the converted measures: Radial Normalised Length * COS(Radial Angle). References use the table-qualified names for the measures created above."
+    }
+  ]
+}
