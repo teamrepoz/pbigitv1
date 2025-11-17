@@ -1,0 +1,43 @@
+table 'AE Benchmarks (FINAL Consolidated Dashboard Data with Charts 5_6_19)_None'
+	lineageTag: dcc48884-4638-42bc-a0c1-9e86b7d94a13
+
+	column F1
+		dataType: string
+		lineageTag: ed595748-e16d-46c4-b7c8-a6c47d21dc01
+		summarizeBy: none
+		sourceColumn: F1
+
+		annotation SummarizationSetBy = Automatic
+
+	column F2
+		dataType: string
+		lineageTag: c874fea4-82ed-410b-b40d-afb202ce0fb1
+		summarizeBy: none
+		sourceColumn: F2
+
+		annotation SummarizationSetBy = Automatic
+
+	column F3
+		dataType: double
+		formatString: General Number
+		lineageTag: c9ab5ff1-fb0c-42b0-9e79-477ff0f86d46
+		summarizeBy: sum
+		sourceColumn: F3
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'AE Benchmarks (FINAL Consolidated Dashboard Data with Charts 5_6_19)_None' = m
+		mode: import
+		source =
+				let
+					    // Fallback for logical table: 
+					    // Member tables: "AE Benchmarks (FINAL Consolidated Dashboard Data with Charts 5_6_19)", "AE Benchmarks (FINAL Consolidated Dashboard Data with Charts 5_6_19)_AE GED 4"
+					    Source = #table({"Table"}, { "AE Benchmarks (FINAL Consolidated Dashboard Data with Charts 5_6_19)", "AE Benchmarks (FINAL Consolidated Dashboard Data with Charts 5_6_19)_AE GED 4" })
+					in
+					    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
