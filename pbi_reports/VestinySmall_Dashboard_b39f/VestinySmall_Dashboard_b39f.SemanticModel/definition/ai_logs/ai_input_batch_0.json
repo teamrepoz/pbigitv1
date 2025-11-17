@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "Sales",
+      "table_name": "COLLEGE+ (TXSA0308)",
+      "tableau_expression": "[PRICE]*[ENROLLMENT]",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "[PRICE]*[ENROLLMENT]",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
