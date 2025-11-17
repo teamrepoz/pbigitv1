@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "rossmann_sales_prediction_aggregated",
+      "name": "Radial Normalised Length",
+      "dax_expression": "VAR ParamInner = SELECTEDVALUE('Radial Inner'[Display As])\nVAR ParamOuter = SELECTEDVALUE('Radial Outer'[Display As])\nVAR PathOrder = SELECTEDVALUE('rossmann_sales_prediction_aggregated'[Path Order])\nVAR CurrentSum = CALCULATE(SUM('rossmann_sales_prediction_aggregated'[Radial Field]))\nVAR WindowMax = CALCULATE(\n    MAXX(\n        ALLSELECTED('rossmann_sales_prediction_aggregated'),\n        CALCULATE(SUM('rossmann_sales_prediction_aggregated'[Radial Field]))\n    )\n)\nRETURN\nParamInner + IF(PathOrder = 0, 0, DIVIDE(CurrentSum, WindowMax, 0) * (ParamOuter - ParamInner))",
+      "solution_explanation": "Replaced Tableau parameters with SELECTEDVALUE('ParameterName'[Display As]). ATTR([Path Order]) translated to SELECTEDVALUE('rossmann_sales_prediction_aggregated'[Path Order]). Aggregations SUM([Radial Field]) converted to SUM('rossmann_sales_prediction_aggregated'[Radial Field]). WINDOW_MAX(SUM(...)) translated to MAXX over ALLSELECTED to emulate the window max of the SUM. Used VARs for readability and DIVIDE to safely handle division.",
+      "type_changed_reason": "The original Tableau expression uses aggregations (SUM) and a table calculation (WINDOW_MAX) and references parameters, which require this to be implemented as a measure in Power BI."
+    }
+  ]
+}
