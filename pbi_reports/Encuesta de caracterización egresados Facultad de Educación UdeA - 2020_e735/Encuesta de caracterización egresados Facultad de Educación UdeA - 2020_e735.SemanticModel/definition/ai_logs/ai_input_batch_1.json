@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "Elegir valor 2",
+      "table_name": "Parameters",
+      "tableau_expression": "10",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "10",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
