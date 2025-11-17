@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Profit by Category, Profit by State, Profit by Manufracture_c2ef"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "a2268c1e-a33b-4c1a-9102-d375a490a948"
+  }
+}
