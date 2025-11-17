@@ -1,0 +1,52 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "Max Date",
+      "dax_expression": "MAX('Orders (Sample - Superstore)'[Order Date])",
+      "solution_explanation": "Converted Tableau {MAX([Order Date])} to a DAX measure that returns the maximum Order Date.",
+      "type_changed_reason": "This calculation uses an aggregation (MAX), so it must be a measure."
+    },
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "First Date Pre Month",
+      "dax_expression": "VAR md = 'Orders (Sample - Superstore)'[Max Date]\nRETURN\nDATE(\n    YEAR(EDATE(md, -1)),\n    MONTH(EDATE(md, -1)),\n    1\n)",
+      "solution_explanation": "Recreated DATE(DATETRUNC('month', DATEADD('month', -1, [Max Date]))) by subtracting one month from Max Date and returning the first day of that month.",
+      "type_changed_reason": "Depends on the aggregated Max Date measure, so it must be a measure."
+    },
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "First Date Pre Month - Last Year",
+      "dax_expression": "VAR fpm = 'Orders (Sample - Superstore)'[First Date Pre Month]\nRETURN\nEDATE(fpm, -12)",
+      "solution_explanation": "Converted DATE(DATEADD('year', -1, [First Date Pre Month])) by shifting the First Date Pre Month back 12 months using EDATE.",
+      "type_changed_reason": "This relies on the First Date Pre Month measure (an aggregate-derived date), so it must be a measure."
+    },
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "Pre Month Value",
+      "dax_expression": "VAR lower = 'Orders (Sample - Superstore)'[First Date Pre Month]\nVAR upper = DATE(YEAR('Orders (Sample - Superstore)'[Max Date]), MONTH('Orders (Sample - Superstore)'[Max Date]), 1)\nVAR sel = SELECTEDVALUE('Measure Selector Param'[Display As])\nRETURN\nSWITCH(\n    sel,\n    \"Profit\",\n        CALCULATE(\n            SUM('Orders (Sample - Superstore)'[Profit]),\n            FILTER(\n                'Orders (Sample - Superstore),\n                'Orders (Sample - Superstore)'[Order Date] >= lower &&\n                'Orders (Sample - Superstore)'[Order Date] < upper\n            )\n        ),\n    \"Sales\",\n        CALCULATE(\n            SUM('Orders (Sample - Superstore)'[Sales]),\n            FILTER(\n                'Orders (Sample - Superstore),\n                'Orders (Sample - Superstore)'[Order Date] >= lower &&\n                'Orders (Sample - Superstore)'[Order Date] < upper\n            )\n        ),\n    BLANK()\n)",
+      "solution_explanation": "Translated the conditional SUM over Order Date bounds and the parameter-based Measure Selector into a DAX measure using SELECTEDVALUE for the parameter and CALCULATE+FILTER to sum the selected column within the date window.",
+      "type_changed_reason": "This calculation aggregates rows (SUM over a filtered set) and references a parameter, so it must be a measure."
+    },
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "Pre Month Value - Last Year",
+      "dax_expression": "VAR lower = 'Orders (Sample - Superstore)'[First Date Pre Month - Last Year]\nVAR upper = DATE(YEAR(EDATE('Orders (Sample - Superstore)'[Max Date], -12)), MONTH(EDATE('Orders (Sample - Superstore)'[Max Date], -12)), 1)\nVAR sel = SELECTEDVALUE('Measure Selector Param'[Display As])\nRETURN\nSWITCH(\n    sel,\n    \"Profit\",\n        CALCULATE(\n            SUM('Orders (Sample - Superstore)'[Profit]),\n            FILTER(\n                'Orders (Sample - Superstore),\n                'Orders (Sample - Superstore)'[Order Date] >= lower &&\n                'Orders (Sample - Superstore)'[Order Date] < upper\n            )\n        ),\n    \"Sales\",\n        CALCULATE(\n            SUM('Orders (Sample - Superstore)'[Sales]),\n            FILTER(\n                'Orders (Sample - Superstore),\n                'Orders (Sample - Superstore)'[Order Date] >= lower &&\n                'Orders (Sample - Superstore)'[Order Date] < upper\n            )\n        ),\n    BLANK()\n)",
+      "solution_explanation": "Mirrors Pre Month Value but shifts the date window one year earlier; uses the parameter selector to sum the appropriate column within the last year's pre-month window.",
+      "type_changed_reason": "This calculation aggregates rows (SUM over a filtered set) and references a parameter, so it must be a measure."
+    },
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "Pre Month Value - YoY",
+      "dax_expression": "VAR prev = 'Orders (Sample - Superstore)'[Pre Month Value]\nVAR prevLY = 'Orders (Sample - Superstore)'[Pre Month Value - Last Year]\nRETURN\nDIVIDE(prev - prevLY, prevLY)",
+      "solution_explanation": "Converted the row that computes percentage change between Pre Month Value and its last year counterpart into a measure using DIVIDE to safely handle division.",
+      "type_changed_reason": "This calculation depends on aggregated measures (Pre Month Value and Pre Month Value - Last Year), so it must be a measure."
+    }
+  ]
+}
