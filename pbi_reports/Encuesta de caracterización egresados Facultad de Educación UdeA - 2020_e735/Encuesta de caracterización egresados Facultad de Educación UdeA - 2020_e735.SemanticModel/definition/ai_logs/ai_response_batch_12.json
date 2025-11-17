@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "name": "Cual seria la metogologia para la FC",
+      "dax_expression": "COUNT('TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[¿Cuál sería la metodología de su preferencia para la formación complementaria?]) / 2",
+      "solution_explanation": "Converted Tableau COUNT(...) to DAX COUNT(...). Transformed the column reference to 'TableName'[ColumnName] format using the provided table. Division by 2 is preserved. This is created as a measure because the expression uses an aggregation (COUNT)."
+    }
+  ]
+}
