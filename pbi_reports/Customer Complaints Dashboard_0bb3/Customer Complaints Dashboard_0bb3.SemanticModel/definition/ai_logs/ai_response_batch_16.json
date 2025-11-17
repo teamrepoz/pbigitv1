@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "complaints",
+      "name": "Bar Label",
+      "dax_expression": "IF(SELECTEDVALUE('complaints'[Selected Product]) <> \"NOT SELECTED\", DISTINCTCOUNT('complaints'[Complaint ID]), BLANK())",
+      "solution_explanation": "Replaced ATTR([Selected Product]) with SELECTEDVALUE('complaints'[Selected Product]) to get the single selected product in the filter context; replaced [Number of Complaints] (COUNTD([Complaint ID])) with DISTINCTCOUNT('complaints'[Complaint ID]). The expression returns the distinct count only when the selected product is not \"NOT SELECTED\", otherwise returns blank.",
+      "type_changed_reason": "The calculation references an aggregation (COUNTD → DISTINCTCOUNT), so it must be created as a measure."
+    }
+  ]
+}
