@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "historicoEducacionCLEAN (historicoEducacionCLEAN)",
+      "name": "Años de estudio",
+      "dax_expression": "IF(\n    NOT(ISBLANK('historicoEducacionCLEAN (historicoEducacionCLEAN)'[Año título])),\n    'historicoEducacionCLEAN (historicoEducacionCLEAN)'[Año título] - 'historicoEducacionCLEAN (historicoEducacionCLEAN)'[Año inicio],\n    IF(\n        NOT(ISBLANK('historicoEducacionCLEAN (historicoEducacionCLEAN)'[Año inicio])),\n        'historicoEducacionCLEAN (historicoEducacionCLEAN)'[Año título] - 'historicoEducacionCLEAN (historicoEducacionCLEAN)'[Año inicio],\n        BLANK()\n    )\n)",
+      "solution_explanation": "Converted Tableau ISNULL checks to DAX ISBLANK and preserved the conditional logic as nested IF statements. References were transformed to 'TableName'[ColumnName] format. This is a row-level calculation using only row fields, so it is implemented as a calculated column."
+    }
+  ]
+}
