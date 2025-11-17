@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "historicoEducacionCLEAN (historicoEducacionCLEAN)",
+      "name": "beans años de estudio",
+      "dax_expression": "VAR YearCount = 'historicoEducacionCLEAN (historicoEducacionCLEAN)'[Años de estudio]\nRETURN\nIF(\n    YearCount >= 1 && YearCount <= 5, \"1-5\",\n    IF(\n        YearCount >= 6 && YearCount <= 10, \"6-10\",\n        IF(\n            YearCount >= 11 && YearCount <= 20, \"11-20\",\n            IF(\n                YearCount >= 21 && YearCount <= 30, \"21-30\",\n                BLANK()\n            )\n        )\n    )\n)",
+      "solution_explanation": "Converted the Tableau IF/ELSEIF ranges into nested DAX IF expressions using a VAR for 'Años de estudio' for clarity. This is a calculated column because it performs row-level comparisons without any aggregation or parameters."
+    }
+  ]
+}
