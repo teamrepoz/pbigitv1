@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "CoffeChain Dashboard_aff4"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "c1d094b0-455b-4536-a01b-e16fcbbe8a63"
+  }
+}
