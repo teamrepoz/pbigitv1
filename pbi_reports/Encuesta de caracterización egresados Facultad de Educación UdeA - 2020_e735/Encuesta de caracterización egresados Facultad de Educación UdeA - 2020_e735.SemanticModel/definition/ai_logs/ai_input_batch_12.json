@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Cual seria la metogologia para la FC",
+      "table_name": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "tableau_expression": "COUNT([¿Cuál sería la metodología de su preferencia para la formación complementaria?])/2",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "COUNT([¿Cuál sería la metodología de su preferencia para la formación complementaria?])/2",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "¿Cuál sería la metodología de su preferencia para la formación complementaria?": "string"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
