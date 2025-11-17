@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "name": "NO mención laboral ",
+      "dax_expression": "IF(\n    'TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[¿Ha recibió alguna mención o reconocimiento a nivel laboral?] = \"No\",\n    BLANK(),\n    IF(\n        'TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[¿Ha recibió alguna mención o reconocimiento a nivel laboral?] = \"Sí\",\n        \".\",\n        BLANK()\n    )\n)",
+      "solution_explanation": "Converted the row-level Tableau IF/ELSEIF to nested DAX IF statements. Column references were mapped to 'TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Column]. Tableau NULL is represented as BLANK() in DAX; the \"Sí\" branch returns \".\" and other cases return BLANK()."
+    }
+  ]
+}
