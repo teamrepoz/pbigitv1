@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Min - Max Profit",
+      "table_name": "Orders (Sample - Superstore)",
+      "tableau_expression": "if SUM([Profit]) = WINDOW_MAX(SUM([Profit])) or SUM([Profit])= WINDOW_MIN(SUM([Profit]))\r\nthen SUM([Profit])\r\nEND",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "if SUM([Profit]) = WINDOW_MAX(SUM([Profit])) or SUM([Profit])= WINDOW_MIN(SUM([Profit]))\r\nthen SUM([Profit])\r\nEND",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Profit": "real"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
