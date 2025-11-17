@@ -1,0 +1,26 @@
+{
+  "calculations": [
+    {
+      "name": "Commission %",
+      "table_name": "Orders+ (Sample - Superstore)",
+      "tableau_expression": "SUM([Commission Total])/ABS(SUM([Profit]))",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "SUM([Commission Total])/ABS(SUM([Profit]))",
+        "calculated_fields": {
+          "Profit": "[Sales] * .575",
+          "Commission Total": "[Discount] *342.34"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Sales": "real",
+          "Discount": "real"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Profit": "real",
+          "Commission Total": "real"
+        }
+      }
+    }
+  ]
+}
