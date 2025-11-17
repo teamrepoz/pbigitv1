@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "wc_pi",
+      "table_name": "Sheet1 (radial_bar_chart_data)",
+      "tableau_expression": "WINDOW_MAX(MAX(pi()))",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "WINDOW_MAX(MAX(pi()))",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
