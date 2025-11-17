@@ -1,0 +1,19 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "complaints",
+      "name": "Number of Complaints",
+      "dax_expression": "DISTINCTCOUNT('complaints'[Complaint ID])",
+      "solution_explanation": "Converted Tableau COUNTD([Complaint ID]) to the DAX equivalent DISTINCTCOUNT on the complaints table."
+    },
+    {
+      "type": "measure",
+      "table": "complaints",
+      "name": "All Complaints (Not Selected)",
+      "dax_expression": "IF(SELECTEDVALUE('Selected Product'[Display As]) <> \"ALL\", 'complaints'[Number of Complaints])",
+      "solution_explanation": "Replaced the Tableau parameter reference with SELECTEDVALUE('Selected Product'[Display As]) and return the Number of Complaints when the selected product is not \"ALL\". References the dependent measure 'complaints'[Number of Complaints].",
+      "type_changed_reason": "The calculation references a Tableau parameter ([Parameters].[Selected Product]); per rules, any formula referencing parameters must be created as a measure."
+    }
+  ]
+}
