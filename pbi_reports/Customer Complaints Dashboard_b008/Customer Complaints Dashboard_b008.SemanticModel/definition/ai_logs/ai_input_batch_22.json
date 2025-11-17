@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "Zero",
+      "table_name": "Data (Complaint Line)",
+      "tableau_expression": "'0'",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "'0'",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
