@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Total seminario ",
+      "table_name": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "tableau_expression": "COUNTD([Seminarios])",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "COUNTD([Seminarios])",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Seminarios": "integer"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
