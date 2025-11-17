@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Gross Profit %",
+      "dax_expression": "SUM('Orders+ (Sample - Superstore)'[Gross Profit Total]) / ABS(SUM('Orders+ (Sample - Superstore)'[Profit]))",
+      "solution_explanation": "Mapped Tableau aggregations to DAX: SUM -> SUM, ABS -> ABS. Transformed field references to table-qualified format: [Gross Profit Total] -> 'Orders+ (Sample - Superstore)'[Gross Profit Total], [Profit] -> 'Orders+ (Sample - Superstore)'[Profit]. This calculation uses aggregations, so it is implemented as a measure."
+    }
+  ]
+}
