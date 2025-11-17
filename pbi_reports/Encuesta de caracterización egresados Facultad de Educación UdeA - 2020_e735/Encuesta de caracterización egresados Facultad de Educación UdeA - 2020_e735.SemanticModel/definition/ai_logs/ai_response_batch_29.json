@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "name": "\"Número de cédula:\",\"Marca temporal\",\"Dirección de correo electrónico\",\"Nombres y apellidos:\",\"Identidad de género:\",\"Dirección - División 3",
+      "dax_expression": "TRIM( PATHITEM( SUBSTITUTE( 'TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[\"Número de cédula:\",\"Marca temporal\",\"Dirección de correo electrónico\",\"Nombres y apellidos:\",\"Identidad de género:\",\"Dirección], \",\", \"|\" ), 3, 1 ) )",
+      "solution_explanation": "Converted Tableau SPLIT(..., \",\", 3) to DAX by replacing the delimiter with \"|\" using SUBSTITUTE and extracting the 3rd token with PATHITEM(..., 3, 1). Preserved TRIM and converted the column reference to 'Table'[Column] format."
+    }
+  ]
+}
