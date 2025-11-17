@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "complaints",
+      "name": "Time to Receipt",
+      "dax_expression": "'complaints'[Date Received] - 'complaints'[Date Sumbited]",
+      "solution_explanation": "Row-level subtraction of two date columns translated to DAX. Subtracting dates in DAX returns the number of days between the dates. All column references were converted to 'complaints'[ColumnName] format."
+    }
+  ]
+}
