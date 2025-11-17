@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Tipo de egresado",
+      "table_name": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "tableau_expression": "IF ISNULL([\"Si la respuesta anterior fue afirmativa, seleccione el tipo de posgrado del cual es egresado\"]) THEN \"Pregrado\"\r\nELSE [\"Si la respuesta anterior fue afirmativa, seleccione el tipo de posgrado del cual es egresado\"] END",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "IF ISNULL([\"Si la respuesta anterior fue afirmativa, seleccione el tipo de posgrado del cual es egresado\"]) THEN \"Pregrado\"\r\nELSE [\"Si la respuesta anterior fue afirmativa, seleccione el tipo de posgrado del cual es egresado\"] END",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "\"Si la respuesta anterior fue afirmativa, seleccione el tipo de posgrado del cual es egresado\"": "string"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
