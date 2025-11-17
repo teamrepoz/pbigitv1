@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Parameters",
+      "name": "Bin Size",
+      "dax_expression": "2.0",
+      "solution_explanation": "Converted the Tableau constant 2.0 to the DAX constant 2.0. This is a static row-level value with no aggregations or parameter references, so it is implemented as a calculated column."
+    }
+  ]
+}
