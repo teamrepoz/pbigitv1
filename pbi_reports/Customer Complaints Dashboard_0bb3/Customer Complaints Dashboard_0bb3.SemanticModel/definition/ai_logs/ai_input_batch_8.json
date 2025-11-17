@@ -1,0 +1,27 @@
+{
+  "calculations": [
+    {
+      "name": "Y",
+      "table_name": "Data (Complaint Line)",
+      "tableau_expression": "[TC_Start Point]\r\n+((1/(1+EXP(-[Index])))*[TC_Value])",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "[TC_Start Point]\r\n+((1/(1+EXP(-[Index])))*[TC_Value])",
+        "calculated_fields": {
+          "Index": "((INDEX()-1)*0.12)-6",
+          "TC_Value": "WINDOW_MAX(MAX([Value]))",
+          "TC_Start Point": "RUNNING_SUM([TC_Value])-[TC_Value]"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Value": "integer"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Index": "real",
+          "TC_Value": "integer",
+          "TC_Start Point": "integer"
+        }
+      }
+    }
+  ]
+}
