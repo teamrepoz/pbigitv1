@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "name": "Total conferencia",
+      "dax_expression": "DISTINCTCOUNT('TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Conferencias])",
+      "solution_explanation": "Converted Tableau COUNTD([Conferencias]) to DAX DISTINCTCOUNT and updated the column reference to 'TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Conferencias].",
+      "type_changed_reason": "The calculation uses an aggregation (COUNTD/DISTINCTCOUNT), so it must be created as a measure."
+    }
+  ]
+}
