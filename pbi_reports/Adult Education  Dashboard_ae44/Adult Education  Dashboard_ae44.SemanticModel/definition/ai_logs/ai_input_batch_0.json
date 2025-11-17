@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "Parameter 1",
+      "table_name": "Parameters",
+      "tableau_expression": "1.0",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "1.0",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
