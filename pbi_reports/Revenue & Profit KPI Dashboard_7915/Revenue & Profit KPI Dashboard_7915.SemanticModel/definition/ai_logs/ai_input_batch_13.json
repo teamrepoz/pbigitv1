@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Min - Max Sales",
+      "table_name": "Orders (Sample - Superstore)",
+      "tableau_expression": "if SUM([Sales]) = WINDOW_MAX(SUM([Sales])) or SUM([Sales])= WINDOW_MIN(SUM([Sales]))\r\nthen SUM([Sales])\r\nEND",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "if SUM([Sales]) = WINDOW_MAX(SUM([Sales])) or SUM([Sales])= WINDOW_MIN(SUM([Sales]))\r\nthen SUM([Sales])\r\nEND",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Sales": "real"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
