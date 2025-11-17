@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Parameters",
+      "name": "Order Date Param",
+      "dax_expression": "1.0",
+      "solution_explanation": "Converted the Tableau constant 1.0 to an inline DAX measure returning the numeric literal 1.0.",
+      "type_changed_reason": "This calculation is defined in the Parameters table (a parameter) and parameter-based calculations should be created as measures."
+    }
+  ]
+}
