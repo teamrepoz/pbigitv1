@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "ZERO AXIS",
+      "table_name": "historicoEducacionCLEAN (historicoEducacionCLEAN)",
+      "tableau_expression": "FLOAT(0)",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "FLOAT(0)",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
