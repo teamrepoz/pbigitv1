@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "CoffeeChain Query (Sample - Cof (CoffeeChain DATASET)",
+      "name": "Year",
+      "dax_expression": "YEAR('CoffeeChain Query (Sample - Cof (CoffeeChain DATASET)'[Date])",
+      "solution_explanation": "Mapped Tableau YEAR([Date]) to DAX YEAR('CoffeeChain Query (Sample - Cof (CoffeeChain DATASET)'[Date]). This is a row-level date extraction (no aggregation or parameters), so it is implemented as a calculated column."
+    }
+  ]
+}
