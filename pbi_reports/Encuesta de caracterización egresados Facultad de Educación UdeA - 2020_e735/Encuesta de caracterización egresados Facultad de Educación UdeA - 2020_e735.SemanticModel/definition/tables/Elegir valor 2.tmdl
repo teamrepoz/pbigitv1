@@ -1,0 +1,44 @@
+table 'Elegir valor 2'
+	lineageTag: 7d54c7f8-03ba-468e-88ca-300d9ba4cdb2
+
+	column Index
+		formatString: 0
+		lineageTag: 52e87f9c-45ef-445d-8eb1-14c3af963981
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 991cc553-79fd-433f-b142-644454a1bec4
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: f5b232dc-1e88-4866-865b-7b33239024af
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Elegir valor 2' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", INTEGER,
+			    "Value", INTEGER,
+			    {
+			        {0, 10, 10}
+			    }
+			)
+
+	annotation PBI_Id = 329d5ff2011148cdba586d3faa452993
+
