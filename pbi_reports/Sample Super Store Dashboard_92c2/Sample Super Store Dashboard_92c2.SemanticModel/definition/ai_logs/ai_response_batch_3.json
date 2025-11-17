@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "Profit RAG",
+      "dax_expression": "VAR ProfitSum = SUM('Orders (Sample - Superstore)'[Profit])\nRETURN\nSWITCH(\n    TRUE(),\n    ProfitSum < 60000, 1,\n    ProfitSum >= 60000 && ProfitSum <= 80000, 2,\n    3\n)",
+      "solution_explanation": "Replaced Tableau IF with SUM([Profit]) comparisons by a DAX measure using VAR to capture SUM('Orders (Sample - Superstore)'[Profit]) and SWITCH(TRUE()) for conditional logic. All column references were converted to the 'Table'[Column] format.",
+      "type_changed_reason": "This calculation uses aggregation (SUM), so it should be created as a measure."
+    }
+  ]
+}
