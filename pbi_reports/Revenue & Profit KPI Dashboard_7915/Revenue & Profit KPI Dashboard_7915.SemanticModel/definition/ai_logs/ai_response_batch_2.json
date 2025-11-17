@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "Measure Selector",
+      "dax_expression": "SWITCH(SELECTEDVALUE('Measure Selector Param'[Display As]), \"Profit\", SUM('Orders (Sample - Superstore'[Profit]), \"Sales\", SUM('Orders (Sample - Superstore)'[Sales]))",
+      "solution_explanation": "Replaced the Tableau parameter reference with SELECTEDVALUE('Measure Selector Param'[Display As]) and mapped field references to 'Orders (Sample - Superstore)'[Profit] and 'Orders (Sample - Superstore)'[Sales]. Wrapped the fields with SUM to produce an aggregated measure that responds to filter context, matching the intended parameter-driven selection behavior.",
+      "type_changed_reason": "The calculation references a Tableau parameter; all parameter-based calculations must be measures."
+    }
+  ]
+}
