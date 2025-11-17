@@ -1,0 +1,28 @@
+table 'top 10 products'
+	lineageTag: cb95b0f4-2c07-4d0c-9dc3-392890f894ae
+
+	measure 'top 10 products Value' = SELECTEDVALUE('top 10 products'[top 10 products], 1)
+		lineageTag: 679c1583-c18d-470f-9eea-15f478765f78
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'top 10 products'
+		dataType: double
+		formatString: 0
+		lineageTag: 05d58f26-82ab-4fe5-babb-a7de4444ab3e
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'top 10 products' = calculated
+		mode: import
+		source = GENERATESERIES(1, 10, 1)
+
+	annotation PBI_Id = 54d70c6ffa4f4369967435e2ab25e836
+
