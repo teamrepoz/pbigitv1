@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "TOTAL LEAD STUDIO",
+      "table_name": "HollywoodsMostProfitableStories",
+      "tableau_expression": "\"TOTAL LEAD STUDIO\"",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "\"TOTAL LEAD STUDIO\"",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
