@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "HollywoodsMostProfitableStories",
+      "name": " AVERAGE AUDIENCE SCORES",
+      "dax_expression": "\" AVG AUDIENCE SCORES\"",
+      "solution_explanation": "Tableau constant string literal converted to a DAX string literal. No references to row fields or aggregations, so it is implemented as a calculated column."
+    }
+  ]
+}
