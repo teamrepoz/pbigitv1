@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "Min - Max Sales",
+      "dax_expression": "VAR currentSales = SUM('Orders (Sample - Superstore)'[Sales])\nVAR windowMax = MAXX(\n    ALLSELECTED('Orders (Sample - Superstore)'),\n    CALCULATE(SUM('Orders (Sample - Superstore)'[Sales]))\n)\nVAR windowMin = MINX(\n    ALLSELECTED('Orders (Sample - Superstore)'),\n    CALCULATE(SUM('Orders (Sample - Superstore)'[Sales]))\n)\nRETURN\nIF(\n    currentSales = windowMax || currentSales = windowMin,\n    currentSales,\n    BLANK()\n)",
+      "solution_explanation": "Converted the Tableau table calculation that checks if the aggregated SUM([Sales]) equals the window max or min into a DAX measure. SUM([Sales]) became SUM('Orders (Sample - Superstore)'[Sales]). WINDOW_MAX(SUM([Sales])) and WINDOW_MIN(SUM([Sales])) are represented with MAXX/MINX over ALLSELECTED('Orders (Sample - Superstore)') combined with CALCULATE(SUM(...)) to emulate the window aggregation across the current selection. VARs are used for clarity and the final IF returns the current sum when it equals the window max or min, otherwise BLANK().",
+      "type_changed_reason": "The Tableau formula uses table calculations (WINDOW_MAX and WINDOW_MIN) and aggregations, which require a measure in Power BI."
+    }
+  ]
+}
