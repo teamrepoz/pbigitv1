@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "complaints",
+      "name": "Number of Complaints",
+      "dax_expression": "DISTINCTCOUNT('complaints'[Complaint ID])",
+      "solution_explanation": "Converted Tableau COUNTD([Complaint ID]) to DAX DISTINCTCOUNT('complaints'[Complaint ID]). This uses an aggregation (distinct count), so it is implemented as a measure."
+    }
+  ]
+}
