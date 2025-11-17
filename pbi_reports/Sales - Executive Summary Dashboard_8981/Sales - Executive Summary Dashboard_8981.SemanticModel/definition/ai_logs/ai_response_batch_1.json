@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Parameters",
+      "name": "Start Date",
+      "dax_expression": "DATE(2016, 1, 1)",
+      "solution_explanation": "Tableau date literal #2016-01-01# converted to DAX using DATE(2016, 1, 1). This is a row-level constant (no aggregates or parameters), so it is implemented as a calculated column in the 'Parameters' table."
+    }
+  ]
+}
