@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Parameters",
+      "name": "Select Date",
+      "dax_expression": "DATE(2016, 4, 1)",
+      "solution_explanation": "Tableau date literal #2016-04-01# is converted to DAX DATE(2016, 4, 1). This is a row-level constant date without aggregations or parameter references, so it should be a calculated column."
+    }
+  ]
+}
