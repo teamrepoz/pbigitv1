@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "HEAD2",
+      "table_name": "HollywoodsMostProfitableStories",
+      "tableau_expression": "\"TOTAL FILMS BY \r\nLEAD STUDIO\"",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "\"TOTAL FILMS BY \r\nLEAD STUDIO\"",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
