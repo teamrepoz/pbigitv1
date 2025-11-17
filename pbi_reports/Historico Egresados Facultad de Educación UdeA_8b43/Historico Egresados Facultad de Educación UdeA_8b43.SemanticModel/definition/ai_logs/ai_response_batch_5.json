@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "historicoEducacionCLEAN (historicoEducacionCLEAN)",
+      "name": "Cuenta de hombres",
+      "dax_expression": "VAR currentId = SELECTEDVALUE('historicoEducacionCLEAN (historicoEducacionCLEAN)'[Identificacion])\nRETURN\nIF(\n    ISBLANK(currentId),\n    BLANK(),\n    CALCULATE(\n        COUNTROWS('historicoEducacionCLEAN (historicoEducacionCLEAN)'),\n        ALL('historicoEducacionCLEAN (historicoEducacionCLEAN)'),\n        'historicoEducacionCLEAN (historicoEducacionCLEAN)'[Identificacion] = currentId,\n        'historicoEducacionCLEAN (historicoEducacionCLEAN)'[Sexo egresados] = \"Masculino\"\n    )\n)",
+      "solution_explanation": "Converted the FIXED LOD that counts rows where [Sexo egresados] = \"Masculino\" per [Identificacion] into a measure. Uses SELECTEDVALUE to capture the current Identificacion, removes other filters with ALL, and then counts rows matching that Identificacion and Sexo egresados = \"Masculino\".",
+      "type_changed_reason": "The Tableau expression uses a FIXED LOD aggregation ({ FIXED ... }), which is an aggregation/context-based calculation and must be implemented as a measure in Power BI."
+    }
+  ]
+}
