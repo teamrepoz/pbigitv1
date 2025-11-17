@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "Min - Max Profit",
+      "dax_expression": "VAR currentProfit = SUM('Orders (Sample - Superstore)'[Profit])\nVAR windowMax = MAXX(VALUES('Orders (Sample - Superstore)'[Profit]), CALCULATE(SUM('Orders (Sample - Superstore)'[Profit])))\nVAR windowMin = MINX(VALUES('Orders (Sample - Superstore)'[Profit]), CALCULATE(SUM('Orders (Sample - Superstore)'[Profit])))\nRETURN\nIF(\n    currentProfit = windowMax || currentProfit = windowMin,\n    currentProfit,\n    BLANK()\n)",
+      "solution_explanation": "Converted SUM([Profit]) to SUM('Orders (Sample - Superstore)'[Profit]). Emulated WINDOW_MAX(SUM([Profit])) and WINDOW_MIN(SUM([Profit])) using MAXX/MINX over VALUES('Orders (Sample - Superstore)'[Profit]) with CALCULATE(SUM(...)) to reproduce the windowed comparison, then return the current sum when it equals the window max or min; otherwise BLANK().",
+      "type_changed_reason": "The calculation uses aggregation (SUM) and table calculations (WINDOW_MAX / WINDOW_MIN), so it must be implemented as a measure."
+    }
+  ]
+}
