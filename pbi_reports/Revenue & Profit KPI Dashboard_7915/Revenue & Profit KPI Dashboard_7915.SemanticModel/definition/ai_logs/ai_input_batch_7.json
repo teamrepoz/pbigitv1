@@ -1,0 +1,26 @@
+{
+  "calculations": [
+    {
+      "name": "Min - Max value",
+      "table_name": "Orders (Sample - Superstore)",
+      "tableau_expression": "if SUM([Measure Selector]) = WINDOW_MAX(SUM([Measure Selector])) or SUM([Measure Selector])= WINDOW_MIN(SUM([Measure Selector]))\r\nthen SUM([Measure Selector])\r\nEND",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "if SUM([Measure Selector]) = WINDOW_MAX(SUM([Measure Selector])) or SUM([Measure Selector])= WINDOW_MIN(SUM([Measure Selector]))\r\nthen SUM([Measure Selector])\r\nEND",
+        "calculated_fields": {
+          "Measure Selector": "case [Parameters].[Measure Selector Param]\r\n    when 'Profit' then [Profit]\r\n    when 'Sales' then [Sales]\r\nEND",
+          "Measure Selector Param": "\"Profit\""
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Sales": "real",
+          "Profit": "real"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Measure Selector": "real",
+          "Measure Selector Param": "string"
+        }
+      }
+    }
+  ]
+}
