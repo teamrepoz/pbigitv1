@@ -1,0 +1,19 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "complaints",
+      "name": "Product Grouping",
+      "dax_expression": "SWITCH(\n    TRUE(),\n    'complaints'[Product] = \"Bank account or service\", \"BANK SERVICES\",\n    'complaints'[Product] = \"Checking or savings account\", \"CHECKING / SAVINGS\",\n    'complaints'[Product] = \"Credit card\", \"CREDIT CARD\",\n    'complaints'[Product] = \"Mortgage\", \"MORTGAGE\",\n    \"OTHER\"\n)",
+      "solution_explanation": "Translated the Tableau CASE statement into a DAX SWITCH(TRUE()) expression evaluating 'complaints'[Product] row-by-row to produce the grouping. This is a row-level transformation, so implemented as a calculated column."
+    },
+    {
+      "type": "measure",
+      "table": "complaints",
+      "name": "Selected Product Filter",
+      "dax_expression": "VAR _selected = SELECTEDVALUE('Selected Product'[Display As])\nRETURN\n    (_selected = 'complaints'[Product Grouping]) || (_selected = \"ALL\")",
+      "solution_explanation": "Replaced the Tableau parameter reference [Parameters].[Selected Product] with SELECTEDVALUE('Selected Product'[Display As]) per parameter mapping. Then evaluated equality against the row-level 'complaints'[Product Grouping] and the literal \"ALL\". Implemented as a measure because it references a parameter.",
+      "type_changed_reason": "The calculation references a parameter, and all parameter-based calculations must be measures."
+    }
+  ]
+}
