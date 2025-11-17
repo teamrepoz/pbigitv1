@@ -1,0 +1,25 @@
+{
+  "calculations": [
+    {
+      "name": "Bar Label",
+      "table_name": "complaints",
+      "tableau_expression": "IF ATTR([Selected Product]) <> 'NOT SELECTED' THEN [Number of Complaints] END",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "IF ATTR([Selected Product]) <> 'NOT SELECTED' THEN [Number of Complaints] END",
+        "calculated_fields": {
+          "Number of Complaints": "COUNTD([Complaint ID])",
+          "Selected Product": "\"OTHER\""
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Complaint ID": "integer"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Number of Complaints": "integer",
+          "Selected Product": "string"
+        }
+      }
+    }
+  ]
+}
