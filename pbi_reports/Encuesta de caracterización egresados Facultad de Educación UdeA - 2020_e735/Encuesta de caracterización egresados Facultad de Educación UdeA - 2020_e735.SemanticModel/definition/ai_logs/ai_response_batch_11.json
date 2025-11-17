@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "name": "Años en 2020",
+      "dax_expression": "2020 - 'TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Año nacimiento]",
+      "solution_explanation": "Row-level calculation: converted the Tableau expression 2020 - [Año nacimiento] to a calculated column. The column reference was transformed to 'TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Año nacimiento]. 'Año nacimiento' is a row-level calculated field (YEAR([Fecha_de_Nacimiento])), so no aggregation is required."
+    }
+  ]
+}
