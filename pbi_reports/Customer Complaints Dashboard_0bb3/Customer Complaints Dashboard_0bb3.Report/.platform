@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Customer Complaints Dashboard_0bb3"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "2b1c1dda-17e7-4a62-a00e-f670a466d4f8"
+  }
+}
