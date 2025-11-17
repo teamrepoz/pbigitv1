@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "name": "Área ",
+      "dax_expression": "VAR area = 'TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Seleccione el área correspondiente a su formación de pregrado dentro de la Facultad de Educación:]\nRETURN\nSWITCH(\n    TRUE(),\n    area = \"Artes Plásticas\", area,\n    area = \"Comunucación Social y Periodismo\", area,\n    area = \"Física\", \"Matemáticas y Física\",\n    area = \"No aplica\", \"\",\n    area = area, area,\n    area = \"Nulo\", \"\",\n    BLANK()\n)",
+      "solution_explanation": "Converted the Tableau IF/ELSEIF chain to a DAX expression using a VAR for the referenced column and SWITCH(TRUE()) to preserve the sequential conditional logic. All column references were transformed to 'Table'[Column] format and string literals use double quotes. This is implemented as a calculated column because the logic is row-level and uses only the current row's field."
+    }
+  ]
+}
