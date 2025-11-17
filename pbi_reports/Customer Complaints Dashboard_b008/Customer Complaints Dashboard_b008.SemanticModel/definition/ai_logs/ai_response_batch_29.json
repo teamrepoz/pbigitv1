@@ -1,0 +1,19 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "complaints",
+      "name": "Product Grouping",
+      "dax_expression": "SWITCH('complaints'[Product], \"Bank account or service\", \"BANK SERVICES\", \"Checking or savings account\", \"CHECKING / SAVINGS\", \"Credit card\", \"CREDIT CARD\", \"Mortgage\", \"MORTGAGE\", \"OTHER\")",
+      "solution_explanation": "Converted the Tableau CASE on [Product] to a DAX SWITCH expression using the row-level column 'complaints'[Product] to produce the grouping."
+    },
+    {
+      "type": "measure",
+      "table": "complaints",
+      "name": "Selected Color",
+      "dax_expression": "'complaints'[Product Grouping] = SELECTEDVALUE('Selected Product'[Display As])",
+      "solution_explanation": "Replaced the Tableau parameter reference [Parameters].[Selected Product] with SELECTEDVALUE('Selected Product'[Display As]) and compared it to the Product Grouping. Returned a boolean measure reflecting the equality.",
+      "type_changed_reason": "The calculation references a parameter, and all parameter-based calculations must be measures."
+    }
+  ]
+}
