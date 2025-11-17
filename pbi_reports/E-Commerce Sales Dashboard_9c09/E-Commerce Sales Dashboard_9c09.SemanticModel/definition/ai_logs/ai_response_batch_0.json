@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Sales DataSource",
+      "name": "Total Revenue",
+      "dax_expression": "SUM('Sales DataSource'[SALES_VALUE])",
+      "solution_explanation": "Converted Tableau SUM([SALES_VALUE]) to DAX SUM('Sales DataSource'[SALES_VALUE]). The expression uses aggregation, so it should be a measure."
+    }
+  ]
+}
