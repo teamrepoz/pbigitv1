@@ -1,0 +1,28 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "Max Date",
+      "dax_expression": "CALCULATE(\n    MAX('Orders (Sample - Superstore)'[Order Date]),\n    ALL('Orders (Sample - Superstore)')\n)",
+      "solution_explanation": "Recreates the Tableau {MAX([Order Date])} as a measure returning the overall max Order Date. Uses CALCULATE with ALL to mimic a fixed/LOD max across the Orders table.",
+      "type_changed_reason": "This calculation uses aggregation (MAX) and an LOD-like fixed aggregation, so it should be a measure."
+    },
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "Measure Selector",
+      "dax_expression": "VAR sel = SELECTEDVALUE('Measure Selector Param'[Display As])\nRETURN\nSWITCH(\n    sel,\n    \"Profit\", SUM('Orders (Sample - Superstore)'[Profit]),\n    \"Sales\", SUM('Orders (Sample - Superstore)'[Sales]),\n    BLANK()\n)",
+      "solution_explanation": "Implements the CASE on the Tableau parameter using SELECTEDVALUE for the parameter and SWITCH to choose the appropriate aggregated measure (SUM of Profit or Sales).",
+      "type_changed_reason": "The calculation references a parameter, and all parameter-based calculations must be measures."
+    },
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "MTD Value",
+      "dax_expression": "VAR _MaxDate = [Max Date]\nVAR _MonthStart = DATE(YEAR(_MaxDate), MONTH(_MaxDate), 1)\nRETURN\nCALCULATE(\n    [Measure Selector],\n    'Orders (Sample - Superstore)'[Order Date] >= _MonthStart\n)",
+      "solution_explanation": "Translates the conditional SUM over rows where Order Date is in the month of the Max Date. Uses the Max Date measure, computes the month start, and CALCULATE to apply the date filter to the selected measure.",
+      "type_changed_reason": "This calculation uses aggregation (SUM) and references other measures, so it should be a measure."
+    }
+  ]
+}
