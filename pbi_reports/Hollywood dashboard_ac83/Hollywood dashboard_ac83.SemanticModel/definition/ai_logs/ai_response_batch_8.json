@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "HollywoodsMostProfitableStories",
+      "name": "HEAD2",
+      "dax_expression": "\"TOTAL FILMS BY \" & UNICHAR(13) & UNICHAR(10) & \"LEAD STUDIO\"",
+      "solution_explanation": "This Tableau expression is a constant text literal with a line break. It does not reference any columns or aggregations, so it should be created as a calculated column returning the same string with a CR+LF line break."
+    }
+  ]
+}
