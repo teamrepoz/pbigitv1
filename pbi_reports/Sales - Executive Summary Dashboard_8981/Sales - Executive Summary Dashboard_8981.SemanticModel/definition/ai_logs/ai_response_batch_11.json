@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Select Current YTD vs Last YTD",
+      "dax_expression": "YEAR('Orders+ (Sample - Superstore)'[Order Date]) >= YEAR(TODAY()) - 1 && (MONTH('Orders+ (Sample - Superstore)'[Order Date]) < MONTH(TODAY()) || (MONTH('Orders+ (Sample - Superstore)'[Order Date]) = MONTH(TODAY()) && DAY('Orders+ (Sample - Superstore)'[Order Date]) <= DAY(TODAY())))",
+      "solution_explanation": "Converted Tableau date component comparisons to DAX using YEAR, MONTH, DAY and TODAY. Replaced logical operators (AND->&&, OR->||) and equality (==->=). References to [Order Date] mapped to 'Orders+ (Sample - Superstore)'[Order Date]. This is row-level boolean logic, so implemented as a calculated column."
+    }
+  ]
+}
