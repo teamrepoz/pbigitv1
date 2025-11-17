@@ -1,0 +1,20 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Data (Complaint Line)",
+      "name": "TC_Value",
+      "dax_expression": "CALCULATE(MAX('Data (Complaint Line)'[Value]), ALLSELECTED('Data (Complaint Line)'))",
+      "solution_explanation": "Converted Tableau WINDOW_MAX(MAX([Value])) to a DAX measure that returns the MAX over the current selection/context using ALLSELECTED to emulate the window scope.",
+      "type_changed_reason": "The Tableau expression uses a table calculation (WINDOW_MAX over an aggregation), which requires a measure in Power BI."
+    },
+    {
+      "type": "measure",
+      "table": "Data (Complaint Line)",
+      "name": "TC_Running Sum",
+      "dax_expression": "VAR __AllRows = ALLSELECTED('Data (Complaint Line)')\nRETURN\nSUMX(__AllRows, 'Data (Complaint Line)'[TC_Value])",
+      "solution_explanation": "Converted Tableau RUNNING_SUM([TC_Value]) to a DAX measure that iterates over the current partition (ALLSELECTED) and sums the dependent TC_Value across those rows. Because Tableau's RUNNING_SUM is a table calculation that requires an ordering to produce a true running total and no ordering field was provided, this implementation returns the cumulative sum across the current selection/partition using the TC_Value measure defined above.",
+      "type_changed_reason": "The Tableau expression uses a table calculation (RUNNING_SUM), so it must be implemented as a measure in Power BI."
+    }
+  ]
+}
