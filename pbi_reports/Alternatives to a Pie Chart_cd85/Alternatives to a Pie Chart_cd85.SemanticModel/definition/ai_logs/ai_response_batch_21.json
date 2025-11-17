@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "rossmann_sales_prediction",
+      "name": "d portion",
+      "dax_expression": "DIVIDE(\n  CALCULATE(\n    SUM('rossmann_sales_prediction'[Sales]),\n    'rossmann_sales_prediction'[StoreType] = \"d\"\n  ),\n  SUM('rossmann_sales_prediction'[Sales])\n)",
+      "solution_explanation": "Converted the Tableau SUM(IF [StoreType] = \"d\" THEN [Sales] END)/SUM([Sales]) to DAX by calculating the sales for StoreType = \"d\" using CALCULATE + SUM and dividing by total SUM of Sales. DIVIDE is used to safely handle division by zero. All column references use the 'table'[column] format.",
+      "type_changed_reason": "The calculation uses aggregation (SUM), so it should be created as a measure."
+    }
+  ]
+}
