@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Order Date Name",
+      "table_name": "Orders (Sample - Superstore)",
+      "tableau_expression": "DATENAME('month',[Order Date]) + ' ' + DATENAME('year',[Order Date])",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "DATENAME('month',[Order Date]) + ' ' + DATENAME('year',[Order Date])",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Order Date": "date"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
