@@ -1,0 +1,28 @@
+table 'Bin Size'
+	lineageTag: ca912db3-14e9-4f78-ae1f-5ffeb583e885
+
+	measure 'Bin Size Value' = SELECTEDVALUE('Bin Size'[Bin Size], 2.0)
+		lineageTag: 5fdd5288-371d-4cb9-887d-fbf9d920609a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Bin Size'
+		dataType: double
+		formatString: 0
+		lineageTag: 870a06b1-d822-47b9-bb4a-321453ff61c9
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Bin Size' = calculated
+		mode: import
+		source = GENERATESERIES(2.0, 10.0, 1.0)
+
+	annotation PBI_Id = b8b093e7bac84a8b8835302b0501af3f
+
