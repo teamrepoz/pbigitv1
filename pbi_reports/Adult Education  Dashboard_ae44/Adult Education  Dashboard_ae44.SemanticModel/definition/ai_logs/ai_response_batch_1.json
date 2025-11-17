@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "AE Benchmarks (FINAL Consolidated Dashboard Data with Charts 5_6_19)",
+      "name": "BATCH",
+      "dax_expression": "1",
+      "solution_explanation": "The Tableau expression is a constant literal (1) with no aggregations, parameters, or row-level field references. This is a row-level constant and should be implemented as a calculated column returning 1."
+    }
+  ]
+}
