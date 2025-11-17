@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "TITLE ",
+      "table_name": "HollywoodsMostProfitableStories",
+      "tableau_expression": "\"HOLLYWOOD STORIES \"",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "\"HOLLYWOOD STORIES \"",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
