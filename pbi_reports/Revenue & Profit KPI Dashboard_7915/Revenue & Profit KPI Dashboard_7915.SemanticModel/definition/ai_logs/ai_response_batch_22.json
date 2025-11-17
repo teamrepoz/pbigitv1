@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "MTD Value - 0",
+      "dax_expression": "IF('Orders (Sample - Superstore)'[MTD Value - YoY] = 0, \"↔\", \"\")",
+      "solution_explanation": "Converted Tableau IF to DAX IF and mapped the referenced calculated field to the table-qualified name 'Orders (Sample - Superstore)'[MTD Value - YoY]. String literals use double quotes.",
+      "type_changed_reason": "This calculation references an aggregated calculated field ([MTD Value - YoY]), so it must be created as a measure."
+    }
+  ]
+}
