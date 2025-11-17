@@ -1,0 +1,63 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.63\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "name": "Section_Products",
+      "ordinal": 0,
+      "displayName": "Products",
+      "visualContainers": [
+        {
+          "x": 13,
+          "y": 125,
+          "z": 0,
+          "width": 615,
+          "height": 374,
+          "config": "{\"name\": \"614637126ec0c8225131db30e4d4aa71\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 13, \"y\": 125, \"z\": 0, \"width\": 615, \"height\": 374, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"treemap\", \"projections\": {\"Values\": [{\"queryRef\": \"raw_data (Dashboard Lesson - Coffee Shop Sales).product_type\"}, {\"queryRef\": \"raw_data (Dashboard Lesson - Coffee Shop Sales).product_detail\"}, {\"queryRef\": \"Sum(raw_data (Dashboard Lesson - Coffee Shop Sales).transaction_qty)\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"r\", \"Entity\": \"raw_data (Dashboard Lesson - Coffee Shop Sales)\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"r\"}}, \"Property\": \"product_type\"}, \"Name\": \"raw_data (Dashboard Lesson - Coffee Shop Sales).product_type\", \"NativeReferenceName\": \"product_type\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"r\"}}, \"Property\": \"product_detail\"}, \"Name\": \"raw_data (Dashboard Lesson - Coffee Shop Sales).product_detail\", \"NativeReferenceName\": \"product_detail\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"r\"}}, \"Property\": \"transaction_qty\"}}, \"Function\": 0}, \"Name\": \"Sum(raw_data (Dashboard Lesson - Coffee Shop Sales).transaction_qty)\", \"NativeReferenceName\": \"Sum of transaction_qty\"}], \"OrderBy\": []}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"titleBold\": {\"expr\": {\"Literal\": {\"Value\": \"\"}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"15D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Roboto'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Most Ordered Products'\"}}}}}]}}}"
+        },
+        {
+          "x": 633,
+          "y": 401,
+          "z": 0,
+          "width": 707,
+          "height": 349,
+          "config": "{\"name\": \"adff347e9917db0aa67b30da0\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 633, \"y\": 401, \"z\": 1000, \"width\": 707, \"height\": 349, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"columnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"raw_data (Dashboard Lesson - Coffee Shop Sales).transaction_qty\", \"active\": true}], \"Y\": [{\"queryRef\": \"raw_data (Dashboard Lesson - Coffee Shop Sales).day\"}], \"Series\": [{\"queryRef\": \"raw_data (Dashboard Lesson - Coffee Shop Sales).transaction_qty\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"r\", \"Entity\": \"raw_data (Dashboard Lesson - Coffee Shop Sales)\", \"Type\": 0}], \"Select\": [{\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"transaction_qty\", \"Expression\": {\"SourceRef\": {\"Source\": \"r\"}}}}, \"Function\": 0}, \"Name\": \"Sum(raw_data (Dashboard Lesson - Coffee Shop Sales).transaction_qty)\", \"NativeReferenceName\": \"Sum of transaction_qty\"}, {\"Measure\": {\"Property\": \"day\", \"Expression\": {\"SourceRef\": {\"Source\": \"r\"}}}, \"Name\": \"raw_data (Dashboard Lesson - Coffee Shop Sales).day\", \"NativeReferenceName\": \"day\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"r\"}}, \"Property\": \"day\"}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"titleBold\": {\"expr\": {\"Literal\": {\"Value\": \"\"}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"15D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Roboto'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Orders per Day'\"}}}}}]}}}"
+        },
+        {
+          "x": 633,
+          "y": 138,
+          "z": 0,
+          "width": 726,
+          "height": 256,
+          "config": "{\"name\": \"1869c2b49e\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 633, \"y\": 138, \"z\": 1000, \"width\": 726, \"height\": 256, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"pieChart\", \"projections\": {\"Category\": [{\"queryRef\": \"raw_data (Dashboard Lesson - Coffee Shop Sales).product_category\", \"active\": true}], \"Y\": [{\"queryRef\": \"Sum(raw_data (Dashboard Lesson - Coffee Shop Sales).Revenue)\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"r\", \"Entity\": \"raw_data (Dashboard Lesson - Coffee Shop Sales)\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Property\": \"product_category\", \"Expression\": {\"SourceRef\": {\"Source\": \"r\"}}}, \"Name\": \"raw_data (Dashboard Lesson - Coffee Shop Sales).product_category\", \"NativeReferenceName\": \"product_category\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Revenue\", \"Expression\": {\"SourceRef\": {\"Source\": \"r\"}}}}, \"Function\": 0}, \"Name\": \"Sum(raw_data (Dashboard Lesson - Coffee Shop Sales).Revenue)\", \"NativeReferenceName\": \"Sum of Revenue\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Revenue\", \"Expression\": {\"SourceRef\": {\"Source\": \"r\"}}}}, \"Function\": 0}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"titleBold\": {\"expr\": {\"Literal\": {\"Value\": \"\"}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"15D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Roboto'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Product Category Revenue Breakdown'\"}}}}}]}}}"
+        },
+        {
+          "x": 17,
+          "y": 502,
+          "z": 0,
+          "width": 601,
+          "height": 256,
+          "config": "{\"name\": \"85766d9f533f196d77a1788dd34cf33f0000\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 17, \"y\": 502, \"z\": 0, \"width\": 601, \"height\": 256, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"projections\": {\"Values\": [{\"queryRef\": \"raw_data (Dashboard Lesson - Coffee Shop Sales).store_location\"}, {\"queryRef\": \"Sum(raw_data (Dashboard Lesson - Coffee Shop Sales).Revenue)\"}, {\"queryRef\": \"raw_data (Dashboard Lesson - Coffee Shop Sales).Revenue\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"r\", \"Entity\": \"raw_data (Dashboard Lesson - Coffee Shop Sales)\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"r\"}}, \"Property\": \"store_location\"}, \"Name\": \"raw_data (Dashboard Lesson - Coffee Shop Sales).store_location\", \"NativeReferenceName\": \"store_location\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"r\"}}, \"Property\": \"Revenue\"}}, \"Function\": 0}, \"Name\": \"Sum(raw_data (Dashboard Lesson - Coffee Shop Sales).Revenue)\", \"NativeReferenceName\": \"Sum of Revenue\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"r\"}}, \"Property\": \"Revenue\"}, \"Name\": \"raw_data (Dashboard Lesson - Coffee Shop Sales).Revenue\", \"NativeReferenceName\": \"Revenue\"}], \"OrderBy\": []}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"titleBold\": {\"expr\": {\"Literal\": {\"Value\": \"\"}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"15D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Roboto Black'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Revenue by Store Location'\"}}}}}]}}}"
+        }
+      ],
+      "width": 1366.0,
+      "height": 768.0
+    }
+  ]
+}
