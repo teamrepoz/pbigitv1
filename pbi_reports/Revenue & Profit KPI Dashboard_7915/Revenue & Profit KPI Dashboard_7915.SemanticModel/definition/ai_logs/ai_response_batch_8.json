@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "Pre Month Value",
+      "dax_expression": "VAR MaxDate = MAX('Orders (Sample - Superstore)'[Order Date])\nVAR FirstDatePreMonth = DATE(YEAR(EDATE(MaxDate, -1)), MONTH(EDATE(MaxDate, -1)), 1)\nVAR StartOfMonthMax = DATE(YEAR(MaxDate), MONTH(MaxDate), 1)\nVAR SelectedMeasure = SELECTEDVALUE('Measure Selector Param'[Display As])\nRETURN\nSWITCH(\n    SelectedMeasure,\n    \"Profit\",\n        CALCULATE(\n            SUM('Orders (Sample - Superstore)'[Profit]),\n            'Orders (Sample - Superstore)'[Order Date] >= FirstDatePreMonth,\n            'Orders (Sample - Superstore)'[Order Date] < StartOfMonthMax\n        ),\n    \"Sales\",\n        CALCULATE(\n            SUM('Orders (Sample - Superstore)'[Sales]),\n            'Orders (Sample - Superstore)'[Order Date] >= FirstDatePreMonth,\n            'Orders (Sample - Superstore)'[Order Date] < StartOfMonthMax\n        ),\n    BLANK()\n)",
+      "solution_explanation": "Recreated the Tableau LOD and conditional measure selection in DAX. Calculated MaxDate with MAX(), derived the first day of the previous month and the start of the MaxDate month, used SELECTEDVALUE for the parameter, and returned the SUM of the selected measure filtered to the date range.",
+      "type_changed_reason": "The calculation contains an aggregation (SUM) and references a Tableau parameter, so it must be implemented as a measure."
+    }
+  ]
+}
