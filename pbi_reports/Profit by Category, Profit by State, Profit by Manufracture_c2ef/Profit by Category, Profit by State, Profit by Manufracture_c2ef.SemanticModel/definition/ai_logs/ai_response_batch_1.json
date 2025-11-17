@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Parameters",
+      "name": "Profit Bin Size",
+      "dax_expression": "200",
+      "solution_explanation": "The Tableau calculation is a constant numeric literal (200). This is a row-level/static value and is represented in Power BI as a calculated column with the same literal expression."
+    }
+  ]
+}
