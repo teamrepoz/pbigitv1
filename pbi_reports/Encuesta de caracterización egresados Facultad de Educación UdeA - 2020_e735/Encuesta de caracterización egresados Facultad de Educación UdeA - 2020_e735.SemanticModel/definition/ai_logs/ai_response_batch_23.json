@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "name": "Con cual metodologia le gustria recibir formación posgraduada",
+      "dax_expression": "COUNT('TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[¿Con cuál metodología le gustaría recibir formación posgraduada?]) / 2",
+      "solution_explanation": "Converted Tableau COUNT(...) to DAX COUNT(...) and transformed the column reference to 'TableName'[ColumnName] format; preserved the division by 2.",
+      "type_changed_reason": "The calculation contains an aggregation (COUNT), so it must be implemented as a measure."
+    }
+  ]
+}
