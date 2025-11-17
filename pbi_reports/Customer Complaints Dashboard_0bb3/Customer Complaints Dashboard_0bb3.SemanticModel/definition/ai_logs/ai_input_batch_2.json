@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "Top X",
+      "table_name": "Parameters",
+      "tableau_expression": "100",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "100",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
