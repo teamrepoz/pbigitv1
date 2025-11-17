@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "T|F",
+      "table_name": "sample_-_superstore (1)",
+      "tableau_expression": "IF AVG([Sales]) > 220 THEN TRUE\nELSE FALSE\nEND",
+      "datatype": "boolean",
+      "calculation_context": {
+        "Expression": "IF AVG([Sales]) > 220 THEN TRUE\nELSE FALSE\nEND",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Sales": "real"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
