@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "Date Type",
+      "table_name": "Parameters",
+      "tableau_expression": "\"Year\"",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "\"Year\"",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
