@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Sales - Executive Summary Dashboard_8981"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "3a672b80-4fb2-425b-a1fb-7f3457eae289"
+  }
+}
