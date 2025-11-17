@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Sheet1 (radial_bar_chart_data)",
+      "name": "Percentage",
+      "dax_expression": "'Sheet1 (radial_bar_chart_data)'[Ratio] / 0.543",
+      "solution_explanation": "Row-level division converted to a DAX calculated column. Replaced Tableau field [Ratio] with 'Sheet1 (radial_bar_chart_data)'[Ratio] and preserved the numeric divisor 0.543."
+    }
+  ]
+}
