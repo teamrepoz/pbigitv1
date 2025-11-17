@@ -1,0 +1,24 @@
+{
+  "calculations": [
+    {
+      "name": "Profit per year",
+      "table_name": "CoffeeChain Query (Sample - Cof (CoffeeChain DATASET)",
+      "tableau_expression": "{FIXED [Year] : SUM([Profit])}",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "{FIXED [Year] : SUM([Profit])}",
+        "calculated_fields": {
+          "Year": "YEAR([Date])"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Date": "date",
+          "Profit": "integer"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Year": "integer"
+        }
+      }
+    }
+  ]
+}
