@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Commission %",
+      "dax_expression": "SUM('Orders+ (Sample - Superstore)'[Commission Total]) / ABS(SUM('Orders+ (Sample - Superstore)'[Profit]))",
+      "solution_explanation": "Translated Tableau SUM and ABS to DAX SUM and ABS. Referenced calculated fields using 'Orders+ (Sample - Superstore)'[Column] format. Kept the same arithmetic structure: SUM([Commission Total]) divided by ABS(SUM([Profit])).",
+      "type_changed_reason": "This calculation uses aggregation (SUM), so it should be created as a measure."
+    }
+  ]
+}
