@@ -1,0 +1,656 @@
+table HollywoodsMostProfitableStories
+	lineageTag: 737f7e5b-5892-4ab5-be4b-bec6b006b651
+
+	column Film
+		dataType: string
+		lineageTag: 9e33a3d3-38f1-4ea4-91da-7a41773783ab
+		summarizeBy: none
+		sourceColumn: Film
+
+		annotation SummarizationSetBy = Automatic
+
+	column Genre
+		dataType: string
+		lineageTag: 79a031e5-93e9-4366-9fe0-7dbc818d61f6
+		summarizeBy: none
+		sourceColumn: Genre
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Lead Studio'
+		dataType: string
+		lineageTag: 30e45156-76aa-4e85-b0fe-7f9fd9099cc8
+		summarizeBy: none
+		sourceColumn: 'Lead Studio'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Audience  score %'
+		dataType: int64
+		formatString: 0
+		lineageTag: e27a2805-2e81-4149-b10b-2ed7fe7528e2
+		summarizeBy: sum
+		sourceColumn: 'Audience  score %'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Profitability
+		dataType: double
+		formatString: General Number
+		lineageTag: 8ad38cbf-1b1e-42e6-8265-8cfa8dee1b09
+		summarizeBy: sum
+		sourceColumn: Profitability
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Rotten Tomatoes %'
+		dataType: int64
+		formatString: 0
+		lineageTag: de5cb883-017d-4b64-ac62-5dd666259caf
+		summarizeBy: sum
+		sourceColumn: 'Rotten Tomatoes %'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Worldwide Gross'
+		dataType: double
+		formatString: General Number
+		lineageTag: 3e0e6dbb-1a74-4327-91a2-fbd68c02b380
+		summarizeBy: sum
+		sourceColumn: 'Worldwide Gross'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Year
+		dataType: datetime
+		lineageTag: 915f7039-6d06-4781-b0db-f35ba0132f7e
+		summarizeBy: none
+		sourceColumn: Year
+
+		variation Variation
+			isDefault
+			relationship: c40bff00-2ad1-473e-bce2-d945ba43274d
+			defaultHierarchy: LocalDateTable_a1d64e78-ff96-4864-9dd8-52bfef1c08ba.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column TITLE = "HOLLYWOOD STORIES "
+		lineageTag: 43045548-b046-4287-ab92-08bb93c624c1
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'TOTAL FILMS' = "TOTAL FILMS"
+		lineageTag: 2eee6e44-6c0c-46b1-8bd5-8b03efd1839c
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'TOTAL LEAD STUDIO' = "TOTAL LEAD STUDIO"
+		lineageTag: 6fb1f884-0b67-4b3a-9718-6bf7b84d3f60
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'TOTAL GENRES' = "TOTAL GENRES"
+		lineageTag: 8dbd5741-ec58-4dcc-a100-1b7b4e8c4a45
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'AVERAGE AUDIENCE SCORES' = " AVG AUDIENCE SCORES"
+		lineageTag: 9a256574-f240-49b3-8162-243fe6a83904
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'AVERAGE ROTTEN TOMATOES' = "AVG ROTTEN TOMATOES"
+		lineageTag: b49de112-d1cb-4c3f-8caf-0e5da026b5a1
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'AVERAGE WORLDWIDE GROSS' = "AVG WORLDWIDE GROSS"
+		lineageTag: c5db8d7b-c039-4f25-966c-80e034400d57
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column HEADER = "TOTAL FILMS \r\nBY GENRE"
+		lineageTag: a40e4693-b979-4b08-ba49-724a851540a4
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column HEAD2 = "TOTAL FILMS BY " & UNICHAR(13) & UNICHAR(10) & "LEAD STUDIO"
+		lineageTag: 57d3fcd5-8acf-479c-85a5-ce6a783b0216
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition HollywoodsMostProfitableStories = m
+		mode: import
+		source =
+				let
+					    Source = Table.FromRecords({
+					        [#"Film" = "controlled", #"Genre" = "disorder", #"Lead Studio" = "communities", #"Audience  score %" = 240, #"Profitability" = 478.83, #"Rotten Tomatoes %" = 502, #"Worldwide Gross" = 976.37, #"Year" = #date(2022, 11, 5)],
+					        [#"Film" = "database", #"Genre" = "offices", #"Lead Studio" = "dallas", #"Audience  score %" = 47, #"Profitability" = 482.3, #"Rotten Tomatoes %" = 145, #"Worldwide Gross" = 744.66, #"Year" = #date(2021, 12, 14)],
+					        [#"Film" = "rod", #"Genre" = "harbor", #"Lead Studio" = "post", #"Audience  score %" = 298, #"Profitability" = 316.06, #"Rotten Tomatoes %" = 881, #"Worldwide Gross" = 745.61, #"Year" = #date(2022, 3, 9)],
+					        [#"Film" = "corner", #"Genre" = "src", #"Lead Studio" = "read", #"Audience  score %" = 48, #"Profitability" = 497.61, #"Rotten Tomatoes %" = 397, #"Worldwide Gross" = 473.9, #"Year" = #date(2021, 2, 28)],
+					        [#"Film" = "customers", #"Genre" = "illness", #"Lead Studio" = "console", #"Audience  score %" = 951, #"Profitability" = 916.66, #"Rotten Tomatoes %" = 112, #"Worldwide Gross" = 367.32, #"Year" = #date(2021, 3, 22)],
+					        [#"Film" = "recognize", #"Genre" = "concerned", #"Lead Studio" = "history", #"Audience  score %" = 591, #"Profitability" = 134.77, #"Rotten Tomatoes %" = 936, #"Worldwide Gross" = 575.94, #"Year" = #date(2020, 8, 21)],
+					        [#"Film" = "il", #"Genre" = "ins", #"Lead Studio" = "social", #"Audience  score %" = 169, #"Profitability" = 990.92, #"Rotten Tomatoes %" = 23, #"Worldwide Gross" = 700.85, #"Year" = #date(2021, 9, 16)],
+					        [#"Film" = "tell", #"Genre" = "martin", #"Lead Studio" = "responsibilities", #"Audience  score %" = 160, #"Profitability" = 240.22, #"Rotten Tomatoes %" = 752, #"Worldwide Gross" = 270.5, #"Year" = #date(2021, 1, 26)],
+					        [#"Film" = "indicator", #"Genre" = "friday", #"Lead Studio" = "gloves", #"Audience  score %" = 300, #"Profitability" = 529.04, #"Rotten Tomatoes %" = 686, #"Worldwide Gross" = 36.2, #"Year" = #date(2020, 7, 18)],
+					        [#"Film" = "venue", #"Genre" = "sensor", #"Lead Studio" = "dependent", #"Audience  score %" = 134, #"Profitability" = 842.13, #"Rotten Tomatoes %" = 779, #"Worldwide Gross" = 323.92, #"Year" = #date(2020, 10, 20)],
+					        [#"Film" = "exhibit", #"Genre" = "integrated", #"Lead Studio" = "sunglasses", #"Audience  score %" = 578, #"Profitability" = 974.11, #"Rotten Tomatoes %" = 255, #"Worldwide Gross" = 753.21, #"Year" = #date(2022, 3, 23)],
+					        [#"Film" = "contest", #"Genre" = "planet", #"Lead Studio" = "advisor", #"Audience  score %" = 952, #"Profitability" = 763.2, #"Rotten Tomatoes %" = 688, #"Worldwide Gross" = 316.57, #"Year" = #date(2020, 10, 30)],
+					        [#"Film" = "permits", #"Genre" = "bruce", #"Lead Studio" = "gospel", #"Audience  score %" = 2, #"Profitability" = 518.55, #"Rotten Tomatoes %" = 232, #"Worldwide Gross" = 47.08, #"Year" = #date(2023, 7, 15)],
+					        [#"Film" = "complaint", #"Genre" = "did", #"Lead Studio" = "parents", #"Audience  score %" = 769, #"Profitability" = 885.88, #"Rotten Tomatoes %" = 780, #"Worldwide Gross" = 592.89, #"Year" = #date(2022, 12, 28)],
+					        [#"Film" = "shot", #"Genre" = "credits", #"Lead Studio" = "identifying", #"Audience  score %" = 405, #"Profitability" = 550.13, #"Rotten Tomatoes %" = 790, #"Worldwide Gross" = 380.21, #"Year" = #date(2022, 11, 15)],
+					        [#"Film" = "hungary", #"Genre" = "platform", #"Lead Studio" = "center", #"Audience  score %" = 62, #"Profitability" = 719.39, #"Rotten Tomatoes %" = 698, #"Worldwide Gross" = 457.38, #"Year" = #date(2022, 10, 25)],
+					        [#"Film" = "canyon", #"Genre" = "hardcover", #"Lead Studio" = "folks", #"Audience  score %" = 885, #"Profitability" = 717.85, #"Rotten Tomatoes %" = 279, #"Worldwide Gross" = 95.34, #"Year" = #date(2022, 11, 20)],
+					        [#"Film" = "foster", #"Genre" = "advice", #"Lead Studio" = "tutorials", #"Audience  score %" = 982, #"Profitability" = 320.52, #"Rotten Tomatoes %" = 818, #"Worldwide Gross" = 850.04, #"Year" = #date(2023, 10, 4)],
+					        [#"Film" = "independence", #"Genre" = "tissue", #"Lead Studio" = "dish", #"Audience  score %" = 351, #"Profitability" = 184.76, #"Rotten Tomatoes %" = 360, #"Worldwide Gross" = 736.54, #"Year" = #date(2021, 11, 30)],
+					        [#"Film" = "fri", #"Genre" = "performance", #"Lead Studio" = "strongly", #"Audience  score %" = 991, #"Profitability" = 624.12, #"Rotten Tomatoes %" = 32, #"Worldwide Gross" = 89.25, #"Year" = #date(2020, 9, 10)],
+					        [#"Film" = "proud", #"Genre" = "birth", #"Lead Studio" = "interest", #"Audience  score %" = 351, #"Profitability" = 760.8, #"Rotten Tomatoes %" = 894, #"Worldwide Gross" = 552.04, #"Year" = #date(2020, 7, 5)],
+					        [#"Film" = "domains", #"Genre" = "cached", #"Lead Studio" = "lewis", #"Audience  score %" = 128, #"Profitability" = 21.91, #"Rotten Tomatoes %" = 597, #"Worldwide Gross" = 212.83, #"Year" = #date(2020, 8, 25)],
+					        [#"Film" = "os", #"Genre" = "ray", #"Lead Studio" = "volunteer", #"Audience  score %" = 250, #"Profitability" = 856.47, #"Rotten Tomatoes %" = 327, #"Worldwide Gross" = 756.14, #"Year" = #date(2022, 10, 24)],
+					        [#"Film" = "diff", #"Genre" = "aim", #"Lead Studio" = "sigma", #"Audience  score %" = 706, #"Profitability" = 911.14, #"Rotten Tomatoes %" = 245, #"Worldwide Gross" = 531.53, #"Year" = #date(2020, 11, 4)],
+					        [#"Film" = "terrorist", #"Genre" = "java", #"Lead Studio" = "protocol", #"Audience  score %" = 577, #"Profitability" = 673.67, #"Rotten Tomatoes %" = 830, #"Worldwide Gross" = 232.38, #"Year" = #date(2021, 1, 29)],
+					        [#"Film" = "explorer", #"Genre" = "cincinnati", #"Lead Studio" = "mortgages", #"Audience  score %" = 915, #"Profitability" = 720.99, #"Rotten Tomatoes %" = 816, #"Worldwide Gross" = 40.45, #"Year" = #date(2024, 7, 8)],
+					        [#"Film" = "removed", #"Genre" = "images", #"Lead Studio" = "developing", #"Audience  score %" = 744, #"Profitability" = 156.17, #"Rotten Tomatoes %" = 987, #"Worldwide Gross" = 474.29, #"Year" = #date(2020, 9, 22)],
+					        [#"Film" = "gun", #"Genre" = "camcorder", #"Lead Studio" = "echo", #"Audience  score %" = 274, #"Profitability" = 976.84, #"Rotten Tomatoes %" = 541, #"Worldwide Gross" = 89.99, #"Year" = #date(2021, 4, 24)],
+					        [#"Film" = "represents", #"Genre" = "holland", #"Lead Studio" = "running", #"Audience  score %" = 636, #"Profitability" = 271.39, #"Rotten Tomatoes %" = 165, #"Worldwide Gross" = 932.72, #"Year" = #date(2020, 1, 11)],
+					        [#"Film" = "whose", #"Genre" = "european", #"Lead Studio" = "adequate", #"Audience  score %" = 703, #"Profitability" = 122.58, #"Rotten Tomatoes %" = 102, #"Worldwide Gross" = 595.77, #"Year" = #date(2024, 8, 19)],
+					        [#"Film" = "noble", #"Genre" = "bestsellers", #"Lead Studio" = "box", #"Audience  score %" = 616, #"Profitability" = 77.36, #"Rotten Tomatoes %" = 350, #"Worldwide Gross" = 805.38, #"Year" = #date(2023, 5, 4)],
+					        [#"Film" = "basis", #"Genre" = "opportunity", #"Lead Studio" = "series", #"Audience  score %" = 175, #"Profitability" = 676.23, #"Rotten Tomatoes %" = 395, #"Worldwide Gross" = 633.79, #"Year" = #date(2020, 7, 26)],
+					        [#"Film" = "danger", #"Genre" = "americans", #"Lead Studio" = "personnel", #"Audience  score %" = 562, #"Profitability" = 97.26, #"Rotten Tomatoes %" = 966, #"Worldwide Gross" = 768.02, #"Year" = #date(2023, 3, 31)],
+					        [#"Film" = "vice", #"Genre" = "components", #"Lead Studio" = "heaven", #"Audience  score %" = 477, #"Profitability" = 673.27, #"Rotten Tomatoes %" = 747, #"Worldwide Gross" = 218.58, #"Year" = #date(2021, 10, 29)],
+					        [#"Film" = "accommodations", #"Genre" = "editor", #"Lead Studio" = "glad", #"Audience  score %" = 752, #"Profitability" = 425.03, #"Rotten Tomatoes %" = 709, #"Worldwide Gross" = 31.28, #"Year" = #date(2022, 9, 10)],
+					        [#"Film" = "directly", #"Genre" = "station", #"Lead Studio" = "engineering", #"Audience  score %" = 140, #"Profitability" = 609.45, #"Rotten Tomatoes %" = 374, #"Worldwide Gross" = 409.23, #"Year" = #date(2022, 10, 31)],
+					        [#"Film" = "dress", #"Genre" = "covered", #"Lead Studio" = "high", #"Audience  score %" = 712, #"Profitability" = 86.43, #"Rotten Tomatoes %" = 907, #"Worldwide Gross" = 958.16, #"Year" = #date(2023, 7, 24)],
+					        [#"Film" = "county", #"Genre" = "counsel", #"Lead Studio" = "universal", #"Audience  score %" = 213, #"Profitability" = 868.2, #"Rotten Tomatoes %" = 906, #"Worldwide Gross" = 176.6, #"Year" = #date(2021, 8, 30)],
+					        [#"Film" = "excerpt", #"Genre" = "carrier", #"Lead Studio" = "opera", #"Audience  score %" = 98, #"Profitability" = 326.05, #"Rotten Tomatoes %" = 163, #"Worldwide Gross" = 593.89, #"Year" = #date(2021, 8, 13)],
+					        [#"Film" = "seller", #"Genre" = "sons", #"Lead Studio" = "extremely", #"Audience  score %" = 325, #"Profitability" = 15.59, #"Rotten Tomatoes %" = 292, #"Worldwide Gross" = 977.29, #"Year" = #date(2022, 3, 31)],
+					        [#"Film" = "molecular", #"Genre" = "google", #"Lead Studio" = "care", #"Audience  score %" = 151, #"Profitability" = 649.65, #"Rotten Tomatoes %" = 598, #"Worldwide Gross" = 294.64, #"Year" = #date(2021, 12, 1)],
+					        [#"Film" = "medicare", #"Genre" = "attorney", #"Lead Studio" = "corp", #"Audience  score %" = 10, #"Profitability" = 130.39, #"Rotten Tomatoes %" = 136, #"Worldwide Gross" = 320.26, #"Year" = #date(2023, 5, 21)],
+					        [#"Film" = "criteria", #"Genre" = "any", #"Lead Studio" = "hours", #"Audience  score %" = 71, #"Profitability" = 780.86, #"Rotten Tomatoes %" = 910, #"Worldwide Gross" = 614.67, #"Year" = #date(2024, 3, 20)],
+					        [#"Film" = "sponsored", #"Genre" = "page", #"Lead Studio" = "alternatives", #"Audience  score %" = 87, #"Profitability" = 252.98, #"Rotten Tomatoes %" = 86, #"Worldwide Gross" = 669.83, #"Year" = #date(2021, 3, 3)],
+					        [#"Film" = "usb", #"Genre" = "seven", #"Lead Studio" = "thou", #"Audience  score %" = 866, #"Profitability" = 337.91, #"Rotten Tomatoes %" = 297, #"Worldwide Gross" = 487.67, #"Year" = #date(2020, 2, 26)],
+					        [#"Film" = "pulled", #"Genre" = "disability", #"Lead Studio" = "charlie", #"Audience  score %" = 635, #"Profitability" = 732.59, #"Rotten Tomatoes %" = 932, #"Worldwide Gross" = 275.51, #"Year" = #date(2022, 5, 6)],
+					        [#"Film" = "contributions", #"Genre" = "carried", #"Lead Studio" = "ap", #"Audience  score %" = 290, #"Profitability" = 315.92, #"Rotten Tomatoes %" = 636, #"Worldwide Gross" = 228.61, #"Year" = #date(2023, 9, 8)],
+					        [#"Film" = "loan", #"Genre" = "requested", #"Lead Studio" = "link", #"Audience  score %" = 645, #"Profitability" = 685.59, #"Rotten Tomatoes %" = 757, #"Worldwide Gross" = 98.21, #"Year" = #date(2020, 3, 10)],
+					        [#"Film" = "universe", #"Genre" = "milwaukee", #"Lead Studio" = "post", #"Audience  score %" = 167, #"Profitability" = 622.61, #"Rotten Tomatoes %" = 102, #"Worldwide Gross" = 877.61, #"Year" = #date(2021, 10, 8)],
+					        [#"Film" = "wheel", #"Genre" = "athens", #"Lead Studio" = "brian", #"Audience  score %" = 246, #"Profitability" = 432.12, #"Rotten Tomatoes %" = 749, #"Worldwide Gross" = 948.82, #"Year" = #date(2020, 11, 11)],
+					        [#"Film" = "award", #"Genre" = "operations", #"Lead Studio" = "desert", #"Audience  score %" = 409, #"Profitability" = 253.86, #"Rotten Tomatoes %" = 632, #"Worldwide Gross" = 666.88, #"Year" = #date(2023, 3, 26)],
+					        [#"Film" = "royal", #"Genre" = "finally", #"Lead Studio" = "swedish", #"Audience  score %" = 538, #"Profitability" = 20.09, #"Rotten Tomatoes %" = 893, #"Worldwide Gross" = 263.23, #"Year" = #date(2020, 6, 2)],
+					        [#"Film" = "garden", #"Genre" = "turn", #"Lead Studio" = "nelson", #"Audience  score %" = 120, #"Profitability" = 530.33, #"Rotten Tomatoes %" = 860, #"Worldwide Gross" = 374.0, #"Year" = #date(2021, 9, 14)],
+					        [#"Film" = "vs", #"Genre" = "cover", #"Lead Studio" = "analog", #"Audience  score %" = 561, #"Profitability" = 423.06, #"Rotten Tomatoes %" = 417, #"Worldwide Gross" = 842.82, #"Year" = #date(2021, 4, 17)],
+					        [#"Film" = "circle", #"Genre" = "family", #"Lead Studio" = "give", #"Audience  score %" = 82, #"Profitability" = 850.28, #"Rotten Tomatoes %" = 679, #"Worldwide Gross" = 460.45, #"Year" = #date(2020, 9, 1)],
+					        [#"Film" = "conventional", #"Genre" = "expect", #"Lead Studio" = "indicators", #"Audience  score %" = 162, #"Profitability" = 441.78, #"Rotten Tomatoes %" = 177, #"Worldwide Gross" = 358.82, #"Year" = #date(2022, 1, 10)],
+					        [#"Film" = "slip", #"Genre" = "mathematics", #"Lead Studio" = "soft", #"Audience  score %" = 480, #"Profitability" = 108.32, #"Rotten Tomatoes %" = 511, #"Worldwide Gross" = 63.1, #"Year" = #date(2020, 11, 21)],
+					        [#"Film" = "living", #"Genre" = "ticket", #"Lead Studio" = "plain", #"Audience  score %" = 21, #"Profitability" = 420.46, #"Rotten Tomatoes %" = 265, #"Worldwide Gross" = 257.26, #"Year" = #date(2020, 9, 22)],
+					        [#"Film" = "activity", #"Genre" = "elections", #"Lead Studio" = "reasonable", #"Audience  score %" = 916, #"Profitability" = 709.32, #"Rotten Tomatoes %" = 742, #"Worldwide Gross" = 154.62, #"Year" = #date(2023, 6, 23)],
+					        [#"Film" = "copy", #"Genre" = "tested", #"Lead Studio" = "mention", #"Audience  score %" = 771, #"Profitability" = 440.21, #"Rotten Tomatoes %" = 579, #"Worldwide Gross" = 636.91, #"Year" = #date(2020, 2, 8)],
+					        [#"Film" = "hiking", #"Genre" = "zip", #"Lead Studio" = "bracelet", #"Audience  score %" = 259, #"Profitability" = 781.29, #"Rotten Tomatoes %" = 589, #"Worldwide Gross" = 670.61, #"Year" = #date(2020, 5, 22)],
+					        [#"Film" = "sharing", #"Genre" = "friendly", #"Lead Studio" = "henry", #"Audience  score %" = 422, #"Profitability" = 602.85, #"Rotten Tomatoes %" = 696, #"Worldwide Gross" = 185.17, #"Year" = #date(2022, 6, 7)],
+					        [#"Film" = "albany", #"Genre" = "functional", #"Lead Studio" = "conducted", #"Audience  score %" = 756, #"Profitability" = 37.9, #"Rotten Tomatoes %" = 434, #"Worldwide Gross" = 538.85, #"Year" = #date(2020, 6, 30)],
+					        [#"Film" = "whom", #"Genre" = "situations", #"Lead Studio" = "hills", #"Audience  score %" = 534, #"Profitability" = 759.02, #"Rotten Tomatoes %" = 960, #"Worldwide Gross" = 85.18, #"Year" = #date(2023, 2, 28)],
+					        [#"Film" = "feature", #"Genre" = "ban", #"Lead Studio" = "card", #"Audience  score %" = 482, #"Profitability" = 720.22, #"Rotten Tomatoes %" = 271, #"Worldwide Gross" = 328.03, #"Year" = #date(2023, 2, 9)],
+					        [#"Film" = "exhibition", #"Genre" = "traditional", #"Lead Studio" = "lottery", #"Audience  score %" = 196, #"Profitability" = 897.19, #"Rotten Tomatoes %" = 225, #"Worldwide Gross" = 384.89, #"Year" = #date(2021, 3, 29)],
+					        [#"Film" = "jeans", #"Genre" = "floral", #"Lead Studio" = "smart", #"Audience  score %" = 452, #"Profitability" = 654.89, #"Rotten Tomatoes %" = 234, #"Worldwide Gross" = 50.13, #"Year" = #date(2022, 1, 7)],
+					        [#"Film" = "color", #"Genre" = "aaron", #"Lead Studio" = "historic", #"Audience  score %" = 16, #"Profitability" = 333.62, #"Rotten Tomatoes %" = 94, #"Worldwide Gross" = 916.99, #"Year" = #date(2020, 10, 14)],
+					        [#"Film" = "ordering", #"Genre" = "lift", #"Lead Studio" = "model", #"Audience  score %" = 727, #"Profitability" = 511.08, #"Rotten Tomatoes %" = 268, #"Worldwide Gross" = 661.93, #"Year" = #date(2020, 12, 30)],
+					        [#"Film" = "philadelphia", #"Genre" = "do", #"Lead Studio" = "receive", #"Audience  score %" = 411, #"Profitability" = 984.95, #"Rotten Tomatoes %" = 153, #"Worldwide Gross" = 660.41, #"Year" = #date(2023, 10, 8)],
+					        [#"Film" = "adopted", #"Genre" = "converted", #"Lead Studio" = "bug", #"Audience  score %" = 428, #"Profitability" = 793.89, #"Rotten Tomatoes %" = 456, #"Worldwide Gross" = 930.56, #"Year" = #date(2022, 7, 16)],
+					        [#"Film" = "technology", #"Genre" = "provided", #"Lead Studio" = "employers", #"Audience  score %" = 60, #"Profitability" = 303.23, #"Rotten Tomatoes %" = 479, #"Worldwide Gross" = 443.83, #"Year" = #date(2022, 2, 9)],
+					        [#"Film" = "compare", #"Genre" = "solution", #"Lead Studio" = "compatible", #"Audience  score %" = 399, #"Profitability" = 418.81, #"Rotten Tomatoes %" = 417, #"Worldwide Gross" = 226.81, #"Year" = #date(2024, 3, 1)],
+					        [#"Film" = "robinson", #"Genre" = "enlarge", #"Lead Studio" = "lab", #"Audience  score %" = 564, #"Profitability" = 387.25, #"Rotten Tomatoes %" = 222, #"Worldwide Gross" = 732.5, #"Year" = #date(2020, 1, 19)],
+					        [#"Film" = "additional", #"Genre" = "species", #"Lead Studio" = "ab", #"Audience  score %" = 726, #"Profitability" = 446.31, #"Rotten Tomatoes %" = 214, #"Worldwide Gross" = 77.88, #"Year" = #date(2023, 1, 19)],
+					        [#"Film" = "oakland", #"Genre" = "decades", #"Lead Studio" = "waste", #"Audience  score %" = 319, #"Profitability" = 921.57, #"Rotten Tomatoes %" = 761, #"Worldwide Gross" = 205.85, #"Year" = #date(2022, 4, 6)],
+					        [#"Film" = "risk", #"Genre" = "designated", #"Lead Studio" = "counter", #"Audience  score %" = 675, #"Profitability" = 161.12, #"Rotten Tomatoes %" = 634, #"Worldwide Gross" = 647.19, #"Year" = #date(2020, 2, 24)],
+					        [#"Film" = "manchester", #"Genre" = "cd", #"Lead Studio" = "radiation", #"Audience  score %" = 738, #"Profitability" = 995.41, #"Rotten Tomatoes %" = 13, #"Worldwide Gross" = 697.22, #"Year" = #date(2021, 10, 15)],
+					        [#"Film" = "payment", #"Genre" = "points", #"Lead Studio" = "scott", #"Audience  score %" = 842, #"Profitability" = 38.89, #"Rotten Tomatoes %" = 617, #"Worldwide Gross" = 376.78, #"Year" = #date(2021, 5, 27)],
+					        [#"Film" = "rock", #"Genre" = "tiger", #"Lead Studio" = "grades", #"Audience  score %" = 306, #"Profitability" = 203.3, #"Rotten Tomatoes %" = 171, #"Worldwide Gross" = 792.77, #"Year" = #date(2020, 10, 4)],
+					        [#"Film" = "equal", #"Genre" = "displayed", #"Lead Studio" = "public", #"Audience  score %" = 579, #"Profitability" = 413.6, #"Rotten Tomatoes %" = 950, #"Worldwide Gross" = 420.52, #"Year" = #date(2022, 3, 18)],
+					        [#"Film" = "clinical", #"Genre" = "lifestyle", #"Lead Studio" = "over", #"Audience  score %" = 544, #"Profitability" = 188.28, #"Rotten Tomatoes %" = 623, #"Worldwide Gross" = 822.59, #"Year" = #date(2024, 2, 10)],
+					        [#"Film" = "region", #"Genre" = "survey", #"Lead Studio" = "lecture", #"Audience  score %" = 709, #"Profitability" = 906.28, #"Rotten Tomatoes %" = 427, #"Worldwide Gross" = 93.63, #"Year" = #date(2020, 10, 27)],
+					        [#"Film" = "discovered", #"Genre" = "growth", #"Lead Studio" = "cleveland", #"Audience  score %" = 286, #"Profitability" = 117.48, #"Rotten Tomatoes %" = 579, #"Worldwide Gross" = 959.8, #"Year" = #date(2024, 8, 23)],
+					        [#"Film" = "books", #"Genre" = "exchange", #"Lead Studio" = "white", #"Audience  score %" = 255, #"Profitability" = 620.02, #"Rotten Tomatoes %" = 361, #"Worldwide Gross" = 990.94, #"Year" = #date(2023, 8, 2)],
+					        [#"Film" = "houston", #"Genre" = "storage", #"Lead Studio" = "easy", #"Audience  score %" = 29, #"Profitability" = 89.77, #"Rotten Tomatoes %" = 446, #"Worldwide Gross" = 574.85, #"Year" = #date(2023, 12, 6)],
+					        [#"Film" = "find", #"Genre" = "nz", #"Lead Studio" = "connect", #"Audience  score %" = 233, #"Profitability" = 855.9, #"Rotten Tomatoes %" = 611, #"Worldwide Gross" = 790.9, #"Year" = #date(2020, 8, 23)],
+					        [#"Film" = "secret", #"Genre" = "unless", #"Lead Studio" = "tell", #"Audience  score %" = 323, #"Profitability" = 991.73, #"Rotten Tomatoes %" = 242, #"Worldwide Gross" = 266.15, #"Year" = #date(2020, 2, 19)],
+					        [#"Film" = "dictionary", #"Genre" = "fed", #"Lead Studio" = "zip", #"Audience  score %" = 178, #"Profitability" = 97.48, #"Rotten Tomatoes %" = 69, #"Worldwide Gross" = 532.26, #"Year" = #date(2023, 5, 2)],
+					        [#"Film" = "framed", #"Genre" = "exciting", #"Lead Studio" = "asia", #"Audience  score %" = 612, #"Profitability" = 894.18, #"Rotten Tomatoes %" = 541, #"Worldwide Gross" = 938.26, #"Year" = #date(2022, 4, 28)],
+					        [#"Film" = "wearing", #"Genre" = "massachusetts", #"Lead Studio" = "bulletin", #"Audience  score %" = 90, #"Profitability" = 549.14, #"Rotten Tomatoes %" = 480, #"Worldwide Gross" = 941.45, #"Year" = #date(2020, 11, 6)],
+					        [#"Film" = "describes", #"Genre" = "and", #"Lead Studio" = "otherwise", #"Audience  score %" = 762, #"Profitability" = 996.36, #"Rotten Tomatoes %" = 256, #"Worldwide Gross" = 524.64, #"Year" = #date(2022, 7, 15)],
+					        [#"Film" = "landscape", #"Genre" = "nose", #"Lead Studio" = "ray", #"Audience  score %" = 46, #"Profitability" = 44.81, #"Rotten Tomatoes %" = 787, #"Worldwide Gross" = 396.77, #"Year" = #date(2024, 3, 15)],
+					        [#"Film" = "sierra", #"Genre" = "red", #"Lead Studio" = "ng", #"Audience  score %" = 342, #"Profitability" = 619.12, #"Rotten Tomatoes %" = 284, #"Worldwide Gross" = 641.24, #"Year" = #date(2024, 4, 26)],
+					        [#"Film" = "workshops", #"Genre" = "oriented", #"Lead Studio" = "reason", #"Audience  score %" = 565, #"Profitability" = 518.96, #"Rotten Tomatoes %" = 30, #"Worldwide Gross" = 918.84, #"Year" = #date(2023, 10, 10)],
+					        [#"Film" = "directors", #"Genre" = "adding", #"Lead Studio" = "hall", #"Audience  score %" = 873, #"Profitability" = 39.82, #"Rotten Tomatoes %" = 100, #"Worldwide Gross" = 690.82, #"Year" = #date(2020, 2, 11)],
+					        [#"Film" = "bedroom", #"Genre" = "bought", #"Lead Studio" = "angle", #"Audience  score %" = 236, #"Profitability" = 740.44, #"Rotten Tomatoes %" = 622, #"Worldwide Gross" = 370.75, #"Year" = #date(2022, 3, 14)],
+					        [#"Film" = "columbus", #"Genre" = "absolute", #"Lead Studio" = "lingerie", #"Audience  score %" = 469, #"Profitability" = 136.26, #"Rotten Tomatoes %" = 541, #"Worldwide Gross" = 604.74, #"Year" = #date(2024, 6, 27)],
+					        [#"Film" = "athletic", #"Genre" = "aim", #"Lead Studio" = "know", #"Audience  score %" = 840, #"Profitability" = 436.56, #"Rotten Tomatoes %" = 547, #"Worldwide Gross" = 858.82, #"Year" = #date(2024, 9, 8)],
+					        [#"Film" = "perfectly", #"Genre" = "fortune", #"Lead Studio" = "concepts", #"Audience  score %" = 160, #"Profitability" = 102.12, #"Rotten Tomatoes %" = 549, #"Worldwide Gross" = 410.81, #"Year" = #date(2024, 2, 29)],
+					        [#"Film" = "peter", #"Genre" = "done", #"Lead Studio" = "sitemap", #"Audience  score %" = 83, #"Profitability" = 725.56, #"Rotten Tomatoes %" = 173, #"Worldwide Gross" = 295.44, #"Year" = #date(2020, 8, 16)],
+					        [#"Film" = "mature", #"Genre" = "benefit", #"Lead Studio" = "serving", #"Audience  score %" = 77, #"Profitability" = 460.54, #"Rotten Tomatoes %" = 637, #"Worldwide Gross" = 378.13, #"Year" = #date(2023, 6, 18)],
+					        [#"Film" = "strip", #"Genre" = "help", #"Lead Studio" = "sponsored", #"Audience  score %" = 959, #"Profitability" = 632.74, #"Rotten Tomatoes %" = 235, #"Worldwide Gross" = 746.37, #"Year" = #date(2022, 6, 16)],
+					        [#"Film" = "defense", #"Genre" = "condition", #"Lead Studio" = "wyoming", #"Audience  score %" = 294, #"Profitability" = 656.88, #"Rotten Tomatoes %" = 651, #"Worldwide Gross" = 875.53, #"Year" = #date(2020, 5, 2)],
+					        [#"Film" = "displays", #"Genre" = "detail", #"Lead Studio" = "provision", #"Audience  score %" = 805, #"Profitability" = 583.98, #"Rotten Tomatoes %" = 935, #"Worldwide Gross" = 372.7, #"Year" = #date(2021, 10, 26)],
+					        [#"Film" = "going", #"Genre" = "customer", #"Lead Studio" = "second", #"Audience  score %" = 341, #"Profitability" = 825.82, #"Rotten Tomatoes %" = 407, #"Worldwide Gross" = 176.28, #"Year" = #date(2020, 5, 19)],
+					        [#"Film" = "essays", #"Genre" = "schemes", #"Lead Studio" = "owner", #"Audience  score %" = 94, #"Profitability" = 734.79, #"Rotten Tomatoes %" = 531, #"Worldwide Gross" = 264.44, #"Year" = #date(2024, 3, 21)],
+					        [#"Film" = "jurisdiction", #"Genre" = "concerning", #"Lead Studio" = "terms", #"Audience  score %" = 228, #"Profitability" = 884.0, #"Rotten Tomatoes %" = 66, #"Worldwide Gross" = 681.62, #"Year" = #date(2023, 9, 8)],
+					        [#"Film" = "walking", #"Genre" = "populations", #"Lead Studio" = "hs", #"Audience  score %" = 397, #"Profitability" = 234.95, #"Rotten Tomatoes %" = 701, #"Worldwide Gross" = 87.8, #"Year" = #date(2021, 7, 6)],
+					        [#"Film" = "automation", #"Genre" = "implement", #"Lead Studio" = "blow", #"Audience  score %" = 768, #"Profitability" = 219.27, #"Rotten Tomatoes %" = 799, #"Worldwide Gross" = 73.71, #"Year" = #date(2023, 5, 17)],
+					        [#"Film" = "expect", #"Genre" = "mapping", #"Lead Studio" = "restrictions", #"Audience  score %" = 746, #"Profitability" = 608.65, #"Rotten Tomatoes %" = 786, #"Worldwide Gross" = 912.88, #"Year" = #date(2023, 9, 7)],
+					        [#"Film" = "joined", #"Genre" = "flag", #"Lead Studio" = "square", #"Audience  score %" = 981, #"Profitability" = 36.61, #"Rotten Tomatoes %" = 715, #"Worldwide Gross" = 717.01, #"Year" = #date(2024, 8, 18)],
+					        [#"Film" = "ability", #"Genre" = "long", #"Lead Studio" = "influence", #"Audience  score %" = 989, #"Profitability" = 194.78, #"Rotten Tomatoes %" = 501, #"Worldwide Gross" = 377.36, #"Year" = #date(2023, 5, 22)],
+					        [#"Film" = "kick", #"Genre" = "poverty", #"Lead Studio" = "fan", #"Audience  score %" = 101, #"Profitability" = 688.74, #"Rotten Tomatoes %" = 994, #"Worldwide Gross" = 357.53, #"Year" = #date(2021, 4, 29)],
+					        [#"Film" = "data", #"Genre" = "food", #"Lead Studio" = "interest", #"Audience  score %" = 594, #"Profitability" = 226.23, #"Rotten Tomatoes %" = 424, #"Worldwide Gross" = 186.63, #"Year" = #date(2021, 1, 11)],
+					        [#"Film" = "ieee", #"Genre" = "ended", #"Lead Studio" = "chief", #"Audience  score %" = 106, #"Profitability" = 306.23, #"Rotten Tomatoes %" = 596, #"Worldwide Gross" = 83.13, #"Year" = #date(2024, 11, 4)],
+					        [#"Film" = "industry", #"Genre" = "matt", #"Lead Studio" = "marriott", #"Audience  score %" = 247, #"Profitability" = 962.1, #"Rotten Tomatoes %" = 171, #"Worldwide Gross" = 58.33, #"Year" = #date(2022, 6, 26)],
+					        [#"Film" = "broken", #"Genre" = "scripts", #"Lead Studio" = "gamecube", #"Audience  score %" = 205, #"Profitability" = 31.63, #"Rotten Tomatoes %" = 381, #"Worldwide Gross" = 696.08, #"Year" = #date(2022, 11, 22)],
+					        [#"Film" = "vast", #"Genre" = "textbooks", #"Lead Studio" = "trusted", #"Audience  score %" = 964, #"Profitability" = 384.63, #"Rotten Tomatoes %" = 827, #"Worldwide Gross" = 245.62, #"Year" = #date(2021, 10, 1)],
+					        [#"Film" = "resource", #"Genre" = "can", #"Lead Studio" = "ralph", #"Audience  score %" = 130, #"Profitability" = 664.66, #"Rotten Tomatoes %" = 784, #"Worldwide Gross" = 186.04, #"Year" = #date(2023, 8, 24)],
+					        [#"Film" = "performed", #"Genre" = "communications", #"Lead Studio" = "venezuela", #"Audience  score %" = 880, #"Profitability" = 759.61, #"Rotten Tomatoes %" = 908, #"Worldwide Gross" = 343.03, #"Year" = #date(2021, 5, 10)],
+					        [#"Film" = "downloaded", #"Genre" = "brother", #"Lead Studio" = "test", #"Audience  score %" = 521, #"Profitability" = 561.08, #"Rotten Tomatoes %" = 486, #"Worldwide Gross" = 867.44, #"Year" = #date(2021, 8, 7)],
+					        [#"Film" = "tennis", #"Genre" = "waste", #"Lead Studio" = "wealth", #"Audience  score %" = 978, #"Profitability" = 348.44, #"Rotten Tomatoes %" = 724, #"Worldwide Gross" = 952.44, #"Year" = #date(2023, 1, 15)],
+					        [#"Film" = "heating", #"Genre" = "assigned", #"Lead Studio" = "functionality", #"Audience  score %" = 444, #"Profitability" = 159.72, #"Rotten Tomatoes %" = 465, #"Worldwide Gross" = 808.53, #"Year" = #date(2021, 8, 10)],
+					        [#"Film" = "hazardous", #"Genre" = "crossing", #"Lead Studio" = "airline", #"Audience  score %" = 774, #"Profitability" = 103.27, #"Rotten Tomatoes %" = 221, #"Worldwide Gross" = 597.57, #"Year" = #date(2024, 7, 5)],
+					        [#"Film" = "bank", #"Genre" = "projects", #"Lead Studio" = "blackjack", #"Audience  score %" = 11, #"Profitability" = 929.46, #"Rotten Tomatoes %" = 515, #"Worldwide Gross" = 128.17, #"Year" = #date(2024, 9, 16)],
+					        [#"Film" = "faculty", #"Genre" = "difference", #"Lead Studio" = "ee", #"Audience  score %" = 706, #"Profitability" = 580.42, #"Rotten Tomatoes %" = 412, #"Worldwide Gross" = 13.11, #"Year" = #date(2024, 1, 7)],
+					        [#"Film" = "couples", #"Genre" = "lewis", #"Lead Studio" = "apart", #"Audience  score %" = 766, #"Profitability" = 516.22, #"Rotten Tomatoes %" = 773, #"Worldwide Gross" = 600.77, #"Year" = #date(2020, 7, 25)],
+					        [#"Film" = "polyphonic", #"Genre" = "profits", #"Lead Studio" = "signals", #"Audience  score %" = 889, #"Profitability" = 936.56, #"Rotten Tomatoes %" = 868, #"Worldwide Gross" = 567.23, #"Year" = #date(2023, 3, 22)],
+					        [#"Film" = "sometimes", #"Genre" = "printed", #"Lead Studio" = "implementing", #"Audience  score %" = 701, #"Profitability" = 117.39, #"Rotten Tomatoes %" = 210, #"Worldwide Gross" = 150.57, #"Year" = #date(2024, 3, 8)],
+					        [#"Film" = "follows", #"Genre" = "opens", #"Lead Studio" = "within", #"Audience  score %" = 465, #"Profitability" = 174.55, #"Rotten Tomatoes %" = 544, #"Worldwide Gross" = 573.41, #"Year" = #date(2021, 12, 1)],
+					        [#"Film" = "accident", #"Genre" = "residents", #"Lead Studio" = "specifically", #"Audience  score %" = 440, #"Profitability" = 150.67, #"Rotten Tomatoes %" = 745, #"Worldwide Gross" = 166.05, #"Year" = #date(2020, 12, 26)],
+					        [#"Film" = "delay", #"Genre" = "source", #"Lead Studio" = "brochure", #"Audience  score %" = 517, #"Profitability" = 805.31, #"Rotten Tomatoes %" = 189, #"Worldwide Gross" = 0.55, #"Year" = #date(2022, 4, 26)],
+					        [#"Film" = "dealer", #"Genre" = "example", #"Lead Studio" = "athletic", #"Audience  score %" = 540, #"Profitability" = 86.29, #"Rotten Tomatoes %" = 110, #"Worldwide Gross" = 38.57, #"Year" = #date(2020, 9, 6)],
+					        [#"Film" = "quebec", #"Genre" = "axis", #"Lead Studio" = "importance", #"Audience  score %" = 503, #"Profitability" = 717.45, #"Rotten Tomatoes %" = 704, #"Worldwide Gross" = 621.82, #"Year" = #date(2020, 10, 25)],
+					        [#"Film" = "rob", #"Genre" = "terrorist", #"Lead Studio" = "promise", #"Audience  score %" = 125, #"Profitability" = 397.68, #"Rotten Tomatoes %" = 67, #"Worldwide Gross" = 313.56, #"Year" = #date(2024, 9, 4)],
+					        [#"Film" = "quit", #"Genre" = "promotional", #"Lead Studio" = "fusion", #"Audience  score %" = 347, #"Profitability" = 883.72, #"Rotten Tomatoes %" = 654, #"Worldwide Gross" = 477.55, #"Year" = #date(2021, 3, 25)],
+					        [#"Film" = "countries", #"Genre" = "opens", #"Lead Studio" = "elements", #"Audience  score %" = 633, #"Profitability" = 591.39, #"Rotten Tomatoes %" = 611, #"Worldwide Gross" = 982.18, #"Year" = #date(2024, 9, 25)],
+					        [#"Film" = "highway", #"Genre" = "shoot", #"Lead Studio" = "ranking", #"Audience  score %" = 341, #"Profitability" = 445.28, #"Rotten Tomatoes %" = 821, #"Worldwide Gross" = 503.06, #"Year" = #date(2024, 5, 7)],
+					        [#"Film" = "lunch", #"Genre" = "iraqi", #"Lead Studio" = "largely", #"Audience  score %" = 738, #"Profitability" = 509.21, #"Rotten Tomatoes %" = 687, #"Worldwide Gross" = 364.99, #"Year" = #date(2022, 5, 23)],
+					        [#"Film" = "province", #"Genre" = "trim", #"Lead Studio" = "tournament", #"Audience  score %" = 468, #"Profitability" = 33.5, #"Rotten Tomatoes %" = 379, #"Worldwide Gross" = 597.41, #"Year" = #date(2020, 11, 11)],
+					        [#"Film" = "math", #"Genre" = "hood", #"Lead Studio" = "cartridge", #"Audience  score %" = 458, #"Profitability" = 19.9, #"Rotten Tomatoes %" = 514, #"Worldwide Gross" = 319.42, #"Year" = #date(2021, 12, 24)],
+					        [#"Film" = "sense", #"Genre" = "surf", #"Lead Studio" = "september", #"Audience  score %" = 317, #"Profitability" = 914.51, #"Rotten Tomatoes %" = 5, #"Worldwide Gross" = 345.04, #"Year" = #date(2023, 8, 31)],
+					        [#"Film" = "slideshow", #"Genre" = "team", #"Lead Studio" = "ic", #"Audience  score %" = 78, #"Profitability" = 34.87, #"Rotten Tomatoes %" = 170, #"Worldwide Gross" = 394.85, #"Year" = #date(2024, 6, 23)],
+					        [#"Film" = "guaranteed", #"Genre" = "thousands", #"Lead Studio" = "obvious", #"Audience  score %" = 512, #"Profitability" = 242.45, #"Rotten Tomatoes %" = 552, #"Worldwide Gross" = 906.98, #"Year" = #date(2022, 12, 6)],
+					        [#"Film" = "database", #"Genre" = "config", #"Lead Studio" = "colors", #"Audience  score %" = 77, #"Profitability" = 748.5, #"Rotten Tomatoes %" = 41, #"Worldwide Gross" = 801.27, #"Year" = #date(2023, 6, 21)],
+					        [#"Film" = "doctors", #"Genre" = "margaret", #"Lead Studio" = "searches", #"Audience  score %" = 411, #"Profitability" = 600.55, #"Rotten Tomatoes %" = 650, #"Worldwide Gross" = 144.86, #"Year" = #date(2021, 10, 25)],
+					        [#"Film" = "choice", #"Genre" = "recorded", #"Lead Studio" = "montreal", #"Audience  score %" = 406, #"Profitability" = 917.94, #"Rotten Tomatoes %" = 486, #"Worldwide Gross" = 107.85, #"Year" = #date(2020, 6, 13)],
+					        [#"Film" = "cooperation", #"Genre" = "ss", #"Lead Studio" = "content", #"Audience  score %" = 625, #"Profitability" = 445.09, #"Rotten Tomatoes %" = 297, #"Worldwide Gross" = 212.41, #"Year" = #date(2021, 1, 25)],
+					        [#"Film" = "insurance", #"Genre" = "announcements", #"Lead Studio" = "minnesota", #"Audience  score %" = 495, #"Profitability" = 773.13, #"Rotten Tomatoes %" = 38, #"Worldwide Gross" = 437.31, #"Year" = #date(2020, 11, 22)],
+					        [#"Film" = "institute", #"Genre" = "utility", #"Lead Studio" = "defendant", #"Audience  score %" = 148, #"Profitability" = 774.77, #"Rotten Tomatoes %" = 826, #"Worldwide Gross" = 476.42, #"Year" = #date(2022, 1, 26)],
+					        [#"Film" = "absolutely", #"Genre" = "clicking", #"Lead Studio" = "canada", #"Audience  score %" = 675, #"Profitability" = 837.65, #"Rotten Tomatoes %" = 249, #"Worldwide Gross" = 256.87, #"Year" = #date(2021, 12, 19)],
+					        [#"Film" = "for", #"Genre" = "notices", #"Lead Studio" = "shot", #"Audience  score %" = 167, #"Profitability" = 756.0, #"Rotten Tomatoes %" = 513, #"Worldwide Gross" = 199.88, #"Year" = #date(2024, 8, 3)],
+					        [#"Film" = "conventional", #"Genre" = "generator", #"Lead Studio" = "outer", #"Audience  score %" = 355, #"Profitability" = 193.22, #"Rotten Tomatoes %" = 111, #"Worldwide Gross" = 487.54, #"Year" = #date(2020, 12, 7)],
+					        [#"Film" = "open", #"Genre" = "humans", #"Lead Studio" = "genetics", #"Audience  score %" = 678, #"Profitability" = 610.38, #"Rotten Tomatoes %" = 719, #"Worldwide Gross" = 406.89, #"Year" = #date(2022, 8, 17)],
+					        [#"Film" = "suspension", #"Genre" = "metropolitan", #"Lead Studio" = "journals", #"Audience  score %" = 36, #"Profitability" = 392.23, #"Rotten Tomatoes %" = 430, #"Worldwide Gross" = 389.02, #"Year" = #date(2020, 4, 6)],
+					        [#"Film" = "chile", #"Genre" = "procedures", #"Lead Studio" = "tv", #"Audience  score %" = 344, #"Profitability" = 904.82, #"Rotten Tomatoes %" = 133, #"Worldwide Gross" = 685.14, #"Year" = #date(2022, 5, 31)],
+					        [#"Film" = "agreement", #"Genre" = "activity", #"Lead Studio" = "catch", #"Audience  score %" = 668, #"Profitability" = 596.49, #"Rotten Tomatoes %" = 166, #"Worldwide Gross" = 20.37, #"Year" = #date(2023, 4, 15)],
+					        [#"Film" = "discussed", #"Genre" = "ref", #"Lead Studio" = "joy", #"Audience  score %" = 450, #"Profitability" = 224.91, #"Rotten Tomatoes %" = 465, #"Worldwide Gross" = 11.53, #"Year" = #date(2024, 8, 18)],
+					        [#"Film" = "xbox", #"Genre" = "decisions", #"Lead Studio" = "purchasing", #"Audience  score %" = 316, #"Profitability" = 216.75, #"Rotten Tomatoes %" = 590, #"Worldwide Gross" = 293.05, #"Year" = #date(2023, 4, 27)],
+					        [#"Film" = "save", #"Genre" = "helpful", #"Lead Studio" = "ward", #"Audience  score %" = 683, #"Profitability" = 728.48, #"Rotten Tomatoes %" = 690, #"Worldwide Gross" = 427.92, #"Year" = #date(2024, 3, 7)],
+					        [#"Film" = "mike", #"Genre" = "scanner", #"Lead Studio" = "trade", #"Audience  score %" = 169, #"Profitability" = 882.75, #"Rotten Tomatoes %" = 744, #"Worldwide Gross" = 643.43, #"Year" = #date(2021, 2, 17)],
+					        [#"Film" = "nv", #"Genre" = "chapter", #"Lead Studio" = "ideal", #"Audience  score %" = 336, #"Profitability" = 791.2, #"Rotten Tomatoes %" = 769, #"Worldwide Gross" = 593.71, #"Year" = #date(2020, 10, 23)],
+					        [#"Film" = "made", #"Genre" = "issues", #"Lead Studio" = "directories", #"Audience  score %" = 607, #"Profitability" = 260.43, #"Rotten Tomatoes %" = 586, #"Worldwide Gross" = 260.39, #"Year" = #date(2020, 8, 6)],
+					        [#"Film" = "away", #"Genre" = "networks", #"Lead Studio" = "fortune", #"Audience  score %" = 357, #"Profitability" = 230.4, #"Rotten Tomatoes %" = 377, #"Worldwide Gross" = 865.68, #"Year" = #date(2023, 4, 9)],
+					        [#"Film" = "catch", #"Genre" = "activation", #"Lead Studio" = "goes", #"Audience  score %" = 503, #"Profitability" = 305.54, #"Rotten Tomatoes %" = 852, #"Worldwide Gross" = 3.87, #"Year" = #date(2023, 6, 14)],
+					        [#"Film" = "bruce", #"Genre" = "supreme", #"Lead Studio" = "php", #"Audience  score %" = 986, #"Profitability" = 157.12, #"Rotten Tomatoes %" = 439, #"Worldwide Gross" = 39.64, #"Year" = #date(2023, 4, 23)],
+					        [#"Film" = "guardian", #"Genre" = "pr", #"Lead Studio" = "joseph", #"Audience  score %" = 861, #"Profitability" = 453.61, #"Rotten Tomatoes %" = 264, #"Worldwide Gross" = 551.26, #"Year" = #date(2021, 2, 1)],
+					        [#"Film" = "cheap", #"Genre" = "workshop", #"Lead Studio" = "nike", #"Audience  score %" = 162, #"Profitability" = 410.32, #"Rotten Tomatoes %" = 41, #"Worldwide Gross" = 259.2, #"Year" = #date(2022, 4, 15)],
+					        [#"Film" = "training", #"Genre" = "generated", #"Lead Studio" = "nurse", #"Audience  score %" = 301, #"Profitability" = 595.64, #"Rotten Tomatoes %" = 567, #"Worldwide Gross" = 800.43, #"Year" = #date(2023, 1, 23)],
+					        [#"Film" = "vt", #"Genre" = "me", #"Lead Studio" = "modify", #"Audience  score %" = 370, #"Profitability" = 294.69, #"Rotten Tomatoes %" = 800, #"Worldwide Gross" = 7.83, #"Year" = #date(2023, 10, 14)],
+					        [#"Film" = "delaware", #"Genre" = "being", #"Lead Studio" = "friends", #"Audience  score %" = 887, #"Profitability" = 892.74, #"Rotten Tomatoes %" = 255, #"Worldwide Gross" = 429.01, #"Year" = #date(2024, 2, 11)],
+					        [#"Film" = "managed", #"Genre" = "proud", #"Lead Studio" = "trip", #"Audience  score %" = 25, #"Profitability" = 789.3, #"Rotten Tomatoes %" = 787, #"Worldwide Gross" = 978.45, #"Year" = #date(2022, 6, 9)],
+					        [#"Film" = "dual", #"Genre" = "meters", #"Lead Studio" = "theme", #"Audience  score %" = 597, #"Profitability" = 746.08, #"Rotten Tomatoes %" = 31, #"Worldwide Gross" = 418.71, #"Year" = #date(2024, 4, 12)],
+					        [#"Film" = "next", #"Genre" = "except", #"Lead Studio" = "where", #"Audience  score %" = 108, #"Profitability" = 215.44, #"Rotten Tomatoes %" = 462, #"Worldwide Gross" = 100.11, #"Year" = #date(2020, 6, 12)],
+					        [#"Film" = "welfare", #"Genre" = "proxy", #"Lead Studio" = "concrete", #"Audience  score %" = 507, #"Profitability" = 430.62, #"Rotten Tomatoes %" = 681, #"Worldwide Gross" = 833.65, #"Year" = #date(2020, 2, 16)],
+					        [#"Film" = "expansion", #"Genre" = "chosen", #"Lead Studio" = "hb", #"Audience  score %" = 965, #"Profitability" = 70.77, #"Rotten Tomatoes %" = 996, #"Worldwide Gross" = 300.53, #"Year" = #date(2024, 1, 12)],
+					        [#"Film" = "constitution", #"Genre" = "spring", #"Lead Studio" = "hiking", #"Audience  score %" = 465, #"Profitability" = 220.61, #"Rotten Tomatoes %" = 591, #"Worldwide Gross" = 887.96, #"Year" = #date(2022, 10, 28)],
+					        [#"Film" = "symbols", #"Genre" = "loans", #"Lead Studio" = "prospective", #"Audience  score %" = 570, #"Profitability" = 407.45, #"Rotten Tomatoes %" = 516, #"Worldwide Gross" = 187.86, #"Year" = #date(2021, 3, 26)],
+					        [#"Film" = "austria", #"Genre" = "request", #"Lead Studio" = "layer", #"Audience  score %" = 947, #"Profitability" = 317.12, #"Rotten Tomatoes %" = 760, #"Worldwide Gross" = 785.79, #"Year" = #date(2020, 2, 27)],
+					        [#"Film" = "trouble", #"Genre" = "designated", #"Lead Studio" = "god", #"Audience  score %" = 837, #"Profitability" = 856.83, #"Rotten Tomatoes %" = 478, #"Worldwide Gross" = 723.4, #"Year" = #date(2023, 10, 16)],
+					        [#"Film" = "comedy", #"Genre" = "sell", #"Lead Studio" = "inch", #"Audience  score %" = 224, #"Profitability" = 351.59, #"Rotten Tomatoes %" = 427, #"Worldwide Gross" = 950.75, #"Year" = #date(2020, 8, 21)],
+					        [#"Film" = "jackson", #"Genre" = "counter", #"Lead Studio" = "december", #"Audience  score %" = 616, #"Profitability" = 618.26, #"Rotten Tomatoes %" = 772, #"Worldwide Gross" = 858.6, #"Year" = #date(2022, 5, 10)],
+					        [#"Film" = "links", #"Genre" = "email", #"Lead Studio" = "kill", #"Audience  score %" = 186, #"Profitability" = 588.54, #"Rotten Tomatoes %" = 456, #"Worldwide Gross" = 64.99, #"Year" = #date(2023, 12, 30)],
+					        [#"Film" = "awareness", #"Genre" = "breaks", #"Lead Studio" = "either", #"Audience  score %" = 927, #"Profitability" = 832.68, #"Rotten Tomatoes %" = 834, #"Worldwide Gross" = 867.81, #"Year" = #date(2022, 12, 18)],
+					        [#"Film" = "sci", #"Genre" = "ground", #"Lead Studio" = "implementing", #"Audience  score %" = 870, #"Profitability" = 181.2, #"Rotten Tomatoes %" = 840, #"Worldwide Gross" = 682.65, #"Year" = #date(2022, 8, 19)],
+					        [#"Film" = "majority", #"Genre" = "broadband", #"Lead Studio" = "vi", #"Audience  score %" = 426, #"Profitability" = 475.61, #"Rotten Tomatoes %" = 37, #"Worldwide Gross" = 669.59, #"Year" = #date(2022, 12, 29)],
+					        [#"Film" = "shopping", #"Genre" = "think", #"Lead Studio" = "fish", #"Audience  score %" = 523, #"Profitability" = 730.23, #"Rotten Tomatoes %" = 480, #"Worldwide Gross" = 259.04, #"Year" = #date(2021, 6, 13)],
+					        [#"Film" = "relative", #"Genre" = "worked", #"Lead Studio" = "band", #"Audience  score %" = 264, #"Profitability" = 97.34, #"Rotten Tomatoes %" = 459, #"Worldwide Gross" = 622.2, #"Year" = #date(2024, 9, 13)],
+					        [#"Film" = "patent", #"Genre" = "effects", #"Lead Studio" = "attended", #"Audience  score %" = 471, #"Profitability" = 113.49, #"Rotten Tomatoes %" = 765, #"Worldwide Gross" = 103.43, #"Year" = #date(2020, 5, 17)],
+					        [#"Film" = "decline", #"Genre" = "titans", #"Lead Studio" = "consider", #"Audience  score %" = 524, #"Profitability" = 375.79, #"Rotten Tomatoes %" = 522, #"Worldwide Gross" = 783.14, #"Year" = #date(2021, 8, 30)],
+					        [#"Film" = "thousands", #"Genre" = "ecommerce", #"Lead Studio" = "catering", #"Audience  score %" = 848, #"Profitability" = 65.39, #"Rotten Tomatoes %" = 452, #"Worldwide Gross" = 986.63, #"Year" = #date(2020, 8, 26)],
+					        [#"Film" = "cleaner", #"Genre" = "increasingly", #"Lead Studio" = "pace", #"Audience  score %" = 57, #"Profitability" = 159.76, #"Rotten Tomatoes %" = 199, #"Worldwide Gross" = 724.9, #"Year" = #date(2021, 2, 25)],
+					        [#"Film" = "prints", #"Genre" = "oklahoma", #"Lead Studio" = "chevrolet", #"Audience  score %" = 122, #"Profitability" = 590.93, #"Rotten Tomatoes %" = 231, #"Worldwide Gross" = 126.73, #"Year" = #date(2021, 1, 28)],
+					        [#"Film" = "basis", #"Genre" = "sit", #"Lead Studio" = "sections", #"Audience  score %" = 363, #"Profitability" = 138.83, #"Rotten Tomatoes %" = 538, #"Worldwide Gross" = 269.76, #"Year" = #date(2022, 2, 7)],
+					        [#"Film" = "bike", #"Genre" = "manga", #"Lead Studio" = "nyc", #"Audience  score %" = 181, #"Profitability" = 758.24, #"Rotten Tomatoes %" = 904, #"Worldwide Gross" = 697.69, #"Year" = #date(2023, 5, 4)],
+					        [#"Film" = "larger", #"Genre" = "citysearch", #"Lead Studio" = "copyright", #"Audience  score %" = 14, #"Profitability" = 553.31, #"Rotten Tomatoes %" = 199, #"Worldwide Gross" = 790.27, #"Year" = #date(2022, 3, 21)],
+					        [#"Film" = "deutsch", #"Genre" = "payment", #"Lead Studio" = "release", #"Audience  score %" = 581, #"Profitability" = 118.17, #"Rotten Tomatoes %" = 60, #"Worldwide Gross" = 258.0, #"Year" = #date(2023, 2, 18)],
+					        [#"Film" = "modify", #"Genre" = "bread", #"Lead Studio" = "exists", #"Audience  score %" = 442, #"Profitability" = 514.47, #"Rotten Tomatoes %" = 991, #"Worldwide Gross" = 762.65, #"Year" = #date(2023, 7, 17)],
+					        [#"Film" = "sd", #"Genre" = "summer", #"Lead Studio" = "glasgow", #"Audience  score %" = 688, #"Profitability" = 754.63, #"Rotten Tomatoes %" = 287, #"Worldwide Gross" = 309.36, #"Year" = #date(2023, 1, 14)],
+					        [#"Film" = "wave", #"Genre" = "publish", #"Lead Studio" = "york", #"Audience  score %" = 466, #"Profitability" = 110.82, #"Rotten Tomatoes %" = 966, #"Worldwide Gross" = 440.63, #"Year" = #date(2023, 9, 23)],
+					        [#"Film" = "mac", #"Genre" = "revision", #"Lead Studio" = "amendment", #"Audience  score %" = 352, #"Profitability" = 72.26, #"Rotten Tomatoes %" = 781, #"Worldwide Gross" = 255.02, #"Year" = #date(2022, 8, 27)],
+					        [#"Film" = "jack", #"Genre" = "animation", #"Lead Studio" = "warner", #"Audience  score %" = 745, #"Profitability" = 672.3, #"Rotten Tomatoes %" = 595, #"Worldwide Gross" = 258.47, #"Year" = #date(2023, 10, 24)],
+					        [#"Film" = "periods", #"Genre" = "jesus", #"Lead Studio" = "canyon", #"Audience  score %" = 363, #"Profitability" = 996.67, #"Rotten Tomatoes %" = 312, #"Worldwide Gross" = 424.19, #"Year" = #date(2023, 2, 20)],
+					        [#"Film" = "listing", #"Genre" = "mapping", #"Lead Studio" = "intended", #"Audience  score %" = 868, #"Profitability" = 555.63, #"Rotten Tomatoes %" = 657, #"Worldwide Gross" = 804.91, #"Year" = #date(2022, 12, 7)],
+					        [#"Film" = "enterprise", #"Genre" = "keeping", #"Lead Studio" = "needed", #"Audience  score %" = 693, #"Profitability" = 119.96, #"Rotten Tomatoes %" = 567, #"Worldwide Gross" = 463.12, #"Year" = #date(2022, 9, 25)],
+					        [#"Film" = "amazon", #"Genre" = "expertise", #"Lead Studio" = "recreation", #"Audience  score %" = 302, #"Profitability" = 721.17, #"Rotten Tomatoes %" = 527, #"Worldwide Gross" = 21.02, #"Year" = #date(2020, 12, 11)],
+					        [#"Film" = "stadium", #"Genre" = "pleased", #"Lead Studio" = "purchasing", #"Audience  score %" = 999, #"Profitability" = 164.99, #"Rotten Tomatoes %" = 436, #"Worldwide Gross" = 574.14, #"Year" = #date(2022, 12, 18)],
+					        [#"Film" = "asp", #"Genre" = "hardware", #"Lead Studio" = "operation", #"Audience  score %" = 959, #"Profitability" = 701.51, #"Rotten Tomatoes %" = 333, #"Worldwide Gross" = 131.64, #"Year" = #date(2021, 9, 12)],
+					        [#"Film" = "norfolk", #"Genre" = "stores", #"Lead Studio" = "carl", #"Audience  score %" = 12, #"Profitability" = 408.13, #"Rotten Tomatoes %" = 469, #"Worldwide Gross" = 518.86, #"Year" = #date(2022, 9, 3)],
+					        [#"Film" = "nsw", #"Genre" = "capability", #"Lead Studio" = "too", #"Audience  score %" = 846, #"Profitability" = 830.33, #"Rotten Tomatoes %" = 617, #"Worldwide Gross" = 742.3, #"Year" = #date(2020, 12, 25)],
+					        [#"Film" = "cart", #"Genre" = "con", #"Lead Studio" = "strong", #"Audience  score %" = 721, #"Profitability" = 987.57, #"Rotten Tomatoes %" = 909, #"Worldwide Gross" = 595.11, #"Year" = #date(2023, 11, 4)],
+					        [#"Film" = "mechanical", #"Genre" = "visits", #"Lead Studio" = "springs", #"Audience  score %" = 2, #"Profitability" = 110.27, #"Rotten Tomatoes %" = 725, #"Worldwide Gross" = 741.92, #"Year" = #date(2020, 5, 30)],
+					        [#"Film" = "george", #"Genre" = "pearl", #"Lead Studio" = "connecticut", #"Audience  score %" = 359, #"Profitability" = 239.89, #"Rotten Tomatoes %" = 962, #"Worldwide Gross" = 940.78, #"Year" = #date(2023, 7, 2)],
+					        [#"Film" = "reputation", #"Genre" = "faith", #"Lead Studio" = "collaboration", #"Audience  score %" = 276, #"Profitability" = 463.13, #"Rotten Tomatoes %" = 243, #"Worldwide Gross" = 648.97, #"Year" = #date(2024, 8, 18)],
+					        [#"Film" = "discussed", #"Genre" = "myself", #"Lead Studio" = "moral", #"Audience  score %" = 670, #"Profitability" = 341.0, #"Rotten Tomatoes %" = 651, #"Worldwide Gross" = 929.5, #"Year" = #date(2024, 5, 22)],
+					        [#"Film" = "worker", #"Genre" = "profits", #"Lead Studio" = "care", #"Audience  score %" = 743, #"Profitability" = 116.35, #"Rotten Tomatoes %" = 371, #"Worldwide Gross" = 433.47, #"Year" = #date(2023, 7, 12)],
+					        [#"Film" = "armed", #"Genre" = "requiring", #"Lead Studio" = "iraq", #"Audience  score %" = 284, #"Profitability" = 249.65, #"Rotten Tomatoes %" = 918, #"Worldwide Gross" = 308.88, #"Year" = #date(2020, 11, 4)],
+					        [#"Film" = "beer", #"Genre" = "vista", #"Lead Studio" = "pure", #"Audience  score %" = 514, #"Profitability" = 828.04, #"Rotten Tomatoes %" = 878, #"Worldwide Gross" = 811.95, #"Year" = #date(2021, 9, 23)],
+					        [#"Film" = "log", #"Genre" = "literary", #"Lead Studio" = "cheese", #"Audience  score %" = 586, #"Profitability" = 43.91, #"Rotten Tomatoes %" = 562, #"Worldwide Gross" = 291.16, #"Year" = #date(2024, 6, 26)],
+					        [#"Film" = "ncaa", #"Genre" = "worse", #"Lead Studio" = "hall", #"Audience  score %" = 967, #"Profitability" = 20.26, #"Rotten Tomatoes %" = 690, #"Worldwide Gross" = 46.76, #"Year" = #date(2024, 12, 22)],
+					        [#"Film" = "tomorrow", #"Genre" = "gone", #"Lead Studio" = "sharing", #"Audience  score %" = 360, #"Profitability" = 61.63, #"Rotten Tomatoes %" = 184, #"Worldwide Gross" = 587.54, #"Year" = #date(2023, 12, 9)],
+					        [#"Film" = "rehabilitation", #"Genre" = "techniques", #"Lead Studio" = "connections", #"Audience  score %" = 829, #"Profitability" = 212.89, #"Rotten Tomatoes %" = 27, #"Worldwide Gross" = 754.5, #"Year" = #date(2023, 4, 13)],
+					        [#"Film" = "chosen", #"Genre" = "ice", #"Lead Studio" = "communicate", #"Audience  score %" = 615, #"Profitability" = 629.68, #"Rotten Tomatoes %" = 810, #"Worldwide Gross" = 636.42, #"Year" = #date(2023, 5, 27)],
+					        [#"Film" = "associated", #"Genre" = "award", #"Lead Studio" = "templates", #"Audience  score %" = 261, #"Profitability" = 697.07, #"Rotten Tomatoes %" = 313, #"Worldwide Gross" = 41.78, #"Year" = #date(2020, 7, 23)],
+					        [#"Film" = "needed", #"Genre" = "truck", #"Lead Studio" = "refers", #"Audience  score %" = 227, #"Profitability" = 436.66, #"Rotten Tomatoes %" = 182, #"Worldwide Gross" = 282.15, #"Year" = #date(2023, 9, 5)],
+					        [#"Film" = "measurement", #"Genre" = "sometimes", #"Lead Studio" = "pack", #"Audience  score %" = 817, #"Profitability" = 819.32, #"Rotten Tomatoes %" = 966, #"Worldwide Gross" = 499.91, #"Year" = #date(2021, 1, 31)],
+					        [#"Film" = "uses", #"Genre" = "wrestling", #"Lead Studio" = "fifth", #"Audience  score %" = 68, #"Profitability" = 193.87, #"Rotten Tomatoes %" = 71, #"Worldwide Gross" = 856.44, #"Year" = #date(2022, 8, 21)],
+					        [#"Film" = "medium", #"Genre" = "beds", #"Lead Studio" = "powder", #"Audience  score %" = 667, #"Profitability" = 880.9, #"Rotten Tomatoes %" = 164, #"Worldwide Gross" = 136.03, #"Year" = #date(2020, 2, 29)],
+					        [#"Film" = "reviewer", #"Genre" = "injuries", #"Lead Studio" = "telephone", #"Audience  score %" = 382, #"Profitability" = 995.32, #"Rotten Tomatoes %" = 370, #"Worldwide Gross" = 915.75, #"Year" = #date(2020, 8, 15)],
+					        [#"Film" = "physician", #"Genre" = "cast", #"Lead Studio" = "south", #"Audience  score %" = 987, #"Profitability" = 871.01, #"Rotten Tomatoes %" = 708, #"Worldwide Gross" = 311.48, #"Year" = #date(2022, 11, 14)],
+					        [#"Film" = "fairly", #"Genre" = "sensor", #"Lead Studio" = "exp", #"Audience  score %" = 663, #"Profitability" = 912.55, #"Rotten Tomatoes %" = 21, #"Worldwide Gross" = 646.68, #"Year" = #date(2020, 5, 8)],
+					        [#"Film" = "game", #"Genre" = "regulatory", #"Lead Studio" = "financing", #"Audience  score %" = 933, #"Profitability" = 429.54, #"Rotten Tomatoes %" = 789, #"Worldwide Gross" = 690.15, #"Year" = #date(2020, 10, 13)],
+					        [#"Film" = "owner", #"Genre" = "walking", #"Lead Studio" = "horizontal", #"Audience  score %" = 658, #"Profitability" = 983.03, #"Rotten Tomatoes %" = 493, #"Worldwide Gross" = 648.16, #"Year" = #date(2021, 8, 6)],
+					        [#"Film" = "dev", #"Genre" = "pace", #"Lead Studio" = "pour", #"Audience  score %" = 840, #"Profitability" = 480.82, #"Rotten Tomatoes %" = 891, #"Worldwide Gross" = 467.75, #"Year" = #date(2021, 6, 1)],
+					        [#"Film" = "opera", #"Genre" = "begin", #"Lead Studio" = "personality", #"Audience  score %" = 796, #"Profitability" = 193.81, #"Rotten Tomatoes %" = 522, #"Worldwide Gross" = 904.25, #"Year" = #date(2021, 3, 25)],
+					        [#"Film" = "liability", #"Genre" = "kit", #"Lead Studio" = "delivered", #"Audience  score %" = 652, #"Profitability" = 144.9, #"Rotten Tomatoes %" = 804, #"Worldwide Gross" = 771.39, #"Year" = #date(2022, 1, 8)],
+					        [#"Film" = "environment", #"Genre" = "overall", #"Lead Studio" = "yours", #"Audience  score %" = 765, #"Profitability" = 976.91, #"Rotten Tomatoes %" = 486, #"Worldwide Gross" = 132.92, #"Year" = #date(2020, 11, 13)],
+					        [#"Film" = "trademarks", #"Genre" = "corporations", #"Lead Studio" = "bluetooth", #"Audience  score %" = 99, #"Profitability" = 443.31, #"Rotten Tomatoes %" = 409, #"Worldwide Gross" = 421.16, #"Year" = #date(2021, 8, 23)],
+					        [#"Film" = "hi", #"Genre" = "preference", #"Lead Studio" = "citizen", #"Audience  score %" = 890, #"Profitability" = 361.75, #"Rotten Tomatoes %" = 280, #"Worldwide Gross" = 719.64, #"Year" = #date(2020, 4, 8)],
+					        [#"Film" = "wild", #"Genre" = "sequences", #"Lead Studio" = "colorado", #"Audience  score %" = 935, #"Profitability" = 49.81, #"Rotten Tomatoes %" = 608, #"Worldwide Gross" = 834.02, #"Year" = #date(2023, 5, 13)],
+					        [#"Film" = "planet", #"Genre" = "liquid", #"Lead Studio" = "individual", #"Audience  score %" = 801, #"Profitability" = 149.33, #"Rotten Tomatoes %" = 769, #"Worldwide Gross" = 764.43, #"Year" = #date(2021, 10, 12)],
+					        [#"Film" = "laser", #"Genre" = "writes", #"Lead Studio" = "valley", #"Audience  score %" = 246, #"Profitability" = 192.87, #"Rotten Tomatoes %" = 689, #"Worldwide Gross" = 982.19, #"Year" = #date(2020, 1, 26)],
+					        [#"Film" = "shoppers", #"Genre" = "railway", #"Lead Studio" = "mercedes", #"Audience  score %" = 137, #"Profitability" = 320.04, #"Rotten Tomatoes %" = 877, #"Worldwide Gross" = 683.96, #"Year" = #date(2024, 4, 4)],
+					        [#"Film" = "marine", #"Genre" = "specify", #"Lead Studio" = "supports", #"Audience  score %" = 703, #"Profitability" = 914.41, #"Rotten Tomatoes %" = 513, #"Worldwide Gross" = 401.99, #"Year" = #date(2020, 12, 25)],
+					        [#"Film" = "ended", #"Genre" = "pills", #"Lead Studio" = "north", #"Audience  score %" = 129, #"Profitability" = 122.28, #"Rotten Tomatoes %" = 519, #"Worldwide Gross" = 902.68, #"Year" = #date(2020, 6, 3)],
+					        [#"Film" = "establishment", #"Genre" = "theme", #"Lead Studio" = "dec", #"Audience  score %" = 229, #"Profitability" = 334.08, #"Rotten Tomatoes %" = 305, #"Worldwide Gross" = 143.34, #"Year" = #date(2024, 5, 17)],
+					        [#"Film" = "pace", #"Genre" = "studies", #"Lead Studio" = "eg", #"Audience  score %" = 445, #"Profitability" = 975.93, #"Rotten Tomatoes %" = 493, #"Worldwide Gross" = 727.77, #"Year" = #date(2023, 7, 28)],
+					        [#"Film" = "general", #"Genre" = "advisor", #"Lead Studio" = "younger", #"Audience  score %" = 265, #"Profitability" = 533.7, #"Rotten Tomatoes %" = 724, #"Worldwide Gross" = 906.13, #"Year" = #date(2024, 5, 12)],
+					        [#"Film" = "ent", #"Genre" = "excellence", #"Lead Studio" = "lights", #"Audience  score %" = 839, #"Profitability" = 271.8, #"Rotten Tomatoes %" = 214, #"Worldwide Gross" = 56.13, #"Year" = #date(2021, 6, 8)],
+					        [#"Film" = "editors", #"Genre" = "long", #"Lead Studio" = "targeted", #"Audience  score %" = 565, #"Profitability" = 939.27, #"Rotten Tomatoes %" = 999, #"Worldwide Gross" = 480.44, #"Year" = #date(2021, 3, 10)],
+					        [#"Film" = "singing", #"Genre" = "pounds", #"Lead Studio" = "newsletters", #"Audience  score %" = 755, #"Profitability" = 762.51, #"Rotten Tomatoes %" = 793, #"Worldwide Gross" = 384.7, #"Year" = #date(2023, 8, 1)],
+					        [#"Film" = "revenue", #"Genre" = "charges", #"Lead Studio" = "information", #"Audience  score %" = 563, #"Profitability" = 134.29, #"Rotten Tomatoes %" = 685, #"Worldwide Gross" = 663.79, #"Year" = #date(2024, 3, 15)],
+					        [#"Film" = "gratis", #"Genre" = "publisher", #"Lead Studio" = "item", #"Audience  score %" = 369, #"Profitability" = 64.03, #"Rotten Tomatoes %" = 548, #"Worldwide Gross" = 822.17, #"Year" = #date(2021, 3, 23)],
+					        [#"Film" = "feed", #"Genre" = "functions", #"Lead Studio" = "latin", #"Audience  score %" = 167, #"Profitability" = 239.04, #"Rotten Tomatoes %" = 170, #"Worldwide Gross" = 426.21, #"Year" = #date(2020, 5, 18)],
+					        [#"Film" = "def", #"Genre" = "sec", #"Lead Studio" = "allocation", #"Audience  score %" = 484, #"Profitability" = 626.47, #"Rotten Tomatoes %" = 18, #"Worldwide Gross" = 125.77, #"Year" = #date(2024, 5, 27)],
+					        [#"Film" = "iraqi", #"Genre" = "modification", #"Lead Studio" = "medium", #"Audience  score %" = 911, #"Profitability" = 56.32, #"Rotten Tomatoes %" = 149, #"Worldwide Gross" = 526.61, #"Year" = #date(2021, 7, 18)],
+					        [#"Film" = "portugal", #"Genre" = "indicated", #"Lead Studio" = "melbourne", #"Audience  score %" = 988, #"Profitability" = 786.16, #"Rotten Tomatoes %" = 284, #"Worldwide Gross" = 160.67, #"Year" = #date(2020, 6, 23)],
+					        [#"Film" = "notify", #"Genre" = "thumbnail", #"Lead Studio" = "christopher", #"Audience  score %" = 952, #"Profitability" = 532.19, #"Rotten Tomatoes %" = 574, #"Worldwide Gross" = 799.21, #"Year" = #date(2024, 7, 7)],
+					        [#"Film" = "june", #"Genre" = "handheld", #"Lead Studio" = "entirely", #"Audience  score %" = 211, #"Profitability" = 894.45, #"Rotten Tomatoes %" = 979, #"Worldwide Gross" = 406.14, #"Year" = #date(2024, 5, 31)],
+					        [#"Film" = "lists", #"Genre" = "basis", #"Lead Studio" = "fundamental", #"Audience  score %" = 397, #"Profitability" = 620.28, #"Rotten Tomatoes %" = 247, #"Worldwide Gross" = 816.29, #"Year" = #date(2024, 12, 9)],
+					        [#"Film" = "danger", #"Genre" = "anything", #"Lead Studio" = "princess", #"Audience  score %" = 938, #"Profitability" = 418.01, #"Rotten Tomatoes %" = 157, #"Worldwide Gross" = 897.83, #"Year" = #date(2020, 11, 24)],
+					        [#"Film" = "governor", #"Genre" = "breast", #"Lead Studio" = "camping", #"Audience  score %" = 853, #"Profitability" = 239.11, #"Rotten Tomatoes %" = 737, #"Worldwide Gross" = 762.89, #"Year" = #date(2021, 1, 5)],
+					        [#"Film" = "husband", #"Genre" = "combat", #"Lead Studio" = "tip", #"Audience  score %" = 193, #"Profitability" = 703.42, #"Rotten Tomatoes %" = 673, #"Worldwide Gross" = 641.5, #"Year" = #date(2024, 11, 23)],
+					        [#"Film" = "behavior", #"Genre" = "people", #"Lead Studio" = "campbell", #"Audience  score %" = 759, #"Profitability" = 454.75, #"Rotten Tomatoes %" = 664, #"Worldwide Gross" = 527.27, #"Year" = #date(2024, 3, 11)],
+					        [#"Film" = "pills", #"Genre" = "temporary", #"Lead Studio" = "dated", #"Audience  score %" = 612, #"Profitability" = 299.09, #"Rotten Tomatoes %" = 744, #"Worldwide Gross" = 986.15, #"Year" = #date(2022, 6, 16)],
+					        [#"Film" = "book", #"Genre" = "sh", #"Lead Studio" = "lawrence", #"Audience  score %" = 677, #"Profitability" = 70.54, #"Rotten Tomatoes %" = 463, #"Worldwide Gross" = 483.45, #"Year" = #date(2024, 7, 16)],
+					        [#"Film" = "linked", #"Genre" = "served", #"Lead Studio" = "sheet", #"Audience  score %" = 986, #"Profitability" = 852.0, #"Rotten Tomatoes %" = 934, #"Worldwide Gross" = 517.12, #"Year" = #date(2020, 6, 14)],
+					        [#"Film" = "scale", #"Genre" = "affected", #"Lead Studio" = "equipment", #"Audience  score %" = 357, #"Profitability" = 494.43, #"Rotten Tomatoes %" = 937, #"Worldwide Gross" = 893.87, #"Year" = #date(2021, 8, 26)],
+					        [#"Film" = "right", #"Genre" = "amazon", #"Lead Studio" = "biology", #"Audience  score %" = 862, #"Profitability" = 296.65, #"Rotten Tomatoes %" = 973, #"Worldwide Gross" = 983.98, #"Year" = #date(2023, 11, 26)],
+					        [#"Film" = "lost", #"Genre" = "saved", #"Lead Studio" = "build", #"Audience  score %" = 712, #"Profitability" = 11.23, #"Rotten Tomatoes %" = 836, #"Worldwide Gross" = 19.04, #"Year" = #date(2021, 2, 4)],
+					        [#"Film" = "recognize", #"Genre" = "allowed", #"Lead Studio" = "error", #"Audience  score %" = 718, #"Profitability" = 407.33, #"Rotten Tomatoes %" = 146, #"Worldwide Gross" = 68.01, #"Year" = #date(2020, 3, 28)],
+					        [#"Film" = "meet", #"Genre" = "championship", #"Lead Studio" = "demand", #"Audience  score %" = 141, #"Profitability" = 900.05, #"Rotten Tomatoes %" = 66, #"Worldwide Gross" = 460.55, #"Year" = #date(2024, 6, 29)],
+					        [#"Film" = "respectively", #"Genre" = "id", #"Lead Studio" = "burn", #"Audience  score %" = 752, #"Profitability" = 321.35, #"Rotten Tomatoes %" = 197, #"Worldwide Gross" = 565.62, #"Year" = #date(2020, 9, 28)],
+					        [#"Film" = "infant", #"Genre" = "recommendation", #"Lead Studio" = "folder", #"Audience  score %" = 541, #"Profitability" = 913.92, #"Rotten Tomatoes %" = 783, #"Worldwide Gross" = 314.15, #"Year" = #date(2024, 7, 19)],
+					        [#"Film" = "served", #"Genre" = "communication", #"Lead Studio" = "continues", #"Audience  score %" = 297, #"Profitability" = 684.77, #"Rotten Tomatoes %" = 496, #"Worldwide Gross" = 573.77, #"Year" = #date(2022, 4, 1)],
+					        [#"Film" = "messaging", #"Genre" = "ease", #"Lead Studio" = "attachments", #"Audience  score %" = 103, #"Profitability" = 420.74, #"Rotten Tomatoes %" = 830, #"Worldwide Gross" = 430.12, #"Year" = #date(2022, 4, 13)],
+					        [#"Film" = "toyota", #"Genre" = "eur", #"Lead Studio" = "perspective", #"Audience  score %" = 716, #"Profitability" = 134.09, #"Rotten Tomatoes %" = 935, #"Worldwide Gross" = 346.43, #"Year" = #date(2022, 1, 25)],
+					        [#"Film" = "suite", #"Genre" = "traditional", #"Lead Studio" = "robin", #"Audience  score %" = 393, #"Profitability" = 191.95, #"Rotten Tomatoes %" = 559, #"Worldwide Gross" = 357.77, #"Year" = #date(2022, 9, 2)],
+					        [#"Film" = "advertisers", #"Genre" = "checked", #"Lead Studio" = "proxy", #"Audience  score %" = 202, #"Profitability" = 439.51, #"Rotten Tomatoes %" = 630, #"Worldwide Gross" = 926.68, #"Year" = #date(2024, 8, 3)],
+					        [#"Film" = "actors", #"Genre" = "polyphonic", #"Lead Studio" = "choosing", #"Audience  score %" = 491, #"Profitability" = 22.36, #"Rotten Tomatoes %" = 216, #"Worldwide Gross" = 814.82, #"Year" = #date(2024, 12, 28)],
+					        [#"Film" = "navigation", #"Genre" = "while", #"Lead Studio" = "involvement", #"Audience  score %" = 206, #"Profitability" = 656.53, #"Rotten Tomatoes %" = 898, #"Worldwide Gross" = 878.31, #"Year" = #date(2021, 8, 8)],
+					        [#"Film" = "ages", #"Genre" = "major", #"Lead Studio" = "charles", #"Audience  score %" = 235, #"Profitability" = 401.28, #"Rotten Tomatoes %" = 205, #"Worldwide Gross" = 253.77, #"Year" = #date(2020, 5, 9)],
+					        [#"Film" = "electric", #"Genre" = "just", #"Lead Studio" = "jackson", #"Audience  score %" = 523, #"Profitability" = 304.15, #"Rotten Tomatoes %" = 88, #"Worldwide Gross" = 388.76, #"Year" = #date(2021, 12, 16)],
+					        [#"Film" = "recognize", #"Genre" = "clips", #"Lead Studio" = "advance", #"Audience  score %" = 612, #"Profitability" = 276.49, #"Rotten Tomatoes %" = 489, #"Worldwide Gross" = 250.86, #"Year" = #date(2023, 3, 10)],
+					        [#"Film" = "gate", #"Genre" = "shock", #"Lead Studio" = "door", #"Audience  score %" = 151, #"Profitability" = 37.34, #"Rotten Tomatoes %" = 569, #"Worldwide Gross" = 198.77, #"Year" = #date(2020, 8, 26)],
+					        [#"Film" = "template", #"Genre" = "ncaa", #"Lead Studio" = "cables", #"Audience  score %" = 654, #"Profitability" = 193.49, #"Rotten Tomatoes %" = 654, #"Worldwide Gross" = 223.3, #"Year" = #date(2023, 9, 2)],
+					        [#"Film" = "howard", #"Genre" = "circumstances", #"Lead Studio" = "les", #"Audience  score %" = 532, #"Profitability" = 405.56, #"Rotten Tomatoes %" = 225, #"Worldwide Gross" = 122.36, #"Year" = #date(2020, 6, 23)],
+					        [#"Film" = "patrick", #"Genre" = "quick", #"Lead Studio" = "recommend", #"Audience  score %" = 115, #"Profitability" = 240.9, #"Rotten Tomatoes %" = 597, #"Worldwide Gross" = 43.06, #"Year" = #date(2024, 9, 29)],
+					        [#"Film" = "night", #"Genre" = "christmas", #"Lead Studio" = "hero", #"Audience  score %" = 757, #"Profitability" = 324.42, #"Rotten Tomatoes %" = 473, #"Worldwide Gross" = 76.12, #"Year" = #date(2024, 11, 15)],
+					        [#"Film" = "seminars", #"Genre" = "abuse", #"Lead Studio" = "diego", #"Audience  score %" = 647, #"Profitability" = 279.36, #"Rotten Tomatoes %" = 29, #"Worldwide Gross" = 740.14, #"Year" = #date(2023, 2, 19)],
+					        [#"Film" = "patterns", #"Genre" = "targeted", #"Lead Studio" = "character", #"Audience  score %" = 212, #"Profitability" = 933.99, #"Rotten Tomatoes %" = 295, #"Worldwide Gross" = 516.27, #"Year" = #date(2022, 8, 19)],
+					        [#"Film" = "states", #"Genre" = "sign", #"Lead Studio" = "rob", #"Audience  score %" = 171, #"Profitability" = 803.18, #"Rotten Tomatoes %" = 135, #"Worldwide Gross" = 495.2, #"Year" = #date(2021, 11, 27)],
+					        [#"Film" = "embedded", #"Genre" = "damn", #"Lead Studio" = "ron", #"Audience  score %" = 810, #"Profitability" = 585.02, #"Rotten Tomatoes %" = 867, #"Worldwide Gross" = 478.01, #"Year" = #date(2020, 1, 4)],
+					        [#"Film" = "buddy", #"Genre" = "lincoln", #"Lead Studio" = "volume", #"Audience  score %" = 949, #"Profitability" = 843.81, #"Rotten Tomatoes %" = 814, #"Worldwide Gross" = 997.24, #"Year" = #date(2023, 4, 5)],
+					        [#"Film" = "lines", #"Genre" = "known", #"Lead Studio" = "symptoms", #"Audience  score %" = 327, #"Profitability" = 653.01, #"Rotten Tomatoes %" = 738, #"Worldwide Gross" = 828.43, #"Year" = #date(2023, 3, 23)],
+					        [#"Film" = "hurt", #"Genre" = "ukraine", #"Lead Studio" = "exciting", #"Audience  score %" = 738, #"Profitability" = 647.17, #"Rotten Tomatoes %" = 692, #"Worldwide Gross" = 597.46, #"Year" = #date(2024, 10, 11)],
+					        [#"Film" = "keeping", #"Genre" = "learn", #"Lead Studio" = "drinking", #"Audience  score %" = 234, #"Profitability" = 165.88, #"Rotten Tomatoes %" = 175, #"Worldwide Gross" = 493.84, #"Year" = #date(2023, 8, 6)],
+					        [#"Film" = "charles", #"Genre" = "bit", #"Lead Studio" = "normally", #"Audience  score %" = 790, #"Profitability" = 998.22, #"Rotten Tomatoes %" = 381, #"Worldwide Gross" = 458.02, #"Year" = #date(2023, 4, 7)],
+					        [#"Film" = "maintained", #"Genre" = "include", #"Lead Studio" = "emails", #"Audience  score %" = 287, #"Profitability" = 733.82, #"Rotten Tomatoes %" = 812, #"Worldwide Gross" = 325.43, #"Year" = #date(2022, 7, 10)],
+					        [#"Film" = "corn", #"Genre" = "genetics", #"Lead Studio" = "gene", #"Audience  score %" = 582, #"Profitability" = 179.39, #"Rotten Tomatoes %" = 933, #"Worldwide Gross" = 205.01, #"Year" = #date(2022, 11, 23)],
+					        [#"Film" = "illness", #"Genre" = "warning", #"Lead Studio" = "show", #"Audience  score %" = 104, #"Profitability" = 325.83, #"Rotten Tomatoes %" = 445, #"Worldwide Gross" = 798.99, #"Year" = #date(2024, 6, 10)],
+					        [#"Film" = "wildlife", #"Genre" = "model", #"Lead Studio" = "permalink", #"Audience  score %" = 939, #"Profitability" = 221.49, #"Rotten Tomatoes %" = 228, #"Worldwide Gross" = 906.7, #"Year" = #date(2022, 8, 1)],
+					        [#"Film" = "craft", #"Genre" = "result", #"Lead Studio" = "gb", #"Audience  score %" = 385, #"Profitability" = 711.52, #"Rotten Tomatoes %" = 896, #"Worldwide Gross" = 875.09, #"Year" = #date(2024, 1, 1)],
+					        [#"Film" = "mechanisms", #"Genre" = "homepage", #"Lead Studio" = "temporary", #"Audience  score %" = 784, #"Profitability" = 671.83, #"Rotten Tomatoes %" = 63, #"Worldwide Gross" = 213.52, #"Year" = #date(2022, 8, 18)],
+					        [#"Film" = "catch", #"Genre" = "any", #"Lead Studio" = "transferred", #"Audience  score %" = 138, #"Profitability" = 556.68, #"Rotten Tomatoes %" = 430, #"Worldwide Gross" = 854.06, #"Year" = #date(2023, 6, 14)],
+					        [#"Film" = "committees", #"Genre" = "headset", #"Lead Studio" = "service", #"Audience  score %" = 36, #"Profitability" = 320.7, #"Rotten Tomatoes %" = 144, #"Worldwide Gross" = 193.98, #"Year" = #date(2023, 4, 18)],
+					        [#"Film" = "adults", #"Genre" = "williams", #"Lead Studio" = "purple", #"Audience  score %" = 422, #"Profitability" = 887.01, #"Rotten Tomatoes %" = 82, #"Worldwide Gross" = 730.73, #"Year" = #date(2024, 8, 2)],
+					        [#"Film" = "mom", #"Genre" = "break", #"Lead Studio" = "compatible", #"Audience  score %" = 407, #"Profitability" = 271.04, #"Rotten Tomatoes %" = 579, #"Worldwide Gross" = 216.74, #"Year" = #date(2023, 11, 20)],
+					        [#"Film" = "systems", #"Genre" = "lg", #"Lead Studio" = "birmingham", #"Audience  score %" = 54, #"Profitability" = 975.25, #"Rotten Tomatoes %" = 116, #"Worldwide Gross" = 620.46, #"Year" = #date(2024, 1, 1)],
+					        [#"Film" = "proposals", #"Genre" = "contents", #"Lead Studio" = "registered", #"Audience  score %" = 228, #"Profitability" = 249.14, #"Rotten Tomatoes %" = 169, #"Worldwide Gross" = 878.89, #"Year" = #date(2024, 8, 18)],
+					        [#"Film" = "box", #"Genre" = "gang", #"Lead Studio" = "xhtml", #"Audience  score %" = 427, #"Profitability" = 336.68, #"Rotten Tomatoes %" = 517, #"Worldwide Gross" = 256.49, #"Year" = #date(2020, 12, 13)],
+					        [#"Film" = "graphics", #"Genre" = "explorer", #"Lead Studio" = "tired", #"Audience  score %" = 755, #"Profitability" = 123.18, #"Rotten Tomatoes %" = 672, #"Worldwide Gross" = 6.42, #"Year" = #date(2020, 12, 23)],
+					        [#"Film" = "league", #"Genre" = "returns", #"Lead Studio" = "check", #"Audience  score %" = 723, #"Profitability" = 133.93, #"Rotten Tomatoes %" = 543, #"Worldwide Gross" = 360.41, #"Year" = #date(2021, 12, 21)],
+					        [#"Film" = "equation", #"Genre" = "way", #"Lead Studio" = "acc", #"Audience  score %" = 770, #"Profitability" = 823.73, #"Rotten Tomatoes %" = 236, #"Worldwide Gross" = 595.02, #"Year" = #date(2021, 7, 22)],
+					        [#"Film" = "passed", #"Genre" = "permits", #"Lead Studio" = "administrative", #"Audience  score %" = 582, #"Profitability" = 650.92, #"Rotten Tomatoes %" = 106, #"Worldwide Gross" = 298.64, #"Year" = #date(2021, 2, 18)],
+					        [#"Film" = "sydney", #"Genre" = "quest", #"Lead Studio" = "romantic", #"Audience  score %" = 627, #"Profitability" = 242.68, #"Rotten Tomatoes %" = 531, #"Worldwide Gross" = 845.57, #"Year" = #date(2024, 5, 29)],
+					        [#"Film" = "constitution", #"Genre" = "nba", #"Lead Studio" = "housing", #"Audience  score %" = 949, #"Profitability" = 745.31, #"Rotten Tomatoes %" = 61, #"Worldwide Gross" = 478.23, #"Year" = #date(2023, 4, 15)],
+					        [#"Film" = "june", #"Genre" = "acid", #"Lead Studio" = "cake", #"Audience  score %" = 794, #"Profitability" = 572.2, #"Rotten Tomatoes %" = 741, #"Worldwide Gross" = 854.45, #"Year" = #date(2023, 1, 29)],
+					        [#"Film" = "english", #"Genre" = "liable", #"Lead Studio" = "driver", #"Audience  score %" = 688, #"Profitability" = 332.61, #"Rotten Tomatoes %" = 387, #"Worldwide Gross" = 160.52, #"Year" = #date(2024, 2, 1)],
+					        [#"Film" = "miss", #"Genre" = "blade", #"Lead Studio" = "funds", #"Audience  score %" = 401, #"Profitability" = 144.22, #"Rotten Tomatoes %" = 56, #"Worldwide Gross" = 534.38, #"Year" = #date(2020, 2, 6)],
+					        [#"Film" = "eric", #"Genre" = "units", #"Lead Studio" = "newsletters", #"Audience  score %" = 354, #"Profitability" = 401.23, #"Rotten Tomatoes %" = 131, #"Worldwide Gross" = 8.37, #"Year" = #date(2021, 6, 6)],
+					        [#"Film" = "lost", #"Genre" = "turned", #"Lead Studio" = "metabolism", #"Audience  score %" = 517, #"Profitability" = 420.63, #"Rotten Tomatoes %" = 127, #"Worldwide Gross" = 187.81, #"Year" = #date(2024, 10, 3)],
+					        [#"Film" = "towards", #"Genre" = "robot", #"Lead Studio" = "import", #"Audience  score %" = 254, #"Profitability" = 204.46, #"Rotten Tomatoes %" = 606, #"Worldwide Gross" = 762.33, #"Year" = #date(2024, 10, 9)],
+					        [#"Film" = "seconds", #"Genre" = "lifetime", #"Lead Studio" = "sql", #"Audience  score %" = 270, #"Profitability" = 394.02, #"Rotten Tomatoes %" = 61, #"Worldwide Gross" = 282.84, #"Year" = #date(2024, 8, 26)],
+					        [#"Film" = "implications", #"Genre" = "already", #"Lead Studio" = "tend", #"Audience  score %" = 935, #"Profitability" = 209.35, #"Rotten Tomatoes %" = 614, #"Worldwide Gross" = 862.72, #"Year" = #date(2023, 5, 7)],
+					        [#"Film" = "resources", #"Genre" = "resolved", #"Lead Studio" = "matches", #"Audience  score %" = 527, #"Profitability" = 674.65, #"Rotten Tomatoes %" = 488, #"Worldwide Gross" = 979.29, #"Year" = #date(2023, 9, 28)],
+					        [#"Film" = "reporter", #"Genre" = "had", #"Lead Studio" = "manage", #"Audience  score %" = 176, #"Profitability" = 2.75, #"Rotten Tomatoes %" = 814, #"Worldwide Gross" = 814.96, #"Year" = #date(2020, 8, 8)],
+					        [#"Film" = "syndrome", #"Genre" = "require", #"Lead Studio" = "concert", #"Audience  score %" = 931, #"Profitability" = 985.29, #"Rotten Tomatoes %" = 243, #"Worldwide Gross" = 828.46, #"Year" = #date(2023, 10, 3)],
+					        [#"Film" = "season", #"Genre" = "cord", #"Lead Studio" = "originally", #"Audience  score %" = 107, #"Profitability" = 18.15, #"Rotten Tomatoes %" = 10, #"Worldwide Gross" = 217.29, #"Year" = #date(2024, 10, 2)],
+					        [#"Film" = "lodging", #"Genre" = "nation", #"Lead Studio" = "secret", #"Audience  score %" = 374, #"Profitability" = 945.22, #"Rotten Tomatoes %" = 452, #"Worldwide Gross" = 369.11, #"Year" = #date(2022, 11, 24)],
+					        [#"Film" = "cm", #"Genre" = "admission", #"Lead Studio" = "wisconsin", #"Audience  score %" = 992, #"Profitability" = 753.43, #"Rotten Tomatoes %" = 217, #"Worldwide Gross" = 268.92, #"Year" = #date(2023, 2, 10)],
+					        [#"Film" = "visited", #"Genre" = "investor", #"Lead Studio" = "downloads", #"Audience  score %" = 931, #"Profitability" = 629.27, #"Rotten Tomatoes %" = 688, #"Worldwide Gross" = 688.99, #"Year" = #date(2020, 4, 2)],
+					        [#"Film" = "drum", #"Genre" = "passenger", #"Lead Studio" = "inventory", #"Audience  score %" = 625, #"Profitability" = 66.0, #"Rotten Tomatoes %" = 722, #"Worldwide Gross" = 546.63, #"Year" = #date(2020, 11, 5)],
+					        [#"Film" = "sur", #"Genre" = "dynamic", #"Lead Studio" = "down", #"Audience  score %" = 812, #"Profitability" = 200.33, #"Rotten Tomatoes %" = 721, #"Worldwide Gross" = 133.27, #"Year" = #date(2021, 3, 2)],
+					        [#"Film" = "current", #"Genre" = "vista", #"Lead Studio" = "throughout", #"Audience  score %" = 635, #"Profitability" = 251.64, #"Rotten Tomatoes %" = 261, #"Worldwide Gross" = 324.91, #"Year" = #date(2023, 5, 14)],
+					        [#"Film" = "benefit", #"Genre" = "teens", #"Lead Studio" = "pl", #"Audience  score %" = 750, #"Profitability" = 361.94, #"Rotten Tomatoes %" = 469, #"Worldwide Gross" = 170.28, #"Year" = #date(2021, 6, 22)],
+					        [#"Film" = "ecommerce", #"Genre" = "cm", #"Lead Studio" = "booking", #"Audience  score %" = 141, #"Profitability" = 87.91, #"Rotten Tomatoes %" = 603, #"Worldwide Gross" = 104.49, #"Year" = #date(2022, 8, 25)],
+					        [#"Film" = "calling", #"Genre" = "sleep", #"Lead Studio" = "prints", #"Audience  score %" = 866, #"Profitability" = 686.51, #"Rotten Tomatoes %" = 961, #"Worldwide Gross" = 840.56, #"Year" = #date(2020, 2, 26)],
+					        [#"Film" = "uniprotkb", #"Genre" = "announcements", #"Lead Studio" = "dead", #"Audience  score %" = 636, #"Profitability" = 268.27, #"Rotten Tomatoes %" = 540, #"Worldwide Gross" = 957.68, #"Year" = #date(2022, 3, 26)],
+					        [#"Film" = "did", #"Genre" = "pound", #"Lead Studio" = "audio", #"Audience  score %" = 68, #"Profitability" = 228.58, #"Rotten Tomatoes %" = 781, #"Worldwide Gross" = 923.7, #"Year" = #date(2022, 8, 3)],
+					        [#"Film" = "consultant", #"Genre" = "arcade", #"Lead Studio" = "equipment", #"Audience  score %" = 431, #"Profitability" = 769.95, #"Rotten Tomatoes %" = 825, #"Worldwide Gross" = 427.18, #"Year" = #date(2024, 5, 1)],
+					        [#"Film" = "nfl", #"Genre" = "converted", #"Lead Studio" = "giving", #"Audience  score %" = 902, #"Profitability" = 623.79, #"Rotten Tomatoes %" = 70, #"Worldwide Gross" = 625.47, #"Year" = #date(2021, 12, 10)],
+					        [#"Film" = "garden", #"Genre" = "morgan", #"Lead Studio" = "arizona", #"Audience  score %" = 468, #"Profitability" = 697.67, #"Rotten Tomatoes %" = 607, #"Worldwide Gross" = 444.94, #"Year" = #date(2024, 10, 6)],
+					        [#"Film" = "negative", #"Genre" = "flower", #"Lead Studio" = "link", #"Audience  score %" = 491, #"Profitability" = 440.98, #"Rotten Tomatoes %" = 817, #"Worldwide Gross" = 957.51, #"Year" = #date(2023, 2, 25)],
+					        [#"Film" = "venezuela", #"Genre" = "lb", #"Lead Studio" = "errors", #"Audience  score %" = 812, #"Profitability" = 748.09, #"Rotten Tomatoes %" = 836, #"Worldwide Gross" = 250.5, #"Year" = #date(2023, 3, 15)],
+					        [#"Film" = "reviews", #"Genre" = "silver", #"Lead Studio" = "town", #"Audience  score %" = 816, #"Profitability" = 174.06, #"Rotten Tomatoes %" = 207, #"Worldwide Gross" = 973.83, #"Year" = #date(2024, 1, 10)],
+					        [#"Film" = "provide", #"Genre" = "event", #"Lead Studio" = "jay", #"Audience  score %" = 406, #"Profitability" = 530.42, #"Rotten Tomatoes %" = 447, #"Worldwide Gross" = 450.99, #"Year" = #date(2023, 10, 10)],
+					        [#"Film" = "nearly", #"Genre" = "circumstances", #"Lead Studio" = "british", #"Audience  score %" = 98, #"Profitability" = 810.5, #"Rotten Tomatoes %" = 266, #"Worldwide Gross" = 581.63, #"Year" = #date(2022, 1, 28)],
+					        [#"Film" = "earrings", #"Genre" = "seconds", #"Lead Studio" = "guy", #"Audience  score %" = 261, #"Profitability" = 730.71, #"Rotten Tomatoes %" = 14, #"Worldwide Gross" = 698.43, #"Year" = #date(2020, 5, 18)],
+					        [#"Film" = "forums", #"Genre" = "healing", #"Lead Studio" = "important", #"Audience  score %" = 316, #"Profitability" = 434.35, #"Rotten Tomatoes %" = 328, #"Worldwide Gross" = 98.85, #"Year" = #date(2024, 3, 3)],
+					        [#"Film" = "pi", #"Genre" = "shot", #"Lead Studio" = "zoom", #"Audience  score %" = 230, #"Profitability" = 885.73, #"Rotten Tomatoes %" = 777, #"Worldwide Gross" = 438.1, #"Year" = #date(2020, 5, 12)],
+					        [#"Film" = "jackson", #"Genre" = "exclusive", #"Lead Studio" = "gang", #"Audience  score %" = 693, #"Profitability" = 863.37, #"Rotten Tomatoes %" = 150, #"Worldwide Gross" = 794.37, #"Year" = #date(2023, 8, 26)],
+					        [#"Film" = "stephen", #"Genre" = "sum", #"Lead Studio" = "pink", #"Audience  score %" = 253, #"Profitability" = 144.53, #"Rotten Tomatoes %" = 888, #"Worldwide Gross" = 814.55, #"Year" = #date(2020, 1, 30)],
+					        [#"Film" = "describes", #"Genre" = "audit", #"Lead Studio" = "database", #"Audience  score %" = 612, #"Profitability" = 427.69, #"Rotten Tomatoes %" = 459, #"Worldwide Gross" = 249.81, #"Year" = #date(2024, 8, 19)],
+					        [#"Film" = "sleeping", #"Genre" = "email", #"Lead Studio" = "diameter", #"Audience  score %" = 93, #"Profitability" = 330.5, #"Rotten Tomatoes %" = 24, #"Worldwide Gross" = 612.52, #"Year" = #date(2020, 7, 8)],
+					        [#"Film" = "suppliers", #"Genre" = "lawrence", #"Lead Studio" = "pierre", #"Audience  score %" = 379, #"Profitability" = 781.22, #"Rotten Tomatoes %" = 192, #"Worldwide Gross" = 819.6, #"Year" = #date(2022, 7, 11)],
+					        [#"Film" = "enables", #"Genre" = "number", #"Lead Studio" = "checking", #"Audience  score %" = 383, #"Profitability" = 566.08, #"Rotten Tomatoes %" = 460, #"Worldwide Gross" = 824.78, #"Year" = #date(2024, 7, 8)],
+					        [#"Film" = "plastic", #"Genre" = "the", #"Lead Studio" = "downtown", #"Audience  score %" = 694, #"Profitability" = 291.84, #"Rotten Tomatoes %" = 601, #"Worldwide Gross" = 845.29, #"Year" = #date(2022, 11, 2)],
+					        [#"Film" = "stone", #"Genre" = "means", #"Lead Studio" = "gamma", #"Audience  score %" = 536, #"Profitability" = 196.47, #"Rotten Tomatoes %" = 438, #"Worldwide Gross" = 161.18, #"Year" = #date(2020, 5, 6)],
+					        [#"Film" = "opinions", #"Genre" = "mayor", #"Lead Studio" = "aim", #"Audience  score %" = 524, #"Profitability" = 369.96, #"Rotten Tomatoes %" = 458, #"Worldwide Gross" = 346.59, #"Year" = #date(2024, 2, 24)],
+					        [#"Film" = "coat", #"Genre" = "core", #"Lead Studio" = "sounds", #"Audience  score %" = 721, #"Profitability" = 416.45, #"Rotten Tomatoes %" = 192, #"Worldwide Gross" = 117.13, #"Year" = #date(2021, 10, 22)],
+					        [#"Film" = "shopper", #"Genre" = "viewed", #"Lead Studio" = "progressive", #"Audience  score %" = 234, #"Profitability" = 911.3, #"Rotten Tomatoes %" = 485, #"Worldwide Gross" = 35.89, #"Year" = #date(2023, 2, 25)],
+					        [#"Film" = "gourmet", #"Genre" = "determine", #"Lead Studio" = "generally", #"Audience  score %" = 989, #"Profitability" = 536.74, #"Rotten Tomatoes %" = 633, #"Worldwide Gross" = 121.09, #"Year" = #date(2020, 8, 8)],
+					        [#"Film" = "falls", #"Genre" = "accurate", #"Lead Studio" = "compare", #"Audience  score %" = 70, #"Profitability" = 524.59, #"Rotten Tomatoes %" = 99, #"Worldwide Gross" = 866.92, #"Year" = #date(2022, 11, 28)],
+					        [#"Film" = "diseases", #"Genre" = "siemens", #"Lead Studio" = "techniques", #"Audience  score %" = 819, #"Profitability" = 239.96, #"Rotten Tomatoes %" = 823, #"Worldwide Gross" = 257.64, #"Year" = #date(2022, 2, 22)],
+					        [#"Film" = "urban", #"Genre" = "fuel", #"Lead Studio" = "make", #"Audience  score %" = 801, #"Profitability" = 923.64, #"Rotten Tomatoes %" = 184, #"Worldwide Gross" = 701.37, #"Year" = #date(2020, 2, 26)],
+					        [#"Film" = "japanese", #"Genre" = "load", #"Lead Studio" = "tree", #"Audience  score %" = 291, #"Profitability" = 170.33, #"Rotten Tomatoes %" = 618, #"Worldwide Gross" = 333.07, #"Year" = #date(2021, 9, 17)],
+					        [#"Film" = "implemented", #"Genre" = "psychology", #"Lead Studio" = "nt", #"Audience  score %" = 493, #"Profitability" = 932.86, #"Rotten Tomatoes %" = 601, #"Worldwide Gross" = 470.9, #"Year" = #date(2020, 12, 17)],
+					        [#"Film" = "attorneys", #"Genre" = "throughout", #"Lead Studio" = "ringtone", #"Audience  score %" = 484, #"Profitability" = 912.82, #"Rotten Tomatoes %" = 618, #"Worldwide Gross" = 783.05, #"Year" = #date(2023, 2, 20)],
+					        [#"Film" = "maker", #"Genre" = "reverse", #"Lead Studio" = "ok", #"Audience  score %" = 216, #"Profitability" = 996.99, #"Rotten Tomatoes %" = 532, #"Worldwide Gross" = 566.51, #"Year" = #date(2022, 3, 12)],
+					        [#"Film" = "even", #"Genre" = "analyst", #"Lead Studio" = "bottom", #"Audience  score %" = 605, #"Profitability" = 560.23, #"Rotten Tomatoes %" = 929, #"Worldwide Gross" = 457.3, #"Year" = #date(2024, 8, 7)],
+					        [#"Film" = "bills", #"Genre" = "caused", #"Lead Studio" = "bargain", #"Audience  score %" = 529, #"Profitability" = 811.66, #"Rotten Tomatoes %" = 26, #"Worldwide Gross" = 966.1, #"Year" = #date(2024, 11, 8)],
+					        [#"Film" = "musical", #"Genre" = "agriculture", #"Lead Studio" = "approved", #"Audience  score %" = 409, #"Profitability" = 356.58, #"Rotten Tomatoes %" = 853, #"Worldwide Gross" = 93.33, #"Year" = #date(2024, 10, 17)],
+					        [#"Film" = "ing", #"Genre" = "nelson", #"Lead Studio" = "accommodation", #"Audience  score %" = 238, #"Profitability" = 885.84, #"Rotten Tomatoes %" = 894, #"Worldwide Gross" = 271.8, #"Year" = #date(2021, 1, 9)],
+					        [#"Film" = "reservation", #"Genre" = "interest", #"Lead Studio" = "soon", #"Audience  score %" = 984, #"Profitability" = 335.17, #"Rotten Tomatoes %" = 129, #"Worldwide Gross" = 950.19, #"Year" = #date(2024, 9, 18)],
+					        [#"Film" = "viewed", #"Genre" = "tx", #"Lead Studio" = "preferred", #"Audience  score %" = 396, #"Profitability" = 385.04, #"Rotten Tomatoes %" = 498, #"Worldwide Gross" = 726.03, #"Year" = #date(2024, 4, 12)],
+					        [#"Film" = "dirty", #"Genre" = "rod", #"Lead Studio" = "families", #"Audience  score %" = 344, #"Profitability" = 451.14, #"Rotten Tomatoes %" = 828, #"Worldwide Gross" = 744.37, #"Year" = #date(2024, 5, 22)],
+					        [#"Film" = "impact", #"Genre" = "low", #"Lead Studio" = "each", #"Audience  score %" = 729, #"Profitability" = 121.68, #"Rotten Tomatoes %" = 675, #"Worldwide Gross" = 530.0, #"Year" = #date(2021, 1, 22)],
+					        [#"Film" = "lived", #"Genre" = "degrees", #"Lead Studio" = "crazy", #"Audience  score %" = 766, #"Profitability" = 59.65, #"Rotten Tomatoes %" = 576, #"Worldwide Gross" = 163.72, #"Year" = #date(2022, 10, 19)],
+					        [#"Film" = "rush", #"Genre" = "huge", #"Lead Studio" = "se", #"Audience  score %" = 855, #"Profitability" = 365.94, #"Rotten Tomatoes %" = 431, #"Worldwide Gross" = 631.04, #"Year" = #date(2021, 9, 28)],
+					        [#"Film" = "tc", #"Genre" = "island", #"Lead Studio" = "ethics", #"Audience  score %" = 697, #"Profitability" = 452.11, #"Rotten Tomatoes %" = 56, #"Worldwide Gross" = 809.4, #"Year" = #date(2021, 1, 24)],
+					        [#"Film" = "rare", #"Genre" = "federal", #"Lead Studio" = "claim", #"Audience  score %" = 917, #"Profitability" = 617.95, #"Rotten Tomatoes %" = 17, #"Worldwide Gross" = 350.22, #"Year" = #date(2023, 2, 19)],
+					        [#"Film" = "democracy", #"Genre" = "postal", #"Lead Studio" = "are", #"Audience  score %" = 729, #"Profitability" = 559.96, #"Rotten Tomatoes %" = 489, #"Worldwide Gross" = 650.75, #"Year" = #date(2024, 1, 21)],
+					        [#"Film" = "beyond", #"Genre" = "votes", #"Lead Studio" = "weak", #"Audience  score %" = 905, #"Profitability" = 650.91, #"Rotten Tomatoes %" = 648, #"Worldwide Gross" = 362.81, #"Year" = #date(2022, 1, 29)],
+					        [#"Film" = "optical", #"Genre" = "growth", #"Lead Studio" = "southeast", #"Audience  score %" = 95, #"Profitability" = 916.75, #"Rotten Tomatoes %" = 745, #"Worldwide Gross" = 328.7, #"Year" = #date(2022, 3, 6)],
+					        [#"Film" = "keeping", #"Genre" = "grade", #"Lead Studio" = "na", #"Audience  score %" = 719, #"Profitability" = 779.16, #"Rotten Tomatoes %" = 144, #"Worldwide Gross" = 641.52, #"Year" = #date(2020, 2, 12)],
+					        [#"Film" = "bird", #"Genre" = "build", #"Lead Studio" = "espn", #"Audience  score %" = 600, #"Profitability" = 506.91, #"Rotten Tomatoes %" = 58, #"Worldwide Gross" = 114.19, #"Year" = #date(2024, 11, 13)],
+					        [#"Film" = "killer", #"Genre" = "stopped", #"Lead Studio" = "chicken", #"Audience  score %" = 548, #"Profitability" = 380.16, #"Rotten Tomatoes %" = 312, #"Worldwide Gross" = 28.89, #"Year" = #date(2024, 11, 22)],
+					        [#"Film" = "latinas", #"Genre" = "films", #"Lead Studio" = "cloudy", #"Audience  score %" = 575, #"Profitability" = 354.0, #"Rotten Tomatoes %" = 770, #"Worldwide Gross" = 348.99, #"Year" = #date(2021, 4, 5)],
+					        [#"Film" = "might", #"Genre" = "focused", #"Lead Studio" = "minimal", #"Audience  score %" = 952, #"Profitability" = 457.18, #"Rotten Tomatoes %" = 238, #"Worldwide Gross" = 440.79, #"Year" = #date(2021, 4, 14)],
+					        [#"Film" = "orange", #"Genre" = "bath", #"Lead Studio" = "lanka", #"Audience  score %" = 5, #"Profitability" = 526.6, #"Rotten Tomatoes %" = 119, #"Worldwide Gross" = 97.97, #"Year" = #date(2021, 4, 10)],
+					        [#"Film" = "harvard", #"Genre" = "rd", #"Lead Studio" = "snow", #"Audience  score %" = 157, #"Profitability" = 245.65, #"Rotten Tomatoes %" = 252, #"Worldwide Gross" = 700.98, #"Year" = #date(2023, 3, 5)],
+					        [#"Film" = "excerpt", #"Genre" = "ri", #"Lead Studio" = "buy", #"Audience  score %" = 147, #"Profitability" = 994.31, #"Rotten Tomatoes %" = 745, #"Worldwide Gross" = 765.86, #"Year" = #date(2023, 2, 17)],
+					        [#"Film" = "brought", #"Genre" = "andrew", #"Lead Studio" = "ha", #"Audience  score %" = 217, #"Profitability" = 459.2, #"Rotten Tomatoes %" = 59, #"Worldwide Gross" = 341.86, #"Year" = #date(2020, 7, 6)],
+					        [#"Film" = "pounds", #"Genre" = "load", #"Lead Studio" = "retail", #"Audience  score %" = 410, #"Profitability" = 526.99, #"Rotten Tomatoes %" = 501, #"Worldwide Gross" = 549.11, #"Year" = #date(2023, 9, 1)],
+					        [#"Film" = "translation", #"Genre" = "sun", #"Lead Studio" = "pending", #"Audience  score %" = 698, #"Profitability" = 969.14, #"Rotten Tomatoes %" = 681, #"Worldwide Gross" = 818.05, #"Year" = #date(2020, 5, 18)],
+					        [#"Film" = "dynamics", #"Genre" = "coverage", #"Lead Studio" = "tank", #"Audience  score %" = 561, #"Profitability" = 114.26, #"Rotten Tomatoes %" = 476, #"Worldwide Gross" = 312.09, #"Year" = #date(2023, 10, 22)],
+					        [#"Film" = "growing", #"Genre" = "sharp", #"Lead Studio" = "arrangements", #"Audience  score %" = 762, #"Profitability" = 611.57, #"Rotten Tomatoes %" = 87, #"Worldwide Gross" = 370.61, #"Year" = #date(2023, 7, 20)],
+					        [#"Film" = "introduce", #"Genre" = "src", #"Lead Studio" = "pieces", #"Audience  score %" = 898, #"Profitability" = 494.46, #"Rotten Tomatoes %" = 868, #"Worldwide Gross" = 719.84, #"Year" = #date(2023, 6, 12)],
+					        [#"Film" = "heights", #"Genre" = "insurance", #"Lead Studio" = "par", #"Audience  score %" = 328, #"Profitability" = 484.56, #"Rotten Tomatoes %" = 66, #"Worldwide Gross" = 306.85, #"Year" = #date(2021, 9, 23)],
+					        [#"Film" = "interview", #"Genre" = "opened", #"Lead Studio" = "awesome", #"Audience  score %" = 327, #"Profitability" = 593.81, #"Rotten Tomatoes %" = 254, #"Worldwide Gross" = 96.7, #"Year" = #date(2024, 12, 22)],
+					        [#"Film" = "pee", #"Genre" = "mitchell", #"Lead Studio" = "garden", #"Audience  score %" = 224, #"Profitability" = 615.6, #"Rotten Tomatoes %" = 795, #"Worldwide Gross" = 40.8, #"Year" = #date(2023, 9, 27)],
+					        [#"Film" = "dirty", #"Genre" = "lie", #"Lead Studio" = "appreciate", #"Audience  score %" = 980, #"Profitability" = 779.16, #"Rotten Tomatoes %" = 22, #"Worldwide Gross" = 702.22, #"Year" = #date(2024, 4, 19)],
+					        [#"Film" = "appeals", #"Genre" = "louisiana", #"Lead Studio" = "producing", #"Audience  score %" = 295, #"Profitability" = 957.67, #"Rotten Tomatoes %" = 961, #"Worldwide Gross" = 392.89, #"Year" = #date(2021, 8, 2)],
+					        [#"Film" = "pdf", #"Genre" = "looks", #"Lead Studio" = "boss", #"Audience  score %" = 71, #"Profitability" = 170.32, #"Rotten Tomatoes %" = 307, #"Worldwide Gross" = 894.2, #"Year" = #date(2021, 8, 15)],
+					        [#"Film" = "hidden", #"Genre" = "seniors", #"Lead Studio" = "living", #"Audience  score %" = 981, #"Profitability" = 558.63, #"Rotten Tomatoes %" = 665, #"Worldwide Gross" = 920.82, #"Year" = #date(2024, 4, 3)],
+					        [#"Film" = "housewares", #"Genre" = "birth", #"Lead Studio" = "babes", #"Audience  score %" = 368, #"Profitability" = 427.22, #"Rotten Tomatoes %" = 588, #"Worldwide Gross" = 881.11, #"Year" = #date(2023, 9, 17)],
+					        [#"Film" = "track", #"Genre" = "lies", #"Lead Studio" = "finish", #"Audience  score %" = 768, #"Profitability" = 674.98, #"Rotten Tomatoes %" = 957, #"Worldwide Gross" = 93.02, #"Year" = #date(2023, 2, 26)],
+					        [#"Film" = "discovery", #"Genre" = "listening", #"Lead Studio" = "duke", #"Audience  score %" = 71, #"Profitability" = 982.82, #"Rotten Tomatoes %" = 338, #"Worldwide Gross" = 275.37, #"Year" = #date(2020, 11, 12)],
+					        [#"Film" = "memorabilia", #"Genre" = "productivity", #"Lead Studio" = "feeling", #"Audience  score %" = 937, #"Profitability" = 260.61, #"Rotten Tomatoes %" = 27, #"Worldwide Gross" = 164.98, #"Year" = #date(2021, 8, 14)],
+					        [#"Film" = "function", #"Genre" = "protection", #"Lead Studio" = "register", #"Audience  score %" = 383, #"Profitability" = 745.8, #"Rotten Tomatoes %" = 243, #"Worldwide Gross" = 244.95, #"Year" = #date(2024, 7, 10)],
+					        [#"Film" = "ends", #"Genre" = "lowest", #"Lead Studio" = "bigger", #"Audience  score %" = 466, #"Profitability" = 477.28, #"Rotten Tomatoes %" = 804, #"Worldwide Gross" = 289.26, #"Year" = #date(2021, 9, 26)],
+					        [#"Film" = "photography", #"Genre" = "unlike", #"Lead Studio" = "corner", #"Audience  score %" = 603, #"Profitability" = 45.57, #"Rotten Tomatoes %" = 28, #"Worldwide Gross" = 32.36, #"Year" = #date(2022, 5, 31)],
+					        [#"Film" = "loss", #"Genre" = "walter", #"Lead Studio" = "bright", #"Audience  score %" = 959, #"Profitability" = 85.53, #"Rotten Tomatoes %" = 739, #"Worldwide Gross" = 629.7, #"Year" = #date(2021, 8, 29)],
+					        [#"Film" = "chips", #"Genre" = "shore", #"Lead Studio" = "server", #"Audience  score %" = 75, #"Profitability" = 739.1, #"Rotten Tomatoes %" = 721, #"Worldwide Gross" = 763.09, #"Year" = #date(2021, 1, 26)],
+					        [#"Film" = "comes", #"Genre" = "continuous", #"Lead Studio" = "cp", #"Audience  score %" = 114, #"Profitability" = 865.44, #"Rotten Tomatoes %" = 66, #"Worldwide Gross" = 944.22, #"Year" = #date(2021, 7, 21)],
+					        [#"Film" = "updated", #"Genre" = "catholic", #"Lead Studio" = "producer", #"Audience  score %" = 977, #"Profitability" = 930.57, #"Rotten Tomatoes %" = 521, #"Worldwide Gross" = 155.71, #"Year" = #date(2022, 9, 27)],
+					        [#"Film" = "future", #"Genre" = "stone", #"Lead Studio" = "assumes", #"Audience  score %" = 189, #"Profitability" = 520.21, #"Rotten Tomatoes %" = 814, #"Worldwide Gross" = 872.15, #"Year" = #date(2024, 7, 9)],
+					        [#"Film" = "absolutely", #"Genre" = "introduction", #"Lead Studio" = "ns", #"Audience  score %" = 678, #"Profitability" = 454.12, #"Rotten Tomatoes %" = 281, #"Worldwide Gross" = 848.12, #"Year" = #date(2023, 7, 16)],
+					        [#"Film" = "past", #"Genre" = "logged", #"Lead Studio" = "subject", #"Audience  score %" = 379, #"Profitability" = 643.05, #"Rotten Tomatoes %" = 730, #"Worldwide Gross" = 732.65, #"Year" = #date(2024, 3, 8)],
+					        [#"Film" = "contribution", #"Genre" = "alphabetical", #"Lead Studio" = "supervisor", #"Audience  score %" = 112, #"Profitability" = 54.34, #"Rotten Tomatoes %" = 580, #"Worldwide Gross" = 564.61, #"Year" = #date(2022, 12, 21)],
+					        [#"Film" = "wisdom", #"Genre" = "solve", #"Lead Studio" = "acoustic", #"Audience  score %" = 937, #"Profitability" = 169.26, #"Rotten Tomatoes %" = 774, #"Worldwide Gross" = 614.8, #"Year" = #date(2021, 3, 26)],
+					        [#"Film" = "climbing", #"Genre" = "strange", #"Lead Studio" = "for", #"Audience  score %" = 450, #"Profitability" = 124.21, #"Rotten Tomatoes %" = 806, #"Worldwide Gross" = 994.03, #"Year" = #date(2021, 6, 10)],
+					        [#"Film" = "judicial", #"Genre" = "considerable", #"Lead Studio" = "article", #"Audience  score %" = 834, #"Profitability" = 484.53, #"Rotten Tomatoes %" = 810, #"Worldwide Gross" = 363.98, #"Year" = #date(2022, 10, 28)],
+					        [#"Film" = "candidate", #"Genre" = "moscow", #"Lead Studio" = "students", #"Audience  score %" = 483, #"Profitability" = 394.24, #"Rotten Tomatoes %" = 318, #"Worldwide Gross" = 566.91, #"Year" = #date(2024, 11, 21)],
+					        [#"Film" = "abuse", #"Genre" = "calculated", #"Lead Studio" = "fit", #"Audience  score %" = 841, #"Profitability" = 529.68, #"Rotten Tomatoes %" = 990, #"Worldwide Gross" = 859.83, #"Year" = #date(2024, 3, 4)],
+					        [#"Film" = "mit", #"Genre" = "involvement", #"Lead Studio" = "command", #"Audience  score %" = 417, #"Profitability" = 846.75, #"Rotten Tomatoes %" = 234, #"Worldwide Gross" = 78.58, #"Year" = #date(2023, 5, 6)],
+					        [#"Film" = "references", #"Genre" = "over", #"Lead Studio" = "pattern", #"Audience  score %" = 196, #"Profitability" = 861.03, #"Rotten Tomatoes %" = 794, #"Worldwide Gross" = 340.91, #"Year" = #date(2020, 3, 16)],
+					        [#"Film" = "charts", #"Genre" = "stocks", #"Lead Studio" = "regulation", #"Audience  score %" = 185, #"Profitability" = 804.3, #"Rotten Tomatoes %" = 977, #"Worldwide Gross" = 941.07, #"Year" = #date(2023, 11, 14)],
+					        [#"Film" = "accessory", #"Genre" = "turkish", #"Lead Studio" = "lord", #"Audience  score %" = 796, #"Profitability" = 447.02, #"Rotten Tomatoes %" = 920, #"Worldwide Gross" = 125.41, #"Year" = #date(2022, 1, 8)],
+					        [#"Film" = "kept", #"Genre" = "reports", #"Lead Studio" = "opened", #"Audience  score %" = 31, #"Profitability" = 580.62, #"Rotten Tomatoes %" = 408, #"Worldwide Gross" = 724.43, #"Year" = #date(2020, 9, 3)],
+					        [#"Film" = "highway", #"Genre" = "alice", #"Lead Studio" = "app", #"Audience  score %" = 711, #"Profitability" = 973.89, #"Rotten Tomatoes %" = 387, #"Worldwide Gross" = 660.99, #"Year" = #date(2022, 10, 31)],
+					        [#"Film" = "passed", #"Genre" = "monitoring", #"Lead Studio" = "brazil", #"Audience  score %" = 157, #"Profitability" = 413.42, #"Rotten Tomatoes %" = 696, #"Worldwide Gross" = 314.56, #"Year" = #date(2021, 12, 3)],
+					        [#"Film" = "alumni", #"Genre" = "employee", #"Lead Studio" = "flowers", #"Audience  score %" = 540, #"Profitability" = 870.22, #"Rotten Tomatoes %" = 296, #"Worldwide Gross" = 423.74, #"Year" = #date(2024, 10, 19)],
+					        [#"Film" = "institution", #"Genre" = "access", #"Lead Studio" = "licensing", #"Audience  score %" = 907, #"Profitability" = 997.57, #"Rotten Tomatoes %" = 368, #"Worldwide Gross" = 837.37, #"Year" = #date(2022, 1, 26)],
+					        [#"Film" = "mining", #"Genre" = "candy", #"Lead Studio" = "broadband", #"Audience  score %" = 298, #"Profitability" = 480.14, #"Rotten Tomatoes %" = 24, #"Worldwide Gross" = 875.31, #"Year" = #date(2022, 4, 24)],
+					        [#"Film" = "soccer", #"Genre" = "previous", #"Lead Studio" = "august", #"Audience  score %" = 431, #"Profitability" = 297.46, #"Rotten Tomatoes %" = 334, #"Worldwide Gross" = 632.73, #"Year" = #date(2022, 3, 23)],
+					        [#"Film" = "shirts", #"Genre" = "locate", #"Lead Studio" = "you", #"Audience  score %" = 549, #"Profitability" = 425.41, #"Rotten Tomatoes %" = 35, #"Worldwide Gross" = 668.15, #"Year" = #date(2024, 11, 24)],
+					        [#"Film" = "twin", #"Genre" = "reaction", #"Lead Studio" = "moon", #"Audience  score %" = 394, #"Profitability" = 866.36, #"Rotten Tomatoes %" = 10, #"Worldwide Gross" = 923.89, #"Year" = #date(2023, 4, 16)],
+					        [#"Film" = "classification", #"Genre" = "catering", #"Lead Studio" = "improvement", #"Audience  score %" = 144, #"Profitability" = 239.02, #"Rotten Tomatoes %" = 645, #"Worldwide Gross" = 922.27, #"Year" = #date(2020, 1, 16)],
+					        [#"Film" = "projection", #"Genre" = "collective", #"Lead Studio" = "republican", #"Audience  score %" = 674, #"Profitability" = 500.11, #"Rotten Tomatoes %" = 980, #"Worldwide Gross" = 346.64, #"Year" = #date(2023, 6, 23)],
+					        [#"Film" = "wheel", #"Genre" = "victoria", #"Lead Studio" = "residence", #"Audience  score %" = 814, #"Profitability" = 483.6, #"Rotten Tomatoes %" = 767, #"Worldwide Gross" = 392.45, #"Year" = #date(2023, 4, 5)],
+					        [#"Film" = "pregnant", #"Genre" = "diary", #"Lead Studio" = "stated", #"Audience  score %" = 541, #"Profitability" = 956.54, #"Rotten Tomatoes %" = 731, #"Worldwide Gross" = 228.29, #"Year" = #date(2023, 10, 13)],
+					        [#"Film" = "specialist", #"Genre" = "diamonds", #"Lead Studio" = "dynamics", #"Audience  score %" = 180, #"Profitability" = 409.64, #"Rotten Tomatoes %" = 603, #"Worldwide Gross" = 851.18, #"Year" = #date(2024, 6, 21)],
+					        [#"Film" = "overview", #"Genre" = "capture", #"Lead Studio" = "ho", #"Audience  score %" = 827, #"Profitability" = 723.16, #"Rotten Tomatoes %" = 327, #"Worldwide Gross" = 454.51, #"Year" = #date(2020, 7, 31)],
+					        [#"Film" = "mar", #"Genre" = "taiwan", #"Lead Studio" = "region", #"Audience  score %" = 937, #"Profitability" = 818.24, #"Rotten Tomatoes %" = 420, #"Worldwide Gross" = 27.62, #"Year" = #date(2021, 9, 26)],
+					        [#"Film" = "real", #"Genre" = "titans", #"Lead Studio" = "continuous", #"Audience  score %" = 628, #"Profitability" = 722.44, #"Rotten Tomatoes %" = 678, #"Worldwide Gross" = 610.94, #"Year" = #date(2022, 10, 7)],
+					        [#"Film" = "eat", #"Genre" = "widely", #"Lead Studio" = "gross", #"Audience  score %" = 351, #"Profitability" = 994.0, #"Rotten Tomatoes %" = 835, #"Worldwide Gross" = 60.26, #"Year" = #date(2020, 5, 3)],
+					        [#"Film" = "contribution", #"Genre" = "performing", #"Lead Studio" = "bidder", #"Audience  score %" = 302, #"Profitability" = 818.21, #"Rotten Tomatoes %" = 901, #"Worldwide Gross" = 997.75, #"Year" = #date(2023, 1, 29)],
+					        [#"Film" = "completed", #"Genre" = "vote", #"Lead Studio" = "diary", #"Audience  score %" = 763, #"Profitability" = 932.7, #"Rotten Tomatoes %" = 99, #"Worldwide Gross" = 593.27, #"Year" = #date(2024, 2, 1)],
+					        [#"Film" = "lay", #"Genre" = "obligation", #"Lead Studio" = "forever", #"Audience  score %" = 188, #"Profitability" = 932.74, #"Rotten Tomatoes %" = 336, #"Worldwide Gross" = 777.93, #"Year" = #date(2020, 6, 24)],
+					        [#"Film" = "physicians", #"Genre" = "total", #"Lead Studio" = "deals", #"Audience  score %" = 614, #"Profitability" = 304.98, #"Rotten Tomatoes %" = 913, #"Worldwide Gross" = 684.1, #"Year" = #date(2022, 8, 19)],
+					        [#"Film" = "paypal", #"Genre" = "jobs", #"Lead Studio" = "silk", #"Audience  score %" = 180, #"Profitability" = 732.3, #"Rotten Tomatoes %" = 347, #"Worldwide Gross" = 863.54, #"Year" = #date(2020, 12, 25)],
+					        [#"Film" = "appearance", #"Genre" = "yesterday", #"Lead Studio" = "usr", #"Audience  score %" = 491, #"Profitability" = 457.59, #"Rotten Tomatoes %" = 545, #"Worldwide Gross" = 908.11, #"Year" = #date(2023, 5, 24)],
+					        [#"Film" = "matching", #"Genre" = "incorporated", #"Lead Studio" = "chamber", #"Audience  score %" = 822, #"Profitability" = 907.51, #"Rotten Tomatoes %" = 777, #"Worldwide Gross" = 335.8, #"Year" = #date(2020, 11, 30)],
+					        [#"Film" = "while", #"Genre" = "highest", #"Lead Studio" = "islamic", #"Audience  score %" = 775, #"Profitability" = 791.81, #"Rotten Tomatoes %" = 407, #"Worldwide Gross" = 557.5, #"Year" = #date(2021, 12, 7)],
+					        [#"Film" = "among", #"Genre" = "injuries", #"Lead Studio" = "drink", #"Audience  score %" = 88, #"Profitability" = 585.46, #"Rotten Tomatoes %" = 816, #"Worldwide Gross" = 500.32, #"Year" = #date(2022, 1, 2)],
+					        [#"Film" = "corporate", #"Genre" = "lamps", #"Lead Studio" = "scores", #"Audience  score %" = 324, #"Profitability" = 237.42, #"Rotten Tomatoes %" = 18, #"Worldwide Gross" = 730.23, #"Year" = #date(2022, 10, 21)],
+					        [#"Film" = "venture", #"Genre" = "editorial", #"Lead Studio" = "else", #"Audience  score %" = 640, #"Profitability" = 958.82, #"Rotten Tomatoes %" = 918, #"Worldwide Gross" = 821.96, #"Year" = #date(2020, 2, 21)],
+					        [#"Film" = "entire", #"Genre" = "best", #"Lead Studio" = "flat", #"Audience  score %" = 631, #"Profitability" = 830.01, #"Rotten Tomatoes %" = 234, #"Worldwide Gross" = 177.44, #"Year" = #date(2021, 7, 19)],
+					        [#"Film" = "advantages", #"Genre" = "usual", #"Lead Studio" = "processors", #"Audience  score %" = 684, #"Profitability" = 295.02, #"Rotten Tomatoes %" = 387, #"Worldwide Gross" = 330.23, #"Year" = #date(2023, 6, 3)],
+					        [#"Film" = "plugin", #"Genre" = "hood", #"Lead Studio" = "exceed", #"Audience  score %" = 934, #"Profitability" = 120.2, #"Rotten Tomatoes %" = 234, #"Worldwide Gross" = 112.42, #"Year" = #date(2020, 12, 23)],
+					        [#"Film" = "bi", #"Genre" = "border", #"Lead Studio" = "healthcare", #"Audience  score %" = 770, #"Profitability" = 257.61, #"Rotten Tomatoes %" = 701, #"Worldwide Gross" = 395.06, #"Year" = #date(2023, 9, 25)],
+					        [#"Film" = "expand", #"Genre" = "percentage", #"Lead Studio" = "diseases", #"Audience  score %" = 925, #"Profitability" = 606.78, #"Rotten Tomatoes %" = 820, #"Worldwide Gross" = 176.04, #"Year" = #date(2022, 9, 10)],
+					        [#"Film" = "reflect", #"Genre" = "roses", #"Lead Studio" = "cookies", #"Audience  score %" = 413, #"Profitability" = 49.93, #"Rotten Tomatoes %" = 619, #"Worldwide Gross" = 2.39, #"Year" = #date(2024, 8, 26)],
+					        [#"Film" = "translate", #"Genre" = "cell", #"Lead Studio" = "ff", #"Audience  score %" = 857, #"Profitability" = 991.74, #"Rotten Tomatoes %" = 490, #"Worldwide Gross" = 965.37, #"Year" = #date(2022, 12, 22)],
+					        [#"Film" = "tennessee", #"Genre" = "refine", #"Lead Studio" = "instruments", #"Audience  score %" = 149, #"Profitability" = 385.41, #"Rotten Tomatoes %" = 111, #"Worldwide Gross" = 268.12, #"Year" = #date(2022, 11, 6)],
+					        [#"Film" = "sql", #"Genre" = "introduced", #"Lead Studio" = "designer", #"Audience  score %" = 986, #"Profitability" = 283.95, #"Rotten Tomatoes %" = 314, #"Worldwide Gross" = 405.22, #"Year" = #date(2024, 4, 26)],
+					        [#"Film" = "some", #"Genre" = "clearly", #"Lead Studio" = "babes", #"Audience  score %" = 102, #"Profitability" = 422.24, #"Rotten Tomatoes %" = 863, #"Worldwide Gross" = 783.98, #"Year" = #date(2022, 10, 19)],
+					        [#"Film" = "reception", #"Genre" = "prescription", #"Lead Studio" = "released", #"Audience  score %" = 843, #"Profitability" = 17.76, #"Rotten Tomatoes %" = 67, #"Worldwide Gross" = 49.11, #"Year" = #date(2023, 4, 1)],
+					        [#"Film" = "loans", #"Genre" = "damage", #"Lead Studio" = "bass", #"Audience  score %" = 263, #"Profitability" = 915.42, #"Rotten Tomatoes %" = 466, #"Worldwide Gross" = 492.79, #"Year" = #date(2023, 6, 30)],
+					        [#"Film" = "impossible", #"Genre" = "foster", #"Lead Studio" = "share", #"Audience  score %" = 550, #"Profitability" = 95.34, #"Rotten Tomatoes %" = 254, #"Worldwide Gross" = 598.06, #"Year" = #date(2020, 7, 6)],
+					        [#"Film" = "healing", #"Genre" = "interviews", #"Lead Studio" = "wall", #"Audience  score %" = 115, #"Profitability" = 343.52, #"Rotten Tomatoes %" = 915, #"Worldwide Gross" = 344.84, #"Year" = #date(2024, 3, 18)],
+					        [#"Film" = "secondary", #"Genre" = "sheets", #"Lead Studio" = "applied", #"Audience  score %" = 439, #"Profitability" = 724.78, #"Rotten Tomatoes %" = 428, #"Worldwide Gross" = 396.15, #"Year" = #date(2023, 5, 24)],
+					        [#"Film" = "economic", #"Genre" = "depending", #"Lead Studio" = "sense", #"Audience  score %" = 536, #"Profitability" = 685.01, #"Rotten Tomatoes %" = 24, #"Worldwide Gross" = 287.04, #"Year" = #date(2021, 12, 17)],
+					        [#"Film" = "they", #"Genre" = "los", #"Lead Studio" = "findings", #"Audience  score %" = 673, #"Profitability" = 705.48, #"Rotten Tomatoes %" = 742, #"Worldwide Gross" = 558.84, #"Year" = #date(2022, 7, 6)],
+					        [#"Film" = "gardens", #"Genre" = "publish", #"Lead Studio" = "trim", #"Audience  score %" = 292, #"Profitability" = 713.36, #"Rotten Tomatoes %" = 889, #"Worldwide Gross" = 870.51, #"Year" = #date(2024, 8, 17)],
+					        [#"Film" = "vice", #"Genre" = "dress", #"Lead Studio" = "eat", #"Audience  score %" = 569, #"Profitability" = 242.75, #"Rotten Tomatoes %" = 359, #"Worldwide Gross" = 4.32, #"Year" = #date(2023, 3, 2)],
+					        [#"Film" = "tracked", #"Genre" = "jesus", #"Lead Studio" = "printers", #"Audience  score %" = 19, #"Profitability" = 661.67, #"Rotten Tomatoes %" = 19, #"Worldwide Gross" = 884.69, #"Year" = #date(2023, 6, 10)],
+					        [#"Film" = "wearing", #"Genre" = "transit", #"Lead Studio" = "identify", #"Audience  score %" = 219, #"Profitability" = 959.77, #"Rotten Tomatoes %" = 947, #"Worldwide Gross" = 673.26, #"Year" = #date(2024, 9, 10)],
+					        [#"Film" = "york", #"Genre" = "utilities", #"Lead Studio" = "arena", #"Audience  score %" = 162, #"Profitability" = 360.48, #"Rotten Tomatoes %" = 748, #"Worldwide Gross" = 471.4, #"Year" = #date(2022, 12, 27)],
+					        [#"Film" = "banks", #"Genre" = "cake", #"Lead Studio" = "accurate", #"Audience  score %" = 788, #"Profitability" = 258.3, #"Rotten Tomatoes %" = 623, #"Worldwide Gross" = 940.97, #"Year" = #date(2021, 9, 6)],
+					        [#"Film" = "semi", #"Genre" = "bluetooth", #"Lead Studio" = "fortune", #"Audience  score %" = 979, #"Profitability" = 625.63, #"Rotten Tomatoes %" = 951, #"Worldwide Gross" = 647.06, #"Year" = #date(2024, 8, 31)],
+					        [#"Film" = "msg", #"Genre" = "clips", #"Lead Studio" = "fear", #"Audience  score %" = 413, #"Profitability" = 968.36, #"Rotten Tomatoes %" = 347, #"Worldwide Gross" = 705.21, #"Year" = #date(2024, 1, 2)],
+					        [#"Film" = "ultra", #"Genre" = "upper", #"Lead Studio" = "absence", #"Audience  score %" = 668, #"Profitability" = 747.05, #"Rotten Tomatoes %" = 700, #"Worldwide Gross" = 319.14, #"Year" = #date(2024, 5, 4)],
+					        [#"Film" = "fundamental", #"Genre" = "hiking", #"Lead Studio" = "lb", #"Audience  score %" = 275, #"Profitability" = 341.23, #"Rotten Tomatoes %" = 629, #"Worldwide Gross" = 794.68, #"Year" = #date(2022, 10, 12)],
+					        [#"Film" = "lens", #"Genre" = "hd", #"Lead Studio" = "argument", #"Audience  score %" = 490, #"Profitability" = 460.07, #"Rotten Tomatoes %" = 19, #"Worldwide Gross" = 451.97, #"Year" = #date(2021, 4, 15)],
+					        [#"Film" = "artists", #"Genre" = "afghanistan", #"Lead Studio" = "switch", #"Audience  score %" = 373, #"Profitability" = 223.1, #"Rotten Tomatoes %" = 552, #"Worldwide Gross" = 185.54, #"Year" = #date(2020, 11, 18)],
+					        [#"Film" = "dimensions", #"Genre" = "jacksonville", #"Lead Studio" = "profits", #"Audience  score %" = 879, #"Profitability" = 693.95, #"Rotten Tomatoes %" = 932, #"Worldwide Gross" = 88.39, #"Year" = #date(2021, 2, 25)],
+					        [#"Film" = "ethernet", #"Genre" = "israel", #"Lead Studio" = "historic", #"Audience  score %" = 251, #"Profitability" = 58.23, #"Rotten Tomatoes %" = 902, #"Worldwide Gross" = 805.31, #"Year" = #date(2024, 4, 5)],
+					        [#"Film" = "services", #"Genre" = "subsequent", #"Lead Studio" = "leaders", #"Audience  score %" = 149, #"Profitability" = 433.05, #"Rotten Tomatoes %" = 383, #"Worldwide Gross" = 356.04, #"Year" = #date(2021, 7, 25)],
+					        [#"Film" = "sites", #"Genre" = "quality", #"Lead Studio" = "stand", #"Audience  score %" = 729, #"Profitability" = 543.74, #"Rotten Tomatoes %" = 230, #"Worldwide Gross" = 553.39, #"Year" = #date(2023, 1, 17)],
+					        [#"Film" = "weblog", #"Genre" = "avg", #"Lead Studio" = "mb", #"Audience  score %" = 742, #"Profitability" = 231.71, #"Rotten Tomatoes %" = 43, #"Worldwide Gross" = 121.19, #"Year" = #date(2024, 4, 1)],
+					        [#"Film" = "learn", #"Genre" = "advertisement", #"Lead Studio" = "attempts", #"Audience  score %" = 909, #"Profitability" = 461.26, #"Rotten Tomatoes %" = 223, #"Worldwide Gross" = 652.29, #"Year" = #date(2022, 11, 26)],
+					        [#"Film" = "prevention", #"Genre" = "pay", #"Lead Studio" = "remains", #"Audience  score %" = 687, #"Profitability" = 98.66, #"Rotten Tomatoes %" = 385, #"Worldwide Gross" = 511.2, #"Year" = #date(2020, 5, 22)],
+					        [#"Film" = "headquarters", #"Genre" = "expect", #"Lead Studio" = "scores", #"Audience  score %" = 995, #"Profitability" = 42.7, #"Rotten Tomatoes %" = 404, #"Worldwide Gross" = 717.48, #"Year" = #date(2024, 1, 23)],
+					        [#"Film" = "mix", #"Genre" = "arkansas", #"Lead Studio" = "neck", #"Audience  score %" = 490, #"Profitability" = 626.94, #"Rotten Tomatoes %" = 347, #"Worldwide Gross" = 428.6, #"Year" = #date(2024, 2, 17)],
+					        [#"Film" = "catholic", #"Genre" = "visiting", #"Lead Studio" = "sir", #"Audience  score %" = 419, #"Profitability" = 42.03, #"Rotten Tomatoes %" = 601, #"Worldwide Gross" = 891.13, #"Year" = #date(2024, 4, 25)],
+					        [#"Film" = "modify", #"Genre" = "undergraduate", #"Lead Studio" = "pp", #"Audience  score %" = 135, #"Profitability" = 139.21, #"Rotten Tomatoes %" = 801, #"Worldwide Gross" = 814.7, #"Year" = #date(2023, 6, 10)]
+					    }),
+					    Typed = Table.TransformColumnTypes(Source, {
+					        {"Film", type text},
+					        {"Genre", type text},
+					        {"Lead Studio", type text},
+					        {"Audience  score %", Int64.Type},
+					        {"Profitability", type number},
+					        {"Rotten Tomatoes %", Int64.Type},
+					        {"Worldwide Gross", type number},
+					        {"Year", type date}
+					    })
+					in
+					    Typed
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
