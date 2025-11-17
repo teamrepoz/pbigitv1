@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Data (Complaint Line)",
+      "name": "Index",
+      "dax_expression": "VAR idx = BLANK()\nRETURN\nIF(\n    ISBLANK(idx),\n    BLANK(),\n    (idx - 1) * 0.12 - 6\n)",
+      "solution_explanation": "The Tableau expression uses INDEX(), which is a table calculation that requires a visual partitioning and ordering to compute. DAX has no direct equivalent to Tableau's INDEX() without an explicit ordering column or row context. This measure provides a safe placeholder: it defines idx as BLANK() and returns BLANK() because the required row-order context is missing. To implement the original logic in Power BI, add an explicit row index column in the model or provide a deterministic ordering column and replace idx with a RANKX or appropriate expression over that ordering; then the final arithmetic ( (idx - 1) * 0.12 - 6 ) can be applied.",
+      "type_changed_reason": "The calculation uses INDEX(), a Tableau table calculation (window function). Table calculations require aggregation/visual context and must be implemented as a measure in Power BI."
+    }
+  ]
+}
