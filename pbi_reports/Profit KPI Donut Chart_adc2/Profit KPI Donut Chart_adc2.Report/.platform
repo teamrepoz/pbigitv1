@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Profit KPI Donut Chart_adc2"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "2b91fd18-1634-42bb-8a3c-047bc7427e22"
+  }
+}
