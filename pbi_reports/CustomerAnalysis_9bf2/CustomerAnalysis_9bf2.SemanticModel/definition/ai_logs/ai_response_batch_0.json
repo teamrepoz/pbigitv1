@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "sales_06_FY2020-21",
+      "name": "Zero Axis",
+      "dax_expression": "0",
+      "solution_explanation": "The Tableau expression is a constant literal 0. In DAX this is represented directly as 0. There are no aggregates or parameters and it applies at the row level, so it is created as a calculated column."
+    }
+  ]
+}
