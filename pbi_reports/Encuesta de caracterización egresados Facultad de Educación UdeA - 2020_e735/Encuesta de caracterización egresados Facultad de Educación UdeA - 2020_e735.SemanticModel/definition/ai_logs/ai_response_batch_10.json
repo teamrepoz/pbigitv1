@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "name": "Años cuando se graduo",
+      "dax_expression": "'TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Año de egreso] - YEAR('TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Fecha_de_Nacimiento])",
+      "solution_explanation": "Row-level subtraction converted to DAX. The referenced calculated field \"Año nacimiento\" was expanded to YEAR('TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Fecha_de_Nacimiento]). This operates per row and contains no aggregations or parameters, so it is implemented as a calculated column."
+    }
+  ]
+}
