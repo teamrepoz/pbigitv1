@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "name": "\"Número de cédula:\",\"Marca temporal\",\"Dirección de correo electrónico\",\"Nombres y apellidos:\",\"Identidad de género:\",\"Dirección - División 10",
+      "dax_expression": "TRIM(PATHITEM(SUBSTITUTE('TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[\"Número de cédula:\",\"Marca temporal\",\"Dirección de correo electrónico\",\"Nombres y apellidos:\",\"Identidad de género:\",\"Dirección], \",\", \"|\"), 10))",
+      "solution_explanation": "Replaced Tableau SPLIT by substituting the comma delimiter to '|' and using PATHITEM to extract the 10th token, then applied TRIM to remove surrounding whitespace. This is a row-level string transformation, so it's implemented as a calculated column."
+    }
+  ]
+}
