@@ -1,0 +1,33 @@
+{
+  "calculations": [
+    {
+      "name": "Pre Month Value - Last Year",
+      "table_name": "Orders (Sample - Superstore)",
+      "tableau_expression": "{ sum(if [Order Date] >= [First Date Pre Month - Last Year]\r\n        and [Order Date] < dateadd('year',-1,DATETRUNC('month',[Max Date]))\r\n        then     [Measure Selector] end) \r\n}",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "{ sum(if [Order Date] >= [First Date Pre Month - Last Year]\r\n        and [Order Date] < dateadd('year',-1,DATETRUNC('month',[Max Date]))\r\n        then     [Measure Selector] end) \r\n}",
+        "calculated_fields": {
+          "Measure Selector": "case [Parameters].[Measure Selector Param]\r\n    when 'Profit' then [Profit]\r\n    when 'Sales' then [Sales]\r\nEND",
+          "First Date Pre Month - Last Year": "date(DATEADD('year',-1,[First Date Pre Month]))",
+          "Max Date": "{MAX([Order Date])}",
+          "First Date Pre Month": "DATE(DATETRUNC('month',DATEADD('month',-1,[Max Date])))",
+          "Measure Selector Param": "\"Profit\""
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Order Date": "date",
+          "Sales": "real",
+          "Profit": "real"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Measure Selector": "real",
+          "Measure Selector Param": "string",
+          "First Date Pre Month - Last Year": "DateTime",
+          "Max Date": "DateTime",
+          "First Date Pre Month": "DateTime"
+        }
+      }
+    }
+  ]
+}
