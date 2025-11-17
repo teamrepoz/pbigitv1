@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "name": "\"Número de cédula:\",\"Marca temporal\",\"Dirección de correo electrónico\",\"Nombres y apellidos:\",\"Identidad de género:\",\"Dirección - División 5",
+      "dax_expression": "VAR txt = 'TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[\"Número de cédula:\",\"Marca temporal\",\"Dirección de correo electrónico\",\"Nombres y apellidos:\",\"Identidad de género:\",\"Dirección]\nVAR pos1 = SEARCH(\",\", txt, 1, 0)\nVAR pos2 = IF(pos1 > 0, SEARCH(\",\", txt, pos1 + 1, 0), 0)\nVAR pos3 = IF(pos2 > 0, SEARCH(\",\", txt, pos2 + 1, 0), 0)\nVAR pos4 = IF(pos3 > 0, SEARCH(\",\", txt, pos3 + 1, 0), 0)\nVAR pos5 = IF(pos4 > 0, SEARCH(\",\", txt, pos4 + 1, 0), 0)\nVAR startPos = IF(pos4 > 0, pos4 + 1, 1)\nVAR endPos = IF(pos5 > 0, pos5 - 1, LEN(txt))\nVAR lenPart = endPos - startPos + 1\nRETURN TRIM( IF(LEN(txt) = 0, \"\", MID(txt, startPos, IF(lenPart > 0, lenPart, 0))) )",
+      "solution_explanation": "Tableau TRIM(SPLIT([field], \",\", 5)) is implemented in DAX by taking the 5th token between commas. The expression reads the raw text from 'TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[\"Número de cédula:\",\"Marca temporal\",\"Dirección de correo electrónico\",\"Nombres y apellidos:\",\"Identidad de género:\",\"Dirección], finds the positions of successive commas using SEARCH, computes the start and end positions for the 5th segment, extracts it with MID, and trims whitespace with TRIM(). This is a row-level string transformation, so it's created as a calculated column."
+    }
+  ]
+}
