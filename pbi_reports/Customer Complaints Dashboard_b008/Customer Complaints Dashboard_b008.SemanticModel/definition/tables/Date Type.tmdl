@@ -1,0 +1,46 @@
+table 'Date Type'
+	lineageTag: 6b3489ff-c7de-42f6-8b91-79764030963e
+
+	column Index
+		formatString: 0
+		lineageTag: 21653d6c-6799-43a6-a43e-957c1e951892
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 5038034b-65cc-4c75-a880-c91e68897798
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: b7559504-2980-4674-8b16-7c6d0fc50c13
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Date Type' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Month", "Month" },
+				{ 1, "Week", "Week" },
+				{ 2, "Year", "Year" }
+			    }
+			)
+
+	annotation PBI_Id = 081e613068374283a27f6ba910bf37bd
+
