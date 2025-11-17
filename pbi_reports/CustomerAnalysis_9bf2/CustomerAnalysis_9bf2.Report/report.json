@@ -1,0 +1,63 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.63\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "name": "Section_Customer Analysis",
+      "ordinal": 0,
+      "displayName": "Customer Analysis",
+      "visualContainers": [
+        {
+          "x": 824,
+          "y": 121,
+          "z": 0,
+          "width": 372,
+          "height": 318,
+          "config": "{\"name\": \"905f5a0d3f73c59ee9\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 824, \"y\": 121, \"z\": 1000, \"width\": 372, \"height\": 318, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"columnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"sales_06_FY2020-21.total\", \"active\": true}], \"Y\": [{\"queryRef\": \"sales_06_FY2020-21.Age (bin)\"}], \"Series\": [{\"queryRef\": \"sales_06_FY2020-21.total\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"s\", \"Entity\": \"sales_06_FY2020-21\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Property\": \"Age (bin)\", \"Expression\": {\"SourceRef\": {\"Source\": \"s\"}}}, \"Name\": \"sales_06_FY2020-21.Age (bin)\", \"NativeReferenceName\": \"Age (bin)\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"total\", \"Expression\": {\"SourceRef\": {\"Source\": \"s\"}}}}, \"Function\": 0}, \"Name\": \"Sum(sales_06_FY2020-21.total)\", \"NativeReferenceName\": \"Sum of total\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"s\"}}, \"Property\": \"Age (bin)\"}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"15D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Age-Wise Sales Analysis'\"}}}}}]}}}"
+        },
+        {
+          "x": 2,
+          "y": 121,
+          "z": 0,
+          "width": 405,
+          "height": 315,
+          "config": "{\"name\": \"fef93d4a1a3d7710d6ee8\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 2, \"y\": 121, \"z\": 1000, \"width\": 405, \"height\": 315, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"columnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"sales_06_FY2020-21.month\", \"active\": true}], \"Y\": [{\"queryRef\": \"Sum(sales_06_FY2020-21.total)\"}], \"Series\": [{\"queryRef\": \"sales_06_FY2020-21.total\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"s\", \"Entity\": \"sales_06_FY2020-21\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Property\": \"month\", \"Expression\": {\"SourceRef\": {\"Source\": \"s\"}}}, \"Name\": \"sales_06_FY2020-21.month\", \"NativeReferenceName\": \"month\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"total\", \"Expression\": {\"SourceRef\": {\"Source\": \"s\"}}}}, \"Function\": 0}, \"Name\": \"Sum(sales_06_FY2020-21.total)\", \"NativeReferenceName\": \"Sum of total\"}, {\"Column\": {\"Property\": \"total\", \"Expression\": {\"SourceRef\": {\"Source\": \"s\"}}}, \"Name\": \"sales_06_FY2020-21.total\", \"NativeReferenceName\": \"total\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"total\", \"Expression\": {\"SourceRef\": {\"Source\": \"s\"}}}}, \"Function\": 0}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"15D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Month-Wise Revenue'\"}}}}}]}}}"
+        },
+        {
+          "x": -17,
+          "y": 441,
+          "z": 0,
+          "width": 1214,
+          "height": 356,
+          "config": "{\"name\": \"d82a9fead62d762265e78585af0c\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": -17, \"y\": 441, \"z\": 0, \"width\": 1214, \"height\": 356, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"scatterChart\", \"projections\": {\"Values\": [{\"queryRef\": \"sales_06_FY2020-21.qty_ordered\"}, {\"queryRef\": \"sales_06_FY2020-21.Discount_Percent\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"s\", \"Entity\": \"sales_06_FY2020-21\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"s\"}}, \"Property\": \"qty_ordered\"}, \"Name\": \"sales_06_FY2020-21.qty_ordered\", \"NativeReferenceName\": \"qty_ordered\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"s\"}}, \"Property\": \"Discount_Percent\"}, \"Name\": \"sales_06_FY2020-21.Discount_Percent\", \"NativeReferenceName\": \"Discount_Percent\"}], \"OrderBy\": []}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"15D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Quantity - Discount Correlation'\"}}}}}]}}}"
+        },
+        {
+          "x": 411,
+          "y": 123,
+          "z": 0,
+          "width": 409,
+          "height": 318,
+          "config": "{\"name\": \"9fa2f1e44eab\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 411, \"y\": 123, \"z\": 0, \"width\": 409, \"height\": 318, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"filledMap\", \"projections\": {\"Values\": [{\"queryRef\": \"sales_06_FY2020-21.Latitude (generated)\"}, {\"queryRef\": \"sales_06_FY2020-21.Longitude (generated)\"}, {\"queryRef\": \"Sum(sales_06_FY2020-21.total)\"}, {\"queryRef\": \"sales_06_FY2020-21.State\"}, {\"queryRef\": \"sales_06_FY2020-21.Geometry (generated)\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"s\", \"Entity\": \"sales_06_FY2020-21\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"s\"}}, \"Property\": \"Latitude (generated)\"}, \"Name\": \"sales_06_FY2020-21.Latitude (generated)\", \"NativeReferenceName\": \"Latitude (generated)\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"s\"}}, \"Property\": \"Longitude (generated)\"}, \"Name\": \"sales_06_FY2020-21.Longitude (generated)\", \"NativeReferenceName\": \"Longitude (generated)\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"s\"}}, \"Property\": \"total\"}}, \"Function\": 0}, \"Name\": \"Sum(sales_06_FY2020-21.total)\", \"NativeReferenceName\": \"Sum of total\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"s\"}}, \"Property\": \"State\"}, \"Name\": \"sales_06_FY2020-21.State\", \"NativeReferenceName\": \"State\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"s\"}}, \"Property\": \"Geometry (generated)\"}, \"Name\": \"sales_06_FY2020-21.Geometry (generated)\", \"NativeReferenceName\": \"Geometry (generated)\"}], \"OrderBy\": []}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"15D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Revenue per State'\"}}}}}]}}}"
+        }
+      ],
+      "width": 1200.0,
+      "height": 800.0
+    }
+  ]
+}
