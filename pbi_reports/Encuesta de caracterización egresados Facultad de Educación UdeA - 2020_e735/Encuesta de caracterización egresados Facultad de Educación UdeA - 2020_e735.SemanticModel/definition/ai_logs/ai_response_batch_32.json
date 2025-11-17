@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "name": "\"Número de cédula:\",\"Marca temporal\",\"Dirección de correo electrónico\",\"Nombres y apellidos:\",\"Identidad de género:\",\"Dirección - División 6",
+      "dax_expression": "TRIM(PATHITEM(SUBSTITUTE('TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[\"Número de cédula:\",\"Marca temporal\",\"Dirección de correo electrónico\",\"Nombres y apellidos:\",\"Identidad de género:\",\"Dirección], \",\", \"|\"), 6))",
+      "solution_explanation": "Replaced Tableau SPLIT(column, \",\", 6) with DAX PATHITEM(SUBSTITUTE(column, \",\", \"|\"), 6) to extract the 6th token, and wrapped with TRIM to remove surrounding spaces. This is a row-level string transformation, so it is implemented as a calculated column."
+    }
+  ]
+}
