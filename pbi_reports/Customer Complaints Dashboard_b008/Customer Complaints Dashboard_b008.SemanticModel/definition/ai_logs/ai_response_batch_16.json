@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "complaints",
+      "name": "Bar Label",
+      "dax_expression": "VAR SelProduct = SELECTEDVALUE('complaints'[Selected Product])\nRETURN IF(SelProduct <> \"NOT SELECTED\", DISTINCTCOUNT('complaints'[Complaint ID]), BLANK())",
+      "solution_explanation": "Replaced Tableau ATTR([Selected Product]) with SELECTEDVALUE('complaints'[Selected Product]) to capture the single selected value. Mapped the calculated field [Number of Complaints] (COUNTD([Complaint ID])) to DISTINCTCOUNT('complaints'[Complaint ID]). The IF structure returns the distinct count when the selected product is not \"NOT SELECTED\"; otherwise returns BLANK().",
+      "type_changed_reason": "The calculation depends on an aggregation (COUNTD -> DISTINCTCOUNT), so it must be created as a measure."
+    }
+  ]
+}
