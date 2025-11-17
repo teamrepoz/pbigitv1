@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "raw_data (Dashboard Lesson - Coffee Shop Sales)",
+      "name": "SUM([Revenue]) / TOTAL(SUM([Revenue]))",
+      "dax_expression": "VAR RevenueSum = SUMX(\n    'raw_data (Dashboard Lesson - Coffee Shop Sales)',\n    'raw_data (Dashboard Lesson - Coffee Shop Sales)'[transaction_qty] * 'raw_data (Dashboard Lesson - Coffee Shop Sales)'[unit_price]\n)\nVAR TotalRevenue = CALCULATE(\n    SUMX(\n        'raw_data (Dashboard Lesson - Coffee Shop Sales)',\n        'raw_data (Dashboard Lesson - Coffee Shop Sales)'[transaction_qty] * 'raw_data (Dashboard Lesson - Coffee Shop Sales)'[unit_price]\n    ),\n    ALL('raw_data (Dashboard Lesson - Coffee Shop Sales)')\n)\nRETURN DIVIDE(RevenueSum, TotalRevenue)",
+      "solution_explanation": "Replaced SUM([Revenue]) with SUMX over the table using the calculated-field definition Revenue = [transaction_qty] * [unit_price]. Emulated Tableau's TOTAL(SUM([Revenue])) by calculating the SUMX over ALL('raw_data (Dashboard Lesson - Coffee Shop Sales)') to remove row-level filters. Used DIVIDE for safe division.",
+      "type_changed_reason": "The calculation uses aggregation (SUM) and a table calculation (TOTAL), which are context/aggregate operations; therefore it must be implemented as a measure."
+    }
+  ]
+}
