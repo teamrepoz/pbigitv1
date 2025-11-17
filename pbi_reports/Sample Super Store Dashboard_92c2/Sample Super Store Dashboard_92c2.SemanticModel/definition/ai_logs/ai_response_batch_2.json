@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "Profit ratio",
+      "dax_expression": "SUM('Orders (Sample - Superstore)'[Profit]) / SUM('Orders (Sample - Superstore)'[Sales])",
+      "solution_explanation": "Converted Tableau SUM([Profit])/SUM([Sales]) to DAX using table-qualified columns: SUM('Orders (Sample - Superstore)'[Profit]) / SUM('Orders (Sample - Superstore)'[Sales]).",
+      "type_changed_reason": "This calculation uses aggregation (SUM), so it should be created as a measure."
+    }
+  ]
+}
