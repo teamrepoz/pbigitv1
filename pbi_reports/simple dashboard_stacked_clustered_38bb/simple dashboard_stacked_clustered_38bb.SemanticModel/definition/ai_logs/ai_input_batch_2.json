@@ -1,0 +1,20 @@
+{
+  "calculations": [
+    {
+      "name": "CAal date",
+      "table_name": "Orders (Global Superstore 2016)",
+      "tableau_expression": "TODAY()=[Parameters].[Enter The Date ]",
+      "datatype": "boolean",
+      "calculation_context": {
+        "Expression": "TODAY()=[Parameters].[Enter The Date ]",
+        "calculated_fields": {},
+        "parameters": [
+          "Enter The Date",
+          "Enter The Date "
+        ],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
