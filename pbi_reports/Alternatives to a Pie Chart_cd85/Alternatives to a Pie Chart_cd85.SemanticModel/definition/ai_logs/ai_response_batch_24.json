@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Sheet1 (waffle template)",
+      "name": "BATCH",
+      "dax_expression": "1",
+      "solution_explanation": "The Tableau calculated field is a constant literal (1). This is a row-level expression with no aggregations or parameters, so it is translated to a DAX calculated column containing the literal 1."
+    }
+  ]
+}
