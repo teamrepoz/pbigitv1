@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "name": "index",
+      "dax_expression": "VAR __result = RANKX(\n    ALLSELECTED('TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'),\n    1,\n    ,\n    ASC,\n    DENSE\n)\nRETURN __result",
+      "solution_explanation": "The Tableau INDEX() function is a table calculation that returns the row position within the partition. In Power BI there is no direct INDEX() equivalent; a common approach is to use RANKX over ALLSELECTED(table) to produce a row number within the current filter/sort context. Because the original Tableau expression does not specify a sort column, this measure uses a constant expression (1) as a placeholder; to reproduce the same ordered index as in Tableau you should rank by the actual sort column or expression used in the Tableau view (e.g., replace the expression argument with the column to order by).",
+      "type_changed_reason": "INDEX() is a Tableau table calculation (a window/table calculation) and depends on the view's row ordering/partitioning, so it must be implemented as a measure in Power BI."
+    }
+  ]
+}
