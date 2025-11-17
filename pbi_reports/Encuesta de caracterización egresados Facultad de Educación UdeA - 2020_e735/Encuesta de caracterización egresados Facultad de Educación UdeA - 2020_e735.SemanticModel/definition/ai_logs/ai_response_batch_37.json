@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "name": "Año nacimiento",
+      "dax_expression": "YEAR('TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Fecha_de_Nacimiento])",
+      "solution_explanation": "Converted YEAR([Fecha_de_Nacimiento]) to DAX YEAR('TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Fecha_de_Nacimiento]). The column reference was updated to the 'TableName'[ColumnName] format. This is a row-level date extraction, so it is a calculated column."
+    }
+  ]
+}
