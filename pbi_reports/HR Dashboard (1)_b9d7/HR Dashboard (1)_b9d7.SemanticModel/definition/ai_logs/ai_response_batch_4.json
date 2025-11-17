@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "HR data (HR Data)",
+      "name": "Age (bin)",
+      "dax_expression": "'HR data (HR Data)'[Age]",
+      "solution_explanation": "This is a row-level passthrough of the [Age] column. Mapped the Tableau field to the table-qualified column 'HR data (HR Data)'[Age]. No aggregation or parameters present, so it should be a calculated column."
+    }
+  ]
+}
