@@ -1,0 +1,28 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "rossmann_sales_prediction_aggregated",
+      "name": "Radial Normalised Length",
+      "dax_expression": "VAR radialInner = SELECTEDVALUE('Radial Inner'[Display As])\nVAR radialOuter = SELECTEDVALUE('Radial Outer'[Display As])\nVAR pathOrder = IF(SELECTEDVALUE('rossmann_sales_prediction_aggregated'[Table Name]) = \"rossmann_sales_prediction_aggregated.csv\", 0, 1)\nVAR totalSalesSum = CALCULATE(SUM('rossmann_sales_prediction_aggregated'[Total Sales]))\nVAR maxTotalSales = CALCULATE(\n    MAXX(\n        ALLSELECTED('rossmann_sales_prediction_aggregated'),\n        CALCULATE(SUM('rossmann_sales_prediction_aggregated'[Total Sales]))\n    )\n)\nRETURN\nradialInner + IF(pathOrder = 0, 0, totalSalesSum / maxTotalSales * (radialOuter - radialInner))",
+      "solution_explanation": "Mapped the Tableau expression to a measure. Parameters [Parameters].[Radial Inner] and [Parameters].[Radial Outer] were converted to SELECTEDVALUE('Radial Inner'[Display As]) and SELECTEDVALUE('Radial Outer'[Display As]). ATTR([Path Order]) logic is implemented using SELECTEDVALUE on the derived Table Name comparison. SUM([Radial Field]) is mapped to SUM('rossmann_sales_prediction_aggregated'[Total Sales]). WINDOW_MAX(SUM(...)) is approximated using MAXX over ALLSELECTED('rossmann_sales_prediction_aggregated') to emulate the window maximum in the current selection context.",
+      "type_changed_reason": "This calculation uses aggregations and table calculations (SUM, WINDOW_MAX) and references parameters, so it must be implemented as a measure."
+    },
+    {
+      "type": "measure",
+      "table": "rossmann_sales_prediction_aggregated",
+      "name": "Radial Angle",
+      "dax_expression": "VAR idx = RANKX(ALLSELECTED('rossmann_sales_prediction_aggregated'), CALCULATE(SUM('rossmann_sales_prediction_aggregated'[Total Sales])), , ASC, DENSE)\nVAR countPoints = COUNTROWS(ALLSELECTED('rossmann_sales_prediction_aggregated'))\nRETURN\n(idx - 1) * (1 / countPoints) * 2 * PI()",
+      "solution_explanation": "Translated the INDEX() and WINDOW_COUNT(COUNT([Radial Field])) table calculations into DAX using RANKX over ALLSELECTED to emulate the row index (using SUM of Total Sales as the ranking expression) and COUNTROWS(ALLSELECTED(...)) to emulate the window count. COUNT([Radial Field]) context is represented by SUM('rossmann_sales_prediction_aggregated'[Total Sales]) for ranking.",
+      "type_changed_reason": "This calculation uses table calculations (INDEX, WINDOW_COUNT) and aggregation, so it must be implemented as a measure."
+    },
+    {
+      "type": "measure",
+      "table": "rossmann_sales_prediction_aggregated",
+      "name": "Radial Y",
+      "dax_expression": "VAR radialNormalisedLength = [Radial Normalised Length]\nVAR radialAngle = [Radial Angle]\nRETURN\nradialNormalisedLength * SIN(radialAngle)",
+      "solution_explanation": "Direct multiplication of the two dependent measures. Uses the previously defined measures Radial Normalised Length and Radial Angle and applies SIN to the angle value. Implemented as a measure because it depends on other measures that use aggregations and table calculations.",
+      "type_changed_reason": "Depends on measures that contain aggregations/table calculations/parameters, therefore must be a measure."
+    }
+  ]
+}
