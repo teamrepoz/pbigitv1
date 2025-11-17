@@ -1,0 +1,18 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "complaints",
+      "name": "Number of Complaints",
+      "dax_expression": "DISTINCTCOUNT('complaints'[Complaint ID])",
+      "solution_explanation": "Translated Tableau COUNTD([Complaint ID]) to DAX DISTINCTCOUNT('complaints'[Complaint ID]). This is an aggregation, so it is implemented as a measure."
+    },
+    {
+      "type": "measure",
+      "table": "complaints",
+      "name": "Product % Complaints",
+      "dax_expression": "VAR Numerator = 'complaints'[Number of Complaints]\nRETURN\nDIVIDE(\n    Numerator,\n    CALCULATE(Numerator, ALL('complaints'))\n)",
+      "solution_explanation": "Tableau expression divides the measure by TOTAL(...) (a table calculation). Implemented as DIVIDE([Number of Complaints], CALCULATE([Number of Complaints], ALL('complaints'))) to compute percent of total. Used CALCULATE with ALL('complaints') to replicate TOTAL across the full partition and DIVIDE to guard against division by zero. Created as a measure because it relies on aggregation/table calculation."
+    }
+  ]
+}
