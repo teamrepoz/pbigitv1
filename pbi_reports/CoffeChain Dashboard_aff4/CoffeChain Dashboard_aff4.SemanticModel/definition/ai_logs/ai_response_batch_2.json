@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "CoffeeChain Query (Sample - Cof (CoffeeChain DATASET)",
+      "name": "Profit per year",
+      "dax_expression": "VAR currentYear = YEAR( MAX('CoffeeChain Query (Sample - Cof (CoffeeChain DATASET)'[Date]) )\nRETURN\nCALCULATE(\n    SUM('CoffeeChain Query (Sample - Cof (CoffeeChain DATASET)'[Profit]),\n    FILTER(\n        ALL('CoffeeChain Query (Sample - Cof (CoffeeChain DATASET)'),\n        YEAR('CoffeeChain Query (Sample - Cof (CoffeeChain DATASET)'[Date]) = currentYear\n    )\n)",
+      "solution_explanation": "Translated the Tableau FIXED LOD {FIXED [Year] : SUM([Profit])} into a measure that calculates the sum of Profit for the Year of the current context. The measure captures the current year using YEAR(MAX(Date)) and then calculates SUM(Profit) over all rows where YEAR(Date) matches that year, thus removing other dimensional filters while preserving year granularity.",
+      "type_changed_reason": "The Tableau expression uses a FIXED Level of Detail ({FIXED ...}), which is an aggregation/context-based calculation; such calculations must be implemented as measures in Power BI."
+    }
+  ]
+}
