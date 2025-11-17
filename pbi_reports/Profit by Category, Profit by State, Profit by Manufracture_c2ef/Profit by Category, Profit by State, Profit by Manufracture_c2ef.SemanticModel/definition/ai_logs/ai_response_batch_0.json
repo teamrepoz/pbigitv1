@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Parameters",
+      "name": "Top Customers",
+      "dax_expression": "5",
+      "solution_explanation": "The Tableau expression is a constant numeric (5). This is a row-level constant without aggregations or parameters, so it is implemented as a calculated column with the DAX expression 5."
+    }
+  ]
+}
