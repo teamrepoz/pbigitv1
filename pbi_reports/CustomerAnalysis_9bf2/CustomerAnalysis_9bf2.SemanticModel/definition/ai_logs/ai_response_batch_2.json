@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "sales_06_FY2020-21",
+      "name": "Male Revenue",
+      "dax_expression": "IF('sales_06_FY2020-21'[Gender] = \"M\", 'sales_06_FY2020-21'[total])",
+      "solution_explanation": "Row-level calculation: returns total for rows where Gender = \"M\". Converted Tableau IF to DAX IF and mapped column references to 'sales_06_FY2020-21'[Column] format."
+    }
+  ]
+}
