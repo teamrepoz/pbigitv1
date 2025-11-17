@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Adult Education  Dashboard_ae44"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "eef6c8fa-cd72-4a71-9108-9b5b27c4514a"
+  }
+}
