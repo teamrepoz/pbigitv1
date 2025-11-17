@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "raw_data (Dashboard Lesson - Coffee Shop Sales)",
+      "name": "Zero Axis",
+      "dax_expression": "0",
+      "solution_explanation": "The Tableau expression is a constant 0 which maps directly to the DAX constant 0. There are no aggregations or parameters and it operates at the row level, so it should be created as a calculated column."
+    }
+  ]
+}
