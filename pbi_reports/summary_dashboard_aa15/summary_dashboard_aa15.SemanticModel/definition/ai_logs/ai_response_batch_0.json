@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "ecommerce-combined",
+      "name": "BATCH",
+      "dax_expression": "1",
+      "solution_explanation": "The Tableau expression is a constant literal (1) with no aggregations or parameter references. This is a row-level value and is implemented as a calculated column that returns 1 for each row."
+    }
+  ]
+}
