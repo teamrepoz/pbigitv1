@@ -1,0 +1,24 @@
+{
+  "calculations": [
+    {
+      "name": "beans años de estudio",
+      "table_name": "historicoEducacionCLEAN (historicoEducacionCLEAN)",
+      "tableau_expression": "IF [Años de estudio] >= 1 AND [Años de estudio] <=5\r\nTHEN \"1-5\"\r\n\r\nELSEIF \r\n[Años de estudio] >= 6 AND [Años de estudio] <=10\r\nTHEN \"6-10\"\r\n\r\nELSEIF \r\n[Años de estudio] >= 11 AND [Años de estudio] <=20\r\nTHEN \"11-20\"\r\n\r\nELSEIF \r\n[Años de estudio] >= 21 AND [Años de estudio] <=30\r\nTHEN \"21-30\"\r\n\r\n\r\n\r\nEND",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "IF [Años de estudio] >= 1 AND [Años de estudio] <=5\r\nTHEN \"1-5\"\r\n\r\nELSEIF \r\n[Años de estudio] >= 6 AND [Años de estudio] <=10\r\nTHEN \"6-10\"\r\n\r\nELSEIF \r\n[Años de estudio] >= 11 AND [Años de estudio] <=20\r\nTHEN \"11-20\"\r\n\r\nELSEIF \r\n[Años de estudio] >= 21 AND [Años de estudio] <=30\r\nTHEN \"21-30\"\r\n\r\n\r\n\r\nEND",
+        "calculated_fields": {
+          "Años de estudio": "IF NOT ISNULL([Año título]) THEN ( [Año título] - [Año inicio]) \r\nELSEIF NOT ISNULL([Año inicio]) THEN ( [Año título] - [Año inicio]) \r\n\r\n\r\nEND"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Año inicio": "integer",
+          "Año título": "integer"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Años de estudio": "Int64"
+        }
+      }
+    }
+  ]
+}
