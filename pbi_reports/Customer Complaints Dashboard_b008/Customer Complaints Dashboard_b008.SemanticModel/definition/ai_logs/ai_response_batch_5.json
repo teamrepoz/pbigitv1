@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Data (Complaint Line)",
+      "name": "TC_Value",
+      "dax_expression": "VAR windowMax = MAXX(ALLSELECTED('Data (Complaint Line)'), 'Data (Complaint Line)'[Value])\nRETURN\nwindowMax",
+      "solution_explanation": "Tableau's WINDOW_MAX(MAX([Value])) is a table calculation that returns the maximum of the aggregated Value across the window. In DAX, this is represented by using MAXX over ALLSELECTED to emulate the table-calculation window scope: MAXX(ALLSELECTED('Data (Complaint Line)'), 'Data (Complaint Line)'[Value]). The result is implemented as a measure because it relies on table-calculation/aggregation semantics."
+    }
+  ]
+}
