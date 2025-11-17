@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Parameters",
+      "name": "Parámetro 3",
+      "dax_expression": "\"De 1 a 2\"",
+      "solution_explanation": "The Tableau expression is a constant string literal. Converted to a DAX calculated column that returns the same literal string. No aggregations or parameter references are present, so this is a row-level (dimension) calculation."
+    }
+  ]
+}
