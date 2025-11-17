@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "Enter The Date ",
+      "table_name": "Parameters",
+      "tableau_expression": "#2017-09-04#",
+      "datatype": "date",
+      "calculation_context": {
+        "Expression": "#2017-09-04#",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
