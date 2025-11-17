@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Sales DataSource",
+      "name": "Total Stores",
+      "dax_expression": "DISTINCTCOUNT('Sales DataSource'[STORE_ID])",
+      "solution_explanation": "COUNTD([STORE_ID]) in Tableau maps to DISTINCTCOUNT('Sales DataSource'[STORE_ID]) in DAX. This is an aggregation across rows, so it should be implemented as a measure.",
+      "type_changed_reason": "This calculation uses an aggregation (COUNTD/DISTINCT COUNT), so it should be created as a measure."
+    }
+  ]
+}
