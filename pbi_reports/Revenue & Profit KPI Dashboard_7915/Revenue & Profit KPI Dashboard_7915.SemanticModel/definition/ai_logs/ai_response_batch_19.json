@@ -1,0 +1,28 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "Max Date",
+      "dax_expression": "CALCULATE(MAX('Orders (Sample - Superstore)'[Order Date]), ALL('Orders (Sample - Superstore)'))",
+      "solution_explanation": "Tableau LOD {MAX([Order Date])} is translated to a measure that returns the maximum Order Date across the entire table, ignoring filters. In DAX this is CALCULATE(MAX(...), ALL(table)).",
+      "type_changed_reason": "This calculation is an aggregate (LOD {MAX([Order Date])}), so it must be implemented as a measure."
+    },
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "First Date Pre Month",
+      "dax_expression": "VAR MaxDate = [Max Date]\nRETURN DATE(YEAR(MaxDate), MONTH(MaxDate) - 1, 1)",
+      "solution_explanation": "Tableau DATE(DATETRUNC('month', DATEADD('month', -1, [Max Date]))) computes the first day of the month prior to Max Date. In DAX we take the Max Date measure and build the first day of the previous month with DATE(YEAR(...), MONTH(...) - 1, 1).",
+      "type_changed_reason": "Depends on the aggregate Max Date (LOD), so this must be a measure."
+    },
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "First Date Pre Month - Last Year",
+      "dax_expression": "VAR FirstDatePreMonth = [First Date Pre Month]\nRETURN DATE(YEAR(FirstDatePreMonth) - 1, MONTH(FirstDatePreMonth), DAY(FirstDatePreMonth))",
+      "solution_explanation": "Tableau date(DATEADD('year', -1, [First Date Pre Month])) shifts the computed First Date Pre Month back by one year. In DAX we subtract one from the YEAR of the First Date Pre Month measure and reconstruct the date.",
+      "type_changed_reason": "This calculation references calculated fields that depend on aggregates (Max Date), so it must be a measure."
+    }
+  ]
+}
