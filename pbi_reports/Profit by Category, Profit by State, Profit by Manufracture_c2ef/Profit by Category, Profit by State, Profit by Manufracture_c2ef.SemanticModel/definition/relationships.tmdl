@@ -1,0 +1,10 @@
+relationship fcfeeeb5-521e-4121-ab62-8a10ff95bf6d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Sample - Superstore'.'Order Date'
+	toColumn: LocalDateTable_3de211aa-466e-401c-9ff6-495667f01240.Date
+
+relationship 03763d10-2c6f-4070-a40e-63d5b0efe616
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Sample - Superstore'.'Ship Date'
+	toColumn: LocalDateTable_8c5330a3-6c7f-490a-a429-6828077c470c.Date
+
