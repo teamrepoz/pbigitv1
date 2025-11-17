@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Max Date",
+      "table_name": "Orders (Sample - Superstore)",
+      "tableau_expression": "{MAX([Order Date])}",
+      "datatype": "date",
+      "calculation_context": {
+        "Expression": "{MAX([Order Date])}",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Order Date": "date"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
