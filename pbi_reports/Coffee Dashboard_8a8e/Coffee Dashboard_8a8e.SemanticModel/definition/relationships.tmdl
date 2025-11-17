@@ -1,0 +1,10 @@
+relationship 24181231-a044-4336-a615-712cb33683f7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'raw_data (Dashboard Lesson - Coffee Shop Sales)'.transaction_date
+	toColumn: LocalDateTable_7fe6923d-416c-4a46-9b05-5e837b6fae15.Date
+
+relationship 5f784b79-288e-485b-ae2b-1a60e7c9a973
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'raw_data (Dashboard Lesson - Coffee Shop Sales)'.transaction_time
+	toColumn: LocalDateTable_44bfdcbe-f3c2-4515-ae61-c32380dbc5c8.Date
+
