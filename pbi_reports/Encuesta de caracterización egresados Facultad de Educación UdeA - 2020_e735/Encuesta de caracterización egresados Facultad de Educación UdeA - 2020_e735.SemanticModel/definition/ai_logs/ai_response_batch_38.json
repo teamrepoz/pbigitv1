@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "name": "Tipo de egresado",
+      "dax_expression": "IF( ISBLANK('TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[\"Si la respuesta anterior fue afirmativa, seleccione el tipo de posgrado del cual es egresado\"] ), \"Pregrado\", 'TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[\"Si la respuesta anterior fue afirmativa, seleccione el tipo de posgrado del cual es egresado\"] )",
+      "solution_explanation": "Converted Tableau IF ISNULL(...) THEN ... ELSE ... END to DAX IF with ISBLANK; transformed field reference to 'TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[\"Si la respuesta anterior fue afirmativa, seleccione el tipo de posgrado del cual es egresado\"]. This is a row-level transformation, so it's implemented as a calculated column."
+    }
+  ]
+}
