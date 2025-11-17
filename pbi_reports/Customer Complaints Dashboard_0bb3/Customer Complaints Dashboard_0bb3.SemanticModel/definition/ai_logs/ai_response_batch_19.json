@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "All_Product_List",
+      "name": "Selected Color",
+      "dax_expression": "'All_Product_List'[Value] = SELECTEDVALUE('Selected Product'[Display As])",
+      "solution_explanation": "Replaced Tableau row-level reference [Value] with 'All_Product_List'[Value] and replaced the Tableau parameter [Parameters].[Selected Product] with SELECTEDVALUE('Selected Product'[Display As]) as required. Preserved the equality comparison as the measure's result.",
+      "type_changed_reason": "The calculation references a Tableau parameter ([Parameters].[Selected Product]); per rules parameter-based calculations must be measures."
+    }
+  ]
+}
