@@ -1,0 +1,18 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Data (Complaint Line)",
+      "name": "TC_Value",
+      "dax_expression": "VAR WindowMax =\n    CALCULATE(\n        MAX('Data (Complaint Line)'[Value]),\n        ALLSELECTED('Data (Complaint Line)')\n    )\nRETURN\n    WindowMax",
+      "solution_explanation": "Converted WINDOW_MAX(MAX([Value])) to a measure that calculates the MAX of 'Data (Complaint Line)'[Value] over the current selected window using ALLSELECTED to emulate the table-calculation window context. This must be a measure because WINDOW_MAX is a table calculation (aggregate over a window)."
+    },
+    {
+      "type": "measure",
+      "table": "Data (Complaint Line)",
+      "name": "TC_Start Point",
+      "dax_expression": "VAR RunningSum =\n    SUMX(\n        ALLSELECTED('Data (Complaint Line)'),\n        'Data (Complaint Line)'[TC_Value]\n    )\nRETURN\n    RunningSum - 'Data (Complaint Line)'[TC_Value]",
+      "solution_explanation": "Translated RUNNING_SUM([TC_Value]) - [TC_Value] into DAX. RUNNING_SUM was mapped to a SUMX over ALLSELECTED to approximate the running/window sum context; the measure then subtracts the current row's TC_Value. The calculation is a measure because it relies on table calculations (RUNNING_SUM) / windowed aggregation logic."
+    }
+  ]
+}
