@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Año título (copia)",
+      "table_name": "historicoEducacionCLEAN (historicoEducacionCLEAN)",
+      "tableau_expression": "DATE(IF NOT ISNULL( DATEPARSE ( \"yyyy\", STR([Año título]) )  ) THEN DATEPARSE ( \"yyyy\", STR([Año título]) )   ELSEIF NOT ISNULL ( DATEPARSE ( \"HH\", STR([Año título]) )  ) THEN DATEPARSE ( \"HH\", STR([Año título]) )   END)",
+      "datatype": "date",
+      "calculation_context": {
+        "Expression": "DATE(IF NOT ISNULL( DATEPARSE ( \"yyyy\", STR([Año título]) )  ) THEN DATEPARSE ( \"yyyy\", STR([Año título]) )   ELSEIF NOT ISNULL ( DATEPARSE ( \"HH\", STR([Año título]) )  ) THEN DATEPARSE ( \"HH\", STR([Año título]) )   END)",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Año título": "integer"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
