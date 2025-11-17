@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "name": "Años cuando se graduo (agrupación)",
+      "dax_expression": "'TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Año de egreso] - YEAR('TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Fecha_de_Nacimiento])",
+      "solution_explanation": "Converted the row-level Tableau calculation [Años cuando se graduo] which is [Año de egreso] - YEAR([Fecha_de_Nacimiento]) into a calculated column using DAX YEAR() and row-level column references in the 'Table'[Column] format."
+    }
+  ]
+}
