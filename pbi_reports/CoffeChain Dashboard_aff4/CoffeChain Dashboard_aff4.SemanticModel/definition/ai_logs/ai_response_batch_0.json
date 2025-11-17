@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Parameters",
+      "name": "top 10 products",
+      "dax_expression": "8",
+      "solution_explanation": "This is a constant numeric literal with no row-level references or aggregations, so it should be created as a calculated column in the 'Parameters' table."
+    }
+  ]
+}
