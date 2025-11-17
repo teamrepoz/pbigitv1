@@ -1,0 +1,23 @@
+{
+  "calculations": [
+    {
+      "name": "Map Toggle",
+      "table_name": "complaints",
+      "tableau_expression": "[Parameters].[Map Type]",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "[Parameters].[Map Type]",
+        "calculated_fields": {
+          "Map Type": "\"Tile\""
+        },
+        "parameters": [
+          "Map Type"
+        ],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {
+          "Map Type": "string"
+        }
+      }
+    }
+  ]
+}
