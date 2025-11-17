@@ -1,0 +1,21 @@
+{
+  "calculations": [
+    {
+      "name": "Total Discount",
+      "table_name": "Sales DataSource",
+      "tableau_expression": "ABS(SUM([COUPON_DISC])+ SUM([COUPON_MATCH_DISC]) + SUM([RETAIL_DISC]))",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "ABS(SUM([COUPON_DISC])+ SUM([COUPON_MATCH_DISC]) + SUM([RETAIL_DISC]))",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "RETAIL_DISC": "real",
+          "COUPON_DISC": "real",
+          "COUPON_MATCH_DISC": "real"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
