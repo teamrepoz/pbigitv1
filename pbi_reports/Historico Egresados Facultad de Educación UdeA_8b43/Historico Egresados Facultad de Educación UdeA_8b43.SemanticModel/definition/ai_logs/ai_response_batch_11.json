@@ -1,0 +1,18 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "historicoEducacionCLEAN (historicoEducacionCLEAN)",
+      "name": "Año Nacimiento",
+      "dax_expression": "YEAR('historicoEducacionCLEAN (historicoEducacionCLEAN)'[Fecha_de_Nacimiento])",
+      "solution_explanation": "Converted Tableau YEAR([Fecha_de_Nacimiento]) to DAX YEAR('historicoEducacionCLEAN (historicoEducacionCLEAN)'[Fecha_de_Nacimiento]). Column reference was changed to the table-qualified format. This is a row-level date extraction, so implemented as a calculated column."
+    },
+    {
+      "type": "calculated_column",
+      "table": "historicoEducacionCLEAN (historicoEducacionCLEAN)",
+      "name": "Edad graduando ",
+      "dax_expression": "VAR AñoNacimiento = 'historicoEducacionCLEAN (historicoEducacionCLEAN)'[Año Nacimiento]\nVAR AñoTitulo = 'historicoEducacionCLEAN (historicoEducacionCLEAN)'[Año título]\nRETURN\nIF(\n    NOT(ISBLANK(AñoNacimiento)),\n    AñoTitulo - AñoNacimiento,\n    IF(\n        NOT(ISBLANK(AñoTitulo)),\n        AñoTitulo - AñoNacimiento,\n        BLANK()\n    )\n)",
+      "solution_explanation": "Translated Tableau IF NOT ISNULL(...) / ELSEIF NOT ISNULL(...) into DAX using ISBLANK checks and nested IFs. All column references were converted to the table-qualified form. Used VARs for clarity and returned BLANK() when neither condition is met. This logic is row-level (no aggregations or parameters), so it is a calculated column."
+    }
+  ]
+}
