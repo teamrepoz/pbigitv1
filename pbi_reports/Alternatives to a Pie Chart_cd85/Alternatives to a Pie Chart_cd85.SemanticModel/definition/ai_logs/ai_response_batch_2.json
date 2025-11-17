@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Sheet1 (radial_bar_chart_data)",
+      "name": "Index",
+      "dax_expression": "VAR _IndexRank = RANKX(ALLSELECTED('Sheet1 (radial_bar_chart_data)'), 0, , ASC, DENSE)\nRETURN (_IndexRank - 1) * 2",
+      "solution_explanation": "Tableau's INDEX() is a table-calculation (row position) which has no direct one-to-one DAX function. In Power BI you typically create a physical index column in Power Query or use RANKX with an explicit ordering expression. The measure above uses RANKX(ALLSELECTED('Sheet1 (radial_bar_chart_data)'), 0, , ASC, DENSE) as a placeholder to produce a row-based rank within the current filter context — replace the second argument (the 0) with the expression that defines your desired ordering if needed. The final result follows the original formula: (index - 1) * 2.",
+      "type_changed_reason": "The Tableau formula uses the table calculation INDEX(), which is context/aggregation-based (row-position). Per conversion rules, table calculations must be converted to measures in Power BI."
+    }
+  ]
+}
