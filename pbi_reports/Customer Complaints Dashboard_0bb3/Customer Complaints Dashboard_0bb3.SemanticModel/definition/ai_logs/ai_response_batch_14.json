@@ -1,0 +1,18 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "complaints",
+      "name": "Number of Complaints",
+      "dax_expression": "DISTINCTCOUNT('complaints'[Complaint ID])",
+      "solution_explanation": "Converted Tableau COUNTD([Complaint ID]) to DAX DISTINCTCOUNT on 'complaints'[Complaint ID]. This is an aggregation, so it is implemented as a measure."
+    },
+    {
+      "type": "measure",
+      "table": "complaints",
+      "name": "Product % Complaints",
+      "dax_expression": "DIVIDE([Number of Complaints], CALCULATE([Number of Complaints], ALL('complaints')))",
+      "solution_explanation": "Tableau TOTAL([Number of Complaints]) returns the grand total (table calculation). In DAX, replicate this by calculating the measure over ALL('complaints') to remove filters. Use DIVIDE to safely compute the percentage."
+    }
+  ]
+}
