@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "index",
+      "table_name": "historicoEducacionCLEAN (historicoEducacionCLEAN)",
+      "tableau_expression": "INDEX()",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "INDEX()",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
