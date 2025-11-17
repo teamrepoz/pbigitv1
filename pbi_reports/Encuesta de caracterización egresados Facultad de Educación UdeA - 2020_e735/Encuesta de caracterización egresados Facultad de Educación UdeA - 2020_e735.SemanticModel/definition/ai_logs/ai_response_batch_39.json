@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "name": "NO Pertenece a redes ",
+      "dax_expression": "IF(\n    'TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Pertenece a redes o grupos académicos] = \"No\",\n    BLANK(),\n    IF(\n        'TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Pertenece a redes o grupos académicos] = \"Sí\",\n        \".\",\n        BLANK()\n    )\n)",
+      "solution_explanation": "Translated row-level Tableau IF logic to a DAX calculated column. Comparisons to \"No\" return BLANK(), comparisons to \"Sí\" return \".\". Column references were converted to the 'TableName'[Column] format and NULL mapped to BLANK()."
+    }
+  ]
+}
