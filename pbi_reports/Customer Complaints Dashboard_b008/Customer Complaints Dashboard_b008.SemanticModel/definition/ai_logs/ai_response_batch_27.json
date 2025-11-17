@@ -1,0 +1,19 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "complaints",
+      "name": "Product Grouping",
+      "dax_expression": "SWITCH(\n    TRUE(),\n    'complaints'[Product] = \"Bank account or service\", \"BANK SERVICES\",\n    'complaints'[Product] = \"Checking or savings account\", \"CHECKING / SAVINGS\",\n    'complaints'[Product] = \"Credit card\", \"CREDIT CARD\",\n    'complaints'[Product] = \"Mortgage\", \"MORTGAGE\",\n    \"OTHER\"\n)",
+      "solution_explanation": "Recreated the Tableau CASE mapping as a row-level calculated column using SWITCH(TRUE()) mapping 'complaints'[Product] to the same group strings. This preserves the original row-level logic."
+    },
+    {
+      "type": "measure",
+      "table": "complaints",
+      "name": "Selected Product",
+      "dax_expression": "VAR _selectedParam = SELECTEDVALUE('Selected Product'[Display As])\nRETURN\nIF(\n    _selectedParam = 'complaints'[Product Grouping],\n    'complaints'[Product Grouping],\n    IF(_selectedParam = \"ALL\", \"ALL\", \"NOT SELECTED\")\n)",
+      "solution_explanation": "Converted the Tableau IF/ELSEIF logic to DAX. Parameter reference [Parameters].[Selected Product] was replaced with SELECTEDVALUE('Selected Product'[Display As]). The measure compares the parameter value to the row-level 'complaints'[Product Grouping] (created above) and returns the corresponding string.",
+      "type_changed_reason": "The calculation references a parameter, and all parameter-based calculations must be measures."
+    }
+  ]
+}
