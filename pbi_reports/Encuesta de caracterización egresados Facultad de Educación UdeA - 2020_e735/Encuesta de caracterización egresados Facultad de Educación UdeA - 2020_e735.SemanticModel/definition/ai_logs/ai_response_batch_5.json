@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "name": "Posgrado no concluido ",
+      "dax_expression": "VAR DistinctIDs = VALUES('TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Número de cédula:])\nRETURN\nSUMX(\n    DistinctIDs,\n    VAR HasNo = CALCULATE(\n        COUNTROWS('TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'),\n        'TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Posgrado concluido] = \"No\"\n    )\n    RETURN IF(HasNo > 0, 1, 0)\n)",
+      "solution_explanation": "Converted the FIXED LOD that performs COUNTD(IF [Posgrado concluido] = \"No\" THEN 1 END) per [Número de cédula:] into a measure. The measure iterates distinct Número de cédula:, uses CALCULATE to check if any row for that ID has Posgrado concluido = \"No\" (countrows > 0), returns 1 for that ID if true, and sums those results to produce the total.",
+      "type_changed_reason": "The original Tableau expression uses a FIXED LOD ({ FIXED ... }), which is an aggregation/context-based calculation; per rules it must be implemented as a measure."
+    }
+  ]
+}
