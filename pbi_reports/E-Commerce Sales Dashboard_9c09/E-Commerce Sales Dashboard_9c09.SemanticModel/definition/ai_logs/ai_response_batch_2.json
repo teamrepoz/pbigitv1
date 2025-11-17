@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Sales DataSource",
+      "name": "Revenue Per Product",
+      "dax_expression": "SUM('Sales DataSource'[SALES_VALUE]) / DISTINCTCOUNT('Sales DataSource'[PRODUCT_ID])",
+      "solution_explanation": "Replaced SUM with SUM, COUNTD with DISTINCTCOUNT, and converted column references to 'Sales DataSource'[Column] format.",
+      "type_changed_reason": "The calculation uses aggregations (SUM and COUNTD), so it should be created as a measure."
+    }
+  ]
+}
