@@ -1,0 +1,20 @@
+relationship 36641a23-0730-4420-8721-e9e26cb39718
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'HR Dataset'.DOB
+	toColumn: LocalDateTable_a7721c1a-b485-42d1-8e39-4732eb999b8d.Date
+
+relationship 49765c37-59f9-486e-8d8e-b84818642745
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'HR Dataset'.DateofHire
+	toColumn: LocalDateTable_23135532-10ad-4224-9480-b8482e63d89d.Date
+
+relationship d11a2722-a4c8-439b-b259-4859efda74d7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'HR Dataset'.DateofTermination
+	toColumn: LocalDateTable_3481565d-a026-4e17-a646-aa8e05cb37d7.Date
+
+relationship ffd1df7a-b4a7-4c5c-a469-24a88a22686e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'HR Dataset'.LastPerformanceReview_Date
+	toColumn: LocalDateTable_7b55bea7-5fb2-4de8-8302-535fec2b4328.Date
+
