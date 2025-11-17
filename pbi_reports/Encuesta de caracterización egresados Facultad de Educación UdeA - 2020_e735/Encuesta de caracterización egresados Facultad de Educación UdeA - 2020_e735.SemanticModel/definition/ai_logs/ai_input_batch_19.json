@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Total conferencia",
+      "table_name": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "tableau_expression": "COUNTD([Conferencias])",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "COUNTD([Conferencias])",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Conferencias": "integer"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
