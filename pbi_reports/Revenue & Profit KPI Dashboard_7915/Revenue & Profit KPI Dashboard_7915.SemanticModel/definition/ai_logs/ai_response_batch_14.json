@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "Pre Month Value - Last Year",
+      "dax_expression": "VAR MaxDate = CALCULATE(MAX('Orders (Sample - Superstore)'[Order Date]), ALL('Orders (Sample - Superstore)'))\nVAR PrevMonthDate = EDATE(MaxDate, -1)\nVAR FirstDatePreMonth = DATE(YEAR(PrevMonthDate), MONTH(PrevMonthDate), 1)\nVAR FirstDatePreMonthLastYear = DATE(YEAR(FirstDatePreMonth) - 1, MONTH(FirstDatePreMonth), 1)\nVAR UpperBound = DATE(YEAR(MaxDate) - 1, MONTH(MaxDate), 1)\nVAR SelectedMeasure = SELECTEDVALUE('Measure Selector Param'[Display As])\nRETURN\nSWITCH(\n    SelectedMeasure,\n    \"Profit\", CALCULATE(\n        SUM('Orders (Sample - Superstore)'[Profit]),\n        FILTER(\n            ALL('Orders (Sample - Superstore)'),\n            'Orders (Sample - Superstore)'[Order Date] >= FirstDatePreMonthLastYear &&\n            'Orders (Sample - Superstore)'[Order Date] < UpperBound\n        )\n    ),\n    \"Sales\", CALCULATE(\n        SUM('Orders (Sample - Superstore)'[Sales]),\n        FILTER(\n            ALL('Orders (Sample - Superstore)'),\n            'Orders (Sample - Superstore)'[Order Date] >= FirstDatePreMonthLastYear &&\n            'Orders (Sample - Superstore)'[Order Date] < UpperBound\n        )\n    ),\n    0\n)",
+      "solution_explanation": "Converted the Tableau LOD sum of a conditional Measure Selector into a DAX measure. Inlined dependent calculated fields: Max Date as the dataset max (using CALCULATE(..., ALL(...))), computed the first day of the previous month and then the same day one year earlier. Mapped the Tableau parameter to SELECTEDVALUE('Measure Selector Param'[Display As]) and used SWITCH to choose SUM(Profit) or SUM(Sales). Used FILTER(ALL(...)) to mimic the FIXED/LOD behavior so the date bounds are evaluated across the full table.",
+      "type_changed_reason": "The original formula includes aggregation/LOD logic and references a parameter (Measure Selector Param); per rules this should be implemented as a measure."
+    }
+  ]
+}
