@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "HR data (HR Data)",
+      "name": "Active Employees",
+      "dax_expression": "SUM('HR data (HR Data)'[Employee Count]) - SUM('HR data (HR Data)'[Attrition Count])",
+      "solution_explanation": "Converted Tableau aggregations to DAX by wrapping each referenced field with SUM() and mapping column references to the table-qualified format 'HR data (HR Data)'[Column]. Kept as a measure because the expression uses aggregations (SUM)."
+    }
+  ]
+}
