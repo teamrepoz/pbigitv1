@@ -1,0 +1,20 @@
+{
+  "calculations": [
+    {
+      "name": "Total expenses to sales  Ratio",
+      "table_name": "CoffeeChain Query (Sample - Cof (CoffeeChain DATASET)",
+      "tableau_expression": "(sum([Total Expenses])/ SUM([Sales])) * 100",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "(sum([Total Expenses])/ SUM([Sales])) * 100",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Sales": "integer",
+          "Total Expenses": "integer"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
