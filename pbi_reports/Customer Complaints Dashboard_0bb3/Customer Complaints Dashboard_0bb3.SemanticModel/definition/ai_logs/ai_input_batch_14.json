@@ -1,0 +1,23 @@
+{
+  "calculations": [
+    {
+      "name": "Product % Complaints",
+      "table_name": "complaints",
+      "tableau_expression": "[Number of Complaints] / TOTAL([Number of Complaints])",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "[Number of Complaints] / TOTAL([Number of Complaints])",
+        "calculated_fields": {
+          "Number of Complaints": "COUNTD([Complaint ID])"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Complaint ID": "integer"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Number of Complaints": "integer"
+        }
+      }
+    }
+  ]
+}
