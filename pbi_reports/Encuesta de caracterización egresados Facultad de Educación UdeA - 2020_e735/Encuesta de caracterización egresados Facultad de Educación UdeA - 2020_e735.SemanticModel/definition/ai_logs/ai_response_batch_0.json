@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Parameters",
+      "name": "Elegir valor ",
+      "dax_expression": "5",
+      "solution_explanation": "The Tableau expression is a literal constant (5). In DAX this is represented directly as the constant 5. This is implemented as a calculated column because it is a row-level/static value not using aggregations or parameters."
+    }
+  ]
+}
