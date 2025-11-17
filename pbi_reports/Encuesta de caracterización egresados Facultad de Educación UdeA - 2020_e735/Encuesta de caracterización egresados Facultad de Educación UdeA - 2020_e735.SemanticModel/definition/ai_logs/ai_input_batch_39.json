@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "NO Pertenece a redes ",
+      "table_name": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "tableau_expression": "IF [Pertenece a redes o grupos académicos] = \"No\"\r\nTHEN [Pertenece a redes o grupos académicos] = NULL\r\nELSEIF [Pertenece a redes o grupos académicos] =\"Sí\" \r\nTHEN [Pertenece a redes o grupos académicos] = \".\"\r\nEND",
+      "datatype": "boolean",
+      "calculation_context": {
+        "Expression": "IF [Pertenece a redes o grupos académicos] = \"No\"\r\nTHEN [Pertenece a redes o grupos académicos] = NULL\r\nELSEIF [Pertenece a redes o grupos académicos] =\"Sí\" \r\nTHEN [Pertenece a redes o grupos académicos] = \".\"\r\nEND",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Pertenece a redes o grupos académicos": "string"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
