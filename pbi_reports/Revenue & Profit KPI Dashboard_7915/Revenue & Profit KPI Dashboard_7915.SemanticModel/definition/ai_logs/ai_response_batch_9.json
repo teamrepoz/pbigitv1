@@ -1,0 +1,25 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "Max Date",
+      "dax_expression": "CALCULATE(MAX('Orders (Sample - Superstore)'[Order Date]), ALL('Orders (Sample - Superstore)'))",
+      "solution_explanation": "Converted the Tableau LOD `{MAX([Order Date])}` to a measure that returns the overall maximum Order Date regardless of filters using CALCULATE with ALL to mimic the FIXED/LOD behavior."
+    },
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "Measure Selector",
+      "dax_expression": "SWITCH(SELECTEDVALUE('Measure Selector Param'[Display As]), \"Profit\", SUM('Orders (Sample - Superstore)'[Profit]), \"Sales\", SUM('Orders (Sample - Superstore)'[Sales]))",
+      "solution_explanation": "Converted the parameter-driven CASE statement to a measure. Parameter references are mapped to SELECTEDVALUE('Measure Selector Param'[Display As]). Depending on the parameter value, the measure returns the aggregated SUM of the selected column."
+    },
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "YTD Value",
+      "dax_expression": "VAR StartOfYear = DATE(YEAR([Max Date]), 1, 1)\nRETURN\nCALCULATE(\n    [Measure Selector],\n    FILTER(\n        ALL('Orders (Sample - Superstore)'),\n        'Orders (Sample - Superstore)'[Order Date] >= StartOfYear\n    )\n)",
+      "solution_explanation": "Translated the Tableau LOD sum with an IF that restricts rows to those on/after the year start of the dataset max date. The LOD behavior is replicated by using ALL to remove filters, computing the start of the year from the overall Max Date, and calculating the selected measure over rows with Order Date >= that start date."
+    }
+  ]
+}
