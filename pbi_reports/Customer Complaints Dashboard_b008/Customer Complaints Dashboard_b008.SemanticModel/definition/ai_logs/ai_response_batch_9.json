@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "complaints",
+      "name": "# Complaints (Not Selected)",
+      "dax_expression": "VAR paramSelected = SELECTEDVALUE('Selected Product'[Display As])\nVAR prodGrouping = SELECTEDVALUE('complaints'[Product Grouping])\nRETURN\nIF(\n    NOT(ISBLANK(prodGrouping)) && prodGrouping <> paramSelected,\n    DISTINCTCOUNT('complaints'[Complaint ID]),\n    BLANK()\n)",
+      "solution_explanation": "Replaced ATTR([Product Grouping]) with SELECTEDVALUE('complaints'[Product Grouping]) to mirror Tableau's ATTR behaviour. Replaced [Parameters].[Selected Product] with SELECTEDVALUE('Selected Product'[Display As]) per parameter mapping rules. Inlined [Number of Complaints] as DISTINCTCOUNT('complaints'[Complaint ID]) since that calculated field is defined as COUNTD([Complaint ID]). Returned BLANK() when condition is not met to match Tableau's implicit ELSE NULL.",
+      "type_changed_reason": "References a parameter ([Parameters].[Selected Product]) and contains an aggregation (COUNTD), therefore it must be implemented as a measure in Power BI."
+    }
+  ]
+}
