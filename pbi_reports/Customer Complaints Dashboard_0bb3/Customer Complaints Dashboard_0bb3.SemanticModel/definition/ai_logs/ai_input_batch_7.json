@@ -1,0 +1,23 @@
+{
+  "calculations": [
+    {
+      "name": "TC_Running Sum",
+      "table_name": "Data (Complaint Line)",
+      "tableau_expression": "RUNNING_SUM([TC_Value])",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "RUNNING_SUM([TC_Value])",
+        "calculated_fields": {
+          "TC_Value": "WINDOW_MAX(MAX([Value]))"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Value": "integer"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "TC_Value": "integer"
+        }
+      }
+    }
+  ]
+}
