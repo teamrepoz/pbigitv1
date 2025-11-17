@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "rossmann_sales_prediction_aggregated",
+      "name": "Radial Angle",
+      "dax_expression": "VAR idx = RANKX(ALLSELECTED('rossmann_sales_prediction_aggregated'), 'rossmann_sales_prediction_aggregated'[Total Sales],, ASC, DENSE)\nVAR totalCount = COUNTROWS(ALLSELECTED('rossmann_sales_prediction_aggregated'))\nRETURN ((idx - 1) * (1 / totalCount)) * 2 * PI()",
+      "solution_explanation": "Translated Tableau table calculations to DAX: INDEX() approximated with RANKX over the current partition using 'rossmann_sales_prediction_aggregated'[Total Sales] as the ordering expression; WINDOW_COUNT(COUNT([Radial Field])) mapped to COUNTROWS(ALLSELECTED('rossmann_sales_prediction_aggregated')) to represent the number of rows in the current window/partition. Arithmetic preserved and PI() used for the 2*PI multiplier.",
+      "type_changed_reason": "The Tableau formula uses table calculations (INDEX, WINDOW_COUNT) which are context/aggregation-based, so it must be created as a measure."
+    }
+  ]
+}
