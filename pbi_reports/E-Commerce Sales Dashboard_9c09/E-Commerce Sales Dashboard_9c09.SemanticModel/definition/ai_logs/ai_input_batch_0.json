@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Total Revenue",
+      "table_name": "Sales DataSource",
+      "tableau_expression": "SUM([SALES_VALUE])",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "SUM([SALES_VALUE])",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "SALES_VALUE": "real"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
