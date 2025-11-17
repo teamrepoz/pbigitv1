@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "MTD Value - down",
+      "dax_expression": "IF('Orders (Sample - Superstore)'[MTD Value - YoY] < 0, \"↓\", \"\")",
+      "solution_explanation": "Removed Tableau comment and converted the IF expression to DAX IF. The referenced field [MTD Value - YoY] was fully qualified to 'Orders (Sample - Superstore)'[MTD Value - YoY]. String literals use double quotes in DAX. The logic returns a downward arrow when the YoY value is negative, otherwise an empty string.",
+      "type_changed_reason": "The calculation references an aggregated/calculated field [MTD Value - YoY] (which depends on aggregates/LOD and a parameter), so it must be implemented as a measure."
+    }
+  ]
+}
