@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Bar Chart Dashboard_fede"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "17faec9a-bd59-4ec2-b7a2-a92215af8156"
+  }
+}
