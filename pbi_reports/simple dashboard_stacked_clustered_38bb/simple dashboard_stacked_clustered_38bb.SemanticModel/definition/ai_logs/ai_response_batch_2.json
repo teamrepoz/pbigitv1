@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Orders (Global Superstore 2016)",
+      "name": "CAal date",
+      "dax_expression": "TODAY() = SELECTEDVALUE('Enter The Date '[Display As])",
+      "solution_explanation": "Converted the parameter reference [Parameters].[Enter The Date ] to SELECTEDVALUE('Enter The Date '[Display As]) per parameter mapping. The TODAY() comparison is preserved as an equality check.",
+      "type_changed_reason": "The calculation references a parameter, and all parameter-based calculations must be measures."
+    }
+  ]
+}
