@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "complaints",
+      "name": "Product Grouping",
+      "dax_expression": "SWITCH('complaints'[Product], \"Bank account or service\", \"BANK SERVICES\", \"Checking or savings account\", \"CHECKING / SAVINGS\", \"Credit card\", \"CREDIT CARD\", \"Mortgage\", \"MORTGAGE\", \"OTHER\")",
+      "solution_explanation": "Converted Tableau CASE on [Product] to DAX SWITCH using the row-level 'complaints'[Product] column. Each WHEN value maps to its corresponding result; ELSE becomes the final argument."
+    }
+  ]
+}
