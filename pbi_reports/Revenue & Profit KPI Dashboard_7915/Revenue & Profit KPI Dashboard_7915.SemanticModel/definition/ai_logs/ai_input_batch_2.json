@@ -1,0 +1,26 @@
+{
+  "calculations": [
+    {
+      "name": "Measure Selector",
+      "table_name": "Orders (Sample - Superstore)",
+      "tableau_expression": "case [Parameters].[Measure Selector Param]\r\n    when 'Profit' then [Profit]\r\n    when 'Sales' then [Sales]\r\nEND",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "case [Parameters].[Measure Selector Param]\r\n    when 'Profit' then [Profit]\r\n    when 'Sales' then [Sales]\r\nEND",
+        "calculated_fields": {
+          "Measure Selector Param": "\"Profit\""
+        },
+        "parameters": [
+          "Measure Selector Param"
+        ],
+        "col_to_datatype_mapping": {
+          "Sales": "real",
+          "Profit": "real"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Measure Selector Param": "string"
+        }
+      }
+    }
+  ]
+}
