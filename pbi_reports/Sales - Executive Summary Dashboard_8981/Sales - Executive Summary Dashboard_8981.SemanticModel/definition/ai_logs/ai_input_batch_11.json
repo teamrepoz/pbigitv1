@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Select Current YTD vs Last YTD",
+      "table_name": "Orders+ (Sample - Superstore)",
+      "tableau_expression": "YEAR([Order Date]) >= YEAR(TODAY())-1 \r\n\tAND (MONTH([Order Date]) < MONTH(TODAY()) \r\n        OR (MONTH([Order Date]) == MONTH(TODAY()) \r\n\t\t\tAND DAY([Order Date]) <= DAY(TODAY())))",
+      "datatype": "boolean",
+      "calculation_context": {
+        "Expression": "YEAR([Order Date]) >= YEAR(TODAY())-1 \r\n\tAND (MONTH([Order Date]) < MONTH(TODAY()) \r\n        OR (MONTH([Order Date]) == MONTH(TODAY()) \r\n\t\t\tAND DAY([Order Date]) <= DAY(TODAY())))",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Order Date": "date"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
