@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "Pre Month Value - down",
+      "dax_expression": "IF('Orders (Sample - Superstore)'[Pre Month Value - YoY] < 0, \"↓\", \"\")",
+      "solution_explanation": "Converted Tableau IF ... THEN ... ELSE to DAX IF. Referenced the calculated field using the table[column] format: 'Orders (Sample - Superstore)'[Pre Month Value - YoY]. String literals preserved and use double quotes per guidelines.",
+      "type_changed_reason": "The calculation references an aggregated calculated field ([Pre Month Value - YoY]) which is derived from LOD/aggregation, so it must be implemented as a measure."
+    }
+  ]
+}
