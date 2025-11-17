@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Parameters",
+      "name": "Chart Type",
+      "dax_expression": "\"Donut\"",
+      "solution_explanation": "Converted the Tableau string literal to an equivalent DAX string literal. This is a calculated column because it returns a row-level/static value without aggregation or parameter references."
+    }
+  ]
+}
