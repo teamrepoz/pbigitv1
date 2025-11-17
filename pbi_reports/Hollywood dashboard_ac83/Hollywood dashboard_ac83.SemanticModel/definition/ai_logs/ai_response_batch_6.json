@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "HollywoodsMostProfitableStories",
+      "name": "AVERAGE WORLDWIDE GROSS",
+      "dax_expression": "\"AVG WORLDWIDE GROSS\"",
+      "solution_explanation": "The Tableau expression is a constant string literal. This is row-level/static and does not use aggregations or parameters, so it should be created as a calculated column returning the string literal."
+    }
+  ]
+}
