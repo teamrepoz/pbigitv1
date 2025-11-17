@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "complaints",
+      "name": "All (Not Selected)",
+      "dax_expression": "IF(SELECTEDVALUE('Selected Product'[Display As]) <> \"ALL\", \"ALL COMPLAINTS\", BLANK())",
+      "solution_explanation": "Replaced the Tableau parameter reference [Parameters].[Selected Product] with SELECTEDVALUE('Selected Product'[Display As]). Converted the IF ... THEN ... END to DAX IF(condition, true_result, false_result) and used BLANK() for the implicit ELSE.",
+      "type_changed_reason": "The calculation references a parameter, and all parameter-based calculations must be measures."
+    }
+  ]
+}
