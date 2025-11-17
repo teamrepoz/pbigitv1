@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "name": "Edad graduante",
+      "dax_expression": "IF('TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Años cuando se graduo] = 9, 17, 'TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Años cuando se graduo])",
+      "solution_explanation": "Converted the Tableau IF expression to DAX IF and mapped the calculated field reference to the table-scoped column 'TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Años cuando se graduo]. This is a row-level transformation (no aggregations or parameters), so it is implemented as a calculated column."
+    }
+  ]
+}
