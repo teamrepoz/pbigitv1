@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Data (Complaint Line)",
+      "name": "Path (bin)",
+      "dax_expression": "'Data (Complaint Line)'[Path]",
+      "solution_explanation": "This is a row-level reference to [Path]; converted to a calculated column using the fully qualified column reference 'Data (Complaint Line)'[Path]."
+    }
+  ]
+}
