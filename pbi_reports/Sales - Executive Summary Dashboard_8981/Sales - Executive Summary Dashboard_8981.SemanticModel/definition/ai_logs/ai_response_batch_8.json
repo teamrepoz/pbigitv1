@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Cost Total",
+      "dax_expression": "'Orders+ (Sample - Superstore)'[Sales] * 0.75",
+      "solution_explanation": "Row-level arithmetic conversion: Tableau [Sales] * 0.75 becomes a DAX calculated column using the row context column reference 'Orders+ (Sample - Superstore)'[Sales] * 0.75."
+    }
+  ]
+}
