@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "rossmann_sales_prediction_aggregated",
+      "name": "Path Order",
+      "dax_expression": "IF('rossmann_sales_prediction_aggregated'[Table Name] = \"rossmann_sales_prediction_aggregated.csv\", 0, 1)",
+      "solution_explanation": "Replaced Tableau IIF with DAX IF and mapped [Table Name] to 'rossmann_sales_prediction_aggregated'[Table Name]. This is row-level logic (per-row comparison) producing 0/1, so it is implemented as a calculated column."
+    }
+  ]
+}
