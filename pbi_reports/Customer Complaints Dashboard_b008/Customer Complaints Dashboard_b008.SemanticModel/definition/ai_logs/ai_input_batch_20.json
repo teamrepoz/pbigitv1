@@ -1,0 +1,25 @@
+{
+  "calculations": [
+    {
+      "name": "Selected Date",
+      "table_name": "Data (Complaint Line)",
+      "tableau_expression": "IF [Type] = [Parameters].[Date Type] THEN [Type] END",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "IF [Type] = [Parameters].[Date Type] THEN [Type] END",
+        "calculated_fields": {
+          "Date Type": "\"Year\""
+        },
+        "parameters": [
+          "Date Type"
+        ],
+        "col_to_datatype_mapping": {
+          "Type": "string"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Date Type": "string"
+        }
+      }
+    }
+  ]
+}
