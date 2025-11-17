@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders (Sample - Superstore)",
+      "name": "Order Date Name",
+      "dax_expression": "FORMAT('Orders (Sample - Superstore)'[Order Date], \"MMMM\") & \" \" & FORMAT('Orders (Sample - Superstore)'[Order Date], \"yyyy\")",
+      "solution_explanation": "DATENAME('month',[Order Date]) -> FORMAT([Order Date], \"MMMM\") and DATENAME('year',[Order Date]) -> FORMAT([Order Date], \"yyyy\"). Concatenate using & with a space. This is a row-level date transformation, so it is implemented as a calculated column."
+    }
+  ]
+}
