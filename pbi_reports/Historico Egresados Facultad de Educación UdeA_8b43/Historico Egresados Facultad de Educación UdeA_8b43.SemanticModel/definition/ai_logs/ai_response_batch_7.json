@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "historicoEducacionCLEAN (historicoEducacionCLEAN)",
+      "name": "Number of record",
+      "dax_expression": "COUNT('historicoEducacionCLEAN (historicoEducacionCLEAN)'[Identificacion])",
+      "solution_explanation": "Converted Tableau COUNT([Identificacion]) to DAX COUNT over the Identificacion column, using the table-qualified column reference.",
+      "type_changed_reason": "This calculation uses aggregation (COUNT), so it should be created as a measure."
+    }
+  ]
+}
