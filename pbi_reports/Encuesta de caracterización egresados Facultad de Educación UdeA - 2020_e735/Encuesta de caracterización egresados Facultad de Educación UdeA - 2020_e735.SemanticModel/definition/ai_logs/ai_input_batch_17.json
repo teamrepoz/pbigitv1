@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Total cursos",
+      "table_name": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "tableau_expression": "COUNTD([Cursos])",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "COUNTD([Cursos])",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Cursos": "integer"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
