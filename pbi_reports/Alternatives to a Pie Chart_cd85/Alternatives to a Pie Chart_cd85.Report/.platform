@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Alternatives to a Pie Chart_cd85"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "45bce439-8e1e-4546-8d17-14b51b27ae9a"
+  }
+}
