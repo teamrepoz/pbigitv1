@@ -1,0 +1,20 @@
+{
+  "calculations": [
+    {
+      "name": "Revenue",
+      "table_name": "raw_data (Dashboard Lesson - Coffee Shop Sales)",
+      "tableau_expression": "[transaction_qty] * [unit_price]",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "[transaction_qty] * [unit_price]",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "transaction_qty": "integer",
+          "unit_price": "real"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
