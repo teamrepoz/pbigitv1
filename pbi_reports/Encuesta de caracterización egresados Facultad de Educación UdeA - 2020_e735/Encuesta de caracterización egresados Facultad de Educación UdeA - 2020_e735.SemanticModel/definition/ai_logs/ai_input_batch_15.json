@@ -1,0 +1,20 @@
+{
+  "calculations": [
+    {
+      "name": "Población Fenemina",
+      "table_name": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "tableau_expression": "IF CONTAINS([Identidad de género:], \"Femenino\") \r\n\r\nTHEN ([Número de cédula:]) END",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "IF CONTAINS([Identidad de género:], \"Femenino\") \r\n\r\nTHEN ([Número de cédula:]) END",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Número de cédula:": "integer",
+          "Identidad de género:": "string"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
