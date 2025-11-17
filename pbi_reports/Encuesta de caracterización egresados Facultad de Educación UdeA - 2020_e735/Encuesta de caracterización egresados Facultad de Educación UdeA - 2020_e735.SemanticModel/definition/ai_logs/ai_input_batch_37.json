@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Año nacimiento",
+      "table_name": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "tableau_expression": "YEAR([Fecha_de_Nacimiento])",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "YEAR([Fecha_de_Nacimiento])",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Fecha_de_Nacimiento": "date"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
