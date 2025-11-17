@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Commission Total",
+      "dax_expression": "'Orders+ (Sample - Superstore)'[Discount] * 342.34",
+      "solution_explanation": "Row-level arithmetic: multiplies the row Discount by the literal 342.34. Converted [Discount] to 'Orders+ (Sample - Superstore)'[Discount]; no aggregation or parameters present, so this should be a calculated column."
+    }
+  ]
+}
