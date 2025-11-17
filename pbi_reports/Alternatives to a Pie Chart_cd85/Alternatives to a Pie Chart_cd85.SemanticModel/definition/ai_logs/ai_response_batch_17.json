@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "rossmann_sales_prediction",
+      "name": "a portion",
+      "dax_expression": "CALCULATE(SUM('rossmann_sales_prediction'[Sales]), 'rossmann_sales_prediction'[StoreType] = \"a\") / SUM('rossmann_sales_prediction'[Sales])",
+      "solution_explanation": "Converted the conditional SUM(IF [StoreType] = \"a\" THEN [Sales] END) to CALCULATE(SUM(...), 'rossmann_sales_prediction'[StoreType] = \"a\") and preserved the denominator SUM([Sales]). This is implemented as a measure because the expression uses aggregations (SUM).",
+      "type_changed_reason": "The calculation uses aggregation (SUM), so it should be created as a measure."
+    }
+  ]
+}
