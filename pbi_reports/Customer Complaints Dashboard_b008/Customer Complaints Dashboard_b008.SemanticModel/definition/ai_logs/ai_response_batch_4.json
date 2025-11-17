@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Data (Complaint Line)",
+      "name": "Index",
+      "dax_expression": "VAR idx = INDEX()\nRETURN (idx - 1) * 0.12 - 6",
+      "solution_explanation": "INDEX() is a Tableau table calculation. In Power BI it must be implemented as a measure (table-calculation context). The original arithmetic ((INDEX()-1)*0.12)-6 is preserved; the INDEX() call is kept as the indexing expression placeholder.",
+      "type_changed_reason": "The calculation uses a Tableau table calculation (INDEX()), which requires an aggregate/table-context in Power BI, so it should be created as a measure."
+    }
+  ]
+}
