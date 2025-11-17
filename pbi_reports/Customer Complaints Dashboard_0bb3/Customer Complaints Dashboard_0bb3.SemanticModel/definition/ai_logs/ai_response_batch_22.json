@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Data (Complaint Line)",
+      "name": "One",
+      "dax_expression": "\"1\"",
+      "solution_explanation": "Converted the Tableau string literal '1' to a DAX string literal \"1\". This is a row-level constant (no aggregation or parameters), so it is implemented as a calculated column on the 'Data (Complaint Line)' table."
+    }
+  ]
+}
