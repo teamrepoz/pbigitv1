@@ -1,0 +1,63 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.63\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "name": "Section_Sample Dashboard ",
+      "ordinal": 0,
+      "displayName": "Sample Dashboard ",
+      "visualContainers": [
+        {
+          "x": 10.0,
+          "y": 59.29,
+          "z": 0,
+          "width": 445.45,
+          "height": 253.57,
+          "config": "{\"name\": \"89b04f17\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 50, \"y\": 50, \"z\": 1000, \"width\": 800, \"height\": 600, \"tabOrder\": 1}}], \"singleVisual\": {\"visualType\": \"columnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"Orders (Global Superstore 2016).Category\", \"active\": true}], \"Y\": [{\"queryRef\": \"Sum(Orders (Global Superstore 2016).Sales)\"}], \"Series\": [{\"queryRef\": \"Orders (Global Superstore 2016).Category\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"O\", \"Entity\": \"Orders (Global Superstore 2016)\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Property\": \"Category\", \"Expression\": {\"SourceRef\": {\"Source\": \"O\"}}}, \"Name\": \"Orders (Global Superstore 2016).Category\", \"NativeReferenceName\": \"Category\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Sales\", \"Expression\": {\"SourceRef\": {\"Source\": \"O\"}}}}, \"Function\": 0}, \"Name\": \"Sum(Orders (Global Superstore 2016).Sales)\", \"NativeReferenceName\": \"Sum of Sales\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Sales\", \"Expression\": {\"SourceRef\": {\"Source\": \"O\"}}}}, \"Function\": 0}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#040404'\"}}}}}, \"titleBold\": {\"expr\": {\"Literal\": {\"Value\": \"\"}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#040404'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#e15759'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"15D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Segoe UI'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Sales By Category'\"}}}}}]}}}"
+        },
+        {
+          "x": 503,
+          "y": 85,
+          "z": 0,
+          "width": 590,
+          "height": 354,
+          "config": "{\"name\": \"0f915c1826fd1491e4c21d2f40f\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 503, \"y\": 85, \"z\": 1000, \"width\": 590, \"height\": 354, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"pieChart\", \"projections\": {\"Category\": [{\"queryRef\": \"Orders (Global Superstore 2016).Segment\", \"active\": true}], \"Y\": [{\"queryRef\": \"Sum(Orders (Global Superstore 2016).Sales)\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"O\", \"Entity\": \"Orders (Global Superstore 2016)\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Property\": \"Segment\", \"Expression\": {\"SourceRef\": {\"Source\": \"O\"}}}, \"Name\": \"Orders (Global Superstore 2016).Segment\", \"NativeReferenceName\": \"Segment\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Sales\", \"Expression\": {\"SourceRef\": {\"Source\": \"O\"}}}}, \"Function\": 0}, \"Name\": \"Sum(Orders (Global Superstore 2016).Sales)\", \"NativeReferenceName\": \"Sum of Sales\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Sales\", \"Expression\": {\"SourceRef\": {\"Source\": \"O\"}}}}, \"Function\": 0}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#e15759'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"15D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Total Sales By Segment'\"}}}}}]}}}"
+        },
+        {
+          "x": 10.0,
+          "y": 586.43,
+          "z": 0,
+          "width": 984.55,
+          "height": 434.29,
+          "config": "{\"name\": \"81d66ac\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 0, \"y\": 0, \"z\": 1000, \"width\": 800, \"height\": 600, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"lineChart\", \"projections\": {\"Category\": [{\"queryRef\": \"Orders (Global Superstore 2016).Order Date.Variation.Date Hierarchy.Month\", \"active\": true}], \"Y\": [{\"queryRef\": \"Sum(Orders (Global Superstore 2016).Profit)\"}], \"Series\": [{\"queryRef\": \"Orders (Global Superstore 2016).[:Measure Names]\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"O\", \"Entity\": \"Orders (Global Superstore 2016)\", \"Type\": 0}], \"Select\": [{\"HierarchyLevel\": {\"Expression\": {\"Hierarchy\": {\"Expression\": {\"PropertyVariationSource\": {\"Expression\": {\"SourceRef\": {\"Source\": \"O\"}}, \"Name\": \"Variation\", \"Property\": \"Order Date\"}}, \"Hierarchy\": \"Date Hierarchy\"}}, \"Level\": \"Month\"}, \"Name\": \"Orders (Global Superstore 2016).Order Date.Variation.Date Hierarchy.Month\", \"NativeReferenceName\": \"Order Date Month\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Profit\", \"Expression\": {\"SourceRef\": {\"Source\": \"O\"}}}}, \"Function\": 0}, \"Name\": \"Sum(Orders (Global Superstore 2016).Profit)\", \"NativeReferenceName\": \"Sum of Profit\"}, {\"Column\": {\"Property\": \"[:Measure Names]\", \"Expression\": {\"SourceRef\": {\"Source\": \"O\"}}}, \"Name\": \"Orders (Global Superstore 2016).[:Measure Names]\", \"NativeReferenceName\": \"[:Measure Names]\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Profit\", \"Expression\": {\"SourceRef\": {\"Source\": \"O\"}}}}, \"Function\": 0}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#040404'\"}}}}}, \"titleBold\": {\"expr\": {\"Literal\": {\"Value\": \"normal\"}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#040404'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#e15759'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"15D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Profit By Month'\"}}}}}]}}}"
+        },
+        {
+          "x": 10.91,
+          "y": 313.57,
+          "z": 0,
+          "width": 986.36,
+          "height": 267.86,
+          "config": "{\"name\": \"2e099c15ef542e7\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 50, \"y\": 50, \"z\": 1000, \"width\": 1000, \"height\": 700, \"tabOrder\": 1}}], \"singleVisual\": {\"visualType\": \"barChart\", \"projections\": {\"Category\": [{\"queryRef\": \"Orders (Global Superstore 2016).Sub-Category\", \"active\": true}], \"Y\": [{\"queryRef\": \"Sum(Orders (Global Superstore 2016).Shipping Cost)\"}], \"Series\": []}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"O\", \"Entity\": \"Orders (Global Superstore 2016)\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Property\": \"Sub-Category\", \"Expression\": {\"SourceRef\": {\"Source\": \"O\"}}}, \"Name\": \"Orders (Global Superstore 2016).Sub-Category\", \"NativeReferenceName\": \"Sub-Category\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Shipping Cost\", \"Expression\": {\"SourceRef\": {\"Source\": \"O\"}}}}, \"Function\": 0}, \"Name\": \"Sum(Orders (Global Superstore 2016).Shipping Cost)\", \"NativeReferenceName\": \"Sum of Shipping Cost\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Shipping Cost\", \"Expression\": {\"SourceRef\": {\"Source\": \"O\"}}}}, \"Function\": 0}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#e15759'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"15D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Segoe UI'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Shipping Cost By Shipping Mode'\"}}}}}]}}}"
+        }
+      ],
+      "width": 1100.0,
+      "height": 1400.0
+    }
+  ]
+}
