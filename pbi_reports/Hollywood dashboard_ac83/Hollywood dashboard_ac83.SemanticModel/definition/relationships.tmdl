@@ -1,0 +1,5 @@
+relationship c40bff00-2ad1-473e-bce2-d945ba43274d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: HollywoodsMostProfitableStories.Year
+	toColumn: LocalDateTable_a1d64e78-ff96-4864-9dd8-52bfef1c08ba.Date
+
