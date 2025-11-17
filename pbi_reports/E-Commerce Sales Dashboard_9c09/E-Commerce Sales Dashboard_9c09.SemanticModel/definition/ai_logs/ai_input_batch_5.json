@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Transaction Hour",
+      "table_name": "Sales DataSource",
+      "tableau_expression": "// Extract the hour part from TRANS_TIME\r\nIF LEN(STR([TRANS_TIME])) = 4 THEN\r\n  // For four-digit times (e.g., 1531)\r\n  LEFT(STR([TRANS_TIME]), 2)\r\nELSE\r\n  // For three-digit times (e.g., 915)\r\n  LEFT(\"0\" + STR([TRANS_TIME]), 2)\r\nEND",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "// Extract the hour part from TRANS_TIME\r\nIF LEN(STR([TRANS_TIME])) = 4 THEN\r\n  // For four-digit times (e.g., 1531)\r\n  LEFT(STR([TRANS_TIME]), 2)\r\nELSE\r\n  // For three-digit times (e.g., 915)\r\n  LEFT(\"0\" + STR([TRANS_TIME]), 2)\r\nEND",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "TRANS_TIME": "integer"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
