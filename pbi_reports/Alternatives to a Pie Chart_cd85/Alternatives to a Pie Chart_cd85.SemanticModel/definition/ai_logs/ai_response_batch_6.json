@@ -1,0 +1,18 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Sheet1 (radial_bar_chart_data)",
+      "name": "Percentage",
+      "dax_expression": "'Sheet1 (radial_bar_chart_data)'[Ratio] / 0.543",
+      "solution_explanation": "Translated the Tableau calculated field Percentage ([Ratio] / 0.543) to a row-level DAX calculated column. Row-level arithmetic becomes a calculated column in Power BI and the [Ratio] reference was converted to 'Sheet1 (radial_bar_chart_data)'[Ratio]."
+    },
+    {
+      "type": "measure",
+      "table": "Sheet1 (radial_bar_chart_data)",
+      "name": "wc_percentage",
+      "dax_expression": "VAR result = MAXX(\n    ALLSELECTED('Sheet1 (radial_bar_chart_data)'),\n    'Sheet1 (radial_bar_chart_data)'[Percentage]\n)\nRETURN\nresult",
+      "solution_explanation": "Tableau's WINDOW_MAX(MAX([Percentage])) is a table calculation and requires a measure in DAX. Mapped the window maximum to MAXX over ALLSELECTED to emulate the window/partition context and referenced the dependent Percentage calculated column ('Sheet1 (radial_bar_chart_data)'[Percentage])."
+    }
+  ]
+}
