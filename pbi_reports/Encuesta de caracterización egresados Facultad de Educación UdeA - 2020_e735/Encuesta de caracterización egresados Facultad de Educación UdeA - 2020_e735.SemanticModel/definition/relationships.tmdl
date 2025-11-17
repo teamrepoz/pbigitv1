@@ -1,0 +1,5 @@
+relationship 49e87a57-a193-498a-b7ba-6ffdad7c9eb0
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'.Fecha_de_Nacimiento
+	toColumn: LocalDateTable_530f24a6-041f-455f-a38a-5d763dd8e10d.Date
+
