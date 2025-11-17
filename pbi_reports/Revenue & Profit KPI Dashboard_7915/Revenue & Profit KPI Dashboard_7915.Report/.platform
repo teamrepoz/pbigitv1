@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Revenue & Profit KPI Dashboard_7915"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "9f5b7762-90da-446d-874e-62dc53e4b775"
+  }
+}
