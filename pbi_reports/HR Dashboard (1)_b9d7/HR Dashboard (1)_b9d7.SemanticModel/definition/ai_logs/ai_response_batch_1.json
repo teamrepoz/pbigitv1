@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "HR data (HR Data)",
+      "name": "Attrition Count",
+      "dax_expression": "IF('HR data (HR Data)'[Attrition] = \"Yes\", 1, 0)",
+      "solution_explanation": "Converted Tableau IF to DAX IF and mapped [Attrition] to 'HR data (HR Data)'[Attrition]. This is a row-level 1/0 assignment per record, so it is implemented as a calculated column."
+    }
+  ]
+}
