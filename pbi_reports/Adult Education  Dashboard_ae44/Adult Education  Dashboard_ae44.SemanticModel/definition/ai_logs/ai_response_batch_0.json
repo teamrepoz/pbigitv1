@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Parameters",
+      "name": "Parameter 1",
+      "dax_expression": "SELECTEDVALUE('Parameters'[Display As])",
+      "solution_explanation": "Tableau parameter converted to a Power BI measure using SELECTEDVALUE on the Parameters table's Display As column. Per rules, Tableau parameters become measures in DAX."
+    }
+  ]
+}
