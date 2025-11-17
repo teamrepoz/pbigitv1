@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Data (Complaint Line)",
+      "name": "Path (bin)",
+      "dax_expression": "'Data (Complaint Line)'[Path]",
+      "solution_explanation": "The Tableau expression references only the row-level field [Path]. This is a direct row-level passthrough, so create a calculated column that returns the value of 'Data (Complaint Line)'[Path]."
+    }
+  ]
+}
