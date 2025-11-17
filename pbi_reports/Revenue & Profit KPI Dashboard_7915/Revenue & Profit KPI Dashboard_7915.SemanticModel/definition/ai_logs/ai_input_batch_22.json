@@ -1,0 +1,37 @@
+{
+  "calculations": [
+    {
+      "name": "MTD Value - 0",
+      "table_name": "Orders (Sample - Superstore)",
+      "tableau_expression": "//MTD Value - 0\r\nif [MTD Value - YoY] = 0 then '↔' else '' END",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "//MTD Value - 0\r\nif [MTD Value - YoY] = 0 then '↔' else '' END",
+        "calculated_fields": {
+          "MTD Value - YoY": "([MTD Value] - [MTD Value - Last Year])/[MTD Value - Last Year]",
+          "MTD Value - Last Year": "{\r\n    sum(if [Order Date]>= date(DATETRUNC('month',[Max date Last Year]))\r\n        and [Order Date]<= [Max date Last Year] \r\n        then [Measure Selector]\r\n    END)\r\n}",
+          "MTD Value": "{ sum(if [Order Date] >= date(DATETRUNC('month',[Max Date]) )\r\n        then     [Measure Selector] end) \r\n}",
+          "Measure Selector": "case [Parameters].[Measure Selector Param]\r\n    when 'Profit' then [Profit]\r\n    when 'Sales' then [Sales]\r\nEND",
+          "Max Date": "{MAX([Order Date])}",
+          "Max date Last Year": "date(DATEADD('year',-1,[Max Date]))",
+          "Measure Selector Param": "\"Profit\""
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Order Date": "date",
+          "Sales": "real",
+          "Profit": "real"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "MTD Value - YoY": "real",
+          "MTD Value - Last Year": "real",
+          "MTD Value": "real",
+          "Measure Selector": "real",
+          "Measure Selector Param": "string",
+          "Max Date": "DateTime",
+          "Max date Last Year": "DateTime"
+        }
+      }
+    }
+  ]
+}
