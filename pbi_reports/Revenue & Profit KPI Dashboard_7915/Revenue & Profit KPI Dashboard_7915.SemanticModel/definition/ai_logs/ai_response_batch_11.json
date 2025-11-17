@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "YTD Value - YoY",
+      "dax_expression": "('Orders (Sample - Superstore)'[YTD Value] - 'Orders (Sample - Superstore)'[YTD Value - Last Year]) / 'Orders (Sample - Superstore)'[YTD Value - Last Year]",
+      "solution_explanation": "Mapped Tableau field references to DAX using 'Orders (Sample - Superstore)'[Field] syntax and translated the arithmetic expression directly. This is implemented as a measure because it depends on aggregated/calculated fields (YTD Value and YTD Value - Last Year) and a parameter-driven selector."
+    }
+  ]
+}
