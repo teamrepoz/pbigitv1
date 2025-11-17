@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "name": "COUNT([Sector en el que labora predominantemente]) / TOTAL(COUNT([Sector en el que labora predominantemente]))",
+      "dax_expression": "VAR Numerator = COUNT('TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Sector en el que labora predominantemente])\nVAR Denominator = CALCULATE(\n    COUNT('TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Sector en el que labora predominantemente]),\n    ALL('TABLA FINAL_ Encuesta_Transpues (Varias conexiones)')\n)\nRETURN DIVIDE(Numerator, Denominator)",
+      "solution_explanation": "Converted Tableau COUNT(...) to DAX COUNT(...). Tableau TOTAL(COUNT(...)) (a table calculation for the grand total) is represented by CALCULATE(COUNT(...), ALL(Table)) to compute the overall count across the table. Used DIVIDE to safely perform the division and VAR/RETURN for clarity. All column references were transformed to 'TableName'[ColumnName] format.",
+      "type_changed_reason": "The calculation uses aggregation (COUNT) and a table calculation (TOTAL), so it must be implemented as a measure."
+    }
+  ]
+}
