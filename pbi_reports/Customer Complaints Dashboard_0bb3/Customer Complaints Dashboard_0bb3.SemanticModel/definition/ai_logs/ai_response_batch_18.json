@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "complaints",
+      "name": "Index Filter",
+      "dax_expression": "VAR TopX = SELECTEDVALUE('Top X'[Display As])\nVAR idx = RANKX(ALLSELECTED('complaints'), 1, , ASC, DENSE)\nRETURN IF(idx <= TopX, TRUE(), FALSE())",
+      "solution_explanation": "Mapped the Tableau table calculation index() to a RANKX-based approach in DAX and replaced the Tableau parameter with SELECTEDVALUE('Top X'[Display As]). Because Tableau's INDEX() is a table calculation that requires an explicit row ordering, this DAX uses RANKX(ALLSELECTED('complaints'), 1, , ASC, DENSE) as a best-effort placeholder for row numbering; for accurate row numbers you should replace the constant expression (1) with a proper ordering expression/column.",
+      "type_changed_reason": "The original formula uses a table calculation (INDEX()) and references a Tableau parameter, so it must be created as a measure."
+    }
+  ]
+}
