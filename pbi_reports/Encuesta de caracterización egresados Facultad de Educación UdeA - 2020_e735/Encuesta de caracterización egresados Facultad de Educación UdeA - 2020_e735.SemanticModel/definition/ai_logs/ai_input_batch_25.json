@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "\"Ingreso promedio mensual (salario mínimo legal vigente - SMLV para el año 2020, $877.802 en el caso Colombiano)\" - División 2",
+      "table_name": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "tableau_expression": "TRIM( SPLIT( [\"Ingreso promedio mensual (salario mínimo legal vigente - SMLV para el año 2020, $877.802 en el caso Colombiano)\"], \"de\", 2 ) )",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "TRIM( SPLIT( [\"Ingreso promedio mensual (salario mínimo legal vigente - SMLV para el año 2020, $877.802 en el caso Colombiano)\"], \"de\", 2 ) )",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "\"Ingreso promedio mensual (salario mínimo legal vigente - SMLV para el año 2020, $877.802 en el caso Colombiano)\"": "string"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
