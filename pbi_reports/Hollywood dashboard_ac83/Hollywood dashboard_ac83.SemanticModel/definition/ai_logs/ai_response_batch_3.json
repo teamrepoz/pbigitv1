@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "HollywoodsMostProfitableStories",
+      "name": "TOTAL GENRES",
+      "dax_expression": "\"TOTAL GENRES\"",
+      "solution_explanation": "This is a literal string constant in Tableau, so it becomes a row-level calculated column that returns the string \"TOTAL GENRES\" for each row."
+    }
+  ]
+}
