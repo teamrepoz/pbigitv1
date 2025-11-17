@@ -1,0 +1,28 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "complaints",
+      "name": "Product Grouping",
+      "dax_expression": "SWITCH('complaints'[Product], \"Bank account or service\", \"BANK SERVICES\", \"Checking or savings account\", \"CHECKING / SAVINGS\", \"Credit card\", \"CREDIT CARD\", \"Mortgage\", \"MORTGAGE\", \"OTHER\")",
+      "solution_explanation": "Recreated the Tableau CASE statement as a row-level calculated column using SWITCH on 'complaints'[Product] to map product values to the grouped labels.",
+      "type_changed_reason": "This is a row-level transformation that depends only on the Product field, so it should be a calculated column (dimension)."
+    },
+    {
+      "type": "measure",
+      "table": "complaints",
+      "name": "Number of Complaints",
+      "dax_expression": "DISTINCTCOUNT('complaints'[Complaint ID])",
+      "solution_explanation": "Converted Tableau COUNTD([Complaint ID]) to DAX DISTINCTCOUNT on 'complaints'[Complaint ID] to produce the distinct complaint count.",
+      "type_changed_reason": "The calculation uses an aggregation (COUNTD/DISTINCTCOUNT), so it should be a measure."
+    },
+    {
+      "type": "measure",
+      "table": "complaints",
+      "name": "# Complaints (Selected)",
+      "dax_expression": "IF(\n    SELECTEDVALUE('complaints'[Product Grouping]) = SELECTEDVALUE('Selected Product'[Display As]),\n    [Number of Complaints]\n)",
+      "solution_explanation": "Recreated the conditional: use SELECTEDVALUE on the Product Grouping column and the parameter. If they match, return the Number of Complaints measure; otherwise return BLANK (implicit). Parameter reference converted to SELECTEDVALUE('Selected Product'[Display As]).",
+      "type_changed_reason": "The calculation references a parameter and an aggregate measure, therefore it must be created as a measure."
+    }
+  ]
+}
