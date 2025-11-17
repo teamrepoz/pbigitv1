@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders (Sample - Superstore (1))",
+      "name": "Calculation1",
+      "dax_expression": "SWITCH(\n    TRUE(),\n    'Orders (Sample - Superstore (1))'[Category] = \"Furniture\", \"furniture\",\n    'Orders (Sample - Superstore (1))'[Category] = \"Office Supplies\", \"office supplier\",\n    'Orders (Sample - Superstore (1))'[Category] = \"Technology\", \"technology\",\n    'Orders (Sample - Superstore (1))'[Category]\n)",
+      "solution_explanation": "Converted Tableau IF/ELSEIF to DAX SWITCH(TRUE(), ...) and replaced [Category] with 'Orders (Sample - Superstore (1))'[Category]. This is a row-level string transformation, so it is implemented as a calculated column."
+    }
+  ]
+}
