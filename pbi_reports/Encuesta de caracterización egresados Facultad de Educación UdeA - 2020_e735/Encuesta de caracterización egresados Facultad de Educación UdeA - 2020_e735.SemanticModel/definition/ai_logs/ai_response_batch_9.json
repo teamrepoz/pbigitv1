@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "name": "Grado de satisfaccion 2",
+      "dax_expression": "'TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Grado de satisfacción]",
+      "solution_explanation": "Row-level passthrough of [Grado de satisfacción]; created as a calculated column using a direct column reference in the same table."
+    }
+  ]
+}
