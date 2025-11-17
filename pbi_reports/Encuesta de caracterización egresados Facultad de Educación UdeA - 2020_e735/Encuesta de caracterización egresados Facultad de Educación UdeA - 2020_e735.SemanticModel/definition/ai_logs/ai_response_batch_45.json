@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "name": "Programa",
+      "dax_expression": "SWITCH(\n    TRUE(),\n    'TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Nombre programa] = \"EDUCACIÓN AGROPECUARIA\", \"\",\n    'TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Nombre programa] = \"EDUCACIÓN ARTES PLÁSTICAS\", \"\",\n    'TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Nombre programa] = \"EDUCACIÓN DEOCENTE COMERCIAL\", \"\",\n    'TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Nombre programa] = \"EDUCACIÓN DOCENCIA COMERCIAL\", \"\",\n    'TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Nombre programa] = \"EDUCACIÓN GEOGRAFÍA E HISTORIA\", \"LICENCIATURA EDUCACIÓN BÁSICA ÉNFASIS EN CIENCIAS SOCIALES\",\n    'TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Nombre programa] = \"EDUACIÓN PRIMARIA\", \"LICENCIATURA EN EDUCACIÓN: PRIMARIA\",\n    'TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Nombre programa] = \"MAESTRÍA EN DOCENCIA\", \"MAESTRÍA EN EDUCACIÓN\",\n    TRUE(),\n    'TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Nombre programa]\n)",
+      "solution_explanation": "Converted the Tableau IF / ELSEIF chain to a DAX SWITCH(TRUE()) expression. Each comparison against [Nombre programa] was translated to 'TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Nombre programa] = \"...\" and returns the corresponding string (blank, mapped string, or the original value). This is a row-level string transformation, so it is implemented as a calculated column."
+    }
+  ]
+}
