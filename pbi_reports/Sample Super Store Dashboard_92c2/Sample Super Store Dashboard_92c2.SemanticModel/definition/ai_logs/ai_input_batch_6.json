@@ -1,0 +1,23 @@
+{
+  "calculations": [
+    {
+      "name": "Chart Type Pie",
+      "table_name": "Orders (Sample - Superstore)",
+      "tableau_expression": "[Parameters].[Chart Type] = 'Pie'",
+      "datatype": "boolean",
+      "calculation_context": {
+        "Expression": "[Parameters].[Chart Type] = 'Pie'",
+        "calculated_fields": {
+          "Chart Type": "\"Donut\""
+        },
+        "parameters": [
+          "Chart Type"
+        ],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {
+          "Chart Type": "string"
+        }
+      }
+    }
+  ]
+}
