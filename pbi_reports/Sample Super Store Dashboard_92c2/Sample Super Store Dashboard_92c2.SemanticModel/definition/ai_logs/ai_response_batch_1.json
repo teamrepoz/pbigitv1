@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Parameters",
+      "name": "Cummulative Total",
+      "dax_expression": "\"Total\"",
+      "solution_explanation": "The Tableau expression is a constant string literal \"Total\", which maps directly to the DAX string literal \"Total\". There are no aggregates or parameters, so this is implemented as a calculated column."
+    }
+  ]
+}
