@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "simple dashboard_stacked_clustered_38bb"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "f9bed7fd-9892-4fbf-8a9f-dcba2e782914"
+  }
+}
