@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Sales DataSource",
+      "name": "Transaction Hour",
+      "dax_expression": "VAR tStr = FORMAT('Sales DataSource'[TRANS_TIME], \"0\")\nRETURN IF(LEN(tStr) = 4, LEFT(tStr, 2), LEFT(\"0\" & tStr, 2))",
+      "solution_explanation": "Converted row-level string logic: STR([TRANS_TIME]) → FORMAT('Sales DataSource'[TRANS_TIME], \"0\"); preserved LEN and LEFT; used string concatenation with &. This is a calculated column because the logic operates at the row level without aggregation or parameters."
+    }
+  ]
+}
