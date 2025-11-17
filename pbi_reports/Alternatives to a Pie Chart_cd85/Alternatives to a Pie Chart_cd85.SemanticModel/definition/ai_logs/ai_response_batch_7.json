@@ -1,0 +1,51 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Sheet1 (radial_bar_chart_data)",
+      "name": "Percentage",
+      "dax_expression": "'Sheet1 (radial_bar_chart_data)'[Ratio] / 0.543",
+      "solution_explanation": "Converted the row-level Tableau calculation [Ratio] / 0.543 into a calculated column in DAX using the table column reference format."
+    },
+    {
+      "type": "measure",
+      "table": "Sheet1 (radial_bar_chart_data)",
+      "name": "wc_pi",
+      "dax_expression": "PI()",
+      "solution_explanation": "Tableau pi() is a constant; mapped to DAX PI(). The original used WINDOW_MAX(MAX(pi())) which yields the constant PI across the window — represented as a measure returning PI().",
+      "type_changed_reason": "The Tableau expression used WINDOW_MAX (a table calculation) around pi(), which implies an aggregation/window context; in Power BI this should be a measure."
+    },
+    {
+      "type": "measure",
+      "table": "Sheet1 (radial_bar_chart_data)",
+      "name": "wc_start",
+      "dax_expression": "MAXX(ALLSELECTED('Sheet1 (radial_bar_chart_data)'), 'Sheet1 (radial_bar_chart_data)'[Order])",
+      "solution_explanation": "Translated WINDOW_MAX(MAX([Order])) to a DAX measure that returns the maximum 'Order' value over the selected window using ALLSELECTED and MAXX.",
+      "type_changed_reason": "WINDOW_MAX is a Tableau table calculation (window aggregation), so this must be implemented as a measure in DAX."
+    },
+    {
+      "type": "measure",
+      "table": "Sheet1 (radial_bar_chart_data)",
+      "name": "wc_percentage",
+      "dax_expression": "MAXX(ALLSELECTED('Sheet1 (radial_bar_chart_data)'), 'Sheet1 (radial_bar_chart_data)'[Percentage])",
+      "solution_explanation": "Mapped WINDOW_MAX(MAX([Percentage])) to a measure that returns the maximum of the calculated column 'Percentage' over the selected window using ALLSELECTED and MAXX.",
+      "type_changed_reason": "WINDOW_MAX is a Tableau table calculation (window aggregation), so this must be implemented as a measure in DAX."
+    },
+    {
+      "type": "measure",
+      "table": "Sheet1 (radial_bar_chart_data)",
+      "name": "Index",
+      "dax_expression": "VAR idx = RANKX(ALLSELECTED('Sheet1 (radial_bar_chart_data)'), 'Sheet1 (radial_bar_chart_data)'[Order], , ASC, DENSE)\nRETURN (idx - 1) * 2",
+      "solution_explanation": "Tableau INDEX() is a table calculation (row position). Emulated the row index in DAX using RANKX over ALLSELECTED ordered by [Order], then applied the (INDEX()-1)*2 transformation.",
+      "type_changed_reason": "INDEX() is a Tableau table calculation (row position); in Power BI it must be implemented as a measure (here approximated with RANKX to derive row position)."
+    },
+    {
+      "type": "measure",
+      "table": "Sheet1 (radial_bar_chart_data)",
+      "name": "X",
+      "dax_expression": "VAR vIndex = [Index]\nVAR v_wc_percentage = [wc_percentage]\nVAR v_wc_pi = [wc_pi]\nVAR v_wc_start = [wc_start]\nRETURN\nIF(\n    vIndex < 270,\n    SIN(vIndex * v_wc_percentage * v_wc_pi / 180) * v_wc_start,\n    IF(\n        vIndex > 270,\n        SIN((540 - vIndex) * v_wc_percentage * v_wc_pi / 180) * (v_wc_start + 1),\n        SIN((vIndex * v_wc_percentage + 3) * v_wc_pi / 180) * (v_wc_start + 0.5)\n    )\n)",
+      "solution_explanation": "Converted the Tableau IF/ELSEIF/ELSE logic into nested IF statements in DAX. Referenced dependent measures ([Index], [wc_percentage], [wc_pi], [wc_start]) and used SIN with the same arithmetic, preserving the degree-to-radian conversion via multiplication by PI (wc_pi) and division by 180.",
+      "type_changed_reason": "The calculation depends on Tableau table calculations (INDEX, WINDOW_MAX) and aggregations; per rules, it must be a measure in Power BI."
+    }
+  ]
+}
