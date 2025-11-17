@@ -1,0 +1,20 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Sheet1 (radial_bar_chart_data)",
+      "name": "wc_start",
+      "dax_expression": "MAXX(ALLSELECTED('Sheet1 (radial_bar_chart_data)'), 'Sheet1 (radial_bar_chart_data)'[Order])",
+      "solution_explanation": "Converted Tableau WINDOW_MAX(MAX([Order])) into a DAX measure that computes the maximum [Order] across the current window/selection using MAXX over ALLSELECTED on the same table.",
+      "type_changed_reason": "This calculation uses a table calculation (WINDOW_MAX), which operates across rows/partitions, so it must be created as a measure."
+    },
+    {
+      "type": "measure",
+      "table": "Sheet1 (radial_bar_chart_data)",
+      "name": "Y2",
+      "dax_expression": "'Sheet1 (radial_bar_chart_data)'[wc_start] + 0.5",
+      "solution_explanation": "Translated [wc_start] + 0.5 to DAX by referencing the wc_start measure on the same table and adding 0.5.",
+      "type_changed_reason": "The expression references wc_start, which is a measure (derived from a table calculation), therefore this must be a measure."
+    }
+  ]
+}
