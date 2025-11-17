@@ -1,0 +1,44 @@
+table 'Radial Outer'
+	lineageTag: e6357a57-5af5-462b-b38b-c0b26cc68321
+
+	column Index
+		formatString: 0
+		lineageTag: 03525258-6d42-4507-9865-072607ffccd3
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 44dabe19-d526-43c1-bbf5-8a68e7c897f8
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 140ac76e-572f-4f27-b138-80a8fe3bd0ee
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Radial Outer' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", DOUBLE,
+			    "Value", DOUBLE,
+			    {
+			        {0, 1.0, 1.0}
+			    }
+			)
+
+	annotation PBI_Id = e9b14120d701415aa043134ad77ff286
+
