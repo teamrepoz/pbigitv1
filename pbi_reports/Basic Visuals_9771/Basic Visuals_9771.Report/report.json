@@ -1,0 +1,63 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.63\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "name": "Section_Dashboard 1",
+      "ordinal": 0,
+      "displayName": "Dashboard 1",
+      "visualContainers": [
+        {
+          "x": 23,
+          "y": 216,
+          "z": 0,
+          "width": 927,
+          "height": 266,
+          "config": "{\"name\": \"79cf8cbd1dfae0decd38b31ebc7301\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 23, \"y\": 216, \"z\": 1000, \"width\": 927, \"height\": 266, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"lineChart\", \"projections\": {\"Category\": [{\"queryRef\": \"SampleSalesData.OrderDate.Variation.Date Hierarchy.Month\", \"active\": true}], \"Y\": [{\"queryRef\": \"Sum(SampleSalesData.Total)\"}], \"Series\": []}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"S\", \"Entity\": \"SampleSalesData\", \"Type\": 0}], \"Select\": [{\"HierarchyLevel\": {\"Expression\": {\"Hierarchy\": {\"Expression\": {\"PropertyVariationSource\": {\"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}, \"Name\": \"Variation\", \"Property\": \"OrderDate\"}}, \"Hierarchy\": \"Date Hierarchy\"}}, \"Level\": \"Month\"}, \"Name\": \"SampleSalesData.OrderDate.Variation.Date Hierarchy.Month\", \"NativeReferenceName\": \"OrderDate Month\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Total\", \"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}}}, \"Function\": 0}, \"Name\": \"Sum(SampleSalesData.Total)\", \"NativeReferenceName\": \"Sum of Total\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Total\", \"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}}}, \"Function\": 0}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"titleBold\": {\"expr\": {\"Literal\": {\"Value\": \"\"}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": 15}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Monthly Sales Trend'\"}}}}}]}}}"
+        },
+        {
+          "x": 507,
+          "y": 510,
+          "z": 0,
+          "width": 333,
+          "height": 266,
+          "config": "{\"name\": \"2a8d24f0bf8eb798e8fac88032ebb9d400\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 507, \"y\": 510, \"z\": 1000, \"width\": 333, \"height\": 266, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"columnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"SampleSalesData.ProductCategory\", \"active\": true}], \"Y\": [{\"queryRef\": \"Sum(SampleSalesData.Total)\"}], \"Series\": [{\"queryRef\": \"SampleSalesData.ProductName\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"S\", \"Entity\": \"SampleSalesData\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Property\": \"ProductCategory\", \"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}}, \"Name\": \"SampleSalesData.ProductCategory\", \"NativeReferenceName\": \"ProductCategory\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Total\", \"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}}}, \"Function\": 0}, \"Name\": \"Sum(SampleSalesData.Total)\", \"NativeReferenceName\": \"Sum of Total\"}, {\"Column\": {\"Property\": \"ProductName\", \"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}}, \"Name\": \"SampleSalesData.ProductName\", \"NativeReferenceName\": \"ProductName\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Total\", \"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}}}, \"Function\": 0}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"titleBold\": {\"expr\": {\"Literal\": {\"Value\": \"\"}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": 15}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Sales by Category& Sub-category'\"}}}}}]}}}"
+        },
+        {
+          "x": 40,
+          "y": 506,
+          "z": 0,
+          "width": 408,
+          "height": 266,
+          "config": "{\"name\": \"6e33851427466e026d82e8c83\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 40, \"y\": 506, \"z\": 1000, \"width\": 408, \"height\": 266, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"columnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"SampleSalesData.Total\", \"active\": true}], \"Y\": [{\"queryRef\": \"SampleSalesData.ProductName\"}], \"Series\": []}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"S\", \"Entity\": \"SampleSalesData\", \"Type\": 0}], \"Select\": [{\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Total\", \"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}}}, \"Function\": 0}, \"Name\": \"Sum(SampleSalesData.Total)\", \"NativeReferenceName\": \"Sum of Total\"}, {\"Column\": {\"Property\": \"ProductName\", \"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}}, \"Name\": \"SampleSalesData.ProductName\", \"NativeReferenceName\": \"ProductName\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}, \"Property\": \"ProductName\"}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": 15}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Sales by Product'\"}}}}}]}}}"
+        },
+        {
+          "x": 71,
+          "y": 8,
+          "z": 0,
+          "width": 333,
+          "height": 213,
+          "config": "{\"name\": \"e7d236cf0b26db48f78c03\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 71, \"y\": 8, \"z\": 1000, \"width\": 333, \"height\": 213, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"pieChart\", \"projections\": {\"Category\": [{\"queryRef\": \"SampleSalesData.Region\", \"active\": true}], \"Y\": [{\"queryRef\": \"Sum(SampleSalesData.Total)\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"S\", \"Entity\": \"SampleSalesData\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Property\": \"Region\", \"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}}, \"Name\": \"SampleSalesData.Region\", \"NativeReferenceName\": \"Region\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Total\", \"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}}}, \"Function\": 0}, \"Name\": \"Sum(SampleSalesData.Total)\", \"NativeReferenceName\": \"Sum of Total\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Total\", \"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}}}, \"Function\": 0}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": 15}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Sales by Region'\"}}}}}]}}}"
+        }
+      ],
+      "width": 1000.0,
+      "height": 800.0
+    }
+  ]
+}
