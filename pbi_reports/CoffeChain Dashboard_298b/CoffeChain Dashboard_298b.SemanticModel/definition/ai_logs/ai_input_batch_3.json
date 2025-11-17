@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Year",
+      "table_name": "CoffeeChain Query (Sample - Cof (CoffeeChain DATASET)",
+      "tableau_expression": "YEAR([Date])",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "YEAR([Date])",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Date": "date"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
