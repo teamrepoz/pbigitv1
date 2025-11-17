@@ -1,0 +1,19 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "complaints",
+      "name": "Number of Complaints",
+      "dax_expression": "DISTINCTCOUNT('complaints'[Complaint ID])",
+      "solution_explanation": "Converted Tableau COUNTD([Complaint ID]) to DAX DISTINCTCOUNT('complaints'[Complaint ID]). Kept as a measure because it is an aggregation over rows."
+    },
+    {
+      "type": "measure",
+      "table": "complaints",
+      "name": "All Complaints (Not Selected)",
+      "dax_expression": "IF(SELECTEDVALUE('Selected Product'[Display As]) <> \"ALL\", 'complaints'[Number of Complaints])",
+      "solution_explanation": "Replaced the Tableau parameter reference with SELECTEDVALUE('Selected Product'[Display As]) and converted the conditional IF to DAX. References the dependent measure 'complaints'[Number of Complaints]; returns BLANK() when the condition is not met.",
+      "type_changed_reason": "The calculation references a parameter, and all parameter-based calculations must be measures."
+    }
+  ]
+}
