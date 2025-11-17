@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "historicoEducacionCLEAN (historicoEducacionCLEAN)",
+      "name": "Cuenta de mujeres",
+      "dax_expression": "VAR CountFem =\n    CALCULATE(\n        COUNTROWS('historicoEducacionCLEAN (historicoEducacionCLEAN)'),\n        'historicoEducacionCLEAN (historicoEducacionCLEAN)'[Sexo egresados] = \"Femenino\",\n        ALLEXCEPT(\n            'historicoEducacionCLEAN (historicoEducacionCLEAN)',\n            'historicoEducacionCLEAN (historicoEducacionCLEAN)'[Identificacion]\n        )\n    )\nRETURN\n    CountFem",
+      "solution_explanation": "Converted the FIXED LOD that counts rows with Sexo egresados = \"Femenino\" per Identificacion into a measure. Used CALCULATE with a boolean filter for Sexo egresados and ALLEXCEPT to fix the calculation at the Identificacion level, returning the count of matching rows.",
+      "type_changed_reason": "The Tableau expression uses a FIXED LOD ({ FIXED ... }), which is an aggregate/context-based calculation. Per the rules, LOD expressions must be implemented as measures in Power BI."
+    }
+  ]
+}
