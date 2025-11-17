@@ -1,0 +1,55 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.63\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "name": "Section_Dashboard 1",
+      "ordinal": 0,
+      "displayName": "Dashboard 1",
+      "visualContainers": [
+        {
+          "x": 8,
+          "y": 8,
+          "z": 0,
+          "width": 772,
+          "height": 844,
+          "config": "{\"name\": \"5ac28f164682658f5b991c1d9\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 8, \"y\": 8, \"z\": 1000, \"width\": 772, \"height\": 844, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"areaChart\", \"projections\": {\"Category\": [{\"queryRef\": \"Section 2 (Section 02 - African-Mobile-Data).Date.Variation.Date Hierarchy.Year\", \"active\": true}, {\"queryRef\": \"Section 2 (Section 02 - African-Mobile-Data).Date.Variation.Date Hierarchy.Month\", \"active\": true}], \"Y\": [{\"queryRef\": \"Sum(Section 2 (Section 02 - African-Mobile-Data).Sales)\"}, {\"queryRef\": \"Section 2 (Section 02 - African-Mobile-Data).Sales\"}], \"Series\": []}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"S\", \"Entity\": \"Section 2 (Section 02 - African-Mobile-Data)\", \"Type\": 0}], \"Select\": [{\"HierarchyLevel\": {\"Expression\": {\"Hierarchy\": {\"Expression\": {\"PropertyVariationSource\": {\"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}, \"Name\": \"Variation\", \"Property\": \"Date\"}}, \"Hierarchy\": \"Date Hierarchy\"}}, \"Level\": \"Year\"}, \"Name\": \"Section 2 (Section 02 - African-Mobile-Data).Date.Variation.Date Hierarchy.Year\", \"NativeReferenceName\": \"Date Year\"}, {\"HierarchyLevel\": {\"Expression\": {\"Hierarchy\": {\"Expression\": {\"PropertyVariationSource\": {\"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}, \"Name\": \"Variation\", \"Property\": \"Date\"}}, \"Hierarchy\": \"Date Hierarchy\"}}, \"Level\": \"Month\"}, \"Name\": \"Section 2 (Section 02 - African-Mobile-Data).Date.Variation.Date Hierarchy.Month\", \"NativeReferenceName\": \"Date Month\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Sales\", \"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}}}, \"Function\": 0}, \"Name\": \"Sum(Section 2 (Section 02 - African-Mobile-Data).Sales)\", \"NativeReferenceName\": \"Sum of Sales\"}, {\"Measure\": {\"Property\": \"Sales\", \"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}}, \"Name\": \"Section 2 (Section 02 - African-Mobile-Data).Sales\", \"NativeReferenceName\": \"Sales\"}], \"OrderBy\": []}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"15D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Domain Padding + Data densification'\"}}}}}]}}}"
+        },
+        {
+          "x": 779,
+          "y": 430,
+          "z": 0,
+          "width": 563,
+          "height": 422,
+          "config": "{\"name\": \"c03c0291\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 779, \"y\": 430, \"z\": 1000, \"width\": 563, \"height\": 422, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"columnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"Section 2 (Section 02 - African-Mobile-Data).Sales\", \"active\": true}], \"Y\": [{\"queryRef\": \"Section 2 (Section 02 - African-Mobile-Data).Sales (Partition)\"}], \"Series\": []}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"S\", \"Entity\": \"Section 2 (Section 02 - African-Mobile-Data)\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Property\": \"Sales\", \"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}}, \"Name\": \"Section 2 (Section 02 - African-Mobile-Data).Sales\", \"NativeReferenceName\": \"Sales\"}, {\"Measure\": {\"Property\": \"Sales (Partition)\", \"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}}, \"Name\": \"Section 2 (Section 02 - African-Mobile-Data).Sales (Partition)\", \"NativeReferenceName\": \"Sales (Partition)\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}, \"Property\": \"Sales (Partition)\"}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"titleBold\": {\"expr\": {\"Literal\": {\"Value\": \"\"}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": 15}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Domain Padding + Partition'\"}}}}}]}}}"
+        },
+        {
+          "x": 780,
+          "y": 8,
+          "z": 0,
+          "width": 562,
+          "height": 422,
+          "config": "{\"name\": \"6a428560\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 780, \"y\": 8, \"z\": 1000, \"width\": 562, \"height\": 422, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"Section 2 (Section 02 - African-Mobile-Data).Sales\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"S\", \"Entity\": \"Section 2 (Section 02 - African-Mobile-Data)\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}, \"Property\": \"Sales\"}, \"Name\": \"Section 2 (Section 02 - African-Mobile-Data).Sales\", \"NativeReferenceName\": \"Sales\"}], \"OrderBy\": []}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}], \"labels\": [{\"properties\": {\"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"bold\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"15D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Individual Sales Values'\"}}}, \"italic\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}"
+        }
+      ],
+      "width": 1350.0,
+      "height": 860.0
+    }
+  ]
+}
