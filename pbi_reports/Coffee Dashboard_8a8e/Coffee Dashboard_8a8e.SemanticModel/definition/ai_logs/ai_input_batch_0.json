@@ -1,0 +1,24 @@
+{
+  "calculations": [
+    {
+      "name": null,
+      "table_name": "raw_data (Dashboard Lesson - Coffee Shop Sales)",
+      "tableau_expression": "SUM([Revenue]) / TOTAL(SUM([Revenue]))",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "SUM([Revenue]) / TOTAL(SUM([Revenue]))",
+        "calculated_fields": {
+          "Revenue": "[transaction_qty] * [unit_price]"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "transaction_qty": "integer",
+          "unit_price": "real"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Revenue": "real"
+        }
+      }
+    }
+  ]
+}
