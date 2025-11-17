@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "name": "Total diplomado",
+      "dax_expression": "DISTINCTCOUNT('TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Diplomados])",
+      "solution_explanation": "Tableau COUNTD([Diplomados]) maps to DAX DISTINCTCOUNT on the same column. This is implemented as a measure performing a distinct count over the table column.",
+      "type_changed_reason": "The calculation uses an aggregation (COUNTD → DISTINCTCOUNT), so it should be created as a measure."
+    }
+  ]
+}
