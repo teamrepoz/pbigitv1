@@ -1,0 +1,8 @@
+{
+  "version": "4.0",
+  "datasetReference": {
+    "byPath": {
+      "path": "../simple dashboard_stacked_clustered_5882.SemanticModel"
+    }
+  }
+}
