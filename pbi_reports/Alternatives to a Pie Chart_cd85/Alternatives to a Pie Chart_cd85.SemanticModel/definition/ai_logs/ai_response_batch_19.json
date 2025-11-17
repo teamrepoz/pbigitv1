@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "rossmann_sales_prediction",
+      "name": "c portion",
+      "dax_expression": "DIVIDE(CALCULATE(SUM('rossmann_sales_prediction'[Sales]), 'rossmann_sales_prediction'[StoreType] = \"c\"), SUM('rossmann_sales_prediction'[Sales]))",
+      "solution_explanation": "Translated the Tableau expression SUM(IF [StoreType] = \"c\" THEN [Sales] END)/SUM([Sales]) to DAX by using CALCULATE to sum Sales filtered to StoreType = \"c\" and DIVIDE for safe division. All column references were mapped to 'rossmann_sales_prediction'[ColumnName].",
+      "type_changed_reason": "The Tableau formula uses aggregation (SUM), so it should be created as a measure."
+    }
+  ]
+}
