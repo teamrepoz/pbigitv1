@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "YTD Value - 0",
+      "dax_expression": "IF('Orders (Sample - Superstore)'[YTD Value - YoY] = 0, \"↔\", \"\")",
+      "solution_explanation": "Translated the Tableau IF expression to DAX IF. The referenced calculated field [YTD Value - YoY] is an aggregate-based calculation, so the reference is kept in the 'Orders (Sample - Superstore)'[YTD Value - YoY] format and the result returns the arrow character when the value equals zero, otherwise an empty string.",
+      "type_changed_reason": "This calculation depends on the aggregated calculated field 'YTD Value - YoY' (which uses SUM/aggregation), so it should be implemented as a measure."
+    }
+  ]
+}
