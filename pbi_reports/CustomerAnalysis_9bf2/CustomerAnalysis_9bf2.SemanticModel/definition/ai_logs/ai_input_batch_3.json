@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Age bins",
+      "table_name": "sales_06_FY2020-21",
+      "tableau_expression": "[age]",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "[age]",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "age": "real"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
