@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Sample Super Store Dashboard_92c2"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "d8e6af4b-baf6-4dde-baeb-22bf76fa8d13"
+  }
+}
