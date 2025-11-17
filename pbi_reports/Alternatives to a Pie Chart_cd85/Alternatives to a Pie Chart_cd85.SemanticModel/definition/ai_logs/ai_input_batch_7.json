@@ -1,0 +1,32 @@
+{
+  "calculations": [
+    {
+      "name": "X",
+      "table_name": "Sheet1 (radial_bar_chart_data)",
+      "tableau_expression": "IF [Index] < 270 THEN\r\n    SIN([Index]*[wc_percentage]*[wc_pi]/180)*[wc_start]\r\nELSEIF [Index] > 270 THEN\r\n    SIN((540-[Index])*[wc_percentage]*[wc_pi]/180)*([wc_start]+1)\r\nELSE\r\n    SIN(([Index]*[wc_percentage]+3)*[wc_pi]/180)*([wc_start]+0.5)\r\nEND",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "IF [Index] < 270 THEN\r\n    SIN([Index]*[wc_percentage]*[wc_pi]/180)*[wc_start]\r\nELSEIF [Index] > 270 THEN\r\n    SIN((540-[Index])*[wc_percentage]*[wc_pi]/180)*([wc_start]+1)\r\nELSE\r\n    SIN(([Index]*[wc_percentage]+3)*[wc_pi]/180)*([wc_start]+0.5)\r\nEND",
+        "calculated_fields": {
+          "wc_start": "WINDOW_MAX(MAX([Order]))",
+          "wc_percentage": "WINDOW_MAX(MAX([Percentage]))",
+          "Index": "(INDEX()-1)*2",
+          "wc_pi": "WINDOW_MAX(MAX(pi()))",
+          "Percentage": "[Ratio]/0.543"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Order": "integer",
+          "Ratio": "real"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Percentage": "real",
+          "wc_start": "integer",
+          "wc_percentage": "real",
+          "Index": "integer",
+          "wc_pi": "real"
+        }
+      }
+    }
+  ]
+}
