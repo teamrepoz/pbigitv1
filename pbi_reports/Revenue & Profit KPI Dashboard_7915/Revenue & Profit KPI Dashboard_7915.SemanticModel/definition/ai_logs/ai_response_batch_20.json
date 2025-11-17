@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "MTD Value - Up",
+      "dax_expression": "IF('Orders (Sample - Superstore)'[MTD Value - YoY] > 0, \"↑\", \"\")",
+      "solution_explanation": "Converted Tableau IF to DAX IF and transformed the calculated field reference to the table-qualified format 'Orders (Sample - Superstore)'[MTD Value - YoY]. String literals use double quotes in DAX.",
+      "type_changed_reason": "The calculation references the aggregated measure 'MTD Value - YoY' (derived from MTD aggregates/LOD), so this is aggregation/context-based logic and should be implemented as a measure."
+    }
+  ]
+}
