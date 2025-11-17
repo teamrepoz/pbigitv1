@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "complaints",
+      "name": "Map Toggle",
+      "dax_expression": "SELECTEDVALUE('Map Type'[Display As])",
+      "solution_explanation": "Replaced the Tableau parameter reference [Parameters].[Map Type] with SELECTEDVALUE('Map Type'[Display As]) as required by the parameter mapping rules. Implemented as a measure because parameter-based calculations must be measures.",
+      "type_changed_reason": "The calculation references a parameter, and all parameter-based calculations must be measures."
+    }
+  ]
+}
