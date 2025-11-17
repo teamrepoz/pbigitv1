@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Total Products",
+      "table_name": "Sales DataSource",
+      "tableau_expression": "COUNTD([PRODUCT_ID])",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "COUNTD([PRODUCT_ID])",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "PRODUCT_ID": "integer"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
