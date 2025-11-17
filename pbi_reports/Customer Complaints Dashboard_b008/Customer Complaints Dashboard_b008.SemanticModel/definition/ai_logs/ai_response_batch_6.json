@@ -1,0 +1,20 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Data (Complaint Line)",
+      "name": "TC_Value",
+      "dax_expression": "VAR __Result = CALCULATE(\n    MAX('Data (Complaint Line)'[Value]),\n    ALLSELECTED('Data (Complaint Line)')\n)\nRETURN __Result",
+      "solution_explanation": "Converted WINDOW_MAX(MAX([Value])) to a measure that takes the MAX of 'Data (Complaint Line)'[Value] across the current window/selection using ALLSELECTED. WINDOW_MAX over MAX([Value]) is represented by calculating the MAX over the selected set.",
+      "type_changed_reason": "The Tableau expression uses a table calculation (WINDOW_MAX), which requires an aggregated/context-aware calculation in Power BI, so it must be a measure."
+    },
+    {
+      "type": "measure",
+      "table": "Data (Complaint Line)",
+      "name": "TC_Start Point",
+      "dax_expression": "VAR __RunningSum = SUMX(\n    ALLSELECTED('Data (Complaint Line)'),\n    [TC_Value]\n)\nRETURN __RunningSum - [TC_Value]",
+      "solution_explanation": "Translated RUNNING_SUM([TC_Value]) - [TC_Value] into a measure. RUNNING_SUM is represented by summing [TC_Value] over the current selection (ALLSELECTED) with SUMX, then subtracting the current row's [TC_Value]. Because the original Tableau calculation is a table calculation, the DAX uses ALLSELECTED to approximate the window context.",
+      "type_changed_reason": "The Tableau expression uses a table calculation (RUNNING_SUM), which requires an aggregated/context-aware calculation in Power BI, so it must be a measure."
+    }
+  ]
+}
