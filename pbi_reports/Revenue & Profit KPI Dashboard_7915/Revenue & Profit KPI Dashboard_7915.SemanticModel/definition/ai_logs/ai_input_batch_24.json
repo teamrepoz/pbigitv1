@@ -1,0 +1,23 @@
+{
+  "calculations": [
+    {
+      "name": "YTD",
+      "table_name": "Orders (Sample - Superstore)",
+      "tableau_expression": "[Order Date]>= DATETRUNC('year',[Max Date])",
+      "datatype": "boolean",
+      "calculation_context": {
+        "Expression": "[Order Date]>= DATETRUNC('year',[Max Date])",
+        "calculated_fields": {
+          "Max Date": "{MAX([Order Date])}"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Order Date": "date"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Max Date": "DateTime"
+        }
+      }
+    }
+  ]
+}
