@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "Max Date",
+      "dax_expression": "MAX('Orders (Sample - Superstore)'[Order Date])",
+      "solution_explanation": "Converted Tableau aggregate {MAX([Order Date])} to DAX MAX and mapped the column reference to 'Orders (Sample - Superstore)'[Order Date].",
+      "type_changed_reason": "The calculation uses an aggregate (MAX), so it must be created as a measure."
+    }
+  ]
+}
