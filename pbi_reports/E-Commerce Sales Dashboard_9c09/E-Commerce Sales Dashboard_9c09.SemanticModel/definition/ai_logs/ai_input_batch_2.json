@@ -1,0 +1,20 @@
+{
+  "calculations": [
+    {
+      "name": "Revenue Per Product",
+      "table_name": "Sales DataSource",
+      "tableau_expression": "SUM([SALES_VALUE])/COUNTD([PRODUCT_ID])",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "SUM([SALES_VALUE])/COUNTD([PRODUCT_ID])",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "PRODUCT_ID": "integer",
+          "SALES_VALUE": "real"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
