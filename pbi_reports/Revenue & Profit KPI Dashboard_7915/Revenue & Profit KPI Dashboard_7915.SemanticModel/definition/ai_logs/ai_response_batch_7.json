@@ -1,0 +1,20 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "Measure Selector",
+      "dax_expression": "SWITCH(\n    SELECTEDVALUE('Measure Selector Param'[Display As]),\n    \"Profit\", SUM('Orders (Sample - Superstore)'[Profit]),\n    \"Sales\", SUM('Orders (Sample - Superstore)'[Sales])\n)",
+      "solution_explanation": "Converted the Tableau CASE on the parameter to a DAX SWITCH using SELECTEDVALUE('Measure Selector Param'[Display As]) and aggregated the selected column with SUM to match SUM([Measure Selector]) behavior.",
+      "type_changed_reason": "The calculation references a Tableau parameter, and all parameter-based calculations must be created as measures."
+    },
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "Min - Max value",
+      "dax_expression": "VAR current = [Measure Selector]\nVAR windowMax = MAXX(ALLSELECTED('Orders (Sample - Superstore)'), [Measure Selector])\nVAR windowMin = MINX(ALLSELECTED('Orders (Sample - Superstore)'), [Measure Selector])\nRETURN\nIF(\n    current = windowMax || current = windowMin,\n    current\n)",
+      "solution_explanation": "Translated the Tableau table calculation comparing SUM([Measure Selector]) to WINDOW_MAX/WINDOW_MIN into DAX by computing the aggregated Measure Selector as a measure, then using MAXX/MINX over ALLSELECTED('Orders (Sample - Superstore)') to emulate the windowed max/min and returning the current measure when it equals the window max or min.",
+      "type_changed_reason": "The calculation contains aggregations and table calculations (WINDOW_MAX/WINDOW_MIN), so it should be implemented as a measure."
+    }
+  ]
+}
