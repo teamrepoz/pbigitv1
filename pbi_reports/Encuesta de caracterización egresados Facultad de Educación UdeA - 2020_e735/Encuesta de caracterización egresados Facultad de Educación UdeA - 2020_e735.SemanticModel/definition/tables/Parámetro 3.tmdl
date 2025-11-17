@@ -1,0 +1,50 @@
+table 'Parámetro 3'
+	lineageTag: 0486f4a9-7dfe-43b9-9e7a-0137f176a089
+
+	column Index
+		formatString: 0
+		lineageTag: bb151fa5-997e-46a0-aa16-a618be7310fd
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 4a462edc-03ac-4728-a893-ea0a5e05e575
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 54eb42b8-cac3-4106-ada0-aa58bd1fb837
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Parámetro 3' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "De 1 a 2", "De 1 a 2" },
+				{ 1, "De 2 a 3", "De 2 a 3" },
+				{ 2, "De 3 a 4", "De 3 a 4" },
+				{ 3, "De 4 a 5", "De 4 a 5" },
+				{ 4, "De 5 a 6", "De 5 a 6" },
+				{ 5, "Más de 7", "Más de 7" },
+				{ 6, "Menos de un SMLV", "Menos de un SMLV" }
+			    }
+			)
+
+	annotation PBI_Id = 9366a4464ffd43de9fac072faf2c26ef
+
