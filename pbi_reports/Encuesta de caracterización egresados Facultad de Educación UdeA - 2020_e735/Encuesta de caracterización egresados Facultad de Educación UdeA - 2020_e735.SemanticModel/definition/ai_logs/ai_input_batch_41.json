@@ -1,0 +1,20 @@
+{
+  "calculations": [
+    {
+      "name": "NO ejerce la profesi{on",
+      "table_name": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "tableau_expression": "IF [Ejerce su profesión] = \"No\"\r\nTHEN [\"Nombre de la Institución, organización o empresa donde labora\"] = NULL\r\nELSEIF [Ejerce su profesión] =\"Sí\" \r\nTHEN [\"Nombre de la Institución, organización o empresa donde labora\"] = \".\"\r\nEND",
+      "datatype": "boolean",
+      "calculation_context": {
+        "Expression": "IF [Ejerce su profesión] = \"No\"\r\nTHEN [\"Nombre de la Institución, organización o empresa donde labora\"] = NULL\r\nELSEIF [Ejerce su profesión] =\"Sí\" \r\nTHEN [\"Nombre de la Institución, organización o empresa donde labora\"] = \".\"\r\nEND",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Ejerce su profesión": "string",
+          "\"Nombre de la Institución, organización o empresa donde labora\"": "string"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
