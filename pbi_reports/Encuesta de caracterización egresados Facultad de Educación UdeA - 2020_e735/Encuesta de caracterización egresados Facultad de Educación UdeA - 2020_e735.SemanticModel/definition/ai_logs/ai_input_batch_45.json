@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Programa",
+      "table_name": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "tableau_expression": "IF [Nombre programa] = \"EDUCACIÓN AGROPECUARIA\" \r\nTHEN \"\"\r\nELSEIF [Nombre programa] = \"EDUCACIÓN ARTES PLÁSTICAS\" \r\nTHEN \"\"\r\nELSEIF [Nombre programa] = \"EDUCACIÓN DEOCENTE COMERCIAL\"\r\nTHEN \"\"\r\nELSEIF [Nombre programa] = \"EDUCACIÓN DOCENCIA COMERCIAL\"\r\nTHEN \"\"\r\nELSEIF [Nombre programa] = \"EDUCACIÓN GEOGRAFÍA E HISTORIA\"\r\nTHEN \"LICENCIATURA EDUCACIÓN BÁSICA ÉNFASIS EN CIENCIAS SOCIALES\"\r\nELSEIF  [Nombre programa] = \"EDUACIÓN PRIMARIA\"\r\nTHEN \"LICENCIATURA EN EDUCACIÓN: PRIMARIA\"\r\nELSEIF  [Nombre programa] = \"MAESTRÍA EN DOCENCIA\"\r\nTHEN \"MAESTRÍA EN EDUCACIÓN\"\r\nELSEIF  [Nombre programa] = [Nombre programa]\r\nTHEN [Nombre programa]\r\nEND",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "IF [Nombre programa] = \"EDUCACIÓN AGROPECUARIA\" \r\nTHEN \"\"\r\nELSEIF [Nombre programa] = \"EDUCACIÓN ARTES PLÁSTICAS\" \r\nTHEN \"\"\r\nELSEIF [Nombre programa] = \"EDUCACIÓN DEOCENTE COMERCIAL\"\r\nTHEN \"\"\r\nELSEIF [Nombre programa] = \"EDUCACIÓN DOCENCIA COMERCIAL\"\r\nTHEN \"\"\r\nELSEIF [Nombre programa] = \"EDUCACIÓN GEOGRAFÍA E HISTORIA\"\r\nTHEN \"LICENCIATURA EDUCACIÓN BÁSICA ÉNFASIS EN CIENCIAS SOCIALES\"\r\nELSEIF  [Nombre programa] = \"EDUACIÓN PRIMARIA\"\r\nTHEN \"LICENCIATURA EN EDUCACIÓN: PRIMARIA\"\r\nELSEIF  [Nombre programa] = \"MAESTRÍA EN DOCENCIA\"\r\nTHEN \"MAESTRÍA EN EDUCACIÓN\"\r\nELSEIF  [Nombre programa] = [Nombre programa]\r\nTHEN [Nombre programa]\r\nEND",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Nombre programa": "string"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
