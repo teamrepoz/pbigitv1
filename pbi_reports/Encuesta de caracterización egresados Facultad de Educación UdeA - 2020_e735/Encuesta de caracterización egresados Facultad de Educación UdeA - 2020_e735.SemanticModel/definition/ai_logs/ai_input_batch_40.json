@@ -1,0 +1,20 @@
+{
+  "calculations": [
+    {
+      "name": "NO mención laboral ",
+      "table_name": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "tableau_expression": "IF [¿Ha recibió alguna mención o reconocimiento a nivel laboral?] = \"No\"\r\nTHEN [Escriba el nombre del reconocimiento] = NULL\r\nELSEIF [¿Ha recibió alguna mención o reconocimiento a nivel laboral?] =\"Sí\" \r\nTHEN [Escriba el nombre del reconocimiento] = \".\"\r\nEND",
+      "datatype": "boolean",
+      "calculation_context": {
+        "Expression": "IF [¿Ha recibió alguna mención o reconocimiento a nivel laboral?] = \"No\"\r\nTHEN [Escriba el nombre del reconocimiento] = NULL\r\nELSEIF [¿Ha recibió alguna mención o reconocimiento a nivel laboral?] =\"Sí\" \r\nTHEN [Escriba el nombre del reconocimiento] = \".\"\r\nEND",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "¿Ha recibió alguna mención o reconocimiento a nivel laboral?": "string",
+          "Escriba el nombre del reconocimiento": "string"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
