@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "name": "Población Fenemina",
+      "dax_expression": "IF(\n    CONTAINSSTRING('TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Identidad de género:], \"Femenino\"),\n    'TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Número de cédula:],\n    BLANK()\n)",
+      "solution_explanation": "Converted Tableau IF CONTAINS(...) THEN [Número de cédula:] END to DAX using IF and CONTAINSSTRING. Row-level string check returns the row's Número de cédula: when Identidad de género: contains \"Femenino\", otherwise BLANK(). Column references were mapped to 'Table'[Column] format."
+    }
+  ]
+}
