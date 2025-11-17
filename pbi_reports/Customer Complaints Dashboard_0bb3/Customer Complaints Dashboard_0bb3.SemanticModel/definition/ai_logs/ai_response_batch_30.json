@@ -1,0 +1,19 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "complaints",
+      "name": "Product Grouping",
+      "dax_expression": "'complaints'[Product Grouping] = SWITCH(\n    TRUE(),\n    'complaints'[Product] = \"Bank account or service\", \"BANK SERVICES\",\n    'complaints'[Product] = \"Checking or savings account\", \"CHECKING / SAVINGS\",\n    'complaints'[Product] = \"Credit card\", \"CREDIT CARD\",\n    'complaints'[Product] = \"Mortgage\", \"MORTGAGE\",\n    \"OTHER\"\n)",
+      "solution_explanation": "Translated the Tableau CASE statement into a row-level DAX calculated column using SWITCH(TRUE()) to evaluate 'complaints'[Product] and return the corresponding grouping. This is a calculated column because the logic is row-level and does not use aggregation."
+    },
+    {
+      "type": "measure",
+      "table": "complaints",
+      "name": "Selected Color",
+      "dax_expression": "VAR SelectedParam = SELECTEDVALUE('Selected Product'[Display As])\nVAR CurrentProductGrouping = SELECTEDVALUE('complaints'[Product Grouping])\nRETURN IF(CurrentProductGrouping = SelectedParam, TRUE(), FALSE())",
+      "solution_explanation": "Replaced the Tableau parameter reference with SELECTEDVALUE('Selected Product'[Display As]) per parameter mapping rules, and compared it to the row-level 'complaints'[Product Grouping]. Implemented as a measure because it references a parameter and uses SELECTEDVALUE to evaluate in the current filter context.",
+      "type_changed_reason": "The calculation references a parameter, and all parameter-based calculations must be measures."
+    }
+  ]
+}
