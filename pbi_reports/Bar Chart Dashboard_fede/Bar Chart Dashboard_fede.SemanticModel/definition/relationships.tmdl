@@ -1,0 +1,20 @@
+relationship 95a355fa-34f0-47e9-8942-41da58c74017
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Orders (Sample - Superstore)'.'Order Date'
+	toColumn: LocalDateTable_1fc27b07-ce27-4c58-a710-98fcba186b05.Date
+
+relationship da652b36-f1c1-49f1-8123-c8c7752986b1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Orders (Sample - Superstore)'.'Ship Date'
+	toColumn: LocalDateTable_9f67920b-9025-406e-b3b0-befb1695d068.Date
+
+relationship 8ef2aafb-023f-4a09-b0a5-ae6bea5ee195
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Sheet1_Sheet1 (Coffee Chain)'.Date
+	toColumn: LocalDateTable_abf3c75c-ed96-4db4-bd72-ba9b329d71c2.Date
+
+relationship 9d116ab9-5250-4b1f-a7d1-2b92e08406f8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Extract_Sheet1 (Coffee Chain)'.Date
+	toColumn: LocalDateTable_5fe9273a-ca2e-4468-920d-26250c4d61de.Date
+
