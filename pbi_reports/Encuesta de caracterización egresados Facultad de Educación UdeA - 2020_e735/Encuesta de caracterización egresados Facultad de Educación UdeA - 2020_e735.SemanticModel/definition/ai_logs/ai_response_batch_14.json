@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "name": "Conteo Género",
+      "dax_expression": "VAR _gender = SELECTEDVALUE('TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Identidad de género:])\nVAR _countCedula = DISTINCTCOUNT('TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Número de cédula:])\nRETURN IF(_gender = \"Femenino\", -1 * _countCedula, _countCedula)",
+      "solution_explanation": "Converted Tableau IF with ATTR(...) and COUNTD(...) to DAX. ATTR([Identidad de género:]) is approximated with SELECTEDVALUE('TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Identidad de género:]). COUNTD([Número de cédula:]) maps to DISTINCTCOUNT('TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Número de cédula:]). The logic returns the negative distinct count when gender equals \"Femenino\" and the positive distinct count otherwise.",
+      "type_changed_reason": "The calculation uses aggregation (COUNTD / DISTINCTCOUNT), so it must be created as a measure."
+    }
+  ]
+}
