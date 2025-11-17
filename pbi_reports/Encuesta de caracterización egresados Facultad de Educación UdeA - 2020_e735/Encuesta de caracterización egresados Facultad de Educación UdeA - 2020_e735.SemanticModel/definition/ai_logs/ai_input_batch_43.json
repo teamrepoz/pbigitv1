@@ -1,0 +1,28 @@
+{
+  "calculations": [
+    {
+      "name": "bins",
+      "table_name": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "tableau_expression": "IF [Edad graduante] <= 17 AND [Edad graduante] <=17\r\nTHEN \"Menor de 20\"\r\n\r\nELSEIF  [Edad graduante] >= 20 AND [Edad graduante] <=25\r\nTHEN \"20-25\"\r\n\r\nELSEIF \r\n[Edad graduante] >= 26 AND [Edad graduante]<=30\r\nTHEN \"26-30\"\r\n\r\nELSEIF \r\n[Edad graduante] >= 31 AND [Edad graduante] <=40\r\nTHEN \"31-40\"\r\n\r\nELSEIF \r\n[Edad graduante] >= 41 AND [Edad graduante] <=50\r\nTHEN \"41-50\"\r\n\r\nELSEIF \r\n[Edad graduante] >= 51 AND [Edad graduante] <=60\r\nTHEN \"51-60\"\r\n\r\nELSEIF \r\n[Edad graduante] >= 61 AND [Edad graduante] <=69\r\nTHEN \"60-69\"\r\n\r\nEND",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "IF [Edad graduante] <= 17 AND [Edad graduante] <=17\r\nTHEN \"Menor de 20\"\r\n\r\nELSEIF  [Edad graduante] >= 20 AND [Edad graduante] <=25\r\nTHEN \"20-25\"\r\n\r\nELSEIF \r\n[Edad graduante] >= 26 AND [Edad graduante]<=30\r\nTHEN \"26-30\"\r\n\r\nELSEIF \r\n[Edad graduante] >= 31 AND [Edad graduante] <=40\r\nTHEN \"31-40\"\r\n\r\nELSEIF \r\n[Edad graduante] >= 41 AND [Edad graduante] <=50\r\nTHEN \"41-50\"\r\n\r\nELSEIF \r\n[Edad graduante] >= 51 AND [Edad graduante] <=60\r\nTHEN \"51-60\"\r\n\r\nELSEIF \r\n[Edad graduante] >= 61 AND [Edad graduante] <=69\r\nTHEN \"60-69\"\r\n\r\nEND",
+        "calculated_fields": {
+          "Edad graduante": "IF [Años cuando se graduo] = 9 THEN 17 ELSE [Años cuando se graduo] END",
+          "Años cuando se graduo": "[Año de egreso]- [Año nacimiento]",
+          "Año nacimiento": "YEAR([Fecha_de_Nacimiento])"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Año de egreso": "integer",
+          "Fecha_de_Nacimiento": "date"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Edad graduante": "integer",
+          "Años cuando se graduo": "integer",
+          "Año nacimiento": "Int64"
+        }
+      }
+    }
+  ]
+}
