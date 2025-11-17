@@ -1,0 +1,71 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.63\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "name": "Section_Dashboard 1",
+      "ordinal": 0,
+      "displayName": "Dashboard 1",
+      "visualContainers": [
+        {
+          "x": 8,
+          "y": 507,
+          "z": 0,
+          "width": 438,
+          "height": 435,
+          "config": "{\"name\": \"4b82677b6c14\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 8, \"y\": 507, \"z\": 1000, \"width\": 438, \"height\": 435, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"stackedAreaChart\", \"projections\": {\"Category\": [{\"queryRef\": \"rossmann_sales_prediction.Sales\", \"active\": true}], \"Y\": [{\"queryRef\": \"Tmn(rossmann_sales_prediction.Date)\"}], \"Series\": [{\"queryRef\": \"rossmann_sales_prediction.StoreType\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"r\", \"Entity\": \"rossmann_sales_prediction\", \"Type\": 0}], \"Select\": [{\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Sales\", \"Expression\": {\"SourceRef\": {\"Source\": \"r\"}}}}, \"Function\": 0}, \"Name\": \"Sum(rossmann_sales_prediction.Sales)\", \"NativeReferenceName\": \"Sum of Sales\"}, {\"Column\": {\"Property\": \"Date\", \"Expression\": {\"SourceRef\": {\"Source\": \"r\"}}}, \"Name\": \"rossmann_sales_prediction.Date\", \"NativeReferenceName\": \"Date\"}, {\"Column\": {\"Property\": \"StoreType\", \"Expression\": {\"SourceRef\": {\"Source\": \"r\"}}}, \"Name\": \"rossmann_sales_prediction.StoreType\", \"NativeReferenceName\": \"StoreType\"}], \"OrderBy\": []}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"titleBold\": {\"expr\": {\"Literal\": {\"Value\": \"\"}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": 15}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'100% stacked area'\"}}}}}]}}}"
+        },
+        {
+          "x": 377,
+          "y": 48,
+          "z": 0,
+          "width": 670,
+          "height": 459,
+          "config": "{\"name\": \"37b51d194a751\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 377, \"y\": 48, \"z\": 1000, \"width\": 670, \"height\": 459, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"columnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"rossmann_sales_prediction.Sales\", \"active\": true}], \"Y\": [{\"queryRef\": \"rossmann_sales_prediction.StoreType\"}], \"Series\": [{\"queryRef\": \"rossmann_sales_prediction.StoreType\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"r\", \"Entity\": \"rossmann_sales_prediction\", \"Type\": 0}], \"Select\": [{\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Sales\", \"Expression\": {\"SourceRef\": {\"Source\": \"r\"}}}}, \"Function\": 0}, \"Name\": \"Sum(rossmann_sales_prediction.Sales)\", \"NativeReferenceName\": \"Sum of Sales\"}, {\"Column\": {\"Property\": \"StoreType\", \"Expression\": {\"SourceRef\": {\"Source\": \"r\"}}}, \"Name\": \"rossmann_sales_prediction.StoreType\", \"NativeReferenceName\": \"StoreType\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"r\"}}, \"Property\": \"StoreType\"}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"titleBold\": {\"expr\": {\"Literal\": {\"Value\": \"\"}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"15D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Bar'\"}}}}}]}}}"
+        },
+        {
+          "x": 446,
+          "y": 507,
+          "z": 0,
+          "width": 746,
+          "height": 435,
+          "config": "{\"name\": \"6438c669e0d0de98e6929c2cc0fac47\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 446, \"y\": 507, \"z\": 1000, \"width\": 746, \"height\": 435, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"stackedAreaChart\", \"projections\": {\"Category\": [{\"queryRef\": \"rossmann_sales_prediction.Date.Variation.Date Hierarchy.Month\", \"active\": true}], \"Y\": [{\"queryRef\": \"Sum(rossmann_sales_prediction.Sales)\"}], \"Series\": [{\"queryRef\": \"rossmann_sales_prediction.StoreType\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"r\", \"Entity\": \"rossmann_sales_prediction\", \"Type\": 0}], \"Select\": [{\"HierarchyLevel\": {\"Expression\": {\"Hierarchy\": {\"Expression\": {\"PropertyVariationSource\": {\"Expression\": {\"SourceRef\": {\"Source\": \"r\"}}, \"Name\": \"Variation\", \"Property\": \"Date\"}}, \"Hierarchy\": \"Date Hierarchy\"}}, \"Level\": \"Month\"}, \"Name\": \"rossmann_sales_prediction.Date.Variation.Date Hierarchy.Month\", \"NativeReferenceName\": \"Date Month\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Sales\", \"Expression\": {\"SourceRef\": {\"Source\": \"r\"}}}}, \"Function\": 0}, \"Name\": \"Sum(rossmann_sales_prediction.Sales)\", \"NativeReferenceName\": \"Sum of Sales\"}, {\"Column\": {\"Property\": \"StoreType\", \"Expression\": {\"SourceRef\": {\"Source\": \"r\"}}}, \"Name\": \"rossmann_sales_prediction.StoreType\", \"NativeReferenceName\": \"StoreType\"}], \"OrderBy\": []}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"titleBold\": {\"expr\": {\"Literal\": {\"Value\": \"\"}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"15D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Line Dual Axis with Area'\"}}}}}]}}}"
+        },
+        {
+          "x": 8,
+          "y": 48,
+          "z": 0,
+          "width": 369,
+          "height": 459,
+          "config": "{\"name\": \"ea702ba4205cb3\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 8, \"y\": 48, \"z\": 1000, \"width\": 369, \"height\": 459, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"pieChart\", \"projections\": {\"Category\": [{\"queryRef\": \"rossmann_sales_prediction.StoreType\", \"active\": true}], \"Y\": [{\"queryRef\": \"Sum(rossmann_sales_prediction.Sales)\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"r\", \"Entity\": \"rossmann_sales_prediction\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Property\": \"StoreType\", \"Expression\": {\"SourceRef\": {\"Source\": \"r\"}}}, \"Name\": \"rossmann_sales_prediction.StoreType\", \"NativeReferenceName\": \"StoreType\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Sales\", \"Expression\": {\"SourceRef\": {\"Source\": \"r\"}}}}, \"Function\": 0}, \"Name\": \"Sum(rossmann_sales_prediction.Sales)\", \"NativeReferenceName\": \"Sum of Sales\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Sales\", \"Expression\": {\"SourceRef\": {\"Source\": \"r\"}}}}, \"Function\": 0}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"titleBold\": {\"expr\": {\"Literal\": {\"Value\": \"\"}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"15D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Pie'\"}}}}}]}}}"
+        },
+        {
+          "x": 1047,
+          "y": 48,
+          "z": 0,
+          "width": 145,
+          "height": 459,
+          "config": "{\"name\": \"1bf7ac27cd\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1047, \"y\": 48, \"z\": 1000, \"width\": 145, \"height\": 459, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"columnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"rossmann_sales_prediction.Date.Variation.Date Hierarchy.Year\", \"active\": true}], \"Y\": [{\"queryRef\": \"Sum(rossmann_sales_prediction.Sales)\"}], \"Series\": [{\"queryRef\": \"rossmann_sales_prediction.StoreType\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"r\", \"Entity\": \"rossmann_sales_prediction\", \"Type\": 0}], \"Select\": [{\"HierarchyLevel\": {\"Expression\": {\"Hierarchy\": {\"Expression\": {\"PropertyVariationSource\": {\"Expression\": {\"SourceRef\": {\"Source\": \"r\"}}, \"Name\": \"Variation\", \"Property\": \"Date\"}}, \"Hierarchy\": \"Date Hierarchy\"}}, \"Level\": \"Year\"}, \"Name\": \"rossmann_sales_prediction.Date.Variation.Date Hierarchy.Year\", \"NativeReferenceName\": \"Date Year\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Sales\", \"Expression\": {\"SourceRef\": {\"Source\": \"r\"}}}}, \"Function\": 0}, \"Name\": \"Sum(rossmann_sales_prediction.Sales)\", \"NativeReferenceName\": \"Sum of Sales\"}, {\"Column\": {\"Property\": \"StoreType\", \"Expression\": {\"SourceRef\": {\"Source\": \"r\"}}}, \"Name\": \"rossmann_sales_prediction.StoreType\", \"NativeReferenceName\": \"StoreType\"}], \"OrderBy\": []}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"titleBold\": {\"expr\": {\"Literal\": {\"Value\": \"\"}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": 15}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Stacked Bar'\"}}}}}]}}}"
+        }
+      ],
+      "width": 1200.0,
+      "height": 950.0
+    }
+  ]
+}
