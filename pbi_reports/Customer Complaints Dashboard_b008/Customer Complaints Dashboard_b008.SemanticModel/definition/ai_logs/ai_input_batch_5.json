@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "TC_Value",
+      "table_name": "Data (Complaint Line)",
+      "tableau_expression": "WINDOW_MAX(MAX([Value]))",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "WINDOW_MAX(MAX([Value]))",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Value": "integer"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
