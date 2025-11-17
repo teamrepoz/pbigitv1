@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Parameters",
+      "name": "top 10 products",
+      "dax_expression": "8",
+      "solution_explanation": "The Tableau expression is a constant literal (8) with no aggregations or parameter references. This is a row-level constant and is implemented as a calculated column returning 8 for each row."
+    }
+  ]
+}
