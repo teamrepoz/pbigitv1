@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Sheet1 (radial_bar_chart_data)",
+      "name": "wc_pi",
+      "dax_expression": "PI()",
+      "solution_explanation": "WINDOW_MAX(MAX(pi())) returns the constant π across the window. In DAX PI() returns π; since the Tableau formula uses a table calculation (WINDOW_MAX) it must be implemented as a measure.",
+      "type_changed_reason": "The Tableau expression uses a table calculation (WINDOW_MAX), which requires an aggregate/context-aware evaluation; therefore it should be a measure."
+    }
+  ]
+}
