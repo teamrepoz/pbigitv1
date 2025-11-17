@@ -1,0 +1,5 @@
+relationship 6011754d-7fc5-4192-ba92-f0f81c239807
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CoffeeChain Query (Sample - Cof (CoffeeChain DATASET)'.Date
+	toColumn: LocalDateTable_b99ddb74-c34e-4961-9b5b-da9d8abd2405.Date
+
