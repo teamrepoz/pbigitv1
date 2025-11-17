@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "TOTAL FILMS",
+      "table_name": "HollywoodsMostProfitableStories",
+      "tableau_expression": "\"TOTAL FILMS\"",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "\"TOTAL FILMS\"",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
