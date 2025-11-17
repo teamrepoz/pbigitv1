@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Encuesta de caracterizaci\u00f3n egresados Facultad de Educaci\u00f3n UdeA - 2020_e735"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "169d6501-bf0e-4edd-80ff-abd01e027acf"
+  }
+}
