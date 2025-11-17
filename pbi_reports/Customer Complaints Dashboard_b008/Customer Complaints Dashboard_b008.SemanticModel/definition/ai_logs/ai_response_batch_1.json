@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Parameters",
+      "name": "Map Type",
+      "dax_expression": "\"Tile\"",
+      "solution_explanation": "This is a row-level constant string. Converted to a calculated column that returns \"Tile\" for each row in the 'Parameters' table."
+    }
+  ]
+}
