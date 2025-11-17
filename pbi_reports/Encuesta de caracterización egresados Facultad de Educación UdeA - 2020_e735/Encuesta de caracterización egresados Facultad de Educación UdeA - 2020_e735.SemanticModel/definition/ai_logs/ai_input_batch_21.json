@@ -1,0 +1,26 @@
+{
+  "calculations": [
+    {
+      "name": "Edad graduante",
+      "table_name": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "tableau_expression": "IF [Años cuando se graduo] = 9 THEN 17 ELSE [Años cuando se graduo] END",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "IF [Años cuando se graduo] = 9 THEN 17 ELSE [Años cuando se graduo] END",
+        "calculated_fields": {
+          "Años cuando se graduo": "[Año de egreso]- [Año nacimiento]",
+          "Año nacimiento": "YEAR([Fecha_de_Nacimiento])"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Año de egreso": "integer",
+          "Fecha_de_Nacimiento": "date"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Años cuando se graduo": "integer",
+          "Año nacimiento": "Int64"
+        }
+      }
+    }
+  ]
+}
