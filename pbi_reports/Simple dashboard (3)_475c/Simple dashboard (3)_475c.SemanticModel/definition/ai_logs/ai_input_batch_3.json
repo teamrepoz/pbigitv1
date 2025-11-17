@@ -1,0 +1,23 @@
+{
+  "calculations": [
+    {
+      "name": "Metric Chosen",
+      "table_name": "Orders (Sample - Superstore)",
+      "tableau_expression": "[Parameters].[Choose a Metric]",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "[Parameters].[Choose a Metric]",
+        "calculated_fields": {
+          "Choose a Metric": "\"Sales\""
+        },
+        "parameters": [
+          "Choose a Metric"
+        ],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {
+          "Choose a Metric": "string"
+        }
+      }
+    }
+  ]
+}
