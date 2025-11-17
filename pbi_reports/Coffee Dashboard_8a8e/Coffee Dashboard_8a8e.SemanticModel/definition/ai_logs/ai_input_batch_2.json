@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "Zero Axis",
+      "table_name": "raw_data (Dashboard Lesson - Coffee Shop Sales)",
+      "tableau_expression": "0",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "0",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
