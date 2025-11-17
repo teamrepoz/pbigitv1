@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Sales DataSource",
+      "name": "Total Products",
+      "dax_expression": "DISTINCTCOUNT('Sales DataSource'[PRODUCT_ID])",
+      "solution_explanation": "Converted Tableau COUNTD([PRODUCT_ID]) to DAX DISTINCTCOUNT and mapped the column reference to 'Sales DataSource'[PRODUCT_ID]. This is an aggregation, so implemented as a measure.",
+      "type_changed_reason": "The calculation uses an aggregation (COUNTD), therefore it should be created as a measure in Power BI."
+    }
+  ]
+}
