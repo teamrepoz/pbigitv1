@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "name": "\"Número de cédula:\",\"Marca temporal\",\"Dirección de correo electrónico\",\"Nombres y apellidos:\",\"Identidad de género:\",\"Dirección - División 9",
+      "dax_expression": "TRIM(PATHITEM(SUBSTITUTE('TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[\"Número de cédula:\",\"Marca temporal\",\"Dirección de correo electrónico\",\"Nombres y apellidos:\",\"Identidad de género:\",\"Dirección], \",\", \"|\"), 9, 0))",
+      "solution_explanation": "Converted Tableau TRIM(SPLIT([Field], \",\", 9)) to DAX by replacing SPLIT with PATHITEM on a substituted delimiter: SUBSTITUTE(..., \",\", \"|\") then PATHITEM(..., 9, 0) to get the 9th token, wrapped with TRIM. Kept the column reference in 'Table'[Column] format and created a calculated column because this is a row-level string transformation."
+    }
+  ]
+}
