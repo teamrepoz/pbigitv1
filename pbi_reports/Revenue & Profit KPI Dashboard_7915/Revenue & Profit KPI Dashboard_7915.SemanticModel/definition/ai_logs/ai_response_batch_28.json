@@ -1,0 +1,28 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "Max Date",
+      "dax_expression": "MAX('Orders (Sample - Superstore)'[Order Date])",
+      "solution_explanation": "Convert Tableau LOD {MAX([Order Date])} to a DAX aggregation measure using MAX on the Order Date column.",
+      "type_changed_reason": "This calculation uses a fixed LOD ({MAX([Order Date])}) which is an aggregation, so it should be a measure."
+    },
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "First Date Pre Month",
+      "dax_expression": "VAR prevDate = EDATE([Max Date], -1)\nRETURN DATE(YEAR(prevDate), MONTH(prevDate), 1)",
+      "solution_explanation": "Translate DATE(DATETRUNC('month', DATEADD('month', -1, [Max Date]))) by shifting Max Date with EDATE and constructing the first day of that month with DATE(YEAR(...), MONTH(...), 1). Uses the Max Date measure defined earlier.",
+      "type_changed_reason": "Depends on an aggregation (Max Date); because it relies on an aggregate value it must be created as a measure."
+    },
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "Pre Month",
+      "dax_expression": "VAR selOrderDate = SELECTEDVALUE('Orders (Sample - Superstore)'[Order Date])\nVAR truncOrderDate = IF(NOT(ISBLANK(selOrderDate)), DATE(YEAR(selOrderDate), MONTH(selOrderDate), 1), BLANK())\nRETURN IF(truncOrderDate = [First Date Pre Month], TRUE(), FALSE())",
+      "solution_explanation": "Convert DATETRUNC('month',[Order Date]) by constructing the first day of the month with DATE(YEAR(...), MONTH(...), 1) and compare it to the First Date Pre Month measure. Uses SELECTEDVALUE to obtain a single Order Date in the measure context.",
+      "type_changed_reason": "The calculation references a calculated field that depends on an aggregation (First Date Pre Month → Max Date), so it must be a measure."
+    }
+  ]
+}
