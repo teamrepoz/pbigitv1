@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "COLLEGE+ (TXSA0308)",
+      "name": "Sales",
+      "dax_expression": "'COLLEGE+ (TXSA0308)'[PRICE] * 'COLLEGE+ (TXSA0308)'[ENROLLMENT]",
+      "solution_explanation": "Row-level multiplication converted from Tableau [PRICE]*[ENROLLMENT] to DAX using table-qualified column references. This uses only row-level fields, so it is implemented as a calculated column."
+    }
+  ]
+}
