@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "Measure Selector Param",
+      "table_name": "Parameters",
+      "tableau_expression": "\"Profit\"",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "\"Profit\"",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
