@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Data (Complaint Line)",
+      "name": "Filter",
+      "dax_expression": "'Data (Complaint Line)'[Category] = SELECTEDVALUE('Selected Product'[Display As]) && 'Data (Complaint Line)'[Type] = SELECTEDVALUE('Date Type'[Display As])",
+      "solution_explanation": "Converted Tableau parameter references to SELECTEDVALUE('ParameterName'[Display As]) for both [Parameters].[Selected Product] and [Parameters].[Date Type]. Transformed Tableau logical AND to DAX && and converted row field references to 'Data (Complaint Line)'[Category] and 'Data (Complaint Line)'[Type]. The expression returns a boolean comparing row values to the selected parameter values.",
+      "type_changed_reason": "The calculation references Tableau parameters (Selected Product and Date Type). Per rules, any formula that references parameters must be implemented as a measure."
+    }
+  ]
+}
