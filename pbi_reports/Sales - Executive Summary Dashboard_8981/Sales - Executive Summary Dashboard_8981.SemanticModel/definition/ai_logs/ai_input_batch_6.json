@@ -1,0 +1,23 @@
+{
+  "calculations": [
+    {
+      "name": "Gross Profit Total",
+      "table_name": "Orders+ (Sample - Superstore)",
+      "tableau_expression": "[Profit] * 2.5",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "[Profit] * 2.5",
+        "calculated_fields": {
+          "Profit": "[Sales] * .575"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Sales": "real"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Profit": "real"
+        }
+      }
+    }
+  ]
+}
