@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "YTD Value - Last Year",
+      "dax_expression": "VAR MaxDate = CALCULATE(MAX('Orders (Sample - Superstore)'[Order Date]), ALL('Orders (Sample - Superstore)'))\nVAR MaxDateLastYear = DATE(YEAR(MaxDate) - 1, MONTH(MaxDate), DAY(MaxDate))\nVAR StartOfYearLastYear = DATE(YEAR(MaxDateLastYear), 1, 1)\nVAR sel = SELECTEDVALUE('Measure Selector Param'[Display As])\nRETURN\nSUMX(\n    FILTER(\n        'Orders (Sample - Superstore)',\n        'Orders (Sample - Superstore)'[Order Date] >= StartOfYearLastYear &&\n        'Orders (Sample - Superstore)'[Order Date] <= MaxDateLastYear\n    ),\n    SWITCH(\n        sel,\n        \"Profit\", 'Orders (Sample - Superstore)'[Profit],\n        \"Sales\", 'Orders (Sample - Superstore)'[Sales],\n        BLANK()\n    )\n)",
+      "solution_explanation": "Converted the Tableau LOD and conditional sum into a DAX measure. Emulated {MAX([Order Date])} with CALCULATE(MAX(...), ALL(...)) to get the dataset max date, computed last year dates with DATE/YEAR/MONTH/DAY, used SELECTEDVALUE('Measure Selector Param'[Display As]) for the Tableau parameter, and SUMX over filtered rows with SWITCH to pick Profit or Sales per row.",
+      "type_changed_reason": "The calculation uses aggregation and references a Tableau parameter, so it must be created as a measure."
+    }
+  ]
+}
