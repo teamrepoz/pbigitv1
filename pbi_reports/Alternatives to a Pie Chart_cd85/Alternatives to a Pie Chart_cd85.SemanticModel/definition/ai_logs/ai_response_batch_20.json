@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "rossmann_sales_prediction",
+      "name": "b portion",
+      "dax_expression": "DIVIDE(\n    CALCULATE(\n        SUM('rossmann_sales_prediction'[Sales]),\n        'rossmann_sales_prediction'[StoreType] = \"b\"\n    ),\n    SUM('rossmann_sales_prediction'[Sales])\n)",
+      "solution_explanation": "Translated Tableau's SUM(IF [StoreType] = \"b\" THEN [Sales] END) to CALCULATE(SUM(table[Sales]), table[StoreType] = \"b\"). Used DIVIDE(...) to perform the division safely. This is a measure because it uses aggregation (SUM)."
+    }
+  ]
+}
