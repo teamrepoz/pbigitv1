@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "HollywoodsMostProfitableStories",
+      "name": "TOTAL FILMS",
+      "dax_expression": "\"TOTAL FILMS\"",
+      "solution_explanation": "The Tableau expression is a constant string literal. This is row-level (no aggregation or parameters), so it is implemented as a calculated column that returns the string \"TOTAL FILMS\"."
+    }
+  ]
+}
