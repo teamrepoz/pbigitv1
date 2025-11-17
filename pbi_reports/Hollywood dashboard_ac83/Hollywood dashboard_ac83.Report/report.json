@@ -1,0 +1,71 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.63\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "name": "Section_Dashboard 1",
+      "ordinal": 0,
+      "displayName": "Dashboard 1",
+      "visualContainers": [
+        {
+          "x": 28,
+          "y": 95,
+          "z": 0,
+          "width": 764,
+          "height": 445,
+          "config": "{\"name\": \"398d45314fdf\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 28, \"y\": 95, \"z\": 1000, \"width\": 764, \"height\": 445, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"barChart\", \"projections\": {\"Category\": [{\"queryRef\": \"HollywoodsMostProfitableStories.Lead Studio\", \"active\": true}], \"Y\": [{\"queryRef\": \"Avg(HollywoodsMostProfitableStories.Profitability)\"}], \"Series\": [{\"queryRef\": \"HollywoodsMostProfitableStories.Genre\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"H\", \"Entity\": \"HollywoodsMostProfitableStories\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Property\": \"Lead Studio\", \"Expression\": {\"SourceRef\": {\"Source\": \"H\"}}}, \"Name\": \"HollywoodsMostProfitableStories.Lead Studio\", \"NativeReferenceName\": \"Lead Studio\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Profitability\", \"Expression\": {\"SourceRef\": {\"Source\": \"H\"}}}}, \"Function\": 1}, \"Name\": \"Avg(HollywoodsMostProfitableStories.Profitability)\", \"NativeReferenceName\": \"Avg of Profitability\"}, {\"Column\": {\"Property\": \"Genre\", \"Expression\": {\"SourceRef\": {\"Source\": \"H\"}}}, \"Name\": \"HollywoodsMostProfitableStories.Genre\", \"NativeReferenceName\": \"Genre\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Profitability\", \"Expression\": {\"SourceRef\": {\"Source\": \"H\"}}}}, \"Function\": 1}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Tableau Bold'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'10D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#000000'\"}}}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#000000'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#000000'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"15D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Tableau Bold'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'PROFITABILITY BY LEAD STUDIO AND GENRE'\"}}}}}]}}}"
+        },
+        {
+          "x": 34,
+          "y": 10,
+          "z": 0,
+          "width": 1563,
+          "height": 87,
+          "config": "{\"name\": \"fe613231445376793\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 34, \"y\": 10, \"z\": 1000, \"width\": 1563, \"height\": 87, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"HollywoodsMostProfitableStories.TITLE \"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"H\", \"Entity\": \"HollywoodsMostProfitableStories\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"H\"}}, \"Property\": \"TITLE \"}, \"Name\": \"HollywoodsMostProfitableStories.TITLE \", \"NativeReferenceName\": \"TITLE \"}], \"OrderBy\": []}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}], \"labels\": [{\"properties\": {\"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Tableau Bold'''\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"28D\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#000000'\"}}}}}, \"bold\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"15D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'TITLE '\"}}}, \"italic\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}"
+        },
+        {
+          "x": 25.0,
+          "y": 620.0,
+          "z": 0,
+          "width": 463.75,
+          "height": 315.56,
+          "config": "{\"name\": \"0772d300\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 0, \"y\": 0, \"z\": 1000, \"width\": 800, \"height\": 600, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"pieChart\", \"projections\": {\"Category\": [{\"queryRef\": \"HollywoodsMostProfitableStories.Genre\", \"active\": true}], \"Y\": [{\"queryRef\": \"Count(HollywoodsMostProfitableStories.Film)\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"H\", \"Entity\": \"HollywoodsMostProfitableStories\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Property\": \"Genre\", \"Expression\": {\"SourceRef\": {\"Source\": \"H\"}}}, \"Name\": \"HollywoodsMostProfitableStories.Genre\", \"NativeReferenceName\": \"Genre\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Film\", \"Expression\": {\"SourceRef\": {\"Source\": \"H\"}}}}, \"Function\": 5}, \"Name\": \"Count(HollywoodsMostProfitableStories.Film)\", \"NativeReferenceName\": \"Count of Film\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Film\", \"Expression\": {\"SourceRef\": {\"Source\": \"H\"}}}}, \"Function\": 5}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#000000'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"15D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Tableau Bold'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'TOTAL FILMS BY GENRE'\"}}}}}]}}}"
+        },
+        {
+          "x": 510.63,
+          "y": 612.22,
+          "z": 0,
+          "width": 478.75,
+          "height": 315.56,
+          "config": "{\"name\": \"954ea06fe203\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 100, \"y\": 100, \"z\": 1000, \"width\": 400, \"height\": 300, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"pieChart\", \"projections\": {\"Category\": [{\"queryRef\": \"HollywoodsMostProfitableStories.Film\", \"active\": true}], \"Y\": [{\"queryRef\": \"Count(HollywoodsMostProfitableStories.Film)\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"H\", \"Entity\": \"HollywoodsMostProfitableStories\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Property\": \"Film\", \"Expression\": {\"SourceRef\": {\"Source\": \"H\"}}}, \"Name\": \"HollywoodsMostProfitableStories.Film\", \"NativeReferenceName\": \"Film\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Film\", \"Expression\": {\"SourceRef\": {\"Source\": \"H\"}}}}, \"Function\": 5}, \"Name\": \"Count(HollywoodsMostProfitableStories.Film)\", \"NativeReferenceName\": \"Count of Film\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Film\", \"Expression\": {\"SourceRef\": {\"Source\": \"H\"}}}}, \"Function\": 5}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#000000'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"15D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Tableau Bold'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'TOTAL FILMS BY LEAD STUDIO'\"}}}}}]}}}"
+        },
+        {
+          "x": 812,
+          "y": 97,
+          "z": 0,
+          "width": 775,
+          "height": 438,
+          "config": "{\"name\": \"b8b066ab83d0cfe5e18a\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 812, \"y\": 97, \"z\": 1000, \"width\": 775, \"height\": 438, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"columnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"HollywoodsMostProfitableStories.Year\", \"active\": true}], \"Y\": [{\"queryRef\": \"Count(HollywoodsMostProfitableStories.Film)\"}], \"Series\": [{\"queryRef\": \"HollywoodsMostProfitableStories.Genre\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"H\", \"Entity\": \"HollywoodsMostProfitableStories\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Property\": \"Year\", \"Expression\": {\"SourceRef\": {\"Source\": \"H\"}}}, \"Name\": \"HollywoodsMostProfitableStories.Year\", \"NativeReferenceName\": \"Year\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Film\", \"Expression\": {\"SourceRef\": {\"Source\": \"H\"}}}}, \"Function\": 5}, \"Name\": \"Count(HollywoodsMostProfitableStories.Film)\", \"NativeReferenceName\": \"Count of Film\"}, {\"Column\": {\"Property\": \"Genre\", \"Expression\": {\"SourceRef\": {\"Source\": \"H\"}}}, \"Name\": \"HollywoodsMostProfitableStories.Genre\", \"NativeReferenceName\": \"Genre\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Film\", \"Expression\": {\"SourceRef\": {\"Source\": \"H\"}}}}, \"Function\": 5}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"titleBold\": {\"expr\": {\"Literal\": {\"Value\": \"\"}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#000000'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"15D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Tableau Bold'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'TOTAL FILMS BY YEAR AND GENRE'\"}}}}}]}}}"
+        }
+      ],
+      "width": 1600.0,
+      "height": 900.0
+    }
+  ]
+}
