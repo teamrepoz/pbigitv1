@@ -1,0 +1,45 @@
+table 'Measure Selector Param'
+	lineageTag: 16539b0b-1862-4899-b22d-5099223485fd
+
+	column Index
+		formatString: 0
+		lineageTag: d1b97c3c-ad21-4740-981c-5af3e1d8c53d
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 75d2eb69-2700-43a4-aded-abe63afdd099
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 1a678823-5379-4530-b7f9-47624e4975e9
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Measure Selector Param' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Profit", "Profit" },
+				{ 1, "Sales", "Sales" }
+			    }
+			)
+
+	annotation PBI_Id = 2f8f82166f554a7aaf4d6a01380c3b3a
+
