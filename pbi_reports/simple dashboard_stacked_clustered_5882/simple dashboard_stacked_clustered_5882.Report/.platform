@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "simple dashboard_stacked_clustered_5882"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "81993582-cf30-4430-96aa-ca84fef59588"
+  }
+}
