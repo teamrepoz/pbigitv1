@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "historicoEducacionCLEAN (historicoEducacionCLEAN)",
+      "name": "Año Nacimiento",
+      "dax_expression": "YEAR('historicoEducacionCLEAN (historicoEducacionCLEAN)'[Fecha_de_Nacimiento])",
+      "solution_explanation": "Converted Tableau YEAR([Fecha_de_Nacimiento]) to DAX YEAR('historicoEducacionCLEAN (historicoEducacionCLEAN)'[Fecha_de_Nacimiento]). This is a row-level date transformation, so it is implemented as a calculated column."
+    }
+  ]
+}
