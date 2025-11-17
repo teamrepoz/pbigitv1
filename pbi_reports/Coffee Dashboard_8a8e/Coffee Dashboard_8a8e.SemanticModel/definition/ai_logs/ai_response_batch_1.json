@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "raw_data (Dashboard Lesson - Coffee Shop Sales)",
+      "name": "Revenue",
+      "dax_expression": "'raw_data (Dashboard Lesson - Coffee Shop Sales)'[transaction_qty] * 'raw_data (Dashboard Lesson - Coffee Shop Sales)'[unit_price]",
+      "solution_explanation": "Row-level multiplication of transaction_qty and unit_price converted to a calculated column. This uses only row-level fields without aggregation."
+    }
+  ]
+}
