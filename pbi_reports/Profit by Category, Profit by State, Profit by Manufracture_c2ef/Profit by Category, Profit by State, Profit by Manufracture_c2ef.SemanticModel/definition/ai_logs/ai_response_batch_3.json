@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Sample - Superstore",
+      "name": "Profit (bin)",
+      "dax_expression": "'Sample - Superstore'[Profit]",
+      "solution_explanation": "Direct row-level reference: replaced [Profit] with 'Sample - Superstore'[Profit] per table/column formatting rules.",
+      "type_changed_reason": "This references a single row-level field without aggregation or parameters, so it should be a calculated column (dimension) in Power BI."
+    }
+  ]
+}
