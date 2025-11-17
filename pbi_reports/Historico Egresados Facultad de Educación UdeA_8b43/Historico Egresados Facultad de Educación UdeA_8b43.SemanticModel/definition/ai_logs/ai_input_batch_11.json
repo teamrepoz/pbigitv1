@@ -1,0 +1,24 @@
+{
+  "calculations": [
+    {
+      "name": "Edad graduando ",
+      "table_name": "historicoEducacionCLEAN (historicoEducacionCLEAN)",
+      "tableau_expression": "IF NOT ISNULL([Año Nacimiento]) THEN ( [Año título] - [Año Nacimiento]) \r\n\r\nELSEIF NOT ISNULL([Año título]) THEN ( [Año título] - [Año Nacimiento]) \r\n\r\nEND",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "IF NOT ISNULL([Año Nacimiento]) THEN ( [Año título] - [Año Nacimiento]) \r\n\r\nELSEIF NOT ISNULL([Año título]) THEN ( [Año título] - [Año Nacimiento]) \r\n\r\nEND",
+        "calculated_fields": {
+          "Año Nacimiento": "YEAR([Fecha_de_Nacimiento])"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Año título": "integer",
+          "Fecha_de_Nacimiento": "date"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Año Nacimiento": "Int64"
+        }
+      }
+    }
+  ]
+}
