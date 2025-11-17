@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "name": "\"Ingreso promedio mensual (salario mínimo legal vigente - SMLV para el año 2020, $877.802 en el caso Colombiano)\" - División 2",
+      "dax_expression": "VAR txt = 'TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[\"Ingreso promedio mensual (salario mínimo legal vigente - SMLV para el año 2020, $877.802 en el caso Colombiano)\"]\nVAR delim = \"de\"\nVAR pos = SEARCH(delim, txt, 1, 0)\nRETURN\nIF(pos = 0, BLANK(),\n    TRIM(MID(txt, pos + LEN(delim), LEN(txt) - pos - LEN(delim) + 1))\n)",
+      "solution_explanation": "Reimplemented TRIM(SPLIT(...)) in DAX. Extracts the substring after the first occurrence of the delimiter \"de\" using SEARCH and MID, then trims the result. If the delimiter is not found, returns BLANK(). The original column reference was converted to 'Table'[Column] format.",
+      "type_changed_reason": "This calculation uses only row-level string functions (TRIM and SPLIT) operating on a single row's field, so it should be a calculated column (dimension) rather than a measure."
+    }
+  ]
+}
