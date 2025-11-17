@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Parameters",
+      "name": "Selected Product",
+      "dax_expression": "\"OTHER\"",
+      "solution_explanation": "The Tableau expression is a constant string literal. This is a row-level (per-row) constant value, so it is implemented as a calculated column returning the string \"OTHER\"."
+    }
+  ]
+}
