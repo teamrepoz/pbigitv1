@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Parameters",
+      "name": "Elegir valor 2",
+      "dax_expression": "10",
+      "solution_explanation": "The Tableau calculated field is a constant value (10). In Power BI this can be represented as a simple measure returning 10.",
+      "type_changed_reason": "This calculation represents a parameter/static value and parameter-related calculations should be created as measures."
+    }
+  ]
+}
