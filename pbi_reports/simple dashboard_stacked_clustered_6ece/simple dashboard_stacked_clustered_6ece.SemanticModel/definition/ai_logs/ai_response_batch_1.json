@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders (Global Superstore 2016)",
+      "name": "BATCH",
+      "dax_expression": "1",
+      "solution_explanation": "Tableau constant '1' converted to a DAX calculated column returning the constant integer 1. This is row-level logic (no aggregation or parameters), so it is a calculated column."
+    }
+  ]
+}
