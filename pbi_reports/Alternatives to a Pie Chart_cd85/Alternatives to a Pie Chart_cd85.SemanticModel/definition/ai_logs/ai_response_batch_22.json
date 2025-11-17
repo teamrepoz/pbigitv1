@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Sheet1 (waffle template)",
+      "name": "StoreType Color",
+      "dax_expression": "VAR avgPercent = AVERAGE('Sheet1 (waffle template)'[Percentage])\nRETURN\nIF(\n    avgPercent <= 'Sheet1 (waffle template)'[a portion],\n    \"a\",\n    IF(\n        avgPercent <= 'Sheet1 (waffle template)'[a portion] + 'Sheet1 (waffle template)'[b portion],\n        \"b\",\n        IF(\n            avgPercent <= 'Sheet1 (waffle template)'[a portion] + 'Sheet1 (waffle template)'[b portion] + 'Sheet1 (waffle template)'[c portion],\n            \"c\",\n            \"d\"\n        )\n    )\n)",
+      "solution_explanation": "Converted AVG([Percentage]) to AVERAGE('Sheet1 (waffle template)'[Percentage]), replaced the ELSEIF chain with nested IF() calls, and transformed all column references to the 'Sheet1 (waffle template)'[Column] format. The measure returns \"a\"/\"b\"/\"c\"/\"d\" based on cumulative portion thresholds.",
+      "type_changed_reason": "The calculation uses aggregation (AVG) and references aggregated calculated fields, so it must be created as a measure."
+    }
+  ]
+}
