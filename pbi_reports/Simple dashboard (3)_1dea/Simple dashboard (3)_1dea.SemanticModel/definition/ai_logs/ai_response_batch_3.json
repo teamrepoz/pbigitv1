@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "Metric Chosen",
+      "dax_expression": "SELECTEDVALUE('Choose a Metric'[Display As])",
+      "solution_explanation": "Converted Tableau parameter reference [Parameters].[Choose a Metric] to DAX SELECTEDVALUE on the parameter table. Parameters must be retrieved via SELECTEDVALUE('ParameterName'[Display As]) in DAX.",
+      "type_changed_reason": "The calculation references a Tableau parameter, and per rules all parameter-based calculations must be created as measures."
+    }
+  ]
+}
