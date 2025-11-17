@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Commission Total",
+      "table_name": "Orders+ (Sample - Superstore)",
+      "tableau_expression": "[Discount] *342.34",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "[Discount] *342.34",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Discount": "real"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
