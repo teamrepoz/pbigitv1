@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "historicoEducacionCLEAN (historicoEducacionCLEAN)",
+      "name": "masculino",
+      "dax_expression": "IF(CONTAINSSTRING('historicoEducacionCLEAN (historicoEducacionCLEAN)'[Sexo egresados], \"M\"), 'historicoEducacionCLEAN (historicoEducacionCLEAN)'[Identificacion], BLANK())",
+      "solution_explanation": "Translated Tableau IF CONTAINS([Sexo egresados], \"M\") THEN [Identificacion] END to DAX using CONTAINSSTRING. Column references were converted to 'TableName'[Column] format. The expression returns Identificacion when Sexo egresados contains \"M\", otherwise BLANK()."
+    }
+  ]
+}
