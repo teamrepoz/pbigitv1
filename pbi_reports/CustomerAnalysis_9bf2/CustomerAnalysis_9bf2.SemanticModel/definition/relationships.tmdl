@@ -1,0 +1,15 @@
+relationship 8c9ad60b-af68-41fd-828b-c0c661534171
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'sales_06_FY2020-21'.order_date
+	toColumn: LocalDateTable_7b150b4d-8484-4844-b9db-8b691a21fe7d.Date
+
+relationship 7ca21001-825c-4f42-b5e4-232e3f92b42b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'sales_06_FY2020-21'.month
+	toColumn: LocalDateTable_c4917a55-2fd6-46b9-a131-37451f79bb42.Date
+
+relationship 411f4a3d-5a7c-4b75-af16-3a7021c57a3d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'sales_06_FY2020-21'.'Customer Since'
+	toColumn: LocalDateTable_86bb9d2c-8a76-4625-b25d-48002b0d9b01.Date
+
