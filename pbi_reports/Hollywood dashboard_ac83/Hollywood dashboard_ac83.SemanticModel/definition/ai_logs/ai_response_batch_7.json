@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "HollywoodsMostProfitableStories",
+      "name": "HEADER ",
+      "dax_expression": "\"TOTAL FILMS \\r\\nBY GENRE\"",
+      "solution_explanation": "This Tableau calculation is a constant string literal. The DAX equivalent is the same string literal. It contains no aggregations or parameters and operates at row-level, so it should be created as a calculated column."
+    }
+  ]
+}
