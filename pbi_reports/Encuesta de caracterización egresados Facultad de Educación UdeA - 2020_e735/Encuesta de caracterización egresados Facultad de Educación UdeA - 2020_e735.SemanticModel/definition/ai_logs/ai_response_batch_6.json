@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "name": "Posgrado en Curso",
+      "dax_expression": "CALCULATE(\n    DISTINCTCOUNT('TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Número de cédula:]),\n    'TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Posgrado en curso] = \"Sí\"\n)",
+      "solution_explanation": "Translated the FIXED LOD + COUNTD(IF ...) into a measure that counts distinct Número de cédula: where Posgrado en curso = \"Sí\". COUNTD -> DISTINCTCOUNT and the fixed scope is implemented by filtering the table in CALCULATE.",
+      "type_changed_reason": "The Tableau expression uses a FIXED LOD ({ FIXED ... }), which is an aggregation/context-based calculation and must be implemented as a measure in Power BI."
+    }
+  ]
+}
