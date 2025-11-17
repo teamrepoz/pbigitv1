@@ -1,0 +1,20 @@
+{
+  "calculations": [
+    {
+      "name": "Años de estudio",
+      "table_name": "historicoEducacionCLEAN (historicoEducacionCLEAN)",
+      "tableau_expression": "IF NOT ISNULL([Año título]) THEN ( [Año título] - [Año inicio]) \r\nELSEIF NOT ISNULL([Año inicio]) THEN ( [Año título] - [Año inicio]) \r\n\r\n\r\nEND",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "IF NOT ISNULL([Año título]) THEN ( [Año título] - [Año inicio]) \r\nELSEIF NOT ISNULL([Año inicio]) THEN ( [Año título] - [Año inicio]) \r\n\r\n\r\nEND",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Año inicio": "integer",
+          "Año título": "integer"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
