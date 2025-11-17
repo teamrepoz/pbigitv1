@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "YTD",
+      "dax_expression": "VAR MaxDateAll = CALCULATE(MAX('Orders (Sample - Superstore)'[Order Date]), ALL('Orders (Sample - Superstore)'))\nVAR StartOfYear = DATE(YEAR(MaxDateAll), 1, 1)\nRETURN IF(MAX('Orders (Sample - Superstore)'[Order Date]) >= StartOfYear, TRUE(), FALSE())",
+      "solution_explanation": "Translated the Tableau LOD {MAX([Order Date])} to a table-level max using CALCULATE(MAX(...), ALL(...)). DATETRUNC('year',[Max Date]) was converted to DATE(YEAR(MaxDateAll), 1, 1) to get the start of the year. The row-level [Order Date] comparison is implemented with MAX(...) in the current filter context so the measure returns TRUE/FALSE when the context's order date(s) are on or after the start of the year.",
+      "type_changed_reason": "The calculation references an aggregation (the LOD {MAX([Order Date])}), so it must be created as a measure."
+    }
+  ]
+}
