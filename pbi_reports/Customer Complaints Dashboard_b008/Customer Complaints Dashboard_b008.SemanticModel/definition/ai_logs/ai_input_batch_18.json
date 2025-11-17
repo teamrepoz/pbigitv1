@@ -1,0 +1,23 @@
+{
+  "calculations": [
+    {
+      "name": "Index Filter",
+      "table_name": "complaints",
+      "tableau_expression": "index() <= [Parameters].[Top X]",
+      "datatype": "boolean",
+      "calculation_context": {
+        "Expression": "index() <= [Parameters].[Top X]",
+        "calculated_fields": {
+          "Top X": "100"
+        },
+        "parameters": [
+          "Top X"
+        ],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {
+          "Top X": "integer"
+        }
+      }
+    }
+  ]
+}
