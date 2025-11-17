@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Parameters",
+      "name": "Radial Outer",
+      "dax_expression": "1.0",
+      "solution_explanation": "Directly converted the constant numeric value 1.0 from Tableau to DAX as a calculated column because it contains no aggregations or parameter references and applies at the row level."
+    }
+  ]
+}
