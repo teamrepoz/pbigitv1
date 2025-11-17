@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "name": "\"Número de cédula:\",\"Marca temporal\",\"Dirección de correo electrónico\",\"Nombres y apellidos:\",\"Identidad de género:\",\"Dirección - División 7",
+      "dax_expression": "VAR src = 'TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[\\\"Número de cédula:\\\",\\\"Marca temporal\\\",\\\"Dirección de correo electrónico\\\",\\\"Nombres y apellidos:\\\",\\\"Identidad de género:\\\",\\\"Dirección]\nVAR replaced = SUBSTITUTE(src, \",\", \"|\")\nRETURN TRIM(PATHITEM(replaced, 7))",
+      "solution_explanation": "Recreated the Tableau TRIM(SPLIT(column, \",\", 7)) logic in DAX by replacing commas with a PATH delimiter using SUBSTITUTE, extracting the 7th token with PATHITEM, and applying TRIM to remove surrounding whitespace."
+    }
+  ]
+}
