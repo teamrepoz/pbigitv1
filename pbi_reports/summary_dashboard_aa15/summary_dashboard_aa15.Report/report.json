@@ -1,0 +1,71 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.63\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "name": "Section_Dashboard 1",
+      "ordinal": 0,
+      "displayName": "Dashboard 1",
+      "visualContainers": [
+        {
+          "x": 550,
+          "y": 493,
+          "z": 0,
+          "width": 542,
+          "height": 299,
+          "config": "{\"name\": \"f41ce8ca203d33369f975bc\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 550, \"y\": 493, \"z\": 1000, \"width\": 542, \"height\": 299, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"barChart\", \"projections\": {\"Category\": [{\"queryRef\": \"ecommerce-combined.product_category\", \"active\": true}], \"Y\": [{\"queryRef\": \"Sum(ecommerce-combined.product_price)\"}], \"Series\": [{\"queryRef\": \"ecommerce-combined.product_category\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"e\", \"Entity\": \"ecommerce-combined\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Property\": \"product_category\", \"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}}, \"Name\": \"ecommerce-combined.product_category\", \"NativeReferenceName\": \"product_category\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"product_price\", \"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}}}, \"Function\": 0}, \"Name\": \"Sum(ecommerce-combined.product_price)\", \"NativeReferenceName\": \"Sum of product_price\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"product_price\", \"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}}}, \"Function\": 0}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"titleBold\": {\"expr\": {\"Literal\": {\"Value\": false}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"15D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Total Sales by Product Category'\"}}}}}]}}}"
+        },
+        {
+          "x": 550,
+          "y": 192,
+          "z": 0,
+          "width": 542,
+          "height": 301,
+          "config": "{\"name\": \"e5ec93449a32a91dffc70\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 550, \"y\": 192, \"z\": 1000, \"width\": 542, \"height\": 301, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"barChart\", \"projections\": {\"Category\": [{\"queryRef\": \"ecommerce-combined.customer_city\", \"active\": true}], \"Y\": [{\"queryRef\": \"Sum(ecommerce-combined.product_price)\"}], \"Series\": [{\"queryRef\": \"ecommerce-combined.customer_city\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"e\", \"Entity\": \"ecommerce-combined\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Property\": \"customer_city\", \"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}}, \"Name\": \"ecommerce-combined.customer_city\", \"NativeReferenceName\": \"customer_city\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"product_price\", \"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}}}, \"Function\": 0}, \"Name\": \"Sum(ecommerce-combined.product_price)\", \"NativeReferenceName\": \"Sum of product_price\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"product_price\", \"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}}}, \"Function\": 0}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"titleBold\": {\"expr\": {\"Literal\": {\"Value\": \"\"}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"15D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Total Sales by City'\"}}}}}]}}}"
+        },
+        {
+          "x": 7.27,
+          "y": 239.97,
+          "z": 0,
+          "width": 492.69,
+          "height": 376.06,
+          "config": "{\"name\": \"241e4a6328\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 699.5066413662239, \"y\": 14.573055028463, \"z\": 1000, \"width\": 581.3029728020241, \"height\": 688.1720430107528, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"barChart\", \"projections\": {\"Category\": [{\"queryRef\": \"ecommerce-combined.customer_city\", \"active\": true}], \"Y\": [{\"queryRef\": \"Count(ecommerce-combined.order_id)\"}], \"Series\": [{\"queryRef\": \"ecommerce-combined.customer_city\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"e\", \"Entity\": \"ecommerce-combined\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Property\": \"customer_city\", \"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}}, \"Name\": \"ecommerce-combined.customer_city\", \"NativeReferenceName\": \"customer_city\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"order_id\", \"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}}}, \"Function\": 5}, \"Name\": \"Count(ecommerce-combined.order_id)\", \"NativeReferenceName\": \"Count of order_id\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"order_id\", \"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}}}, \"Function\": 5}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"titleBold\": {\"expr\": {\"Literal\": {\"Value\": \"\"}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"15D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Total Orders by City'\"}}}}}]}}}"
+        },
+        {
+          "x": 8,
+          "y": 493,
+          "z": 0,
+          "width": 542,
+          "height": 299,
+          "config": "{\"name\": \"3e480dfc32f2\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 8, \"y\": 493, \"z\": 1000, \"width\": 542, \"height\": 299, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"barChart\", \"projections\": {\"Category\": [{\"queryRef\": \"ecommerce-combined.product_category\", \"active\": true}], \"Y\": [{\"queryRef\": \"Sum(ecommerce-combined.Number of Records)\"}], \"Series\": [{\"queryRef\": \"ecommerce-combined.product_category\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"e\", \"Entity\": \"ecommerce-combined\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Property\": \"product_category\", \"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}}, \"Name\": \"ecommerce-combined.product_category\", \"NativeReferenceName\": \"product_category\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Number of Records\", \"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}}}, \"Function\": 0}, \"Name\": \"Sum(ecommerce-combined.Number of Records)\", \"NativeReferenceName\": \"Sum of Number of Records\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Number of Records\", \"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}}}, \"Function\": 0}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"titleBold\": {\"expr\": {\"Literal\": {\"Value\": \"\"}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": 15}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Total Orders by Product Category'\"}}}}}]}}}"
+        },
+        {
+          "x": 8,
+          "y": 8,
+          "z": 0,
+          "width": 1084,
+          "height": 184,
+          "config": "{\"name\": \"05a5979a\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 8, \"y\": 8, \"z\": 1000, \"width\": 1084, \"height\": 184, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"lineChart\", \"projections\": {\"Category\": [{\"queryRef\": \"ecommerce-combined.order_purchase_timestamp.Variation.Date Hierarchy.Day\", \"active\": true}], \"Y\": [{\"queryRef\": \"Count(ecommerce-combined.order_id)\"}], \"Series\": []}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"e\", \"Entity\": \"ecommerce-combined\", \"Type\": 0}], \"Select\": [{\"HierarchyLevel\": {\"Expression\": {\"Hierarchy\": {\"Expression\": {\"PropertyVariationSource\": {\"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}, \"Name\": \"Variation\", \"Property\": \"order_purchase_timestamp\"}}, \"Hierarchy\": \"Date Hierarchy\"}}, \"Level\": \"Day\"}, \"Name\": \"ecommerce-combined.order_purchase_timestamp.Variation.Date Hierarchy.Day\", \"NativeReferenceName\": \"order_purchase_timestamp Day\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"order_id\", \"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}}}, \"Function\": 5}, \"Name\": \"Count(ecommerce-combined.order_id)\", \"NativeReferenceName\": \"Count of order_id\"}], \"OrderBy\": []}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"titleBold\": {\"expr\": {\"Literal\": {\"Value\": \"\"}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": 15}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Total Orders by Date'\"}}}}}]}}}"
+        }
+      ],
+      "width": 1100.0,
+      "height": 800.0
+    }
+  ]
+}
