@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "MTD Value - Last Year",
+      "dax_expression": "VAR vMaxDate = CALCULATE(MAX('Orders (Sample - Superstore)'[Order Date]), ALL('Orders (Sample - Superstore)'))\nVAR vMaxDateLastYear = DATE(YEAR(vMaxDate) - 1, MONTH(vMaxDate), DAY(vMaxDate))\nVAR vStartOfMonthLastYear = DATE(YEAR(vMaxDateLastYear), MONTH(vMaxDateLastYear), 1)\nVAR vMeasureParam = SELECTEDVALUE('Measure Selector Param'[Display As])\nRETURN\nSUMX(\n    FILTER(\n        ALL('Orders (Sample - Superstore)'),\n        'Orders (Sample - Superstore)'[Order Date] >= vStartOfMonthLastYear &&\n        'Orders (Sample - Superstore)'[Order Date] <= vMaxDateLastYear\n    ),\n    SWITCH(\n        vMeasureParam,\n        \"Profit\", 'Orders (Sample - Superstore)'[Profit],\n        \"Sales\", 'Orders (Sample - Superstore)'[Sales],\n        BLANK()\n    )\n)",
+      "solution_explanation": "Recreated the Tableau LOD and SUM over a conditional row-level field as a DAX measure. Calculated the dataset-level max date using CALCULATE(MAX(...), ALL(...)) to mirror the {MAX([Order Date])} LOD, computed the same last-year date and month start, used SELECTEDVALUE('Measure Selector Param'[Display As]) for the Tableau parameter, then SUMX over the filtered rows and SWITCH to pick Profit or Sales per row.",
+      "type_changed_reason": "The Tableau expression contains aggregation (SUM) and LOD-style fixed max date logic, so it should be implemented as a measure."
+    }
+  ]
+}
