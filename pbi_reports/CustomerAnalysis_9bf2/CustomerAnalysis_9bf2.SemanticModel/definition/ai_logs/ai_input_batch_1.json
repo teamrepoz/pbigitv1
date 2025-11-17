@@ -1,0 +1,20 @@
+{
+  "calculations": [
+    {
+      "name": "Female Revenue",
+      "table_name": "sales_06_FY2020-21",
+      "tableau_expression": "IF [Gender] = 'F' THEN [total] END",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "IF [Gender] = 'F' THEN [total] END",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "total": "real",
+          "Gender": "string"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
