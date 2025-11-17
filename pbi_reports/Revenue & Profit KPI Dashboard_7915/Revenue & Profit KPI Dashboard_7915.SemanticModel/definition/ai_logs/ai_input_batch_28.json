@@ -1,0 +1,25 @@
+{
+  "calculations": [
+    {
+      "name": "Pre Month",
+      "table_name": "Orders (Sample - Superstore)",
+      "tableau_expression": "DATETRUNC('month',[Order Date]) = [First Date Pre Month]",
+      "datatype": "boolean",
+      "calculation_context": {
+        "Expression": "DATETRUNC('month',[Order Date]) = [First Date Pre Month]",
+        "calculated_fields": {
+          "First Date Pre Month": "DATE(DATETRUNC('month',DATEADD('month',-1,[Max Date])))",
+          "Max Date": "{MAX([Order Date])}"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Order Date": "date"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "First Date Pre Month": "DateTime",
+          "Max Date": "DateTime"
+        }
+      }
+    }
+  ]
+}
