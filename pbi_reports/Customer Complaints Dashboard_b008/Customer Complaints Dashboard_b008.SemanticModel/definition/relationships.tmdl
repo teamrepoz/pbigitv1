@@ -1,0 +1,10 @@
+relationship 27658aae-4e2b-4c17-a06f-64b10a6d5923
+	joinOnDateBehavior: datePartOnly
+	fromColumn: complaints.'Date Sumbited'
+	toColumn: LocalDateTable_351a0aa2-7006-4540-9a60-2a9ea9c2e55b.Date
+
+relationship f51be030-cf71-46e3-90a0-892f7b8447cc
+	joinOnDateBehavior: datePartOnly
+	fromColumn: complaints.'Date Received'
+	toColumn: LocalDateTable_31e2120e-7ebd-411d-aea0-331f2358ad53.Date
+
