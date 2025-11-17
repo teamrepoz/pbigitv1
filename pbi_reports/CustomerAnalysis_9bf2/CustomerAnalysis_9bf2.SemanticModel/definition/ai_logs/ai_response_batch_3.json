@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "sales_06_FY2020-21",
+      "name": "Age bins",
+      "dax_expression": "'sales_06_FY2020-21'[age]",
+      "solution_explanation": "Direct row-level reference to the [age] column mapped to the table-qualified column reference in DAX."
+    }
+  ]
+}
