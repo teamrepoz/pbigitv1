@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": null,
+      "table_name": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "tableau_expression": "COUNT([Sector en el que labora predominantemente]) / TOTAL(COUNT([Sector en el que labora predominantemente]))",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "COUNT([Sector en el que labora predominantemente]) / TOTAL(COUNT([Sector en el que labora predominantemente]))",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Sector en el que labora predominantemente": "string"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
