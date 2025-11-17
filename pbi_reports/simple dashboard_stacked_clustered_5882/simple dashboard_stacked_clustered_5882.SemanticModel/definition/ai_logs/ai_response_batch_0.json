@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Parameters",
+      "name": "Enter The Date ",
+      "dax_expression": "DATE(2017, 9, 4)",
+      "solution_explanation": "Converted Tableau date literal #2017-09-04# to DAX DATE(2017, 9, 4). This is a row-level constant (no aggregations or parameter references), so it is implemented as a calculated column in the Parameters table."
+    }
+  ]
+}
