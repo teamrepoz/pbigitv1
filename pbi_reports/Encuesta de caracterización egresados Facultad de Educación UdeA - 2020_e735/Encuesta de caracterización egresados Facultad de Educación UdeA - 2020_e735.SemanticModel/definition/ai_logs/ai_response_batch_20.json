@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "name": "Total seminario ",
+      "dax_expression": "DISTINCTCOUNT('TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Seminarios])",
+      "solution_explanation": "Tableau COUNTD([Seminarios]) maps to DAX DISTINCTCOUNT. This is created as a measure because it performs an aggregation (distinct count). Column reference converted to 'TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Seminarios]."
+    }
+  ]
+}
