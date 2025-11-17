@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "Grado de intereres en modalidad",
+      "table_name": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "tableau_expression": "INT(IF [Valores de campo de tabla dinámica] = \"1\" THEN [Valores de campo de tabla dinámica]\r\nELSEIF [Valores de campo de tabla dinámica] = \"2\" THEN [Valores de campo de tabla dinámica]\r\nELSEIF [Valores de campo de tabla dinámica] = \"3\" THEN [Valores de campo de tabla dinámica]\r\nELSEIF [Valores de campo de tabla dinámica] = \"4\" THEN [Valores de campo de tabla dinámica]\r\nEND)",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "INT(IF [Valores de campo de tabla dinámica] = \"1\" THEN [Valores de campo de tabla dinámica]\r\nELSEIF [Valores de campo de tabla dinámica] = \"2\" THEN [Valores de campo de tabla dinámica]\r\nELSEIF [Valores de campo de tabla dinámica] = \"3\" THEN [Valores de campo de tabla dinámica]\r\nELSEIF [Valores de campo de tabla dinámica] = \"4\" THEN [Valores de campo de tabla dinámica]\r\nEND)",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
