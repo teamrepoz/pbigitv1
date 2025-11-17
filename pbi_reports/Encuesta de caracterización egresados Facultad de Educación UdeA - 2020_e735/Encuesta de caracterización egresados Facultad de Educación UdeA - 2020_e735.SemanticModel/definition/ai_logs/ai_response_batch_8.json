@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "name": "Top and Bottom ",
+      "dax_expression": "VAR TopN = SELECTEDVALUE('Elegir valor '[Display As])\nVAR RankDesc =\n    RANKX(\n        ALL('TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Seleccione el área correspondiente a su formación de pregrado dentro de la Facultad de Educación:]),\n        CALCULATE(COUNT('TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Seleccione el área correspondiente a su formación de pregrado dentro de la Facultad de Educación:])),\n        ,\n        DESC\n    )\nVAR RankAsc =\n    RANKX(\n        ALL('TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Seleccione el área correspondiente a su formación de pregrado dentro de la Facultad de Educación:]),\n        CALCULATE(COUNT('TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Seleccione el área correspondiente a su formación de pregrado dentro de la Facultad de Educación:])),\n        ,\n        ASC\n    )\nRETURN\nIF(RankDesc <= TopN || RankAsc <= TopN, TRUE(), FALSE())",
+      "solution_explanation": "Converted Tableau RANK(COUNT(...),'desc'/'asc') comparisons into DAX using RANKX over ALL(...) with CALCULATE(COUNT(...)). The Tableau parameter [Parameters].[Elegir valor ] is mapped to SELECTEDVALUE('Elegir valor '[Display As]). The measure returns TRUE when the rank (descending or ascending) is less than or equal to the selected parameter value, matching the original boolean logic.",
+      "type_changed_reason": "The calculation uses aggregation (COUNT) and references a Tableau parameter, so it must be implemented as a measure."
+    }
+  ]
+}
