@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "historicoEducacionCLEAN (historicoEducacionCLEAN)",
+      "name": "ZERO AXIS",
+      "dax_expression": "0.0",
+      "solution_explanation": "Tableau FLOAT(0) casts the literal 0 to a floating numeric. In DAX the equivalent is the numeric literal 0.0. This is a row-level constant (no aggregates or parameters), so create it as a calculated column."
+    }
+  ]
+}
