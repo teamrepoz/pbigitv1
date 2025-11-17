@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "Radial Inner",
+      "table_name": "Parameters",
+      "tableau_expression": "0.40000000000000002",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "0.40000000000000002",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
