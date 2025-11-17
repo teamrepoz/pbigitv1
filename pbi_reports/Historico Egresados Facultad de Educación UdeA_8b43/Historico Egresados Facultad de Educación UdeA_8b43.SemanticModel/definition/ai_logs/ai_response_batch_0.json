@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "historicoEducacionCLEAN (historicoEducacionCLEAN)",
+      "name": "Femenino",
+      "dax_expression": "IF(CONTAINSSTRING('historicoEducacionCLEAN (historicoEducacionCLEAN)'[Sexo egresados], \"F\"), 'historicoEducacionCLEAN (historicoEducacionCLEAN)'[Identificacion], BLANK())",
+      "solution_explanation": "Converted Tableau IF CONTAINS(...) THEN [Identificacion] END to DAX using CONTAINSSTRING for substring check. Preserved row-level logic by returning Identificacion when Sexo egresados contains \"F\", otherwise BLANK(). Column references were mapped to the 'table'[column] format."
+    }
+  ]
+}
