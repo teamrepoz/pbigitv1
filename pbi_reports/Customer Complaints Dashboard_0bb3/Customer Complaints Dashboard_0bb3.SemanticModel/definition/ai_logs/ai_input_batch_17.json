@@ -1,0 +1,20 @@
+{
+  "calculations": [
+    {
+      "name": "Time to Receipt",
+      "table_name": "complaints",
+      "tableau_expression": "[Date Received] - [Date Sumbited]",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "[Date Received] - [Date Sumbited]",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Date Sumbited": "date",
+          "Date Received": "date"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
