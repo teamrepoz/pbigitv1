@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "Profit Bin Size",
+      "table_name": "Parameters",
+      "tableau_expression": "200",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "200",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
