@@ -1,0 +1,36 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Data (Complaint Line)",
+      "name": "Index",
+      "dax_expression": "VAR idx = RANKX(\n    ALLSELECTED('Data (Complaint Line)'),\n    CALCULATE(MAX('Data (Complaint Line)'[Value])),\n    ,\n    ASC,\n    DENSE\n)\nRETURN ((idx - 1) * 0.12) - 6",
+      "solution_explanation": "Tableau INDEX() is a table calculation that provides a row position within the partition. In DAX there is no direct INDEX() equivalent, so RANKX over the current selection (using MAX([Value]) as the ordering expression since no explicit order column exists in the provided context) is used to approximate the row position. The rest of the arithmetic mirrors the Tableau expression: ((INDEX()-1)*0.12)-6.",
+      "type_changed_reason": "The Tableau expression uses the table calculation INDEX(), which is an aggregate/window-style operation; per rules this must be implemented as a measure."
+    },
+    {
+      "type": "measure",
+      "table": "Data (Complaint Line)",
+      "name": "TC_Value",
+      "dax_expression": "CALCULATE(\n    MAX('Data (Complaint Line)'[Value]),\n    ALLSELECTED('Data (Complaint Line)')\n)",
+      "solution_explanation": "Tableau WINDOW_MAX(MAX([Value])) computes the maximum of MAX([Value]) across the window/partition. In DAX this is represented by taking the overall MAX('Data (Complaint Line)'[Value]) over the current selection context using ALLSELECTED to emulate the Tableau window behavior.",
+      "type_changed_reason": "The Tableau expression uses a window aggregation (WINDOW_MAX), which is context/aggregate-based and must be a measure."
+    },
+    {
+      "type": "measure",
+      "table": "Data (Complaint Line)",
+      "name": "TC_Start Point",
+      "dax_expression": "VAR currentIdx = RANKX(\n    ALLSELECTED('Data (Complaint Line)'),\n    CALCULATE(MAX('Data (Complaint Line)'[Value])),\n    ,\n    ASC,\n    DENSE\n)\nVAR runningPrev =\n    SUMX(\n        FILTER(\n            ALLSELECTED('Data (Complaint Line)'),\n            RANKX(\n                ALLSELECTED('Data (Complaint Line)'),\n                CALCULATE(MAX('Data (Complaint Line)'[Value])),\n                ,\n                ASC,\n                DENSE\n            ) < currentIdx\n        ),\n        CALCULATE(MAX('Data (Complaint Line)'[Value]))\n    )\nRETURN runningPrev",
+      "solution_explanation": "Tableau RUNNING_SUM([TC_Value])-[TC_Value] produces the running total up to the previous row. In DAX, a running total is emulated by summing the partition rows with an index less than the current row (index approximated with RANKX as above). The expression sums MAX([Value]) across those prior rows to replicate RUNNING_SUM([TC_Value]) - [TC_Value].",
+      "type_changed_reason": "The Tableau uses RUNNING_SUM (a table calculation), which requires a measure in DAX to operate over the filter/window context."
+    },
+    {
+      "type": "measure",
+      "table": "Data (Complaint Line)",
+      "name": "Y",
+      "dax_expression": "VAR tcStart = [TC_Start Point]\nVAR idx = [Index]\nVAR tcVal = [TC_Value]\nRETURN tcStart + ((1 / (1 + EXP(-idx))) * tcVal)",
+      "solution_explanation": "Direct translation of the Tableau expression [TC_Start Point] + ((1/(1+EXP(-[Index])))*[TC_Value]). Since the referenced fields are implemented as measures (they are table calculations/aggregations), this calculation is also a measure and uses those measures as inputs. The logistic transformation uses EXP in DAX as in Tableau.",
+      "type_changed_reason": "The calculation references table-calculation-based fields (TC_Start Point, Index, TC_Value), so it must be created as a measure."
+    }
+  ]
+}
