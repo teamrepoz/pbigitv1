@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Adult Education  Dashboard_ae44"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "6da3b233-4b87-49de-a9fc-485a73e212c5"
+  }
+}
