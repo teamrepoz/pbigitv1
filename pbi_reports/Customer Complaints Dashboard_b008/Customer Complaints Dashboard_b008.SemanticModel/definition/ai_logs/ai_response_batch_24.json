@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Data (Complaint Line)",
+      "name": "Not Selected Date",
+      "dax_expression": "IF('Data (Complaint Line)'[Type] <> SELECTEDVALUE('Date Type'[Display As]), 'Data (Complaint Line)'[Type])",
+      "solution_explanation": "Replaced the Tableau parameter reference with SELECTEDVALUE('Date Type'[Display As]) and converted row-level IF to DAX IF. Transformed column references to the 'Table'[Column] format.",
+      "type_changed_reason": "The calculation references a parameter, and all parameter-based calculations must be measures."
+    }
+  ]
+}
