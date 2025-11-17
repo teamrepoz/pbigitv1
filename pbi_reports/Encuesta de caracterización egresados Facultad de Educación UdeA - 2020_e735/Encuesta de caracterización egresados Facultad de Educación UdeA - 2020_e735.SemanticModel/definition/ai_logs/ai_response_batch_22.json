@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "name": "Grado de intereres en modalidad",
+      "dax_expression": "VAR val = 'TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Valores de campo de tabla dinámica]\nRETURN\nIF(\n    val = \"1\" || val = \"2\" || val = \"3\" || val = \"4\",\n    INT(VALUE(val)),\n    BLANK()\n)",
+      "solution_explanation": "This is a row-level transformation that checks the row value of 'Valores de campo de tabla dinámica' and returns the numeric integer for values \"1\" through \"4\". The Tableau IF/ELSEIF chain is converted to a DAX IF with logical ORs; the field reference was transformed to the 'TableName'[Column] format. VALUE() converts the string to number and INT() casts to integer. No aggregation or parameters are used, so it is implemented as a calculated column."
+    }
+  ]
+}
