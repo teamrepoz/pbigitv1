@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "name": "\"Número de cédula:\",\"Marca temporal\",\"Dirección de correo electrónico\",\"Nombres y apellidos:\",\"Identidad de género:\",\"Dirección - División 1",
+      "dax_expression": "VAR txt = 'TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[\"Número de cédula:\",\"Marca temporal\",\"Dirección de correo electrónico\",\"Nombres y apellidos:\",\"Identidad de género:\",\"Dirección\"]\nVAR pos = SEARCH(\",\", txt, 1, 0)\nVAR lenToTake = IF(pos = 0, LEN(txt), pos - 1)\nRETURN TRIM(LEFT(txt, lenToTake))",
+      "solution_explanation": "Replaced Tableau SPLIT(..., \",\", 1) with SEARCH to find the first comma and LEFT to extract the first token, then TRIM to remove surrounding spaces. Kept the exact column reference and table name as provided."
+    }
+  ]
+}
