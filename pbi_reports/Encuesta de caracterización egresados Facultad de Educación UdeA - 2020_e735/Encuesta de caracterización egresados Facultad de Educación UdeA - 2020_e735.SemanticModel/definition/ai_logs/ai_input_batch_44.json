@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Área ",
+      "table_name": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "tableau_expression": "IF [Seleccione el área correspondiente a su formación de pregrado dentro de la Facultad de Educación:] = \"Artes Plásticas\"\r\nTHEN [Seleccione el área correspondiente a su formación de pregrado dentro de la Facultad de Educación:]\r\nELSEIF [Seleccione el área correspondiente a su formación de pregrado dentro de la Facultad de Educación:] = \"Comunucación Social y Periodismo\"\r\nTHEN [Seleccione el área correspondiente a su formación de pregrado dentro de la Facultad de Educación:]\r\nELSEIF [Seleccione el área correspondiente a su formación de pregrado dentro de la Facultad de Educación:] = \"Física\"\r\nTHEN \"Matemáticas y Física\"\r\nELSEIF [Seleccione el área correspondiente a su formación de pregrado dentro de la Facultad de Educación:] = \"No aplica\"\r\nTHEN \"\"\r\nELSEIF [Seleccione el área correspondiente a su formación de pregrado dentro de la Facultad de Educación:] = [Seleccione el área correspondiente a su formación de pregrado dentro de la Facultad de Educación:]\r\nTHEN [Seleccione el área correspondiente a su formación de pregrado dentro de la Facultad de Educación:]\r\nELSEIF [Seleccione el área correspondiente a su formación de pregrado dentro de la Facultad de Educación:] = \"Nulo\"\r\nTHEN \"\"\r\nEND",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "IF [Seleccione el área correspondiente a su formación de pregrado dentro de la Facultad de Educación:] = \"Artes Plásticas\"\r\nTHEN [Seleccione el área correspondiente a su formación de pregrado dentro de la Facultad de Educación:]\r\nELSEIF [Seleccione el área correspondiente a su formación de pregrado dentro de la Facultad de Educación:] = \"Comunucación Social y Periodismo\"\r\nTHEN [Seleccione el área correspondiente a su formación de pregrado dentro de la Facultad de Educación:]\r\nELSEIF [Seleccione el área correspondiente a su formación de pregrado dentro de la Facultad de Educación:] = \"Física\"\r\nTHEN \"Matemáticas y Física\"\r\nELSEIF [Seleccione el área correspondiente a su formación de pregrado dentro de la Facultad de Educación:] = \"No aplica\"\r\nTHEN \"\"\r\nELSEIF [Seleccione el área correspondiente a su formación de pregrado dentro de la Facultad de Educación:] = [Seleccione el área correspondiente a su formación de pregrado dentro de la Facultad de Educación:]\r\nTHEN [Seleccione el área correspondiente a su formación de pregrado dentro de la Facultad de Educación:]\r\nELSEIF [Seleccione el área correspondiente a su formación de pregrado dentro de la Facultad de Educación:] = \"Nulo\"\r\nTHEN \"\"\r\nEND",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Seleccione el área correspondiente a su formación de pregrado dentro de la Facultad de Educación:": "string"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
