@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "Selected Product",
+      "table_name": "Parameters",
+      "tableau_expression": "\"OTHER\"",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "\"OTHER\"",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
