@@ -1,0 +1,20 @@
+{
+  "calculations": [
+    {
+      "name": "Cuenta de hombres",
+      "table_name": "historicoEducacionCLEAN (historicoEducacionCLEAN)",
+      "tableau_expression": "{ FIXED [Identificacion] : COUNT(\r\nIF [Sexo egresados] =\"Masculino\"\r\nTHEN 1\r\nEND\r\n)}",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "{ FIXED [Identificacion] : COUNT(\r\nIF [Sexo egresados] =\"Masculino\"\r\nTHEN 1\r\nEND\r\n)}",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Identificacion": "integer",
+          "Sexo egresados": "string"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
