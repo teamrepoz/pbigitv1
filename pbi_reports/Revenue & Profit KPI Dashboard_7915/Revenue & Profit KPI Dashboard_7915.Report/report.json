@@ -1,0 +1,64 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.63\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "name": "Section_Revenue & Profit KPI Tracking - MTD/YTD/Prior Month",
+      "ordinal": 0,
+      "displayName": "Revenue & Profit KPI Tracking - MTD/YTD/Prior Month",
+      "visualContainers": [
+        {
+          "x": 21,
+          "y": 583,
+          "z": 0,
+          "width": 957,
+          "height": 135,
+          "config": "{\"name\": \"0f2e620fb987d5148395878\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 21, \"y\": 583, \"z\": 1000, \"width\": 957, \"height\": 135, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"clusteredBarChart\", \"projections\": {\"Category\": [{\"queryRef\": \"Orders (Sample - Superstore).Category\", \"active\": true}, {\"queryRef\": \"Orders (Sample - Superstore).Sub-Category\", \"active\": true}], \"Y\": [{\"queryRef\": \"Sum(Orders (Sample - Superstore).Sales)\"}], \"Series\": []}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"O\", \"Entity\": \"Orders (Sample - Superstore)\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Property\": \"Category\", \"Expression\": {\"SourceRef\": {\"Source\": \"O\"}}}, \"Name\": \"Orders (Sample - Superstore).Category\", \"NativeReferenceName\": \"Category\"}, {\"Column\": {\"Property\": \"Sub-Category\", \"Expression\": {\"SourceRef\": {\"Source\": \"O\"}}}, \"Name\": \"Orders (Sample - Superstore).Sub-Category\", \"NativeReferenceName\": \"Sub-Category\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Sales\", \"Expression\": {\"SourceRef\": {\"Source\": \"O\"}}}}, \"Function\": 0}, \"Name\": \"Sum(Orders (Sample - Superstore).Sales)\", \"NativeReferenceName\": \"Sum of Sales\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Sales\", \"Expression\": {\"SourceRef\": {\"Source\": \"O\"}}}}, \"Function\": 0}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"titleBold\": {\"expr\": {\"Literal\": {\"Value\": \"\"}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#de1450'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"15D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'MTD by Category'\"}}}}}]}}}"
+        },
+        {
+          "x": 21,
+          "y": 448,
+          "z": 0,
+          "width": 957,
+          "height": 135,
+          "config": "{\"name\": \"c80122715d1fed06f65ab7\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 21, \"y\": 448, \"z\": 1000, \"width\": 957, \"height\": 135, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"clusteredBarChart\", \"projections\": {\"Category\": [{\"queryRef\": \"Orders (Sample - Superstore).State\", \"active\": true}], \"Y\": [{\"queryRef\": \"Sum(Orders (Sample - Superstore).Sales)\"}], \"Series\": []}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"O\", \"Entity\": \"Orders (Sample - Superstore)\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Property\": \"State\", \"Expression\": {\"SourceRef\": {\"Source\": \"O\"}}}, \"Name\": \"Orders (Sample - Superstore).State\", \"NativeReferenceName\": \"State\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Sales\", \"Expression\": {\"SourceRef\": {\"Source\": \"O\"}}}}, \"Function\": 0}, \"Name\": \"Sum(Orders (Sample - Superstore).Sales)\", \"NativeReferenceName\": \"Sum of Sales\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Sales\", \"Expression\": {\"SourceRef\": {\"Source\": \"O\"}}}}, \"Function\": 0}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"titleBold\": {\"expr\": {\"Literal\": {\"Value\": \"\"}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#de1450'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"15D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'MTD by State'\"}}}}}]}}}"
+        },
+        {},
+        {
+          "x": 21,
+          "y": 214,
+          "z": 0,
+          "width": 957,
+          "height": 117,
+          "config": "{\"name\": \"d9b3678ee1\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 21, \"y\": 214, \"z\": 1000, \"width\": 957, \"height\": 117, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"stackedAreaChart\", \"projections\": {\"Category\": [{\"queryRef\": \"Orders (Sample - Superstore).Measure Selector\", \"active\": true}, {\"queryRef\": \"Orders (Sample - Superstore).Min - Max value\", \"active\": true}], \"Y\": [{\"queryRef\": \"Tdy(Orders (Sample - Superstore).Order Date)\"}], \"Series\": []}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"O\", \"Entity\": \"Orders (Sample - Superstore)\", \"Type\": 0}], \"Select\": [{\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Measure Selector\", \"Expression\": {\"SourceRef\": {\"Source\": \"O\"}}}}, \"Function\": 0}, \"Name\": \"Sum(Orders (Sample - Superstore).Measure Selector)\", \"NativeReferenceName\": \"Sum of Measure Selector\"}, {\"Measure\": {\"Property\": \"Min - Max value\", \"Expression\": {\"SourceRef\": {\"Source\": \"O\"}}}, \"Name\": \"Orders (Sample - Superstore).Min - Max value\", \"NativeReferenceName\": \"Min - Max value\"}, {\"Column\": {\"Property\": \"Order Date\", \"Expression\": {\"SourceRef\": {\"Source\": \"O\"}}}, \"Name\": \"Orders (Sample - Superstore).Order Date\", \"NativeReferenceName\": \"Order Date\"}], \"OrderBy\": []}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"titleBold\": {\"expr\": {\"Literal\": {\"Value\": \"\"}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"15D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Tableau Medium'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Pre Month <[Parameters].[Parameter 1]>'\"}}}}}]}}}"
+        },
+        {
+          "x": 21,
+          "y": 71,
+          "z": 0,
+          "width": 957,
+          "height": 27,
+          "config": "{\"name\": \"e179f930\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 21, \"y\": 71, \"z\": 1000, \"width\": 957, \"height\": 27, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"lineChart\", \"projections\": {\"Category\": [{\"queryRef\": \"Orders (Sample - Superstore).Measure Selector\", \"active\": true}, {\"queryRef\": \"Orders (Sample - Superstore).Min - Max value\", \"active\": true}], \"Y\": [{\"queryRef\": \"Twk(Orders (Sample - Superstore).Order Date)\"}], \"Series\": []}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"O\", \"Entity\": \"Orders (Sample - Superstore)\", \"Type\": 0}], \"Select\": [{\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Measure Selector\", \"Expression\": {\"SourceRef\": {\"Source\": \"O\"}}}}, \"Function\": 0}, \"Name\": \"Sum(Orders (Sample - Superstore).Measure Selector)\", \"NativeReferenceName\": \"Sum of Measure Selector\"}, {\"Measure\": {\"Property\": \"Min - Max value\", \"Expression\": {\"SourceRef\": {\"Source\": \"O\"}}}, \"Name\": \"Orders (Sample - Superstore).Min - Max value\", \"NativeReferenceName\": \"Min - Max value\"}, {\"Column\": {\"Property\": \"Order Date\", \"Expression\": {\"SourceRef\": {\"Source\": \"O\"}}}, \"Name\": \"Orders (Sample - Superstore).Order Date\", \"NativeReferenceName\": \"Order Date\"}], \"OrderBy\": []}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"titleBold\": {\"expr\": {\"Literal\": {\"Value\": \"\"}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"15D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Tableau Medium'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'YTD <[Parameters].[Parameter 1]>'\"}}}}}]}}}"
+        }
+      ],
+      "width": 1000.0,
+      "height": 750.0
+    }
+  ]
+}
