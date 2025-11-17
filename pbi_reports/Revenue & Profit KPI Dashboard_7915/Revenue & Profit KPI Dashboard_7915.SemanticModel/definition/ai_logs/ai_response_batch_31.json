@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "YTD Value - Up",
+      "dax_expression": "IF('Orders (Sample - Superstore)'[YTD Value - YoY] > 0, \"↑\", \"\")",
+      "solution_explanation": "Converted Tableau IF expression to DAX IF. Referenced the calculated field using table-qualified column syntax ('Orders (Sample - Superstore)'[YTD Value - YoY]) and preserved string literals with double quotes.",
+      "type_changed_reason": "The calculation references the aggregated/calculated field 'YTD Value - YoY' (an aggregation/measure), therefore it must be implemented as a measure in Power BI."
+    }
+  ]
+}
