@@ -1,0 +1,32 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "name": "Año nacimiento",
+      "dax_expression": "YEAR('TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Fecha_de_Nacimiento])",
+      "solution_explanation": "Converted Tableau YEAR([Fecha_de_Nacimiento]) to DAX YEAR('TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Fecha_de_Nacimiento]). This is a row-level date transformation, so implemented as a calculated column."
+    },
+    {
+      "type": "calculated_column",
+      "table": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "name": "Años cuando se graduo",
+      "dax_expression": "'TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Año de egreso] - 'TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Año nacimiento]",
+      "solution_explanation": "Converted the row-level subtraction [Año de egreso] - [Año nacimiento] to DAX using table-qualified column references. Implemented as a calculated column because it operates at row level."
+    },
+    {
+      "type": "calculated_column",
+      "table": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "name": "Edad graduante",
+      "dax_expression": "IF(\n    'TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Años cuando se graduo] = 9,\n    17,\n    'TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Años cuando se graduo]\n)",
+      "solution_explanation": "Translated the Tableau IF expression to DAX IF, preserving the conditional logic and referencing the row-level calculated field 'Años cuando se graduo'. Implemented as a calculated column."
+    },
+    {
+      "type": "calculated_column",
+      "table": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "name": "bins",
+      "dax_expression": "VAR Edad = 'TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Edad graduante]\nRETURN\nSWITCH(\n    TRUE(),\n    Edad <= 17 && Edad <= 17, \"Menor de 20\",\n    Edad >= 20 && Edad <= 25, \"20-25\",\n    Edad >= 26 && Edad <= 30, \"26-30\",\n    Edad >= 31 && Edad <= 40, \"31-40\",\n    Edad >= 41 && Edad <= 50, \"41-50\",\n    Edad >= 51 && Edad <= 60, \"51-60\",\n    Edad >= 61 && Edad <= 69, \"60-69\",\n    BLANK()\n)",
+      "solution_explanation": "Converted the Tableau IF / ELSEIF ladder to a DAX SWITCH(TRUE()) with a VAR for 'Edad graduante' to improve readability. All conditions and resulting labels are preserved. Implemented as a calculated column because the logic is row-level and uses no aggregations or parameters."
+    }
+  ]
+}
