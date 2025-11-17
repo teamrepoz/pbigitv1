@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "Bins",
+      "table_name": "historicoEducacionCLEAN (historicoEducacionCLEAN)",
+      "tableau_expression": "IF [Edad graduando ] <= 19 AND [Edad graduando ] <=19\r\nTHEN \"Menor de 20\"\r\n\r\nELSEIF  [Edad graduando ] >= 20 AND [Edad graduando ] <=25\r\nTHEN \"20-25\"\r\n\r\nELSEIF \r\n[Edad graduando ] >= 26 AND [Edad graduando ] <=30\r\nTHEN \"26-30\"\r\n\r\nELSEIF \r\n[Edad graduando ] >= 31 AND [Edad graduando ] <=40\r\nTHEN \"31-40\"\r\n\r\nELSEIF \r\n[Edad graduando ] >= 41 AND [Edad graduando ] <=50\r\nTHEN \"41-50\"\r\n\r\nELSEIF \r\n[Edad graduando ] >= 51 AND [Edad graduando ] <=60\r\nTHEN \"51-60\"\r\n\r\nELSEIF \r\n[Edad graduando ] >= 61 AND [Edad graduando ] <=69\r\nTHEN \"60-69\"\r\n\r\nEND",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "IF [Edad graduando ] <= 19 AND [Edad graduando ] <=19\r\nTHEN \"Menor de 20\"\r\n\r\nELSEIF  [Edad graduando ] >= 20 AND [Edad graduando ] <=25\r\nTHEN \"20-25\"\r\n\r\nELSEIF \r\n[Edad graduando ] >= 26 AND [Edad graduando ] <=30\r\nTHEN \"26-30\"\r\n\r\nELSEIF \r\n[Edad graduando ] >= 31 AND [Edad graduando ] <=40\r\nTHEN \"31-40\"\r\n\r\nELSEIF \r\n[Edad graduando ] >= 41 AND [Edad graduando ] <=50\r\nTHEN \"41-50\"\r\n\r\nELSEIF \r\n[Edad graduando ] >= 51 AND [Edad graduando ] <=60\r\nTHEN \"51-60\"\r\n\r\nELSEIF \r\n[Edad graduando ] >= 61 AND [Edad graduando ] <=69\r\nTHEN \"60-69\"\r\n\r\nEND",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
