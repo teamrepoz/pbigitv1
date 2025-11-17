@@ -1,0 +1,31 @@
+{
+  "calculations": [
+    {
+      "name": "YTD Value - Last Year",
+      "table_name": "Orders (Sample - Superstore)",
+      "tableau_expression": "{\r\n    sum(if [Order Date]>= date(DATETRUNC('year',[Max date Last Year]))\r\n        and [Order Date]<= [Max date Last Year] \r\n        then [Measure Selector]\r\n    END)\r\n}",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "{\r\n    sum(if [Order Date]>= date(DATETRUNC('year',[Max date Last Year]))\r\n        and [Order Date]<= [Max date Last Year] \r\n        then [Measure Selector]\r\n    END)\r\n}",
+        "calculated_fields": {
+          "Measure Selector": "case [Parameters].[Measure Selector Param]\r\n    when 'Profit' then [Profit]\r\n    when 'Sales' then [Sales]\r\nEND",
+          "Max date Last Year": "date(DATEADD('year',-1,[Max Date]))",
+          "Max Date": "{MAX([Order Date])}",
+          "Measure Selector Param": "\"Profit\""
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Order Date": "date",
+          "Sales": "real",
+          "Profit": "real"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Measure Selector": "real",
+          "Measure Selector Param": "string",
+          "Max date Last Year": "DateTime",
+          "Max Date": "DateTime"
+        }
+      }
+    }
+  ]
+}
