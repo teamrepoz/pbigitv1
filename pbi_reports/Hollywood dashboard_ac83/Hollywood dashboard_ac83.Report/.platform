@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Hollywood dashboard_ac83"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "0335d299-657e-4f19-9118-65007896bf71"
+  }
+}
