@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Profit",
+      "table_name": "Orders+ (Sample - Superstore)",
+      "tableau_expression": "[Sales] * .575",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "[Sales] * .575",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Sales": "real"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
