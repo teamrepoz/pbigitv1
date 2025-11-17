@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "YTD Value - down",
+      "dax_expression": "IF('Orders (Sample - Superstore)'[YTD Value - YoY] < 0, \"↓\", \"\")",
+      "solution_explanation": "Returns a down arrow when the YTD Value YoY change is negative; uses the aggregated field 'YTD Value - YoY' so it must be a measure.",
+      "type_changed_reason": "The calculation references an aggregated/calculated measure ('YTD Value - YoY'), therefore it must be created as a measure in Power BI."
+    }
+  ]
+}
