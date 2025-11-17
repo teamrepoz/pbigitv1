@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "name": "NO ejerce la profesi{on",
+      "dax_expression": "VAR _ejerce = 'TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Ejerce su profesión]\nRETURN\nIF(\n    _ejerce = \"No\",\n    'TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[\"Nombre de la Institución, organización o empresa donde labora\"] = BLANK(),\n    IF(\n        _ejerce = \"Sí\",\n        'TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[\"Nombre de la Institución, organización o empresa donde labora\"] = \".\",\n        BLANK()\n    )\n)",
+      "solution_explanation": "This is row-level logic using IF and direct comparisons, so it is implemented as a calculated column. Translated Tableau IF/ELSEIF to nested IF in DAX, replaced NULL with BLANK(), and converted column references to the 'TableName'[ColumnName] format. The expression returns boolean results of the comparisons."
+    }
+  ]
+}
