@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "historicoEducacionCLEAN (historicoEducacionCLEAN)",
+      "name": "Bins",
+      "dax_expression": "SWITCH(\n    TRUE(),\n    'historicoEducacionCLEAN (historicoEducacionCLEAN)'[Edad graduando ] <= 19 && 'historicoEducacionCLEAN (historicoEducacionCLEAN)'[Edad graduando ] <=19, \"Menor de 20\",\n    'historicoEducacionCLEAN (historicoEducacionCLEAN)'[Edad graduando ] >= 20 && 'historicoEducacionCLEAN (historicoEducacionCLEAN)'[Edad graduando ] <=25, \"20-25\",\n    'historicoEducacionCLEAN (historicoEducacionCLEAN)'[Edad graduando ] >= 26 && 'historicoEducacionCLEAN (historicoEducacionCLEAN)'[Edad graduando ] <=30, \"26-30\",\n    'historicoEducacionCLEAN (historicoEducacionCLEAN)'[Edad graduando ] >= 31 && 'historicoEducacionCLEAN (historicoEducacionCLEAN)'[Edad graduando ] <=40, \"31-40\",\n    'historicoEducacionCLEAN (historicoEducacionCLEAN)'[Edad graduando ] >= 41 && 'historicoEducacionCLEAN (historicoEducacionCLEAN)'[Edad graduando ] <=50, \"41-50\",\n    'historicoEducacionCLEAN (historicoEducacionCLEAN)'[Edad graduando ] >= 51 && 'historicoEducacionCLEAN (historicoEducacionCLEAN)'[Edad graduando ] <=60, \"51-60\",\n    'historicoEducacionCLEAN (historicoEducacionCLEAN)'[Edad graduando ] >= 61 && 'historicoEducacionCLEAN (historicoEducacionCLEAN)'[Edad graduando ] <=69, \"60-69\",\n    BLANK()\n)",
+      "solution_explanation": "Converted the Tableau IF / ELSEIF ladder to a DAX SWITCH(TRUE()) expression. All column references were transformed to the 'TableName'[Column] format using the provided table name. The multi-branch string outputs were preserved as double-quoted literals. No aggregations or parameters are used, so this is implemented as a row-level calculated column."
+    }
+  ]
+}
