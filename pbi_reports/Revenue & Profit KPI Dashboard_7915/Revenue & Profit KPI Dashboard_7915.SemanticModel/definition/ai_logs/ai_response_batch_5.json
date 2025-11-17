@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "MTD Value - YoY",
+      "dax_expression": "('Orders (Sample - Superstore)'[MTD Value] - 'Orders (Sample - Superstore)'[MTD Value - Last Year]) / 'Orders (Sample - Superstore)'[MTD Value - Last Year]",
+      "solution_explanation": "Converted the Tableau formula to DAX by referencing the pre-existing calculated measures in the 'Orders (Sample - Superstore)' table using the table[column] format and preserving the original arithmetic ((MTD Value - MTD Value - Last Year) / MTD Value - Last Year).",
+      "type_changed_reason": "The calculation references aggregated/calculated measures (MTD Value and MTD Value - Last Year), so it must be implemented as a measure."
+    }
+  ]
+}
