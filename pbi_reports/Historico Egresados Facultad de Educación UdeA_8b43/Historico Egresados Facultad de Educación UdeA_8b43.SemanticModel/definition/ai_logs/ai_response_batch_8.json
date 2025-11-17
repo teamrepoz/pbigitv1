@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "historicoEducacionCLEAN (historicoEducacionCLEAN)",
+      "name": "Cálculo1",
+      "dax_expression": "IF('historicoEducacionCLEAN (historicoEducacionCLEAN)'[Edad graduando ] > 19, 20, 'historicoEducacionCLEAN (historicoEducacionCLEAN)'[Edad graduando ])",
+      "solution_explanation": "Converted Tableau IF to DAX IF and replaced row-level column references with 'TableName'[Column]. This is a row-level transformation, so implemented as a calculated column."
+    }
+  ]
+}
