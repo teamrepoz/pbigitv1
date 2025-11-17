@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "End Date",
+      "table_name": "Parameters",
+      "tableau_expression": "#2016-05-31#",
+      "datatype": "date",
+      "calculation_context": {
+        "Expression": "#2016-05-31#",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
