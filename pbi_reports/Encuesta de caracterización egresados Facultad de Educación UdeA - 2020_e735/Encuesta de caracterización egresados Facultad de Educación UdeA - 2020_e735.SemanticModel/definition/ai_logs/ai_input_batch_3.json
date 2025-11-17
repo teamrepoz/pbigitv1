@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "number of records",
+      "table_name": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "tableau_expression": "AVG([Número de cédula:])",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "AVG([Número de cédula:])",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Número de cédula:": "integer"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
