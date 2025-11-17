@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "HollywoodsMostProfitableStories",
+      "name": "TOTAL LEAD STUDIO",
+      "dax_expression": "\"TOTAL LEAD STUDIO\"",
+      "solution_explanation": "This is a constant string literal and does not reference any row-level fields or aggregations, so it should be implemented as a calculated column returning the text \"TOTAL LEAD STUDIO\"."
+    }
+  ]
+}
