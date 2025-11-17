@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "complaints",
+      "name": "# Complaints (Selected)",
+      "dax_expression": "VAR SelectedParam = SELECTEDVALUE('Selected Product'[Display As])\nVAR ProdGrouping = SELECTEDVALUE('complaints'[Product Grouping])\nRETURN\nIF(ProdGrouping = SelectedParam, 'complaints'[Number of Complaints])",
+      "solution_explanation": "Replaced ATTR([Product Grouping]) with SELECTEDVALUE('complaints'[Product Grouping]). Replaced the parameter [Parameters].[Selected Product] with SELECTEDVALUE('Selected Product'[Display As]). Kept the referenced calculated field 'Number of Complaints' as 'complaints'[Number of Complaints] (COUNTD in Tableau -> DISTINCTCOUNT measure in Power BI). Implemented logic to return the count only when product grouping matches the selected parameter.",
+      "type_changed_reason": "The calculation references a parameter and uses an aggregation (COUNTD for Number of Complaints), so it must be created as a measure."
+    }
+  ]
+}
