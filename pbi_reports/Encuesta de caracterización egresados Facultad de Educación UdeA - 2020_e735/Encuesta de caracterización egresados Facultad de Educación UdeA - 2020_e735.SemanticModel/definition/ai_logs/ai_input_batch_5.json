@@ -1,0 +1,20 @@
+{
+  "calculations": [
+    {
+      "name": "Posgrado no concluido ",
+      "table_name": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "tableau_expression": "{ FIXED [Número de cédula:] : COUNTD(\r\nIF [Posgrado concluido] = \"No\"\r\nTHEN 1\r\n\r\nEND)}",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "{ FIXED [Número de cédula:] : COUNTD(\r\nIF [Posgrado concluido] = \"No\"\r\nTHEN 1\r\n\r\nEND)}",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Número de cédula:": "integer",
+          "Posgrado concluido": "string"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
