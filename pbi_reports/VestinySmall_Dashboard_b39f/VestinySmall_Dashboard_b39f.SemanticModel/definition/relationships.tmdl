@@ -1,0 +1,20 @@
+relationship 1972361f-81e0-444e-8a64-31e0908a1508
+	toCardinality: many
+	fromColumn: 'COLLEGE+ (TXSA0308)'.SUBJECT_ID
+	toColumn: 'COLLEGE+ (TXSA0308)_COURSES'.SUBJECT_ID
+
+relationship 692a9fd1-7e93-4dc1-b5b6-a82c79b0a513
+	toCardinality: many
+	fromColumn: 'COLLEGE+ (TXSA0308)_SECTIONS'.ISBN
+	toColumn: 'COLLEGE+ (TXSA0308)_EBOOKS'.ISBN
+
+relationship 0142d662-bde9-44c3-8acd-9e6219b7ebda
+	toCardinality: many
+	fromColumn: 'COLLEGE+ (TXSA0308)_COURSES'.COURSE_CODE
+	toColumn: 'COLLEGE+ (TXSA0308)_SECTIONS'.COURSE_CODE
+
+relationship 3d4ebcd1-4194-4cda-b806-1c7114e0a830
+	toCardinality: many
+	fromColumn: 'COLLEGE+ (TXSA0308)_COLLEGE'.COLLEGE_ID
+	toColumn: 'COLLEGE+ (TXSA0308)'.COLLEGE_ID
+
