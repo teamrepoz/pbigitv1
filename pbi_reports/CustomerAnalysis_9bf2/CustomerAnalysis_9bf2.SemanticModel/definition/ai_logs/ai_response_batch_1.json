@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "sales_06_FY2020-21",
+      "name": "Female Revenue",
+      "dax_expression": "IF('sales_06_FY2020-21'[Gender] = \"F\", 'sales_06_FY2020-21'[total], BLANK())",
+      "solution_explanation": "Converted the row-level Tableau IF expression to a DAX calculated column. Replaced Tableau column references with 'Table'[Column] format and used double quotes for the string literal. Returns total when Gender = \"F\", otherwise BLANK()."
+    }
+  ]
+}
