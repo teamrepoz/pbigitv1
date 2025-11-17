@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Parameters",
+      "name": "Choose a Metric",
+      "dax_expression": "\"Sales\"",
+      "solution_explanation": "The Tableau expression is a constant string literal. It does not reference any row-level columns, aggregations, or parameters, so it is implemented as a calculated column that returns the string \"Sales\"."
+    }
+  ]
+}
