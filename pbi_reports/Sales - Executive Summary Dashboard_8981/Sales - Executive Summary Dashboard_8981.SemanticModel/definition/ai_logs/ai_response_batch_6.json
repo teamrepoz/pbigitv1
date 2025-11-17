@@ -1,0 +1,18 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Profit",
+      "dax_expression": "'Orders+ (Sample - Superstore)'[Sales] * 0.575",
+      "solution_explanation": "Converted Tableau calculated field [Profit] = [Sales] * .575 into a DAX calculated column performing row-level multiplication."
+    },
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Gross Profit Total",
+      "dax_expression": "'Orders+ (Sample - Superstore)'[Profit] * 2.5",
+      "solution_explanation": "Converted Tableau [Profit] * 2.5 into a DAX calculated column using the row-level 'Profit' column defined above. This is a calculated column because the expression is row-level and contains no aggregations or parameters."
+    }
+  ]
+}
