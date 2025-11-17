@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders+ (Sample - Superstore)",
+      "name": "Total Sales",
+      "dax_expression": "'Orders+ (Sample - Superstore)'[Sales] * 3.523",
+      "solution_explanation": "Converted row-level multiplication to a calculated column. Replaced [Sales] with 'Orders+ (Sample - Superstore)'[Sales] and kept the constant multiplier."
+    }
+  ]
+}
