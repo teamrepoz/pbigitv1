@@ -1,0 +1,18 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "raw_data (Dashboard Lesson - Coffee Shop Sales)",
+      "name": "Revenue",
+      "dax_expression": "'raw_data (Dashboard Lesson - Coffee Shop Sales)'[transaction_qty] * 'raw_data (Dashboard Lesson - Coffee Shop Sales)'[unit_price]",
+      "solution_explanation": "Converted the dependent calculated field Revenue from Tableau ([transaction_qty] * [unit_price]) to a row-level DAX calculated column using the same table's columns. This is a row-level arithmetic operation, so it is implemented as a calculated column."
+    },
+    {
+      "type": "calculated_column",
+      "table": "raw_data (Dashboard Lesson - Coffee Shop Sales)",
+      "name": "BATCH",
+      "dax_expression": "'raw_data (Dashboard Lesson - Coffee Shop Sales)'[Revenue]",
+      "solution_explanation": "The Tableau expression references the calculated field [Revenue]. After creating Revenue as a calculated column, BATCH simply references that column at row level, so it is implemented as a calculated column."
+    }
+  ]
+}
