@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Data (Complaint Line)",
+      "name": "TC_Value",
+      "dax_expression": "CALCULATE(\n    MAX('Data (Complaint Line)'[Value]),\n    ALLSELECTED('Data (Complaint Line)')\n)",
+      "solution_explanation": "Tableau's WINDOW_MAX(MAX([Value])) is a table calculation that returns the maximum of the aggregated Value over the window/partition. In DAX, this is approximated by taking the MAX of 'Data (Complaint Line)'[Value] evaluated over the current selection context using ALLSELECTED('Data (Complaint Line)') to emulate Tableau's window/partition scope.",
+      "type_changed_reason": "The Tableau expression uses a table calculation (WINDOW_MAX) and an aggregation (MAX), which requires evaluation across rows/partitions — this must be implemented as a measure in Power BI."
+    }
+  ]
+}
