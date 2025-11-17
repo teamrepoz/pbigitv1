@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "name": "number of records",
+      "dax_expression": "AVERAGE('TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Número de cédula:])",
+      "solution_explanation": "Converted Tableau AVG([Número de cédula:]) to DAX AVERAGE('TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Número de cédula:]). The column reference was transformed to the 'Table'[Column] syntax and the aggregation function was mapped from AVG to AVERAGE.",
+      "type_changed_reason": "The calculation uses an aggregation (AVG), therefore it should be created as a measure."
+    }
+  ]
+}
