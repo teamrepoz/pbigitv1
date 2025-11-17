@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Total diplomado",
+      "table_name": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "tableau_expression": "COUNTD([Diplomados])",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "COUNTD([Diplomados])",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Diplomados": "integer"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
