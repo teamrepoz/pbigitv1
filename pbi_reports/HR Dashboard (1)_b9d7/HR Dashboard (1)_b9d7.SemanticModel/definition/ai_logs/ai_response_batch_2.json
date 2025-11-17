@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "HR data (HR Data)",
+      "name": "Attrition Rate",
+      "dax_expression": "SUM('HR data (HR Data)'[Attrition Count]) / SUM('HR data (HR Data)'[Employee Count])",
+      "solution_explanation": "Translated the Tableau expression SUM([Attrition Count]) / SUM([Employee Count]) to DAX by applying SUM to the corresponding table columns. 'Attrition Count' is a calculated field in the same table and is referenced as 'HR data (HR Data)'[Attrition Count]. The expression returns the ratio of the two aggregated sums.",
+      "type_changed_reason": "This calculation uses aggregation (SUM), so it should be created as a measure."
+    }
+  ]
+}
