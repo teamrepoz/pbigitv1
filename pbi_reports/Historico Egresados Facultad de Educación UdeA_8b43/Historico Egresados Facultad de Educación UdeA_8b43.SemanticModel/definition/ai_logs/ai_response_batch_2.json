@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "historicoEducacionCLEAN (historicoEducacionCLEAN)",
+      "name": "Count ciudad de residencia ",
+      "dax_expression": "CALCULATE(DISTINCTCOUNT('historicoEducacionCLEAN (historicoEducacionCLEAN)'[Ciudad residencia]), ALLEXCEPT('historicoEducacionCLEAN (historicoEducacionCLEAN)', 'historicoEducacionCLEAN (historicoEducacionCLEAN)'[Identificacion]))",
+      "solution_explanation": "Replaced Tableau COUNTD with DAX DISTINCTCOUNT. Implemented the FIXED [Identificacion] LOD by calculating the distinct count while removing all filters except 'Identificacion' using ALLEXCEPT, producing the distinct count of 'Ciudad residencia' per 'Identificacion'.",
+      "type_changed_reason": "The Tableau expression uses a FIXED LOD ({ FIXED ... }), which is an aggregation scoped independently of the view context, so it should be created as a measure."
+    }
+  ]
+}
