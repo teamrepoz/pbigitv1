@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "Pre Month Value - 0",
+      "dax_expression": "IF('Orders (Sample - Superstore)'[Pre Month Value - YoY] = 0, \"↔\", \"\")",
+      "solution_explanation": "Converted the Tableau IF expression to DAX IF and mapped the referenced calculated field to 'Orders (Sample - Superstore)'[Pre Month Value - YoY]. Returns the arrow symbol when the YoY value equals 0, otherwise an empty string.",
+      "type_changed_reason": "The expression references an aggregated/calculated field (Pre Month Value - YoY) derived from LOD/aggregations, so it must be created as a measure."
+    }
+  ]
+}
