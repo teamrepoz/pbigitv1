@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Parameters",
+      "name": "Date Type",
+      "dax_expression": "\"Year\"",
+      "solution_explanation": "Converted the Tableau string literal Year to a DAX constant string. There are no field references or aggregations, so this is a row-level constant and should be a calculated column."
+    }
+  ]
+}
