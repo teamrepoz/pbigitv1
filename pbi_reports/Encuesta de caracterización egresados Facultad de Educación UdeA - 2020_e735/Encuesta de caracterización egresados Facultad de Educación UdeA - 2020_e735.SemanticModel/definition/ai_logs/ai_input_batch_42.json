@@ -1,0 +1,20 @@
+{
+  "calculations": [
+    {
+      "name": "NO menci{on de honor en posgrado",
+      "table_name": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "tableau_expression": "IF [¿Recibió alguna mención o reconocimiento durante su formación de pregrado o posgrado?] = \"No\"\r\nTHEN [Escriba el nombre del reconocimiento.] = NULL\r\nELSEIF [¿Recibió alguna mención o reconocimiento durante su formación de pregrado o posgrado?] =\"Sí\" \r\nTHEN [Escriba el nombre del reconocimiento.] = \".\"\r\nEND",
+      "datatype": "boolean",
+      "calculation_context": {
+        "Expression": "IF [¿Recibió alguna mención o reconocimiento durante su formación de pregrado o posgrado?] = \"No\"\r\nTHEN [Escriba el nombre del reconocimiento.] = NULL\r\nELSEIF [¿Recibió alguna mención o reconocimiento durante su formación de pregrado o posgrado?] =\"Sí\" \r\nTHEN [Escriba el nombre del reconocimiento.] = \".\"\r\nEND",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "¿Recibió alguna mención o reconocimiento durante su formación de pregrado o posgrado?": "string",
+          "Escriba el nombre del reconocimiento.": "string"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
