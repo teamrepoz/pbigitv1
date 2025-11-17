@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "rossmann_sales_prediction_aggregated",
+      "name": "Radial Field",
+      "dax_expression": "'rossmann_sales_prediction_aggregated'[Total Sales]",
+      "solution_explanation": "Direct row-level reference converted to DAX column reference. The Tableau expression [Total Sales] becomes 'rossmann_sales_prediction_aggregated'[Total Sales]. This is a calculated column because it operates at the row level without aggregation."
+    }
+  ]
+}
