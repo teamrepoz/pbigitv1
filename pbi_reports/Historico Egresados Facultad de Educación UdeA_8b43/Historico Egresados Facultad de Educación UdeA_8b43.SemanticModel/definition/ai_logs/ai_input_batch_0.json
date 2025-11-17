@@ -1,0 +1,20 @@
+{
+  "calculations": [
+    {
+      "name": "Femenino",
+      "table_name": "historicoEducacionCLEAN (historicoEducacionCLEAN)",
+      "tableau_expression": "IF CONTAINS([Sexo egresados], \"F\") \r\n\r\nTHEN ([Identificacion]) END",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "IF CONTAINS([Sexo egresados], \"F\") \r\n\r\nTHEN ([Identificacion]) END",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Identificacion": "integer",
+          "Sexo egresados": "string"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
