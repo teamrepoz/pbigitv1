@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "HollywoodsMostProfitableStories",
+      "name": "TITLE ",
+      "dax_expression": "\"HOLLYWOOD STORIES \"",
+      "solution_explanation": "Converted the Tableau string literal to a DAX string literal. This is a row-level constant (no aggregates, table calculations, or parameters), so it should be a calculated column."
+    }
+  ]
+}
