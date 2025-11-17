@@ -1,0 +1,30 @@
+{
+  "calculations": [
+    {
+      "name": "# Complaints (Selected)",
+      "table_name": "complaints",
+      "tableau_expression": "IF ATTR([Product Grouping]) = [Parameters].[Selected Product] THEN [Number of Complaints] END",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "IF ATTR([Product Grouping]) = [Parameters].[Selected Product] THEN [Number of Complaints] END",
+        "calculated_fields": {
+          "Number of Complaints": "COUNTD([Complaint ID])",
+          "Product Grouping": "CASE [Product]\r\nWHEN 'Bank account or service' THEN 'BANK SERVICES'\r\nWHEN 'Checking or savings account' THEN 'CHECKING / SAVINGS'\r\nWHEN 'Credit card' THEN 'CREDIT CARD'\r\nWHEN 'Mortgage' THEN 'MORTGAGE'\r\nELSE 'OTHER' END",
+          "Selected Product": "\"OTHER\""
+        },
+        "parameters": [
+          "Selected Product"
+        ],
+        "col_to_datatype_mapping": {
+          "Complaint ID": "integer",
+          "Product": "string"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Number of Complaints": "integer",
+          "Selected Product": "string",
+          "Product Grouping": "String"
+        }
+      }
+    }
+  ]
+}
