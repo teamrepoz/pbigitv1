@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "TABLA FINAL_ Encuesta_Transpues (Varias conexiones)",
+      "name": "Posgrado en no curso (¿pregrado?)",
+      "dax_expression": "CALCULATE(\n    DISTINCTCOUNT('TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Número de cédula:]),\n    'TABLA FINAL_ Encuesta_Transpues (Varias conexiones)'[Posgrado en curso] = \"No\"\n)",
+      "solution_explanation": "The Tableau LOD { FIXED [Número de cédula:] : COUNTD(IF [Posgrado en curso] = \"No\" THEN 1 END) } returns a per-cédula indicator (1 if any row for that cédula has \"No\"). In DAX this is implemented by counting distinct Número de cédula: where Posgrado en curso = \"No\". The measure returns the count of unique cédula that meet the condition.",
+      "type_changed_reason": "The Tableau expression is a FIXED LOD (aggregate across rows grouped by Número de cédula:), which maps to an aggregated measure in DAX."
+    }
+  ]
+}
