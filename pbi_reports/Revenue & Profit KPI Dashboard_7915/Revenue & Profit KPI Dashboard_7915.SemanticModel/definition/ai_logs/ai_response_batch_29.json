@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders (Sample - Superstore)",
+      "name": "Order Date  for Max Date",
+      "dax_expression": "'Orders (Sample - Superstore)'[Order Date]",
+      "solution_explanation": "Row-level passthrough of the [Order Date] field. Converted to a calculated column that returns the Order Date for each row by referencing 'Orders (Sample - Superstore)'[Order Date] in DAX."
+    }
+  ]
+}
