@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "sample_-_superstore (1)",
+      "name": "T|F",
+      "dax_expression": "IF( AVERAGE('sample_-_superstore (1)'[Sales]) > 220, TRUE(), FALSE() )",
+      "solution_explanation": "Mapped Tableau AVG([Sales]) to DAX AVERAGE('sample_-_superstore (1)'[Sales]) and preserved the IF logic. Used TRUE()/FALSE() for boolean literals. Returned as a measure because the expression uses an aggregation.",
+      "type_changed_reason": "The calculation uses an aggregation (AVG), so it should be created as a measure."
+    }
+  ]
+}
