@@ -1,0 +1,44 @@
+table 'Select Agent'
+	lineageTag: 664feb92-ffbd-43ff-a8f0-0b8d8cd749b6
+
+	column Index
+		formatString: 0
+		lineageTag: 88ea12d1-15f4-443f-aeaf-b20c7db075e3
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: a82f60b7-cada-4711-bdad-544400bcbf89
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 0f0ed6aa-3bb6-4fe5-9477-923e49c8128f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Select Agent' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        {0, "1", "1"}
+			    }
+			)
+
+	annotation PBI_Id = 32b4bccc5814485e9d5aa681f20907eb
+
