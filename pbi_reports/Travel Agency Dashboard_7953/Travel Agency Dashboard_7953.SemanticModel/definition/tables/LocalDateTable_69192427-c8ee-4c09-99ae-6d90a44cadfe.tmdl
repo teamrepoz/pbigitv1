@@ -1,0 +1,111 @@
+table LocalDateTable_69192427-c8ee-4c09-99ae-6d90a44cadfe
+	isHidden
+	showAsVariationsOnly
+	lineageTag: d71e378d-7a54-49c2-9ef6-ac78bed9b53e
+
+	column Date
+		dataType: dateTime
+		isHidden
+		lineageTag: e1f0b85f-51b2-4a1d-b1bd-c1c1c6523f6f
+		dataCategory: PaddedDateTableDates
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = User
+
+	column Year = YEAR([Date])
+		dataType: int64
+		isHidden
+		lineageTag: 7fd71621-42a0-4270-92fe-d76b85579ff1
+		dataCategory: Years
+		summarizeBy: none
+
+		annotation SummarizationSetBy = User
+
+		annotation TemplateId = Year
+
+	column MonthNo = MONTH([Date])
+		dataType: int64
+		isHidden
+		lineageTag: 3683a5db-5947-4636-9343-b9937ff3b849
+		dataCategory: MonthOfYear
+		summarizeBy: none
+
+		annotation SummarizationSetBy = User
+
+		annotation TemplateId = MonthNumber
+
+	column Month = FORMAT([Date], "MMMM")
+		dataType: string
+		isHidden
+		lineageTag: 94cda6c3-a1c2-45b7-a694-136477b18785
+		dataCategory: Months
+		summarizeBy: none
+		sortByColumn: MonthNo
+
+		annotation SummarizationSetBy = User
+
+		annotation TemplateId = Month
+
+	column QuarterNo = INT(([MonthNo] + 2) / 3)
+		dataType: int64
+		isHidden
+		lineageTag: 1da7b235-e036-47a3-9435-ca6bab34d4f1
+		dataCategory: QuarterOfYear
+		summarizeBy: none
+
+		annotation SummarizationSetBy = User
+
+		annotation TemplateId = QuarterNumber
+
+	column Quarter = "Qtr " & [QuarterNo]
+		dataType: string
+		isHidden
+		lineageTag: 8bd9b409-6ee1-4e94-8e89-9c44a0c8650f
+		dataCategory: Quarters
+		summarizeBy: none
+		sortByColumn: QuarterNo
+
+		annotation SummarizationSetBy = User
+
+		annotation TemplateId = Quarter
+
+	column Day = DAY([Date])
+		dataType: int64
+		isHidden
+		lineageTag: 4750fe95-fdec-4b1d-acb3-22fe091f11ea
+		dataCategory: DayOfMonth
+		summarizeBy: none
+
+		annotation SummarizationSetBy = User
+
+		annotation TemplateId = Day
+
+	hierarchy 'Date Hierarchy'
+		lineageTag: 4c742897-3e4c-4f08-9f59-84bdfa2890ab
+
+		level Year
+			lineageTag: 51786267-a4f9-4c4e-a393-b5c782402d4f
+			column: Year
+
+		level Quarter
+			lineageTag: 92179297-8378-4f96-ba7d-697974e940b3
+			column: Quarter
+
+		level Month
+			lineageTag: fa0d3891-387b-4d73-919c-e9bda63feb45
+			column: Month
+
+		level Day
+			lineageTag: 8e21a6ac-d5c9-43a1-810b-3a25ddca2f31
+			column: Day
+
+		annotation TemplateId = DateHierarchy
+
+	partition LocalDateTable_69192427-c8ee-4c09-99ae-6d90a44cadfe = calculated
+		mode: import
+		source = Calendar(Date(Year(MIN('Agoda Flights Transactions (Agoda Flights Transactions)'[time])), 1, 1), Date(Year(MAX('Agoda Flights Transactions (Agoda Flights Transactions)'[time])), 12, 31))
+
+	annotation __PBI_LocalDateTable = true
+
