@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "EJB Sales Dashboard_8b12"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "d64d3bdc-b1b7-44da-a7f0-29a8b024a1df"
+  }
+}
