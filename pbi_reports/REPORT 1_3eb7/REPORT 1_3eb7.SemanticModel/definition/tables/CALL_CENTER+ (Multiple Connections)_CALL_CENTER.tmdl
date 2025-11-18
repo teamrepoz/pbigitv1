@@ -1,0 +1,1224 @@
+table 'CALL_CENTER+ (Multiple Connections)_CALL_CENTER'
+	lineageTag: bb73592f-b900-4324-89cb-f0f5a426a0d8
+
+	column CR_RETURNED_DATE_SK
+		dataType: int64
+		formatString: 0
+		lineageTag: 10edaacb-4e8b-4a29-91f4-8684f3348318
+		summarizeBy: sum
+		sourceColumn: CR_RETURNED_DATE_SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column CR_RETURNED_TIME_SK
+		dataType: int64
+		formatString: 0
+		lineageTag: 18455eb2-7e09-468b-abe5-773f861f0a0d
+		summarizeBy: sum
+		sourceColumn: CR_RETURNED_TIME_SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column CR_ITEM_SK
+		dataType: int64
+		formatString: 0
+		lineageTag: 6d1d069c-8c66-44d6-b82c-42df05377434
+		summarizeBy: sum
+		sourceColumn: CR_ITEM_SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column CR_REFUNDED_CUSTOMER_SK
+		dataType: int64
+		formatString: 0
+		lineageTag: ab834537-c1f0-4a71-8b8f-cb6e8350cf1a
+		summarizeBy: sum
+		sourceColumn: CR_REFUNDED_CUSTOMER_SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column CR_REFUNDED_CDEMO_SK
+		dataType: int64
+		formatString: 0
+		lineageTag: c00709cf-e9d7-4d0b-9d6e-5bd2c0113483
+		summarizeBy: sum
+		sourceColumn: CR_REFUNDED_CDEMO_SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column CR_REFUNDED_HDEMO_SK
+		dataType: int64
+		formatString: 0
+		lineageTag: 87c0f6c9-0fc3-4b20-af59-66d3941af837
+		summarizeBy: sum
+		sourceColumn: CR_REFUNDED_HDEMO_SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column CR_REFUNDED_ADDR_SK
+		dataType: int64
+		formatString: 0
+		lineageTag: d4ce07a1-6dcb-4546-b9a2-ad5d264f185b
+		summarizeBy: sum
+		sourceColumn: CR_REFUNDED_ADDR_SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column CR_RETURNING_CUSTOMER_SK
+		dataType: int64
+		formatString: 0
+		lineageTag: 5637fc85-431e-4fb3-b9e1-3919ab9330ed
+		summarizeBy: sum
+		sourceColumn: CR_RETURNING_CUSTOMER_SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column CR_RETURNING_CDEMO_SK
+		dataType: int64
+		formatString: 0
+		lineageTag: 355d83d5-4d1e-4fcd-af78-48e133d06007
+		summarizeBy: sum
+		sourceColumn: CR_RETURNING_CDEMO_SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column CR_RETURNING_HDEMO_SK
+		dataType: int64
+		formatString: 0
+		lineageTag: 7635bdd1-fcdf-4781-be31-53a2b8f0a369
+		summarizeBy: sum
+		sourceColumn: CR_RETURNING_HDEMO_SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column CR_RETURNING_ADDR_SK
+		dataType: int64
+		formatString: 0
+		lineageTag: 9623f6af-220f-4302-b116-72390621cfa1
+		summarizeBy: sum
+		sourceColumn: CR_RETURNING_ADDR_SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column CR_CALL_CENTER_SK
+		dataType: int64
+		formatString: 0
+		lineageTag: 42d705a5-309d-4ea0-9c9d-9c61b25d7876
+		summarizeBy: sum
+		sourceColumn: CR_CALL_CENTER_SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column CR_CATALOG_PAGE_SK
+		dataType: int64
+		formatString: 0
+		lineageTag: 70591bfe-eb9b-4a1a-baa6-52a0408e0c7c
+		summarizeBy: sum
+		sourceColumn: CR_CATALOG_PAGE_SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column CR_SHIP_MODE_SK
+		dataType: int64
+		formatString: 0
+		lineageTag: 9cc64852-6b39-4243-98c4-dd1d7cce0da4
+		summarizeBy: sum
+		sourceColumn: CR_SHIP_MODE_SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column CR_WAREHOUSE_SK
+		dataType: int64
+		formatString: 0
+		lineageTag: ebca77ba-6c42-4625-9eea-a1b8c0b792ff
+		summarizeBy: sum
+		sourceColumn: CR_WAREHOUSE_SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column CR_REASON_SK
+		dataType: int64
+		formatString: 0
+		lineageTag: 27e9a274-f135-4751-b1a0-e230fb31daf4
+		summarizeBy: sum
+		sourceColumn: CR_REASON_SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column CR_ORDER_NUMBER
+		dataType: int64
+		formatString: 0
+		lineageTag: dbe21841-c583-4061-87e8-17d20a0c39c9
+		summarizeBy: sum
+		sourceColumn: CR_ORDER_NUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+	column CR_RETURN_QUANTITY
+		dataType: int64
+		formatString: 0
+		lineageTag: f1ca6842-bf05-43ba-8548-481b440ac161
+		summarizeBy: sum
+		sourceColumn: CR_RETURN_QUANTITY
+
+		annotation SummarizationSetBy = Automatic
+
+	column CR_RETURN_AMOUNT
+		dataType: double
+		formatString: General Number
+		lineageTag: cd050099-f00f-4491-8236-3bc3d1f64c38
+		summarizeBy: sum
+		sourceColumn: CR_RETURN_AMOUNT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CR_RETURN_TAX
+		dataType: double
+		formatString: General Number
+		lineageTag: 9ec987f6-6f13-414e-a06f-2d2abe1a7427
+		summarizeBy: sum
+		sourceColumn: CR_RETURN_TAX
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CR_RETURN_AMT_INC_TAX
+		dataType: double
+		formatString: General Number
+		lineageTag: b3474ce1-dd5a-4292-b673-8120c1fbe789
+		summarizeBy: sum
+		sourceColumn: CR_RETURN_AMT_INC_TAX
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CR_FEE
+		dataType: double
+		formatString: General Number
+		lineageTag: dd429a48-8f14-494b-ae0e-c9d6ceca26d3
+		summarizeBy: sum
+		sourceColumn: CR_FEE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CR_RETURN_SHIP_COST
+		dataType: double
+		formatString: General Number
+		lineageTag: dde3f9ee-b677-40ca-ac11-d7ef12e45c0d
+		summarizeBy: sum
+		sourceColumn: CR_RETURN_SHIP_COST
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CR_REFUNDED_CASH
+		dataType: double
+		formatString: General Number
+		lineageTag: 5bd58948-c8a5-41f0-86d0-1cbde2dad0e4
+		summarizeBy: sum
+		sourceColumn: CR_REFUNDED_CASH
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CR_REVERSED_CHARGE
+		dataType: double
+		formatString: General Number
+		lineageTag: 5f8ea7b4-ec04-49ca-97c6-be42fddaff2e
+		summarizeBy: sum
+		sourceColumn: CR_REVERSED_CHARGE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CR_STORE_CREDIT
+		dataType: double
+		formatString: General Number
+		lineageTag: 3e6126d2-433c-4c66-9fea-cf068cb08770
+		summarizeBy: sum
+		sourceColumn: CR_STORE_CREDIT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CR_NET_LOSS
+		dataType: double
+		formatString: General Number
+		lineageTag: 91498e7c-6358-468a-b363-3c41185f1d63
+		summarizeBy: sum
+		sourceColumn: CR_NET_LOSS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CS_SOLD_DATE_SK
+		dataType: int64
+		formatString: 0
+		lineageTag: b2e56b7c-2770-4052-9ccd-76799449be8f
+		summarizeBy: sum
+		sourceColumn: CS_SOLD_DATE_SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column CS_SOLD_TIME_SK
+		dataType: int64
+		formatString: 0
+		lineageTag: a7b131c3-5c09-4741-88c8-08b24807b58a
+		summarizeBy: sum
+		sourceColumn: CS_SOLD_TIME_SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column CS_SHIP_DATE_SK
+		dataType: int64
+		formatString: 0
+		lineageTag: 5fb170cb-c716-4331-af3f-9afd28d09557
+		summarizeBy: sum
+		sourceColumn: CS_SHIP_DATE_SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column CS_BILL_CUSTOMER_SK
+		dataType: int64
+		formatString: 0
+		lineageTag: c9a89a5a-ce9c-41ea-a9f5-5c0d66b599dd
+		summarizeBy: sum
+		sourceColumn: CS_BILL_CUSTOMER_SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column CS_BILL_CDEMO_SK
+		dataType: int64
+		formatString: 0
+		lineageTag: ce42e5a5-65b4-4f9c-9bb7-d0f456457acc
+		summarizeBy: sum
+		sourceColumn: CS_BILL_CDEMO_SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column CS_BILL_HDEMO_SK
+		dataType: int64
+		formatString: 0
+		lineageTag: 1fc99b8b-5617-4919-8eb6-f4ae7efe84e3
+		summarizeBy: sum
+		sourceColumn: CS_BILL_HDEMO_SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column CS_BILL_ADDR_SK
+		dataType: int64
+		formatString: 0
+		lineageTag: 742baa57-17ef-4073-9c65-874b76415b47
+		summarizeBy: sum
+		sourceColumn: CS_BILL_ADDR_SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column CS_SHIP_CUSTOMER_SK
+		dataType: int64
+		formatString: 0
+		lineageTag: 827d32ac-a60b-4fa6-9955-01de6c76d92c
+		summarizeBy: sum
+		sourceColumn: CS_SHIP_CUSTOMER_SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column CS_SHIP_CDEMO_SK
+		dataType: int64
+		formatString: 0
+		lineageTag: c9824e83-4cba-4cd4-ba83-dd87f001fcfe
+		summarizeBy: sum
+		sourceColumn: CS_SHIP_CDEMO_SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column CS_SHIP_HDEMO_SK
+		dataType: int64
+		formatString: 0
+		lineageTag: e27e6b56-0c1f-4526-a38d-2f0151932252
+		summarizeBy: sum
+		sourceColumn: CS_SHIP_HDEMO_SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column CS_SHIP_ADDR_SK
+		dataType: int64
+		formatString: 0
+		lineageTag: 77244164-aa9a-4c8d-9520-760581c19cd8
+		summarizeBy: sum
+		sourceColumn: CS_SHIP_ADDR_SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column CS_CALL_CENTER_SK
+		dataType: int64
+		formatString: 0
+		lineageTag: 5f097b86-62d9-482c-80a0-275c8fd37758
+		summarizeBy: sum
+		sourceColumn: CS_CALL_CENTER_SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column CS_CATALOG_PAGE_SK
+		dataType: int64
+		formatString: 0
+		lineageTag: 1415525e-e5f0-4fa7-b0c7-256ad12cc14f
+		summarizeBy: sum
+		sourceColumn: CS_CATALOG_PAGE_SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column CS_SHIP_MODE_SK
+		dataType: int64
+		formatString: 0
+		lineageTag: 12077b35-0ca3-4c03-ba0c-92c15a286ebc
+		summarizeBy: sum
+		sourceColumn: CS_SHIP_MODE_SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column CS_WAREHOUSE_SK
+		dataType: int64
+		formatString: 0
+		lineageTag: 3ece3258-d34e-4295-a1bb-e786b552fa14
+		summarizeBy: sum
+		sourceColumn: CS_WAREHOUSE_SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column CS_ITEM_SK
+		dataType: int64
+		formatString: 0
+		lineageTag: babc17c3-0747-4db0-ae43-fd3ddcab48ff
+		summarizeBy: sum
+		sourceColumn: CS_ITEM_SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column CS_PROMO_SK
+		dataType: int64
+		formatString: 0
+		lineageTag: 5340a950-7d33-4b6e-a35d-56b2f3d684cc
+		summarizeBy: sum
+		sourceColumn: CS_PROMO_SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column CS_ORDER_NUMBER
+		dataType: int64
+		formatString: 0
+		lineageTag: 590ceb80-c834-4be2-aca9-1cf803876d76
+		summarizeBy: sum
+		sourceColumn: CS_ORDER_NUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+	column CS_QUANTITY
+		dataType: int64
+		formatString: 0
+		lineageTag: e9e7f8d4-d332-4b43-8413-e3fc134e8838
+		summarizeBy: sum
+		sourceColumn: CS_QUANTITY
+
+		annotation SummarizationSetBy = Automatic
+
+	column CS_WHOLESALE_COST
+		dataType: double
+		formatString: General Number
+		lineageTag: e21d1090-f0ed-4431-a1c9-7259a1090a1b
+		summarizeBy: sum
+		sourceColumn: CS_WHOLESALE_COST
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CS_LIST_PRICE
+		dataType: double
+		formatString: General Number
+		lineageTag: 540ab0f5-ceae-4c4f-ac12-5215c7a9119e
+		summarizeBy: sum
+		sourceColumn: CS_LIST_PRICE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CS_SALES_PRICE
+		dataType: double
+		formatString: General Number
+		lineageTag: 20b9bf40-d2cb-4c7f-88c4-b863a771463c
+		summarizeBy: sum
+		sourceColumn: CS_SALES_PRICE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CS_EXT_DISCOUNT_AMT
+		dataType: double
+		formatString: General Number
+		lineageTag: 72273cd2-43f0-4961-b329-1f88ec8e8f8b
+		summarizeBy: sum
+		sourceColumn: CS_EXT_DISCOUNT_AMT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CS_EXT_SALES_PRICE
+		dataType: double
+		formatString: General Number
+		lineageTag: 2fd227e7-38fc-4f1e-8cfa-f4fb289be2bf
+		summarizeBy: sum
+		sourceColumn: CS_EXT_SALES_PRICE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CS_EXT_WHOLESALE_COST
+		dataType: double
+		formatString: General Number
+		lineageTag: 5fbf6db1-c117-494f-b6f7-6a63b6d270e8
+		summarizeBy: sum
+		sourceColumn: CS_EXT_WHOLESALE_COST
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CS_EXT_LIST_PRICE
+		dataType: double
+		formatString: General Number
+		lineageTag: d9d07da8-f43c-470c-899f-37cb4059fa9a
+		summarizeBy: sum
+		sourceColumn: CS_EXT_LIST_PRICE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CS_EXT_TAX
+		dataType: double
+		formatString: General Number
+		lineageTag: fe0862be-62da-47ca-bf9e-a71e860943e7
+		summarizeBy: sum
+		sourceColumn: CS_EXT_TAX
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CS_COUPON_AMT
+		dataType: double
+		formatString: General Number
+		lineageTag: 60187aba-27cb-44b3-84ce-72286df761bf
+		summarizeBy: sum
+		sourceColumn: CS_COUPON_AMT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CS_EXT_SHIP_COST
+		dataType: double
+		formatString: General Number
+		lineageTag: 6e74ef39-6e94-44b2-9152-11fe64a31e24
+		summarizeBy: sum
+		sourceColumn: CS_EXT_SHIP_COST
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CS_NET_PAID
+		dataType: double
+		formatString: General Number
+		lineageTag: 9393207c-690b-472d-a5f9-dba99cf9a4d5
+		summarizeBy: sum
+		sourceColumn: CS_NET_PAID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CS_NET_PAID_INC_TAX
+		dataType: double
+		formatString: General Number
+		lineageTag: 239fe9c1-7da5-4263-b692-e0dcc1c8d085
+		summarizeBy: sum
+		sourceColumn: CS_NET_PAID_INC_TAX
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CS_NET_PAID_INC_SHIP
+		dataType: double
+		formatString: General Number
+		lineageTag: c9070ec0-2e1a-4097-bdc4-d07fa564ec7a
+		summarizeBy: sum
+		sourceColumn: CS_NET_PAID_INC_SHIP
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CS_NET_PAID_INC_SHIP_TAX
+		dataType: double
+		formatString: General Number
+		lineageTag: b5229f4e-9cd2-4dd7-bc53-f52609f966b0
+		summarizeBy: sum
+		sourceColumn: CS_NET_PAID_INC_SHIP_TAX
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CS_NET_PROFIT
+		dataType: double
+		formatString: General Number
+		lineageTag: 10b75033-0d37-4440-83ca-bfdc11c52c7e
+		summarizeBy: sum
+		sourceColumn: CS_NET_PROFIT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Table Name'
+		dataType: string
+		lineageTag: 6daf8b26-6b88-49b3-be6f-bab6c62612b5
+		summarizeBy: none
+		sourceColumn: 'Table Name'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CR_RETURNED_DATE_SK.1'
+		dataType: int64
+		formatString: 0
+		lineageTag: 868f70be-af0b-47e0-828b-c665acf5a405
+		summarizeBy: sum
+		sourceColumn: 'CR_RETURNED_DATE_SK.1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CR_RETURNED_TIME_SK.1'
+		dataType: int64
+		formatString: 0
+		lineageTag: e89a4f4e-c201-4f02-a5b0-bf242b8059b0
+		summarizeBy: sum
+		sourceColumn: 'CR_RETURNED_TIME_SK.1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CR_ITEM_SK.1'
+		dataType: int64
+		formatString: 0
+		lineageTag: 40c722d2-19d0-43ab-95d4-df0fa2638f4a
+		summarizeBy: sum
+		sourceColumn: 'CR_ITEM_SK.1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CR_REFUNDED_CUSTOMER_SK.1'
+		dataType: int64
+		formatString: 0
+		lineageTag: 7655e359-1671-4095-b1a4-ef9c0ea286a2
+		summarizeBy: sum
+		sourceColumn: 'CR_REFUNDED_CUSTOMER_SK.1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CR_REFUNDED_CDEMO_SK.1'
+		dataType: int64
+		formatString: 0
+		lineageTag: 4d6307f4-f74c-4d35-bc70-03af5d59e6c9
+		summarizeBy: sum
+		sourceColumn: 'CR_REFUNDED_CDEMO_SK.1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CR_REFUNDED_HDEMO_SK.1'
+		dataType: int64
+		formatString: 0
+		lineageTag: 673c7754-d151-49f8-af4c-302b13d9aae8
+		summarizeBy: sum
+		sourceColumn: 'CR_REFUNDED_HDEMO_SK.1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CR_REFUNDED_ADDR_SK.1'
+		dataType: int64
+		formatString: 0
+		lineageTag: e4ce6879-afe7-455d-b19a-036c0f46122d
+		summarizeBy: sum
+		sourceColumn: 'CR_REFUNDED_ADDR_SK.1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CR_RETURNING_CUSTOMER_SK.1'
+		dataType: int64
+		formatString: 0
+		lineageTag: ff29104e-4f86-4620-86c9-45e895d06b57
+		summarizeBy: sum
+		sourceColumn: 'CR_RETURNING_CUSTOMER_SK.1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CR_RETURNING_CDEMO_SK.1'
+		dataType: int64
+		formatString: 0
+		lineageTag: 24699944-45b4-43a0-b748-4184213d8644
+		summarizeBy: sum
+		sourceColumn: 'CR_RETURNING_CDEMO_SK.1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CR_RETURNING_HDEMO_SK.1'
+		dataType: int64
+		formatString: 0
+		lineageTag: 5e9e9ebc-ad9d-46d9-ab14-002eec5feb34
+		summarizeBy: sum
+		sourceColumn: 'CR_RETURNING_HDEMO_SK.1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CR_RETURNING_ADDR_SK.1'
+		dataType: int64
+		formatString: 0
+		lineageTag: b35b0043-8860-40c3-9e24-86a6f4de5c9c
+		summarizeBy: sum
+		sourceColumn: 'CR_RETURNING_ADDR_SK.1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CR_CALL_CENTER_SK.1'
+		dataType: int64
+		formatString: 0
+		lineageTag: 0ed011eb-1b22-4767-9ecd-68327aec724c
+		summarizeBy: sum
+		sourceColumn: 'CR_CALL_CENTER_SK.1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CR_CATALOG_PAGE_SK.1'
+		dataType: int64
+		formatString: 0
+		lineageTag: e080dcdb-bfaf-4d30-9739-8532ff4bc7b0
+		summarizeBy: sum
+		sourceColumn: 'CR_CATALOG_PAGE_SK.1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CR_SHIP_MODE_SK.1'
+		dataType: int64
+		formatString: 0
+		lineageTag: 3a440e65-245c-409c-94ca-ceadde8784af
+		summarizeBy: sum
+		sourceColumn: 'CR_SHIP_MODE_SK.1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CR_WAREHOUSE_SK.1'
+		dataType: int64
+		formatString: 0
+		lineageTag: 100f15f8-68a9-494c-b716-e5202d2e64a2
+		summarizeBy: sum
+		sourceColumn: 'CR_WAREHOUSE_SK.1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CR_REASON_SK.1'
+		dataType: int64
+		formatString: 0
+		lineageTag: dd47c1e2-d639-4b69-b5be-4f96ea62a66f
+		summarizeBy: sum
+		sourceColumn: 'CR_REASON_SK.1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CR_ORDER_NUMBER.1'
+		dataType: int64
+		formatString: 0
+		lineageTag: 02e42f01-d47a-4fc0-bdda-6020c2978a7c
+		summarizeBy: sum
+		sourceColumn: 'CR_ORDER_NUMBER.1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CR_RETURN_QUANTITY.1'
+		dataType: int64
+		formatString: 0
+		lineageTag: dcba4cef-5f87-416a-b514-37cd18c99231
+		summarizeBy: sum
+		sourceColumn: 'CR_RETURN_QUANTITY.1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CR_RETURN_AMOUNT.1'
+		dataType: double
+		formatString: General Number
+		lineageTag: c2e6e291-273a-4ae0-aef2-e26231ed7efb
+		summarizeBy: sum
+		sourceColumn: 'CR_RETURN_AMOUNT.1'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'CR_RETURN_TAX.1'
+		dataType: double
+		formatString: General Number
+		lineageTag: 11834fc7-c09d-4442-9945-884da7ef173a
+		summarizeBy: sum
+		sourceColumn: 'CR_RETURN_TAX.1'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'CR_RETURN_AMT_INC_TAX.1'
+		dataType: double
+		formatString: General Number
+		lineageTag: b7f6dfe1-0ee7-48e7-b6d6-862be4c735e3
+		summarizeBy: sum
+		sourceColumn: 'CR_RETURN_AMT_INC_TAX.1'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'CR_FEE.1'
+		dataType: double
+		formatString: General Number
+		lineageTag: f0d9ba68-4075-4e9b-954c-6e658b3535c1
+		summarizeBy: sum
+		sourceColumn: 'CR_FEE.1'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'CR_RETURN_SHIP_COST.1'
+		dataType: double
+		formatString: General Number
+		lineageTag: e5680896-983b-47a3-ad23-3b1ecbe09660
+		summarizeBy: sum
+		sourceColumn: 'CR_RETURN_SHIP_COST.1'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'CR_REFUNDED_CASH.1'
+		dataType: double
+		formatString: General Number
+		lineageTag: 69e31192-f85b-434d-8ce8-c4313ac6eb81
+		summarizeBy: sum
+		sourceColumn: 'CR_REFUNDED_CASH.1'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'CR_REVERSED_CHARGE.1'
+		dataType: double
+		formatString: General Number
+		lineageTag: 79e81ab2-4398-4d4d-91ad-89c0bf5b56c7
+		summarizeBy: sum
+		sourceColumn: 'CR_REVERSED_CHARGE.1'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'CR_STORE_CREDIT.1'
+		dataType: double
+		formatString: General Number
+		lineageTag: e6b050fd-27d8-42fa-adc6-a50090338b72
+		summarizeBy: sum
+		sourceColumn: 'CR_STORE_CREDIT.1'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'CR_NET_LOSS.1'
+		dataType: double
+		formatString: General Number
+		lineageTag: 41bede9a-d87a-41e9-af1b-ed165d6eb16a
+		summarizeBy: sum
+		sourceColumn: 'CR_NET_LOSS.1'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'CS_SOLD_DATE_SK.1'
+		dataType: int64
+		formatString: 0
+		lineageTag: 35a1dc3c-46d6-4758-95b8-fd8caacf9922
+		summarizeBy: sum
+		sourceColumn: 'CS_SOLD_DATE_SK.1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CS_SOLD_TIME_SK.1'
+		dataType: int64
+		formatString: 0
+		lineageTag: a296527b-9718-4eb7-9af1-145ac4e8c3ee
+		summarizeBy: sum
+		sourceColumn: 'CS_SOLD_TIME_SK.1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CS_SHIP_DATE_SK.1'
+		dataType: int64
+		formatString: 0
+		lineageTag: 51ef6159-88e3-4b02-8bbb-9b27934c485d
+		summarizeBy: sum
+		sourceColumn: 'CS_SHIP_DATE_SK.1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CS_BILL_CUSTOMER_SK.1'
+		dataType: int64
+		formatString: 0
+		lineageTag: cf40889c-876e-4a51-8861-1252d615697f
+		summarizeBy: sum
+		sourceColumn: 'CS_BILL_CUSTOMER_SK.1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CS_BILL_CDEMO_SK.1'
+		dataType: int64
+		formatString: 0
+		lineageTag: d3914b8c-cfe0-4ef5-a849-788685fa046a
+		summarizeBy: sum
+		sourceColumn: 'CS_BILL_CDEMO_SK.1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CS_BILL_HDEMO_SK.1'
+		dataType: int64
+		formatString: 0
+		lineageTag: 1e4246d7-5d1c-49dc-bc4b-d0614d2b37f0
+		summarizeBy: sum
+		sourceColumn: 'CS_BILL_HDEMO_SK.1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CS_BILL_ADDR_SK.1'
+		dataType: int64
+		formatString: 0
+		lineageTag: 0808114c-e3d7-4eb6-a3b8-15abe889671e
+		summarizeBy: sum
+		sourceColumn: 'CS_BILL_ADDR_SK.1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CS_SHIP_CUSTOMER_SK.1'
+		dataType: int64
+		formatString: 0
+		lineageTag: 3c1f7cd2-bfa2-44d2-9033-b3a469b04285
+		summarizeBy: sum
+		sourceColumn: 'CS_SHIP_CUSTOMER_SK.1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CS_SHIP_CDEMO_SK.1'
+		dataType: int64
+		formatString: 0
+		lineageTag: 28e8d0f0-e59e-4fee-89a5-b31dcfb68269
+		summarizeBy: sum
+		sourceColumn: 'CS_SHIP_CDEMO_SK.1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CS_SHIP_HDEMO_SK.1'
+		dataType: int64
+		formatString: 0
+		lineageTag: 79047ecf-6e2e-46fc-a3cd-329f8a094c25
+		summarizeBy: sum
+		sourceColumn: 'CS_SHIP_HDEMO_SK.1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CS_SHIP_ADDR_SK.1'
+		dataType: int64
+		formatString: 0
+		lineageTag: 10daca53-36a1-4420-b5f0-8373d0432f3a
+		summarizeBy: sum
+		sourceColumn: 'CS_SHIP_ADDR_SK.1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CS_CALL_CENTER_SK.1'
+		dataType: int64
+		formatString: 0
+		lineageTag: cccaa1ee-57b7-4b78-8607-47c2c7a94aa4
+		summarizeBy: sum
+		sourceColumn: 'CS_CALL_CENTER_SK.1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CS_CATALOG_PAGE_SK.1'
+		dataType: int64
+		formatString: 0
+		lineageTag: 6f151e3e-8597-44f4-8745-1f9570f35217
+		summarizeBy: sum
+		sourceColumn: 'CS_CATALOG_PAGE_SK.1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CS_SHIP_MODE_SK.1'
+		dataType: int64
+		formatString: 0
+		lineageTag: bcf02fc9-cab8-4a0c-bfbe-d6ff113069ad
+		summarizeBy: sum
+		sourceColumn: 'CS_SHIP_MODE_SK.1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CS_WAREHOUSE_SK.1'
+		dataType: int64
+		formatString: 0
+		lineageTag: 32a5dc54-50ae-4382-9350-c8b7e8ae47ce
+		summarizeBy: sum
+		sourceColumn: 'CS_WAREHOUSE_SK.1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CS_ITEM_SK.1'
+		dataType: int64
+		formatString: 0
+		lineageTag: 17c8585e-2c78-4502-8eb8-4d61cee7f0d0
+		summarizeBy: sum
+		sourceColumn: 'CS_ITEM_SK.1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CS_PROMO_SK.1'
+		dataType: int64
+		formatString: 0
+		lineageTag: 44d7d5be-f401-4146-b509-1393ac2a3d16
+		summarizeBy: sum
+		sourceColumn: 'CS_PROMO_SK.1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CS_ORDER_NUMBER.1'
+		dataType: int64
+		formatString: 0
+		lineageTag: 8493d729-e3e5-4e15-96b4-2e323ce0cfcb
+		summarizeBy: sum
+		sourceColumn: 'CS_ORDER_NUMBER.1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CS_QUANTITY.1'
+		dataType: int64
+		formatString: 0
+		lineageTag: c7409d41-9795-4997-b13e-6f510ee198af
+		summarizeBy: sum
+		sourceColumn: 'CS_QUANTITY.1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CS_WHOLESALE_COST.1'
+		dataType: double
+		formatString: General Number
+		lineageTag: 770d6338-4707-4a8f-aa94-a0e317525f8f
+		summarizeBy: sum
+		sourceColumn: 'CS_WHOLESALE_COST.1'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'CS_LIST_PRICE.1'
+		dataType: double
+		formatString: General Number
+		lineageTag: d7ad5dbb-b6f3-405b-9ab1-d5b3b369c87f
+		summarizeBy: sum
+		sourceColumn: 'CS_LIST_PRICE.1'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'CS_SALES_PRICE.1'
+		dataType: double
+		formatString: General Number
+		lineageTag: 542b2594-e06a-4ca3-9ff0-ae0dd55098b6
+		summarizeBy: sum
+		sourceColumn: 'CS_SALES_PRICE.1'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'CS_EXT_DISCOUNT_AMT.1'
+		dataType: double
+		formatString: General Number
+		lineageTag: 094b38b6-cdc7-489e-8c85-6b01626ef10f
+		summarizeBy: sum
+		sourceColumn: 'CS_EXT_DISCOUNT_AMT.1'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'CS_EXT_SALES_PRICE.1'
+		dataType: double
+		formatString: General Number
+		lineageTag: 2d263db7-b284-47bc-b89c-fe376dd460fb
+		summarizeBy: sum
+		sourceColumn: 'CS_EXT_SALES_PRICE.1'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'CS_EXT_WHOLESALE_COST.1'
+		dataType: double
+		formatString: General Number
+		lineageTag: bc82bbab-f9d1-47ab-958e-44184bfe3eec
+		summarizeBy: sum
+		sourceColumn: 'CS_EXT_WHOLESALE_COST.1'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'CS_EXT_LIST_PRICE.1'
+		dataType: double
+		formatString: General Number
+		lineageTag: 43ae442c-95fd-4975-9a00-941f4230e2ca
+		summarizeBy: sum
+		sourceColumn: 'CS_EXT_LIST_PRICE.1'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'CS_EXT_TAX.1'
+		dataType: double
+		formatString: General Number
+		lineageTag: 11211e79-1bf6-464d-ac43-ebb7c2c09f52
+		summarizeBy: sum
+		sourceColumn: 'CS_EXT_TAX.1'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'CS_COUPON_AMT.1'
+		dataType: double
+		formatString: General Number
+		lineageTag: 019690b8-c733-4907-ba3e-3145c5450562
+		summarizeBy: sum
+		sourceColumn: 'CS_COUPON_AMT.1'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'CS_EXT_SHIP_COST.1'
+		dataType: double
+		formatString: General Number
+		lineageTag: 594586c6-46c6-4a85-b164-15804d14677f
+		summarizeBy: sum
+		sourceColumn: 'CS_EXT_SHIP_COST.1'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'CS_NET_PAID.1'
+		dataType: double
+		formatString: General Number
+		lineageTag: b44b97e1-5923-44e4-a4ea-c2fdc22adee2
+		summarizeBy: sum
+		sourceColumn: 'CS_NET_PAID.1'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'CS_NET_PAID_INC_TAX.1'
+		dataType: double
+		formatString: General Number
+		lineageTag: 7d7cd789-bc47-44f3-b2fb-6d475c009821
+		summarizeBy: sum
+		sourceColumn: 'CS_NET_PAID_INC_TAX.1'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'CS_NET_PAID_INC_SHIP.1'
+		dataType: double
+		formatString: General Number
+		lineageTag: 48dde4f7-3b0a-4916-b3f2-a8841ae75665
+		summarizeBy: sum
+		sourceColumn: 'CS_NET_PAID_INC_SHIP.1'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'CS_NET_PAID_INC_SHIP_TAX.1'
+		dataType: double
+		formatString: General Number
+		lineageTag: 82ef76fc-12ab-4f7e-a01b-daf14e985883
+		summarizeBy: sum
+		sourceColumn: 'CS_NET_PAID_INC_SHIP_TAX.1'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'CS_NET_PROFIT.1'
+		dataType: double
+		formatString: General Number
+		lineageTag: 4cc7282c-366f-4a43-8335-19f5e61d3dfe
+		summarizeBy: sum
+		sourceColumn: 'CS_NET_PROFIT.1'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Table Name.1'
+		dataType: string
+		lineageTag: ca16f9f1-2814-47d9-919d-a651d6592e59
+		summarizeBy: none
+		sourceColumn: 'Table Name.1'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'CALL_CENTER+ (Multiple Connections)_CALL_CENTER' = m
+		mode: import
+		source =
+				let
+					    Source = Table.Combine({#"CATALOG_RETURNS_CALL_CENTER+ (Multiple Connections)", #"CATALOG_SALES_CALL_CENTER+ (Multiple Connections)"})
+					in
+					    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
