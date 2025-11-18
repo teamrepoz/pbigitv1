@@ -1,0 +1,46 @@
+table 'Performance Metric'
+	lineageTag: fbfedf97-b092-4d32-86cd-0a545284717a
+
+	column Index
+		formatString: 0
+		lineageTag: 715e4d5e-7c74-4da5-8deb-949c11735581
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 9000df76-5119-4941-909b-082184a1c95d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: 3622778d-d683-4803-b7c7-d513c7a5d5a5
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Performance Metric' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Resolution Rate ", "Resolution Rate " },
+				{ 1, "Satisfaction Rating", "Satisfaction Rating" },
+				{ 2, "Talk Duration", "Talk Duration" }
+			    }
+			)
+
+	annotation PBI_Id = 1470258971e5458eaebe3abb3902ef5e
+
