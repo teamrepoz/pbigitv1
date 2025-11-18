@@ -1,0 +1,20 @@
+{
+  "calculations": [
+    {
+      "name": "Avg. Time to Delivery",
+      "table_name": "Data (EJB)",
+      "tableau_expression": "AVG([Date Delivered]-[Date Ordered])",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "AVG([Date Delivered]-[Date Ordered])",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Date Ordered": "date",
+          "Date Delivered": "date"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
