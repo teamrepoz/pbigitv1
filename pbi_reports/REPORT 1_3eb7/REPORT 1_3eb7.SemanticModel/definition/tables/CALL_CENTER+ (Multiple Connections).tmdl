@@ -1,0 +1,365 @@
+table 'CALL_CENTER+ (Multiple Connections)'
+	lineageTag: 3fa4e524-9705-4b6c-8f20-6e8cff8a4a54
+
+	column CC_CALL_CENTER_SK
+		dataType: int64
+		formatString: 0
+		lineageTag: 9213703c-e0e7-425a-a390-564c7a980018
+		summarizeBy: sum
+		sourceColumn: CC_CALL_CENTER_SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column CC_CALL_CENTER_ID
+		dataType: string
+		lineageTag: 6a0481fb-27c9-426d-96bf-143daf03909b
+		summarizeBy: none
+		sourceColumn: CC_CALL_CENTER_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CC_REC_START_DATE
+		dataType: datetime
+		lineageTag: 3106bb76-b3bf-4c58-9d9d-d9a4c9c38719
+		summarizeBy: none
+		sourceColumn: CC_REC_START_DATE
+
+		variation Variation
+			isDefault
+			relationship: 006fc600-6a30-4063-9514-fc828bf6242e
+			defaultHierarchy: LocalDateTable_f2d2e24a-9afa-413e-a6c3-3e005d49f99f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column CC_REC_END_DATE
+		dataType: datetime
+		lineageTag: 7b7d7bb2-b575-4532-b78b-d825f4af4c45
+		summarizeBy: none
+		sourceColumn: CC_REC_END_DATE
+
+		variation Variation
+			isDefault
+			relationship: a7ca7d82-e284-45c4-a339-4edf8a2f2d92
+			defaultHierarchy: LocalDateTable_86cdf333-fdb4-404c-8935-b8d3cceaeccb.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column CC_CLOSED_DATE_SK
+		dataType: int64
+		formatString: 0
+		lineageTag: 519e0409-30f6-408f-9710-92acf071aa2e
+		summarizeBy: sum
+		sourceColumn: CC_CLOSED_DATE_SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column CC_OPEN_DATE_SK
+		dataType: int64
+		formatString: 0
+		lineageTag: ad53661f-1c8e-4534-bebe-e74a2f28528f
+		summarizeBy: sum
+		sourceColumn: CC_OPEN_DATE_SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column CC_NAME
+		dataType: string
+		lineageTag: 30bccea7-8af9-41ca-809c-d186c4f15f6f
+		summarizeBy: none
+		sourceColumn: CC_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column CC_CLASS
+		dataType: string
+		lineageTag: cc5a7ed6-4463-46d6-a23b-3a258b639375
+		summarizeBy: none
+		sourceColumn: CC_CLASS
+
+		annotation SummarizationSetBy = Automatic
+
+	column CC_EMPLOYEES
+		dataType: int64
+		formatString: 0
+		lineageTag: cef96c74-1ce1-4bb0-a540-6630f22aa452
+		summarizeBy: sum
+		sourceColumn: CC_EMPLOYEES
+
+		annotation SummarizationSetBy = Automatic
+
+	column CC_SQ_FT
+		dataType: int64
+		formatString: 0
+		lineageTag: d046f7bd-4944-4ddc-bcb6-fa2c563f30af
+		summarizeBy: sum
+		sourceColumn: CC_SQ_FT
+
+		annotation SummarizationSetBy = Automatic
+
+	column CC_HOURS
+		dataType: string
+		lineageTag: 23fe0fd8-c319-4349-a12d-9981f37428af
+		summarizeBy: none
+		sourceColumn: CC_HOURS
+
+		annotation SummarizationSetBy = Automatic
+
+	column CC_MANAGER
+		dataType: string
+		lineageTag: 5b9d2740-c258-4c7e-96b9-434bfcd708e0
+		summarizeBy: none
+		sourceColumn: CC_MANAGER
+
+		annotation SummarizationSetBy = Automatic
+
+	column CC_MKT_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 6f9354e9-763e-4387-b086-d007b975d28e
+		summarizeBy: sum
+		sourceColumn: CC_MKT_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CC_MKT_CLASS
+		dataType: string
+		lineageTag: 10150991-4a44-415b-b2d3-e701d7455162
+		summarizeBy: none
+		sourceColumn: CC_MKT_CLASS
+
+		annotation SummarizationSetBy = Automatic
+
+	column CC_MKT_DESC
+		dataType: string
+		lineageTag: 53a9289e-b102-4854-85c8-6bd3edef3fc9
+		summarizeBy: none
+		sourceColumn: CC_MKT_DESC
+
+		annotation SummarizationSetBy = Automatic
+
+	column CC_MARKET_MANAGER
+		dataType: string
+		lineageTag: a46fa77b-f8fc-42e5-afb9-d05aae79a64e
+		summarizeBy: none
+		sourceColumn: CC_MARKET_MANAGER
+
+		annotation SummarizationSetBy = Automatic
+
+	column CC_DIVISION
+		dataType: int64
+		formatString: 0
+		lineageTag: dbbaf7b1-9b25-467d-b52d-4d92aec9ba9e
+		summarizeBy: sum
+		sourceColumn: CC_DIVISION
+
+		annotation SummarizationSetBy = Automatic
+
+	column CC_DIVISION_NAME
+		dataType: string
+		lineageTag: 12003c50-d6f9-4b78-a7d7-815d3012f6e3
+		summarizeBy: none
+		sourceColumn: CC_DIVISION_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column CC_COMPANY
+		dataType: int64
+		formatString: 0
+		lineageTag: 43e2c227-c962-47a0-8edf-b142223f2f04
+		summarizeBy: sum
+		sourceColumn: CC_COMPANY
+
+		annotation SummarizationSetBy = Automatic
+
+	column CC_COMPANY_NAME
+		dataType: string
+		lineageTag: df081704-0a32-41a2-a2fc-44bb746de057
+		summarizeBy: none
+		sourceColumn: CC_COMPANY_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column CC_STREET_NUMBER
+		dataType: string
+		lineageTag: 95a8bde9-7e60-439f-a388-86a5a613e143
+		summarizeBy: none
+		sourceColumn: CC_STREET_NUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+	column CC_STREET_NAME
+		dataType: string
+		lineageTag: 1df8bc67-80f7-4659-ae93-8e058935d91d
+		summarizeBy: none
+		sourceColumn: CC_STREET_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column CC_STREET_TYPE
+		dataType: string
+		lineageTag: d8ae9825-7869-4d1f-884b-91031e138e8f
+		summarizeBy: none
+		sourceColumn: CC_STREET_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column CC_SUITE_NUMBER
+		dataType: string
+		lineageTag: c4c6625c-5ebe-4fe7-9960-eb1c104626d1
+		summarizeBy: none
+		sourceColumn: CC_SUITE_NUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+	column CC_CITY
+		dataType: string
+		lineageTag: 05550e5b-8cec-4a05-9435-277f4fbafc61
+		summarizeBy: none
+		sourceColumn: CC_CITY
+
+		annotation SummarizationSetBy = Automatic
+
+	column CC_COUNTY
+		dataType: string
+		lineageTag: fa13e32f-198b-4fce-bde4-f4ddaac2ea29
+		summarizeBy: none
+		sourceColumn: CC_COUNTY
+
+		annotation SummarizationSetBy = Automatic
+
+	column CC_STATE
+		dataType: string
+		lineageTag: 52b0cbca-31e9-4f60-895f-99ce29d2dcca
+		summarizeBy: none
+		sourceColumn: CC_STATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column CC_ZIP
+		dataType: string
+		lineageTag: c8b62c29-aa88-48f4-a13b-87698dd2c51d
+		summarizeBy: none
+		sourceColumn: CC_ZIP
+
+		annotation SummarizationSetBy = Automatic
+
+	column CC_COUNTRY
+		dataType: string
+		lineageTag: a54aa580-2bde-431a-8951-68f3144dfcf6
+		summarizeBy: none
+		sourceColumn: CC_COUNTRY
+
+		annotation SummarizationSetBy = Automatic
+
+	column CC_GMT_OFFSET
+		dataType: double
+		formatString: General Number
+		lineageTag: 9c84b922-1774-4ae5-8d37-fd9bc09d34c1
+		summarizeBy: sum
+		sourceColumn: CC_GMT_OFFSET
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CC_TAX_PERCENTAGE
+		dataType: double
+		formatString: General Number
+		lineageTag: 345950f4-897d-41cd-8de6-55ae839cd8c7
+		summarizeBy: sum
+		sourceColumn: CC_TAX_PERCENTAGE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CP_CATALOG_PAGE_SK
+		dataType: int64
+		formatString: 0
+		lineageTag: 18495c72-f1e5-4576-9bb9-90ebb52b8aad
+		summarizeBy: sum
+		sourceColumn: CP_CATALOG_PAGE_SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column CP_CATALOG_PAGE_ID
+		dataType: string
+		lineageTag: 027bc48e-4ece-4b2c-a5d3-3aa2f7407fab
+		summarizeBy: none
+		sourceColumn: CP_CATALOG_PAGE_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CP_START_DATE_SK
+		dataType: int64
+		formatString: 0
+		lineageTag: 47e20f45-7189-4011-8862-8a7be206b243
+		summarizeBy: sum
+		sourceColumn: CP_START_DATE_SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column CP_END_DATE_SK
+		dataType: int64
+		formatString: 0
+		lineageTag: 3ebb6d51-95b2-46fd-97ae-aabf9103baf0
+		summarizeBy: sum
+		sourceColumn: CP_END_DATE_SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column CP_DEPARTMENT
+		dataType: string
+		lineageTag: dcdc4ff9-7e20-4968-93c3-2177b1ee64ff
+		summarizeBy: none
+		sourceColumn: CP_DEPARTMENT
+
+		annotation SummarizationSetBy = Automatic
+
+	column CP_CATALOG_NUMBER
+		dataType: int64
+		formatString: 0
+		lineageTag: 7dae8ca0-3dd7-4d37-aefa-f2856f05abaf
+		summarizeBy: sum
+		sourceColumn: CP_CATALOG_NUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+	column CP_CATALOG_PAGE_NUMBER
+		dataType: int64
+		formatString: 0
+		lineageTag: 0e4df26b-56f8-4b79-b877-a125cb67b2d1
+		summarizeBy: sum
+		sourceColumn: CP_CATALOG_PAGE_NUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+	column CP_DESCRIPTION
+		dataType: string
+		lineageTag: 6f58ea82-8ec2-4646-864d-9ddba146873b
+		summarizeBy: none
+		sourceColumn: CP_DESCRIPTION
+
+		annotation SummarizationSetBy = Automatic
+
+	column CP_TYPE
+		dataType: string
+		lineageTag: 3d1efb2b-4a1b-4938-a9b7-a692ac9d2e06
+		summarizeBy: none
+		sourceColumn: CP_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'CALL_CENTER+ (Multiple Connections)' = m
+		mode: import
+		source =
+				let 
+					#"Source0" = Table.NestedJoin(#"CALL_CENTER_CALL_CENTER+ (Multiple Connections)", {"CC_CALL_CENTER_ID"}, #"CATALOG_PAGE_CALL_CENTER+ (Multiple Connections)", {"CP_CATALOG_PAGE_ID"}, "CATALOG_PAGE_CALL_CENTER+ (Multiple Connections)", JoinKind.Inner),
+					#"Expand0" = Table.ExpandTableColumn(#"Source0", "CATALOG_PAGE_CALL_CENTER+ (Multiple Connections)", {"CP_CATALOG_PAGE_SK", "CP_CATALOG_PAGE_ID", "CP_START_DATE_SK", "CP_END_DATE_SK", "CP_DEPARTMENT", "CP_CATALOG_NUMBER", "CP_CATALOG_PAGE_NUMBER", "CP_DESCRIPTION", "CP_TYPE"}, {"CP_CATALOG_PAGE_SK", "CP_CATALOG_PAGE_ID", "CP_START_DATE_SK", "CP_END_DATE_SK", "CP_DEPARTMENT", "CP_CATALOG_NUMBER", "CP_CATALOG_PAGE_NUMBER", "CP_DESCRIPTION", "CP_TYPE"}),
+					#"Source1" = Table.NestedJoin(#"Expand0", {"CC_CALL_CENTER_SK"}, #"CALL_CENTER+ (Multiple Connections)_CALL_CENTER", {"CR_CATALOG_PAGE_SK"}, "CALL_CENTER+ (Multiple Connections)_CALL_CENTER", JoinKind.LeftOuter),
+					#"Expand1" = Table.ExpandTableColumn(#"Source1", "CALL_CENTER+ (Multiple Connections)_CALL_CENTER", {"CR_RETURNED_DATE_SK", "CR_RETURNED_TIME_SK", "CR_ITEM_SK", "CR_REFUNDED_CUSTOMER_SK", "CR_REFUNDED_CDEMO_SK", "CR_REFUNDED_HDEMO_SK", "CR_REFUNDED_ADDR_SK", "CR_RETURNING_CUSTOMER_SK", "CR_RETURNING_CDEMO_SK", "CR_RETURNING_HDEMO_SK", "CR_RETURNING_ADDR_SK", "CR_CALL_CENTER_SK", "CR_CATALOG_PAGE_SK", "CR_SHIP_MODE_SK", "CR_WAREHOUSE_SK", "CR_REASON_SK", "CR_ORDER_NUMBER", "CR_RETURN_QUANTITY", "CR_RETURN_AMOUNT", "CR_RETURN_TAX", "CR_RETURN_AMT_INC_TAX", "CR_FEE", "CR_RETURN_SHIP_COST", "CR_REFUNDED_CASH", "CR_REVERSED_CHARGE", "CR_STORE_CREDIT", "CR_NET_LOSS", "CS_SOLD_DATE_SK", "CS_SOLD_TIME_SK", "CS_SHIP_DATE_SK", "CS_BILL_CUSTOMER_SK", "CS_BILL_CDEMO_SK", "CS_BILL_HDEMO_SK", "CS_BILL_ADDR_SK", "CS_SHIP_CUSTOMER_SK", "CS_SHIP_CDEMO_SK", "CS_SHIP_HDEMO_SK", "CS_SHIP_ADDR_SK", "CS_CALL_CENTER_SK", "CS_CATALOG_PAGE_SK", "CS_SHIP_MODE_SK", "CS_WAREHOUSE_SK", "CS_ITEM_SK", "CS_PROMO_SK", "CS_ORDER_NUMBER", "CS_QUANTITY", "CS_WHOLESALE_COST", "CS_LIST_PRICE", "CS_SALES_PRICE", "CS_EXT_DISCOUNT_AMT", "CS_EXT_SALES_PRICE", "CS_EXT_WHOLESALE_COST", "CS_EXT_LIST_PRICE", "CS_EXT_TAX", "CS_COUPON_AMT", "CS_EXT_SHIP_COST", "CS_NET_PAID", "CS_NET_PAID_INC_TAX", "CS_NET_PAID_INC_SHIP", "CS_NET_PAID_INC_SHIP_TAX", "CS_NET_PROFIT", "Table Name"}, {"CR_RETURNED_DATE_SK", "CR_RETURNED_TIME_SK", "CR_ITEM_SK", "CR_REFUNDED_CUSTOMER_SK", "CR_REFUNDED_CDEMO_SK", "CR_REFUNDED_HDEMO_SK", "CR_REFUNDED_ADDR_SK", "CR_RETURNING_CUSTOMER_SK", "CR_RETURNING_CDEMO_SK", "CR_RETURNING_HDEMO_SK", "CR_RETURNING_ADDR_SK", "CR_CALL_CENTER_SK", "CR_CATALOG_PAGE_SK", "CR_SHIP_MODE_SK", "CR_WAREHOUSE_SK", "CR_REASON_SK", "CR_ORDER_NUMBER", "CR_RETURN_QUANTITY", "CR_RETURN_AMOUNT", "CR_RETURN_TAX", "CR_RETURN_AMT_INC_TAX", "CR_FEE", "CR_RETURN_SHIP_COST", "CR_REFUNDED_CASH", "CR_REVERSED_CHARGE", "CR_STORE_CREDIT", "CR_NET_LOSS", "CS_SOLD_DATE_SK", "CS_SOLD_TIME_SK", "CS_SHIP_DATE_SK", "CS_BILL_CUSTOMER_SK", "CS_BILL_CDEMO_SK", "CS_BILL_HDEMO_SK", "CS_BILL_ADDR_SK", "CS_SHIP_CUSTOMER_SK", "CS_SHIP_CDEMO_SK", "CS_SHIP_HDEMO_SK", "CS_SHIP_ADDR_SK", "CS_CALL_CENTER_SK", "CS_CATALOG_PAGE_SK", "CS_SHIP_MODE_SK", "CS_WAREHOUSE_SK", "CS_ITEM_SK", "CS_PROMO_SK", "CS_ORDER_NUMBER", "CS_QUANTITY", "CS_WHOLESALE_COST", "CS_LIST_PRICE", "CS_SALES_PRICE", "CS_EXT_DISCOUNT_AMT", "CS_EXT_SALES_PRICE", "CS_EXT_WHOLESALE_COST", "CS_EXT_LIST_PRICE", "CS_EXT_TAX", "CS_COUPON_AMT", "CS_EXT_SHIP_COST", "CS_NET_PAID", "CS_NET_PAID_INC_TAX", "CS_NET_PAID_INC_SHIP", "CS_NET_PAID_INC_SHIP_TAX", "CS_NET_PROFIT", "Table Name"})
+					in #"Expand1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
