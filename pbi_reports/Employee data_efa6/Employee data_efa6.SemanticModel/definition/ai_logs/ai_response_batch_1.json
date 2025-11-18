@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "data (hr-data-analysis (2))",
+      "name": "Age",
+      "dax_expression": "'data (hr-data-analysis (2))'[Age]",
+      "solution_explanation": "Row-level passthrough of the [Age] field; create a calculated column that references the table column directly."
+    }
+  ]
+}
