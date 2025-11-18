@@ -1,0 +1,39 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.63\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "name": "Section_Dashboard 1",
+      "ordinal": 0,
+      "displayName": "Dashboard 1",
+      "visualContainers": [
+        {
+          "x": 33,
+          "y": 33,
+          "z": 0,
+          "width": 333,
+          "height": 266,
+          "config": "{\"name\": \"89b04f17b6a005b5113d\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 33, \"y\": 33, \"z\": 1000, \"width\": 333, \"height\": 266, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"barChart\", \"projections\": {\"Category\": [{\"queryRef\": \"Orders (Sample - Superstore (1)).Category\", \"active\": true}], \"Y\": [{\"queryRef\": \"Count(Orders (Sample - Superstore (1)).Product Name)\"}], \"Series\": []}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"O\", \"Entity\": \"Orders (Sample - Superstore (1))\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Property\": \"Category\", \"Expression\": {\"SourceRef\": {\"Source\": \"O\"}}}, \"Name\": \"Orders (Sample - Superstore (1)).Category\", \"NativeReferenceName\": \"Category\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Product Name\", \"Expression\": {\"SourceRef\": {\"Source\": \"O\"}}}}, \"Function\": 5}, \"Name\": \"Count(Orders (Sample - Superstore (1)).Product Name)\", \"NativeReferenceName\": \"Count of Product Name\"}], \"OrderBy\": []}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"15D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Sheet 1'\"}}}}}]}}}"
+        }
+      ],
+      "width": 1000.0,
+      "height": 800.0
+    }
+  ]
+}
