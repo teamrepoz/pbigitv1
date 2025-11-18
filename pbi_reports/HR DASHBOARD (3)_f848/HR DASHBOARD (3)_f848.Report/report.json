@@ -1,0 +1,55 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.63\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "name": "Section_HR DASHBOARD",
+      "ordinal": 0,
+      "displayName": "HR DASHBOARD",
+      "visualContainers": [
+        {
+          "x": 20,
+          "y": 106,
+          "z": 0,
+          "width": 509,
+          "height": 340,
+          "config": "{\"name\": \"6761edd7796bd45c214039\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 106, \"z\": 1000, \"width\": 509, \"height\": 340, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"pieChart\", \"projections\": {\"Category\": [{\"queryRef\": \"HR data (HR Data).Department\", \"active\": true}], \"Y\": [{\"queryRef\": \"Sum(HR data (HR Data).Attrition Count )\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"H\", \"Entity\": \"HR data (HR Data)\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Property\": \"Department\", \"Expression\": {\"SourceRef\": {\"Source\": \"H\"}}}, \"Name\": \"HR data (HR Data).Department\", \"NativeReferenceName\": \"Department\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Attrition Count \", \"Expression\": {\"SourceRef\": {\"Source\": \"H\"}}}}, \"Function\": 0}, \"Name\": \"Sum(HR data (HR Data).Attrition Count )\", \"NativeReferenceName\": \"Sum of Attrition Count \"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Attrition Count \", \"Expression\": {\"SourceRef\": {\"Source\": \"H\"}}}}, \"Function\": 0}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#0000de'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"16D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Tableau Bold'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Department wise Attrition'\"}}}}}]}}}"
+        },
+        {
+          "x": 20,
+          "y": 462,
+          "z": 0,
+          "width": 504,
+          "height": 368,
+          "config": "{\"name\": \"15cbaa9c7f92f7097086a5d7bd6d1\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 462, \"z\": 1000, \"width\": 504, \"height\": 368, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"barChart\", \"projections\": {\"Category\": [{\"queryRef\": \"HR data (HR Data).Education Field\", \"active\": true}], \"Y\": [{\"queryRef\": \"Sum(HR data (HR Data).Attrition Count )\"}], \"Series\": []}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"H\", \"Entity\": \"HR data (HR Data)\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Property\": \"Education Field\", \"Expression\": {\"SourceRef\": {\"Source\": \"H\"}}}, \"Name\": \"HR data (HR Data).Education Field\", \"NativeReferenceName\": \"Education Field\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Attrition Count \", \"Expression\": {\"SourceRef\": {\"Source\": \"H\"}}}}, \"Function\": 0}, \"Name\": \"Sum(HR data (HR Data).Attrition Count )\", \"NativeReferenceName\": \"Sum of Attrition Count \"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Attrition Count \", \"Expression\": {\"SourceRef\": {\"Source\": \"H\"}}}}, \"Function\": 0}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"titleBold\": {\"expr\": {\"Literal\": {\"Value\": \"\"}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#0000ff'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"16D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Tableau Bold'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Education Field wise Attrition'\"}}}}}]}}}"
+        },
+        {
+          "x": 539,
+          "y": 104,
+          "z": 0,
+          "width": 1002,
+          "height": 727,
+          "config": "{\"name\": \"258645a9c0737059ea6d2dade22b3222000000\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 539, \"y\": 104, \"z\": 1000, \"width\": 1002, \"height\": 727, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"columnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"HR data (HR Data).Employee Count\", \"active\": true}], \"Y\": [{\"queryRef\": \"HR data (HR Data).Age (bin)\"}], \"Series\": [{\"queryRef\": \"HR data (HR Data).Employee Count\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"H\", \"Entity\": \"HR data (HR Data)\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Property\": \"Age (bin)\", \"Expression\": {\"SourceRef\": {\"Source\": \"H\"}}}, \"Name\": \"HR data (HR Data).Age (bin)\", \"NativeReferenceName\": \"Age (bin)\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Employee Count\", \"Expression\": {\"SourceRef\": {\"Source\": \"H\"}}}}, \"Function\": 0}, \"Name\": \"Sum(HR data (HR Data).Employee Count)\", \"NativeReferenceName\": \"Sum of Employee Count\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"H\"}}, \"Property\": \"Age (bin)\"}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Tableau Semibold'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#ffffff'\"}}}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Tableau Semibold'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#ffffff'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#0000de'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"16D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Tableau Bold'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'No.of.Employee by Age group '\"}}}}}]}}}"
+        }
+      ],
+      "width": 1580.0,
+      "height": 850.0
+    }
+  ]
+}
