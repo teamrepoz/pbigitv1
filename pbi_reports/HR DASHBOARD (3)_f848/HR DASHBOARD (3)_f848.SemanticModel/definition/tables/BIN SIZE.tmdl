@@ -1,0 +1,28 @@
+table 'BIN SIZE'
+	lineageTag: 6b9fd876-71b8-4df7-9dba-a603dd25d85d
+
+	measure 'BIN SIZE Value' = SELECTEDVALUE('BIN SIZE'[BIN SIZE], 2.0)
+		lineageTag: d6386da2-701c-4522-9128-acd5ff9bd6cd
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'BIN SIZE'
+		dataType: double
+		formatString: 0
+		lineageTag: 9c2c9271-6b92-4a03-86a8-e61732fc5f72
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'BIN SIZE' = calculated
+		mode: import
+		source = GENERATESERIES(2.0, 10.0, 1.0)
+
+	annotation PBI_Id = 7fce0095aa3643db98adbd2f33971d85
+
