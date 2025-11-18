@@ -1,0 +1,56 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.63\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "name": "Section_Dashboard 1",
+      "ordinal": 0,
+      "displayName": "Dashboard 1",
+      "visualContainers": [
+        {
+          "x": 562,
+          "y": 72,
+          "z": 0,
+          "width": 570,
+          "height": 482,
+          "config": "{\"name\": \"76d2b0cbf673e8\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 562, \"y\": 72, \"z\": 1000, \"width\": 570, \"height\": 482, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"pieChart\", \"projections\": {\"Category\": [{\"queryRef\": \"data (hr-data-analysis (2)).Gender\", \"active\": true}], \"Y\": [{\"queryRef\": \"Count(data (hr-data-analysis (2)).data_6BA6561DE8AA418F9EA4DF3796E8CA5D)\"}], \"Series\": []}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"d\", \"Entity\": \"data (hr-data-analysis (2))\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Property\": \"Gender\", \"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}}, \"Name\": \"data (hr-data-analysis (2)).Gender\", \"NativeReferenceName\": \"Gender\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"data_6BA6561DE8AA418F9EA4DF3796E8CA5D\", \"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}}}, \"Function\": 5}, \"Name\": \"Count(data (hr-data-analysis (2)).data_6BA6561DE8AA418F9EA4DF3796E8CA5D)\", \"NativeReferenceName\": \"Count of data_6BA6561DE8AA418F9EA4DF3796E8CA5D\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"data_6BA6561DE8AA418F9EA4DF3796E8CA5D\", \"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}}}, \"Function\": 5}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#000000'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": 15}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Tableau Bold'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Gender Distribution'\"}}}}}]}}}"
+        },
+        {},
+        {
+          "x": 1132,
+          "y": 93,
+          "z": 0,
+          "width": 655,
+          "height": 480,
+          "config": "{\"name\": \"8860370af76c\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1132, \"y\": 93, \"z\": 1000, \"width\": 655, \"height\": 480, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"barChart\", \"projections\": {\"Category\": [{\"queryRef\": \"data (hr-data-analysis (2)).Job Title\", \"active\": true}], \"Y\": [{\"queryRef\": \"Count(data (hr-data-analysis (2)).data_6BA6561DE8AA418F9EA4DF3796E8CA5D)\"}], \"Series\": []}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"d\", \"Entity\": \"data (hr-data-analysis (2))\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Property\": \"Job Title\", \"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}}, \"Name\": \"data (hr-data-analysis (2)).Job Title\", \"NativeReferenceName\": \"Job Title\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"data_6BA6561DE8AA418F9EA4DF3796E8CA5D\", \"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}}}, \"Function\": 5}, \"Name\": \"Count(data (hr-data-analysis (2)).data_6BA6561DE8AA418F9EA4DF3796E8CA5D)\", \"NativeReferenceName\": \"Count of data_6BA6561DE8AA418F9EA4DF3796E8CA5D\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"data_6BA6561DE8AA418F9EA4DF3796E8CA5D\", \"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}}}, \"Function\": 5}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": 15}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Q1'\"}}}}}]}}}"
+        },
+        {
+          "x": 13,
+          "y": 87,
+          "z": 0,
+          "width": 545,
+          "height": 478,
+          "config": "{\"name\": \"c66219e\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 13, \"y\": 87, \"z\": 1000, \"width\": 545, \"height\": 478, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"barChart\", \"projections\": {\"Category\": [{\"queryRef\": \"data (hr-data-analysis (2)).Job Title\", \"active\": true}], \"Y\": [{\"queryRef\": \"Avg(data (hr-data-analysis (2)).Salary)\"}], \"Series\": []}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"d\", \"Entity\": \"data (hr-data-analysis (2))\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Property\": \"Job Title\", \"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}}, \"Name\": \"data (hr-data-analysis (2)).Job Title\", \"NativeReferenceName\": \"Job Title\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Salary\", \"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}}}, \"Function\": 1}, \"Name\": \"Avg(data (hr-data-analysis (2)).Salary)\", \"NativeReferenceName\": \"Avg of Salary\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Salary\", \"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}}}, \"Function\": 1}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"titleBold\": {\"expr\": {\"Literal\": {\"Value\": \"\"}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"15D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Which jobs pay more?'\"}}}}}]}}}"
+        }
+      ],
+      "width": 1800.0,
+      "height": 850.0
+    }
+  ]
+}
