@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Attrition Count ",
+      "table_name": "HR data (HR Data)",
+      "tableau_expression": "IF [Attrition]=\"Yes\" THEN 1 \r\nELSE 0 \r\nEND",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "IF [Attrition]=\"Yes\" THEN 1 \r\nELSE 0 \r\nEND",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Attrition": "string"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
