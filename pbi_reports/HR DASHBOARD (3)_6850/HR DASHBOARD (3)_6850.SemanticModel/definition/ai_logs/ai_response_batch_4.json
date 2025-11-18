@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "HR data (HR Data)",
+      "name": "Age (bin)",
+      "dax_expression": "'HR data (HR Data)'[Age]",
+      "solution_explanation": "Direct row-level reference to [Age]; converted to a calculated column using the table[column] format."
+    }
+  ]
+}
