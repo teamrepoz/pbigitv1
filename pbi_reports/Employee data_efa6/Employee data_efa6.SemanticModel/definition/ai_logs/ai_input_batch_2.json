@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "First Letter",
+      "table_name": "data (hr-data-analysis (2))",
+      "tableau_expression": "LEFT([Name],1)",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "LEFT([Name],1)",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Name": "string"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
