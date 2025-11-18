@@ -1,0 +1,5 @@
+relationship a1b92656-662e-4b47-ac7d-970598b6ccd9
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'data (hr-data-analysis (2))'.'Date of Join'
+	toColumn: LocalDateTable_869d0fb4-4b2d-4bb1-9199-d9ce03c41604.Date
+
