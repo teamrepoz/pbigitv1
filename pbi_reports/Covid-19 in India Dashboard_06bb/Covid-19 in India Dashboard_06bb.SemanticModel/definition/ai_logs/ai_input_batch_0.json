@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "Title ",
+      "table_name": "ICMRTestingLabs",
+      "tableau_expression": "\"Covid-19 in India Dashboard Analysis\"",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "\"Covid-19 in India Dashboard Analysis\"",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
