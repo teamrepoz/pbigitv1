@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "data (hr-data-analysis (2))",
+      "name": "First Letter",
+      "dax_expression": "LEFT('data (hr-data-analysis (2))'[Name], 1)",
+      "solution_explanation": "Converted Tableau LEFT([Name], 1) to DAX using the table-qualified column reference. This is row-level string extraction so it is implemented as a calculated column."
+    }
+  ]
+}
