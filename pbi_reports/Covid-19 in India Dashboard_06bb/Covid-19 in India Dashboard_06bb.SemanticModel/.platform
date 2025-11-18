@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Covid-19 in India Dashboard_06bb"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "ac8e1e20-b077-4644-b2f2-1fe332c2f503"
+  }
+}
