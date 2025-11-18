@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": null,
+      "table_name": "data (hr-data-analysis (2))",
+      "tableau_expression": "[Age]",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "[Age]",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Age": "real"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
