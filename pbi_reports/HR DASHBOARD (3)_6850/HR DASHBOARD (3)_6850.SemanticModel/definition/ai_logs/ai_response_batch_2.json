@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "HR data (HR Data)",
+      "name": "Attrition Rate",
+      "dax_expression": "SUM('HR data (HR Data)'[Attrition Count ]) / SUM('HR data (HR Data)'[Employee Count])",
+      "solution_explanation": "Converted the Tableau aggregations to DAX by preserving the SUM functions and converting column references to the 'Table'[Column] format: SUM('HR data (HR Data)'[Attrition Count ]) / SUM('HR data (HR Data)'[Employee Count]). No parameters or LODs are present.",
+      "type_changed_reason": "This calculation uses aggregation (SUM), so it should be created as a measure."
+    }
+  ]
+}
