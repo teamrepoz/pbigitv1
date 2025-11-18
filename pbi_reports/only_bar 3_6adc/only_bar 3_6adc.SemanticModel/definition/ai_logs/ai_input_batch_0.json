@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Calculation1",
+      "table_name": "Orders (Sample - Superstore (1))",
+      "tableau_expression": "if [Category]=\"Furniture\" then \"furniture\"\r\nELSEIF [Category]=\"Office Supplies\" then \"office supplier\"\r\nELSEIF  [Category] = \"Technology\" then \"technology\"\r\nelse [Category]\r\nend",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "if [Category]=\"Furniture\" then \"furniture\"\r\nELSEIF [Category]=\"Office Supplies\" then \"office supplier\"\r\nELSEIF  [Category] = \"Technology\" then \"technology\"\r\nelse [Category]\r\nend",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Category": "string"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
