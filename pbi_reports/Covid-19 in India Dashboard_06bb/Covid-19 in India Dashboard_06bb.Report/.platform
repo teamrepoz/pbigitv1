@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Covid-19 in India Dashboard_06bb"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "9bf4a70f-493e-4155-b2c9-e1256fa6f3b3"
+  }
+}
