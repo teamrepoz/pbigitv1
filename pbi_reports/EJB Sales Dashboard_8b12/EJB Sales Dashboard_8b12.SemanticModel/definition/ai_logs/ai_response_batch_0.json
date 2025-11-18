@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Data (EJB)",
+      "name": "Avg. Time to Delivery",
+      "dax_expression": "AVERAGEX('Data (EJB)', 'Data (EJB)'[Date Delivered] - 'Data (EJB)'[Date Ordered])",
+      "solution_explanation": "Tableau AVG over an expression is translated to AVERAGEX in DAX. This measure iterates rows of 'Data (EJB)', computes the row-level difference between 'Date Delivered' and 'Date Ordered', and returns the average of those differences.",
+      "type_changed_reason": "The calculation uses aggregation (AVG), so it must be created as a measure."
+    }
+  ]
+}
