@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Staff with more than 20days leave balance ",
+      "table_name": "data (hr-data-analysis (2))",
+      "tableau_expression": "IF [Leave Balance]>20 THEN 1 else 0 end",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "IF [Leave Balance]>20 THEN 1 else 0 end",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Leave Balance": "integer"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
