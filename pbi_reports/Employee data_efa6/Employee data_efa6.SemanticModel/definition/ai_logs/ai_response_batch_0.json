@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "data (hr-data-analysis (2))",
+      "name": "Staff with more than 20days leave balance ",
+      "dax_expression": "IF('data (hr-data-analysis (2))'[Leave Balance] > 20, 1, 0)",
+      "solution_explanation": "Converted Tableau IF to DAX IF for row-level logic. Mapped [Leave Balance] to 'data (hr-data-analysis (2))'[Leave Balance]. No aggregates or parameters are used, so this is a calculated column."
+    }
+  ]
+}
