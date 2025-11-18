@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "ICMRTestingLabs",
+      "name": "Title ",
+      "dax_expression": "\"Covid-19 in India Dashboard Analysis\"",
+      "solution_explanation": "Converted the Tableau string literal to a DAX string literal. This is a row-level constant (no aggregates or parameters), so it is implemented as a calculated column."
+    }
+  ]
+}
