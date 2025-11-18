@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Age (bin)",
+      "table_name": "HR data (HR Data)",
+      "tableau_expression": "[Age]",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "[Age]",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Age": "integer"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
