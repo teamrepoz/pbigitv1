@@ -1,0 +1,63 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.63\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "name": "Section_Dashboard 1",
+      "ordinal": 0,
+      "displayName": "Dashboard 1",
+      "visualContainers": [
+        {
+          "x": 850,
+          "y": 86,
+          "z": 0,
+          "width": 842,
+          "height": 403,
+          "config": "{\"name\": \"a2261b689c2a834facd855\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 850, \"y\": 86, \"z\": 1000, \"width\": 842, \"height\": 403, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"lineChart\", \"projections\": {\"Category\": [{\"queryRef\": \"covid_19_india (1) im.Confirmed\", \"active\": true}, {\"queryRef\": \"covid_19_india (1) im.Cured\", \"active\": true}, {\"queryRef\": \"covid_19_india (1) im.Deaths\", \"active\": true}], \"Y\": [{\"queryRef\": \"covid_19_india (1) im.Date\"}], \"Series\": [{\"queryRef\": \"covid_19_india (1) im.Confirmed\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"c\", \"Entity\": \"covid_19_india (1) im\", \"Type\": 0}], \"Select\": [{\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Confirmed\", \"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}}}, \"Function\": 0}, \"Name\": \"Sum(covid_19_india (1) im.Confirmed)\", \"NativeReferenceName\": \"Sum of Confirmed\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Cured\", \"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}}}, \"Function\": 0}, \"Name\": \"Sum(covid_19_india (1) im.Cured)\", \"NativeReferenceName\": \"Sum of Cured\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Deaths\", \"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}}}, \"Function\": 0}, \"Name\": \"Sum(covid_19_india (1) im.Deaths)\", \"NativeReferenceName\": \"Sum of Deaths\"}, {\"Column\": {\"Property\": \"Date\", \"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}}, \"Name\": \"covid_19_india (1) im.Date\", \"NativeReferenceName\": \"Date\"}], \"OrderBy\": []}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Tableau Bold'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#ffffff'\"}}}}}, \"titleBold\": {\"expr\": {\"Literal\": {\"Value\": \"\"}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Tableau Bold'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#ffffff'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#ffffff'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"15D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Tableau Bold'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Covid cases by state '\"}}}}}]}}}"
+        },
+        {
+          "x": 8,
+          "y": 86,
+          "z": 0,
+          "width": 842,
+          "height": 806,
+          "config": "{\"name\": \"3ebe589bffc62077cf4c953b75e0\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 8, \"y\": 86, \"z\": 1000, \"width\": 842, \"height\": 806, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"barChart\", \"projections\": {\"Category\": [{\"queryRef\": \"ICMRTestingLabs.state\", \"active\": true}], \"Y\": [{\"queryRef\": \"Count(ICMRTestingLabs.lab)\"}], \"Series\": []}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"I\", \"Entity\": \"ICMRTestingLabs\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Property\": \"state\", \"Expression\": {\"SourceRef\": {\"Source\": \"I\"}}}, \"Name\": \"ICMRTestingLabs.state\", \"NativeReferenceName\": \"state\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"lab\", \"Expression\": {\"SourceRef\": {\"Source\": \"I\"}}}}, \"Function\": 5}, \"Name\": \"Count(ICMRTestingLabs.lab)\", \"NativeReferenceName\": \"Count of lab\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"lab\", \"Expression\": {\"SourceRef\": {\"Source\": \"I\"}}}}, \"Function\": 5}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"titleBold\": {\"expr\": {\"Literal\": {\"Value\": \"\"}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#ffffff'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"15D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Tableau Bold'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'ICMR Testing Labs in each state'\"}}}}}]}}}"
+        },
+        {
+          "x": 850,
+          "y": 489,
+          "z": 0,
+          "width": 842,
+          "height": 403,
+          "config": "{\"name\": \"aff3e4e00779d46d55224d9\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 850, \"y\": 489, \"z\": 1000, \"width\": 842, \"height\": 403, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"clusteredBarChart\", \"projections\": {\"Category\": [{\"queryRef\": \"StatewiseTestingDetails.State\", \"active\": true}], \"Y\": [{\"queryRef\": \"Sum(StatewiseTestingDetails.Negative)\"}], \"Series\": [{\"queryRef\": \"StatewiseTestingDetails.Negative\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"S\", \"Entity\": \"StatewiseTestingDetails\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Property\": \"State\", \"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}}, \"Name\": \"StatewiseTestingDetails.State\", \"NativeReferenceName\": \"State\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Negative\", \"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}}}, \"Function\": 0}, \"Name\": \"Sum(StatewiseTestingDetails.Negative)\", \"NativeReferenceName\": \"Sum of Negative\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Negative\", \"Expression\": {\"SourceRef\": {\"Source\": \"S\"}}}}, \"Function\": 0}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"titleBold\": {\"expr\": {\"Literal\": {\"Value\": \"\"}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#ffffff'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"15D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Tableau Bold'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Statewise Testing Details'\"}}}}}]}}}"
+        },
+        {
+          "x": 8,
+          "y": 8,
+          "z": 0,
+          "width": 1684,
+          "height": 78,
+          "config": "{\"name\": \"b78a3223503896721cc\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 8, \"y\": 8, \"z\": 1000, \"width\": 1684, \"height\": 78, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"ICMRTestingLabs.Title \"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"I\", \"Entity\": \"ICMRTestingLabs\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"I\"}}, \"Property\": \"Title \"}, \"Name\": \"ICMRTestingLabs.Title \", \"NativeReferenceName\": \"Title \"}], \"OrderBy\": []}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}], \"labels\": [{\"properties\": {\"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Tableau Bold'''\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"26D\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#ffffff'\"}}}}}, \"bold\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"15D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Title'\"}}}, \"italic\": {\"expr\": {\"Literal\": {\"Value\": false}}}}}]}}}"
+        }
+      ],
+      "width": 1700.0,
+      "height": 900.0
+    }
+  ]
+}
