@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Attrition Rate",
+      "table_name": "HR data (HR Data)",
+      "tableau_expression": "SUM([Attrition Count ])/ SUM([Employee Count])",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "SUM([Attrition Count ])/ SUM([Employee Count])",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Employee Count": "integer"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
