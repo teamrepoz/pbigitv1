@@ -1,0 +1,55 @@
+relationship 3e506daa-fc99-4a07-a5b4-284ead101a0b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CALL_CENTER_CALL_CENTER+ (Multiple Connections)'.CC_REC_START_DATE
+	toColumn: LocalDateTable_5958373f-08a1-4359-aec5-d3ce61a98e53.Date
+
+relationship aa1cdb31-482b-4d1f-bb36-3ce3402f90ba
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CALL_CENTER_CALL_CENTER+ (Multiple Connections)'.CC_REC_END_DATE
+	toColumn: LocalDateTable_feb01c4d-6c84-43ae-9ba9-bbcf7d922b74.Date
+
+relationship 1a347f6d-6c0d-46a8-b861-f160a4c298db
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CALL_CENTER+ (Multiple Connections)_Telecom Company Call-Center-Dataset.csv'.Date
+	toColumn: LocalDateTable_035f3788-6faa-443a-9a94-91a4cbc2b427.Date
+
+relationship 71b7455e-26a0-4e08-a57b-a59cd21613e0
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CALL_CENTER+ (Multiple Connections)_Telecom Company Call-Center-Dataset.csv'.Time
+	toColumn: LocalDateTable_f56b1cca-43d8-4daa-8d5f-a50f37b8825f.Date
+
+relationship cf8e153f-accb-4b0d-bee0-5e60635cddb6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CALL_CENTER+ (Multiple Connections)_Telecom Company Call-Center-Dataset.csv'.AvgTalkDuration
+	toColumn: LocalDateTable_c46456fb-3784-4046-90d6-52dee4ded016.Date
+
+relationship 3eb2c8bd-3e3b-482e-a9e1-758febdad630
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CALL_CENTER+ (Multiple Connections)'.CC_REC_START_DATE
+	toColumn: LocalDateTable_1d49d6f1-b06e-4a36-bd43-7e5daff088b2.Date
+
+relationship 9f51c849-7c39-4d60-84b2-8363339f3e5d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CALL_CENTER+ (Multiple Connections)'.CC_REC_END_DATE
+	toColumn: LocalDateTable_9a368a9c-ca61-40d5-bb0d-8f828547711f.Date
+
+relationship 006fc600-6a30-4063-9514-fc828bf6242e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CALL_CENTER+ (Multiple Connections)'.CC_REC_START_DATE
+	toColumn: LocalDateTable_f2d2e24a-9afa-413e-a6c3-3e005d49f99f.Date
+
+relationship a7ca7d82-e284-45c4-a339-4edf8a2f2d92
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'CALL_CENTER+ (Multiple Connections)'.CC_REC_END_DATE
+	toColumn: LocalDateTable_86cdf333-fdb4-404c-8935-b8d3cceaeccb.Date
+
+relationship cf25c734-e3e3-4679-8de1-dc9c4a9f4bab
+	toCardinality: many
+	fromColumn: 'CALL_CENTER+ (Multiple Connections)'.CC_CALL_CENTER_ID
+	toColumn: 'CALL_CENTER+ (Multiple Connections)_Detail View.csv'.'Current Emp'
+
+relationship 70b49cab-af47-4aae-8fc4-2d3a603b08a7
+	toCardinality: many
+	fromColumn: 'CALL_CENTER+ (Multiple Connections)'.CC_CALL_CENTER_ID
+	toColumn: 'CALL_CENTER+ (Multiple Connections)_Telecom Company Call-Center-Dataset.csv'.'Call Id'
+
