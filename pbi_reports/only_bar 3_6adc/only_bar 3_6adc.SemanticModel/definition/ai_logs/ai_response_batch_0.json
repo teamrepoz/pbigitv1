@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Orders (Sample - Superstore (1))",
+      "name": "Calculation1",
+      "dax_expression": "SWITCH(\n    TRUE(),\n    'Orders (Sample - Superstore (1))'[Category] = \"Furniture\", \"furniture\",\n    'Orders (Sample - Superstore (1))'[Category] = \"Office Supplies\", \"office supplier\",\n    'Orders (Sample - Superstore (1))'[Category] = \"Technology\", \"technology\",\n    'Orders (Sample - Superstore (1))'[Category]\n)",
+      "solution_explanation": "Row-level conditional mapping converted from Tableau IF/ELSEIF to DAX SWITCH(TRUE()) with all column references transformed to 'TableName'[ColumnName] format. This is a calculated column since it operates per row without aggregation."
+    }
+  ]
+}
