@@ -1,0 +1,40 @@
+relationship 2e9d5f28-c97c-4987-95f7-e4cd4b5abe3d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'covid_19_india (1) im'.Date
+	toColumn: LocalDateTable_fe719648-24bd-4925-b9ca-a75957e48fde.Date
+
+relationship f1c9dc77-dd03-4a2b-b2f1-b47dc9be04a7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'covid_19_india.csv_covid_19_india'.'Updated On'
+	toColumn: LocalDateTable_ef080148-4c3c-464e-9566-5b2bf519eab9.Date
+
+relationship 5e692b8b-133a-4c28-b02e-a3cb104647e5
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Extract_covid_19_india.'Updated On'
+	toColumn: LocalDateTable_d25e35b2-7d37-4747-b8b3-ddeedca9ce45.Date
+
+relationship d444edee-e9bd-46af-9414-647aea90e9b6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'IndividualDetails.csv_IndividualDetails'.diagnosed_date
+	toColumn: LocalDateTable_e58b30eb-d218-4e4f-ae81-598c8ac6e706.Date
+
+relationship f638d50a-b95b-4bdd-8a61-c55c8ae9f628
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'IndividualDetails.csv_IndividualDetails'.status_change_date
+	toColumn: LocalDateTable_45bd6f0d-73be-47b9-8bf7-a78d0dc59ff4.Date
+
+relationship 38f32d68-4da2-4c84-9568-9b8b7981306d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Extract_IndividualDetails.diagnosed_date
+	toColumn: LocalDateTable_e350574f-0605-4ab5-99be-7ff66cd200cd.Date
+
+relationship 7e84d01f-ceb0-44e7-aaa3-17f8c39100eb
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Extract_IndividualDetails.status_change_date
+	toColumn: LocalDateTable_733c6535-23d8-44f2-879d-b61d8de8579e.Date
+
+relationship cb1973bb-cec8-411b-9ab5-16e72ae0671f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: StatewiseTestingDetails.Date
+	toColumn: LocalDateTable_32786e06-8a0f-4d3a-b1ce-cf89dea2af2d.Date
+
