@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Parameters",
+      "name": "BIN SIZE ",
+      "dax_expression": "3.0",
+      "solution_explanation": "The Tableau expression is a constant numeric literal (3.0). It translates directly to a DAX literal. There are no aggregations, row-level references, or parameter usages, so it should be implemented as a calculated column."
+    }
+  ]
+}
