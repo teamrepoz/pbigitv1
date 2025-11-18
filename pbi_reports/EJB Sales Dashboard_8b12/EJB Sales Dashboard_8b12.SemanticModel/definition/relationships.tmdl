@@ -1,0 +1,10 @@
+relationship 7f1fc143-4cbf-4920-a099-094755c37be8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Data (EJB)'.'Date Ordered'
+	toColumn: LocalDateTable_756299df-5ae9-42a7-b7c5-8980c0e7e83b.Date
+
+relationship 533837c4-e05d-4174-8b1a-7d17ebe74134
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Data (EJB)'.'Date Delivered'
+	toColumn: LocalDateTable_4b956b67-18d4-466d-9481-d6cdac580cbe.Date
+
