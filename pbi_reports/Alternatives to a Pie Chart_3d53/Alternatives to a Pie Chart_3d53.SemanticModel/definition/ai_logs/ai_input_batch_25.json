@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Path (bin)",
+      "table_name": "Sheet1 (radial_bar_chart_data)",
+      "tableau_expression": "[Path]",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "[Path]",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Path": "integer"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
