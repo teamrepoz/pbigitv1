@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Section 2 (Section 02 - African-Mobile-Data)",
+      "name": "Sales (Partition)",
+      "dax_expression": "'Section 2 (Section 02 - African-Mobile-Data)'[Sales]",
+      "solution_explanation": "This is a direct row-level reference to [Sales]; converted to a calculated column that returns the row value of 'Section 2 (Section 02 - African-Mobile-Data)'[Sales]."
+    }
+  ]
+}
