@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Sheet1 (radial_bar_chart_data)",
+      "name": "Index",
+      "dax_expression": "BLANK()",
+      "solution_explanation": "The Tableau expression uses the table calculation INDEX(), which has no direct one-to-one DAX equivalent without additional information about row ordering or a unique row identifier. Implementing the same behavior in Power BI requires providing a row-level key and an explicit ranking expression (for example using RANKX over a specified ordering) or calculating the index in the visual layer. Because the original formula depends on Tableau's table calculation context, it cannot be reliably converted to a row-level calculated column here.",
+      "type_changed_reason": "The calculation uses a Tableau table calculation (INDEX()), which requires table/visual context (windowing) and therefore must be implemented as a measure in Power BI."
+    }
+  ]
+}
