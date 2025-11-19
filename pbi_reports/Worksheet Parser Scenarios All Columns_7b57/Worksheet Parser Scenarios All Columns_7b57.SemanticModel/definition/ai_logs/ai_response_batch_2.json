@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "HR Dataset",
+      "name": "dep calc 1",
+      "dax_expression": "'HR Dataset'[DeptID]",
+      "solution_explanation": "Row-level passthrough of [DeptID]; converted the Tableau field reference to the Power BI column reference 'HR Dataset'[DeptID]."
+    }
+  ]
+}
