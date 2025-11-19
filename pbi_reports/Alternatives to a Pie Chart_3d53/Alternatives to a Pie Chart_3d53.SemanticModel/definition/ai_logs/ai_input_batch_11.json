@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Radial Field",
+      "table_name": "rossmann_sales_prediction_aggregated",
+      "tableau_expression": "[Total Sales]",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "[Total Sales]",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Total Sales": "integer"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
