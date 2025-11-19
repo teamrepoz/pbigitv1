@@ -1,0 +1,132 @@
+table 'rossmann_sales_prediction_aggregated.csv+_rossmann_sales_prediction_aggregated'
+	lineageTag: 038ddf0c-9c00-42aa-bd8c-f105ae3784a5
+
+	column Store
+		dataType: int64
+		formatString: 0
+		lineageTag: 089fc6d1-186f-48f2-8966-d4b2ead80a43
+		summarizeBy: sum
+		sourceColumn: Store
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: datetime
+		lineageTag: 55811686-87b8-4c36-9539-1fd248eec105
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sales
+		dataType: int64
+		formatString: 0
+		lineageTag: fe4af2bd-60c7-432f-87f3-5880dd4801d8
+		summarizeBy: sum
+		sourceColumn: Sales
+
+		annotation SummarizationSetBy = Automatic
+
+	column StoreType
+		dataType: string
+		lineageTag: 0b63e3d5-9af0-401c-9e53-baf889987051
+		summarizeBy: none
+		sourceColumn: StoreType
+
+		annotation SummarizationSetBy = Automatic
+
+	column Assortment
+		dataType: string
+		lineageTag: 72b17d83-0dd4-4faa-9aa0-b3e42efb54b9
+		summarizeBy: none
+		sourceColumn: Assortment
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Sales'
+		dataType: int64
+		formatString: 0
+		lineageTag: 5ac94627-99e8-4632-9fe3-317c44864ae6
+		summarizeBy: sum
+		sourceColumn: 'Total Sales'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Table Name'
+		dataType: string
+		lineageTag: e3cd8cab-4640-43ee-a586-53585190a9d6
+		summarizeBy: none
+		sourceColumn: 'Table Name'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Store.1'
+		dataType: int64
+		formatString: 0
+		lineageTag: 34863d9e-504f-47e1-8008-b9fce341f4b2
+		summarizeBy: sum
+		sourceColumn: 'Store.1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date.1'
+		dataType: datetime
+		lineageTag: fc1a961c-8e83-49a1-ae9e-fabd9719d724
+		summarizeBy: none
+		sourceColumn: 'Date.1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sales.1'
+		dataType: int64
+		formatString: 0
+		lineageTag: 455a6306-f188-40a3-bbd2-950f70bc8688
+		summarizeBy: sum
+		sourceColumn: 'Sales.1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'StoreType.1'
+		dataType: string
+		lineageTag: 1c6c2b2e-3104-4b2d-a1ff-d38119813bf3
+		summarizeBy: none
+		sourceColumn: 'StoreType.1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Assortment.1'
+		dataType: string
+		lineageTag: f9d659e9-77ad-4499-8b30-3bb3fad0343c
+		summarizeBy: none
+		sourceColumn: 'Assortment.1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Sales.1'
+		dataType: int64
+		formatString: 0
+		lineageTag: 8daf64a0-f70e-4fb7-8f6d-4f4bd2fed378
+		summarizeBy: sum
+		sourceColumn: 'Total Sales.1'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Table Name.1'
+		dataType: string
+		lineageTag: 65197111-d1b6-4a15-9b76-a1ba9cb09b57
+		summarizeBy: none
+		sourceColumn: 'Table Name.1'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'rossmann_sales_prediction_aggregated.csv+_rossmann_sales_prediction_aggregated' = m
+		mode: import
+		source =
+				let
+					    Source = Table.Combine({#"rossmann_sales_prediction_aggregated.csv_rossmann_sales_prediction_aggregated", #"rossmann_sales_prediction_aggregated.csv1_rossmann_sales_prediction_aggregated"})
+					in
+					    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
