@@ -1,0 +1,36 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "rossmann_sales_prediction_aggregated",
+      "name": "Radial Field",
+      "dax_expression": "SUM('rossmann_sales_prediction_aggregated'[Total Sales])",
+      "solution_explanation": "Converted the calculated field [Radial Field] (which referenced [Total Sales]) into a measure that aggregates the column for use in window and aggregate calculations.",
+      "type_changed_reason": "This field is used inside aggregations (SUM, WINDOW_*) in the original Tableau calculations, so it must be a measure."
+    },
+    {
+      "type": "measure",
+      "table": "rossmann_sales_prediction_aggregated",
+      "name": "Radial Angle",
+      "dax_expression": "VAR RowIndex = RANKX(ALLSELECTED('rossmann_sales_prediction_aggregated'), CALCULATE([Radial Field]), , ASC, DENSE)\nVAR WindowCount = COUNTROWS(ALLSELECTED('rossmann_sales_prediction_aggregated'))\nRETURN\n(RowIndex - 1) * (1 / WindowCount) * 2 * PI()",
+      "solution_explanation": "Recreated the table-calculation logic from INDEX() and WINDOW_COUNT(...) using RANKX over ALLSELECTED for row position and COUNTROWS(ALLSELECTED(...)) for the window count, then applied the same arithmetic to compute the angle.",
+      "type_changed_reason": "The original expression uses table calculations (INDEX, WINDOW_COUNT), which require a measure in Power BI."
+    },
+    {
+      "type": "measure",
+      "table": "rossmann_sales_prediction_aggregated",
+      "name": "Radial Normalised Length",
+      "dax_expression": "VAR RadialInner = SELECTEDVALUE('Radial Inner'[Display As])\nVAR RadialOuter = SELECTEDVALUE('Radial Outer'[Display As])\nVAR PathOrderAttr = IF(SELECTEDVALUE('rossmann_sales_prediction_aggregated'[Table Name]) = \"rossmann_sales_prediction_aggregated.csv\", 0, 1)\nVAR SumRadialField = [Radial Field]\nVAR MaxSumRadialField = CALCULATE([Radial Field], ALLSELECTED('rossmann_sales_prediction_aggregated'))\nRETURN\nRadialInner + IF(\n    PathOrderAttr = 0,\n    0,\n    SumRadialField / MaxSumRadialField * (RadialOuter - RadialInner)\n)",
+      "solution_explanation": "Translated the Tableau expression: replaced parameter references with SELECTEDVALUE(...) and implemented the ATTR([Path Order]) check using SELECTEDVALUE on the underlying [Table Name]. SUM([Radial Field]) maps to the [Radial Field] measure and WINDOW_MAX(SUM([Radial Field])) is approximated by evaluating the measure over ALLSELECTED to represent the window maximum context.",
+      "type_changed_reason": "This calculation references parameters and window/table calculations (SUM, WINDOW_MAX, ATTR), so it must be a measure."
+    },
+    {
+      "type": "measure",
+      "table": "rossmann_sales_prediction_aggregated",
+      "name": "Radial X",
+      "dax_expression": "[Radial Normalised Length] * COS([Radial Angle])",
+      "solution_explanation": "Direct translation of the Tableau expression multiplying the normalized radial length measure by the cosine of the radial angle measure. References the previously defined measures.",
+      "type_changed_reason": "Depends on measures and table calculations (through its dependencies), so it should be a measure."
+    }
+  ]
+}
