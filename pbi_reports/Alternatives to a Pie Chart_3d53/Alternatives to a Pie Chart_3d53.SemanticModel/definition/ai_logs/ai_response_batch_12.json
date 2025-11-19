@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "rossmann_sales_prediction_aggregated",
+      "name": "Radial Angle",
+      "dax_expression": "VAR idx = RANKX(\n    ALLSELECTED('rossmann_sales_prediction_aggregated'),\n    CALCULATE(SUM('rossmann_sales_prediction_aggregated'[Total Sales])),\n    ,\n    ASC\n)\nVAR totalCount = COUNTROWS(ALLSELECTED('rossmann_sales_prediction_aggregated'))\nRETURN IF(totalCount = 0, BLANK(), (idx - 1) * DIVIDE(1, totalCount) * 2 * PI())",
+      "solution_explanation": "Converted the Tableau table calculation to a measure. INDEX() is emulated with RANKX over ALLSELECTED using the underlying field 'rossmann_sales_prediction_aggregated'[Total Sales] (Radial Field maps to [Total Sales]). WINDOW_COUNT(COUNT([Radial Field])) is represented by COUNTROWS(ALLSELECTED('rossmann_sales_prediction_aggregated')). The expression guards against division by zero and multiplies by 2 * PI() as in the original."
+    }
+  ]
+}
