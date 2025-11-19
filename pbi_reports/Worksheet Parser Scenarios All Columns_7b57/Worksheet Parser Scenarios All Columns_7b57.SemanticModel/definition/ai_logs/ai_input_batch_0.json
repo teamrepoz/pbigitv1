@@ -1,0 +1,20 @@
+{
+  "calculations": [
+    {
+      "name": "Calculation1",
+      "table_name": "HR Dataset",
+      "tableau_expression": "[DeptID] + [GenderID]",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "[DeptID] + [GenderID]",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "GenderID": "integer",
+          "DeptID": "integer"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
