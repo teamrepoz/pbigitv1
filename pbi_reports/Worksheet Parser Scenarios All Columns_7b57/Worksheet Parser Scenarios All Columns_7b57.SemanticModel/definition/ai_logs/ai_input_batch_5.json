@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "Calculation4",
+      "table_name": "HR Dataset",
+      "tableau_expression": "INT(NULL)",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "INT(NULL)",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
