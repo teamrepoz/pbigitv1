@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Parameters",
+      "name": "Chart Type",
+      "dax_expression": "\"Donut\"",
+      "solution_explanation": "Converted the Tableau string literal \"Donut\" to a DAX calculated column returning the same string value."
+    }
+  ]
+}
