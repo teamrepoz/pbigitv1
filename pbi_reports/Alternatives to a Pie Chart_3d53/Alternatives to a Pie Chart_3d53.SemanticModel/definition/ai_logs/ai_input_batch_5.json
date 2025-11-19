@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "wc_start",
+      "table_name": "Sheet1 (radial_bar_chart_data)",
+      "tableau_expression": "WINDOW_MAX(MAX([Order]))",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "WINDOW_MAX(MAX([Order]))",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Order": "integer"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
