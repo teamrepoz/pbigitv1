@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Domain Padding_1a24"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "e79f77eb-e08f-4697-8245-e83d70d4e6db"
+  }
+}
