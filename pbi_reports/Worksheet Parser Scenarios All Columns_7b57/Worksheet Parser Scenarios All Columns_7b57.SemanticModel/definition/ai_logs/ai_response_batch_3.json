@@ -1,0 +1,18 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "HR Dataset",
+      "name": "dep calc 1",
+      "dax_expression": "'HR Dataset'[DeptID]",
+      "solution_explanation": "Row-level pass-through mapping: Tableau '[DeptID]' → DAX 'HR Dataset'[DeptID]. Created as a calculated column because it references a single row-level field without aggregation."
+    },
+    {
+      "type": "calculated_column",
+      "table": "HR Dataset",
+      "name": "dep calc 2",
+      "dax_expression": "'HR Dataset'[dep calc 1] * 'HR Dataset'[MarriedID]",
+      "solution_explanation": "Converted Tableau '[dep calc 1] * [MarriedID]' to DAX by referencing the dependent calculated column and column: 'HR Dataset'[dep calc 1] * 'HR Dataset'[MarriedID]. Created as a calculated column because it performs row-level arithmetic without aggregation."
+    }
+  ]
+}
