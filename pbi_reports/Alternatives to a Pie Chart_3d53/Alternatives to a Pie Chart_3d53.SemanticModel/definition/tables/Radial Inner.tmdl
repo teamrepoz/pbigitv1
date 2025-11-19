@@ -1,0 +1,28 @@
+table 'Radial Inner'
+	lineageTag: 0a550e49-96b8-4222-8a1f-68c45e8c06b3
+
+	measure 'Radial Inner Value' = SELECTEDVALUE('Radial Inner'[Radial Inner], 0.0)
+		lineageTag: 19bdde21-48fa-4080-8190-91ad193b7ebb
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Radial Inner'
+		dataType: double
+		formatString: 0
+		lineageTag: 5117e61b-e940-4955-b30a-6fc6276b4a2e
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Radial Inner' = calculated
+		mode: import
+		source = GENERATESERIES(0.0, 1.0, 0.1)
+
+	annotation PBI_Id = a3e481e6c0bf4c2791b5e90cd695b98e
+
