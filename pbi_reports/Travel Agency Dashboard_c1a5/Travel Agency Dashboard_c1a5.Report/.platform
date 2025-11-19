@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Travel Agency Dashboard_c1a5"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "cbbe72b0-046b-419b-8b5b-6231ccef159b"
+  }
+}
