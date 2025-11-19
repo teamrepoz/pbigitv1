@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Alternatives to a Pie Chart_3d53"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "93d6cced-efc3-451e-b3d3-a48d3fc60bd0"
+  }
+}
