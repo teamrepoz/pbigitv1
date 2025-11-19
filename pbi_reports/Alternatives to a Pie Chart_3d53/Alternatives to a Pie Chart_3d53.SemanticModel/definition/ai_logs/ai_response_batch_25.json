@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Sheet1 (radial_bar_chart_data)",
+      "name": "Path (bin)",
+      "dax_expression": "'Sheet1 (radial_bar_chart_data)'[Path]",
+      "solution_explanation": "Row-level direct field reference converted to a calculated column by qualifying the column with its table: [Path] -> 'Sheet1 (radial_bar_chart_data)'[Path]."
+    }
+  ]
+}
