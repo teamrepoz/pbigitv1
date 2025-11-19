@@ -1,0 +1,19 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Sheet1 (radial_bar_chart_data)",
+      "name": "Percentage",
+      "dax_expression": "'Sheet1 (radial_bar_chart_data)'[Ratio] / 0.543",
+      "solution_explanation": "Converted the Tableau row-level calculated field [Percentage] = [Ratio] / 0.543 into a Power BI calculated column that performs the same per-row division using 'Sheet1 (radial_bar_chart_data)'[Ratio]."
+    },
+    {
+      "type": "measure",
+      "table": "Sheet1 (radial_bar_chart_data)",
+      "name": "wc_percentage",
+      "dax_expression": "VAR window_max = MAXX(ALLSELECTED('Sheet1 (radial_bar_chart_data)'), 'Sheet1 (radial_bar_chart_data)'[Percentage])\nRETURN\nwindow_max",
+      "solution_explanation": "Tableau's WINDOW_MAX(MAX([Percentage])) is a table calculation that computes the maximum of the aggregated [Percentage] across the window. In Power BI this is implemented as a measure. The expression uses MAXX over ALLSELECTED('Sheet1 (radial_bar_chart_data)') to emulate the window-level maximum of 'Sheet1 (radial_bar_chart_data)'[Percentage].",
+      "type_changed_reason": "This calculation contains a table calculation (WINDOW_MAX) and an aggregation, so it must be created as a measure."
+    }
+  ]
+}
