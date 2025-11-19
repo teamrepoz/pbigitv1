@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Sheet1 (radial_bar_chart_data)",
+      "name": "BATCH",
+      "dax_expression": "1",
+      "solution_explanation": "The Tableau expression is a constant (1) with no aggregations or parameter references, so it is a row-level calculation. Implemented as a calculated column that returns the constant value 1."
+    }
+  ]
+}
