@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "HR Dataset",
+      "name": "Calculation2",
+      "dax_expression": "'HR Dataset'[Termd] * 'HR Dataset'[Salary] * 'HR Dataset'[EngagementSurvey]",
+      "solution_explanation": "This is a row-level arithmetic expression that multiplies three columns without any aggregation or parameter references, so it should be implemented as a calculated column."
+    }
+  ]
+}
