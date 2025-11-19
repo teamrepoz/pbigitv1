@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "Sum Type",
+      "dax_expression": "VAR selectedParam = SELECTEDVALUE('Cummulative Total'[Display As])\nRETURN\nIF(\n    selectedParam = \"Total\",\n    SUM('Orders (Sample - Superstore)'[Sales]),\n    CALCULATE(\n        SUM('Orders (Sample - Superstore)'[Sales]),\n        FILTER(\n            ALLSELECTED('Orders (Sample - Superstore)'),\n            TRUE()\n        )\n    )\n)",
+      "solution_explanation": "Replaced the parameter reference with SELECTEDVALUE('Cummulative Total'[Display As]). The IF branch for 'Total' returns SUM('Orders (Sample - Superstore)'[Sales]). Tableau's RUNNING_SUM(SUM([Sales])) is a table calculation that requires an ordering/partition (e.g., a date). Because no ordering/partition column was provided, it was translated to a CALCULATE over ALLSELECTED('Orders (Sample - Superstore)') to approximate cumulative behavior across the current selection. If you have a specific sort/order field (e.g., Order Date), replace the FILTER with a condition that limits rows to those with the ordering field <= MAX(ordering field) to get a true running total.",
+      "type_changed_reason": "The calculation references a Tableau parameter ([Parameters].[Cummulative Total]) and includes a table calculation (RUNNING_SUM), so it must be implemented as a measure."
+    }
+  ]
+}
