@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Parameters",
+      "name": "Radial Inner",
+      "dax_expression": "0.40000000000000002",
+      "solution_explanation": "The Tableau expression is a literal numeric constant. It has no aggregations or parameter references and applies at the row level, so create it as a calculated column containing the same constant value."
+    }
+  ]
+}
