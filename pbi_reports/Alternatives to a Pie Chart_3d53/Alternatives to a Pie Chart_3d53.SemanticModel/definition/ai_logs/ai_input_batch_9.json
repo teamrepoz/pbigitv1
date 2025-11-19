@@ -1,0 +1,23 @@
+{
+  "calculations": [
+    {
+      "name": "Y2",
+      "table_name": "Sheet1 (radial_bar_chart_data)",
+      "tableau_expression": "[wc_start]+0.5",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "[wc_start]+0.5",
+        "calculated_fields": {
+          "wc_start": "WINDOW_MAX(MAX([Order]))"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Order": "integer"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "wc_start": "integer"
+        }
+      }
+    }
+  ]
+}
