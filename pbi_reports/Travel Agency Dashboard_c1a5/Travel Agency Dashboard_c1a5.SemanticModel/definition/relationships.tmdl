@@ -1,0 +1,10 @@
+relationship dd2e4fa1-0284-4171-af64-1de2496767b6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Agoda Flights Transactions (Agoda Flights Transactions)'.time
+	toColumn: LocalDateTable_39725112-6a52-4402-bb0d-4a345c11227f.Date
+
+relationship 906ecc26-37bf-457c-87bf-112982a4cf87
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Agoda Flights Transactions (Agoda Flights Transactions)'.date
+	toColumn: LocalDateTable_a561f902-5888-457d-8599-fd60bf0668fe.Date
+
