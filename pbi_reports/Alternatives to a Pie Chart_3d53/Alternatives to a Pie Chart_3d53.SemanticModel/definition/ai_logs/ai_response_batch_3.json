@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Sheet1 (radial_bar_chart_data)",
+      "name": "Percentage",
+      "dax_expression": "'Sheet1 (radial_bar_chart_data)'[Ratio] / 0.543",
+      "solution_explanation": "Row-level division converted to a calculated column. Replaced Tableau column reference [Ratio] with 'Sheet1 (radial_bar_chart_data)'[Ratio]. No aggregates or parameters present, so it remains a row-level calculated column."
+    }
+  ]
+}
