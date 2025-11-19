@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "rossmann_sales_prediction",
+      "name": "a portion",
+      "dax_expression": "CALCULATE(\n    SUM('rossmann_sales_prediction'[Sales]),\n    'rossmann_sales_prediction'[StoreType] = \"a\"\n) / SUM('rossmann_sales_prediction'[Sales])",
+      "solution_explanation": "Converted Tableau SUM(IF [StoreType] = \"a\" THEN [Sales] END) to DAX CALCULATE(SUM(...), 'rossmann_sales_prediction'[StoreType] = \"a\") and kept the denominator as SUM('rossmann_sales_prediction'[Sales]). All column references were transformed to 'rossmann_sales_prediction'[ColumnName] format.",
+      "type_changed_reason": "The calculation uses aggregation (SUM), so it should be created as a measure."
+    }
+  ]
+}
