@@ -1,0 +1,5 @@
+relationship b0e1bff8-a235-4510-b8eb-74253364213c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Section 2 (Section 02 - African-Mobile-Data)'.Date
+	toColumn: LocalDateTable_153d2d82-08ca-4538-a46f-606244728584.Date
+
