@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Sheet1 (radial_bar_chart_data)",
+      "name": "wc_start",
+      "dax_expression": "MAXX(ALLSELECTED('Sheet1 (radial_bar_chart_data)'), 'Sheet1 (radial_bar_chart_data)'[Order])",
+      "solution_explanation": "WINDOW_MAX(MAX([Order])) is a table calculation. Translated by taking the maximum of the [Order] column across the window/context using MAXX over ALLSELECTED. Implemented as a measure because WINDOW_* are table calculations that operate across the evaluation context."
+    }
+  ]
+}
