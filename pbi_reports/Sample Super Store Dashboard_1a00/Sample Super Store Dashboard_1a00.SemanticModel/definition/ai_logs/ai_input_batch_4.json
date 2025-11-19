@@ -1,0 +1,25 @@
+{
+  "calculations": [
+    {
+      "name": "Sum Type",
+      "table_name": "Orders (Sample - Superstore)",
+      "tableau_expression": "if [Parameters].[Cummulative Total] = 'Total'\r\nTHEN SUM([Sales])\r\nELSE RUNNING_SUM(SUM([Sales]))\r\nEND",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "if [Parameters].[Cummulative Total] = 'Total'\r\nTHEN SUM([Sales])\r\nELSE RUNNING_SUM(SUM([Sales]))\r\nEND",
+        "calculated_fields": {
+          "Cummulative Total": "\"Total\""
+        },
+        "parameters": [
+          "Cummulative Total"
+        ],
+        "col_to_datatype_mapping": {
+          "Sales": "real"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Cummulative Total": "string"
+        }
+      }
+    }
+  ]
+}
