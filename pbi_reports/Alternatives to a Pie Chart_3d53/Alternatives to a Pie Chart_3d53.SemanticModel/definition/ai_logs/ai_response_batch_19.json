@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "rossmann_sales_prediction",
+      "name": "c portion",
+      "dax_expression": "CALCULATE(SUM('rossmann_sales_prediction'[Sales]), 'rossmann_sales_prediction'[StoreType] = \"c\") / SUM('rossmann_sales_prediction'[Sales])",
+      "solution_explanation": "Converted the Tableau conditional aggregate SUM(IF [StoreType] = \"c\" THEN [Sales] END) to a DAX CALCULATE filter: CALCULATE(SUM('rossmann_sales_prediction'[Sales]), 'rossmann_sales_prediction'[StoreType] = \"c\"). The denominator SUM([Sales]) was mapped to SUM('rossmann_sales_prediction'[Sales]). This uses aggregation, so it is implemented as a measure."
+    }
+  ]
+}
