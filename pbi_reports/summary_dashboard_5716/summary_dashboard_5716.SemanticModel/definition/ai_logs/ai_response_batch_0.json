@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "ecommerce-combined",
+      "name": "1",
+      "dax_expression": "1",
+      "solution_explanation": "Converted constant Tableau expression 1 to a DAX calculated column returning 1. The expression contains no aggregations or parameters and is row-level, so it should be a calculated column."
+    }
+  ]
+}
