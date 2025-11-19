@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Parameters",
+      "name": "Radial Outer",
+      "dax_expression": "1.0",
+      "solution_explanation": "The Tableau expression is a constant numeric literal (1.0) with no aggregations or parameter references. This is a row-level constant, so it is implemented as a calculated column with the DAX numeric literal 1.0."
+    }
+  ]
+}
