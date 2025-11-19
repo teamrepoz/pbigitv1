@@ -1,0 +1,34 @@
+{
+  "calculations": [
+    {
+      "name": "Radial X",
+      "table_name": "rossmann_sales_prediction_aggregated",
+      "tableau_expression": "[Radial Normalised Length] * COS([Radial Angle])",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "[Radial Normalised Length] * COS([Radial Angle])",
+        "calculated_fields": {
+          "Radial Normalised Length": "[Parameters].[Radial Inner] + \r\nIIF(ATTR([Path Order]) = 0 , 0  \r\n    ,SUM([Radial Field])/WINDOW_MAX(SUM([Radial Field])) * ([Parameters].[Radial Outer]-[Parameters].[Radial Inner])\r\n)",
+          "Radial Angle": "(INDEX()-1) * (1/WINDOW_COUNT(COUNT([Radial Field]))) * 2 * PI()",
+          "Radial Field": "[Total Sales]",
+          "Radial Outer": "1.0",
+          "Path Order": "IIF([Table Name] = \"rossmann_sales_prediction_aggregated.csv\", 0, 1)",
+          "Radial Inner": "0.40000000000000002"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Total Sales": "integer",
+          "Table Name": "string"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Radial Normalised Length": "real",
+          "Radial Angle": "real",
+          "Radial Field": "integer",
+          "Radial Outer": "real",
+          "Radial Inner": "real",
+          "Path Order": "Int64"
+        }
+      }
+    }
+  ]
+}
