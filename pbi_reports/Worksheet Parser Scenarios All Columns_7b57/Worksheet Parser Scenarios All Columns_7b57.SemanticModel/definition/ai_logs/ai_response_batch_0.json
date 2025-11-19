@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "HR Dataset",
+      "name": "Calculation1",
+      "dax_expression": "'HR Dataset'[DeptID] + 'HR Dataset'[GenderID]",
+      "solution_explanation": "This is a row-level arithmetic operation adding two integer columns (DeptID and GenderID). Converted to a calculated column using 'HR Dataset'[DeptID] + 'HR Dataset'[GenderID]."
+    }
+  ]
+}
