@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Percentage",
+      "table_name": "Sheet1 (radial_bar_chart_data)",
+      "tableau_expression": "[Ratio]/0.543",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "[Ratio]/0.543",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Ratio": "real"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
