@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Travel Agency Dashboard_c1a5"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "8bd004c6-87a1-4a21-8cc1-2c6b247b834a"
+  }
+}
