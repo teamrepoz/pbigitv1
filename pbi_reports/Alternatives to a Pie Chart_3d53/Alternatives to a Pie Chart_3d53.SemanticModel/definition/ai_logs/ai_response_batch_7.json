@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Sheet1 (radial_bar_chart_data)",
+      "name": "X",
+      "dax_expression": "VAR idx = 'Sheet1 (radial_bar_chart_data)'[Index]\nVAR wc_percentage = 'Sheet1 (radial_bar_chart_data)'[wc_percentage]\nVAR wc_pi = 'Sheet1 (radial_bar_chart_data)'[wc_pi]\nVAR wc_start = 'Sheet1 (radial_bar_chart_data)'[wc_start]\nRETURN\nIF(\n    idx < 270,\n    SIN(idx * wc_percentage * wc_pi / 180) * wc_start,\n    IF(\n        idx > 270,\n        SIN((540 - idx) * wc_percentage * wc_pi / 180) * (wc_start + 1),\n        SIN((idx * wc_percentage + 3) * wc_pi / 180) * (wc_start + 0.5)\n    )\n)",
+      "solution_explanation": "Converted the Tableau IF/ELSEIF/ELSE logic to nested DAX IF statements. All field references were transformed to the table-qualified format 'Sheet1 (radial_bar_chart_data)'[Column]. Mathematical and trig functions (SIN, multiplication, division) were kept with equivalent DAX functions. Intermediate values were captured in VARs for readability.",
+      "type_changed_reason": "The calculation relies on table calculations (INDEX, WINDOW_MAX) and aggregated/windowed fields, which require evaluation in a filter/aggregation context — therefore it must be created as a measure."
+    }
+  ]
+}
