@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "Sum Type",
+      "dax_expression": "VAR selectedParam = SELECTEDVALUE('Cummulative Total'[Display As])\nRETURN\nIF(\n    selectedParam = \"Total\",\n    SUM('Orders (Sample - Superstore)'[Sales]),\n    SUMX(\n        FILTER(\n            ALLSELECTED('Orders (Sample - Superstore)'),\n            TRUE\n        ),\n        'Orders (Sample - Superstore)'[Sales]\n    )\n)",
+      "solution_explanation": "Replaced the Tableau parameter reference with SELECTEDVALUE('Cummulative Total'[Display As]) and mapped SUM([Sales]) to SUM('Orders (Sample - Superstore)'[Sales]). Tableau's RUNNING_SUM(SUM([Sales])) is a table calculation that requires an explicit sort/order context in DAX (for example a date or index column) to compute a proper running total. Because no ordering column or partitioning context was provided, the expression includes a SUMX over ALLSELECTED('Orders (Sample - Superstore)') as a placeholder. To produce a true running total, replace the FILTER/ALLSELECTED block with a FILTER that defines the cumulative window (for example using a date column and DATESBETWEEN or a comparison against the current row's sort value).",
+      "type_changed_reason": "The formula references a parameter ([Parameters].[Cummulative Total]), and all parameter-based calculations must be created as measures."
+    }
+  ]
+}
