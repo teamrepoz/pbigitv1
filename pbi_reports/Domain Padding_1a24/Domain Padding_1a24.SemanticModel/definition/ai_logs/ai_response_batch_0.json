@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Section 2 (Section 02 - African-Mobile-Data)",
+      "name": "1",
+      "dax_expression": "1",
+      "solution_explanation": "The Tableau expression is a constant numeric literal (1) with no aggregations or parameters. This is row-level logic, so it is implemented as a calculated column containing the literal value 1."
+    }
+  ]
+}
