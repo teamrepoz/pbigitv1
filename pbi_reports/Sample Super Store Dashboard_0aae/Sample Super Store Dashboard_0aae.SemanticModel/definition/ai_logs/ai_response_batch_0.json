@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Parameters",
+      "name": "Chart Type",
+      "dax_expression": "\"Donut\"",
+      "solution_explanation": "Returns the constant string \"Donut\" as a row-level calculated column on the 'Parameters' table."
+    }
+  ]
+}
