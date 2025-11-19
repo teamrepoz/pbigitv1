@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "rossmann_sales_prediction",
+      "name": "d portion",
+      "dax_expression": "CALCULATE(SUM('rossmann_sales_prediction'[Sales]), 'rossmann_sales_prediction'[StoreType] = \"d\") / SUM('rossmann_sales_prediction'[Sales])",
+      "solution_explanation": "Converted Tableau SUM(IF [StoreType] = \"d\" THEN [Sales] END)/SUM([Sales]) to a DAX measure. The conditional SUM is implemented with CALCULATE(SUM(...), filter) to apply StoreType = \"d\", and the denominator remains SUM of Sales."
+    }
+  ]
+}
