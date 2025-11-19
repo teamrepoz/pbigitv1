@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "Chart Type Donut",
+      "dax_expression": "SELECTEDVALUE('Chart Type'[Display As]) = \"Donut\"",
+      "solution_explanation": "Replaced the Tableau parameter reference [Parameters].[Chart Type] with SELECTEDVALUE('Chart Type'[Display As]) per parameter rules. Converted the string literal to DAX double-quoted string.",
+      "type_changed_reason": "The calculation references a parameter, and all parameter-based calculations must be measures."
+    }
+  ]
+}
