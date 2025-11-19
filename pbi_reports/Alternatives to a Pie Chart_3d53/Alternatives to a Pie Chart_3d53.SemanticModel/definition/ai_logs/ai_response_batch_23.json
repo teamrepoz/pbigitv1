@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Sheet1 (waffle template)",
+      "name": "Index",
+      "dax_expression": "VAR idx = RANKX(ALLSELECTED('Sheet1 (waffle template)'), 1, , ASC, DENSE)\nRETURN (idx - 1) * 2",
+      "solution_explanation": "Tableau's INDEX() is a table calculation. In DAX there is no direct INDEX() function; a common pattern is to emulate row indexing with RANKX over the table's current selection. This measure computes a row index (using RANKX over ALLSELECTED for the current partition) then applies the original arithmetic (index - 1) * 2.",
+      "type_changed_reason": "The calculation uses the table calculation INDEX(), so it should be created as a measure."
+    }
+  ]
+}
