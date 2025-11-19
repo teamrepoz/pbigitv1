@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "Profit RAG",
+      "dax_expression": "IF(\n    SUM('Orders (Sample - Superstore)'[Profit]) < 60000,\n    1,\n    IF(\n        SUM('Orders (Sample - Superstore)'[Profit]) >= 60000 && SUM('Orders (Sample - Superstore)'[Profit]) <= 80000,\n        2,\n        3\n    )\n)",
+      "solution_explanation": "Converted Tableau IF with aggregated SUM([Profit]) into nested DAX IF statements using SUM('Orders (Sample - Superstore)'[Profit]). This is created as a measure because the calculation uses aggregation (SUM)."
+    }
+  ]
+}
