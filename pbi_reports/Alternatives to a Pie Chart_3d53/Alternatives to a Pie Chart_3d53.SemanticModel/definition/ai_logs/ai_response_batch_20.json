@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "rossmann_sales_prediction",
+      "name": "b portion",
+      "dax_expression": "DIVIDE(\n    CALCULATE(SUM('rossmann_sales_prediction'[Sales]), 'rossmann_sales_prediction'[StoreType] = \"b\"),\n    SUM('rossmann_sales_prediction'[Sales])\n)",
+      "solution_explanation": "Translated SUM(IF [StoreType] = \"b\" THEN [Sales] END)/SUM([Sales]) into DAX by using CALCULATE to apply the StoreType = \"b\" filter to SUM('rossmann_sales_prediction'[Sales]) and DIVIDE for safe division. All column references use the 'table'[column] format.",
+      "type_changed_reason": "The calculation uses aggregation (SUM), so it should be created as a measure."
+    }
+  ]
+}
