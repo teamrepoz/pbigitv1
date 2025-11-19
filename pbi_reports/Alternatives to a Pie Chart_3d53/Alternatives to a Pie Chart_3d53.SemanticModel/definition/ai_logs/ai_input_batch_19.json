@@ -1,0 +1,20 @@
+{
+  "calculations": [
+    {
+      "name": "c portion",
+      "table_name": "rossmann_sales_prediction",
+      "tableau_expression": "SUM(IF [StoreType] = \"c\" THEN [Sales] END)/SUM([Sales])",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "SUM(IF [StoreType] = \"c\" THEN [Sales] END)/SUM([Sales])",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "StoreType": "string",
+          "Sales": "integer"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
