@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "Profit RAG",
+      "dax_expression": "VAR totalProfit = SUM('Orders (Sample - Superstore)'[Profit])\nRETURN\nIF(\n    totalProfit < 60000,\n    1,\n    IF(\n        totalProfit >= 60000 && totalProfit <= 80000,\n        2,\n        3\n    )\n)",
+      "solution_explanation": "Replaced SUM([Profit]) with SUM('Orders (Sample - Superstore)'[Profit]) and used a VAR for the aggregated value, then applied nested IF to mirror the Tableau conditional logic.",
+      "type_changed_reason": "This calculation uses aggregation (SUM), so it should be created as a measure."
+    }
+  ]
+}
