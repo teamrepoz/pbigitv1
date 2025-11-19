@@ -1,0 +1,25 @@
+relationship 82d45dca-3b40-45c2-ac7e-5139280de84b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'ecommerce-combined'.order_purchase_timestamp
+	toColumn: LocalDateTable_e751d0c0-0e67-46f5-af96-65ffb46f17aa.Date
+
+relationship 823d1496-65e2-4455-8fda-5855a7f7be12
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'ecommerce-combined'.order_approved_at
+	toColumn: LocalDateTable_2fcb668f-1366-480c-ad2f-68c5ae757e4c.Date
+
+relationship 9a49ec03-9d3e-4204-8339-52d6b39a0fe5
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'ecommerce-combined'.order_delivered_carrier_date
+	toColumn: LocalDateTable_5b28ce5d-790a-4585-9d10-d54191a8d408.Date
+
+relationship 1d8ee96a-764f-47a4-a8a6-988113e0ebb3
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'ecommerce-combined'.order_delivered_customer_date
+	toColumn: LocalDateTable_413b618d-6348-4995-800b-d3632ef8f163.Date
+
+relationship 9f92027b-e878-4d8f-b887-00ac47330f36
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'ecommerce-combined'.order_estimated_delivery_date
+	toColumn: LocalDateTable_6fdcba27-ba49-4f22-b863-41347c53c6dd.Date
+
