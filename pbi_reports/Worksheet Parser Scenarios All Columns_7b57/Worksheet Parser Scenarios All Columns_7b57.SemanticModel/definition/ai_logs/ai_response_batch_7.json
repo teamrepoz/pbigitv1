@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "HR Dataset",
+      "name": "C_Employee_Status",
+      "dax_expression": "'HR Dataset'[EmploymentStatus]",
+      "solution_explanation": "Direct row-level reference to [EmploymentStatus] converted to a calculated column using 'HR Dataset'[EmploymentStatus]. No aggregation or parameters present, so it remains a calculated column."
+    }
+  ]
+}
