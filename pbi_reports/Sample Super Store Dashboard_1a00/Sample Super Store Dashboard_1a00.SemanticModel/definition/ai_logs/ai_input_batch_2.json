@@ -1,0 +1,20 @@
+{
+  "calculations": [
+    {
+      "name": "Profit ratio",
+      "table_name": "Orders (Sample - Superstore)",
+      "tableau_expression": "SUM([Profit])/SUM([Sales])",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "SUM([Profit])/SUM([Sales])",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Sales": "real",
+          "Profit": "real"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
