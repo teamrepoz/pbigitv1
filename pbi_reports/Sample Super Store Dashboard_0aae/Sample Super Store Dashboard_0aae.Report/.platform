@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Sample Super Store Dashboard_0aae"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "b33e7cc6-91c9-4ed3-b8c3-65cf3a25f0ad"
+  }
+}
