@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "Profit ratio",
+      "dax_expression": "SUM('Orders (Sample - Superstore)'[Profit]) / SUM('Orders (Sample - Superstore)'[Sales])",
+      "solution_explanation": "The Tableau formula uses aggregations SUM([Profit]) and SUM([Sales]), so it should be a measure. Converted column references to fully qualified DAX syntax and preserved the aggregate logic."
+    }
+  ]
+}
