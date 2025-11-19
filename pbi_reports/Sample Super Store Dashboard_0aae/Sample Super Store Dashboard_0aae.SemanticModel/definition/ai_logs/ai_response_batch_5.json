@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "Chart Type Donut",
+      "dax_expression": "SELECTEDVALUE('Chart Type'[Display As]) = \"Donut\"",
+      "solution_explanation": "Replaced [Parameters].[Chart Type] with SELECTEDVALUE('Chart Type'[Display As]) per parameter mapping and compared to the string literal \"Donut\". This is a measure because it references a parameter, and parameter-based calculations must be measures."
+    }
+  ]
+}
