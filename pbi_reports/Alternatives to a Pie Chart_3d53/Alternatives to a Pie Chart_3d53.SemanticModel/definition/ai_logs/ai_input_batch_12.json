@@ -1,0 +1,23 @@
+{
+  "calculations": [
+    {
+      "name": "Radial Angle",
+      "table_name": "rossmann_sales_prediction_aggregated",
+      "tableau_expression": "(INDEX()-1) * (1/WINDOW_COUNT(COUNT([Radial Field]))) * 2 * PI()",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "(INDEX()-1) * (1/WINDOW_COUNT(COUNT([Radial Field]))) * 2 * PI()",
+        "calculated_fields": {
+          "Radial Field": "[Total Sales]"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Total Sales": "integer"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Radial Field": "integer"
+        }
+      }
+    }
+  ]
+}
