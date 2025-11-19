@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "rossmann_sales_prediction_aggregated",
+      "name": "BATCH",
+      "dax_expression": "1",
+      "solution_explanation": "The Tableau expression is a row-level constant (1) with no aggregations or parameters. This should be a calculated column that returns 1 for every row."
+    }
+  ]
+}
