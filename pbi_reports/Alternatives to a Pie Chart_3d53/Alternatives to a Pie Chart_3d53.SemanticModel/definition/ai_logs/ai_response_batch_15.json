@@ -1,0 +1,58 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "rossmann_sales_prediction_aggregated",
+      "name": "Path Order",
+      "dax_expression": "IF('rossmann_sales_prediction_aggregated'[Table Name] = \"rossmann_sales_prediction_aggregated.csv\", 0, 1)",
+      "solution_explanation": "Converted the row-level IIF comparing [Table Name] to a constant into a DAX calculated column using IF and preserved the exact string literal.",
+      "type_changed_reason": "This is row-level conditional logic (depends only on the row's [Table Name]) so it should be a calculated column (dimension)."
+    },
+    {
+      "type": "measure",
+      "table": "rossmann_sales_prediction_aggregated",
+      "name": "Radial Field",
+      "dax_expression": "SUM('rossmann_sales_prediction_aggregated'[Total Sales])",
+      "solution_explanation": "Converted the Tableau field [Radial Field] (which references [Total Sales]) into a SUM measure so it can be used in further aggregations and window-style calculations.",
+      "type_changed_reason": "This field is used inside aggregations (SUM) and window calculations in the original Tableau logic, so it must be a measure."
+    },
+    {
+      "type": "measure",
+      "table": "rossmann_sales_prediction_aggregated",
+      "name": "Radial Inner",
+      "dax_expression": "0.40000000000000002",
+      "solution_explanation": "Converted the constant Radial Inner into a DAX measure returning the same numeric literal for reuse in other measures."
+    },
+    {
+      "type": "measure",
+      "table": "rossmann_sales_prediction_aggregated",
+      "name": "Radial Outer",
+      "dax_expression": "1.0",
+      "solution_explanation": "Converted the constant Radial Outer into a DAX measure returning the same numeric literal for reuse in other measures."
+    },
+    {
+      "type": "measure",
+      "table": "rossmann_sales_prediction_aggregated",
+      "name": "Radial Angle",
+      "dax_expression": "VAR idx = RANKX(ALLSELECTED('rossmann_sales_prediction_aggregated'), [Radial Field], , ASC, DENSE) - 1\nVAR totalCount = COUNTROWS(ALLSELECTED('rossmann_sales_prediction_aggregated'))\nRETURN\nIF(totalCount = 0, 0, idx * (1 / totalCount) * 2 * PI())",
+      "solution_explanation": "Approximated Tableau's INDEX() and WINDOW_COUNT(...) using RANKX over ALLSELECTED as an INDEX surrogate and COUNTROWS(ALLSELECTED(...)) for the window count. The expression follows the original formula: (INDEX()-1) * (1/WINDOW_COUNT(...)) * 2 * PI().",
+      "type_changed_reason": "The original uses Tableau table calculations (INDEX, WINDOW_COUNT), which must be implemented as measures in DAX."
+    },
+    {
+      "type": "measure",
+      "table": "rossmann_sales_prediction_aggregated",
+      "name": "Radial Normalised Length",
+      "dax_expression": "VAR inner = [Radial Inner]\nVAR outer = [Radial Outer]\nVAR pathOrder = SELECTEDVALUE('rossmann_sales_prediction_aggregated'[Path Order])\nVAR currentSum = [Radial Field]\nVAR maxInWindow = CALCULATE([Radial Field], ALLSELECTED('rossmann_sales_prediction_aggregated'))\nRETURN\ninner + IF(\n    pathOrder = 0,\n    0,\n    IF(maxInWindow = 0, 0, DIVIDE(currentSum, maxInWindow) * (outer - inner))\n)",
+      "solution_explanation": "Translated the Tableau logic that adds Radial Inner and conditionally computes a normalized length using SUM([Radial Field]) / WINDOW_MAX(SUM([Radial Field])) * (Radial Outer - Radial Inner). WINDOW_MAX(SUM(...)) is approximated by calculating the measure over ALLSELECTED to get the window maximum, and ATTR(Path Order) is represented by SELECTEDVALUE on the calculated Path Order column.",
+      "type_changed_reason": "The original uses aggregations and window table calculations (SUM, WINDOW_MAX, ATTR), so it must be created as a measure."
+    },
+    {
+      "type": "measure",
+      "table": "rossmann_sales_prediction_aggregated",
+      "name": "Radial Y",
+      "dax_expression": "[Radial Normalised Length] * SIN([Radial Angle])",
+      "solution_explanation": "Direct translation of [Radial Normalised Length] * SIN([Radial Angle]) using the previously defined measures for Radial Normalised Length and Radial Angle.",
+      "type_changed_reason": "This calculation depends on measures/table calculations (aggregations and INDEX/WINDOW*), therefore it must be a measure."
+    }
+  ]
+}
