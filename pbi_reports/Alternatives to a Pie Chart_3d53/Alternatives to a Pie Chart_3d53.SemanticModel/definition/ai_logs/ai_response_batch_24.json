@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Sheet1 (waffle template)",
+      "name": "1",
+      "dax_expression": "1",
+      "solution_explanation": "The Tableau expression is a constant literal (1). It does not reference any fields, aggregations, or parameters, so it is a row-level calculation and is implemented as a calculated column returning 1."
+    }
+  ]
+}
