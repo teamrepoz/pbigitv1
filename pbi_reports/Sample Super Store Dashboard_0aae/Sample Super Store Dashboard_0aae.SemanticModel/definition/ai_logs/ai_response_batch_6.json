@@ -1,0 +1,12 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Orders (Sample - Superstore)",
+      "name": "Chart Type Pie",
+      "dax_expression": "SELECTEDVALUE('Chart Type'[Display As]) = \"Pie\"",
+      "solution_explanation": "Replaced the Tableau parameter reference with SELECTEDVALUE('Chart Type'[Display As]) and compared it to the string \"Pie\" to produce a boolean measure.",
+      "type_changed_reason": "The calculation references a parameter, and all parameter-based calculations must be measures."
+    }
+  ]
+}
