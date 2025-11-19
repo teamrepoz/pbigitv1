@@ -1,0 +1,20 @@
+relationship 5c3be8ec-0169-4383-aaab-88270c1d228c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'rossmann_sales_prediction_aggregated.csv_rossmann_sales_prediction_aggregated'.Date
+	toColumn: LocalDateTable_8115c6e3-c0c0-496a-b2aa-a4900d0d0f17.Date
+
+relationship aab5386f-a2b0-48b2-8292-87cc761198d9
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'rossmann_sales_prediction_aggregated.csv1_rossmann_sales_prediction_aggregated'.Date
+	toColumn: LocalDateTable_242e8853-a83b-4899-a954-87ba28142267.Date
+
+relationship 095f8e05-bd7c-492c-af99-485b5c8d65ed
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Extract_rossmann_sales_prediction_aggregated.Date
+	toColumn: LocalDateTable_1ddbbc52-36e8-46e1-ba32-3356fdb806e0.Date
+
+relationship a750d6a7-cf45-46e5-8253-6c1b1348a2ff
+	joinOnDateBehavior: datePartOnly
+	fromColumn: rossmann_sales_prediction.Date
+	toColumn: LocalDateTable_273fcf58-ea6e-45af-92d6-6cd24d602804.Date
+
