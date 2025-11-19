@@ -1,0 +1,47 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.63\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "name": "Section_Dashboard 1",
+      "ordinal": 0,
+      "displayName": "Dashboard 1",
+      "visualContainers": [
+        {
+          "x": 1039,
+          "y": 132,
+          "z": 0,
+          "width": 608,
+          "height": 334,
+          "config": "{\"name\": \"e8b0ff835866\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1039, \"y\": 132, \"z\": 1000, \"width\": 608, \"height\": 334, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"pieChart\", \"projections\": {\"Category\": [{\"queryRef\": \"Agoda Flights Transactions (Agoda Flights Transactions).flightType\", \"active\": true}], \"Y\": [{\"queryRef\": \"Count(Agoda Flights Transactions (Agoda Flights Transactions).Agoda Flights Transactions_E19CD9AC72FB4E51BE71D5B91DB2F547)\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"A\", \"Entity\": \"Agoda Flights Transactions (Agoda Flights Transactions)\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Property\": \"flightType\", \"Expression\": {\"SourceRef\": {\"Source\": \"A\"}}}, \"Name\": \"Agoda Flights Transactions (Agoda Flights Transactions).flightType\", \"NativeReferenceName\": \"flightType\"}, {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Agoda Flights Transactions_E19CD9AC72FB4E51BE71D5B91DB2F547\", \"Expression\": {\"SourceRef\": {\"Source\": \"A\"}}}}, \"Function\": 5}, \"Name\": \"Count(Agoda Flights Transactions (Agoda Flights Transactions).Agoda Flights Transactions_E19CD9AC72FB4E51BE71D5B91DB2F547)\", \"NativeReferenceName\": \"Count of Agoda Flights Transactions_E19CD9AC72FB4E51BE71D5B91DB2F547\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Agoda Flights Transactions_E19CD9AC72FB4E51BE71D5B91DB2F547\", \"Expression\": {\"SourceRef\": {\"Source\": \"A\"}}}}, \"Function\": 5}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}, \"titleBold\": {\"expr\": {\"Literal\": {\"Value\": \"\"}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Arial'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"9D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#000000'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"15D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Tableau Bold'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Flight type'\"}}}}}]}}}"
+        },
+        {
+          "x": 1041,
+          "y": 494,
+          "z": 0,
+          "width": 604,
+          "height": 375,
+          "config": "{\"name\": \"b8078c93a475a9159d8b2622d7f\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1041, \"y\": 494, \"z\": 1000, \"width\": 604, \"height\": 375, \"tabOrder\": 1000}}], \"singleVisual\": {\"visualType\": \"columnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"Agoda Flights Transactions (Agoda Flights Transactions).Agoda Flights Transactions_E19CD9AC72FB4E51BE71D5B91DB2F547\", \"active\": true}], \"Y\": [{\"queryRef\": \"Agoda Flights Transactions (Agoda Flights Transactions).agency\"}], \"Series\": []}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"A\", \"Entity\": \"Agoda Flights Transactions (Agoda Flights Transactions)\", \"Type\": 0}], \"Select\": [{\"Aggregation\": {\"Expression\": {\"Column\": {\"Property\": \"Agoda Flights Transactions_E19CD9AC72FB4E51BE71D5B91DB2F547\", \"Expression\": {\"SourceRef\": {\"Source\": \"A\"}}}}, \"Function\": 5}, \"Name\": \"Count(Agoda Flights Transactions (Agoda Flights Transactions).Agoda Flights Transactions_E19CD9AC72FB4E51BE71D5B91DB2F547)\", \"NativeReferenceName\": \"Count of Agoda Flights Transactions_E19CD9AC72FB4E51BE71D5B91DB2F547\"}, {\"Column\": {\"Property\": \"agency\", \"Expression\": {\"SourceRef\": {\"Source\": \"A\"}}}, \"Name\": \"Agoda Flights Transactions (Agoda Flights Transactions).agency\", \"NativeReferenceName\": \"agency\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"A\"}}, \"Property\": \"agency\"}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"categoryAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Arial'''\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"'9D'\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}], \"valueAxis\": [{\"properties\": {\"titleFontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Tableau Bold'\"}}}, \"titleFontSize\": {\"expr\": {\"Literal\": {\"Value\": \"11D\"}}}, \"titleColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#333333'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#000000'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"15D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'''Tableau Bold'''\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Total Flight by Agency'\"}}}}}]}}}"
+        }
+      ],
+      "width": 1700.0,
+      "height": 900.0
+    }
+  ]
+}
