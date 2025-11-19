@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Profit RAG",
+      "table_name": "Orders (Sample - Superstore)",
+      "tableau_expression": "IF SUM([Profit]) < 60000\r\nTHEN 1\r\nELSEIF SUM([Profit]) >= 60000 and SUM([Profit]) <=80000\r\nTHEN 2\r\nELSE 3\r\nEND",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "IF SUM([Profit]) < 60000\r\nTHEN 1\r\nELSEIF SUM([Profit]) >= 60000 and SUM([Profit]) <=80000\r\nTHEN 2\r\nELSE 3\r\nEND",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Profit": "real"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
