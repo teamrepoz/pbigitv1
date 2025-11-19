@@ -1,0 +1,45 @@
+table 'Cummulative Total'
+	lineageTag: 5613d256-9755-4bef-adee-77ee758ca1e3
+
+	column Index
+		formatString: 0
+		lineageTag: 180fc547-2f6e-42c7-b317-388575bef5ed
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display As'
+		lineageTag: 1c0754b6-6f4c-4ed7-a795-1c43ba22d5c4
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Display As]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		lineageTag: d7b4799a-feea-4a1c-9f6d-d2f66e7d3453
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Cummulative Total' = calculated
+		mode: import
+		source =
+				
+			DATATABLE(
+			    "Index", INTEGER,
+			    "Display As", STRING,
+			    "Value", STRING,
+			    {
+			        { 0, "Total", "Total" },
+				{ 1, "Cummulative Total", "Cummulative Total" }
+			    }
+			)
+
+	annotation PBI_Id = 2d42c00cbdd145eeba72e2022a63fd23
+
