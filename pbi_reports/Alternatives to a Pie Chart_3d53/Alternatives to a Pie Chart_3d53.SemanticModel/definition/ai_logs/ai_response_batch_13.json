@@ -1,0 +1,26 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "rossmann_sales_prediction_aggregated",
+      "name": "Sum Radial Field",
+      "dax_expression": "SUM('rossmann_sales_prediction_aggregated'[Total Sales])",
+      "solution_explanation": "Create a measure that sums the Radial Field (Total Sales) to replicate SUM([Radial Field]) used in the Tableau expression."
+    },
+    {
+      "type": "measure",
+      "table": "rossmann_sales_prediction_aggregated",
+      "name": "Max Sum Radial Field Window",
+      "dax_expression": "VAR _result = MAXX(ALLSELECTED('rossmann_sales_prediction_aggregated'), [Sum Radial Field])\nRETURN _result",
+      "solution_explanation": "Represents WINDOW_MAX(SUM([Radial Field])) by taking the maximum of the Sum Radial Field over the current selection (ALLSELECTED to approximate Tableau window context)."
+    },
+    {
+      "type": "measure",
+      "table": "rossmann_sales_prediction_aggregated",
+      "name": "Radial Normalised Length",
+      "dax_expression": "VAR RadialInner = SELECTEDVALUE('Radial Inner'[Display As])\nVAR RadialOuter = SELECTEDVALUE('Radial Outer'[Display As])\nVAR PathOrder = IF(SELECTEDVALUE('rossmann_sales_prediction_aggregated'[Table Name]) = \"rossmann_sales_prediction_aggregated.csv\", 0, 1)\nVAR SumRadial = [Sum Radial Field]\nVAR MaxSumRadial = [Max Sum Radial Field Window]\nRETURN IF(\n    PathOrder = 0,\n    0,\n    RadialInner + SumRadial / MaxSumRadial * (RadialOuter - RadialInner)\n)",
+      "solution_explanation": "Converts the Tableau expression to a measure. Parameters are mapped to SELECTEDVALUE('ParameterName'[Display As]). ATTR([Path Order]) logic is implemented via SELECTEDVALUE on Table Name to reproduce the Path Order calculation. Aggregations and the window max are referenced via the supporting measures.",
+      "type_changed_reason": "The formula references Tableau parameters and uses aggregations and a table calculation (WINDOW_MAX and SUM), so it must be implemented as a measure."
+    }
+  ]
+}
