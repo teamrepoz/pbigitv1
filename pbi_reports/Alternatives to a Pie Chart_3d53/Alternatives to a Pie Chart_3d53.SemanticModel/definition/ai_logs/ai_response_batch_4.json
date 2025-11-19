@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Sheet1 (radial_bar_chart_data)",
+      "name": "wc_pi",
+      "dax_expression": "PI()",
+      "solution_explanation": "TABLEAU: WINDOW_MAX(MAX(pi())) is a table calculation returning the maximum of PI() over the window. MAX(pi()) simplifies to PI(), and the WINDOW_MAX over that constant remains PI(). In Power BI this is implemented as a measure returning PI()."
+    }
+  ]
+}
