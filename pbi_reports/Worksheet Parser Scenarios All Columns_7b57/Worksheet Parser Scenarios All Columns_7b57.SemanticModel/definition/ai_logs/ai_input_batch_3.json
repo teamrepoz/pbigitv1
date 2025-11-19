@@ -1,0 +1,24 @@
+{
+  "calculations": [
+    {
+      "name": "dep calc 2",
+      "table_name": "HR Dataset",
+      "tableau_expression": "[dep calc 1] * [MarriedID]",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "[dep calc 1] * [MarriedID]",
+        "calculated_fields": {
+          "dep calc 1": "[DeptID]"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "MarriedID": "integer",
+          "DeptID": "integer"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "dep calc 1": "integer"
+        }
+      }
+    }
+  ]
+}
