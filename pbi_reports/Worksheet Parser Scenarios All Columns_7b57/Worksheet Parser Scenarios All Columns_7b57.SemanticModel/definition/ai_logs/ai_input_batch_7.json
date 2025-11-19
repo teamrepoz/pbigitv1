@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "C_Employee_Status",
+      "table_name": "HR Dataset",
+      "tableau_expression": "[EmploymentStatus]",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "[EmploymentStatus]",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "EmploymentStatus": "string"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
