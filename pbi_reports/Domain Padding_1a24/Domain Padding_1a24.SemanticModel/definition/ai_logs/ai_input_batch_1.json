@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Sales (Partition)",
+      "table_name": "Section 2 (Section 02 - African-Mobile-Data)",
+      "tableau_expression": "[Sales]",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "[Sales]",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Sales": "real"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
