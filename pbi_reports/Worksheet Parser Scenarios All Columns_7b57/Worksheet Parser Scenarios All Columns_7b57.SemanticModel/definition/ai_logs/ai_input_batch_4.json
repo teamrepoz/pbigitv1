@@ -1,0 +1,26 @@
+{
+  "calculations": [
+    {
+      "name": "dep calc 3",
+      "table_name": "HR Dataset",
+      "tableau_expression": "SUM([dep calc 2])",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "SUM([dep calc 2])",
+        "calculated_fields": {
+          "dep calc 2": "[dep calc 1] * [MarriedID]",
+          "dep calc 1": "[DeptID]"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "MarriedID": "integer",
+          "DeptID": "integer"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "dep calc 2": "integer",
+          "dep calc 1": "integer"
+        }
+      }
+    }
+  ]
+}
