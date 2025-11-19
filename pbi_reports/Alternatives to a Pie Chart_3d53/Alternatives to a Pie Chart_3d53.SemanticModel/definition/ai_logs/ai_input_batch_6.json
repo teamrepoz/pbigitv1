@@ -1,0 +1,23 @@
+{
+  "calculations": [
+    {
+      "name": "wc_percentage",
+      "table_name": "Sheet1 (radial_bar_chart_data)",
+      "tableau_expression": "WINDOW_MAX(MAX([Percentage]))",
+      "datatype": "real",
+      "calculation_context": {
+        "Expression": "WINDOW_MAX(MAX([Percentage]))",
+        "calculated_fields": {
+          "Percentage": "[Ratio]/0.543"
+        },
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Ratio": "real"
+        },
+        "calc_fields_to_datatype_mapping": {
+          "Percentage": "real"
+        }
+      }
+    }
+  ]
+}
