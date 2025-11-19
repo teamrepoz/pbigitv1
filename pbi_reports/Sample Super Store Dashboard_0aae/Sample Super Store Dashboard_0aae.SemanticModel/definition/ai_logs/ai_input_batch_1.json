@@ -1,0 +1,17 @@
+{
+  "calculations": [
+    {
+      "name": "Cummulative Total",
+      "table_name": "Parameters",
+      "tableau_expression": "\"Total\"",
+      "datatype": "string",
+      "calculation_context": {
+        "Expression": "\"Total\"",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {},
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
