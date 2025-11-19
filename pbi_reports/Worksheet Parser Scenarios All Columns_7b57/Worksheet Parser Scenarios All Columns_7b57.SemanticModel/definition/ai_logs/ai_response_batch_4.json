@@ -1,0 +1,26 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "HR Dataset",
+      "name": "dep calc 1",
+      "dax_expression": "'HR Dataset'[DeptID]",
+      "solution_explanation": "Row-level passthrough of [DeptID] to a calculated column. Column reference converted to 'HR Dataset'[DeptID]."
+    },
+    {
+      "type": "calculated_column",
+      "table": "HR Dataset",
+      "name": "dep calc 2",
+      "dax_expression": "'HR Dataset'[dep calc 1] * 'HR Dataset'[MarriedID]",
+      "solution_explanation": "Row-level multiplication of dep calc 1 and MarriedID. References converted to 'HR Dataset'[dep calc 1] and 'HR Dataset'[MarriedID]."
+    },
+    {
+      "type": "measure",
+      "table": "HR Dataset",
+      "name": "dep calc 3",
+      "dax_expression": "SUM('HR Dataset'[dep calc 2])",
+      "solution_explanation": "Aggregation SUM over the column dep calc 2 converted to a DAX measure using SUM('HR Dataset'[dep calc 2]).",
+      "type_changed_reason": "This calculation uses aggregation (SUM), so it should be created as a measure."
+    }
+  ]
+}
