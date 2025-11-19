@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "Parameters",
+      "name": "Cummulative Total",
+      "dax_expression": "\"Total\"",
+      "solution_explanation": "This is a constant string literal with no aggregations or parameter references, so it is a row-level calculated column returning \"Total\"."
+    }
+  ]
+}
