@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Domain Padding_1a24"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "c72de77c-f266-444b-ac60-0ae615eecef7"
+  }
+}
