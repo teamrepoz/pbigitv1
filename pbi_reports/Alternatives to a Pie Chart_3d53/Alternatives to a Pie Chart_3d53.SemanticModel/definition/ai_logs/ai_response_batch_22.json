@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "measure",
+      "table": "Sheet1 (waffle template)",
+      "name": "StoreType Color",
+      "dax_expression": "VAR avgPercentage = AVERAGEX(\n    'Sheet1 (waffle template)',\n    'Sheet1 (waffle template)'[Ratio] / 0.543\n)\nVAR aPortion = DIVIDE(\n    CALCULATE( SUM('rossmann_sales_prediction'[Sales]), 'rossmann_sales_prediction'[StoreType] = \"a\" ),\n    CALCULATE( SUM('rossmann_sales_prediction'[Sales]) )\n)\nVAR bPortion = DIVIDE(\n    CALCULATE( SUM('rossmann_sales_prediction'[Sales]), 'rossmann_sales_prediction'[StoreType] = \"b\" ),\n    CALCULATE( SUM('rossmann_sales_prediction'[Sales]) )\n)\nVAR cPortion = DIVIDE(\n    CALCULATE( SUM('rossmann_sales_prediction'[Sales]), 'rossmann_sales_prediction'[StoreType] = \"c\" ),\n    CALCULATE( SUM('rossmann_sales_prediction'[Sales]) )\n)\nRETURN\nIF(\n    avgPercentage <= aPortion, \"a\",\n    IF(\n        avgPercentage <= aPortion + bPortion, \"b\",\n        IF(\n            avgPercentage <= aPortion + bPortion + cPortion, \"c\",\n            \"d\"\n        )\n    )\n)",
+      "solution_explanation": "Converted AVG([Percentage]) to AVERAGEX over 'Sheet1 (waffle template)' computing [Ratio]/0.543. Converted the \"a portion\", \"b portion\", and \"c portion\" aggregations from 'rossmann_sales_prediction' into DIVIDE(CALCULATE(SUM(...))) expressions that mirror SUM(IF StoreType=... THEN Sales END)/SUM(Sales). Preserved the conditional branching with nested IFs to return \"a\"/\"b\"/\"c\"/\"d\". All column references use 'TableName'[ColumnName] format and the calculation is a measure because it uses aggregations (AVERAGEX/CALCULATE/SUM)."
+    }
+  ]
+}
