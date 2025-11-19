@@ -1,0 +1,19 @@
+{
+  "calculations": [
+    {
+      "name": "Path Order",
+      "table_name": "rossmann_sales_prediction_aggregated",
+      "tableau_expression": "IIF([Table Name] = \"rossmann_sales_prediction_aggregated.csv\", 0, 1)",
+      "datatype": "integer",
+      "calculation_context": {
+        "Expression": "IIF([Table Name] = \"rossmann_sales_prediction_aggregated.csv\", 0, 1)",
+        "calculated_fields": {},
+        "parameters": [],
+        "col_to_datatype_mapping": {
+          "Table Name": "string"
+        },
+        "calc_fields_to_datatype_mapping": {}
+      }
+    }
+  ]
+}
