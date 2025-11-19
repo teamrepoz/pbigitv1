@@ -1,0 +1,11 @@
+{
+  "fixes": [
+    {
+      "type": "calculated_column",
+      "table": "HR Dataset",
+      "name": "Calculation3",
+      "dax_expression": "'HR Dataset'[TermReason] & FORMAT('HR Dataset'[Termd], \"0\")",
+      "solution_explanation": "Converted Tableau string concatenation and STR(): replaced + with & and STR([Termd]) with FORMAT('HR Dataset'[Termd], \"0\"). This is a row-level string transformation, so created as a calculated column."
+    }
+  ]
+}
